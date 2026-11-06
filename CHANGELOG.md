@@ -1,5 +1,12 @@
 # Changelog
 
+## Archive Steward report comparison 0.2, 2026-11-06
+
+- Added read-only `--compare` support for a selected saved local report, with exact changes to concept next steps/status, artifact rights/verification declarations, selected source metadata and findings.
+- Added actual file-hash snapshots, including unlisted files, to reveal changed bytes even after deliberate baseline refresh. Unhashable common files remain explicitly uncompared.
+- Kept all current findings visible in focused text output. JSON output remains a full reusable report; 0.1 reports are supported with explicit missing-coverage limits.
+- Added comparison regression tests. The helper still makes no network calls, changes no files and performs no publication or scheduling.
+
 ## Archive Steward helper 0.1, 2026-11-06
 
 - Added a new dependency-free offline Python helper, tests and run instructions under `tools/archive-steward/` using the existing compilation license.

@@ -18,7 +18,7 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 ## Maintain the archive with a small offline helper
 
-[Archive Steward 0.1](tools/archive-steward/README.md) is the first newly built archive helper: a dependency-free Python CLI that checks file integrity and preserved-source hashes, reports declared license scopes and evidence limits, and turns the existing concept next steps into a review queue. All 33 synthetic tests pass. It is read-only, runs offline, and neither recovers private content nor publishes anything. See its README for commands and limits.
+[Archive Steward 0.2](tools/archive-steward/README.md) is the first newly built archive helper: a dependency-free Python CLI that checks file integrity and preserved-source hashes, reports declared license scopes and evidence limits, and turns the existing concept next steps into a review queue. It can now compare saved reports to show changed bytes, next steps, source declarations and license/verification limits. All 57 synthetic tests pass. It is read-only, runs offline, and neither recovers private content nor publishes anything. See its README for commands and limits.
 
 ## Start here
 

@@ -1,5 +1,6 @@
 """Synthetic fixtures only. No credentials, network, or real user files."""
 import contextlib
+import copy
 import hashlib
 import importlib.util
 import io
@@ -291,6 +292,219 @@ class StewardTests(unittest.TestCase):
         status, _, err = self.invoke()
         self.assertEqual(status, 2)
         self.assertNotIn("Traceback", err)
+
+
+    def test_compare_same_report_has_no_changes(self):
+        report = self.report()
+        diff = steward.compare_reports(report, report)
+        for key in ("review_queue", "artifacts", "sources", "files", "findings"):
+            self.assertFalse(any(diff[key].values()))
+
+    def test_compare_changed_next_step_and_limit(self):
+        before = self.report()
+        after = copy.deepcopy(before)
+        after["review_queue"][0]["next_step"] = "Try one documented experiment."
+        after["review_queue"][0]["limitations"] = "Scope remains narrow."
+        fields = steward.compare_reports(before, after)["review_queue"]["changed"][0]["fields"]
+        self.assertEqual([f["field"] for f in fields], ["limitations", "next_step"])
+        self.assertEqual(fields[1]["before"], "Run a bounded test.")
+
+    def test_compare_rights_and_verification_fields(self):
+        before = self.report()
+        after = copy.deepcopy(before)
+        after["artifacts"][0]["rights"]["license_declared"] = "unknown"
+        after["artifacts"][0]["rights"]["scope"] = "New limited scope."
+        after["artifacts"][0]["verification"]["status"] = "historical_only"
+        fields = steward.compare_reports(before, after)["artifacts"]["changed"][0]["fields"]
+        self.assertEqual([f["field"] for f in fields], ["rights.license_declared", "rights.scope", "verification.status"])
+
+    def test_compare_added_removed_concepts(self):
+        before = self.report()
+        after = copy.deepcopy(before)
+        after["review_queue"][0]["id"] = "C-2"
+        diff = steward.compare_reports(before, after)["review_queue"]
+        self.assertEqual(diff["added"][0]["id"], "C-2")
+        self.assertEqual(diff["removed"][0]["id"], "C-1")
+        self.assertEqual(diff["changed"], [])
+
+    def test_compare_per_source_and_access_counts(self):
+        before = self.report()
+        after = copy.deepcopy(before)
+        after["source_inventory"][0]["access"] = "public_source"
+        after["source_access_counts"] = {"public_source": 1}
+        diff = steward.compare_reports(before, after)
+        self.assertEqual(diff["sources"]["changed"][0]["fields"][0]["field"], "access")
+        self.assertEqual(len(diff["source_access_counts"]), 2)
+
+    def test_compare_changed_bytes_after_baseline_refresh(self):
+        before = self.report()
+        self.write("tools/example/README.md", "updated review record")
+        self.refresh()
+        after = self.report()
+        self.assertEqual(after["summary"]["errors"], 0)
+        self.assertIn("tools/example/README.md", steward.compare_reports(before, after)["files"]["changed"])
+
+    def test_compare_added_removed_files(self):
+        before = self.report()
+        self.write("new.txt", "new bytes")
+        (self.root / "tools/example/file.txt").unlink()
+        diff = steward.compare_reports(before, self.report())["files"]
+        self.assertEqual(diff["added"], ["new.txt"])
+        self.assertEqual(diff["removed"], ["tools/example/file.txt"])
+
+    def test_compare_hashes_unlisted_files(self):
+        self.write("new.txt", "first")
+        before = self.report()
+        self.write("new.txt", "second")
+        after = self.report()
+        self.assertIn("new.txt", steward.compare_reports(before, after)["files"]["changed"])
+        self.assertEqual(after["hash_checks"]["unlisted_snapshot"], 1)
+
+    def test_compare_unreadable_files_are_not_unchanged(self):
+        before = self.report()
+        after = copy.deepcopy(before)
+        after["file_snapshot"]["LICENSE"] = None
+        diff = steward.compare_reports(before, after)
+        self.assertEqual(diff["files"]["uncompared"], ["LICENSE"])
+        self.assertTrue(any("could not be hashed" in item for item in diff["limitations"]))
+
+    def test_compare_findings_introduced_and_no_longer_reported(self):
+        before = self.report()
+        self.write("new.txt", "new")
+        after = self.report()
+        forward = steward.compare_reports(before, after)
+        reverse = steward.compare_reports(after, before)
+        self.assertEqual(forward["findings"]["introduced"][0]["code"], "unlisted_file")
+        self.assertEqual(reverse["findings"]["no_longer_reported"][0]["code"], "unlisted_file")
+
+    def test_compare_legacy_report_reports_missing_coverage(self):
+        after = self.report()
+        before = copy.deepcopy(after)
+        before["version"] = "0.1.0"
+        for key in ("report_schema_version", "file_snapshot", "source_inventory"):
+            before.pop(key)
+        diff = steward.compare_reports(before, after)
+        self.assertIsNone(diff["files"])
+        self.assertIsNone(diff["sources"])
+        self.assertTrue(any("Version 0.1" in item for item in diff["limitations"]))
+
+    def test_compare_rejects_unknown_schema_or_non_report(self):
+        report = self.report()
+        for bad in ({}, dict(report, report_schema_version="999"), dict(report, tool="other")):
+            with self.subTest(bad=bad.get("tool")), self.assertRaises(steward.InputError):
+                steward.compare_reports(bad, report)
+
+    def test_compare_rejects_malformed_records(self):
+        report = self.report()
+        bad_records = [dict(report, review_queue=[{}]), dict(report, file_snapshot={"a": "not-a-hash"}),
+                       dict(report, source_access_counts={"private": True}), dict(report, findings=[{"level": "info"}])]
+        for bad in bad_records:
+            with self.subTest(keys=list(bad)), self.assertRaises(steward.InputError):
+                steward.compare_reports(bad, report)
+
+    def test_compare_never_opens_paths_from_report(self):
+        before = self.report()
+        before["file_snapshot"]["../../do-not-open"] = "0" * 64
+        after = self.report()
+        with patch.object(steward, "digest", side_effect=AssertionError("unexpected file access")):
+            diff = steward.compare_reports(before, after)
+        self.assertIn("../../do-not-open", diff["files"]["removed"])
+
+    def test_compare_cli_json_can_be_compared_again_without_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            previous = Path(directory) / "previous.json"
+            previous.write_text(json.dumps(self.report()))
+            original = previous.read_bytes()
+            status, out, err = self.invoke("--compare", str(previous), "--format", "json")
+            self.assertEqual((status, err), (0, ""))
+            current = json.loads(out)
+            self.assertIn("comparison", current)
+            self.assertEqual(previous.read_bytes(), original)
+            self.assertEqual(steward.compare_reports(current, self.report())["files"]["changed"], [])
+
+    def test_compare_cli_text_keeps_persistent_errors_visible(self):
+        self.write("unlisted.txt", "unlisted")
+        with tempfile.TemporaryDirectory() as directory:
+            previous = Path(directory) / "previous.json"
+            previous.write_text(json.dumps(self.report()))
+            status, out, _ = self.invoke("--compare", str(previous))
+            self.assertEqual(status, 1)
+            self.assertIn("All current findings", out)
+            self.assertIn("unlisted_file: unlisted.txt", out)
+            self.assertIn("No finding changes.", out)
+
+    def test_compare_cli_missing_or_bad_report_returns_two(self):
+        self.assertEqual(self.invoke("--compare", str(self.root / "absent.json"))[0], 2)
+        self.write("invalid.json", "{}")
+        status, _, err = self.invoke("--compare", str(self.root / "invalid.json"))
+        self.assertEqual(status, 2)
+        self.assertNotIn("Traceback", err)
+
+    def test_compare_selected_report_allows_explicit_parent_path(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "child").mkdir()
+            (root / "previous.json").write_text(json.dumps(self.report()))
+            self.assertEqual(steward.read_selected_report(root / "child/../previous.json")["tool"], "Archive Steward")
+
+    def test_compare_selected_report_rejects_symlink(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "previous.json").write_text(json.dumps(self.report()))
+            (root / "link.json").symlink_to(root / "previous.json")
+            with self.assertRaises(steward.InputError):
+                steward.read_selected_report(root / "link.json")
+
+    def test_comparison_text_escapes_control_characters(self):
+        before = self.report()
+        after = copy.deepcopy(before)
+        after["review_queue"][0]["next_step"] = "Injected\n\x1b[31m"
+        after["comparison"] = steward.compare_reports(before, after)
+        rendered = steward.render_comparison(after)
+        self.assertNotIn("\x1b", rendered)
+        self.assertIn("Injected\\n\\x1b[31m", rendered)
+
+
+    def test_compare_invalid_finding_level_returns_two(self):
+        for level in ([], {}):
+            with self.subTest(level=level), tempfile.TemporaryDirectory() as directory:
+                report = self.report()
+                report["findings"] = [{"level": level, "code": "x", "subject": "x", "message": "x"}]
+                previous = Path(directory) / "previous.json"
+                previous.write_text(json.dumps(report))
+                status, _, err = self.invoke("--compare", str(previous))
+                self.assertEqual(status, 2)
+                self.assertNotIn("Traceback", err)
+
+    def test_incomplete_walk_withholds_added_removed_file_claims(self):
+        before = self.report()
+        real_walk = steward.os.walk
+        def incomplete_walk(root, *, followlinks, onerror):
+            for base, dirs, names in real_walk(root, followlinks=followlinks, onerror=onerror):
+                if Path(base) == self.root:
+                    dirs.remove("tools")
+                    onerror(PermissionError("fixture unreadable directory"))
+                yield base, dirs, names
+        with patch.object(steward.os, "walk", incomplete_walk):
+            after = self.report()
+        self.assertFalse(after["file_inventory_complete"])
+        diff = steward.compare_reports(before, after)
+        self.assertEqual(diff["files"]["removed"], [])
+        self.assertIn("tools/example/file.txt", diff["files"]["uncompared_presence"])
+        # Reversing the comparison must not invent new additions either.
+        reverse = steward.compare_reports(after, before)
+        self.assertEqual(reverse["files"]["added"], [])
+        self.assertIn("tools/example/file.txt", reverse["files"]["uncompared_presence"])
+
+    def test_directory_symlink_marks_inventory_incomplete(self):
+        (self.root / "linked-dir").symlink_to(self.root / "tools", target_is_directory=True)
+        self.assertFalse(self.report()["file_inventory_complete"])
+
+    def test_compare_requires_inventory_coverage_flag(self):
+        report = self.report()
+        for flag in (None, "true", 1):
+            with self.subTest(flag=flag), self.assertRaises(steward.InputError):
+                steward.compare_reports(dict(report, file_inventory_complete=flag), report)
 
 
 if __name__ == "__main__":

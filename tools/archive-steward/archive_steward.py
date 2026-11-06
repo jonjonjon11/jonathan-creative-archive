@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Archive Steward 0.1: deterministic, read-only, offline archive review aid."""
+"""Archive Steward 0.2: deterministic, read-only, offline archive review aid."""
 from __future__ import annotations
 
 import argparse
@@ -12,7 +12,8 @@ import re
 import stat
 import sys
 
-VERSION = "0.1.0"
+VERSION = "0.2.0"
+REPORT_SCHEMA = "1"
 NO_HASH = object()
 MAX_JSON_BYTES = 4 * 1024 * 1024
 MAX_HASH_BYTES = 64 * 1024 * 1024
@@ -139,6 +140,7 @@ def inspect(root):
         raise InputError("data/checksums.json: unsupported exclusion list")
     findings = []
     checks = Counter()
+    observed_hashes = {}
 
     def issue(level, code, subject, message):
         findings.append({"level": level, "code": code, "subject": subject, "message": message})
@@ -152,6 +154,7 @@ def inspect(root):
             if not isinstance(expected, str) or not re.fullmatch(r"[a-f0-9]{64}", expected):
                 raise InputError("expected hash must be 64 lowercase hexadecimal characters")
             actual = digest(root, rel)
+            observed_hashes[rel] = actual
             checks[origin] += 1
             if actual != expected:
                 issue("error", "hash_mismatch", rel, f"Bytes differ from {origin} record.")
@@ -167,7 +170,10 @@ def inspect(root):
     for rel, expected in sorted(expected_files.items()):
         check_file(rel, expected, "archive_checksum")
     present = set()
+    inventory_complete = True
     def walk_error(_):
+        nonlocal inventory_complete
+        inventory_complete = False
         issue("error", "unreadable_directory", ".", "A directory could not be inventoried.")
     for base, dirs, names in os.walk(root, followlinks=False, onerror=walk_error):
         for name in sorted(dirs[:]):
@@ -175,6 +181,7 @@ def inspect(root):
             rel = path.relative_to(root).as_posix()
             if path.is_symlink():
                 issue("error", "symlink", rel, "Directory symlinks are not followed.")
+                inventory_complete = False
                 dirs.remove(name)
             elif name in SKIP_DIRS:
                 dirs.remove(name)
@@ -182,6 +189,7 @@ def inspect(root):
             path = Path(base) / name
             rel = path.relative_to(root).as_posix()
             if path.is_symlink():
+                present.add(rel)
                 issue("error", "symlink", rel, "File symlinks are not followed.")
                 continue
             if name in SKIP_FILES or name.endswith(".pyc") or rel == "data/checksums.json":
@@ -189,6 +197,11 @@ def inspect(root):
             present.add(rel)
             if rel not in expected_files:
                 issue("error", "unlisted_file", rel, "File has no archive checksum; review before adding it.")
+                try:
+                    observed_hashes[rel] = digest(root, rel)
+                    checks["unlisted_snapshot"] += 1
+                except (InputError, OSError, ValueError):
+                    issue("error", "unreadable_file", rel, "Unlisted file could not be hashed for comparison.")
 
     used_sources = set()
     statuses = Counter()
@@ -289,11 +302,17 @@ def inspect(root):
                           "rights": rights, "verification": verification})
 
     access = Counter()
+    source_inventory = []
     for ident, source in sorted(sources.items()):
         access[require_text(source.get("access"), f"{ident} access")] += 1
+        source_inventory.append({"id": ident, "title": source["title"], "access": source["access"],
+                                 "evidence_class": require_text(source.get("evidence_class", "unspecified"), f"{ident} evidence_class")})
     findings.sort(key=lambda x: (x["level"], x["code"], x["subject"], x["message"]))
     queue.sort(key=lambda x: (x["category"] != "evidence_gap", x["id"]))
-    return {"tool": "Archive Steward", "version": VERSION,
+    return {"tool": "Archive Steward", "version": VERSION, "report_schema_version": REPORT_SCHEMA,
+            "file_snapshot": {rel: observed_hashes.get(rel) for rel in sorted(present)},
+            "file_inventory_complete": inventory_complete,
+            "source_inventory": source_inventory,
             "summary": {"sources": len(sources), "concepts": len(concepts),
                         "registered_artifacts": len(artifacts), "inventoried_files": len(present),
                         "errors": sum(f["level"] == "error" for f in findings),
@@ -305,6 +324,167 @@ def inspect(root):
             "artifacts": inventory, "review_queue": queue, "findings": findings, "limitations": LIMITS}
 
 
+
+def validate_report(report):
+    """Validate the compared subset; never treat a saved report as trusted evidence."""
+    if not isinstance(report, dict) or report.get("tool") != "Archive Steward":
+        raise InputError("comparison input must be an Archive Steward JSON report")
+    legacy = report.get("version") == "0.1.0" and "report_schema_version" not in report
+    if not legacy and report.get("report_schema_version") != REPORT_SCHEMA:
+        raise InputError("unsupported comparison report schema")
+    require_text(report.get("version"), "report version")
+    field_sets = {
+        "review_queue": ("title", "category", "artifact_status", "next_step", "limitations"),
+        "artifacts": ("title", "path", "rights.license_declared", "rights.license_path", "rights.scope",
+                      "rights.review_record", "verification.status", "verification.record", "verification.limitations"),
+    }
+    if not legacy:
+        field_sets["source_inventory"] = ("title", "access", "evidence_class")
+    normalized = {"legacy": legacy}
+    for key, fields in field_sets.items():
+        normalized[key] = {}
+        for ident, item in record_map(report, key).items():
+            normalized[key][ident] = {}
+            for field in fields:
+                value = item
+                for part in field.split("."):
+                    value = value.get(part) if isinstance(value, dict) else None
+                normalized[key][ident][field] = require_text(value, f"report {key}.{field}")
+    for key in ("status_counts", "source_access_counts"):
+        counts = report.get(key)
+        if not isinstance(counts, dict) or any(not isinstance(k, str) or type(v) is not int or v < 0 for k, v in counts.items()):
+            raise InputError(f"report {key} must map labels to nonnegative integers")
+        normalized[key] = counts
+    findings = []
+    for item in require_list(report.get("findings"), "report findings"):
+        if not isinstance(item, dict) or not isinstance(item.get("level"), str) or item["level"] not in {"error", "warning"}:
+            raise InputError("report finding requires an error or warning level")
+        findings.append({key: require_text(item.get(key), f"report finding.{key}")
+                         for key in ("level", "code", "subject", "message")})
+    normalized["findings"] = {json.dumps(item, sort_keys=True): item for item in findings}
+    if not legacy:
+        if type(report.get("file_inventory_complete")) is not bool:
+            raise InputError("report file_inventory_complete must be a boolean")
+        normalized["file_inventory_complete"] = report["file_inventory_complete"]
+        snapshot = report.get("file_snapshot")
+        if not isinstance(snapshot, dict):
+            raise InputError("report file_snapshot must be an object")
+        for path, value in snapshot.items():
+            require_text(path, "report snapshot path")
+            # Names are inert labels. Never resolve or open a path from a saved report.
+            if value is not None and (not isinstance(value, str) or not re.fullmatch(r"[a-f0-9]{64}", value)):
+                raise InputError("report snapshot hashes must be SHA-256 strings or null")
+        normalized["file_snapshot"] = snapshot
+    return normalized
+
+
+def record_changes(before, after):
+    changed = []
+    for ident in sorted(before.keys() & after.keys()):
+        fields = [{"field": key, "before": before[ident][key], "after": after[ident][key]}
+                  for key in sorted(before[ident]) if before[ident][key] != after[ident][key]]
+        if fields:
+            changed.append({"id": ident, "fields": fields})
+    return {"added": [{"id": key, **after[key]} for key in sorted(after.keys() - before.keys())],
+            "removed": [{"id": key, **before[key]} for key in sorted(before.keys() - after.keys())],
+            "changed": changed}
+
+
+def read_selected_report(path):
+    # This path is an explicit CLI selection, so parent-directory components are
+    # allowed. Still reject symbolic links before normalizing the selected path.
+    raw = Path(path).absolute()
+    current = Path(raw.anchor)
+    for part in raw.parts[1:]:
+        current = current / part
+        if current.is_symlink():
+            raise InputError("comparison report symlinks are not followed")
+    normalized = Path(os.path.abspath(raw))
+    return read_json(Path(normalized.anchor), normalized.relative_to(normalized.anchor).as_posix())
+
+
+def compare_reports(previous, current):
+    before, after = validate_report(previous), validate_report(current)
+    result = {"previous_version": previous["version"], "current_version": current["version"],
+              "limitations": ["Saved reports are editable local records, not authenticated history or proof of progress.",
+                              "Removed findings mean no longer reported, not independently proven fixed.",
+                              "Added/removed files mean inventory presence changed; an incomplete scan can also change inventory."]}
+    for key in ("review_queue", "artifacts"):
+        result[key] = record_changes(before[key], after[key])
+    for key in ("status_counts", "source_access_counts"):
+        result[key] = [{"label": label, "before": before[key].get(label, 0), "after": after[key].get(label, 0)}
+                       for label in sorted(before[key].keys() | after[key].keys())
+                       if before[key].get(label, 0) != after[key].get(label, 0)]
+    result["findings"] = {
+        "introduced": [after["findings"][key] for key in sorted(after["findings"].keys() - before["findings"].keys())],
+        "no_longer_reported": [before["findings"][key] for key in sorted(before["findings"].keys() - after["findings"].keys())]}
+    if before["legacy"] or after["legacy"]:
+        result["files"] = None
+        result["sources"] = None
+        result["file_inventory_complete"] = None
+        result["limitations"].append("Version 0.1 lacks file snapshots and per-source inventory; those changes cannot be compared.")
+    else:
+        old, new = before["file_snapshot"], after["file_snapshot"]
+        common = old.keys() & new.keys()
+        complete = before["file_inventory_complete"] and after["file_inventory_complete"]
+        result["file_inventory_complete"] = complete
+        result["files"] = {"added": sorted(new.keys() - old.keys()) if complete else [],
+                           "removed": sorted(old.keys() - new.keys()) if complete else [],
+                           "changed": sorted(key for key in common if old[key] is not None and new[key] is not None and old[key] != new[key]),
+                           "uncompared": sorted(key for key in common if old[key] is None or new[key] is None),
+                           "uncompared_presence": sorted(old.keys() ^ new.keys()) if not complete else []}
+        if not complete:
+            result["limitations"].append("Directory inventory is incomplete in one or both reports; added/removed claims are withheld and unmatched paths are uncompared_presence.")
+        result["sources"] = record_changes(before["source_inventory"], after["source_inventory"])
+        if result["files"]["uncompared"]:
+            result["limitations"].append("Some common files could not be hashed in one or both reports; do not treat them as unchanged.")
+    return result
+
+
+def render_comparison(report):
+    diff = report["comparison"]
+    out = [f"Archive Steward {VERSION} | changes since saved report",
+           f"Current archive: {report['summary']['errors']} errors; {report['summary']['warnings']} warnings. Read-only run; no files modified by this tool."]
+    for key, title in (("review_queue", "Concept next steps and status"), ("artifacts", "Artifact rights and verification"), ("sources", "Source declarations")):
+        changes = diff[key]
+        out.append("\n" + title + ":")
+        if changes is None:
+            out.append("- Unavailable for legacy report.")
+            continue
+        for action in ("added", "removed"):
+            out.extend(f"- {action}: {line(item['id'])} ({line(item['title'])})" for item in changes[action])
+        for item in changes["changed"]:
+            for field in item["fields"]:
+                out.append(f"- {line(item['id'])} {line(field['field'])}: {line(field['before'])} -> {line(field['after'])}")
+        if not any(changes.values()):
+            out.append("- No changes in compared fields.")
+    out.append("\nFile bytes (excluding fixed cache/checksum exclusions):")
+    if diff["files"] is None:
+        out.append("- Unavailable for legacy report.")
+    else:
+        for kind, paths in diff["files"].items():
+            out.extend(f"- {kind}: {line(path)}" for path in paths)
+        if not any(diff["files"].values()):
+            out.append("- No changes in successfully compared file bytes.")
+    for key in ("status_counts", "source_access_counts"):
+        if diff[key]:
+            out.append("\n" + key + ":")
+            out.extend(f"- {line(item['label'])}: {item['before']} -> {item['after']}" for item in diff[key])
+    out.append("\nFinding changes:")
+    for kind, items in diff["findings"].items():
+        out.extend(f"- {kind}: {line(item['code'])}: {line(item['subject'])}: {line(item['message'])}" for item in items)
+    if not any(diff["findings"].values()):
+        out.append("- No finding changes.")
+    out.append("\nAll current findings (including persistent ones):")
+    out.extend(f"- {item['level'].upper()} {line(item['code'])}: {line(item['subject'])}: {line(item['message'])}" for item in report["findings"])
+    if not report["findings"]:
+        out.append("- None. This is not publication clearance.")
+    out.append("\nLimits:")
+    out.extend("- " + value for value in diff["limitations"])
+    out.append("- Compare only reports from the same archive; archive identity is not authenticated.")
+    out.append("- Run without --compare for the full current inventory and review queue.")
+    return "\n".join(out) + "\n"
+
 def line(value):
     """Keep human-readable output one line; neutralize terminal control characters."""
     return str(value).encode("unicode_escape").decode("ascii")
@@ -314,7 +494,7 @@ def render(report):
     s = report["summary"]
     out = [f"Archive Steward {VERSION} | offline review report",
            f"{s['concepts']} concepts; {s['sources']} sources; {s['registered_artifacts']} registered artifacts; {s['inventoried_files']} inventoried files.",
-           f"{s['errors']} errors; {s['warnings']} warnings. No files changed.", "", "Integrity checks:"]
+           f"{s['errors']} errors; {s['warnings']} warnings. Read-only run; no files modified by this tool.", "", "Integrity checks:"]
     out.extend(f"- {key}: {value} files hashed" for key, value in report["hash_checks"].items())
     out.append("\nFindings:")
     out.extend(f"- {f['level'].upper()} {line(f['code'])}: {line(f['subject'])}: {line(f['message'])}" for f in report["findings"])
@@ -344,9 +524,13 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", type=Path, help="local archive root (required; no home-directory search)")
     parser.add_argument("--format", choices=("text", "json"), default="text")
+    parser.add_argument("--compare", type=Path, metavar="PREVIOUS_JSON", help="compare with an explicitly selected saved local report")
     args = parser.parse_args(argv)
     try:
         report = inspect(args.root)
+        if args.compare is not None:
+            previous = read_selected_report(args.compare)
+            report["comparison"] = compare_reports(previous, report)
     except (InputError, OSError, ValueError) as exc:
         detail = str(exc) if isinstance(exc, InputError) else "Archive root or required input is missing or unreadable."
         print("Archive Steward input error: " + line(detail), file=sys.stderr)
@@ -354,7 +538,7 @@ def main(argv=None):
     if args.format == "json":
         print(json.dumps(report, ensure_ascii=True, indent=2, sort_keys=True))
     else:
-        print(render(report), end="")
+        print(render_comparison(report) if args.compare else render(report), end="")
     return 1 if report["summary"]["errors"] else 0
 
 

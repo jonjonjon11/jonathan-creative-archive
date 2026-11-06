@@ -44,6 +44,16 @@ Result on 2026-11-06: all 33 synthetic tests passed under Python 3.12.14. Both t
 
 The helper is newly written editorial software under the existing compilation license. Its synthetic tests cover checksum drift, preserved-source disagreement after baseline updates, missing/unlisted files, source/status metadata, both preserved-manifest formats, symlinks/traversal, malformed JSON, size limits, nonregular files, deterministic reports, CLI exit codes and unchanged archive bytes. See the helper README for the exact scope and limitations. It does not run the artifact suites or establish new browser verification.
 
+## Archive Steward 0.2 comparison improvement
+
+The 0.2 helper adds optional `--compare PREVIOUS_JSON`. Its report retains actual file hashes and selected source metadata; comparison output identifies changed records/bytes and introduced/no-longer-reported findings without silently hiding current persistent findings.
+
+Commands remain those above, plus `python3 tools/archive-steward/archive_steward.py . --compare /path/to/previous-report.json`. Save both previous and current reports outside the repository. JSON output can be reused for another comparison. Version 0.1 inputs have explicit missing file/source comparison coverage rather than invented history.
+
+Result on 2026-11-06: all 57 synthetic tests passed under Python 3.12.14. The original 33 checks remain included. The new tests cover record/rights/source changes, byte changes after a refreshed baseline, added/removed/unhashable files, finding differences, legacy and malformed reports, path safety, persistent errors, terminal control-character escaping, incomplete-inventory handling and reusable output. Directory read failures cannot be silently relabeled as file removals. The real-archive comparison identified the seven changed content files after checksum refresh, with zero current errors/warnings and no metadata changes. A report emitted by published 0.1 also compared successfully with explicit missing file/source coverage. Existing artifact bytes and browser-verification limits remain unchanged.
+
+The comparator does not authenticate report history or establish that a removed finding is truly fixed. It compares selected metadata fields and local bytes; changes alone are not a quality score, new runtime verification or permission to publish.
+
 ## Rights and privacy boundary
 
 Exact-commit CC0 provenance was reviewed separately for Reality Atlas, Lumen Commons and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.
