@@ -26,7 +26,7 @@ private_patterns = [r'https://chatgpt\.com/c/', r'https://(?:docs|drive)\.google
 files = [p for p in root.rglob('*') if p.is_file() and '.git' not in p.parts and '__pycache__' not in p.parts]
 for p in files:
     if p.suffix in {'.pem', '.key', '.p12', '.pfx', '.jks', '.keystore'}: errors.append(f"Disallowed file: {p.relative_to(root)}")
-    if p.suffix not in {'.md', '.json', '.txt', '.py', '.cjs', '.html'} and p.name != '.gitignore' and p != root / 'LICENSE': errors.append(f"Unexpected file type: {p.relative_to(root)}")
+    if p.suffix not in {'.md', '.json', '.txt', '.py', '.cjs', '.html'} and p.name != '.gitignore' and p not in {root / 'LICENSE', root / 'artifacts/cooperation-rescue/LICENSE'}: errors.append(f"Unexpected file type: {p.relative_to(root)}")
     text = p.read_text(encoding='utf-8')
     if p.suffix != '.py':
         for pat in private_patterns:

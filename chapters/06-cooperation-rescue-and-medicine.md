@@ -30,7 +30,7 @@ A recovered September 2026 packet contains versioned mission data, a Python auth
 - **Lantern Bridge:** restore a crossing or quiet detour, help travelers and animals, and welcome a caravan.
 - **Commons Garden:** optional making, music, rest, and reflection, with no required task or moral score.
 
-The inspected receipt reports 25 historical passing authoring/semantic tests, including 288 objective-order permutations. The packet explicitly was not imported into either Unity game at that checkpoint. It is a concrete authoring artifact, not a rendered multiplayer world or verified rescue-training system. Current merge/build state and the reported tests were not rechecked in this compilation. [SRC-020]
+The [preserved mission kit](../artifacts/cooperation-rescue/README.md) is now included with its exact-source manifest and separate CC0 license. The four-mission validator and all 25 preserved authoring/reference tests passed on 2026-11-06, including all 288 objective-order permutations with retries. The source PR was still draft and unmerged at review; the original packet was not integrated into either Unity game at its checkpoint. This is a concrete authoring artifact, not a playable game, rendered multiplayer world, certified rescue-training system, or evidence of real-world completion. Its pending science, accessibility and runtime-security review fields remain unchanged. [SRC-020]
 
 This packet offers a more concrete starting point than the later sanctuary survival idea. The two should remain distinct unless a future designer deliberately combines them.
 

@@ -13,7 +13,7 @@ Use the most specific supported label. The labels do not form a guarantee of qua
 - `review_gap`: evidence is missing or insufficient to assign a more informative status.
 - `editorial_proposal`: a new recommendation made while assembling this archive, not historical user work.
 
-No complete source application in this compilation is newly assigned `runtime_verified` by the archive review. The included Reality Atlas HTML has 46 focused calculation-layer/syntax checks, documented separately; its fresh browser launch was blocked before loading.
+No complete source application in this compilation is newly assigned `runtime_verified` by the archive review. The included Reality Atlas HTML has 46 focused calculation-layer/syntax checks, documented separately; its fresh browser launch was blocked before loading. The cooperation/rescue authoring kit has 25 freshly rerun passing tests and a passing four-mission validator. That is scoped verification of offline authoring/reference logic, not a completed game or certified system.
 
 ## Evidence classes
 

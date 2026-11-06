@@ -1,5 +1,12 @@
 # Changelog
 
+## Cooperation/rescue preservation update, 2026-11-06
+
+- Added seven reviewed files under `artifacts/cooperation-rescue/`: four mission scenarios, authoring validator/reference logic, preserved tests, source manifest, README, complete CC0 license and local ignore rules.
+- Verified preserved source and license hashes against the exact-revision manifest; reran the integrated four-mission validator and all 25 tests successfully.
+- Updated navigation, source/concept status, rights, and validation notes. The source remains draft/unmerged authoring software, not a playable or certified rescue system.
+- Excluded the private review note, revalidation log, original ZIP and unrelated source files.
+
 ## First public edition 0.1, 2026-11-06
 
 - Prepared the reviewed documentation archive and unchanged Reality Atlas tool for the owner-created public repository.

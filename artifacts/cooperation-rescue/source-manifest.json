@@ -1,0 +1,41 @@
+{
+  "source_repository": "jonjonjon11/Jon-Harvey-Ultimate-Educational-Universe",
+  "source_commit": "2578df90a00c267ed4372ca937eb6ace86d57cb8",
+  "source_pr": 16,
+  "source_status_checked": "2026-11-06",
+  "source_status": "open draft, not merged",
+  "license": "CC0-1.0",
+  "original_archive": "Humanity_Cooperation_Rescue_Packet_2026-09-09.zip",
+  "original_archive_sha256": "3c529e58622b63342488314fec69dfcb7e2379c9e8c57d45e73dd41a17f6c8dd",
+  "files": {
+    "contract.py": {
+      "source_path": "shared/cooperation/contract.py",
+      "git_blob_sha1": "55eefbd09ff049cc483236455a9c3f0588d1e109",
+      "modified": false,
+      "sha256": "f41e4823296f44a651efc538e812bf8085d62cc2236e50aec8ebe88bb8d2d19c",
+      "bytes": 10298
+    },
+    "mission-pack.json": {
+      "source_path": "shared/cooperation/mission-pack.json",
+      "git_blob_sha1": "c220ca3ff859c4ead0c5deba338e50248136ac4d",
+      "modified": false,
+      "sha256": "ea24ad04ccc673fbbd39714770f3706fe9d91f621914533c94948ceea11729cf",
+      "bytes": 7875
+    },
+    "test_contract.py": {
+      "source_path": "shared/cooperation/test_contract.py",
+      "git_blob_sha1": "4e5d296a7d6442ca977261c53818e173d6e83287",
+      "modified": false,
+      "sha256": "4e1f8591ef3b5bf080b83f1458fe6ea29066b5b9d4877a7865f0fc94d6ec9185",
+      "bytes": 10328
+    },
+    "LICENSE": {
+      "source_path": "LICENSE",
+      "git_blob_sha1": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+      "modified": false,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "bytes": 7048
+    }
+  },
+  "source_repository_visibility_at_review": "private"
+}

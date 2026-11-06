@@ -194,8 +194,8 @@
       ],
       "artifact_status": "source_inspected",
       "scientific_standing": "not_a_scientific_claim",
-      "limitations": "Offline authoring/reference code, not Unity integration or rescue qualification.",
-      "next_step": "Inspect and rerun reference tests before adapting one mission."
+      "limitations": "Preserved offline authoring/reference kit with 25 freshly passing tests, not a playable game, Unity integration or rescue qualification. Source remains draft/unmerged.",
+      "next_step": "Adapt one included mission in a bounded prototype while preserving its license, optional participation, and separate runtime/safety review requirements."
     },
     {
       "id": "CON-012",

@@ -1,6 +1,6 @@
 # Recovered project map
 
-This map summarizes selected source and branch work. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. The one separately reviewed included artifact is the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/`. Test counts below are historical source reports, not results rerun for this archive. Exact private repository locators are withheld.
+This map summarizes selected source and branch work. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/` and CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
 
 ## AR Buddy Commons
 
@@ -77,17 +77,17 @@ Repository root detected CC0-1.0. Third-party assets, engine dependencies and ol
 ### Actual artifacts
 
 - Lumen Reach 4 release record: shared Browser and Immersive XR entries, rescue state, repair workshop, offline cache and controlled-room logic.
-- Shared cooperation branch: versioned mission data, standard-library validator and offline reference state machine.
+- [Included cooperation/rescue mission kit](../artifacts/cooperation-rescue/README.md): four mission definitions, standard-library validator, offline reference state machine, preserved tests, exact-source manifest and complete CC0 license. Source files match revision `2578df90a00c267ed4372ca937eb6ace86d57cb8`. All 25 preserved tests and the four-mission validator passed during archive revalidation on 2026-11-06.
 
 ### Evidence limits
 
 - Lumen 4 release record reports 91 unit tests and internal Chromium preview/two-client checks, not independent current retesting.
 - Quest wrapper source generated but APK packaging blocked in that release; physical mobile, Quest and PCVR hardware untested.
-- Shared-cooperation packet alone is not rendered content, live multiplayer, credentialing or verified world-state completion.
+- The shared-cooperation source PR remains draft and unmerged at review. The packet is not rendered content, Unity integration, live multiplayer, credentialing, rescue-training certification or verified world-state completion. Its policy/accessibility fields describe requirements, not implemented protections.
 
 ### Rights
 
-Root CC0 subject to exact branch/content and dependency verification.
+The included cooperation/rescue source and full license were verified at their exact source revision as CC0-1.0. Other Lumen branches, dependencies and assets still require their own rights review.
 
 ## Humanity VR and medical-science learning
 

@@ -219,9 +219,10 @@
       "source_date": "2026-09-09",
       "access": "private_source_or_current_conversation",
       "public_url": null,
-      "findings": "ZIP bytes inspected: mission data, validator, offline reference state machine, tests, receipt.",
-      "limitations": "Historical 25-test/288-permutation report not rerun; not integrated into Unity at checkpoint.",
-      "locator_policy": "Exact private locator withheld from publication candidate."
+      "findings": "Preserved mission data, Python authoring validator and offline reference state machine, tests, exact-revision CC0 license, and source-hash manifest included in artifacts/cooperation-rescue/. Four-mission validator and all 25 tests freshly passed on 2026-11-06, including 288 objective-order permutations with retries.",
+      "limitations": "Source PR remained open, draft and unmerged at review. Not a playable game, Unity integration, authoritative multiplayer service, medical/rescue training, or safety/accessibility certification. Original review-status fields remain pending.",
+      "locator_policy": "Exact private locator withheld from publication candidate.",
+      "included_artifact": "artifacts/cooperation-rescue/README.md"
     },
     {
       "id": "SRC-021",

@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "policy": {
+    "essential_access": "free",
+    "network": "offline",
+    "runtime_ai": "disabled",
+    "public_uploads": "disabled",
+    "voice_and_free_text_chat": "disabled",
+    "personal_data_collection": "none",
+    "model_training_from_players": "disabled",
+    "paid_api_requests": 0,
+    "physical_device_control": "disabled",
+    "release": "internal_prototype"
+  },
+  "accessibility_requirements": {
+    "noncombat_completion": true,
+    "seated_menu_equivalent": true,
+    "untimed_actions": true,
+    "text_equivalent": true,
+    "reduced_motion": true,
+    "leave_without_penalty": true,
+    "solo_scripted_companion": true,
+    "role_switching": true
+  },
+  "review_status": {
+    "content": "pending_human_review",
+    "science": "pending_educator_review",
+    "accessibility": "pending_device_test",
+    "runtime_security": "not_evaluated"
+  },
+  "missions": [
+    {
+      "id": "harbor-of-lights",
+      "title": "Harbor of Lights",
+      "setting": "Hopeful coastal sanctuary",
+      "combat": "none",
+      "premise": "A storm has interrupted a safe route home. Survey, repair and guide a family and their puppy to a welcoming garden. NPCs remain sheltered while players experiment; leaving never harms them. Reuse the existing HEART rescue principles rather than replacing them.",
+      "roles": [
+        "surveyor",
+        "builder",
+        "guide"
+      ],
+      "learning_topics": [
+        "scale",
+        "gravitational-energy"
+      ],
+      "objectives": [
+        {
+          "id": "inspect-route",
+          "kind": "observe",
+          "label": "Inspect a small bridge using the existing scale lesson.",
+          "requires": [],
+          "required": true
+        },
+        {
+          "id": "repair-route",
+          "kind": "repair",
+          "label": "Restore the marked route using a seated or in-world control.",
+          "requires": [
+            "inspect-route"
+          ],
+          "required": true
+        },
+        {
+          "id": "escort-neighbors",
+          "kind": "escort",
+          "label": "Guide the sheltered family and puppy across the restored route.",
+          "requires": [
+            "repair-route"
+          ],
+          "required": true
+        },
+        {
+          "id": "welcome-home",
+          "kind": "welcome",
+          "label": "Open the garden refuge and acknowledge the shared rescue.",
+          "requires": [
+            "escort-neighbors"
+          ],
+          "required": true
+        },
+        {
+          "id": "reflect-together",
+          "kind": "reflect",
+          "label": "Optionally discuss what made helping easier.",
+          "requires": [
+            "welcome-home"
+          ],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "one-earth-relay",
+      "title": "One Earth Relay",
+      "setting": "Orbital rescue station",
+      "combat": "optional_nonfatal_robots",
+      "premise": "A mixed crew protects evacuation pods from fictional malfunctioning invader robots. Restore guidance and containment; a fully non-combat route is equivalent. Friendly robots help, disabled opponents can be repaired, and no real nationality is cast as the enemy.",
+      "roles": [
+        "navigator",
+        "engineer",
+        "guardian",
+        "rescuer"
+      ],
+      "learning_topics": [
+        "circular-orbits",
+        "wave-frequency-period"
+      ],
+      "objectives": [
+        {
+          "id": "inspect-relay",
+          "kind": "observe",
+          "label": "Read a simplified orbital guidance display.",
+          "requires": [],
+          "required": true
+        },
+        {
+          "id": "restore-relay",
+          "kind": "repair",
+          "label": "Restore a fictional guidance relay without operating real hardware.",
+          "requires": [
+            "inspect-relay"
+          ],
+          "required": true
+        },
+        {
+          "id": "escort-pods",
+          "kind": "escort",
+          "label": "Guide the evacuation pods through the safe corridor.",
+          "requires": [
+            "restore-relay"
+          ],
+          "required": true
+        },
+        {
+          "id": "restore-habitat",
+          "kind": "restore",
+          "label": "Restore the habitat and offer repair to disabled robots.",
+          "requires": [
+            "escort-pods"
+          ],
+          "required": true
+        },
+        {
+          "id": "compare-model",
+          "kind": "reflect",
+          "label": "Optionally compare the fantasy event with the existing orbital workshop.",
+          "requires": [
+            "restore-habitat"
+          ],
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "lantern-bridge",
+      "title": "Lantern Bridge",
+      "setting": "Medieval-fantasy river town",
+      "combat": "optional_nonfatal_robots",
+      "premise": "Travelers, children and animals shelter in a lantern town while mechanical invaders block a route. Repair, shielding or a quiet detour reaches the same hopeful outcome. There is no graphic injury, punishment for stopping, or demand to fight.",
+      "roles": [
+        "pathfinder",
+        "maker",
+        "protector"
+      ],
+      "learning_topics": [
+        "scale",
+        "gravitational-energy"
+      ],
+      "objectives": [
+        {
+          "id": "survey-crossing",
+          "kind": "observe",
+          "label": "Compare the model crossing with its scaled plan.",
+          "requires": [],
+          "required": true
+        },
+        {
+          "id": "restore-crossing",
+          "kind": "repair",
+          "label": "Complete the model bridge or the equivalent safe detour.",
+          "requires": [
+            "survey-crossing"
+          ],
+          "required": true
+        },
+        {
+          "id": "escort-caravan",
+          "kind": "escort",
+          "label": "Guide sheltered travelers and animals to the lantern square.",
+          "requires": [
+            "restore-crossing"
+          ],
+          "required": true
+        },
+        {
+          "id": "welcome-caravan",
+          "kind": "welcome",
+          "label": "Reunite the caravan and share a voluntary celebration.",
+          "requires": [
+            "escort-caravan"
+          ],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "commons-garden",
+      "title": "Commons Garden",
+      "setting": "Futuristic garden, cafe and music terrace",
+      "combat": "none",
+      "premise": "A peaceful place to meet, create, listen or simply be present. Local previews use clearly labeled scripted companions, not invented online players. Quiet attendance needs no task completion, speech, disclosure or moral score.",
+      "roles": [
+        "host",
+        "maker",
+        "musician"
+      ],
+      "learning_topics": [
+        "wave-frequency-period",
+        "ohms-law"
+      ],
+      "objectives": [
+        {
+          "id": "observe-garden",
+          "kind": "observe",
+          "label": "Explore the garden or use its direct-access menu.",
+          "requires": [],
+          "required": true
+        },
+        {
+          "id": "welcome-guest",
+          "kind": "welcome",
+          "label": "Offer a preset welcome without requiring a reply.",
+          "requires": [
+            "observe-garden"
+          ],
+          "required": true
+        },
+        {
+          "id": "restore-music",
+          "kind": "restore",
+          "label": "Optionally adjust a sound-garden model with a visual equivalent.",
+          "requires": [
+            "observe-garden"
+          ],
+          "required": false
+        },
+        {
+          "id": "share-discovery",
+          "kind": "reflect",
+          "label": "Optionally reflect on a musical or circuit experiment.",
+          "requires": [
+            "restore-music"
+          ],
+          "required": false
+        }
+      ]
+    }
+  ]
+}
