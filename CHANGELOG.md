@@ -1,5 +1,12 @@
 # Changelog
 
+## Archive Steward helper 0.1, 2026-11-06
+
+- Added a new dependency-free offline Python helper, tests and run instructions under `tools/archive-steward/` using the existing compilation license.
+- Added a three-family recovered-artifact registry with explicit license scopes, provenance files and current verification limits.
+- Added integrity comparisons against the archive baseline and preserved-source manifests, source/status inventory, and a deterministic queue from the 21 existing concept next steps.
+- No scheduler, network access, source execution, credential use, file editing or publishing is built into the helper. Hash agreement and metadata presence do not establish legal rights or runtime correctness.
+
 ## Lumen Commons preservation update, 2026-11-06
 
 - Added the distinct CC0 Lumen Commons 0.1 standalone and reproducible source under `tools/lumen-commons/`, with exact-revision provenance and a new archive README.

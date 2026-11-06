@@ -27,8 +27,13 @@ Privacy: exact private conversation/document locators are excluded.
 
 - [Lumen Commons 0.1](tools/lumen-commons/README.md): distinct CC0 educational browser adventure with reproducible source; 24 Node tests and static build checks passed, fresh browser test blocked before page load.
 
+## Offline maintenance helper
+
+- [Archive Steward 0.1](tools/archive-steward/README.md): newly written read-only Python helper for checksums, declared rights/status inventory and an existing-next-step review queue. No network or autonomous publication; CC BY 4.0 under the compilation license.
+
 ## Structured records and implementation
 
+- [Recovered artifacts](data/artifacts.json): declared license scope, provenance and verification limits.
 - [Concepts](data/concepts.json): concepts, status, sources, and next steps.
 - [Sources](sources/manifest.json): evidence classes and known limits.
 - [Status vocabulary](docs/evidence-and-status.md): interpretation of claims.

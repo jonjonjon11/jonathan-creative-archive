@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "review_date": "2026-11-06",
+  "scope": "Registry of recovered artifacts already included in this archive, not a catalog of every original tool or a legal clearance record.",
+  "artifacts": [
+    {
+      "id": "ART-001",
+      "title": "Reality Atlas Appearance 0.3.1",
+      "path": "tools/reality-atlas",
+      "source_ids": ["SRC-019", "SRC-033"],
+      "rights": {
+        "license_declared": "CC0-1.0",
+        "license_path": "tools/reality-atlas/LICENSE.CC0-1.0.txt",
+        "scope": "Preserved HTML artifact only; archive-facing documentation is CC BY 4.0.",
+        "review_record": "tools/reality-atlas/README.md"
+      },
+      "verification": {
+        "status": "focused_calculation_checks_passed_browser_blocked",
+        "record": "tools/reality-atlas/README.md",
+        "limitations": "46 calculation/syntax checks passed. Fresh browser rendering, interaction and export remain unverified."
+      },
+      "preserved_manifest": null,
+      "pinned_files": [
+        {
+          "path": "tools/reality-atlas/Reality_Atlas_Appearance_0.3.1.html",
+          "sha256": "fdb0f246ddcf45e3b6b90fae356c95dfce86cfab122fab33a1143659f87bce0d"
+        }
+      ]
+    },
+    {
+      "id": "ART-002",
+      "title": "Cooperation and rescue mission kit",
+      "path": "artifacts/cooperation-rescue",
+      "source_ids": ["SRC-020"],
+      "rights": {
+        "license_declared": "CC0-1.0",
+        "license_path": "artifacts/cooperation-rescue/LICENSE",
+        "scope": "Preserved upstream files named in source-manifest.json; new archive documentation is CC BY 4.0.",
+        "review_record": "artifacts/cooperation-rescue/README.md"
+      },
+      "verification": {
+        "status": "offline_authoring_tests_passed",
+        "record": "artifacts/cooperation-rescue/README.md",
+        "limitations": "25 tests and four-mission validator passed. Draft/unmerged reference logic, not a playable game or certified training."
+      },
+      "preserved_manifest": "artifacts/cooperation-rescue/source-manifest.json",
+      "pinned_files": []
+    },
+    {
+      "id": "ART-003",
+      "title": "Lumen Commons 0.1",
+      "path": "tools/lumen-commons",
+      "source_ids": ["SRC-034"],
+      "rights": {
+        "license_declared": "CC0-1.0",
+        "license_path": "tools/lumen-commons/LICENSE",
+        "scope": "Included originals and generated standalone named in source-review-manifest.json; archive README is CC BY 4.0.",
+        "review_record": "tools/lumen-commons/README.md"
+      },
+      "verification": {
+        "status": "node_and_static_checks_passed_browser_blocked",
+        "record": "tools/lumen-commons/README.md",
+        "limitations": "24 Node tests and build/static checks passed. Fresh browser suite blocked before page load; no educational efficacy or target-device acceptance."
+      },
+      "preserved_manifest": "tools/lumen-commons/source-review-manifest.json",
+      "pinned_files": []
+    }
+  ]
+}

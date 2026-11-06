@@ -32,6 +32,18 @@ Result on 2026-11-06: all 24 Node tests passed under Node v24.22.1. Static check
 
 Fresh browser suite: BLOCKED BEFORE PAGE LOAD. Chromium exited during startup because the sandbox denied process-singleton socket creation. The app was not loaded. Historical 35-check browser evidence remains separate. No current rendering, interactions, audio, download, native-persistence, Safari/device, accessibility, educational-efficacy or child-safety acceptance is claimed.
 
+## Archive Steward 0.1 maintenance helper
+
+Commands from the repository root:
+
+- `python3 -m unittest discover -s tools/archive-steward/tests -p 'test_*.py' -v`
+- `python3 tools/archive-steward/archive_steward.py .`
+- `python3 tools/archive-steward/archive_steward.py . --format json`
+
+Result on 2026-11-06: all 33 synthetic tests passed under Python 3.12.14. Both text and JSON reports completed with zero configured errors or warnings against the reviewed 58-file archive (57 baseline hashes, 16 preserved-source hashes, one generated-build hash and one pinned-artifact hash). The existing structural and artifact checks also passed; browser limitations remain unchanged.
+
+The helper is newly written editorial software under the existing compilation license. Its synthetic tests cover checksum drift, preserved-source disagreement after baseline updates, missing/unlisted files, source/status metadata, both preserved-manifest formats, symlinks/traversal, malformed JSON, size limits, nonregular files, deterministic reports, CLI exit codes and unchanged archive bytes. See the helper README for the exact scope and limitations. It does not run the artifact suites or establish new browser verification.
+
 ## Rights and privacy boundary
 
 Exact-commit CC0 provenance was reviewed separately for Reality Atlas, Lumen Commons and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.

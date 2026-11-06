@@ -25,4 +25,4 @@ Do not submit personal records, medical details, credentials, identifying inform
 
 ## Review
 
-Run the structural validator, then review the prose. Automated checks cannot establish truth, license compatibility, safety, or completeness. Corrections should preserve the source history of the claim rather than silently rewriting a proposal as an accomplished result.
+Run the structural validator and [Archive Steward](tools/archive-steward/README.md), then review the prose. When adding a recovered artifact, update `data/artifacts.json` with the exact rights scope and verification limits. Review all new and changed files before refreshing `data/checksums.json`; the read-only helper deliberately cannot bless a new baseline. Automated checks cannot establish truth, license compatibility, safety, or completeness. Corrections should preserve the source history of the claim rather than silently rewriting a proposal as an accomplished result.

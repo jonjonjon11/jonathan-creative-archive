@@ -16,6 +16,10 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 [Lumen Commons 0.1](tools/lumen-commons/README.md) is a distinct educational browser-adventure prototype with five experiments, scripted NPCs, optional synthesized music, and local artwork/progress. The standalone HTML and reproducible source are included under CC0. **24 fresh Node tests and static build-parity/CSP checks passed; the fresh browser test was blocked before page load.** It is not a live MMORPG, hosted service, or independently validated curriculum.
 
+## Maintain the archive with a small offline helper
+
+[Archive Steward 0.1](tools/archive-steward/README.md) is the first newly built archive helper: a dependency-free Python CLI that checks file integrity and preserved-source hashes, reports declared license scopes and evidence limits, and turns the existing concept next steps into a review queue. All 33 synthetic tests pass. It is read-only, runs offline, and neither recovers private content nor publishes anything. See its README for commands and limits.
+
 ## Start here
 
 1. [Vision and design values](chapters/01-vision.md): the shared direction and the boundaries of this synthesis.
@@ -31,6 +35,7 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 ## For builders and AI-assisted research
 
+- [Recovered-artifact registry](data/artifacts.json): included artifact families, declared rights scope, provenance records and scoped verification limits.
 - [Concept records](data/concepts.json): stable IDs, source IDs, status, limitations, and suggested next experiments.
 - [Source records](sources/manifest.json): what was consulted and how strong each kind of evidence is.
 - [Implementation brief](concepts/first-demonstrator.md): a small, testable path from this archive to a working learning demonstration.
