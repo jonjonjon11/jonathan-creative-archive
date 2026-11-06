@@ -1,0 +1,194 @@
+{
+  "test_suite": "archive-reality-core-smoke/1",
+  "artifact_sha256": "fdb0f246ddcf45e3b6b90fae356c95dfce86cfab122fab33a1143659f87bce0d",
+  "runtime": "v24.22.1",
+  "passed": 46,
+  "failed": 0,
+  "scope": "Exact-original calculation layer plus full-script syntax only. No browser, WebGL, UI, download, SVG-export, accessibility, mobile, or headset acceptance.",
+  "checks": [
+    {
+      "name": "original bytes and complete inline-script syntax",
+      "result": "pass"
+    },
+    {
+      "name": "quarter-turn rotation",
+      "result": "pass"
+    },
+    {
+      "name": "zero rotation axis rejected",
+      "result": "pass"
+    },
+    {
+      "name": "Woven sphere: accepted finite parameters",
+      "result": "pass"
+    },
+    {
+      "name": "Woven sphere: finite sampled positions",
+      "result": "pass"
+    },
+    {
+      "name": "Woven sphere: numerical speed within declared upper bound",
+      "result": "pass"
+    },
+    {
+      "name": "Woven sphere: history budget and equal-time mass",
+      "result": "pass"
+    },
+    {
+      "name": "Woven sphere: occupancy conserves sample weight",
+      "result": "pass"
+    },
+    {
+      "name": "Circle: accepted finite parameters",
+      "result": "pass"
+    },
+    {
+      "name": "Circle: finite sampled positions",
+      "result": "pass"
+    },
+    {
+      "name": "Circle: numerical speed within declared upper bound",
+      "result": "pass"
+    },
+    {
+      "name": "Circle: history budget and equal-time mass",
+      "result": "pass"
+    },
+    {
+      "name": "Circle: occupancy conserves sample weight",
+      "result": "pass"
+    },
+    {
+      "name": "Breathing braid: accepted finite parameters",
+      "result": "pass"
+    },
+    {
+      "name": "Breathing braid: finite sampled positions",
+      "result": "pass"
+    },
+    {
+      "name": "Breathing braid: numerical speed within declared upper bound",
+      "result": "pass"
+    },
+    {
+      "name": "Breathing braid: history budget and equal-time mass",
+      "result": "pass"
+    },
+    {
+      "name": "Breathing braid: occupancy conserves sample weight",
+      "result": "pass"
+    },
+    {
+      "name": "Open weave: accepted finite parameters",
+      "result": "pass"
+    },
+    {
+      "name": "Open weave: finite sampled positions",
+      "result": "pass"
+    },
+    {
+      "name": "Open weave: numerical speed within declared upper bound",
+      "result": "pass"
+    },
+    {
+      "name": "Open weave: history budget and equal-time mass",
+      "result": "pass"
+    },
+    {
+      "name": "Open weave: occupancy conserves sample weight",
+      "result": "pass"
+    },
+    {
+      "name": "circle closes after one cycle",
+      "result": "pass"
+    },
+    {
+      "name": "zero exposure yields one snapshot",
+      "result": "pass"
+    },
+    {
+      "name": "negative exposure rejected",
+      "result": "pass"
+    },
+    {
+      "name": "nonfinite parameter rejected",
+      "result": "pass"
+    },
+    {
+      "name": "phase color repeats after one cycle",
+      "result": "pass"
+    },
+    {
+      "name": "Equal/box: bounded nonoverlapping placement",
+      "result": "pass"
+    },
+    {
+      "name": "Equal/sphere: bounded nonoverlapping placement",
+      "result": "pass"
+    },
+    {
+      "name": "Equal: seeded placement reproducible",
+      "result": "pass"
+    },
+    {
+      "name": "Equal: larger probe cannot increase accessible voxel count",
+      "result": "pass"
+    },
+    {
+      "name": "Unequal/box: bounded nonoverlapping placement",
+      "result": "pass"
+    },
+    {
+      "name": "Unequal/sphere: bounded nonoverlapping placement",
+      "result": "pass"
+    },
+    {
+      "name": "Unequal: seeded placement reproducible",
+      "result": "pass"
+    },
+    {
+      "name": "Unequal: larger probe cannot increase accessible voxel count",
+      "result": "pass"
+    },
+    {
+      "name": "Fibonacci/box: bounded nonoverlapping placement",
+      "result": "pass"
+    },
+    {
+      "name": "Fibonacci/sphere: bounded nonoverlapping placement",
+      "result": "pass"
+    },
+    {
+      "name": "Fibonacci: seeded placement reproducible",
+      "result": "pass"
+    },
+    {
+      "name": "Fibonacci: larger probe cannot increase accessible voxel count",
+      "result": "pass"
+    },
+    {
+      "name": "Tetrahedral throat/box: bounded nonoverlapping placement",
+      "result": "pass"
+    },
+    {
+      "name": "Tetrahedral throat/sphere: bounded nonoverlapping placement",
+      "result": "pass"
+    },
+    {
+      "name": "Tetrahedral throat: seeded placement reproducible",
+      "result": "pass"
+    },
+    {
+      "name": "Tetrahedral throat: larger probe cannot increase accessible voxel count",
+      "result": "pass"
+    },
+    {
+      "name": "invalid requested sphere count rejected",
+      "result": "pass"
+    },
+    {
+      "name": "invalid probe rejected",
+      "result": "pass"
+    }
+  ]
+}

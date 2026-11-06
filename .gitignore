@@ -1,0 +1,14 @@
+# Deliberate text-only compilation. Keep private review material outside this tree.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+__pycache__/
+*.pyc
+.DS_Store
+private/
+review-private/

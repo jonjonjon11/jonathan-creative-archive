@@ -1,0 +1,40 @@
+{
+  "algorithm": "sha256",
+  "excluded": [
+    "data/checksums.json",
+    ".git/**"
+  ],
+  "files": {
+    ".gitignore": "bb1e6cdf00a7850b7a814c06e83ccef552eb35052d2689abf9447f0bcf323dff",
+    "CHANGELOG.md": "4a98e6077e6216f19e36770c2993703c23ecd650e940a7a9f28d7f4bf1ff4e22",
+    "CONTRIBUTING.md": "0ac002d9f461ed0ef54f5e32dd2d3f70c3ae70d29f430a4f0d327cf386046399",
+    "LICENSE": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f",
+    "README.md": "b0de39a052f142ceb481409ac283b5101d737f92d509f0e778099f150370bf2d",
+    "chapters/01-vision.md": "fba120ed31a97dfcf1f41f8604353c6969666036dd7d5712dc700dda67aa1f05",
+    "chapters/02-educational-universe.md": "7da8f2c1ea244934c58dc2d457303c1ee440972e9532343a83be36712b0ba511",
+    "chapters/03-math-physics-and-xr.md": "b4bd2e258edeed847bcb530af0ab2ebdfcd36c27b5af16351280378b46154057",
+    "chapters/04-music-and-expression.md": "8f0fb45853de9cbe41703b268623f52cc6d839b60ddc01f83868bd5fc303ac0b",
+    "chapters/05-martial-arts-and-community.md": "0705b034b28ce7f9ec44d0a85966cdea55e6b7499b0b25303594b603d6ea08c1",
+    "chapters/06-cooperation-rescue-and-medicine.md": "5d2fd0184849a8da337b74fe2f326024abe120f2ffd3a85e83a1f5faa2607b55",
+    "chapters/07-roadmap.md": "70efaf091246812e6a5726709337e30412c6c1710a57b600fdf24fb6f98f76ea",
+    "chapters/08-lessons-and-unfinished-work.md": "e33dd5db18ebbb057b27f2909fc210f171e833678dace6a88a61aeb93104ab24",
+    "chapters/09-stories-and-art.md": "1827d0387ee62651fa0d4802e2027c43b63dd659ca4afd818911208f6b05a867",
+    "concepts/first-demonstrator.md": "354539d67aea457e1b156c04970fffe1b878faf0b90edd118e2f29b2a359cfdb",
+    "data/README.md": "a32b4a57c1edfa9d39f2c6975b92170470a26ffec46ad1f555b43f91aae46062",
+    "data/concepts.json": "1e53b798ab3cd0785f38f55e94a72b412196987cb3afa18d0cf44bc2b8a8f769",
+    "docs/evidence-and-status.md": "80b93996362fc8f5c355ac5ee708ef5e356769aa1e5ae62217333c699a951683",
+    "docs/project-map.md": "6090d9ff0aa66bf4e7aebba6652b9548d73e205cc7e97cc42a39571bd0a7d738",
+    "docs/release-checklist.md": "e3ed888910bf35080c3e0d45fddb09ae08319d42bc0391e2f22a3e931ecde2a4",
+    "docs/rights-and-publication.md": "19da6fcc6613ce29d395d132b9a4b3ff0a993109562f12bfda45c68f98c09147",
+    "docs/validation-report.md": "7cd7767c9187450679d2081dcd52c7d0b002a13a1468426a29f01ef3ca7271d5",
+    "llms.txt": "7a3560686bc132b73f7804b3639c77d7a7c84f70b56db20ba42db7d790b86a5b",
+    "scripts/check_reality_core.cjs": "0e0bb0e1cbb31d40e676692d6e6e3344a5706b3374cab79b51e866f553f0da63",
+    "scripts/validate_archive.py": "a59a215d7fd8143ee09e60ee83d251b66b84222429b5e535e350fa20e14071c1",
+    "sources/README.md": "bd5582c2092cc61f6ecc94f003db3fcb3c0ad31ca9ad4bbf3f2ffad3f98667da",
+    "sources/manifest.json": "d09333dedc96fc8dacd6186525848d509a29a9bed5c80a4058e09d763c61bf3d",
+    "tools/reality-atlas/LICENSE.CC0-1.0.txt": "7179683e8000e6bdc9bbc60d85edf0a4ac8e76f951857f54fcb775d5886f1309",
+    "tools/reality-atlas/README.md": "e29ab3ba2b18b8e6cfd7d5a45bf3d4ea13c6a153f02147986397ffbf529f6b1c",
+    "tools/reality-atlas/Reality_Atlas_Appearance_0.3.1.html": "fdb0f246ddcf45e3b6b90fae356c95dfce86cfab122fab33a1143659f87bce0d",
+    "tools/reality-atlas/core-check-results.json": "b6cac311b5aab23335888b1a755f20bf57aed0d8126472fbfb325c80285c78aa"
+  }
+}

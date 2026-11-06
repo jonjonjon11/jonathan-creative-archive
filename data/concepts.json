@@ -1,0 +1,355 @@
+{
+  "schema_version": "1.0",
+  "edition": "0.1-first-edition",
+  "review_date": "2026-11-06",
+  "concepts": [
+    {
+      "id": "CON-001",
+      "title": "Educational universe",
+      "tags": [
+        "education",
+        "simulation"
+      ],
+      "summary": "Connected learning through exploration, models, play and making.",
+      "source_ids": [
+        "SRC-001",
+        "SRC-008",
+        "SRC-024"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "No single integrated finished universe.",
+      "next_step": "Build and verify one accessible lesson."
+    },
+    {
+      "id": "CON-002",
+      "title": "Inspectable scientific visual language",
+      "tags": [
+        "math",
+        "physics",
+        "visualization"
+      ],
+      "summary": "Preserve identity while switching quantities, geometry, color and evidence views.",
+      "source_ids": [
+        "SRC-004",
+        "SRC-019"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "design_mapping",
+      "limitations": "Recipes do not prove implementation or science validity.",
+      "next_step": "Audit one model and its display mappings."
+    },
+    {
+      "id": "CON-003",
+      "title": "Temporal Geometry",
+      "tags": [
+        "math",
+        "time",
+        "simulation"
+      ],
+      "summary": "Separate model, state, history, representation, lens and display; use explicit clocks.",
+      "source_ids": [
+        "SRC-004"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "design_mapping",
+      "limitations": "A design chain is not a validated universal simulator.",
+      "next_step": "Implement bounded history and test replay independence."
+    },
+    {
+      "id": "CON-004",
+      "title": "Reality Atlas",
+      "tags": [
+        "physics",
+        "browser",
+        "geometry"
+      ],
+      "summary": "Inspect motion, exposure, occupancy, packing and finite-probe void views.",
+      "source_ids": [
+        "SRC-007",
+        "SRC-019",
+        "SRC-033"
+      ],
+      "artifact_status": "source_inspected",
+      "scientific_standing": "established_model_scoped",
+      "limitations": "Historical tests not rerun; not quantum truth or headset acceptance.",
+      "next_step": "Open the included standalone in a WebGL2 browser and conduct a documented rendering, interaction and export check.",
+      "included_artifact": "tools/reality-atlas/Reality_Atlas_Appearance_0.3.1.html",
+      "limited_verification": "46 original calculation-layer/syntax checks passed on Node v24.22.1. Fresh Chromium test blocked before load."
+    },
+    {
+      "id": "CON-005",
+      "title": "Music and matter ratio atlas",
+      "tags": [
+        "music",
+        "math",
+        "data"
+      ],
+      "summary": "Explore explicit musical mappings of reference ratios.",
+      "source_ids": [
+        "SRC-016"
+      ],
+      "artifact_status": "source_inspected",
+      "scientific_standing": "design_mapping",
+      "limitations": "Not complete spectra or intrinsic particle sounds; uncertainties unpropagated.",
+      "next_step": "Validate one subset with sources and units."
+    },
+    {
+      "id": "CON-006",
+      "title": "Periodic Resonance Studio",
+      "tags": [
+        "music",
+        "education",
+        "browser"
+      ],
+      "summary": "Bounded atoms, molecular graphs and curated channels with sonification/export.",
+      "source_ids": [
+        "SRC-025"
+      ],
+      "artifact_status": "historical_test_report",
+      "scientific_standing": "design_mapping",
+      "limitations": "Hosting, listening tests and full scientific review incomplete.",
+      "next_step": "Recover exact UI and recheck an end-to-end export."
+    },
+    {
+      "id": "CON-007",
+      "title": "Music creation field guide",
+      "tags": [
+        "music",
+        "writing"
+      ],
+      "summary": "Distinguish documented controls, creator practices and original prompt experiments.",
+      "source_ids": [
+        "SRC-017"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "Service features and audio rights require current review.",
+      "next_step": "Publish a rights-cleared, dated subset of general composition practices."
+    },
+    {
+      "id": "CON-008",
+      "title": "Community martial arts center",
+      "tags": [
+        "martial_arts",
+        "community",
+        "physical_space"
+      ],
+      "summary": "Shared training, learning, respectful etiquette and gathering across disciplines.",
+      "source_ids": [
+        "SRC-010",
+        "SRC-011",
+        "SRC-012"
+      ],
+      "artifact_status": "artifact_delivery_record",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "No venue, business demand or safe operating model verified.",
+      "next_step": "Test one appropriately supervised community activity."
+    },
+    {
+      "id": "CON-009",
+      "title": "Virtual martial arts sandbox",
+      "tags": [
+        "martial_arts",
+        "games",
+        "simulation"
+      ],
+      "summary": "Playful first/third-person training world inspired by the community gym.",
+      "source_ids": [
+        "SRC-013"
+      ],
+      "artifact_status": "idea",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "No confirmed playable build; game performance is not combat competence.",
+      "next_step": "Prototype one non-injurious timing interaction."
+    },
+    {
+      "id": "CON-010",
+      "title": "Philosopher Trainer VR",
+      "tags": [
+        "martial_arts",
+        "xr",
+        "learning"
+      ],
+      "summary": "Stylized mentors, movement and reflection across distinct headset targets.",
+      "source_ids": [
+        "SRC-015"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "Bootstrap prompts only; no hardware acceptance.",
+      "next_step": "Choose one target and test safe tracking/pause behavior."
+    },
+    {
+      "id": "CON-011",
+      "title": "Shared cooperation missions",
+      "tags": [
+        "cooperation",
+        "rescue",
+        "games"
+      ],
+      "summary": "Repair, escort, restore and welcome with peaceful participation.",
+      "source_ids": [
+        "SRC-020"
+      ],
+      "artifact_status": "source_inspected",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "Offline authoring/reference code, not Unity integration or rescue qualification.",
+      "next_step": "Inspect and rerun reference tests before adapting one mission."
+    },
+    {
+      "id": "CON-012",
+      "title": "Sanctuary restoration world",
+      "tags": [
+        "cooperation",
+        "rescue",
+        "worldbuilding"
+      ],
+      "summary": "Rebuild hope, animal care, knowledge and infrastructure through cooperative play.",
+      "source_ids": [
+        "SRC-014"
+      ],
+      "artifact_status": "idea",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "No confirmed title/build; audience and mature content need an explicit decision.",
+      "next_step": "Prototype a single non-graphic restoration loop."
+    },
+    {
+      "id": "CON-013",
+      "title": "PHYSIO-MESH",
+      "tags": [
+        "health_research",
+        "sensing",
+        "provenance"
+      ],
+      "summary": "Low-burden sensing research with measured/proxy/inferred distinctions.",
+      "source_ids": [
+        "SRC-021"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "insufficient_evidence",
+      "limitations": "R&D scaffold, no validated device or clinical efficacy; no autonomous dosing.",
+      "next_step": "Review claims and uncertainty architecture with qualified experts."
+    },
+    {
+      "id": "CON-014",
+      "title": "Accessible medical-science learning",
+      "tags": [
+        "health_education",
+        "accessibility"
+      ],
+      "summary": "Motor-neuron-to-muscle exhibit and transparent health-evidence curriculum.",
+      "source_ids": [
+        "SRC-022"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "insufficient_evidence",
+      "limitations": "Curriculum foundation, not implemented runtime or clinical system.",
+      "next_step": "Create one professionally reviewed non-diagnostic lesson."
+    },
+    {
+      "id": "CON-015",
+      "title": "Music of Matter speculative dialogue",
+      "tags": [
+        "fiction",
+        "health_research",
+        "music"
+      ],
+      "summary": "Interdisciplinary-care aspiration explored through speculative characters.",
+      "source_ids": [
+        "SRC-023"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "speculative_unvalidated",
+      "limitations": "Invented successes are not a cure, study or protocol.",
+      "next_step": "Extract questions only and label fiction explicitly."
+    },
+    {
+      "id": "CON-016",
+      "title": "No One Holds the Sky Alone",
+      "tags": [
+        "fiction",
+        "art",
+        "cooperation"
+      ],
+      "summary": "Connection that preserves individuality and distributes the burden of care.",
+      "source_ids": [
+        "SRC-018"
+      ],
+      "artifact_status": "artifact_delivery_record",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "Full text/art rights and private references not reviewed.",
+      "next_step": "Review a short original excerpt and illustration provenance."
+    },
+    {
+      "id": "CON-017",
+      "title": "Three-atom thought experiment",
+      "tags": [
+        "physics",
+        "fiction",
+        "math"
+      ],
+      "summary": "Narrow imagined perception into calculable deformation/inference questions.",
+      "source_ids": [
+        "SRC-019"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "speculative_unvalidated",
+      "limitations": "No validated sensor or novel discovery; prior checks not rerun.",
+      "next_step": "Reproduce a bounded calculation and discuss alternative causes."
+    },
+    {
+      "id": "CON-018",
+      "title": "Universal Trail",
+      "tags": [
+        "education",
+        "accessibility",
+        "xr"
+      ],
+      "summary": "A welcoming hub and cosmic routes with separate science and fiction layers.",
+      "source_ids": [
+        "SRC-030"
+      ],
+      "artifact_status": "documented_design",
+      "scientific_standing": "design_mapping",
+      "limitations": "No implemented route or accepted runtime.",
+      "next_step": "Build one accessible route segment with explicit scales."
+    },
+    {
+      "id": "CON-019",
+      "title": "Local creation and learning helpers",
+      "tags": [
+        "ai",
+        "education",
+        "tools"
+      ],
+      "summary": "Owner-controlled, bounded local work and inspectable learning tasks.",
+      "source_ids": [
+        "SRC-031"
+      ],
+      "artifact_status": "source_inspected",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "No reliable unrestricted autonomy or physical authority.",
+      "next_step": "Evaluate one isolated task with a clear stop and test criterion."
+    },
+    {
+      "id": "CON-020",
+      "title": "One-model learning demonstrator",
+      "tags": [
+        "education",
+        "math",
+        "browser"
+      ],
+      "summary": "A new small implementation proposal to test model/history/representation separation.",
+      "source_ids": [
+        "SRC-004",
+        "SRC-007",
+        "SRC-008"
+      ],
+      "artifact_status": "editorial_proposal",
+      "scientific_standing": "established_model_scoped",
+      "limitations": "Not historical implementation or currently supplied executable.",
+      "next_step": "Follow concepts/first-demonstrator.md."
+    }
+  ]
+}

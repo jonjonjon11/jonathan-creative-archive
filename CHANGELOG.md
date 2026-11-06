@@ -1,0 +1,26 @@
+# Changelog
+
+## First public edition 0.1, 2026-11-06
+
+- Prepared the reviewed documentation archive and unchanged Reality Atlas tool for the owner-created public repository.
+- Applied the owner-selected CC BY 4.0 license to newly written archive content and preserved the existing CC0 tool license.
+- Replaced the initial placeholder README with the archive index, scope, limitations, and navigation.
+- Kept private review records, private conversation/Drive locators, credentials, source-project histories, and unreviewed assets out of the release.
+- Preserved incomplete coverage and the fresh browser-testing limitation explicitly.
+
+## Artifact-review draft, 2026-11-06
+
+- Added the unchanged CC0 Reality Atlas Appearance 0.3.1 HTML and complete upstream license.
+- Verified the artifact SHA-256 and added 46 passing calculation-layer/syntax checks.
+- Fresh browser testing was blocked by the environment before page load; no new rendered-UI/export claims.
+- Added precise launch instructions, provenance, scientific limits and test results.
+- Compilation licensing/publication remains a separate release decision; the artifact retains CC0.
+
+## Initial documentation draft, 2026-11-06
+
+- Consolidated nine thematic chapters from selected conversation, document, recovered-artifact, and repository evidence.
+- Added twenty machine-readable concept records and thirty-three source records.
+- Preserved concrete technical leads and their known verification gaps.
+- Added a small implementation brief, project map, status vocabulary, rights review, and release checklist.
+- Excluded raw source trees, private transcripts/locators, credentials, personal records, and unreviewed assets.
+- No public repository creation, push, app deployment, or runtime verification occurred during this initial draft.

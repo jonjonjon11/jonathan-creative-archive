@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#080b13"><link rel="icon" href="data:,"><title>Reality Atlas · Motion makes shape</title><style>:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#dce7ed;background:#080b13;color-scheme:dark;font-synthesis:none;--ink:#8c9caf;--line:#243041;--aqua:#80eac9;--panel:#0e1420}
+*{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button,a,input,select{touch-action:manipulation}button,select{color:inherit;background:#151e2c;border:1px solid var(--line);border-radius:7px;min-height:38px;padding:8px 12px}button{cursor:pointer}button:hover{background:#233247}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--aqua);outline-offset:3px}button[aria-pressed=true]{color:var(--aqua);background:#12312f;border-color:#3f7c70}a{color:var(--aqua);text-decoration:none}input[type=range]{width:100%;accent-color:var(--aqua);cursor:pointer;height:24px}input[type=checkbox]{accent-color:var(--aqua)}[hidden]{display:none!important}.a-header{max-width:1500px;margin:auto;padding:20px 36px;display:flex;gap:20px;align-items:center;border-bottom:1px solid var(--line)}.a-brand{color:#f5f8fa;display:flex;align-items:center;gap:12px;font-weight:700;font-size:13px;letter-spacing:.12em}.a-brand small{display:block;font-size:8px;letter-spacing:.16em;color:var(--ink);margin-top:5px}.a-mark{font-size:34px;font-weight:300;color:var(--aqua)}.a-status{margin-left:auto;font:11px ui-monospace,monospace;color:#9eafc0}.a-quiet{background:transparent}.a-layout{max-width:1500px;padding:0 36px 24px;margin:auto;display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:20px}.a-intro{grid-column:1/-1;display:flex;justify-content:space-between;align-items:end;margin:20px 0 4px}.a-eyebrow{font-size:10px;font-weight:700;letter-spacing:.17em;color:var(--aqua);margin:0 0 10px}.a-intro h1{font-size:clamp(26px,3vw,42px);font-weight:450;letter-spacing:-.045em;margin:0}.a-intro>p{color:var(--ink);font-size:12px;line-height:1.7;margin:0}.a-tabs{grid-column:1/-1;display:flex;gap:8px;align-items:center}.a-tabs span{margin-left:auto;font-size:9px;letter-spacing:.12em;color:var(--ink)}.a-stage-wrap{min-width:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#090e16;align-self:start}.a-stage{height:clamp(390px,47vw,640px);position:relative;background:#000}#a-canvas{display:block;width:100%;height:100%;touch-action:none}.a-heading{position:absolute;top:22px;left:24px;pointer-events:none}.a-heading h2{font-size:24px;font-weight:450;letter-spacing:-.03em;margin:0}.a-heading p:last-child{font-size:11px;color:#a2aebd;margin:8px 0 0}.a-heading .a-eyebrow{font-size:8px;margin-bottom:5px}.a-corner-label{position:absolute;right:22px;top:26px;font:9px ui-monospace,monospace;color:#9cabba}.a-axis{position:absolute;bottom:18px;left:24px;font-size:10px;display:flex;align-items:center;gap:7px}.a-axis i{font-style:normal;font-weight:bold}.a-axis i:nth-child(1){color:#ef957d}.a-axis i:nth-child(2){color:#8fe1b0}.a-axis i:nth-child(3){color:#8ab5f9}.a-axis span{font-size:7px;color:#8c9aa9;letter-spacing:.1em;margin-left:4px}.a-navigation{position:absolute;right:16px;bottom:12px;display:flex;gap:4px}.a-navigation button{background:#111b25bf;min-height:30px;font-size:11px;padding:5px 10px}.a-observer{display:flex;padding:12px;gap:6px;border-top:1px solid var(--line)}.a-observer button{flex:1;font-size:11px}.a-transport{display:flex;align-items:center;gap:12px;padding:0 12px 12px}.a-transport label{font-size:8px;letter-spacing:.1em;color:#9eafc0;flex-shrink:0}.a-transport output{display:block;margin-top:3px;color:#dbe9f0;font:10px ui-monospace,monospace}.a-transport button{font-size:11px}.a-transport input{min-width:30px}.a-legend{border-top:1px solid var(--line);padding:12px 16px;display:flex;gap:12px;align-items:center}.a-legend>span{width:54px;height:6px;flex-shrink:0;border-radius:6px;background:linear-gradient(90deg,#f3958b,#83e8a7,#8b9bed,#f3958b)}.a-legend p{font-size:10px;line-height:1.6;color:#adb8c7;margin:0}.a-inspector{background:var(--panel);border:1px solid var(--line);padding:18px;border-radius:12px;min-width:0;align-self:start;font-size:12px}.a-select-label{display:block;color:#aebccc;font-size:11px;margin:12px 0}.a-select-label select{display:block;width:100%;margin-top:7px;font-size:11px;max-width:100%}.a-control{margin:15px 0}.a-control label{display:flex;justify-content:space-between;align-items:center;font-size:11px}.a-control output{color:var(--aqua);font:10px ui-monospace,monospace}.a-divider{height:1px;background:var(--line);margin:18px 0}.a-fine{color:#a1afc0;font-size:10px;line-height:1.7}.a-checkbox{display:flex;gap:8px;align-items:center;font-size:11px;margin:16px 0}.a-wide{width:100%;font-size:11px}.a-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.a-stat{border-left:2px solid #314a53;padding-left:8px}.a-stat small{display:block;font-size:8px;color:var(--ink);margin-bottom:5px}.a-stat strong{font:13px ui-monospace,monospace;font-weight:450}.a-warning{font-size:10px;line-height:1.6;color:#ffc591}.a-warning:empty{display:none}details{border-top:1px solid var(--line);padding:13px 0;color:#afbecd;font-size:10px;line-height:1.7}summary{cursor:pointer;color:#c7d2dc}pre{font-size:9px;white-space:pre-wrap;overflow-wrap:anywhere;background:#080e16;padding:10px;border-radius:4px}.a-question{grid-column:1/-1;border-top:1px solid var(--line);padding:18px 0;display:flex;gap:22px;align-items:center}.a-question .a-eyebrow{margin:0;white-space:nowrap}.a-question p{font-size:12px;line-height:1.7;color:#b7c6d2;margin:0}footer{max-width:1500px;margin:auto;padding:18px 36px 25px;display:flex;justify-content:space-between;color:#78889b;font-size:9px;gap:12px}#a-error{position:absolute;top:35%;left:10%;right:10%;padding:20px;background:#4b201fe8;color:#fff;border:1px solid #fd9e8d;font-size:12px}
+@media(min-width:1600px){.a-stage{height:680px}}@media(max-width:1050px){.a-layout{grid-template-columns:minmax(0,1fr) 260px;padding:0 20px 20px;gap:14px}.a-header{padding:16px 20px}.a-intro>p{display:none}.a-corner-label{top:auto;bottom:54px;font-size:8px}.a-heading{left:18px}.a-inspector{padding:14px}}
+@media(max-width:760px){.a-layout{grid-template-columns:1fr;padding:0 12px 14px;gap:12px}.a-header{padding:12px;gap:8px;flex-wrap:wrap}.a-brand{font-size:10px;letter-spacing:.1em}.a-brand small{font-size:6px}.a-mark{font-size:27px}.a-header>button{margin-left:auto;font-size:10px}.a-status{order:3;width:100%;font-size:9px;margin-left:0}.a-intro{margin-top:12px}.a-intro h1{font-size:31px}.a-intro .a-eyebrow{font-size:8px}.a-tabs span{display:none}.a-tabs button{font-size:10px;flex:1;padding:8px 5px}.a-stage{height:420px}.a-heading h2{font-size:21px}.a-heading p:last-child{font-size:9px;max-width:250px}.a-axis{left:14px}.a-axis span{display:none}.a-observer{padding:8px;gap:4px}.a-observer button{padding:7px 3px;min-height:38px;font-size:10px}.a-transport{gap:7px;padding:0 8px 10px}.a-transport button{font-size:10px;padding:5px 8px}.a-inspector{padding:18px}.a-control{margin:18px 0}.a-select-label select{min-height:42px}.a-question{gap:12px;align-items:start}.a-question p{font-size:11px}footer{padding:12px;display:block;font-size:8px}footer span{display:block;margin-top:7px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style></head>
+<body>
+<header class="a-header"><a class="a-brand" href="https://github.com/jonjonjon11/Jon-Harvey-Ultimate-Educational-Universe/pull/22" aria-label="Open Reality Atlas source and review"><span class="a-mark">◎</span><span>REALITY ATLAS<small>EDUCATIONAL UNIVERSE / EXPERIMENT 07</small></span></a><span class="a-status" id="a-backend">Starting WebGL2…</span><button id="a-export" class="a-quiet">Save state ↗</button></header>
+<main class="a-layout">
+<section class="a-intro"><div><p class="a-eyebrow">SHAPE · MOTION · OBSERVATION</p><h1>Motion makes shape.</h1></div><p>One model. Different ways of seeing.<br>Change the observer, not the mathematics.</p></section>
+<nav class="a-tabs" aria-label="Experiment"><button data-lab="motion" aria-pressed="true">01 &nbsp; Motion composer</button><button data-lab="packing" aria-pressed="false">02 &nbsp; Matter & void</button><span>CLASSICAL / EXPLANATORY MODEL</span></nav>
+<section class="a-stage-wrap" aria-label="Interactive scientific viewport">
+<div class="a-stage"><canvas id="a-canvas" tabindex="0" aria-label="3D mathematical view. Drag or arrow keys to rotate, pinch or plus and minus to zoom."></canvas><div class="a-heading"><p class="a-eyebrow" id="a-kicker">A POINT, GIVEN TIME</p><h2 id="a-title">Woven sphere</h2><p id="a-subtitle">An accumulated path, not the surface of an atom.</p></div><div class="a-corner-label" id="a-measure">01 / FINITE EXPOSURE</div><div id="a-error" role="alert" hidden></div><div class="a-axis"><i>x</i> <i>y</i> <i>z</i> <span>MODEL COORDINATES</span></div><div class="a-navigation"><button id="a-zoomout" aria-label="Zoom out">−</button><button id="a-fit">Fit</button><button id="a-zoomin" aria-label="Zoom in">+</button></div></div>
+<div class="a-observer" id="a-observer" role="group" aria-label="Observation mode"><button data-view="snapshot">Snapshot</button><button data-view="trail">Trail</button><button data-view="exposure" aria-pressed="true">Exposure</button><button data-view="occupancy">Occupancy</button></div>
+<div class="a-transport"><button id="a-play">Pause</button><label for="a-time">TIME<output id="a-time-value"></output></label><input id="a-time" type="range" min="0" max="8" step="0.002" value="1"><button id="a-reset">Reset</button></div>
+<div class="a-legend"><span id="a-swatch"></span><p id="a-legend-text"></p></div>
+</section>
+<aside class="a-inspector" aria-label="Experiment controls">
+<div id="a-motion-controls">
+<p class="a-eyebrow">BUILD THE MOTION</p>
+<label class="a-select-label">Starting shape<select id="a-preset"><option>Woven sphere</option><option>Circle</option><option>Breathing braid</option><option>Open weave</option></select></label>
+<div class="a-control"><label for="a-orbit">Orbit <output id="a-orbit-value"></output></label><input id="a-orbit" type="range" min="0" max="40" step="1" value="31"></div>
+<div class="a-control"><label for="a-precession">Precession <output id="a-precession-value"></output></label><input id="a-precession" type="range" min="0" max="5" step="0.01" value="1"></div>
+<div class="a-control"><label for="a-vibration">Vertical vibration <output id="a-vibration-value"></output></label><input id="a-vibration" type="range" min="0" max="0.6" step="0.01" value="0"></div>
+<div class="a-control"><label for="a-breathing">Radial breathing <output id="a-breathing-value"></output></label><input id="a-breathing" type="range" min="0" max="0.5" step="0.01" value="0"></div>
+<div class="a-divider"></div><p class="a-eyebrow">CHOOSE THE OBSERVER</p>
+<div class="a-control"><label for="a-exposure">Observation window <output id="a-exposure-value"></output></label><input id="a-exposure" type="range" min="0.02" max="4" step="0.01" value="1"></div>
+<label class="a-select-label">Physical reference frequency<select id="a-frequency"><option value="1000000">1 MHz</option><option value="5000000000" selected>5 GHz · 5 billion cycles/s</option><option value="1000000000000">1 THz</option><option value="1000000000000000">1 PHz · 10¹⁵ cycles/s</option></select></label>
+<p class="a-fine" id="a-time-note"></p>
+</div>
+<div id="a-packing-controls" hidden>
+<p class="a-eyebrow">BUILD THE PACKING</p>
+<label class="a-select-label">Radius family<select id="a-family"><option>Equal</option><option>Unequal</option><option>Fibonacci</option><option>Tetrahedral throat</option></select></label>
+<label class="a-select-label">Container<select id="a-container"><option value="box">Box</option><option value="sphere">Sphere</option></select></label>
+<div class="a-control"><label for="a-count">Requested spheres <output id="a-count-value"></output></label><input id="a-count" type="range" min="2" max="64" step="1" value="32"></div>
+<label class="a-select-label">Show<select id="a-matter"><option value="matter">Matter · solid balls</option><option value="void">Void · accessible space</option></select></label>
+<div class="a-control"><label for="a-probe">Probe radius <output id="a-probe-value"></output></label><input id="a-probe" type="range" min="0" max="0.14" step="0.002" value="0"></div>
+<label class="a-checkbox"><input id="a-cut" type="checkbox" checked> Cutaway · remove z &gt; 0</label>
+<label class="a-select-label">Void grid<select id="a-grid"><option value="25">25³ · quick</option><option value="33" selected>33³ · balanced</option><option value="49">49³ · finer</option></select></label>
+<button id="a-seed" class="a-wide">New arrangement</button>
+<p class="a-fine">The probe asks “what can fit through?” A positive probe can become trapped even where a mathematical point can pass.</p>
+</div>
+<div class="a-divider"></div>
+<label class="a-select-label">Color encodes<select id="a-color"><option value="phase">Cyclic phase</option><option value="age">Age / recency</option><option value="gray">Grayscale magnitude</option></select></label>
+<div class="a-stats" id="a-stats"></div>
+<p class="a-warning" id="a-warning" role="status"></p>
+<details><summary>Equation & interpretation</summary><pre id="a-equation"></pre><p id="a-limits"></p><p>Source contracts: Temporal Geometry / Reality Atlas. Shader API: Khronos WebGL2.</p></details>
+<button id="a-svg" class="a-wide">Export vector view · SVG ↗</button>
+</aside>
+<section class="a-question"><span class="a-eyebrow">TRY THIS</span><p id="a-challenge">Switch to <strong>Snapshot</strong>. The woven sphere disappears. Only the bead exists at one instant. The rest is its history.</p></section>
+</main><footer><span>Geometry is calculated. Color is a declared encoding.</span><span>LOCAL COMPUTE · NO ACCOUNTS · NO AI CALLS</span></footer>
+<script>(()=>{const ATAU = 2 * Math.PI;
+const LIGHT_SPEED = 299792458;
+const avAdd = (a, b) => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
+const avScale = (a, s) => [a[0] * s, a[1] * s, a[2] * s];
+const avLength = (a) => Math.hypot(...a);
+const avDistance = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+const aClamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
+function requireFinite(x, name) {
+    if (!Number.isFinite(x))
+        throw new RangeError(`${name} must be finite`);
+    return x;
+}
+function axisQuaternion(axis, angle) {
+    requireFinite(angle, 'angle');
+    const n = avLength(axis);
+    if (!Number.isFinite(n) || n < 1e-15)
+        throw new RangeError('rotation axis must be nonzero and finite');
+    const s = Math.sin(angle / 2) / n;
+    return [axis[0] * s, axis[1] * s, axis[2] * s, Math.cos(angle / 2)];
+}
+function multiplyQuaternion(a, b) {
+    const [x, y, z, w] = a, [X, Y, Z, W] = b;
+    return [w * X + x * W + y * Z - z * Y, w * Y - x * Z + y * W + z * X, w * Z + x * Y - y * X + z * W, w * W - x * X - y * Y - z * Z];
+}
+function rotateVector(q, v) {
+    const [x, y, z, w] = q, [a, b, c] = v;
+    const tx = 2 * (y * c - z * b), ty = 2 * (z * a - x * c), tz = 2 * (x * b - y * a);
+    return [a + w * tx + y * tz - z * ty, b + w * ty + z * tx - x * tz, c + w * tz + x * ty - y * tx];
+}
+const APRESETS = {
+    'Woven sphere': { radius: 1, orbit: 31, precession: 1, tilt: .18, vibration: 0, vibrationRate: 5, breathing: 0, breathingRate: 3, frequencyHz: 5e9, metersPerUnit: 1e-10 },
+    'Circle': { radius: 1, orbit: 1, precession: 0, tilt: 0, vibration: 0, vibrationRate: 3, breathing: 0, breathingRate: 2, frequencyHz: 5e9, metersPerUnit: 1e-10 },
+    'Breathing braid': { radius: .8, orbit: 5, precession: 2, tilt: .35, vibration: .28, vibrationRate: 7, breathing: .23, breathingRate: 3, frequencyHz: 5e9, metersPerUnit: 1e-10 },
+    'Open weave': { radius: 1, orbit: 8, precession: Math.SQRT2, tilt: .65, vibration: .16, vibrationRate: 5, breathing: .09, breathingRate: 2, frequencyHz: 5e9, metersPerUnit: 1e-10 }
+};
+function validateMotion(s) {
+    for (const [key, v] of Object.entries(s))
+        requireFinite(v, key);
+    if (s.radius <= 0 || s.radius > 2 || s.breathing < 0 || s.breathing >= s.radius || s.vibration < 0 || s.vibration > 1)
+        throw new RangeError('invalid geometry extent');
+    if ([s.orbit, s.precession, s.vibrationRate, s.breathingRate].some(v => v < 0 || v > 64))
+        throw new RangeError('rate ratios must be in [0,64]');
+    if (s.frequencyHz <= 0 || s.frequencyHz > 1e15 || s.metersPerUnit <= 0)
+        throw new RangeError('invalid physical scale');
+}
+function motionPoint(s, cycles) {
+    const phase = (ratio) => ATAU * ((cycles * ratio) % 1);
+    const local = [s.radius + s.breathing * Math.sin(phase(s.breathingRate)), 0, s.vibration * Math.sin(phase(s.vibrationRate))];
+    const q = multiplyQuaternion(axisQuaternion([0, 1, 0], phase(s.precession)), multiplyQuaternion(axisQuaternion([1, 0, 0], s.tilt), axisQuaternion([0, 0, 1], phase(s.orbit))));
+    return rotateVector(q, local);
+}
+function motionSpeed(s, cycles) {
+    const h = 1e-5 / Math.max(1, s.orbit + s.precession + s.vibrationRate + s.breathingRate);
+    return avDistance(motionPoint(s, cycles + h), motionPoint(s, cycles - h)) / (2 * h) * s.frequencyHz * s.metersPerUnit;
+}
+function speedUpperBound(s) {
+    const r = Math.hypot(s.radius + s.breathing, s.vibration);
+    return ATAU * (r * (s.orbit + s.precession) + s.breathing * s.breathingRate + s.vibration * s.vibrationRate) * s.frequencyHz * s.metersPerUnit;
+}
+function sampleHistory(s, end, window, budget = 12000) {
+    validateMotion(s);
+    requireFinite(end, 'end');
+    requireFinite(window, 'exposure');
+    if (window < 0 || window > 8 || !Number.isInteger(budget) || budget < 32 || budget > 32768)
+        throw new RangeError('invalid exposure or budget');
+    const rate = s.orbit + s.precession + (s.vibration ? s.vibrationRate : 0) + (s.breathing ? s.breathingRate : 0);
+    const requested = Math.max(256, Math.ceil(window * Math.max(1, rate) * 96));
+    const count = window === 0 ? 1 : Math.min(requested, budget);
+    const samples = [];
+    // Midpoint quadrature: equal time weights, independent of display refresh.
+    for (let i = 0; i < count; i++) {
+        const age = window === 0 ? 0 : window * (1 - (i + .5) / count), cycle = end - age;
+        samples.push({ position: motionPoint(s, cycle), cycle, age, weight: 1 / count });
+    }
+    return { samples, undersampled: requested > budget, requested };
+}
+function occupancy(samples, resolution = 32, extent = 1.8) {
+    if (!Number.isInteger(resolution) || resolution < 4 || resolution > 128 || extent <= 0)
+        throw new RangeError('invalid occupancy grid');
+    const map = new Map(), step = 2 * extent / resolution;
+    for (const s of samples) {
+        const index = s.position.map(x => Math.floor((x + extent) / step));
+        if (index.some(i => i < 0 || i >= resolution))
+            throw new RangeError('occupancy extent does not contain all samples');
+        const [x, y, z] = index, key = x + resolution * (y + resolution * z), old = map.get(key);
+        if (old) {
+            old.mass += s.weight;
+            old.count++;
+        }
+        else
+            map.set(key, { position: [-extent + (x + .5) * step, -extent + (y + .5) * step, -extent + (z + .5) * step], mass: s.weight, count: 1 });
+    }
+    return [...map.values()];
+}
+/** Cyclic explanatory phase colors; not optical spectra. */
+function phaseRGB(cycles) {
+    const t = ATAU * (cycles - Math.floor(cycles));
+    return [.58 + .42 * Math.cos(t), .58 + .42 * Math.cos(t - ATAU / 3), .58 + .42 * Math.cos(t + ATAU / 3)];
+}
+function orderedRGB(u, gray = false) {
+    u = aClamp(u, 0, 1);
+    if (gray)
+        return [.16 + .84 * u, .16 + .84 * u, .16 + .84 * u];
+    return [.10 + .88 * u, .24 + .72 * Math.sqrt(u), .46 + .40 * (1 - u)];
+}
+function seededRandom(seed) {
+    let x = seed >>> 0;
+    return () => { x = (Math.imul(1664525, x) + 1013904223) >>> 0; return x / 4294967296; };
+}
+function containerVolume(p) { return p.kind === 'box' ? (2 * p.bound) ** 3 : 4 * Math.PI * p.bound ** 3 / 3; }
+function packingFraction(p) { return p.balls.reduce((v, b) => v + 4 * Math.PI * b.radius ** 3 / 3, 0) / containerVolume(p); }
+function isValidPacking(p) {
+    if (!Number.isFinite(p.bound) || p.bound <= 0)
+        return false;
+    return p.balls.every((b, i) => Number.isFinite(b.radius) && b.radius > 0 && b.center.every(Number.isFinite) &&
+        (p.kind === 'sphere' ? avLength(b.center) + b.radius <= p.bound + 1e-10 : b.center.every(x => Math.abs(x) + b.radius <= p.bound + 1e-10)) &&
+        p.balls.slice(0, i).every(a => avDistance(a.center, b.center) >= a.radius + b.radius - 1e-10));
+}
+function makePacking(family, count = 32, seed = 17, kind = 'box') {
+    if (!Number.isInteger(count) || count < 1 || count > 64)
+        throw new RangeError('count must be 1..64');
+    if (!['Equal', 'Unequal', 'Fibonacci', 'Tetrahedral throat'].includes(family))
+        throw new RangeError('unknown packing family');
+    const p = { kind, bound: 1, balls: [], requested: count, family, seed };
+    if (family === 'Tetrahedral throat') {
+        p.kind = 'box';
+        p.requested = 4;
+        const a = .5 / Math.SQRT2;
+        p.balls = [[a, a, a], [a, -a, -a], [-a, a, -a], [-a, -a, a]].map(center => ({ center: center, radius: .5 }));
+        return p;
+    }
+    const random = seededRandom(seed), fib = [1, 2, 3, 5, 8, 13, 21, 34];
+    const weights = family === 'Fibonacci' ? fib.slice(0, Math.min(count, 8)) : Array.from({ length: count }, () => family === 'Equal' ? 1 : .5 + random());
+    p.requested = weights.length;
+    const scale = Math.cbrt(.18 * containerVolume(p) / (4 * Math.PI / 3 * weights.reduce((a, r) => a + r ** 3, 0)));
+    const radii = weights.map(r => r * scale).sort((a, b) => b - a);
+    for (const radius of radii) {
+        for (let attempt = 0; attempt < 4000; attempt++) {
+            const center = [(2 * random() - 1) * (1 - radius), (2 * random() - 1) * (1 - radius), (2 * random() - 1) * (1 - radius)];
+            if (kind === 'sphere' && avLength(center) + radius > 1)
+                continue;
+            if (p.balls.every(b => avDistance(b.center, center) >= b.radius + radius + .002)) {
+                p.balls.push({ center, radius });
+                break;
+            }
+        }
+    }
+    if (!isValidPacking(p))
+        throw new Error('packing invariant failed');
+    return p;
+}
+/** Face-adjacent voxel-center graph, NOT exact continuum topology. Finite probe erodes container and dilates balls. */
+function analyzeVoid(p, resolution = 33, probe = 0) {
+    if (!Number.isInteger(resolution) || resolution < 9 || resolution > 65 || probe < 0 || probe >= p.bound || !Number.isFinite(probe))
+        throw new RangeError('invalid grid or probe');
+    const n = resolution, total = n ** 3, step = 2 * p.bound / n, labels = new Int32Array(total).fill(-2), clearance = new Float32Array(total);
+    const pos = (i) => [-p.bound + (i % n + .5) * step, -p.bound + (Math.floor(i / n) % n + .5) * step, -p.bound + (Math.floor(i / (n * n)) + .5) * step];
+    let containerSamples = 0;
+    for (let i = 0; i < total; i++) {
+        const a = pos(i), boundary = p.kind === 'sphere' ? p.bound - avLength(a) : p.bound - Math.max(...a.map(Math.abs));
+        if (boundary < 0)
+            continue;
+        containerSamples++;
+        let d = boundary;
+        for (const b of p.balls)
+            d = Math.min(d, avDistance(a, b.center) - b.radius);
+        clearance[i] = d;
+        if (d > probe)
+            labels[i] = -1;
+    }
+    const counts = [], edge = [], queue = new Int32Array(total);
+    for (let start = 0; start < total; start++) {
+        if (labels[start] !== -1)
+            continue;
+        const component = counts.length;
+        let head = 0, tail = 1;
+        queue[0] = start;
+        labels[start] = component;
+        edge.push(false);
+        while (head < tail) {
+            const i = queue[head++], a = pos(i), bd = p.kind === 'sphere' ? p.bound - avLength(a) : p.bound - Math.max(...a.map(Math.abs));
+            if (bd - probe <= step * 1.05)
+                edge[component] = true;
+            const x = i % n, y = Math.floor(i / n) % n, z = Math.floor(i / (n * n));
+            const near = [];
+            if (x > 0)
+                near.push(i - 1);
+            if (x < n - 1)
+                near.push(i + 1);
+            if (y > 0)
+                near.push(i - n);
+            if (y < n - 1)
+                near.push(i + n);
+            if (z > 0)
+                near.push(i - n * n);
+            if (z < n - 1)
+                near.push(i + n * n);
+            for (const j of near)
+                if (labels[j] === -1) {
+                    labels[j] = component;
+                    queue[tail++] = j;
+                }
+        }
+        counts.push(tail);
+    }
+    const cells = [];
+    for (let i = 0; i < total; i++)
+        if (labels[i] >= 0) {
+            const c = labels[i];
+            cells.push({ position: pos(i), clearance: clearance[i], component: c, boundary: edge[c] });
+        }
+    return { cells, components: counts.length, enclosed: edge.filter(b => !b).length, resolution: n, step, accessibleFraction: cells.length / containerSamples, componentCounts: counts, boundaryComponents: edge };
+}
+
+const AVERT = `#version 300 es
+precision highp float;
+precision highp int;
+layout(location=0) in vec2 corner;
+layout(location=1) in vec3 a;
+layout(location=2) in vec3 b;
+layout(location=3) in vec3 color;
+layout(location=4) in vec3 properties;
+uniform vec4 rotation;
+uniform vec2 viewport;
+uniform float zoom;
+uniform float pixelRatio;
+uniform int kind;
+out vec2 uv;
+out vec3 rgb;
+out float opacity;
+out float depth;
+out float radius;
+out vec3 center;
+out vec3 world;
+vec3 turn(vec3 p){return p+2.0*cross(rotation.xyz,cross(rotation.xyz,p)+rotation.w*p);}
+vec3 project(vec3 p){vec3 q=turn(p);return vec3(q.x*.69*zoom*viewport.y/viewport.x,q.y*.69*zoom,-q.z*.18);}
+void main(){
+  vec3 q=project(a);vec2 offset;
+  uv=corner;rgb=color;opacity=properties.y;radius=properties.x;center=a;world=a;
+  if(kind==1){
+    vec3 end=project(b);vec2 delta=(end.xy-q.xy)*viewport;
+    vec2 normal=vec2(-delta.y,delta.x)/max(length(delta),.001);
+    float t=(corner.x+1.0)*.5;
+    q=mix(q,end,t);world=mix(a,b,t);
+    offset=normal*corner.y*properties.x*pixelRatio*2.0/viewport;
+  }else if(kind==2){offset=corner*properties.x*.69*zoom*vec2(viewport.y/viewport.x,1.0);}
+  else {offset=corner*properties.x*pixelRatio*2.0/viewport;}
+  gl_Position=vec4(q.xy+offset,q.z,1.0);depth=q.z*.5+.5;
+}`;
+const AFRAG = `#version 300 es
+precision highp float;
+precision highp int;
+in vec2 uv;in vec3 rgb;in float opacity;in float depth;in float radius;in vec3 center;in vec3 world;
+uniform int kind;uniform bool cutaway;uniform vec4 rotation;
+out vec4 result;
+vec3 inverseTurn(vec3 p){vec3 v=-rotation.xyz;return p+2.0*cross(v,cross(v,p)+rotation.w*p);}
+void main(){
+  gl_FragDepth=depth;
+  if(kind==2){
+    float d=dot(uv,uv);if(d>1.0)discard;
+    vec3 n=vec3(uv,sqrt(1.0-d));float hit=n.z;
+    vec3 surface=center+inverseTurn(radius*n);
+    if(cutaway&&surface.z>0.0){
+      vec3 direction=inverseTurn(vec3(0.0,0.0,1.0));
+      if(direction.z<=0.00001)discard;
+      float plane=-(center.z/radius+inverseTurn(vec3(uv,0.0)).z)/direction.z;
+      if(plane < -sqrt(1.0-d)||plane > sqrt(1.0-d))discard;
+      hit=plane;
+      vec3 v=rotation.xyz;n=vec3(0.0,0.0,1.0)+2.0*cross(v,cross(v,vec3(0.0,0.0,1.0))+rotation.w*vec3(0.0,0.0,1.0));
+    }
+    float diffuse=.24+.76*max(dot(n,normalize(vec3(-.4,.7,1.0))),0.0);
+    float rim=pow(1.0-n.z,3.0);float spec=pow(max(dot(n,normalize(vec3(-.2,.4,1.0))),0.0),42.0);
+    result=vec4(rgb*diffuse+vec3(.35)*spec+rgb*rim*.65,1.0);
+    gl_FragDepth=depth-radius*.09*hit;
+  }else{
+    if(cutaway&&world.z>0.0)discard;
+    float d=kind==1?abs(uv.y):length(uv);if(d>1.0)discard;
+    float glow=exp(-4.0*d*d)*(1.0-smoothstep(.70,1.0,d));
+    result=vec4(rgb,opacity*glow);
+  }
+}`;
+class AppearanceGPU {
+    canvas;
+    gl;
+    program;
+    vao;
+    buffers = [];
+    counts = [0, 0, 0];
+    locations = {};
+    yaw = .42;
+    pitch = .25;
+    zoom = 1;
+    drawCalls = 0;
+    frames = 0;
+    lost = false;
+    constructor(canvas) {
+        this.canvas = canvas;
+        const gl = canvas.getContext('webgl2', { alpha: false, antialias: true, preserveDrawingBuffer: true });
+        if (!gl)
+            throw new Error('WebGL2 is required for this lab; no CPU rendering is mislabeled as GPU.');
+        this.gl = gl;
+        const compile = (type, text) => { const s = gl.createShader(type); gl.shaderSource(s, text); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS))
+            throw new Error(gl.getShaderInfoLog(s) || 'Shader compilation failed'); return s; };
+        this.program = gl.createProgram();
+        const v = compile(gl.VERTEX_SHADER, AVERT), f = compile(gl.FRAGMENT_SHADER, AFRAG);
+        gl.attachShader(this.program, v);
+        gl.attachShader(this.program, f);
+        gl.linkProgram(this.program);
+        gl.deleteShader(v);
+        gl.deleteShader(f);
+        if (!gl.getProgramParameter(this.program, gl.LINK_STATUS))
+            throw new Error(gl.getProgramInfoLog(this.program) || 'Program link failed');
+        this.vao = gl.createVertexArray();
+        gl.bindVertexArray(this.vao);
+        const corners = gl.createBuffer();
+        this.buffers.push(corners);
+        gl.bindBuffer(gl.ARRAY_BUFFER, corners);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+        gl.enableVertexAttribArray(0);
+        gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+        for (let i = 0; i < 3; i++)
+            this.buffers.push(gl.createBuffer());
+        for (const name of ['rotation', 'viewport', 'zoom', 'pixelRatio', 'kind', 'cutaway'])
+            this.locations[name] = gl.getUniformLocation(this.program, name);
+        canvas.addEventListener('webglcontextlost', e => { e.preventDefault(); this.lost = true; });
+        canvas.addEventListener('webglcontextrestored', () => { this.lost = true; canvas.dispatchEvent(new CustomEvent('renderer-needs-reload')); });
+    }
+    quaternion() { return multiplyQuaternion(axisQuaternion([1, 0, 0], this.pitch), axisQuaternion([0, 1, 0], this.yaw)); }
+    project(p, width, height) { const q = rotateVector(this.quaternion(), p), k = .345 * this.zoom * height; return [width / 2 + q[0] * k, height / 2 - q[1] * k]; }
+    upload(frame) {
+        const gl = this.gl, groups = [frame.points, frame.lines, frame.spheres];
+        groups.forEach((items, index) => {
+            const data = new Float32Array(items.length * 12);
+            items.forEach((p, i) => { const b = p.b || p.a; data.set([...p.a, ...b, ...p.color, p.size, p.alpha, 0], i * 12); });
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.buffers[index + 1]);
+            gl.bufferData(gl.ARRAY_BUFFER, data, gl.DYNAMIC_DRAW);
+            this.counts[index] = items.length;
+        });
+    }
+    render(cut = false) {
+        if (this.lost)
+            return;
+        const gl = this.gl, r = this.canvas.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 1.5);
+        const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+        if (this.canvas.width !== w || this.canvas.height !== h) {
+            this.canvas.width = w;
+            this.canvas.height = h;
+        }
+        gl.viewport(0, 0, w, h);
+        gl.clearColor(0, 0, 0, 1);
+        gl.clearDepth(1);
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+        gl.useProgram(this.program);
+        gl.bindVertexArray(this.vao);
+        gl.uniform4fv(this.locations.rotation, this.quaternion());
+        gl.uniform2f(this.locations.viewport, w, h);
+        gl.uniform1f(this.locations.zoom, this.zoom);
+        gl.uniform1f(this.locations.pixelRatio, dpr);
+        gl.uniform1i(this.locations.cutaway, cut ? 1 : 0);
+        this.drawCalls = 0;
+        for (const index of [2, 1, 0]) {
+            if (!this.counts[index])
+                continue;
+            gl.uniform1i(this.locations.kind, index);
+            gl.bindBuffer(gl.ARRAY_BUFFER, this.buffers[index + 1]);
+            for (let a = 1; a <= 4; a++) {
+                gl.enableVertexAttribArray(a);
+                gl.vertexAttribPointer(a, 3, gl.FLOAT, false, 48, (a - 1) * 12);
+                gl.vertexAttribDivisor(a, 1);
+            }
+            gl.enable(gl.DEPTH_TEST);
+            gl.depthFunc(gl.LEQUAL);
+            if (index === 2) {
+                gl.disable(gl.BLEND);
+                gl.depthMask(true);
+            }
+            else {
+                gl.enable(gl.BLEND);
+                gl.blendFunc(gl.SRC_ALPHA, gl.ONE);
+                gl.depthMask(false);
+            }
+            gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, 4, this.counts[index]);
+            this.drawCalls++;
+        }
+        gl.depthMask(true);
+        this.frames++;
+    }
+    pixels() { const g = this.gl, p = new Uint8Array(this.canvas.width * this.canvas.height * 4); g.readPixels(0, 0, this.canvas.width, this.canvas.height, g.RGBA, g.UNSIGNED_BYTE, p); return p; }
+    dispose() { for (const b of this.buffers)
+        this.gl.deleteBuffer(b); this.gl.deleteVertexArray(this.vao); this.gl.deleteProgram(this.program); }
+}
+
+const ae = (id) => { const e = document.getElementById(id); if (!e)
+    throw new Error(`Missing ${id}`); return e; };
+const aval = (id) => ae(id).value;
+const anum = (id) => Number(aval(id));
+const ap = new URLSearchParams(location.search);
+const ast = { lab: ap.get('lab') === 'packing' ? 'packing' : 'motion', view: ['snapshot', 'trail', 'exposure', 'occupancy'].includes(ap.get('view') || '') ? ap.get('view') : 'exposure', preset: 'Woven sphere', cycles: 1, displaySeconds: 0, window: 1, playing: !matchMedia('(prefers-reduced-motion: reduce)').matches && !ap.has('paused'), seed: 17, settings: { ...APRESETS['Woven sphere'] }, palette: 'phase' };
+let agpu;
+let aframe = { points: [], lines: [], spheres: [], cut: false };
+let ahistory = [], apacking = null, avoid = null;
+let adirty = true, amodelDirty = true, apackDirty = true, asampleWarning = '', alast = 0, alastBuild = 0, araf = 0;
+const aestat = (label, value) => `<div class="a-stat"><small>${label}</small><strong>${value}</strong></div>`;
+const aformat = (v) => Math.abs(v) > 1e5 || Math.abs(v) < .001 && v !== 0 ? v.toExponential(3) : v.toFixed(3);
+const acamera = () => ({ yaw: agpu.yaw, pitch: agpu.pitch, zoom: agpu.zoom });
+function aguide(bound = 1.12) {
+    const lines = [];
+    const c = [.17, .28, .34];
+    for (let d = 0; d < 3; d++) {
+        const a = [0, 0, 0], b = [0, 0, 0];
+        a[d] = -1.35;
+        b[d] = 1.35;
+        lines.push({ a, b, color: [[.55, .26, .22], [.23, .50, .35], [.24, .37, .61]][d], size: .65, alpha: .30 });
+    }
+    for (let d = 0; d < 3; d++)
+        for (const s of [-1, 1])
+            for (const t of [-1, 1]) {
+                const a = [0, 0, 0], b = [0, 0, 0];
+                a[d] = -bound;
+                b[d] = bound;
+                a[(d + 1) % 3] = b[(d + 1) % 3] = s * bound;
+                a[(d + 2) % 3] = b[(d + 2) % 3] = t * bound;
+                lines.push({ a, b, color: c, size: .5, alpha: .23 });
+            }
+    return lines;
+}
+function asyncPalette() {
+    const select = ae('a-color');
+    const opts = ast.lab === 'packing' && aval('a-matter') === 'matter' ? [['identity', 'Sphere identity'], ['gray', 'Grayscale spheres']] : ast.lab === 'packing' ? [['clearance', 'Clearance + cavity class'], ['component', 'Connected components'], ['gray', 'Grayscale clearance']] : ast.view === 'occupancy' ? [['density', 'Occupancy mass per voxel'], ['gray', 'Grayscale occupancy']] : [['phase', 'Cyclic orbit phase'], ['age', 'Age / recency'], ['gray', 'Grayscale recency']];
+    const signature = opts.map(v => v[0]).join();
+    if (select.dataset.signature !== signature) {
+        select.innerHTML = opts.map(([v, t]) => `<option value="${v}">${t}</option>`).join('');
+        select.dataset.signature = signature;
+    }
+    if (!opts.some(o => o[0] === ast.palette))
+        ast.palette = opts[0][0];
+    select.value = ast.palette;
+}
+function asyncLabels() {
+    const isMotion = ast.lab === 'motion';
+    ae('a-motion-controls').hidden = !isMotion;
+    ae('a-packing-controls').hidden = isMotion;
+    ae('a-observer').hidden = !isMotion;
+    ae('a-svg').textContent = isMotion ? 'Export vector view · SVG ↗' : 'Export packing diagram · SVG ↗';
+    document.querySelectorAll('[data-lab]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lab === ast.lab)));
+    document.querySelectorAll('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === ast.view)));
+    ae('a-play').disabled = !isMotion;
+    ae('a-time').disabled = !isMotion;
+    ae('a-play').textContent = ast.playing ? 'Pause' : 'Play';
+    ae('a-time-value').textContent = `${ast.cycles.toFixed(3)} cycles`;
+    ae('a-time').value = String(ast.cycles);
+    for (const key of ['orbit', 'precession', 'vibration', 'breathing']) {
+        ae(`a-${key}`).value = String(ast.settings[key]);
+        ae(`a-${key}-value`).textContent = `${ast.settings[key].toFixed(key === 'orbit' ? 0 : 2)}${key === 'orbit' || key === 'precession' ? ' × f₀' : ' units'}`;
+    }
+    ae('a-frequency').value = String(ast.settings.frequencyHz);
+    ae('a-exposure-value').textContent = `${ast.window.toFixed(2)} cycles`;
+    ae('a-time-note').textContent = `f₀ = ${ast.settings.frequencyHz.toExponential(2)} Hz. 1 unit = 0.1 nm. Playback: 0.08 reference cycles per display second (${(0.08 / ast.settings.frequencyHz).toExponential(2)} physical s/display s). Camera time is separate.`;
+    ae('a-count-value').textContent = aval('a-count');
+    ae('a-probe-value').textContent = `${anum('a-probe').toFixed(3)} units`;
+    ae('a-title').textContent = isMotion ? ast.preset : aval('a-family');
+    ae('a-kicker').textContent = isMotion ? 'A POINT, GIVEN TIME' : 'THE SPACE BETWEEN OBJECTS';
+    ae('a-subtitle').textContent = isMotion ? 'An accumulated path, not the surface of an atom.' : 'Solid balls and their complementary space.';
+    ae('a-measure').textContent = isMotion ? `01 / ${ast.view.toUpperCase()}` : `02 / ${aval('a-matter').toUpperCase()}`;
+    ae('a-equation').textContent = isMotion ? 'p(τ) = Ry(2πpτ) Rx(tilt) Rz(2πoτ)\n  [R + B sin(2πbτ), 0, V sin(2πvτ)]\nτ = f₀ tphysical\nEach R is applied as a unit quaternion.' : 'φ = Σ (4πr³/3) / Vcontainer\nfree(x) = clearance(x) > rprobe\n6-neighbor voxel-center connectivity';
+    ae('a-limits').textContent = isMotion ? 'Prescribed kinematics, not forces, relativity, a quantum orbital or intrinsic spin. Exposure samples one trajectory uniformly in time. Occupancy is its time-weighted histogram, not a quantum probability law. A smooth unmarked sphere’s spin alone is invisible.' : 'Non-overlapping balls, bounded seeded placement; not an optimal packing algorithm. Void topology is a voxel-center approximation and can miss narrow passages. A finite probe changes accessible space, not the true geometric void volume. Fibonacci mode uses at most the eight listed radii ratios.';
+    ae('a-challenge').innerHTML = isMotion ? 'Switch to <strong>Snapshot</strong>. The woven sphere disappears. Only the bead exists at one instant. The rest is its history.' : 'Choose <strong>Tetrahedral throat → Void</strong>. Compare a point probe with radius <strong>0.10</strong>. The small central region can become inaccessible to the larger probe. Then increase the grid resolution.';
+    asyncPalette();
+}
+function amotionFrame() {
+    const s = ast.settings;
+    const hist = sampleHistory(s, ast.cycles, ast.view === 'snapshot' ? 0 : ast.window, innerWidth < 760 ? 6000 : 12000);
+    ahistory = hist.samples;
+    asampleWarning = hist.undersampled ? 'Sample budget reached: unresolved fine history is possible. Reduce window or rate ratios.' : '';
+    const points = [], lines = aguide(), head = motionPoint(s, ast.cycles);
+    const tint = (h) => ast.palette === 'phase' ? phaseRGB(h.cycle * s.orbit) : orderedRGB(1 - h.age / Math.max(ast.window, 1e-9), ast.palette === 'gray');
+    if (ast.view === 'snapshot') {
+        lines.push({ a: [0, 0, 0], b: head, color: [.45, .60, .66], size: .8, alpha: .6 });
+    }
+    else if (ast.view === 'occupancy') {
+        const cells = occupancy(ahistory, 36, 2), max = Math.max(...cells.map(c => c.mass));
+        for (const c of cells) {
+            const u = Math.log1p(30 * c.mass / max) / Math.log(31);
+            points.push({ a: c.position, color: orderedRGB(u, ast.palette === 'gray'), size: 2.2 + 2 * u, alpha: .12 + .78 * u });
+        }
+    }
+    else if (ast.view === 'trail') {
+        for (let i = 1; i < ahistory.length; i++) {
+            const h = ahistory[i], alpha = Math.exp(-3 * h.age / Math.max(ast.window, 1e-9));
+            lines.push({ a: ahistory[i - 1].position, b: h.position, color: tint(h), size: 2.3, alpha: .12 + .75 * alpha });
+        }
+    }
+    else {
+        for (const h of ahistory)
+            points.push({ a: h.position, color: tint(h), size: 3.1, alpha: Math.min(1, h.weight * 3000) });
+    }
+    // White head is a minimum-size display glyph, not the physical diameter of a bead.
+    points.push({ a: head, color: [1, 1, 1], size: 6, alpha: 1 });
+    aframe = { points, lines, spheres: [], cut: false };
+    const speed = motionSpeed(s, ast.cycles), bound = speedUpperBound(s);
+    ae('a-stats').innerHTML = aestat('PHYSICAL TIME', `${aformat(ast.cycles / s.frequencyHz)} s`) + aestat('SPEED AT HEAD', `${aformat(speed)} m/s`) + aestat('HISTORY SAMPLES', ahistory.length.toLocaleString()) + aestat('EXPOSURE', `${(ast.window / s.frequencyHz).toExponential(2)} s`);
+    ae('a-warning').textContent = [asampleWarning, bound >= LIGHT_SPEED ? 'The speed upper bound reaches c. This is a mathematical path only; no relativistically valid material motion is claimed.' : ''].filter(Boolean).join(' ');
+    const label = ast.view === 'occupancy' ? 'Brightness = log-scaled time occupancy per 36³ voxel. Histogram mass sums to 1; glow and point size aid visibility.' : `${ast.palette === 'phase' ? 'Hue = orbit phase (0 → 2π, cyclic)' : ast.palette === 'gray' ? 'Gray luminance = recency' : 'Color = recency'}. ${ast.view === 'snapshot' ? 'White dot = current position.' : ast.view === 'trail' ? 'Opacity fades with age; lines join sampled positions.' : 'Equal-time samples; opacity is an explanatory exposure gain.'} White dot = current position.`;
+    ae('a-legend-text').textContent = label;
+}
+function apackingFrame() {
+    if (apackDirty || !apacking || !avoid) {
+        apacking = makePacking(aval('a-family'), anum('a-count'), ast.seed, aval('a-container'));
+        avoid = analyzeVoid(apacking, anum('a-grid'), anum('a-probe'));
+        apackDirty = false;
+    }
+    const p = apacking, v = avoid, points = [], lines = aguide(p.bound), spheres = [], matter = aval('a-matter') === 'matter';
+    if (p.kind === 'sphere')
+        for (let plane = 0; plane < 3; plane++)
+            for (let j = 0; j < 96; j++) {
+                const a = [0, 0, 0], b = [0, 0, 0];
+                a[plane] = Math.cos(ATAU * j / 96);
+                a[(plane + 1) % 3] = Math.sin(ATAU * j / 96);
+                b[plane] = Math.cos(ATAU * (j + 1) / 96);
+                b[(plane + 1) % 3] = Math.sin(ATAU * (j + 1) / 96);
+                lines.push({ a, b, color: [.35, .8, .72], size: .9, alpha: .45 });
+            }
+    if (matter) {
+        p.balls.forEach((b, i) => spheres.push({ a: b.center, color: ast.palette === 'gray' ? [.69, .72, .75] : phaseRGB(i / p.balls.length + .08), size: b.radius, alpha: 1 }));
+    }
+    else {
+        const stride = Math.max(1, Math.ceil(v.cells.length / (innerWidth < 760 ? 14000 : 24000)));
+        v.cells.forEach((c, i) => {
+            // Never drop small enclosed components during display decimation.
+            if (i % stride !== 0 && c.boundary)
+                return;
+            const u = aClamp((c.clearance - anum('a-probe')) / .25, 0, 1);
+            const color = ast.palette === 'gray' ? orderedRGB(u, true) : !c.boundary ? [1, .62, .22] : ast.palette === 'component' ? phaseRGB(c.component * .618) : orderedRGB(u, false);
+            points.push({ a: c.position, color, size: c.boundary ? 1.65 : 4, alpha: c.boundary ? .08 + .20 * u : .95 });
+        });
+    }
+    aframe = { points, lines, spheres, cut: ae('a-cut').checked };
+    const phi = packingFraction(p);
+    ae('a-stats').innerHTML = aestat('PLACED / REQUESTED', `${p.balls.length} / ${p.requested}`) + aestat('PACKING FRACTION', `${(100 * phi).toFixed(2)}%`) + aestat('TRUE VOID VOLUME', `${(100 * (1 - phi)).toFixed(2)}%`) + aestat('PROBE ACCESSIBLE¹', `${(100 * v.accessibleFraction).toFixed(2)}%`) + aestat('GRID COMPONENTS¹', String(v.components)) + aestat('ENCLOSED CANDIDATES¹', String(v.enclosed));
+    const unresolved = v.componentCounts.filter((n, i) => !v.boundaryComponents[i] && n < 8).length;
+    ae('a-warning').textContent = `¹ Grid estimate: ${v.resolution}³, cell width ${v.step.toFixed(4)} units, face adjacency. Narrow throats may be unresolved.${unresolved ? ' ' + unresolved + ' small enclosed components have fewer than 8 cells; these are unresolved candidates.' : ''}${p.balls.length < p.requested ? ' Placement budget reached; fewer spheres are shown.' : ''}${p.family === 'Tetrahedral throat' ? ' Container is a box for this reference fixture.' : ''}`;
+    ae('a-legend-text').textContent = matter ? 'Ball color = object identity (or grayscale). Radii are geometric. Cutaway removes z > 0 and exposes flat section caps; the original balls are solid.' : `Void points = probe-center-accessible cells. ${ast.palette === 'gray' ? 'Luminance = clearance.' : ast.palette === 'component' ? 'Hue = component; amber = enclosed component.' : 'Brightness/color = clearance; amber = enclosed component.'} Boundary-connected refers to the eroded container boundary, not flow through a solid wall.`;
+    ae('a-container').disabled = p.family === 'Tetrahedral throat';
+    ae('a-count').disabled = p.family === 'Tetrahedral throat';
+    ae('a-title').textContent = `${p.family}${p.family === 'Fibonacci' ? ' · 1 : 2 : 3 : 5 : 8 : 13 : 21 : 34' : ''}`;
+}
+function arebuild() {
+    asyncLabels();
+    if (ast.lab === 'motion')
+        amotionFrame();
+    else
+        apackingFrame();
+    ae('a-swatch').style.background = ast.palette === 'gray' ? 'linear-gradient(90deg,#333,#fff)' : ast.palette === 'identity' || ast.lab === 'motion' && ast.view !== 'occupancy' && ast.palette === 'phase' ? 'linear-gradient(90deg,#f79491,#9cebad,#91a3f0,#f79491)' : 'linear-gradient(90deg,#1c438a,#98e3bf,#ffe079)';
+    agpu.upload(aframe);
+    amodelDirty = false;
+    adirty = true;
+}
+function arecord() {
+    return { schema: 'reality-atlas:appearance/0.3.1', model: ast.lab === 'motion' ? 'prescribed-quaternion-trajectory/1' : 'nonoverlapping-balls-voxel-complement/1', lab: ast.lab, settings: ast.lab === 'motion' ? { ...ast.settings } : apacking, observation: ast.lab === 'motion' ? { mode: ast.view, referenceCycles: ast.cycles, physicalTimeSeconds: ast.cycles / ast.settings.frequencyHz, exposureCycles: ast.window, exposureSeconds: (ast.view === 'snapshot' ? 0 : ast.window) / ast.settings.frequencyHz, samples: ahistory.length, quadrature: 'equal-time midpoint', solver: 'analytic; no integration timesteps', occupancyGrid: ast.view === 'occupancy' ? 36 : null } : { mode: aval('a-matter'), probeRadius: anum('a-probe'), grid: avoid?.resolution, connectivity: '6-neighbor voxel-center estimate', components: avoid?.components, enclosed: avoid?.enclosed, accessibleFraction: avoid?.accessibleFraction, packingFraction: apacking ? packingFraction(apacking) : null }, display: { elapsedSeconds: ast.displaySeconds, referenceCyclesPerDisplaySecond: .08, palette: ast.palette, legend: ae('a-legend-text').textContent, camera: acamera(), cutaway: aframe.cut, backend: 'WebGL2 instanced quads; no WebGPU/Metal claim' }, limits: ae('a-limits').textContent };
+}
+function adownload(data, mime, name) {
+    const blob = new Blob([data], { type: mime }), url = URL.createObjectURL(blob), a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+}
+const aesc = (s) => s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+function asvg() {
+    const width = 1200, height = 1000, rgb = (c) => `rgb(${c.map(x => Math.round(aClamp(x, 0, 1) * 255)).join(',')})`;
+    const elements = [];
+    for (const line of aframe.lines) {
+        const a = agpu.project(line.a, width, height), b = agpu.project(line.b, width, height);
+        elements.push(`<path d="M${a.map(v => v.toFixed(3)).join(' ')} L${b.map(v => v.toFixed(3)).join(' ')}" fill="none" stroke="${rgb(line.color)}" stroke-width="${line.size}" opacity="${line.alpha.toFixed(4)}"/>`);
+    }
+    for (const p of [...aframe.spheres, ...aframe.points]) {
+        if (aframe.cut && p.a[2] > 0)
+            continue;
+        const a = agpu.project(p.a, width, height), radius = aframe.spheres.includes(p) ? p.size * .345 * agpu.zoom * height : p.size;
+        elements.push(`<circle cx="${a[0].toFixed(3)}" cy="${a[1].toFixed(3)}" r="${radius.toFixed(3)}" fill="${rgb(p.color)}" opacity="${p.alpha.toFixed(4)}"/>`);
+    }
+    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" role="img"><title>${aesc(ae('a-title').textContent || 'Reality Atlas')}</title><desc>Orthographic vector glyph export, not a volume render or optical photograph. Packing circles are center-clipped schematic glyphs.</desc><metadata>${aesc(JSON.stringify(arecord()))}</metadata><rect width="100%" height="100%" fill="#050a11"/><g id="calculated-geometry">${elements.join('\n')}</g><g id="labels" fill="#d7e8ee" font-family="sans-serif"><text x="40" y="52" font-size="22">${aesc(ae('a-title').textContent || '')}</text><text x="40" y="82" font-size="13">${aesc(ast.lab === 'motion' ? ast.view + ' | calculated classical history' : 'Packing | orthographic schematic')}</text><text x="40" y="965" font-size="11">Display colors and glyph sizes are explanatory. Embedded metadata preserves model state.</text></g></svg>`;
+}
+function achange(pack = false) { amodelDirty = true; apackDirty ||= pack; adirty = true; }
+function astart() {
+    agpu = new AppearanceGPU(ae('a-canvas'));
+    document.querySelectorAll('[data-lab]').forEach(b => b.onclick = () => { ast.lab = b.dataset.lab; ast.palette = ast.lab === 'motion' ? 'phase' : 'clearance'; achange(true); });
+    document.querySelectorAll('[data-view]').forEach(b => b.onclick = () => { ast.view = b.dataset.view; achange(); });
+    ae('a-preset').onchange = () => { ast.preset = aval('a-preset'); ast.settings = { ...APRESETS[ast.preset] }; ast.cycles = 1; ae('a-frequency').value = String(ast.settings.frequencyHz); achange(); };
+    for (const key of ['orbit', 'precession', 'vibration', 'breathing'])
+        ae(`a-${key}`).oninput = () => { ast.settings[key] = anum(`a-${key}`); ast.preset = 'Custom motion'; achange(); };
+    ae('a-exposure').oninput = () => { ast.window = anum('a-exposure'); achange(); };
+    ae('a-frequency').onchange = () => { ast.settings.frequencyHz = anum('a-frequency'); achange(); };
+    ae('a-color').onchange = () => { ast.palette = aval('a-color'); achange(); };
+    for (const id of ['a-family', 'a-container', 'a-count', 'a-grid', 'a-probe'])
+        ae(id).onchange = () => achange(true);
+    ae('a-seed').onclick = () => { ast.seed++; achange(true); };
+    ae('a-matter').onchange = () => achange();
+    ae('a-cut').onchange = () => achange();
+    ae('a-play').onclick = () => { ast.playing = !ast.playing; asyncLabels(); adirty = true; };
+    ae('a-time').oninput = () => { ast.cycles = anum('a-time'); ast.playing = false; achange(); };
+    ae('a-reset').onclick = () => { if (ast.lab === 'packing') {
+        for (const [id, value] of [['a-family', 'Equal'], ['a-container', 'box'], ['a-count', '32'], ['a-grid', '33'], ['a-probe', '0'], ['a-matter', 'matter']])
+            ae(id).value = value;
+        ast.seed = 17;
+        achange(true);
+        return;
+    } ast.cycles = 1; ast.displaySeconds = 0; ast.settings = { ...APRESETS[aval('a-preset')] }; ast.preset = aval('a-preset'); ast.window = 1; ae('a-exposure').value = '1'; achange(); };
+    ae('a-fit').onclick = () => { agpu.yaw = .42; agpu.pitch = .25; agpu.zoom = 1; adirty = true; };
+    const zoom = (factor) => { agpu.zoom = aClamp(agpu.zoom * factor, .45, 3); adirty = true; };
+    ae('a-zoomin').onclick = () => zoom(1.15);
+    ae('a-zoomout').onclick = () => zoom(1 / 1.15);
+    const pointers = new Map(), canvas = agpu.canvas;
+    canvas.onpointerdown = e => { canvas.setPointerCapture(e.pointerId); pointers.set(e.pointerId, [e.clientX, e.clientY]); };
+    canvas.onpointermove = e => {
+        const old = pointers.get(e.pointerId);
+        if (!old)
+            return;
+        if (pointers.size === 1) {
+            agpu.yaw += (e.clientX - old[0]) * .006;
+            agpu.pitch = aClamp(agpu.pitch + (e.clientY - old[1]) * .006, -1.5, 1.5);
+        }
+        else {
+            const other = [...pointers.entries()].find(([id]) => id !== e.pointerId)[1];
+            const before = Math.hypot(old[0] - other[0], old[1] - other[1]), after = Math.hypot(e.clientX - other[0], e.clientY - other[1]);
+            if (before > 2)
+                zoom(after / before);
+        }
+        pointers.set(e.pointerId, [e.clientX, e.clientY]);
+        adirty = true;
+    };
+    const release = (e) => pointers.delete(e.pointerId);
+    canvas.onpointerup = release;
+    canvas.onpointercancel = release;
+    canvas.onlostpointercapture = release;
+    canvas.addEventListener('wheel', e => { e.preventDefault(); zoom(Math.exp(-e.deltaY * .001)); }, { passive: false });
+    canvas.onkeydown = e => { if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', '+', '-'].includes(e.key)) {
+        e.preventDefault();
+        if (e.key === 'ArrowLeft')
+            agpu.yaw -= .1;
+        if (e.key === 'ArrowRight')
+            agpu.yaw += .1;
+        if (e.key === 'ArrowUp')
+            agpu.pitch -= .1;
+        if (e.key === 'ArrowDown')
+            agpu.pitch += .1;
+        if (e.key === '+')
+            zoom(1.1);
+        if (e.key === '-')
+            zoom(1 / 1.1);
+        adirty = true;
+    } };
+    ae('a-export').onclick = () => adownload(JSON.stringify(arecord(), null, 2), 'application/json', 'reality-appearance-state.json');
+    ae('a-svg').onclick = () => adownload(asvg(), 'image/svg+xml', 'reality-appearance-vector.svg');
+    window.addEventListener('resize', () => { adirty = true; });
+    document.addEventListener('visibilitychange', () => { alast = 0; adirty = true; });
+    canvas.addEventListener('renderer-needs-reload', () => { ae('a-error').hidden = false; ae('a-error').textContent = 'Graphics context was restored. Reload this page to recreate GPU resources.'; });
+    arebuild();
+    agpu.render(aframe.cut);
+    window.appearanceLab = { state: ast, record: arecord, svg: asvg, renderer: agpu, rebuild: () => { arebuild(); agpu.render(aframe.cut); }, getFrame: () => aframe, getVoid: () => avoid, isSettled: () => !amodelDirty && !adirty && (ast.lab === 'motion' || !apackDirty) };
+    function animate(now) {
+        araf = requestAnimationFrame(animate);
+        if (document.hidden) {
+            alast = 0;
+            return;
+        }
+        const dt = alast ? (now - alast) / 1000 : 0;
+        alast = now;
+        if (ast.playing && ast.lab === 'motion') {
+            ast.displaySeconds += dt;
+            ast.cycles += dt * .08;
+            if (ast.cycles > Number(ae('a-time').max))
+                ae('a-time').max = String(Math.max(8, 8 * Math.ceil(ast.cycles / 8)));
+            if (now - alastBuild > 66) {
+                amodelDirty = true;
+                alastBuild = now;
+            }
+        }
+        if (amodelDirty)
+            arebuild();
+        if (adirty) {
+            agpu.render(aframe.cut);
+            adirty = false;
+            ae('a-backend').textContent = `WebGL2 · instanced quads · ${agpu.drawCalls} batches · ${aframe.points.length + aframe.lines.length + aframe.spheres.length} glyphs`;
+        }
+        if (agpu.lost) {
+            ae('a-error').hidden = false;
+            ae('a-error').textContent = 'Graphics context lost. Reload to recreate this local scene.';
+        }
+    }
+    araf = requestAnimationFrame(animate);
+    window.addEventListener('pagehide', () => { cancelAnimationFrame(araf); agpu.dispose(); });
+}
+try {
+    astart();
+}
+catch (error) {
+    ae('a-error').hidden = false;
+    ae('a-error').textContent = String(error);
+    console.error(error);
+}
+
+})();</script></body></html>

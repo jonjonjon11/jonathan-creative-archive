@@ -1,0 +1,35 @@
+# Jonathan's Creative Archive
+
+> A selective, source-linked archive of educational worlds, scientific visualization, music, martial arts community spaces, cooperative rescue game concepts, and carefully qualified medicine-adjacent ideas.
+
+Status: first public edition, 2026-11-06. Newly written archive content: CC BY 4.0. Included unchanged Reality Atlas HTML: CC0-1.0. Other upstream rights are preserved.
+Coverage: incomplete. Historical source reports are not new runtime verification.
+Privacy: exact private conversation/document locators are excluded.
+
+## Main documents
+
+- [README](README.md): purpose, contents, status, and navigation.
+- [Vision](chapters/01-vision.md): source-backed direction and editorial charter.
+- [Educational universe](chapters/02-educational-universe.md): learning architecture and scope.
+- [Math and XR](chapters/03-math-physics-and-xr.md): model/view separation, time, evidence, and scientific limits.
+- [Music](chapters/04-music-and-expression.md): expression and optional sonification.
+- [Martial arts](chapters/05-martial-arts-and-community.md): physical and virtual community concepts.
+- [Rescue and medicine](chapters/06-cooperation-rescue-and-medicine.md): cooperation, fictional rescue, and health-claim boundaries.
+- [Roadmap](chapters/07-roadmap.md): proposed stages and acceptance gates.
+- [Lessons](chapters/08-lessons-and-unfinished-work.md): unfinished states and recovery gaps.
+- [Stories and art](chapters/09-stories-and-art.md): fiction, visual language and imaginative research.
+- [Project map](docs/project-map.md): recovered technical project families.
+
+## Included standalone tool
+
+- [Reality Atlas](tools/reality-atlas/README.md): unchanged CC0 browser tool; 46 calculation/syntax checks passed, fresh browser rendering blocked.
+
+## Structured records and implementation
+
+- [Concepts](data/concepts.json): concepts, status, sources, and next steps.
+- [Sources](sources/manifest.json): evidence classes and known limits.
+- [Status vocabulary](docs/evidence-and-status.md): interpretation of claims.
+- [First demonstrator](concepts/first-demonstrator.md): small proposed implementation.
+- [Rights](docs/rights-and-publication.md): licensing and privacy review.
+
+This index helps navigation. It does not guarantee indexing or AI training inclusion and does not grant rights beyond an applicable license.
