@@ -1,0 +1,146 @@
+{
+  "source_repository": "jonjonjon11/Jon-Harvey-Ultimate-Educational-Universe",
+  "source_commit": "6ab40aa56ce9b5fd94908bda3b0e55cdb3e1f33b",
+  "license": "CC0-1.0",
+  "files": [
+    {
+      "path": ".gitignore",
+      "git_blob_sha": "ba4c5cf76187310e78b69f941649e1a5de13e71d",
+      "size": 107,
+      "sha256": "33a8cb2e169312278c14851470cc5f044322a6fb854dce648a8f78e33b7f11e1",
+      "included": true,
+      "archive_path": ".gitignore"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "0e259d42c996742e9e3cba14c677129b2c1b6311",
+      "size": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "included": true,
+      "archive_path": "LICENSE"
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha": "74c51e924ca2a5135a36901dff8a9b1b13e06b28",
+      "size": 5159,
+      "sha256": "1727462b8b9358d8fdecc62524391bec840875d47644fed8275b25060b924361",
+      "included": false,
+      "archive_path": null
+    },
+    {
+      "path": "SECURITY.md",
+      "git_blob_sha": "3a6bb9c64dabe6d191d380461662293654871cae",
+      "size": 3653,
+      "sha256": "3477a15cf9866814a1ca79352622d75f46c078c75e6ce4a664bd6697328865c4",
+      "included": false,
+      "archive_path": null
+    },
+    {
+      "path": "build_single.py",
+      "git_blob_sha": "551b85bfa7d278385de681b3769f9d1fe2997499",
+      "size": 1060,
+      "sha256": "1a610a48e0577138551dfa45a3eb1c2f806b8cd579ea9983e0653566f1be8ceb",
+      "included": true,
+      "archive_path": "build_single.py"
+    },
+    {
+      "path": "docs/CHARTER_AND_ROADMAP.md",
+      "git_blob_sha": "812a444978e33cacfb7099413460a99a76462149",
+      "size": 11632,
+      "sha256": "bc31aae95ad874b3a47a42d66f08d660ec50090677e37afc1c014b819530c9b1",
+      "included": false,
+      "archive_path": null
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "git_blob_sha": "a2a851c0702bc7f084d36e583943d11d4cffa45a",
+      "size": 3620,
+      "sha256": "bc6fe1998d8d0788cedad9b87df8def3631b95eca6a1310c5008d82867bb06b8",
+      "included": false,
+      "archive_path": null
+    },
+    {
+      "path": "index.html",
+      "git_blob_sha": "0e07f7294cc3b2d0090a9204fbf8789fa086bd77",
+      "size": 5315,
+      "sha256": "5d21a76d28d18554628330da02f936806cab1fc8c1c407da6ee9a81778b60c13",
+      "included": true,
+      "archive_path": "index.html"
+    },
+    {
+      "path": "serve.py",
+      "git_blob_sha": "291f2b744cc06f676f48399cfa24af409dd4ee59",
+      "size": 2190,
+      "sha256": "8c80f15f004813e8ef29b2b7e1415c23558b81c408d8ddb3c1dfde01022774b6",
+      "included": true,
+      "archive_path": "serve.py"
+    },
+    {
+      "path": "src/core.js",
+      "git_blob_sha": "1f415f15827696f37fe7a24cf3d2c4dd41d1dd81",
+      "size": 3590,
+      "sha256": "81f6ce3cb3cca54bfd6389227469eefdbf2cca8d55fb69915eaf61ec6431882c",
+      "included": true,
+      "archive_path": "src/core.js"
+    },
+    {
+      "path": "src/game.js",
+      "git_blob_sha": "eb50ad7eef7b2a2af1df5e77fee6aac6a010b98d",
+      "size": 38696,
+      "sha256": "79cf6be8e2ed409048180bf7d51e5660a359548bd6712090f13fe4863cc40464",
+      "included": true,
+      "archive_path": "src/game.js"
+    },
+    {
+      "path": "src/style.css",
+      "git_blob_sha": "ca551c59836aefd2a6fa086d473b1db7029c8433",
+      "size": 12563,
+      "sha256": "befe494d18e1590e9b86e13e5946e34814138dfb1c349ddd3b8e95ecf9dde72f",
+      "included": true,
+      "archive_path": "src/style.css"
+    },
+    {
+      "path": "src/world.js",
+      "git_blob_sha": "a1ef20526e8b5290d9b469c298cd43640fbeb7d5",
+      "size": 21146,
+      "sha256": "cea170d83299902b5224e02797187421e9c3ed60d746ec1e8a25a32a6edf7045",
+      "included": true,
+      "archive_path": "src/world.js"
+    },
+    {
+      "path": "tests/browser_smoke.py",
+      "git_blob_sha": "d91401ee579ec809527096071288bf5258179256",
+      "size": 6238,
+      "sha256": "53f041bc5704f42006dbf8f665b7f10587c058eb5996a066628f76df17e3db0e",
+      "included": true,
+      "archive_path": "tests/browser_smoke.py"
+    },
+    {
+      "path": "tests/core.test.cjs",
+      "git_blob_sha": "5c179b90a43a0379215a436071405cc45f174939",
+      "size": 3514,
+      "sha256": "7a60cb28d3e9ca3b12ec0753222714c4c4799eb1d40880e292102712cdea7e73",
+      "included": true,
+      "archive_path": "tests/core.test.cjs"
+    },
+    {
+      "path": "tests/static_check.py",
+      "git_blob_sha": "5a773b710dbf4550516f9ff9c82556657f0795d9",
+      "size": 1350,
+      "sha256": "0cf6fae84afe0f3ac700310d5831e401ad7835ec5b201ca4dad82a495cd6ca99",
+      "included": true,
+      "archive_path": "tests/static_check.py"
+    }
+  ],
+  "review_date": "2026-11-06",
+  "source_repository_visibility_at_review": "private",
+  "source_locator_policy": "Repository identity and exact revision are recorded as provenance metadata; private source links are not included.",
+  "generated_build": {
+    "path": "Lumen-Commons-Play.html",
+    "bytes": 81407,
+    "sha256": "e802f3137cf16d0ce693f28c70182a32aadaef68b8547905d000433ee477d1e2",
+    "method": "python3 build_single.py from the included unchanged source files",
+    "source_build_parity": "passed"
+  },
+  "archive_readme": "README.md is new archive documentation; upstream README, SECURITY.md and historical roadmap/validation documents were inspected but are not bundled."
+}

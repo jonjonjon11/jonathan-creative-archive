@@ -1,6 +1,6 @@
 # Recovered project map
 
-This map summarizes selected source and branch work. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/` and CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
+This map summarizes selected source and branch work. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/`, CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`, and CC0 Lumen Commons source/standalone in `tools/lumen-commons/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
 
 ## AR Buddy Commons
 
@@ -60,6 +60,34 @@ Software AGPL-3.0-or-later; documentation/prompts/curricula CC-BY-SA-4.0; future
 ### Rights
 
 Repository root detected CC0-1.0. Third-party assets, engine dependencies and older branch-specific source still require individual verification.
+
+## Lumen Commons 0.1
+
+**Status:** Recovered single-player browser-adventure prototype, distinct from the later Lumen Reach records and cooperation/rescue kit. Not a live MMORPG, hosted service or independently validated curriculum.
+
+**Source IDs:** SRC-034.
+
+### Useful ideas
+
+- Five experiments connect fractions, projectile motion, musical octaves, orbital scaling, and schematic coordinates to restoring a fictional village.
+- Six clearly scripted NPCs, optional music, a local art space, and replayable learning without timers or leaderboard pressure.
+- Direct destination controls, optional sound, reduced ambient motion, and draft English/Spanish/Japanese interface text.
+
+### Actual artifacts
+
+- [Included Lumen Commons package](../tools/lumen-commons/README.md): 81,407-byte standalone HTML, unchanged reproducible source/build scripts/tests, complete CC0 license, and exact-revision source manifest.
+- Source revision: `6ab40aa56ce9b5fd94908bda3b0e55cdb3e1f33b`.
+- Fresh revalidation: 24 Node tests and static source/build parity, CSP-hash, size-budget, and prohibited-runtime-API checks passed.
+
+### Evidence limits
+
+- Fresh browser suite stopped during Chromium startup because socket creation was denied; the app was not loaded. Historical 35-check browser evidence is not a current pass.
+- No fresh audio, exports, native storage persistence, physical-device/Safari performance, accessibility certification, educational efficacy or public child-safety acceptance.
+- Browser-local progress and art are not cloud sync; companions are not online players or live AI.
+
+### Rights
+
+Preserved source and generated standalone retain their exact-source CC0 license. No imported art, fonts, sound recordings or runtime third-party dependencies are bundled. The archive-facing README is new CC BY 4.0 documentation.
 
 ## Lumen Reach and cooperative rescue
 

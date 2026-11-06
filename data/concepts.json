@@ -350,6 +350,24 @@
       "scientific_standing": "established_model_scoped",
       "limitations": "Not historical implementation or currently supplied executable.",
       "next_step": "Follow concepts/first-demonstrator.md."
+    },
+    {
+      "id": "CON-021",
+      "title": "Lumen Commons learning village",
+      "tags": [
+        "education",
+        "browser",
+        "music",
+        "art"
+      ],
+      "summary": "Restore a fictional village through five bounded experiments, with scripted companions, optional sound, local artwork, and replayable learning.",
+      "source_ids": [
+        "SRC-034"
+      ],
+      "artifact_status": "source_inspected",
+      "scientific_standing": "established_model_scoped",
+      "limitations": "Source/generated prototype with 24 passing Node tests and static build checks, but fresh browser testing blocked before page load. Not a validated curriculum, live MMORPG or certified accessible system.",
+      "next_step": "Run the preserved browser suite and deliberate device/persistence/audio/accessibility checks before extending the lessons or hosting it."
     }
   ]
 }

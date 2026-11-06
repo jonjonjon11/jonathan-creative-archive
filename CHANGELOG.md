@@ -1,5 +1,12 @@
 # Changelog
 
+## Lumen Commons preservation update, 2026-11-06
+
+- Added the distinct CC0 Lumen Commons 0.1 standalone and reproducible source under `tools/lumen-commons/`, with exact-revision provenance and a new archive README.
+- Preserved 12 source/license/test files unchanged; generated HTML matches the reviewed 81,407-byte build.
+- Reran 24 Node tests and static build/source-parity checks successfully. Fresh browser testing remained blocked before page load; historical browser reports are not current passes.
+- Added one source and one concept record, navigation and explicit licensing/testing limits. No hosting, server, accounts, multiplayer or network permissions were enabled.
+
 ## Cooperation/rescue preservation update, 2026-11-06
 
 - Added seven reviewed files under `artifacts/cooperation-rescue/`: four mission scenarios, authoring validator/reference logic, preserved tests, source manifest, README, complete CC0 license and local ignore rules.

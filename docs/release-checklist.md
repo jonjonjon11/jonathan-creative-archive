@@ -6,7 +6,7 @@ Review date: 2026-11-06. A clean structural check is not a complete security, le
 
 - Public destination: `jonjonjon11/jonathan-creative-archive`, selected and created by the owner.
 - The repository owner, public visibility, initial README, and CC BY 4.0 license were verified directly before upload.
-- This edition contains nine thematic chapters, twenty concept records, thirty-three source records, an eleven-family project map, an implementation brief, a separately reviewed original browser tool, and a separately reviewed cooperation/rescue authoring kit.
+- This edition contains nine thematic chapters, twenty-one concept records, thirty-four source records, a twelve-family project map, an implementation brief, two separately reviewed browser tools, and a separately reviewed cooperation/rescue authoring kit.
 - This is a selective reconstruction, not a complete account export, merged codebase, finished metaverse, or validated medical platform.
 - Exact private conversation/Drive/file locators and editorial review files remain outside the repository.
 
@@ -15,6 +15,7 @@ Review date: 2026-11-06. A clean structural check is not a complete security, le
 - The original root CC BY 4.0 license is preserved unchanged. Newly written archive content uses that license.
 - The included unchanged Reality Atlas HTML retains its complete CC0 1.0 Universal license and exact artifact hash.
 - The preserved cooperation/rescue files retain their complete exact-revision CC0 license and source hashes. Private review notes and validation logs from the source review are excluded.
+- Lumen Commons retains its complete CC0 license, exact-source hashes, generated-build hash, and reproducible source. Review logs and private source links are excluded.
 - No bulk source trees, existing source-project Git history, unreviewed datasets, commercial asset packs, private transcripts, or personal records are imported.
 - Selected private-locator and credential-marker checks are part of the validator. A separate focused release scan checked common token patterns, personal-email patterns, private source URLs, and local private paths.
 - These checks do not prove absence of every secret or resolve unknown third-party rights. Future additions require their own review.
@@ -25,6 +26,7 @@ Review date: 2026-11-06. A clean structural check is not a complete security, le
 - Run `node scripts/check_reality_core.cjs` for the preserved tool’s 46 focused calculation/syntax checks.
 - The cooperation/rescue validator and all 25 preserved tests passed; these check authoring/reference logic, not playable content or safety certification.
 - The Reality Atlas tool’s fresh rendered-browser test was blocked before page load. Browser interaction, WebGL rendering, downloads, SVG export, accessibility, mobile, and headset acceptance remain unverified in this edition.
+- Lumen Commons passed 24 fresh Node tests and static build/source-parity checks. Its browser test was blocked before page load; no fresh rendered-browser or device acceptance is claimed.
 - Historical source test reports remain distinct from newly executed checks.
 - SHA-256 values in `data/checksums.json` support file-integrity comparison; they are not proof of scientific correctness or rights.
 

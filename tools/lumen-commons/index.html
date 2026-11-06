@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#102923">
+<meta name="description" content="Lumen Commons — a free, local-first educational adventure prototype. Explore, experiment, create.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Lumen Commons · The Learning Universe</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23132e2c'/%3E%3Cpath d='M32 8 46 31 32 56 18 31Z' fill='%23d9edac'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="src/style.css">
+<script defer src="src/core.js"></script>
+<script defer src="src/world.js"></script>
+<script defer src="src/game.js"></script>
+</head>
+<body>
+<a class="skip" href="#destinations">Skip world canvas and use destinations</a>
+<header class="topbar">
+ <div class="brand"><span class="brandmark" aria-hidden="true">✧</span><div><strong>LUMEN <span>COMMONS</span></strong><small data-i18n="subtitle">THE LEARNING UNIVERSE</small></div></div>
+ <div class="session"><span class="statusdot"></span><span data-i18n="local">LOCAL ADVENTURE</span><span class="divider">/</span><span class="muted" data-i18n="free">FREE, FOREVER</span></div>
+ <button id="settingsTop" class="iconbtn" aria-label="Settings">☷</button>
+</header>
+<main>
+ <section class="viewport" aria-label="Adventure world">
+  <canvas id="world" tabindex="0" aria-label="Lumen Commons exploration. Use WASD or arrow keys to move, E to interact, Space for a resonance pulse. Destinations below offer a non-canvas alternative."></canvas>
+  <div class="location"><span class="eyebrow" data-i18n="zone">FIRST LIGHT ARCHIPELAGO</span><h1 data-i18n="town">A place for curious minds.</h1><p data-i18n="tagline">Find your people. Follow your wonder.</p></div>
+  <div class="mapcard"><canvas id="minimap" width="168" height="104" aria-label="World map. Destinations are available in the sidebar."></canvas><span data-i18n="maplabel">LUMEN VILLAGE · DAY 01</span></div>
+  <div class="worldnote" data-i18n="scripted">Solo prototype · all companions are scripted NPCs</div>
+  <div class="hint" id="worldHint" data-i18n="controls">Click to walk · WASD / arrows · E to interact</div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div class="touchcontrols"><div id="joystick" role="group" aria-label="Touch movement joystick"><span id="stick"></span></div><button id="pulseTouch" class="roundaction" aria-label="Resonance pulse">✧</button></div>
+  <button id="interact" class="interact" data-i18n="interact">Explore nearby [E]</button>
+  <div class="canvascredit">ORIGINAL WORLDS. SHARED WONDER.</div>
+ </section>
+ <aside class="sidebar" id="sidebar">
+  <div class="profile"><span class="portrait" aria-hidden="true">✦</span><div><small data-i18n="role">YOUR ADVENTURE</small><h2 data-i18n="explorer">Curious explorer</h2></div><span class="badge" id="level">01</span></div>
+  <div class="progressinfo"><span data-i18n="constellation">First constellation</span><strong id="progressLabel">0 / 5</strong></div><progress id="progress" max="5" value="0" aria-label="Completed learning quests"></progress>
+  <section class="mission"><span class="eyebrow" data-i18n="storylabel">THE STORY SO FAR</span><h2 data-i18n="storytitle">Bring the village to life.</h2><p data-i18n="story">Five beacons have fallen quiet. Restore them by experimenting, listening, and discovering. There is no timer. Wonder at your own pace.</p><button id="begin" class="primary" data-i18n="begin">Begin your adventure <span>↗</span></button></section>
+  <div class="sectionhead"><h2 data-i18n="destinations">PLACES TO DISCOVER</h2><span>05 + 01</span></div>
+  <nav id="destinations" aria-label="Accessible world destinations"></nav>
+  <div class="safecard"><span aria-hidden="true">◇</span><p data-i18n="safe">No ads. No purchases. No public chat.<br>Your progress stays in this browser.</p></div>
+ </aside>
+</main>
+<footer class="toolbar"><div class="toolgroup"><button id="exploreButton" class="active" data-i18n="explore">⌖ Explore</button><button id="journalButton" data-i18n="journal">▤ Journal</button><button id="cafeButton" data-i18n="cafe">♧ Café & create</button><button id="settingsButton" data-i18n="settings">☷ Settings</button></div><div class="wallet"><span aria-hidden="true">✧</span> <strong id="moteCount">0</strong><span data-i18n="motes"> / 12 discoveries</span><span class="fps" id="fps">— fps</span></div></footer>
+<dialog id="panel" aria-labelledby="panelTitle"><div class="modalhead"><div><span class="eyebrow" id="panelKicker">DISCOVERY LAB</span><h2 id="panelTitle">Explore</h2></div><button id="closePanel" class="iconbtn" aria-label="Close dialog">×</button></div><div id="panelBody"></div></dialog>
+<div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+<noscript><p>JavaScript is needed for this local game. There is no account or network connection.</p></noscript>
+</body></html>

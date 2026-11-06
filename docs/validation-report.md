@@ -24,8 +24,16 @@ Result on 2026-11-06: four draft mission definitions validated; all 25 preserved
 
 This is a draft/unmerged authoring/reference artifact, not a playable game, Unity integration, authoritative multiplayer service, medical or rescue training, or accessibility/safety certification. Source review flags remain unchanged.
 
+## Lumen Commons 0.1
+
+From `tools/lumen-commons/`, run `node --test tests/core.test.cjs` and `python3 tests/static_check.py`.
+
+Result on 2026-11-06: all 24 Node tests passed under Node v24.22.1. Static checks passed for exact source/build parity, CSP hashes, the 250 KB budget and selected prohibited runtime APIs. The regenerated HTML is 81,407 bytes and matches SHA-256 `e802f3137cf16d0ce693f28c70182a32aadaef68b8547905d000433ee477d1e2`. Included original files match their exact-source Git blob and SHA-256 hashes.
+
+Fresh browser suite: BLOCKED BEFORE PAGE LOAD. Chromium exited during startup because the sandbox denied process-singleton socket creation. The app was not loaded. Historical 35-check browser evidence remains separate. No current rendering, interactions, audio, download, native-persistence, Safari/device, accessibility, educational-efficacy or child-safety acceptance is claimed.
+
 ## Rights and privacy boundary
 
-Exact-commit CC0 provenance was reviewed separately for Reality Atlas and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.
+Exact-commit CC0 provenance was reviewed separately for Reality Atlas, Lumen Commons and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.
 
 These are pre-publication content checks. The initial public repository’s owner, public visibility, README, and CC BY 4.0 license were verified before adding this edition. The placeholder README is replaced by the archive index, and its existing license is preserved unchanged. No source-project history or application deployment is included. SHA-256 values in `data/checksums.json` provide file-integrity comparison, not proof of scientific truth or rights. These checks do not certify license compatibility, clinical or educational efficacy, exhaustive absence of secrets, account completeness, or full source-project correctness.
