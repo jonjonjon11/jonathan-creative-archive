@@ -1,6 +1,6 @@
 # Recovered project map
 
-This map summarizes selected source and branch work. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/`, CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`, and CC0 Lumen Commons source/standalone in `tools/lumen-commons/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
+This map summarizes selected source and branch work. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/`, CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`, CC0 Lumen Commons source/standalone in `tools/lumen-commons/`, and the CC0 source toolkit in `tools/universal-color-ontology/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
 
 ## AR Buddy Commons
 
@@ -88,6 +88,34 @@ Repository root detected CC0-1.0. Third-party assets, engine dependencies and ol
 ### Rights
 
 Preserved source and generated standalone retain their exact-source CC0 license. No imported art, fonts, sound recordings or runtime third-party dependencies are bundled. The archive-facing README is new CC BY 4.0 documentation.
+
+## Universal Color and Ontology Core v1
+
+**Status:** Preserved experimental JavaScript source toolkit. Not a playable app, rendered visualizer, complete knowledge graph or validated scientific database.
+
+**Source IDs:** SRC-035.
+
+### Useful ideas
+
+- Separate conventional color calculations from semantic/pedagogical visual mappings.
+- Represent a bounded vocabulary with explicit epistemic labels, then generate exact or large mathematical/music addresses on demand.
+- Treat every candidate connection as a possibility requiring evidence or a declared mapping, not as an asserted fact.
+
+### Actual artifacts
+
+- [Included source toolkit](../tools/universal-color-ontology/README.md): 12 unchanged source, package, schema, test, README and license files from revision `e17aaa014a9cf66b6a510c01c5563409780b8656`.
+- Finite registry: 593 vocabulary nodes. Fresh revalidation: all 29 existing Node tests passed on 2026-11-07.
+
+### Evidence limits
+
+- Known tuning, unsafe-integer and non-finite-input gaps remain; pair spaces grow quadratically.
+- Semantic colors are not physical properties. Registry labels lack authoritative citations per record.
+- `safeDisplayRate` naming is not a photosensitivity/accessibility assurance; future presentation should default to static and receive separate review.
+- No UI or browser acceptance, and the separate ZIP mentioned in upstream documentation was not recovered or verified.
+
+### Rights
+
+The unchanged snapshot retains full CC0 1.0 text and the existing OKLab attribution. The archive-facing README/manifest use the compilation's CC BY 4.0. No dependencies, media, network service or npm publication are added.
 
 ## Lumen Reach and cooperative rescue
 

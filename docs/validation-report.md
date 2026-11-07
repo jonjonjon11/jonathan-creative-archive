@@ -54,8 +54,18 @@ Result on 2026-11-06: all 57 synthetic tests passed under Python 3.12.14. The or
 
 The comparator does not authenticate report history or establish that a removed finding is truly fixed. It compares selected metadata fields and local bytes; changes alone are not a quality score, new runtime verification or permission to publish.
 
+## Universal Color and Ontology Core v1 preservation
+
+From `tools/universal-color-ontology/`, run `node --test upstream/packages/universal-color/test/*.test.mjs upstream/packages/universal-ontology-core/test/*.test.mjs`.
+
+Result on 2026-11-07: 29 tests passed, zero failed or skipped, under Node v24.22.1. All 12 preserved upstream files, including the complete CC0 license, match their source Git blob and SHA-256 hashes. No installation or runtime dependencies are needed. The source toolkit has no UI, so no browser or rendering acceptance is asserted.
+
+Known limits are recorded in the toolkit README: tuning validation differs between note/chord generators; unsafe Number integers can round; some visual inputs allow non-finite values; semantic colors and vocabulary labels are not physical or authoritative scientific evidence; pair growth is quadratic; and the separately mentioned ZIP is unverified. In particular, `safeDisplayRate` does not establish safe flashing or accessibility. The source snapshot remains unchanged.
+
+The integrated archive's structural check, all 57 Archive Steward tests, its four-family manifest/hash report and existing focused artifact suites passed. The archive now contains 22 concepts and 35 source records; earlier counts above describe their historical checkpoints. Existing browser limits are unchanged.
+
 ## Rights and privacy boundary
 
-Exact-commit CC0 provenance was reviewed separately for Reality Atlas, Lumen Commons and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.
+Exact-commit CC0 provenance was reviewed separately for Reality Atlas, Lumen Commons, Universal Color/Ontology and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.
 
 These are pre-publication content checks. The initial public repository’s owner, public visibility, README, and CC BY 4.0 license were verified before adding this edition. The placeholder README is replaced by the archive index, and its existing license is preserved unchanged. No source-project history or application deployment is included. SHA-256 values in `data/checksums.json` provide file-integrity comparison, not proof of scientific truth or rights. These checks do not certify license compatibility, clinical or educational efficacy, exhaustive absence of secrets, account completeness, or full source-project correctness.

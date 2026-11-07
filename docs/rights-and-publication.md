@@ -10,13 +10,15 @@ The included Lumen Commons source and generated standalone retain their [CC0 lic
 
 The unchanged Reality Atlas HTML is separately covered by [CC0 1.0 Universal](../tools/reality-atlas/LICENSE.CC0-1.0.txt). The preserved cooperation/rescue source files have their own exact-revision [CC0 license](../artifacts/cooperation-rescue/LICENSE); their original filenames and hashes are recorded in the [source manifest](../artifacts/cooperation-rescue/source-manifest.json). Existing projects and any quoted or referenced third-party works retain their own rights. This compilation license does not relicense upstream source trees, assets, private originals, or other works not included here. It is not a blanket authorization for unrelated data or a guarantee of legal clearance.
 
+The [Universal Color and Ontology toolkit](../tools/universal-color-ontology/README.md) preserves 12 unchanged files under its exact-source [CC0 license](../tools/universal-color-ontology/upstream/LICENSE). Its archive README and provenance manifest are new CC BY 4.0 documentation. Existing source credits remain intact; passing tests and a declared root license are not a legal or scientific audit.
+
 ## Different upstream licenses
 
 Reviewed source families use different terms. The educational-universe repository reports CC0-1.0. AR Buddy Commons separates AGPL-3.0-or-later source from CC-BY-SA-4.0 documentation/prompts/curricula and a future CERN-OHL-S-2.0 hardware direction. Other repositories have mixed or absent root licensing. [SRC-007, SRC-008, SRC-009]
 
 These are observations from the reviewed records, not a legal audit. File-level notices, dependency licenses, asset-store agreements, authorship, generated materials, and inherited history may introduce additional obligations. A root license does not prove that every bundled file can be redistributed under it.
 
-This archive supplies fresh summaries and minimal quotations for provenance. It includes an unchanged Reality Atlas HTML artifact, a bounded cooperation/rescue authoring kit, and Lumen Commons source plus its reproducible standalone build, each with separately verified CC0 source provenance and complete license text. It does not bulk-copy upstream source trees, asset packs, artwork, audio, or full design documents. If excerpts are later expanded, review their rights and required attribution before inclusion.
+This archive supplies fresh summaries and minimal quotations for provenance. It includes an unchanged Reality Atlas HTML artifact, a bounded cooperation/rescue authoring kit, Lumen Commons source plus its reproducible standalone build, and a bounded Universal Color/Ontology source toolkit, each with separately verified CC0 source provenance and complete license text. It does not bulk-copy upstream source trees, asset packs, artwork, audio, or full design documents. If excerpts are later expanded, review their rights and required attribution before inclusion.
 
 ## Material excluded from this edition
 

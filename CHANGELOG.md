@@ -1,5 +1,12 @@
 # Changelog
 
+## Universal Color and Ontology preservation, 2026-11-07
+
+- Added 12 unchanged CC0 upstream files for two dependency-free source packages, with separate license, exact hashes and a new archive README.
+- Reran all 29 preserved Node tests; documented input-validation, vocabulary, display-rate and missing-ZIP limits without altering historical source.
+- Added one source/concept record and a fourth artifact-family registry entry, navigation and a narrow validator allowance for the included modules/license.
+- No app, flashing renderer, network service, package publication or scientific/accessibility certification is supplied.
+
 ## Archive Steward report comparison 0.2, 2026-11-06
 
 - Added read-only `--compare` support for a selected saved local report, with exact changes to concept next steps/status, artifact rights/verification declarations, selected source metadata and findings.

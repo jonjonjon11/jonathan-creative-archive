@@ -1,0 +1,13 @@
+{
+  "name": "@educational-universe/universal-color",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic color, pixel, visual-channel and semantic mapping primitives for the Universal Node Graph.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

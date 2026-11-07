@@ -1,13 +1,16 @@
 {
   "schema_version": "1.0",
-  "review_date": "2026-11-06",
+  "review_date": "2026-11-07",
   "scope": "Registry of recovered artifacts already included in this archive, not a catalog of every original tool or a legal clearance record.",
   "artifacts": [
     {
       "id": "ART-001",
       "title": "Reality Atlas Appearance 0.3.1",
       "path": "tools/reality-atlas",
-      "source_ids": ["SRC-019", "SRC-033"],
+      "source_ids": [
+        "SRC-019",
+        "SRC-033"
+      ],
       "rights": {
         "license_declared": "CC0-1.0",
         "license_path": "tools/reality-atlas/LICENSE.CC0-1.0.txt",
@@ -31,7 +34,9 @@
       "id": "ART-002",
       "title": "Cooperation and rescue mission kit",
       "path": "artifacts/cooperation-rescue",
-      "source_ids": ["SRC-020"],
+      "source_ids": [
+        "SRC-020"
+      ],
       "rights": {
         "license_declared": "CC0-1.0",
         "license_path": "artifacts/cooperation-rescue/LICENSE",
@@ -50,7 +55,9 @@
       "id": "ART-003",
       "title": "Lumen Commons 0.1",
       "path": "tools/lumen-commons",
-      "source_ids": ["SRC-034"],
+      "source_ids": [
+        "SRC-034"
+      ],
       "rights": {
         "license_declared": "CC0-1.0",
         "license_path": "tools/lumen-commons/LICENSE",
@@ -63,6 +70,27 @@
         "limitations": "24 Node tests and build/static checks passed. Fresh browser suite blocked before page load; no educational efficacy or target-device acceptance."
       },
       "preserved_manifest": "tools/lumen-commons/source-review-manifest.json",
+      "pinned_files": []
+    },
+    {
+      "id": "ART-004",
+      "title": "Universal Color and Ontology Core v1",
+      "path": "tools/universal-color-ontology",
+      "source_ids": [
+        "SRC-035"
+      ],
+      "rights": {
+        "license_declared": "CC0-1.0",
+        "license_path": "tools/universal-color-ontology/upstream/LICENSE",
+        "scope": "Twelve unchanged upstream files named in source-review-manifest.json; archive README and manifest are CC BY 4.0.",
+        "review_record": "tools/universal-color-ontology/README.md"
+      },
+      "verification": {
+        "status": "node_source_tests_passed_known_input_limits",
+        "record": "tools/universal-color-ontology/README.md",
+        "limitations": "29 preserved Node tests passed. Source toolkit, no UI; input-validation gaps and uncited vocabulary labels remain. No photosensitivity, accessibility or scientific certification."
+      },
+      "preserved_manifest": "tools/universal-color-ontology/source-review-manifest.json",
       "pinned_files": []
     }
   ]

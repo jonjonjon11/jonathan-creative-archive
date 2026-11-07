@@ -8,6 +8,6 @@ The edition is a documentation dataset, not a model benchmark or an exhaustive a
 
 ## Recovered-artifact registry
 
-`artifacts.json` records the three recovered artifact families included in the archive. It adds stable artifact IDs, local paths, source IDs, declared license scope, license/review file locations, verification status/limits, and preserved manifest or pinned-file references. It does not certify rights, change any license, enumerate every support script, or upgrade a historical test claim.
+`artifacts.json` records the four recovered artifact families included in the archive. It adds stable artifact IDs, local paths, source IDs, declared license scope, license/review file locations, verification status/limits, and preserved manifest or pinned-file references. It does not certify rights, change any license, enumerate every support script, or upgrade a historical test claim.
 
 [Archive Steward](../tools/archive-steward/README.md) reads this registry together with concepts, sources and checksums to produce an offline review report. The registry and checker are new editorial tools, not newly recovered historical sources. Keep checksum updates separate from the read-only check so changed files require deliberate review.

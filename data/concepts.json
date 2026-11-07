@@ -368,6 +368,25 @@
       "scientific_standing": "established_model_scoped",
       "limitations": "Source/generated prototype with 24 passing Node tests and static build checks, but fresh browser testing blocked before page load. Not a validated curriculum, live MMORPG or certified accessible system.",
       "next_step": "Run the preserved browser suite and deliberate device/persistence/audio/accessibility checks before extending the lessons or hosting it."
+    },
+    {
+      "id": "CON-022",
+      "title": "Color and ontology source toolkit",
+      "tags": [
+        "education",
+        "math",
+        "music",
+        "color",
+        "tools"
+      ],
+      "summary": "Use inspectable color conversions, semantic visual representations, a finite vocabulary and bounded generators as reusable foundations for learning tools.",
+      "source_ids": [
+        "SRC-035"
+      ],
+      "artifact_status": "source_inspected",
+      "scientific_standing": "design_mapping",
+      "limitations": "29 preserved Node tests pass, but source has documented input-validation gaps. Semantic colors and registry labels are not physical truth; display-rate names do not certify flashing safety. No UI or complete knowledge graph.",
+      "next_step": "Build a separately tested derivative with finite/tuning/large-integer validation and static-by-default presentation; add authoritative citations before treating registry entries as evaluated knowledge."
     }
   ]
 }

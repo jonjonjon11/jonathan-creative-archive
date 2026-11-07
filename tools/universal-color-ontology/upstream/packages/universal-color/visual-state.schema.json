@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UniversalVisualState",
+  "type": "object",
+  "required": [
+    "rgba8",
+    "linearRgb",
+    "luminance",
+    "shape",
+    "mappingStatus",
+    "legend"
+  ],
+  "properties": {
+    "rgba8": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "type": "integer", "minimum": 0, "maximum": 255 }
+    },
+    "linearRgb": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "type": "number" }
+    },
+    "oklch": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "type": "number" }
+    },
+    "luminance": { "type": "number" },
+    "shape": { "type": "string" },
+    "size": { "type": "number", "minimum": 0 },
+    "emission": { "type": "number", "minimum": 0 },
+    "sharpness": { "type": "number", "minimum": 0, "maximum": 1 },
+    "blurPx": { "type": "number", "minimum": 0 },
+    "roughness": { "type": "number", "minimum": 0, "maximum": 1 },
+    "metallic": { "type": "number", "minimum": 0, "maximum": 1 },
+    "transmission": { "type": "number", "minimum": 0, "maximum": 1 },
+    "rotationHz": { "type": "number" },
+    "vibrationHz": { "type": "number", "minimum": 0 },
+    "pulseHz": { "type": "number", "minimum": 0 },
+    "flickerHz": { "type": "number", "minimum": 0 },
+    "jitter": { "type": "number", "minimum": 0 },
+    "turbulence": { "type": "number", "minimum": 0 },
+    "fieldRadius": { "type": "number", "minimum": 0 },
+    "fieldStrength": { "type": "number", "minimum": 0 },
+    "trailLength": { "type": "number", "minimum": 0 },
+    "probability": { "type": "number", "minimum": 0, "maximum": 1 },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "uncertainty": { "type": "number", "minimum": 0, "maximum": 1 },
+    "mappingStatus": { "type": "string" },
+    "legend": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

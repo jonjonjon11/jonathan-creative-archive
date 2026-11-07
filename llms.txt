@@ -2,7 +2,7 @@
 
 > A selective, source-linked archive of educational worlds, scientific visualization, music, martial arts community spaces, cooperative rescue game concepts, and carefully qualified medicine-adjacent ideas.
 
-Status: first public edition, 2026-11-06. Newly written archive content: CC BY 4.0. Included unchanged Reality Atlas HTML, Lumen Commons source/generated standalone, and preserved cooperation/rescue source: separate CC0-1.0 licenses. Other upstream rights are preserved.
+Status: first public edition, 2026-11-06. Newly written archive content: CC BY 4.0. Included unchanged Reality Atlas HTML, Lumen Commons source/generated standalone, preserved Universal Color/Ontology source, and preserved cooperation/rescue source: separate CC0-1.0 licenses. Other upstream rights are preserved.
 Coverage: incomplete. Historical source reports are not new runtime verification.
 Privacy: exact private conversation/document locators are excluded.
 
@@ -26,6 +26,8 @@ Privacy: exact private conversation/document locators are excluded.
 - [Cooperation/rescue mission kit](artifacts/cooperation-rescue/README.md): preserved CC0 mission data and Python authoring/reference validator; 25 tests passed. Draft/unmerged source, not a playable game or certified training system.
 
 - [Lumen Commons 0.1](tools/lumen-commons/README.md): distinct CC0 educational browser adventure with reproducible source; 24 Node tests and static build checks passed, fresh browser test blocked before page load.
+
+- [Universal Color + Ontology Core v1](tools/universal-color-ontology/README.md): preserved CC0 source toolkit for color representations, a finite vocabulary and bounded generators; 29 Node tests passed. Known input gaps; no UI, validated knowledge graph or flashing/accessibility safety claim.
 
 ## Offline maintenance helper
 

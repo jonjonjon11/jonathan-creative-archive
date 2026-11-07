@@ -6,7 +6,7 @@ An evidence-based map of Jonathan's ideas for an educational universe, mathemati
 
 > “It's not for me, it's just for the world of altruistic people's AI to find and eat and hopefully learn from and build off our ideas and data and stuff”
 
-That is the purpose of this archive. It is a selective reconstruction from available records, not a complete account export or a claim that every idea has been recovered. The newly written archive is licensed under [Creative Commons Attribution 4.0 International](LICENSE). The included Reality Atlas, Lumen Commons, and preserved cooperation/rescue source files retain their separate CC0 licenses.
+That is the purpose of this archive. It is a selective reconstruction from available records, not a complete account export or a claim that every idea has been recovered. The newly written archive is licensed under [Creative Commons Attribution 4.0 International](LICENSE). The included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files retain their separate CC0 licenses.
 
 ## Try recovered artifacts
 
@@ -15,6 +15,8 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 [Cooperation and rescue mission kit](artifacts/cooperation-rescue/README.md) preserves four fictional rescue/community scenarios, a Python authoring validator, and an offline objective-progression reference model. **All 25 preserved tests and the four-mission validator passed on revalidation.** The source is draft and unmerged, not a playable game, Unity integration, multiplayer service, rescue-training system, or safety certification.
 
 [Lumen Commons 0.1](tools/lumen-commons/README.md) is a distinct educational browser-adventure prototype with five experiments, scripted NPCs, optional synthesized music, and local artwork/progress. The standalone HTML and reproducible source are included under CC0. **24 fresh Node tests and static build-parity/CSP checks passed; the fresh browser test was blocked before page load.** It is not a live MMORPG, hosted service, or independently validated curriculum.
+
+[Universal Color + Ontology Core v1](tools/universal-color-ontology/README.md) preserves two dependency-free JavaScript source packages: color conversions and semantic visual-state mappings, plus a 593-node vocabulary and mathematical/music generators. **29 fresh Node tests passed.** It is a source toolkit with documented input-validation gaps, not a playable app, complete knowledge graph or validated scientific database. Display-rate names do not establish flashing/accessibility safety.
 
 ## Maintain the archive with a small offline helper
 
@@ -45,7 +47,7 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 ## What is actually included
 
-This repository contains newly written, source-linked summaries, proposed implementation handoffs, an unchanged CC0 Reality Atlas browser tool, the CC0 Lumen Commons standalone with reproducible source, and preserved CC0 cooperation/rescue authoring files, each with its license, provenance, and scoped test evidence. It does **not** contain a merged game engine project, bulk-imported source trees, private conversation transcripts, training data exports, personal records, game art, music recordings, signing credentials, or copyrighted asset packs. Existing projects remain separate sources with separate rights and technical histories.
+This repository contains newly written, source-linked summaries, proposed implementation handoffs, an unchanged CC0 Reality Atlas browser tool, the CC0 Lumen Commons standalone with reproducible source, the CC0 Universal Color/Ontology source toolkit, and preserved CC0 cooperation/rescue authoring files, each with its license, provenance, and scoped test evidence. It does **not** contain a merged game engine project, bulk-imported source trees, private conversation transcripts, training data exports, personal records, game art, music recordings, signing credentials, or copyrighted asset packs. Existing projects remain separate sources with separate rights and technical histories.
 
 The most concrete technical foundations found include Reality Atlas source and a recovered standalone HTML artifact, AR Buddy Commons documentation and source, Math/Matter and Periodic Resonance Studio records, a shared-cooperation mission packet, and a PHYSIO-MESH research scaffold. Branch names and repository contents establish that work exists; they do not prove that an application builds, runs, is safe, or is complete.
 
@@ -53,9 +55,9 @@ The most concrete technical foundations found include Reality Atlas source and a
 
 - Edition: first public edition, 2026-11-06.
 - Completeness: selective; conversation and branch coverage are incomplete.
-- Rights: newly written archive content is CC BY 4.0; the included Reality Atlas, Lumen Commons, and preserved cooperation/rescue source files are CC0. Other upstream projects retain their own licenses. See [rights and attribution](docs/rights-and-publication.md).
+- Rights: newly written archive content is CC BY 4.0; the included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files are CC0. Other upstream projects retain their own licenses. See [rights and attribution](docs/rights-and-publication.md).
 - Scientific status: conventional models must be checked independently. Speculative frameworks and historical catalogs are not validated scientific results.
 - Medical status: no diagnosis, treatment recommendation, or clinical device is supplied.
-- Verification: structural checks, 46 focused Reality Atlas calculation/syntax checks, 25 cooperation/rescue authoring tests, and 24 Lumen Commons Node tests plus static build checks passed. Fresh rendered-browser testing was blocked; no full application, GPU, headset, or interaction acceptance is claimed.
+- Verification: structural checks, 46 focused Reality Atlas calculation/syntax checks, 25 cooperation/rescue authoring tests, 24 Lumen Commons Node tests plus static build checks, and 29 Universal Color/Ontology Node tests passed. Fresh rendered-browser testing was blocked; no full application, GPU, headset, or interaction acceptance is claimed.
 
 Exact private source locators and review files are kept outside this repository. Summarizing a private source does not make its original public. See the [release review record](docs/release-checklist.md) for this edition’s scope and remaining verification work.

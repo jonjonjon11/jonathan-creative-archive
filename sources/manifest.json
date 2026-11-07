@@ -385,6 +385,20 @@
       "artifact_license": "CC0-1.0",
       "source_commit": "6ab40aa56ce9b5fd94908bda3b0e55cdb3e1f33b",
       "artifact_sha256": "e802f3137cf16d0ce693f28c70182a32aadaef68b8547905d000433ee477d1e2"
+    },
+    {
+      "id": "SRC-035",
+      "title": "Universal Color and Ontology Core v1 source toolkit",
+      "evidence_class": "repository_inspection",
+      "source_date": "2026-09-15",
+      "access": "private_source_with_reviewed_public_artifact",
+      "public_url": null,
+      "findings": "Twelve exact-source CC0 files preserved: color/visual-state modules, 593-node finite vocabulary, mathematical/music generators, schema, package metadata and tests. 29 fresh Node tests passed.",
+      "limitations": "Source toolkit only; no UI or validated scientific database. Known tuning/non-finite/unsafe-integer input gaps, uncited evaluated-data labels, quadratic pair growth and unverified separate ZIP. Display-rate naming is not photosensitivity/accessibility assurance.",
+      "locator_policy": "Private source links withheld; source identity, original paths and revision retained as provenance metadata.",
+      "included_artifact": "tools/universal-color-ontology/README.md",
+      "artifact_license": "CC0-1.0",
+      "source_commit": "e17aaa014a9cf66b6a510c01c5563409780b8656"
     }
   ]
 }
