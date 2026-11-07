@@ -1,5 +1,12 @@
 # Changelog
 
+## Idea Finder 0.1, 2026-11-07
+
+- Added a small offline concept-search helper with literal all-terms matching, exact tag/status filters, bounded results and transparent text ranking.
+- Results keep next steps, scientific/artifact status, source access and evidence limits together with related included artifacts and their declared rights scopes.
+- Shared source references are explicitly leads to inspect, not proof that an artifact implements a concept. No private-source retrieval, network, edits, execution or publication is performed.
+- Added synthetic tests and usage documentation; existing concept, source and recovered-artifact bytes remain unchanged by this helper addition.
+
 ## Universal Color and Ontology preservation, 2026-11-07
 
 - Added 12 unchanged CC0 upstream files for two dependency-free source packages, with separate license, exact hashes and a new archive README.

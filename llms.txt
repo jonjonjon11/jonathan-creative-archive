@@ -29,9 +29,11 @@ Privacy: exact private conversation/document locators are excluded.
 
 - [Universal Color + Ontology Core v1](tools/universal-color-ontology/README.md): preserved CC0 source toolkit for color representations, a finite vocabulary and bounded generators; 29 Node tests passed. Known input gaps; no UI, validated knowledge graph or flashing/accessibility safety claim.
 
-## Offline maintenance helper
+## Offline helpers
 
 - [Archive Steward 0.2](tools/archive-steward/README.md): newly written read-only Python helper for checksums, declared rights/status inventory, an existing-next-step review queue and comparison between saved local reports. No network or autonomous publication; CC BY 4.0 under the compilation license.
+
+- [Idea Finder 0.1](tools/idea-finder/README.md): new read-only local concept search with tag/status filters, next steps, attributed source records and scoped artifact rights/verification declarations. Literal metadata matching, not semantic search or proof of implementation.
 
 ## Structured records and implementation
 

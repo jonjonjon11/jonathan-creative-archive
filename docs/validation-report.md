@@ -64,6 +64,16 @@ Known limits are recorded in the toolkit README: tuning validation differs betwe
 
 The integrated archive's structural check, all 57 Archive Steward tests, its four-family manifest/hash report and existing focused artifact suites passed. The archive now contains 22 concepts and 35 source records; earlier counts above describe their historical checkpoints. Existing browser limits are unchanged.
 
+## Idea Finder 0.1
+
+Command from the repository root: `python3 -m unittest discover -s tools/idea-finder/tests -p 'test_*.py' -v`.
+
+Result on 2026-11-07: all 32 synthetic tests passed under Python 3.12.14. Coverage includes literal all-terms matching, Unicode normalization, exact tag/status filters, deterministic ranking and ties, duplicate-term handling, bounded/omitted results, source attribution, artifact relationship limits, unknown fields, malformed/oversized inputs, nonregular files, symlinks including a root loop, inert metadata paths, controlled errors, terminal escaping and unchanged archive bytes.
+
+The tool reads only the three specified metadata files. It does not run artifact code, check URLs, certify rights, evaluate science or claim semantic retrieval. A shared source ID is not proof of implementation. The existing browser-verification limits remain unchanged.
+
+Integrated after the Universal Color/Ontology preservation release: real queries for music, rescue, inspected physics, Lumen and ontology resolve against the expanded 22-concept/35-source archive. The ontology result preserves its known input-validation and display-safety limits. All prior artifact files, registry/source/concept records and licenses are unchanged by this helper addition.
+
 ## Rights and privacy boundary
 
 Exact-commit CC0 provenance was reviewed separately for Reality Atlas, Lumen Commons, Universal Color/Ontology and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.

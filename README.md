@@ -18,6 +18,10 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 [Universal Color + Ontology Core v1](tools/universal-color-ontology/README.md) preserves two dependency-free JavaScript source packages: color conversions and semantic visual-state mappings, plus a 593-node vocabulary and mathematical/music generators. **29 fresh Node tests passed.** It is a source toolkit with documented input-validation gaps, not a playable app, complete knowledge graph or validated scientific database. Display-rate names do not establish flashing/accessibility safety.
 
+## Find an idea to build
+
+[Idea Finder 0.1](tools/idea-finder/README.md) searches the local public metadata and returns concepts with their next steps, evidence limits and related artifacts. Try `python3 tools/idea-finder/idea_finder.py . "rescue"`, or filter by a tag such as `music`, `physics` or `education`. It runs offline with Python and no extra packages. Results preserve source-access, licensing and verification limits; matches do not prove an idea is implemented.
+
 ## Maintain the archive with a small offline helper
 
 [Archive Steward 0.2](tools/archive-steward/README.md) is the first newly built archive helper: a dependency-free Python CLI that checks file integrity and preserved-source hashes, reports declared license scopes and evidence limits, and turns the existing concept next steps into a review queue. It can now compare saved reports to show changed bytes, next steps, source declarations and license/verification limits. All 57 synthetic tests pass. It is read-only, runs offline, and neither recovers private content nor publishes anything. See its README for commands and limits.
