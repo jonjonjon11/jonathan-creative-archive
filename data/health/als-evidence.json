@@ -1,0 +1,459 @@
+{
+  "schema_version": "1.0",
+  "pack": {
+    "id": "PACK-ALS-001",
+    "title": "ALS evidence and research foundations",
+    "version": "0.1.0",
+    "review_status": "draft_pending_qualified_review",
+    "scope": "Original offline educational synthesis of selected ALS biology, care, trial outcomes, regulatory decisions, and research methods.",
+    "as_of": "2026-11-07",
+    "license": "CC BY 4.0 for original selection and synthesis; cited source material retains its own rights.",
+    "limits": [
+      "Selected sources and results, not an exhaustive systematic review or individualized clinical guidance.",
+      "Source publication dates, follow-up design, genetic subgroup, endpoint, and uncertainty are retained with the relevant claims."
+    ]
+  },
+  "sources": [
+    {
+      "id": "ALS-BIB-001",
+      "title": "Amyotrophic Lateral Sclerosis",
+      "url": "https://medlineplus.gov/amyotrophiclateralsclerosis.html",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "HTML overview retrieved HTTP 200 and relevant biology/care text inspected"
+    },
+    {
+      "id": "ALS-BIB-002",
+      "title": "Amyotrophic lateral sclerosis (MedlinePlus Genetics)",
+      "url": "https://medlineplus.gov/genetics/condition/amyotrophic-lateral-sclerosis/",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "HTML retrieved HTTP 200 and genetics section inspected"
+    },
+    {
+      "id": "ALS-BIB-003",
+      "title": "SOD1 gene",
+      "url": "https://medlineplus.gov/genetics/gene/sod1/",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "HTML retrieved HTTP 200 and normal function/ALS sections inspected"
+    },
+    {
+      "id": "ALS-BIB-004",
+      "title": "C9orf72 gene",
+      "url": "https://medlineplus.gov/genetics/gene/c9orf72/",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "HTML retrieved HTTP 200 and function/repeat-expansion sections inspected"
+    },
+    {
+      "id": "ALS-BIB-005",
+      "title": "TARDBP gene",
+      "url": "https://medlineplus.gov/genetics/gene/tardbp/",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "HTML retrieved HTTP 200 and normal function/ALS sections inspected"
+    },
+    {
+      "id": "ALS-BIB-006",
+      "title": "FUS gene",
+      "url": "https://medlineplus.gov/genetics/gene/fus/",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "HTML retrieved HTTP 200 and normal function/ALS sections inspected"
+    },
+    {
+      "id": "ALS-BIB-007",
+      "title": "Trial of Antisense Oligonucleotide Tofersen for SOD1 ALS",
+      "url": "https://doi.org/10.1056/NEJMoa2204705",
+      "source_type": "primary_trial",
+      "published": 2022,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "Consensus search then mandatory fetch; complete returned publication abstract inspected, not paywalled full methods"
+    },
+    {
+      "id": "ALS-BIB-008",
+      "title": "FDA approves treatment of amyotrophic lateral sclerosis associated with a mutation in the SOD1 gene",
+      "url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-amyotrophic-lateral-sclerosis-associated-mutation-sod1-gene",
+      "source_type": "regulatory",
+      "published": "2023-04-25",
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "Official HTML retrieved HTTP 200, action/effectiveness/accelerated approval sections inspected"
+    },
+    {
+      "id": "ALS-BIB-009",
+      "title": "Long-Term Tofersen in SOD1 Amyotrophic Lateral Sclerosis",
+      "url": "https://doi.org/10.1001/jamaneurol.2025.4946",
+      "source_type": "primary_trial",
+      "published": 2026,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "Consensus search+fetch abstract; Crossref title lookup independently confirmsDOI and print date2026-02-01"
+    },
+    {
+      "id": "ALS-BIB-010",
+      "title": "Trial of Sodium Phenylbutyrate–Taurursodiol for Amyotrophic Lateral Sclerosis",
+      "url": "https://doi.org/10.1056/NEJMoa1916945",
+      "source_type": "primary_trial",
+      "published": 2020,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "Consensus search+fetch full returned abstract inspected"
+    },
+    {
+      "id": "ALS-BIB-011",
+      "title": "Amylyx Pharmaceuticals, Inc.; Withdrawal of Approval of New Drug Application for RELYVRIO",
+      "url": "https://www.federalregister.gov/documents/2025/08/29/2025-16646/amylyx-pharmaceuticals-inc-withdrawal-of-approval-of-new-drug-application-for-relyvrio-sodium",
+      "source_type": "regulatory",
+      "published": "2025-08-29",
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "Official JSONmetadata and full body HTML retrievedHTTP200 and read"
+    },
+    {
+      "id": "ALS-BIB-012",
+      "title": "Methodological standards, quality of reporting and regulatory compliance in animal research on amyotrophic lateral sclerosis: a systematic review",
+      "url": "https://consensus.app/papers/methodological-standards-quality-of-reporting-and-fernandes-franco/5ea0ebb55c015b409802bdc89061c91e/?utm_source=chatgpt",
+      "source_type": "methods",
+      "published": 2019,
+      "checked": "2026-11-07",
+      "rights_note": "Used for factual attribution and original synthesis. Source prose, abstracts, figures, tables, and media are not reproduced; source rights remain with their holders.",
+      "inspection": "Consensus search+fetch abstract inspected"
+    },
+    {
+      "id": "ALS-BIB-013",
+      "title": "Amylyx Pharmaceuticals Announces Topline Results From Global Phase 3 PHOENIX Trial of AMX0035 in ALS",
+      "url": "https://investors.amylyx.com/news-releases/news-release-details/amylyx-pharmaceuticals-announces-topline-results-global-phase-3",
+      "source_type": "sponsor_report",
+      "published": "2024-03-08",
+      "checked": "2026-11-07",
+      "rights_note": "Sponsor text remains under its own rights; only selected factual measurements, study identifiers, and original summaries are included.",
+      "inspection": "HTTP 200; publication date, PHOENIX Study Results, and About the PHOENIX Trial sections inspected. No registry API data or full peer-reviewed PHOENIX paper was used for this row.",
+      "source_response_sha256": "98c85650c63d3f7a95dc6d24029b09abb56aa8f81180a89c16cd78644686a6e9"
+    },
+    {
+      "id": "ALS-BIB-014",
+      "title": "Design of a Randomized, Placebo-Controlled, Phase 3 Trial of Tofersen Initiated in Clinically Presymptomatic SOD1 Variant Carriers: the ATLAS Study",
+      "url": "https://consensus.app/papers/design-of-a-randomized-placebocontrolled-phase-3-trial-of-benatar-wuu/149d258962b15be4b8024a7dd9c8f7d7/?utm_source=chatgpt",
+      "source_type": "primary_trial",
+      "published": 2022,
+      "checked": "2026-11-07",
+      "rights_note": "The original publication and abstract retain publisher/author rights; this record does not relicense or reproduce the abstract. Bibliographic titles, measurements, and original factual selection are included.",
+      "inspection": "Consensus fetch returned the primary publication abstract and bibliographic record; only factual fields and original summaries are embedded here. Full text was not used.",
+      "source_response_sha256": "45569623e1fdb2b2fc360f9651370edf997104080274ff973758fe5cd7bbf40c"
+    }
+  ],
+  "claims": [
+    {
+      "id": "ALS-CLAIM-001",
+      "topic": "biology",
+      "statement": "ALS is a disorder of motor neurons involved in voluntary movement. Weakness and loss of movement can affect speaking, swallowing, limb function, and breathing.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "ALS-BIB-001"
+      ],
+      "population": "People with ALS",
+      "limitations": [
+        "Presentation and progression vary; this overview does not identify the cause of an individual's symptoms."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-002",
+      "topic": "genetic heterogeneity",
+      "statement": "ALS has multiple genetic and nonfamilial presentations. SOD1, C9orf72, TARDBP, and FUS are examples of associated genes; a result in one genetic subgroup cannot be assumed to apply to all ALS.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "ALS-BIB-002",
+        "ALS-BIB-003",
+        "ALS-BIB-004",
+        "ALS-BIB-005",
+        "ALS-BIB-006"
+      ],
+      "population": "ALS across different genetic and clinical backgrounds",
+      "limitations": [
+        "These four genes are not an exhaustive catalog; absence of a family history does not establish absence of a relevant genetic variant."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-003",
+      "topic": "SOD1 biology",
+      "statement": "SOD1 normally participates in handling superoxide radicals. ALS-associated changes can produce harmful protein effects, motivating gene-specific research.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "ALS-BIB-003"
+      ],
+      "population": "SOD1-associated ALS biology",
+      "limitations": [
+        "Normal gene function and disease-associated protein toxicity are different questions; mechanisms remain an active research area."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-004",
+      "topic": "C9orf72 biology",
+      "statement": "A repeat expansion in C9orf72 is associated with ALS and frontotemporal dementia. This links repeat biology and nervous-system disease while leaving multiple mechanistic questions to investigate.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "ALS-BIB-004"
+      ],
+      "population": "C9orf72-associated ALS and frontotemporal dementia",
+      "limitations": [
+        "An association or proposed molecular pathway is not a demonstration that reversing one process will restore function."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-005",
+      "topic": "RNA and protein biology",
+      "statement": "TARDBP encodes TDP-43, and FUS encodes another DNA/RNA-binding protein. RNA processing and the location and handling of proteins are important lines of ALS research.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "ALS-BIB-005",
+        "ALS-BIB-006"
+      ],
+      "population": "ALS-related molecular research",
+      "limitations": [
+        "Protein aggregation is an observation; a complete causal mechanism and a successful therapeutic intervention require further evidence."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-006",
+      "topic": "care and daily function",
+      "statement": "ALS care includes symptom management and support for nutrition, breathing, mobility, communication, and daily function. Physical, occupational, and speech therapy and communication technologies can contribute to care.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "ALS-BIB-001"
+      ],
+      "population": "People receiving ALS care",
+      "limitations": [
+        "Care is tailored to each person's needs and preferences; this record gives no treatment selection or dosing instruction."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-007",
+      "topic": "tofersen VALOR randomized endpoint",
+      "statement": "VALOR randomized 108 participants with SOD1 ALS (72 tofersen, 36 placebo). In the predicted faster-progressing primary subgroup (39 and 21), the week-28 ALSFRS-R changes were -6.98 and -8.14. The reported primary between-group difference was 1.2 points (95% CI -3.2 to 5.5); the primary clinical endpoint was not met.",
+      "evidence_type": "randomized_trial",
+      "source_ids": [
+        "ALS-BIB-007"
+      ],
+      "population": "Adults with SOD1 ALS; primary analysis in the predicted faster-progressing subgroup",
+      "limitations": [
+        "The primary subgroup is not all 108 randomized participants.",
+        "The source reports P=0.97 for its specified analysis. Do not infer or replace that value from the rounded means or confidence interval.",
+        "Biomarker reductions are separate from the primary functional result."
+      ],
+      "quantitative": {
+        "outcome": "Between-group difference in ALSFRS-R change",
+        "unit": "ALSFRS-R points",
+        "timepoint": "28 weeks",
+        "estimate": 1.2,
+        "ci95_low": -3.2,
+        "ci95_high": 5.5,
+        "interpretation": "The reported interval spans zero. The trial did not establish its prespecified primary functional benefit."
+      }
+    },
+    {
+      "id": "ALS-CLAIM-008",
+      "topic": "tofersen FDA biomarker decision",
+      "statement": "On 2023-04-25 the US FDA granted accelerated approval to tofersen (Qalsody) for adults with ALS associated with an SOD1 mutation, based on reduction in plasma neurofilament light chain, a surrogate considered reasonably likely to predict clinical benefit.",
+      "evidence_type": "regulatory_decision",
+      "source_ids": [
+        "ALS-BIB-008"
+      ],
+      "population": "US regulatory indication for adults with SOD1-associated ALS",
+      "limitations": [
+        "The indication is genetically specific.",
+        "The regulatory basis, a biomarker result, and direct evidence of functional or survival benefit should remain separately recorded."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-009",
+      "topic": "tofersen delayed-start follow-up",
+      "statement": "At week 52, reported ALSFRS-R changes were -6.0 in the early-start group and -9.5 in the delayed-start group, a difference of 3.5 points (95% CI 0.4 to 6.7). The delayed-start group began tofersen at week 28.",
+      "evidence_type": "open_label_followup",
+      "source_ids": [
+        "ALS-BIB-007"
+      ],
+      "population": "Early-start versus delayed-start groups in integrated VALOR and open-label extension analyses",
+      "limitations": [
+        "This is not a comparison against placebo throughout 52 weeks.",
+        "These later analyses were not adjusted for multiplicity and should not replace the week-28 primary result."
+      ],
+      "quantitative": {
+        "outcome": "Early-start minus delayed-start ALSFRS-R change",
+        "unit": "ALSFRS-R points",
+        "timepoint": "52 weeks",
+        "estimate": 3.5,
+        "ci95_low": 0.4,
+        "ci95_high": 6.7,
+        "interpretation": "The reported later comparison favored early start; its delayed-start extension design must be retained."
+      }
+    },
+    {
+      "id": "ALS-CLAIM-010",
+      "topic": "tofersen long-term follow-up",
+      "statement": "The final VALOR/open-label extension publication reported numerical ALSFRS-R change over 148 weeks of -9.9 with early start and -13.5 with delayed start. Of 108 randomized participants, 95 entered the extension and 46 completed it. The authors concluded that long-term results supported benefit.",
+      "evidence_type": "open_label_followup",
+      "source_ids": [
+        "ALS-BIB-009"
+      ],
+      "population": "Integrated VALOR/open-label extension early-start and delayed-start groups",
+      "limitations": [
+        "All extension participants received tofersen.",
+        "Attrition, study design, and long-term modeling matter; the groups are not three independent trials or a continuously placebo-controlled comparison.",
+        "No confidence interval for the 148-week numerical difference is supplied in the inspected abstract; none is invented here."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-011",
+      "topic": "CENTAUR primary result",
+      "statement": "CENTAUR randomized 137 participants (89 active, 48 placebo). Over 24 weeks its modified intention-to-treat analysis reported mean ALSFRS-R slopes of -1.24 and -1.66 points per month, a difference of 0.42 (95% CI 0.03 to 0.81, P=0.03).",
+      "evidence_type": "randomized_trial",
+      "source_ids": [
+        "ALS-BIB-010"
+      ],
+      "population": "CENTAUR participants with ALS and symptom onset within 18 months",
+      "limitations": [
+        "This is a slope in points per month, not a total point difference.",
+        "Secondary outcomes were not statistically significant; later confirmatory evidence must be considered alongside this earlier result."
+      ],
+      "quantitative": {
+        "outcome": "Between-group difference in ALSFRS-R slope",
+        "unit": "ALSFRS-R points per month",
+        "timepoint": "Through 24 weeks",
+        "estimate": 0.42,
+        "ci95_low": 0.03,
+        "ci95_high": 0.81,
+        "interpretation": "The early primary result favored the studied combination; it is not a current approval or proof of benefit for all ALS."
+      }
+    },
+    {
+      "id": "ALS-CLAIM-012",
+      "topic": "PHOENIX confirmatory evidence",
+      "statement": "The FDA's formal withdrawal notice states that the 48-week randomized placebo-controlled PHOENIX trial did not meet its prespecified primary and secondary endpoints.",
+      "evidence_type": "regulatory_decision",
+      "source_ids": [
+        "ALS-BIB-011"
+      ],
+      "population": "US regulatory assessment of the confirmatory ALS study",
+      "limitations": [
+        "The inspected notice does not provide an effect estimate or confidence interval; do not infer them from the description of a negative result."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-013",
+      "topic": "RELYVRIO regulatory chronology",
+      "statement": "The FDA notice distinguishes the sponsor's planned marketing discontinuation on 2024-10-31, its voluntary withdrawal request on 2025-02-28, and formal US withdrawal of approval effective 2025-08-29.",
+      "evidence_type": "regulatory_decision",
+      "source_ids": [
+        "ALS-BIB-011"
+      ],
+      "population": "United States approval and marketing chronology",
+      "limitations": [
+        "These dates describe different events and do not establish other jurisdictions' dates or an individual's access to a medicine."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-014",
+      "topic": "preclinical methods",
+      "statement": "A systematic review of 569 SOD1 mouse papers published from 2005 through 2015 found absent randomization and blinding information in more than two-thirds of the reports, emphasizing the importance of reproducible methods and reporting.",
+      "evidence_type": "methodological",
+      "source_ids": [
+        "ALS-BIB-012"
+      ],
+      "population": "Historical SOD1 mouse research reports from 2005-2015",
+      "limitations": [
+        "Missing reporting does not prove that a procedure was not performed.",
+        "This is a historical reporting review, not a census of present-day ALS research or proof that an animal finding will translate to people."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-015",
+      "topic": "research questions",
+      "statement": "Which molecular and clinical subgroups predict response, and how well do biomarker changes predict outcomes that matter to people over time? These are useful questions to pursue with explicit endpoints and reproducible evidence.",
+      "evidence_type": "open_question",
+      "source_ids": [
+        "ALS-BIB-002",
+        "ALS-BIB-007",
+        "ALS-BIB-008",
+        "ALS-BIB-009"
+      ],
+      "population": "Future ALS evidence synthesis and research planning",
+      "limitations": [
+        "This is a research question derived from the recorded evidence, not a claimed discovery or a treatment recommendation."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-016",
+      "topic": "evidence interpretation",
+      "statement": "Read the endpoint, units, timepoint, population, and study design before comparing numbers. VALOR's week-28 point difference and CENTAUR's points-per-month slope estimate measure different things.",
+      "evidence_type": "methodological",
+      "source_ids": [
+        "ALS-BIB-007",
+        "ALS-BIB-010"
+      ],
+      "population": "Readers comparing ALS trial results",
+      "limitations": [
+        "Numerical size alone cannot rank treatments across different designs, populations, scales, and measurement times."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-017",
+      "topic": "PHOENIX sponsor-reported result",
+      "statement": "The sponsor's 2024-03-08 release reports that PHOENIX randomized 664 adults with ALS in a 3:2 ratio and found no statistically significant week-48 primary ALSFRS-R difference (P=0.667).",
+      "evidence_type": "sponsor_report",
+      "source_ids": [
+        "ALS-BIB-013",
+        "ALS-BIB-011"
+      ],
+      "population": "Adults with ALS in the PHOENIX trial",
+      "limitations": [
+        "This is a sponsor topline release, distinct from an independently peer-reviewed report.",
+        "The release did not supply a primary effect estimate or confidence interval; a P value cannot supply those missing values.",
+        "The allocation ratio does not establish exact group counts."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-018",
+      "topic": "ATLAS prevention research design",
+      "statement": "The 2022 ATLAS design article describes a randomized, placebo-controlled phase 3 study of initiating tofersen in selected clinically presymptomatic SOD1 variant carriers with elevated neurofilament light chain.",
+      "evidence_type": "trial_design",
+      "source_ids": [
+        "ALS-BIB-014"
+      ],
+      "population": "Selected clinically presymptomatic SOD1 variant carriers described in the design article",
+      "limitations": [
+        "A design article does not report a preventive treatment effect.",
+        "The linked correction was identified but its text was not inspected; confirm the corrected protocol before using design details.",
+        "No current recruitment status, actual enrollment, or outcome is inferred from the historical design paper."
+      ]
+    },
+    {
+      "id": "ALS-CLAIM-019",
+      "topic": "tofersen study safety",
+      "statement": "The 2022 VALOR publication reports common lumbar-puncture-related adverse events and neurologic serious adverse events in 7% of tofersen recipients.",
+      "evidence_type": "study_safety",
+      "source_ids": [
+        "ALS-BIB-007"
+      ],
+      "population": "Tofersen recipients described in the 2022 VALOR publication",
+      "limitations": [
+        "The inspected abstract does not specify a numerator, exact safety denominator, or whether this percentage covers the randomized phase alone or the combined extension.",
+        "Do not derive a participant count, placebo comparison, or individualized risk from this percentage."
+      ]
+    }
+  ]
+}

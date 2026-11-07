@@ -1,0 +1,10 @@
+{
+  "review_id": "REV-als-foundations-001",
+  "project_id": "PROJ-health-and-assistive-foundations",
+  "task_id": "TASK-als-source-review",
+  "acceptance_decision": "pending",
+  "reviewer": null,
+  "review_date": null,
+  "deliverable_summary": "Original educational ALS synthesis, factual evidence records, offline evidence code, and synthetic switch-input teaching code.",
+  "decision_rule": "Record an actual consenting reviewer, revision, checks, and decision; automated checks or an AI review are not another person's acceptance."
+}

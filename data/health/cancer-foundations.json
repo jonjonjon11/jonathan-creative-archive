@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "pack": {
+    "id": "PACK-CANCER-001",
+    "title": "Cancer biology and evidence foundations",
+    "version": "0.1.0",
+    "review_status": "draft_pending_qualified_review",
+    "scope": "Original educational synthesis of cancer biology, molecular-test interpretation, trial design, and endpoint meaning, with an offline reading path.",
+    "as_of": "2026-11-07",
+    "license": "CC BY 4.0 for original summaries; source rights remain separate.",
+    "limits": [
+      "Selected foundational concepts, rather than a comprehensive oncology guideline or review of treatment effects."
+    ]
+  },
+  "sources": [
+    {
+      "id": "CAN-S-001",
+      "title": "What Is Cancer? — National Cancer Institute",
+      "url": "https://www.cancer.gov/about-cancer/understanding/what-is-cancer",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Cited for factual concepts. This pack contains original summaries; no source prose, illustrations, tables, or participant data are reproduced. Sources retain their own rights.",
+      "inspection": "HTTP 200 HTML retrieved; cell growth, genetic changes, driver genes, heterogeneity, and metastasis sections read."
+    },
+    {
+      "id": "CAN-S-002",
+      "title": "Biomarker Testing for Cancer Treatment — National Cancer Institute",
+      "url": "https://www.cancer.gov/about-cancer/treatment/types/precision-medicine/tumor-dna-sequencing",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Cited for factual concepts. This pack contains original summaries; no source prose, illustrations, tables, or participant data are reproduced. Sources retain their own rights.",
+      "inspection": "HTTP 200 HTML retrieved; tumor testing versus inherited testing, biomarker interpretation, heterogeneity, and changing biomarkers sections read."
+    },
+    {
+      "id": "CAN-S-003",
+      "title": "Tumor Markers — National Cancer Institute",
+      "url": "https://www.cancer.gov/about-cancer/diagnosis-staging/diagnosis/tumor-markers-fact-sheet",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Cited for factual concepts. This pack contains original summaries; no source prose, illustrations, tables, or participant data are reproduced. Sources retain their own rights.",
+      "inspection": "HTTP 200 HTML retrieved; marker uses for prognosis, treatment selection, monitoring, and limitations read."
+    },
+    {
+      "id": "CAN-S-004",
+      "title": "Who Can Join a Clinical Trial? Eligibility Criteria and Trial Phases — National Cancer Institute",
+      "url": "https://www.cancer.gov/about-cancer/treatment/clinical-trials/what-are-trials/phases",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Cited for factual concepts. This pack contains original summaries; no source prose, illustrations, tables, or participant data are reproduced. Sources retain their own rights.",
+      "inspection": "HTTP 200 HTML retrieved; eligibility and phases 1 through 4 sections read."
+    },
+    {
+      "id": "CAN-S-005",
+      "title": "Clinical Trial Endpoints for the Approval of Cancer Drugs and Biologics: Guidance for Industry — FDA",
+      "url": "https://www.fda.gov/media/71195/download",
+      "source_type": "methods",
+      "published": 2018,
+      "checked": "2026-11-07",
+      "rights_note": "Cited for factual concepts. This pack contains original summaries; no source prose, illustrations, tables, or participant data are reproduced. Sources retain their own rights.",
+      "inspection": "HTTP 200 PDF retrieved and converted to text; sections III.A, III.B.2, III.B.4 on overall survival, objective response, and progression-free survival read. Guidance describes context-dependent use of endpoints."
+    },
+    {
+      "id": "CAN-S-006",
+      "title": "About Biomarkers and Qualification — FDA",
+      "url": "https://www.fda.gov/drugs/biomarker-qualification-program/about-biomarkers-and-qualification",
+      "source_type": "government_education",
+      "published": null,
+      "checked": "2026-11-07",
+      "rights_note": "Cited for factual concepts. This pack contains original summaries; no source prose, illustrations, tables, or participant data are reproduced. Sources retain their own rights.",
+      "inspection": "HTTP 200 HTML retrieved; biomarker categories and the importance of a stated context of use read."
+    }
+  ],
+  "claims": [
+    {
+      "id": "CAN-C-001",
+      "topic": "cancer biology",
+      "statement": "Cancer comprises diseases in which abnormal cells grow without normal control and can invade nearby tissue. Many cancers form solid tumors; blood cancers need not form a solid mass.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-001"
+      ],
+      "population": "General cancer biology",
+      "limitations": [
+        "Tumor behavior, lineage, stage, and molecular features vary among cancers."
+      ]
+    },
+    {
+      "id": "CAN-C-002",
+      "topic": "metastasis and cancer identity",
+      "statement": "Metastasis is spread from the original cancer site to another part of the body. Metastatic breast cancer in the lung is classified as breast cancer that has spread, rather than a new primary lung cancer.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-001"
+      ],
+      "population": "Cancer classification and metastatic disease",
+      "limitations": [
+        "A person can also develop a separate primary cancer; site alone does not establish lineage."
+      ]
+    },
+    {
+      "id": "CAN-C-003",
+      "topic": "genetic and inherited changes",
+      "statement": "Cancer involves genetic changes, but genetic does not mean inherited. Changes can arise during cell division or after environmental exposures, as well as being inherited.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-001"
+      ],
+      "population": "Origins of cancer-associated genetic changes",
+      "limitations": [
+        "An inherited susceptibility variant changes risk; it does not imply that every carrier will develop cancer."
+      ]
+    },
+    {
+      "id": "CAN-C-004",
+      "topic": "heterogeneity and evolution",
+      "statement": "Cancer cells can differ between people, between regions of a tumor, and over time as further changes occur. A biomarker test samples a particular specimen at a particular time.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-001",
+        "CAN-S-002"
+      ],
+      "population": "Tumor biology and molecular profiling",
+      "limitations": [
+        "A single specimen may not represent every cancer cell or a later disease state."
+      ]
+    },
+    {
+      "id": "CAN-C-005",
+      "topic": "driver changes and causal evidence",
+      "statement": "Changes in growth-control, tumor-suppressor, and DNA-repair genes can contribute to cancer development. Finding a variant in a tumor does not by itself establish that it drives growth or predicts response to a treatment.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-001",
+        "CAN-S-002"
+      ],
+      "population": "Interpretation of tumor molecular findings",
+      "limitations": [
+        "Variants can be benign or of unknown significance; causal and treatment claims need additional evidence."
+      ]
+    },
+    {
+      "id": "CAN-C-006",
+      "topic": "tumor profiling and germline testing",
+      "statement": "Tumor biomarker testing can inform treatment research and selection. It differs from testing specifically intended to identify inherited cancer susceptibility; a possible inherited finding in a tumor may need confirmation with an appropriate germline test.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-002"
+      ],
+      "population": "Distinguishing somatic and inherited molecular information",
+      "limitations": [
+        "Tumor testing can incidentally suggest an inherited change; its presence alone does not establish family members' genetic status."
+      ]
+    },
+    {
+      "id": "CAN-C-007",
+      "topic": "biomarker actionability",
+      "statement": "Biomarkers include genes, proteins, and other measurable features. Some inform treatment selection, but a matching marker does not guarantee benefit because other biological features, cell mixtures, and changes over time affect response.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-002",
+        "CAN-S-003"
+      ],
+      "population": "Cancer biomarker interpretation",
+      "limitations": [
+        "Actionability depends on the exact alteration, cancer context, test performance, and evidence for the proposed use."
+      ]
+    },
+    {
+      "id": "CAN-C-008",
+      "topic": "prognostic and predictive uses",
+      "statement": "A prognostic use concerns likely disease course or outcome; a predictive use concerns response to a particular intervention. A marker associated with poor outcomes is not automatically evidence that one treatment works better for marker-positive patients.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-002",
+        "CAN-S-003",
+        "CAN-S-006"
+      ],
+      "population": "Interpretation of biomarker context of use",
+      "limitations": [
+        "One biomarker can have different roles in different contexts; the clinical question and supporting comparison must be stated."
+      ]
+    },
+    {
+      "id": "CAN-C-009",
+      "topic": "clinical trial phases and comparison",
+      "statement": "Early cancer trial phases emphasize safety and initial activity, while phase 3 studies compare an intervention with a relevant standard. Eligibility criteria and randomized assignment address different design questions: who is studied and how comparison groups are formed.",
+      "evidence_type": "established_background",
+      "source_ids": [
+        "CAN-S-004"
+      ],
+      "population": "Reading cancer trial designs",
+      "limitations": [
+        "Phase is a design label, not a guarantee of benefit; results depend on the actual population, comparator, endpoints, and analysis."
+      ]
+    },
+    {
+      "id": "CAN-C-010",
+      "topic": "objective response, progression-free survival, and overall survival",
+      "statement": "Objective response measures predefined tumor shrinkage. Progression-free survival measures time until progression or death under the trial's definitions. Overall survival measures time until death from any cause. A change in one endpoint does not automatically establish a change in the others.",
+      "evidence_type": "methodological",
+      "source_ids": [
+        "CAN-S-005"
+      ],
+      "population": "Interpretation of cancer trial endpoints",
+      "limitations": [
+        "Definitions, assessment schedules, censoring, duration of response, and disease context matter; these endpoints should not be pooled as interchangeable measures."
+      ]
+    }
+  ]
+}

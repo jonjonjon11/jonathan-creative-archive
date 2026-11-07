@@ -1,0 +1,32 @@
+{
+  "project_id": "PROJ-health-and-assistive-foundations",
+  "version": "0.1.0",
+  "title": "Health evidence and assistive-input foundations",
+  "purpose": "Build substantive, openly reusable scientific knowledge, factual evidence data, and inspectable engineering code, starting with ALS and sampled digital inputs.",
+  "status": "in_progress",
+  "license": "CC BY 4.0",
+  "affected_communities": [
+    {
+      "community_name": "People studying ALS, scientific contributors, educators, and accessible-technology builders",
+      "involvement_in_design": "This is an AI-assisted public educational contribution; no patient or community co-design is recorded for this edition."
+    }
+  ],
+  "deliverables": [
+    "Embedded ALS evidence and trial-fact records",
+    "An original ALS learning primer",
+    "Embedded cancer biology and evidence foundations with an original primer",
+    "A searchable offline evidence-library CLI",
+    "A synthetic switch-signal laboratory with executable code and lesson"
+  ],
+  "governance": {
+    "decision_maker": "Repository maintainer or maintainer-designated reviewers",
+    "review_required": true,
+    "scientific_review": "Qualified clinical and research reviewers should inspect the medical synthesis before endorsing it."
+  },
+  "privacy": "Public source facts and synthetic signals only; no participant-level or personal records.",
+  "resources": {
+    "runtime": "Python standard library and text reader",
+    "paid_services_required": false
+  },
+  "evidence_entrypoint": "docs/research/README.md"
+}

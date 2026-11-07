@@ -17,7 +17,21 @@ jobs:
         run: python3 tools/validate.py module data/modules.json
       
       - name: Validate projects
-        run: python3 tools/validate.py project data/projects/proj-motion-trace-shape.json
+        run: python3 tools/validate.py project data/projects/*.json
       
       - name: Validate tasks
-        run: python3 tools/validate.py task data/tasks/task-motion-browser-test.json && python3 tools/validate.py task data/tasks/task-motion-add-example.json
+        run: python3 tools/validate.py task data/tasks/*.json
+
+      - name: Validate embedded medical evidence
+        run: |
+          python3 tools/evidence-library/evidence_library.py data/health/als-evidence.json validate
+          python3 tools/evidence-library/evidence_library.py data/health/cancer-foundations.json validate
+
+      - name: Test evidence library
+        run: python3 -m unittest discover -s tools/evidence-library/tests -p 'test_*.py' -v
+
+      - name: Test sampled switch-input lab
+        run: python3 -m unittest discover -s tools/switch-input-lab/tests -p 'test_*.py' -v
+
+      - name: Check committed science data and offline examples
+        run: python3 -m unittest discover -s tests -p 'test_health_foundations.py' -v
