@@ -14,10 +14,13 @@ jobs:
           python-version: '3.11'
       
       - name: Validate Knowledge Commons modules
-        run: python3 tools/validate.py module data/modules.json
+        run: python3 tools/validate.py module data/modules.json data/modules/*.json
+
+      - name: Check division lesson arithmetic and readable edition
+        run: python3 -m unittest discover -s tests -p 'test_division_lesson.py' -v
       
       - name: Validate projects
-        run: python3 tools/validate.py project data/projects/proj-motion-trace-shape.json
+        run: python3 tools/validate.py project data/projects/*.json
       
       - name: Validate tasks
-        run: python3 tools/validate.py task data/tasks/task-motion-browser-test.json && python3 tools/validate.py task data/tasks/task-motion-add-example.json
+        run: python3 tools/validate.py task data/tasks/*.json

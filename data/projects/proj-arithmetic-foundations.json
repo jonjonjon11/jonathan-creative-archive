@@ -1,0 +1,49 @@
+{
+  "project_id": "PROJ-arithmetic-foundations",
+  "version": "0.1.0",
+  "title": "Arithmetic foundations: learning and review",
+  "purpose": "Extend the existing counting, addition/subtraction, and multiplication lessons with an original offline division lesson and a bounded review opportunity.",
+  "status": "in_progress",
+  "license": "CC BY 4.0",
+  "affected_communities": [
+    {
+      "community_name": "Beginning and returning arithmetic learners, and educators",
+      "involvement_in_design": "Learner and educator participation has not yet been evaluated.",
+      "accessibility_needs": "Readable text, explanations independent of diagrams, no timer or account requirement."
+    }
+  ],
+  "current_state": {
+    "available": [
+      "Three existing standalone arithmetic lessons",
+      "Proposed division lesson in JSON and Markdown",
+      "Manual review task with scope and acceptance criteria"
+    ],
+    "unverified": [
+      "Independent educator approval",
+      "Learner comprehension",
+      "Assistive-technology experience",
+      "International grade-level suitability"
+    ]
+  },
+  "governance": {
+    "decision_maker": "Repository maintainer or a maintainer-designated reviewer",
+    "review_required": true,
+    "merge_is_separate_from_review": true
+  },
+  "resources": {
+    "runtime": "UTF-8 text reader; Python 3 for optional checks",
+    "accounts_required_to_read": false,
+    "budget": "No paid services required"
+  },
+  "related_work": [
+    {
+      "path": "data/modules/MOD-math-mult-intro-001.json",
+      "relationship": "Prerequisite lesson already in this repository."
+    }
+  ],
+  "next_milestones": [
+    "Review division explanations and arithmetic",
+    "Invite optional learner feedback through a maintainer-approved process",
+    "Review citations and known gaps in earlier arithmetic lessons"
+  ]
+}
