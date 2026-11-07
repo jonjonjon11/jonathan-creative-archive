@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "module": {
     "id": "MOD-lissajous-motion-001",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Motion, Traces, and Shape: Discovering Patterns in Repeating Motion",
     "subtitle": "How two oscillating coordinates combine to create lines, circles, and figure-eights",
     "license": "CC BY 4.0",
@@ -12,16 +12,14 @@
       "Archive Contributors"
     ],
     "last_reviewed": "2026-11-07",
-    "review_status": "verified_calculations_real_browser_pending",
-    
+    "review_status": "corrected_draft_human_acceptance_pending",
     "learning_objectives": [
       "Understand how two independent oscillating motions combine to create a composite trace",
       "Distinguish between model time, motion parameters (frequency and phase), and visual representation",
       "Recognize Lissajous curves as patterns produced by frequency and phase relationships",
       "Make predictions about shapes before viewing results",
-      "Apply this understanding to other oscillating systems (sound, light, planetary motion)"
+      "Use coordinate values to check a shape prediction and explain why frequency ratio alone is not enough"
     ],
-    
     "prerequisites": [
       {
         "id": "PREREQ-graphs",
@@ -34,22 +32,19 @@
         "description": "Understanding that a function maps inputs to outputs, such as f(x) = 2x"
       }
     ],
-    
     "expected_level": "beginner",
     "time_estimate_minutes": 30,
-    "accessibility_level": "partial_verified",
-    
+    "accessibility_level": "text_path_available_device_testing_pending",
     "content": {
       "introduction": {
-        "plain_text": "# Why This Matters\n\nWhen two things oscillate at different rates or start at different times, their combined effect can create beautiful, predictable patterns. This happens everywhere:\n- In **music**: different frequencies combine into chords and harmonies\n- In **physics**: planetary orbits, water waves, and pendulums\n- In **art and design**: patterns found in nature and created intentionally\n\nBy understanding how two simple back-and-forth motions combine, you unlock a lens for seeing order in complexity. The shapes you discover are called Lissajous curves, named after Jules Antoine Lissajous, a 19th-century physicist.",
+        "plain_text": "# Why This Matters\n\nA repeated motion can look very different depending on how we record it. A point can move along a number line, leave a wave-shaped position-versus-time trace, or supply one coordinate of a two-dimensional drawing. These are different views of the same position data.\n\nIn this lesson, we pair a left-right rhythm with an up-down rhythm. At each shared time, their two positions give one point on an x-y graph. With a few settings, the point follows a line, circle, or sideways figure-eight. You can investigate with the tables below and a pencil, or simply read the ordered coordinates and describe them in words. Animation is optional.\n\nThese mathematical drawings belong to the Lissajous family. Oscillations also matter in sound and physical systems, but pairing two coordinates is not the same operation as adding two sounds. This lesson specifies positions directly. It does not simulate a musical instrument, planetary orbit, force, or measured object.",
         "estimated_reading_minutes": 2
       },
-      
       "core_lesson": {
         "sections": [
           {
             "title": "Section 1: One Motion at a Time",
-            "content": "# One Motion at a Time\n\nStart with a single oscillating motion:\n\n**A moving point going left and right:**\n- Imagine a point that moves left, then right, then left again, at a steady rhythm.\n- When we measure its position, we use a number line: negative means left, positive means right.\n- If the range is from −1 to +1, the point never goes beyond those boundaries.\n\n**Showing the motion three ways:**\n1. **As a position now**: a single point on a number line\n2. **As a time trace**: a graph showing position over time (a smooth wave)\n3. **As an equation**: x(t) = sin(2πft), where t is time, f is frequency, and the sine function describes the smooth back-and-forth\n\n**Key vocabulary:**\n- **Amplitude**: the maximum distance from the center (here, 1 unit on either side)\n- **Frequency**: how many complete cycles per second (or per 8-second window)\n- **Period**: the time for one complete cycle\n- **Phase**: where in the cycle the motion starts (0° at the beginning, 90° at the peak)\n\nEach view tells the same story but reveals something different. The position-time graph lets you see the entire history at once. The equation lets you calculate any position at any time.",
+            "content": "# One Motion at a Time\n\nA complete oscillation returns to the same position and the same stage of motion. Going from the center to one end is only a quarter-cycle. In our first example, a point starts at the center, reaches the right end after 2 model seconds, crosses the center after 4, reaches the left end after 6, and returns to the center moving right after 8.\n\nThe amplitude is the largest distance from the center: 1 model unit. The period is the time for a complete cycle: 8 model seconds. Frequency counts complete cycles per unit time, so one cycle in 8 model seconds is 1/8 cycle per model second. The lab controls show repeat counts per 8-second window, not cycles per second. With two repeats in that window, the period is 4 model seconds and the frequency is 2/8.\n\nA time trace puts time on the horizontal axis and position on the vertical axis. The point's physical-looking left-right movement becomes an up-down curve on that graph because the vertical axis represents position, not a second direction of travel. Label both axes to avoid mixing the views.\n\nOur equation is x(t) = sin(2π × n_x × t / 8), where n_x is the repeat count and t is model time. The sine argument is an angle in radians. You do not need to calculate sine to start: the supplied tables give the required positions. All coordinates are model units, not measurements in metres.",
             "estimated_reading_minutes": 4,
             "key_terms": [
               "oscillation",
@@ -62,7 +57,7 @@
           },
           {
             "title": "Section 2: Two Motions Together",
-            "content": "# Two Motions Together\n\n**The setup:**\n- One motion goes left-right (we call this the x-coordinate)\n- Another motion goes up-down (we call this the y-coordinate)\n- Both start at the same instant (time = 0)\n- At every moment in time, the combined point has one x-position and one y-position\n\n**Predicting the shape:**\nThe path traced by the combined point depends on two things:\n1. **Frequency ratio**: does one oscillate twice as fast as the other? Three times? Or at the same rate?\n2. **Phase offset**: do they start together, or does one start ahead?\n\n**Three important patterns:**\n\n1. **Same frequency, no offset (1:1, 0°)**\n   - Both reach their peaks and valleys at exactly the same moment\n   - The combined point traces a straight diagonal line\n   - Mathematical reason: when x and y are always equal, the point moves along the line y = x\n\n2. **Same frequency, quarter-cycle offset (1:1, 90°)**\n   - When x reaches its peak, y is at zero; when y reaches its peak, x is at zero\n   - The combined point traces a perfect circle\n   - Mathematical reason: when x = sin(t) and y = cos(t), we have x² + y² = 1, which is the equation of a circle\n\n3. **2:1 frequency ratio, together (2:1, 0°)**\n   - While x completes one cycle, y completes two\n   - The combined point traces a figure-eight (or infinity symbol)\n   - Mathematical reason: the point bounces up-down twice while moving left-right once\n\nThese curves are called **Lissajous curves** or **Lissajous figures**, after the mathematician who studied them in the 1850s.",
+            "content": "# Two Motions Together\n\nFor every time, read both positions before plotting anything. The ordered pair (x, y) means move x units horizontally and y units vertically from the origin. Negative x means left; negative y means down. Time does not label either axis of the shape plot. Instead, time determines the order in which points are visited.\n\nWe write ratios as x:y. One horizontal repeat and two vertical repeats therefore means 1:2. Our y equation is y(t) = sin(2π × n_y × t / 8 + φ), where φ is the phase angle in radians. The lab displays this angle in degrees: 90° equals π/2 radians. Adding 90° advances y by one quarter of its own cycle; it does not delay when the clock starts.\n\nWhen repeat counts match and phase is 0°, x equals y at every time. The path is the line segment y = x. With the same repeat counts, equal amplitudes, and phase 90°, the path is a unit circle. With x:y = 1:2 and phase 0°, the path has two side-by-side loops: a sideways figure-eight.\n\nPhase matters as well as ratio. Keeping 1:2 but changing phase to 90° gives a retraced parabola segment, not a figure-eight. Exercise 5 checks why. No general petal-count rule is needed. A 360° phase increase restores the same position at every time; a 180° increase changes the sign of y and generally changes the path. Equal plot scales are necessary to display a circle without stretching it.",
             "estimated_reading_minutes": 5,
             "key_terms": [
               "Lissajous curve",
@@ -74,31 +69,77 @@
           }
         ]
       },
-      
       "worked_examples": [
         {
           "id": "EXE-LJ-001",
           "title": "Example 1: The Straight Diagonal Line",
           "difficulty": "beginner",
-          "scenario": "Both motions oscillate at the same frequency. They start at the same time (phase offset = 0°).",
+          "scenario": "Both motions complete one cycle in 8 model seconds. Their phase offset is 0°.",
           "parameters": {
             "x_frequency": 1,
             "y_frequency": 1,
             "phase_offset_degrees": 0,
             "time_window_seconds": 8
           },
-          "prediction": "A straight line from the lower-left corner to the upper-right corner of the plot, bouncing back and forth along the same path.",
+          "prediction": "The point retraces a straight line segment from (−1, −1) to (1, 1), with positive slope.",
           "step_by_step": [
-            "At time t=0: both x and y start at 0 (the center)",
-            "As time increases: x and y both increase together",
-            "At the peak (t≈2): both x and y reach +1 simultaneously",
-            "As time continues: x and y both decrease together",
-            "At the bottom (t≈4): both x and y reach −1 simultaneously",
-            "The pattern repeats"
+            "At t=0: x = 0 and y = 0; the point starts at the center moving toward positive coordinates.",
+            "At t=2: x = 1 and y = 1; both coordinates reach their maximum.",
+            "At t=4: x = 0 and y = 0; the point crosses the center, moving toward negative coordinates.",
+            "At t=6: x = −1 and y = −1; both coordinates reach their minimum.",
+            "At t=8: x = 0 and y = 0; one complete oscillation is finished."
           ],
-          "explanation": "When two coordinates always move together (same frequency, same phase), the point moves along a single line. In this case, x always equals y, so the path is y = x.",
-          "mathematical_form": "x(t) = sin(2πt / 8)\ny(t) = sin(2πt / 8)\nSince x = y always, the equation of the line is y = x.",
-          "verification": "Using the interactive lab: Set both cycles to 1, phase offset to 0°, and press Play. You should see a line bouncing from lower-left to upper-right."
+          "explanation": "The same sine value supplies both coordinates, so x always equals y. Turning back at the ends changes the direction of travel, not the line into the opposite diagonal.",
+          "mathematical_form": "x(t) = sin(2πt / 8)\ny(t) = sin(2πt / 8)\nTherefore y = x, with −1 ≤ x ≤ 1.",
+          "verification": "Optional lab check: set x repeats to 1, y repeats to 1, and phase to 0°. Keep Still mode on and set time to 0, 2, 4, 6, and 8; compare the position readout with the table. The paper calculation does not require the lab.",
+          "reference_points": [
+            {
+              "t": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "t": 1,
+              "x": 0.707107,
+              "y": 0.707107
+            },
+            {
+              "t": 2,
+              "x": 1,
+              "y": 1
+            },
+            {
+              "t": 3,
+              "x": 0.707107,
+              "y": 0.707107
+            },
+            {
+              "t": 4,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "t": 5,
+              "x": -0.707107,
+              "y": -0.707107
+            },
+            {
+              "t": 6,
+              "x": -1,
+              "y": -1
+            },
+            {
+              "t": 7,
+              "x": -0.707107,
+              "y": -0.707107
+            },
+            {
+              "t": 8,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "reference_point_precision": "Values rounded to six decimal places; zero is exact at the listed crossings. Rounded 0.707107 represents √2/2."
         },
         {
           "id": "EXE-LJ-002",
@@ -111,82 +152,176 @@
             "phase_offset_degrees": 90,
             "time_window_seconds": 8
           },
-          "prediction": "A perfect circle, traced continuously or back-and-forth depending on the direction of motion.",
+          "prediction": "A unit circle traversed clockwise as model time increases, with positive y upward. It is not retraced back and forth in one cycle.",
           "step_by_step": [
-            "At time t=0: x = 0, but y is at its peak (+1)",
-            "As t increases: x increases while y decreases",
-            "At t≈2: x reaches +1, y returns to 0",
-            "As t increases more: x decreases while y becomes negative",
-            "At t≈4: x reaches −1, y reaches its minimum (−1)",
-            "The pattern continues, tracing a circle"
+            "At t=0: x = 0 and y = 1; start at the top of the circle.",
+            "At t=2: x = 1 and y = 0; reach the rightmost point.",
+            "At t=4: x = 0 and y = −1; reach the bottom, not the leftmost point.",
+            "At t=6: x = −1 and y = 0; reach the leftmost point.",
+            "At t=8: x = 0 and y = 1; return to the top after one clockwise circuit."
           ],
-          "explanation": "The 90° phase offset means the two motions are 'out of sync' by exactly a quarter cycle. When one is at its peak, the other is at zero. This perpendicular offset creates a circular path. Mathematically, x² + y² = 1.",
-          "mathematical_form": "x(t) = sin(2πt / 8)\ny(t) = sin(2πt / 8 + π/2) = cos(2πt / 8)\nThe circle equation: x² + y² = sin²(t) + cos²(t) = 1",
-          "verification": "Using the interactive lab: Set both cycles to 1, phase offset to 90°, and press Play. You should see a smooth circle traced in the shape plot."
+          "explanation": "With θ = 2πt/8, the coordinates are sin(θ) and cos(θ). The identity sin²(θ) + cos²(θ) = 1 keeps the point exactly one model unit from the origin. Both amplitudes are 1; unequal amplitudes would generally give an ellipse instead.",
+          "mathematical_form": "Let θ = 2πt / 8. Then x = sin(θ) and y = sin(θ + π/2) = cos(θ).\nx² + y² = sin²(θ) + cos²(θ) = 1.",
+          "verification": "Optional lab check: choose Circle, keep Still mode on, and compare the readout at 0, 2, 4, 6, and 8 model seconds. Use equal horizontal and vertical scales on paper.",
+          "reference_points": [
+            {
+              "t": 0,
+              "x": 0,
+              "y": 1
+            },
+            {
+              "t": 1,
+              "x": 0.707107,
+              "y": 0.707107
+            },
+            {
+              "t": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "t": 3,
+              "x": 0.707107,
+              "y": -0.707107
+            },
+            {
+              "t": 4,
+              "x": 0,
+              "y": -1
+            },
+            {
+              "t": 5,
+              "x": -0.707107,
+              "y": -0.707107
+            },
+            {
+              "t": 6,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "t": 7,
+              "x": -0.707107,
+              "y": 0.707107
+            },
+            {
+              "t": 8,
+              "x": 0,
+              "y": 1
+            }
+          ],
+          "reference_point_precision": "Values rounded to six decimal places; zero is exact at the listed crossings. Rounded 0.707107 represents √2/2."
         },
         {
           "id": "EXE-LJ-003",
           "title": "Example 3: The Figure-Eight",
           "difficulty": "beginner",
-          "scenario": "The y-motion oscillates twice as fast as the x-motion. Both start at time zero (phase offset = 0°).",
+          "scenario": "The x:y repeat-count ratio is 1:2. Horizontal motion completes one cycle and vertical motion completes two in 8 model seconds. Phase is 0°.",
           "parameters": {
             "x_frequency": 1,
             "y_frequency": 2,
             "phase_offset_degrees": 0,
             "time_window_seconds": 8
           },
-          "prediction": "An infinity symbol or figure-eight: while the point moves left-to-right once, it moves up-down twice.",
+          "prediction": "A sideways figure-eight with one loop on the right and one on the left, meeting at the origin.",
           "step_by_step": [
-            "At t=0: both start at the center (0, 0)",
-            "As t increases: x moves right slowly, y oscillates up-down quickly",
-            "By t≈4: x has moved all the way right (+1), and y has completed 2 full cycles",
-            "From t≈4 to t≈8: x moves back left, while y continues its fast up-down pattern",
-            "The trace creates a figure-eight shape with two loops"
+            "At t=0: x = 0 and y = 0; start at the crossing.",
+            "At t=1: x ≈ 0.707107 and y = 1; reach the top of the right loop.",
+            "At t=2: x = 1 and y = 0; reach the rightmost point.",
+            "At t=3: x ≈ 0.707107 and y = −1; reach the bottom of the right loop.",
+            "At t=4: x = 0 and y = 0; finish the right loop. The y-motion has completed one cycle, while x has completed half a cycle.",
+            "From t=4 to t=8: x is negative between the endpoints, so the point traces the left loop. It reaches (−1, 0) at t=6 and returns to (0, 0) at t=8."
           ],
-          "explanation": "The 2:1 frequency ratio means y oscillates twice as fast as x. So while x completes one left-right journey, y completes two up-down journeys. The resulting path has two lobes.",
-          "mathematical_form": "x(t) = sin(2π · 1 · t / 8)\ny(t) = sin(2π · 2 · t / 8) = sin(4πt / 8)\nThe shape is determined by the ratio 2:1.",
-          "verification": "Using the interactive lab: Set x cycles to 1, y cycles to 2, phase offset to 0°, and press Play. You should see a figure-eight pattern."
+          "explanation": "For 0 < t < 4, x is positive, placing the first loop on the right. For 4 < t < 8, x is negative, placing the second on the left. Over all 8 model seconds, y completes two full cycles. The center crossing at t=4 is not a full repeat of the motion: the point heads into the other loop.",
+          "mathematical_form": "Let θ = 2πt / 8. Then x = sin(θ) and y = sin(2θ).\ny² = 4x²(1 − x²). The x:y ratio is 1:2 and phase is 0°; both settings matter.",
+          "verification": "Optional lab check: choose Figure-eight, keep Still mode on, and compare integer times from 0 through 8 with the table. At t=4 both positions are zero; at t=2 the x-position is at its maximum.",
+          "reference_points": [
+            {
+              "t": 0,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "t": 1,
+              "x": 0.707107,
+              "y": 1
+            },
+            {
+              "t": 2,
+              "x": 1,
+              "y": 0
+            },
+            {
+              "t": 3,
+              "x": 0.707107,
+              "y": -1
+            },
+            {
+              "t": 4,
+              "x": 0,
+              "y": 0
+            },
+            {
+              "t": 5,
+              "x": -0.707107,
+              "y": 1
+            },
+            {
+              "t": 6,
+              "x": -1,
+              "y": 0
+            },
+            {
+              "t": 7,
+              "x": -0.707107,
+              "y": -1
+            },
+            {
+              "t": 8,
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "reference_point_precision": "Values rounded to six decimal places; zero is exact at the listed crossings. Rounded 0.707107 represents √2/2."
         }
       ],
-      
       "exercises": [
         {
           "id": "EXER-LJ-001",
           "difficulty": "beginner",
           "prompt": "**Make a prediction:** If both motions have the same frequency and start together (phase offset = 0°), describe the shape you expect to see. Draw a rough sketch or explain in words why that shape makes sense.",
-          "solution_guidance": "The answer is a diagonal line going from lower-left to upper-right (or upper-left to lower-right, depending on the direction). The reasoning: when both coordinates reach their peaks and valleys at the same moment, they move in perfect sync, creating a straight path.",
-          "key_insight": "Synchronized motion (same frequency, zero phase) always produces a straight line, no matter what the frequency is."
+          "solution_guidance": "The path is the positive-slope segment y = x from (−1, −1) to (1, 1). Reversing travel along this same segment does not change its slope. At t=4 in the one-repeat example, the point is at the center; the minimum occurs at t=6.",
+          "key_insight": "For this equal-amplitude model, equal repeat counts and zero phase give y = x. A 180° phase offset instead gives y = −x."
         },
         {
           "id": "EXER-LJ-002",
           "difficulty": "beginner",
-          "prompt": "**Calculate:** Suppose x(t) = sin(t) and y(t) = cos(t). Verify that x² + y² = 1 for any value of t. What does this equation represent?",
-          "solution_guidance": "Using the Pythagorean identity, sin²(t) + cos²(t) = 1 always holds. This is the equation of a circle with radius 1. So the path traced is a perfect circle.",
-          "key_insight": "The Pythagorean identity guarantees that a 90° phase offset between equal frequencies produces a circle."
+          "prompt": "**Calculate:** Suppose x = sin(θ) and y = cos(θ), with θ = 2πt/8. Verify that x² + y² = 1. What shape does this describe, and where is the point at t=4 model seconds?",
+          "solution_guidance": "The identity sin²(θ) + cos²(θ) = 1 gives a circle of radius 1 model unit. At t=4, θ = π, so (x, y) = (0, −1). Equal axis scales show the circle without stretching it.",
+          "key_insight": "Equal repeat counts, equal amplitudes, and a 90° offset produce a circle in this model."
         },
         {
           "id": "EXER-LJ-003",
           "difficulty": "intermediate",
-          "prompt": "**Predict and test:** Set x-frequency to 1, y-frequency to 2, and phase offset to 0°. Before pressing Play, sketch what you think the shape will be. Then press Play and compare your sketch to the actual result.",
-          "solution_guidance": "The expected shape is a figure-eight or infinity symbol. The reasoning: while x completes one full oscillation, y completes two, creating two 'loops' in the vertical direction.",
-          "key_insight": "Integer frequency ratios (like 1:2, 2:3, 3:4) produce recognizable families of shapes. Odd ratios create more complex patterns with more loops."
+          "prompt": "**Predict and check:** Set x repeats to 1, y repeats to 2, and phase to 0°. Predict the shape. Use the table or optional lab to locate the point at t=2 and t=4. How many full y cycles have elapsed by t=4?",
+          "solution_guidance": "The figure-eight has side-by-side loops. At t=2 the point is (1, 0), and at t=4 it is (0, 0). The y-motion completes one full cycle by t=4 and two by t=8. The x-motion completes half a cycle by t=4 and one by t=8.",
+          "key_insight": "A return to the same position need not mean the full motion has repeated. At the central crossing, the point can be heading into a different loop."
         },
         {
           "id": "EXER-LJ-004",
           "difficulty": "intermediate",
-          "prompt": "**Explore phase:** Set both frequencies to 1. Now try different phase offsets (0°, 45°, 90°, 135°, 180°). Describe how the shape changes as you increase the phase offset. At which offset(s) does it become a circle? A line?",
-          "solution_guidance": "- At 0° and 180°: straight lines (but in different directions)\n- At 90° and 270°: perfect circles\n- At 45°, 135°, etc.: ellipses (elongated circles)\nThe pattern repeats every 180° because phase is directional.",
-          "key_insight": "Phase offset is continuous; there's a smooth progression from line to circle to line again as you change it."
+          "prompt": "**Explore phase:** Keep both repeat counts at 1. Predict the paths at 0°, 45°, 90°, 135°, 180°, 270°, and 360°. Which are lines or circles? Does a 180° phase increase always leave the same path?",
+          "solution_guidance": "At 0° and 360°, the line is y = x. At 180°, the line is y = −x. At 90° and 270°, the path is the same unit circle, but the direction of travel is opposite. At 45° and 135°, the paths are ellipses with different orientations. A 180° phase increase reflects y to −y and does not always preserve the path; 0° and 180° are a counterexample. A 360° increase restores the same positions at the same times.",
+          "key_insight": "Distinguish the set of visited points, the order of traversal, and the position at a particular time. Equal-looking paths do not imply identical motions."
         },
         {
           "id": "EXER-LJ-005",
           "difficulty": "advanced",
-          "prompt": "**Challenge:** A Lissajous curve with frequency ratio 3:2 (x oscillates 3 times while y oscillates 2 times) creates a 3-lobed or 6-pointed shape. Write a hypothesis: what do you think a 4:3 ratio would look like? What about 5:2? How many 'petals' or 'lobes' would you expect in each case?",
-          "solution_guidance": "The number of lobes or petals is related to the frequency ratio. For a ratio p:q, the shape typically has max(p, q) lobes or petals (or sometimes p+q). A 4:3 ratio should have around 6-7 features. A 5:2 ratio should have 5 or more. Test your hypothesis in the interactive lab by adjusting the frequencies.",
-          "key_insight": "Higher frequency ratios produce more complex Lissajous curves with more lobes. This is why these shapes are beautiful and appear throughout nature."
+          "prompt": "**Challenge: same ratio, different shape.** Keep x repeats at 1 and y repeats at 2, but change phase from 0° to 90°. With θ = 2πt/8, use sin(2θ + π/2) = cos(2θ) and cos(2θ) = 1 − 2sin²(θ). Find y in terms of x. Predict the shape and its positions at t=0, 2, 4, 6, and 8. All these settings are available in the lab.",
+          "solution_guidance": "Since x = sin(θ), y = cos(2θ) = 1 − 2x², with −1 ≤ x ≤ 1. This is a downward-opening parabola segment, retraced as x oscillates, not a figure-eight. The five positions are (0, 1), (1, −1), (0, 1), (−1, −1), and (0, 1). The frequency ratio stays 1:2 while the phase changes the shape.",
+          "key_insight": "A ratio alone does not fix a Lissajous shape. Derive coordinates or a curve equation instead of using an unsupported rule for counting petals."
         }
       ],
-      
       "interactive_experiences": [
         {
           "id": "INT-LJ-001",
@@ -195,11 +330,11 @@
           "format": "Standalone HTML (no server, internet, or packages required)",
           "file_path": "tools/motion-trace-shape/Motion-Trace-Shape.html",
           "how_to_access": "1. Download from GitHub or clone the repository. 2. Open Motion-Trace-Shape.html in any modern browser.",
-          "description": "Adjust frequencies and phase in real time. Watch two separate motions, see their position-versus-time traces, and watch the resulting shape evolve. Pause, step, or scrub with the time slider.",
+          "description": "Adjust repeat counts and phase to begin a new drawing. Inspect two separate positions, their position-versus-time traces, and the combined shape. Pause, step, or scrub with the time slider.",
           "key_features": [
             "Three presets: Line, Circle, Figure-Eight",
-            "Adjustable x-frequency (1-4 cycles)",
-            "Adjustable y-frequency (1-4 cycles)",
+            "Adjustable x repeats (1–4 per 8 model seconds)",
+            "Adjustable y repeats (1–4 per 8 model seconds)",
             "Adjustable phase offset (0-360° in 15° steps)",
             "Play/Pause/Step controls",
             "Time slider for scrubbing",
@@ -214,8 +349,8 @@
             "Challenge: Create your own combination and predict the shape"
           ],
           "accessibility_features": [
-            "Keyboard-only controls (Tab to navigate, Enter/Space to activate)",
-            "High-contrast colors (4.5:1 contrast ratio verified)",
+            "Native controls and keyboard labels present in source; real keyboard navigation not verified",
+            "Seven selected text-color pairs pass 4.5:1 source calculations; not a full contrast audit",
             "Visible focus indicators",
             "Reduced-motion system preference respected",
             "Semantic HTML labels",
@@ -230,9 +365,7 @@
           "verification_status": "18 numerical tests and 14 UI tests passed; real-browser and assistive-technology testing pending"
         }
       ],
-      
-      "text_only_path": "## Complete Understanding Without Animation\n\nYou can fully understand Lissajous curves using only this text, pencil, and paper.\n\n**Step 1: Draw two time-position graphs (one above the other)**\n- Horizontal axis: time (0 to 8 seconds)\n- Vertical axis: position (−1 to +1)\n- For the first graph, draw one sine wave (smooth up-and-down curve)\n- For the second graph, draw another sine wave\n- If the phase offset is 90°, start the second curve at its peak while the first is at zero\n\n**Step 2: Pick several moments in time**\n- At t=0, t=1, t=2, etc.\n- For each time point, read the x-position from the first graph\n- Read the y-position from the second graph\n\n**Step 3: Plot points on a new graph**\n- Make a new graph with x-axis from −1 to +1 (left-right) and y-axis from −1 to +1 (up-down)\n- For each time point, plot a dot at the (x, y) coordinates you read\n- Connect the dots in order\n\n**Step 4: Describe the shape**\n- Do the dots form a line? A circle? A figure-eight?\n- Why does that make sense given the frequencies and phase offset you chose?\n\nThis is the essence of Lissajous curves: two independent motions, combined into a single shape.",
-      
+      "text_only_path": "## Seven steps without animation\n\n1. Choose the line, circle, or figure-eight example. Read its settings and prediction. You may work with words and numbers alone; drawing is optional.\n2. Read one row of its table: t is model time; x and y are positions at that same time. The tables use integer times from 0 to 8. The rounded number 0.707107 is approximately √2/2; it is between 0 and 1, not a new maximum.\n3. For a time trace, put time from 0 to 8 on a horizontal axis and position from −1 to 1 on a vertical axis. Plot the table's (t, x) pairs. Make a second trace using (t, y). Label the axes so time is not confused with x-position.\n4. For the shape plot, use two equal-scale axes from −1 to 1. Plot (x, y), not (t, y). For example, the figure-eight row at t=1 means move about 0.707107 units right and 1 unit up. In words, that point is at the top of the right loop.\n5. Follow points in increasing time order and add arrows, or read the ordered coordinates aloud. Connect only as a rough sketch: straight segments between sparse samples are not the exact continuous curve. The equations and explanations establish the exact shape. For the circle, go top, right, bottom, left, top. For the line, return over the same segment. For the figure-eight, visit the right loop and then the left.\n6. Check the t=4 row before guessing that a cycle is complete. The line is crossing the center, the circle is at the bottom, and the figure-eight is crossing into its left loop. Compare with t=0 and the direction of motion. A matching position alone does not prove a complete repeat.\n7. Answer the five exercises before reading the solutions. Explain one result in your own words. If you use the optional lab later, keep Still mode on and compare its numeric readout with your table; no Play action is required.",
       "visual_aids": [
         {
           "id": "VIS-LJ-001",
@@ -242,10 +375,9 @@
         {
           "id": "VIS-LJ-002",
           "description": "Diagram showing two motions combined: three separate views (two position lines, two time-traces, and one shape plot)",
-          "accessible_text": "A diagram with three columns. Left column: Two short vertical number lines (−1 to +1 each), one showing a circle at a position (x-coordinate) and one showing a diamond (y-coordinate). Middle column: Two stacked graphs, each with time (0-8 seconds) on the horizontal axis and position (−1 to +1) on the vertical. The top graph shows a sine wave for x(t); the bottom shows a sine wave for y(t), possibly with a phase offset. Right column: A square plot from −1 to +1 on both axes. The traced path of the combined (x, y) point is drawn (e.g., a line, circle, or figure-eight)."
+          "accessible_text": "A diagram with three views. The position view has a horizontal x number line and a vertical y number line, each from −1 to +1, with a circle marking x and a diamond marking y. The time-trace view has two graphs with time from 0 to 8 on the horizontal axis and position from −1 to +1 on the vertical axis. The shape view has equal-scale x and y axes from −1 to +1, showing the sampled path and the current combined point. This description follows the intended source layout; rendered-browser behavior is unverified."
         }
       ],
-      
       "sources_and_references": [
         {
           "id": "REF-LJ-001",
@@ -276,23 +408,34 @@
           "id": "REF-LJ-003",
           "type": "historical_reference",
           "authors": [
-            "Lissajous, Jules Antoine"
+            "MacTutor History of Mathematics, University of St Andrews"
           ],
-          "title": "Résonance expérimentale d'oscillations elliptiques (Experimental resonance of elliptical oscillations)",
-          "year": "1857",
-          "note": "Historical context; the curves are named after Lissajous's optical experiments with tuning forks",
-          "relevance": "Origin and naming of Lissajous curves"
+          "title": "Lissajous Curves",
+          "url": "https://mathshistory.st-andrews.ac.uk/Curves/Lissajous/",
+          "accessed_date": "2026-11-07",
+          "relevance": "Documents the parametric sine-curve family and historical work by Bowditch and Lissajous.",
+          "scope": "Historical context, not evidence of educational effectiveness. Replaces an unverified historical title in module version 1.0.0."
+        },
+        {
+          "id": "REF-LJ-004",
+          "type": "textbook",
+          "authors": [
+            "OpenStax via Mathematics LibreTexts"
+          ],
+          "title": "Precalculus, 7.2: Sum and Difference Identities",
+          "url": "https://math.libretexts.org/Bookshelves/Precalculus/Precalculus_1e_%28OpenStax%29/07%3A_Trigonometric_Identities_and_Equations/7.02%3A_Sum_and_Difference_Identities",
+          "accessed_date": "2026-11-07",
+          "relevance": "The sine and cosine angle-sum identities support the phase-shift and double-angle derivations.",
+          "scope": "Derive cos(2θ) = cos²(θ) − sin²(θ) = 1 − 2sin²(θ) using the cosine-sum and Pythagorean identities. The worksheet examples are original."
         }
       ],
-      
       "license_and_attribution": {
         "content_license": "CC BY 4.0",
         "license_uri": "https://creativecommons.org/licenses/by/4.0/",
         "attribution_suggested": "Motion → Trace → Shape Module, Jonathan's Creative Archive, 2026",
-        "modifications_in_this_version": "none; original composition",
+        "modifications_in_this_version": "Version 1.0.1 corrects timed positions, cycle counts, phase and ratio claims; adds checked coordinate tables and a readable text-only edition. Source text and diagrams are not imported.",
         "how_to_attribute": "Include the title, archive name, year, and a link to the public repository when sharing or adapting"
       },
-      
       "scientific_claims": {
         "mathematical_status": "established_mathematics",
         "model_scope": "Analytical sinusoidal functions describing periodic motion in two dimensions",
@@ -303,18 +446,15 @@
           "Real-world measurements in meters, seconds, or other physical units",
           "Claims about actual motion of objects without explicit mention of a real system"
         ],
-        "distinction": "This lesson demonstrates a mathematical model. While such patterns appear in physical systems (sound waves, planetary orbits, light), the lesson itself does not simulate those systems. It studies the pure geometry of combined oscillations.",
+        "distinction": "This lesson studies paired sinusoidal coordinates. Similar mathematics is used in some physical models, but this lab neither adds sound waves nor models planetary orbits, forces, or measured systems.",
         "uncertainty_and_limitations": "This is deterministic mathematics; no experimental uncertainty or measurement error is modeled. Real physical systems would show deviations from these perfect curves."
       },
-      
       "accessibility_and_device_support": {
         "verified_working": [
-          "Keyboard navigation (Tab, Enter, Space, arrow keys)",
-          "Reduced-motion system preference (disables continuous animation, enables step/scrub)",
-          "High-contrast text colors (4.5:1 contrast ratio, verified by color calculator)",
-          "Semantic HTML with explicit labels and focus indicators",
-          "Offline operation (no internet, no external dependencies)",
-          "Standalone HTML (no server, installation, or configuration required)"
+          "Plain-text teaching content and coordinate tables supplied in a readable Markdown edition",
+          "Simulated UI-state tests and source-level motion hooks only; native keyboard behavior remains unverified",
+          "Seven selected text-color pairs meet 4.5:1 in source calculations; no full contrast or accessibility audit",
+          "Source checks find labels, focus styles, and a standalone build without runtime asset dependencies; not rendered-browser verification"
         ],
         "not_yet_verified": [
           "Real-browser rendering (Chrome, Firefox, Safari, Edge)",
@@ -322,13 +462,15 @@
           "Touch-screen interaction",
           "Screen readers (NVDA, JAWS, VoiceOver)",
           "Zoom and text resizing",
-          "Printing or PDF export"
+          "Printing or PDF export",
+          "Learner comprehension and educational effectiveness"
         ],
         "design_intent": "The lab is designed to work with keyboard-only input, screen readers, and reduced-motion preferences, but these designs have not been tested with actual devices or assistive technology",
         "accessibility_commitment": "Accessibility is an ongoing goal, not a claim of current compliance. Real testing with devices and assistive technology is the next critical step."
-      }
+      },
+      "readable_edition": "docs/lessons/motion-trace-shape.md",
+      "parameter_convention": "The existing keys x_frequency and y_frequency mean repeat counts per 8 model seconds, not hertz. For a repeat count n, frequency is n/8 cycles per model second and period is 8/n model seconds. Ratios are always written x:y. Phase is added to the y angle; 90° advances y by one quarter of its own cycle. Coordinates have equal amplitude 1 model unit."
     },
-    
     "contribution_opportunities": [
       {
         "task_id": "CONTRIB-motion-001",
@@ -416,7 +558,6 @@
         "template_path": "docs/task-templates/verification-report-template.md"
       }
     ],
-    
     "testing_and_validation": {
       "numerical_tests": {
         "count": 18,
@@ -438,11 +579,12 @@
       "accessibility_tests": {
         "status": "partial",
         "tested": [
-          "Keyboard navigation (simulated)",
-          "Label presence and semantics",
-          "Contrast ratio calculations"
+          "Simulated control handlers and reduced-motion state",
+          "Label and ARIA target presence (source checks)",
+          "Selected text-color contrast calculations"
         ],
         "not_tested": [
+          "Native keyboard navigation and focus traversal",
           "Screen readers (NVDA, JAWS, VoiceOver)",
           "Zoom and text resizing",
           "Touch interaction on mobile"
