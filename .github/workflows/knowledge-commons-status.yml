@@ -1,0 +1,23 @@
+name: Knowledge Commons Status
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Validate Knowledge Commons modules
+        run: python3 tools/validate.py module data/modules.json
+      
+      - name: Validate projects
+        run: python3 tools/validate.py project data/projects/proj-motion-trace-shape.json
+      
+      - name: Validate tasks
+        run: python3 tools/validate.py task data/tasks/task-motion-browser-test.json && python3 tools/validate.py task data/tasks/task-motion-add-example.json
