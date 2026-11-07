@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0",
+  "module": {
+    "id": "MOD-[subject]-[level]-001",
+    "version": "1.0.0",
+    "title": "[Human-readable title]",
+    "subtitle": "[Optional subtitle explaining what's covered]",
+    "grade_level": "[K-2, 3-4, 5-6, 7-8, 9-12, Undergrad, Grad, or Professional]",
+    "subject": "[Math, Physics, Biology, History, Language, Arts, Music, Health, Technology, Philosophy, Trades]",
+    "expected_level": "beginner|intermediate|advanced|expert",
+    "time_estimate_minutes": 45,
+    "license": "CC BY 4.0",
+    "license_uri": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Jonathan's Creative Archive Contributors",
+    "authors": [
+      "[Your name or alias]"
+    ],
+    "last_reviewed": "[YYYY-MM-DD]",
+    "review_status": "content_complete",
+    
+    "learning_objectives": [
+      "First learning objective (measurable, action-oriented)",
+      "Second learning objective",
+      "Third learning objective",
+      "Fourth learning objective",
+      "Fifth learning objective"
+    ],
+    
+    "prerequisites": [
+      {
+        "id": "MOD-[prerequisite-id]",
+        "title": "[Name of prerequisite module]",
+        "description": "[Why it matters as preparation]"
+      }
+    ],
+    
+    "content": {
+      "introduction": {
+        "plain_text": "# Why This Matters\n\n[Explanation of why this topic is important. Why does a learner need to know this? What problems does it solve? What doors does it open?]\n\n[2-3 concrete examples of where this shows up in real life]",
+        "estimated_reading_minutes": 3
+      },
+      
+      "core_lesson": {
+        "sections": [
+          {
+            "title": "Section 1: [Main Concept Name]",
+            "content": "# [Main Concept]\n\n[Complete explanation of the first major concept]\n\n[Definitions of key terms]\n\n[Visual descriptions that someone without images could understand]\n\n[Connection to real-world examples]",
+            "estimated_reading_minutes": 12,
+            "key_terms": [
+              "[Term 1]",
+              "[Term 2]",
+              "[Term 3]"
+            ]
+          },
+          {
+            "title": "Section 2: [Secondary Concept Name]",
+            "content": "# [Secondary Concept]\n\n[Complete explanation of the second major concept]\n\n[How it connects to Section 1]\n\n[Why both concepts matter together]\n\n[Common misconceptions and clarifications]",
+            "estimated_reading_minutes": 12,
+            "key_terms": [
+              "[Term 1]",
+              "[Term 2]",
+              "[Term 3]"
+            ]
+          }
+        ]
+      },
+      
+      "worked_examples": [
+        {
+          "id": "EX-001",
+          "title": "Example 1: [Descriptive Title]",
+          "difficulty": "beginner",
+          "scenario": "[Clear problem statement or situation]",
+          "parameters": {
+            "[parameter_1]": "[value]",
+            "[parameter_2]": "[value]"
+          },
+          "prediction": "[What should happen based on the concepts]",
+          "step_by_step": [
+            "Step 1: [First action]",
+            "Step 2: [Second action]",
+            "Step 3: [Third action]",
+            "Step 4: [Reaching the solution]"
+          ],
+          "explanation": "[Why this approach works. Connect back to learning objectives. Explain the reasoning.]",
+          "mathematical_form": "[Equations or formal notation if applicable]",
+          "visual_description": "[How this would look if drawn or visualized]"
+        },
+        {
+          "id": "EX-002",
+          "title": "Example 2: [Descriptive Title]",
+          "difficulty": "intermediate",
+          "scenario": "[More complex problem statement]",
+          "parameters": {
+            "[parameter_1]": "[value]",
+            "[parameter_2]": "[value]"
+          },
+          "prediction": "[What should happen]",
+          "step_by_step": [
+            "Step 1: [First action]",
+            "Step 2: [Second action]",
+            "Step 3: [Third action]",
+            "Step 4: [Reaching the solution]"
+          ],
+          "explanation": "[Explanation focusing on nuance and variations from Example 1]",
+          "mathematical_form": "[Equations or formal notation]",
+          "visual_description": "[Visual representation]"
+        },
+        {
+          "id": "EX-003",
+          "title": "Example 3: [Descriptive Title]",
+          "difficulty": "advanced",
+          "scenario": "[Complex or novel problem]",
+          "parameters": {
+            "[parameter_1]": "[value]",
+            "[parameter_2]": "[value]"
+          },
+          "prediction": "[What should happen]",
+          "step_by_step": [
+            "Step 1: [First action]",
+            "Step 2: [Second action]",
+            "Step 3: [Third action]",
+            "Step 4: [Reaching the solution]"
+          ],
+          "explanation": "[Explanation connecting to deeper understanding and advanced applications]",
+          "mathematical_form": "[Equations or formal notation]",
+          "visual_description": "[Visual representation]"
+        }
+      ],
+      
+      "exercises": [
+        {
+          "id": "EX-001",
+          "title": "Exercise 1: [Short descriptive title]",
+          "difficulty": "beginner",
+          "problem_statement": "[Clear problem for learner to solve. Should be solvable using concepts from core_lesson and examples.]",
+          "hint": "[Helpful hint pointing toward solution without giving it away]",
+          "solution": "[Complete step-by-step solution path]",
+          "answer": "[Final answer]"
+        },
+        {
+          "id": "EX-002",
+          "title": "Exercise 2: [Short descriptive title]",
+          "difficulty": "beginner",
+          "problem_statement": "[Another problem at same difficulty]",
+          "hint": "[Helpful hint]",
+          "solution": "[Complete solution]",
+          "answer": "[Final answer]"
+        },
+        {
+          "id": "EX-003",
+          "title": "Exercise 3: [Short descriptive title]",
+          "difficulty": "intermediate",
+          "problem_statement": "[Problem requiring combining multiple concepts]",
+          "hint": "[Helpful hint]",
+          "solution": "[Complete solution]",
+          "answer": "[Final answer]"
+        },
+        {
+          "id": "EX-004",
+          "title": "Exercise 4: [Short descriptive title]",
+          "difficulty": "intermediate",
+          "problem_statement": "[Another intermediate problem]",
+          "hint": "[Helpful hint]",
+          "solution": "[Complete solution]",
+          "answer": "[Final answer]"
+        },
+        {
+          "id": "EX-005",
+          "title": "Exercise 5: [Short descriptive title - Challenge]",
+          "difficulty": "advanced",
+          "problem_statement": "[Challenge problem that extends the concepts or applies to a novel situation]",
+          "hint": "[Helpful hint for advanced learner]",
+          "solution": "[Complete solution path]",
+          "answer": "[Final answer]"
+        }
+      ],
+      
+      "interactive_experience": "[Optional: Link to interactive HTML lab or note: 'No interactive lab for this module']",
+      
+      "text_only_path": "[Optional: Complete summary of lesson in plain text for accessibility. Can reference core_lesson + worked_examples.]"
+    },
+    
+    "sources": [
+      {
+        "title": "[Source title]",
+        "url": "[URL if available]",
+        "authors": "[Author names if applicable]",
+        "publication_year": "[Year]",
+        "description": "[Why this source is authoritative for this topic]"
+      },
+      {
+        "title": "[Another source]",
+        "url": "[URL]",
+        "authors": "[Author names]",
+        "publication_year": "[Year]",
+        "description": "[Why this source]"
+      }
+    ],
+    
+    "contribution_opportunities": [
+      {
+        "title": "[Opportunity 1]",
+        "description": "[What could be improved or added]",
+        "estimated_time_hours": 1,
+        "difficulty": "beginner"
+      }
+    ],
+    
+    "accessibility_notes": "Keyboard navigable, semantic HTML, text-only path provided, reduced-motion support",
+    "accessibility_level": "partial_verified"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "status": "Work in progress - all modules below need content filling",
+  "total_modules_needed": 200,
+  "total_modules_defined": 38,
+  "total_modules_complete": 1,
+  "completion_percentage": 0.5,
+  
+  "notes": [
+    "This file tracks which modules are defined vs complete",
+    "Modules can be in one of 3 states: TODO (defined but not started), IN_PROGRESS (being worked on), COMPLETE (content filled and validated)",
+    "Contributors: Pick any TODO module and change its status to IN_PROGRESS, then to COMPLETE when done",
+    "Use this command to claim a module: git commit -m 'Start module: MOD-xyz'"
+  ],
+  
+  "modules": {
+    "mathematics": {
+      "status": "38 defined, 0 complete",
+      "modules": [
+        {"id": "MOD-math-count-001", "title": "Counting and Number Recognition (0-20)", "grade": "K-2", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-add-001", "title": "Basic Addition and Subtraction", "grade": "K-2", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-shape-001", "title": "Shapes and Spatial Reasoning", "grade": "K-2", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-measure-001", "title": "Measurement (length, weight, time)", "grade": "K-2", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-pattern-001", "title": "Patterns and Sorting", "grade": "K-2", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-add-multi-001", "title": "Multi-digit Addition and Subtraction", "grade": "3-4", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-mult-intro-001", "title": "Introduction to Multiplication", "grade": "3-4", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-div-intro-001", "title": "Introduction to Division", "grade": "3-4", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-frac-simple-001", "title": "Fractions (halves, thirds, quarters)", "grade": "3-4", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-money-time-001", "title": "Money and Time", "grade": "3-4", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-mult-master-001", "title": "Multiplication and Division Mastery", "grade": "5-6", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-frac-ops-001", "title": "Fractions (operations, comparison)", "grade": "5-6", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-decimal-001", "title": "Decimals", "grade": "5-6", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-ratio-percent-001", "title": "Introduction to Ratios and Percentages", "grade": "5-6", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-geom-basics-001", "title": "Geometry (area, perimeter, volume)", "grade": "5-6", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-integers-001", "title": "Integers and Rational Numbers", "grade": "7-8", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-alg-expr-001", "title": "Algebraic Expressions and Equations", "grade": "7-8", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-linear-eq-001", "title": "Linear Equations and Graphing", "grade": "7-8", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-sys-eq-001", "title": "Systems of Equations", "grade": "7-8", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-prob-stat-001", "title": "Probability and Statistics Basics", "grade": "7-8", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-quad-001", "title": "Quadratic Equations and Functions", "grade": "9-12", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-poly-001", "title": "Polynomial Functions", "grade": "9-12", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-exp-log-001", "title": "Exponential and Logarithmic Functions", "grade": "9-12", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-trig-001", "title": "Trigonometry (unit circle, trig functions)", "grade": "9-12", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-seq-series-001", "title": "Sequences and Series", "grade": "9-12", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-comb-prob-001", "title": "Combinatorics and Probability", "grade": "9-12", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-stat-001", "title": "Introductory Statistics", "grade": "9-12", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-matrix-001", "title": "Basic Matrices and Linear Systems", "grade": "9-12", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-calc1-001", "title": "Calculus I (Limits, Derivatives, Applications)", "grade": "Undergrad", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-calc2-001", "title": "Calculus II (Integration, Techniques, Series)", "grade": "Undergrad", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-multicalc-001", "title": "Multivariable Calculus", "grade": "Undergrad", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-linalg-001", "title": "Linear Algebra", "grade": "Undergrad", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-diffeq-001", "title": "Differential Equations", "grade": "Undergrad", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-abstract-001", "title": "Abstract Algebra I (Groups, Rings, Fields)", "grade": "Graduate", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-realanalysis-001", "title": "Real Analysis", "grade": "Graduate", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-complex-001", "title": "Complex Analysis", "grade": "Graduate", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-topology-001", "title": "Topology", "grade": "Graduate", "status": "TODO", "assigned_to": null},
+        {"id": "MOD-math-numtheory-001", "title": "Number Theory", "grade": "Graduate", "status": "TODO", "assigned_to": null}
+      ]
+    },
+    
+    "physics": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "25-30 modules needed covering K-12 and college physics",
+      "status": "PENDING"
+    },
+    
+    "biology": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "25-30 modules needed covering K-12 and college biology",
+      "status": "PENDING"
+    },
+    
+    "history": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "20-25 modules needed",
+      "status": "PENDING"
+    },
+    
+    "language_and_literacy": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "15-20 modules needed",
+      "status": "PENDING"
+    },
+    
+    "arts_and_music": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "15-20 modules needed",
+      "status": "PENDING"
+    },
+    
+    "health_and_physical_training": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "15-20 modules needed",
+      "status": "PENDING"
+    },
+    
+    "technology_and_engineering": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "20-25 modules needed",
+      "status": "PENDING"
+    },
+    
+    "philosophy_and_spirituality": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "10-15 modules needed",
+      "status": "PENDING"
+    },
+    
+    "trades_and_practical_skills": {
+      "status": "NOT YET DEFINED - ready to generate",
+      "description": "20-25 modules needed",
+      "status": "PENDING"
+    }
+  }
+}
