@@ -8,6 +8,10 @@ An evidence-based map of Jonathan's ideas for an educational universe, mathemati
 
 That is the purpose of this archive. It is a selective reconstruction from available records, not a complete account export or a claim that every idea has been recovered. The newly written archive is licensed under [Creative Commons Attribution 4.0 International](LICENSE). The included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files retain their separate CC0 licenses.
 
+## Try a newly built learning mini-lab
+
+[Motion → Trace → Shape 0.1](tools/motion-trace-shape/README.md) turns two repeating motions into a line, circle or figure-eight. Download its self-contained HTML, then compare motion, time traces and shape offline. It starts paused and offers stepping, a time slider, reduced-motion handling and experiment JSON export logic. **18 analytical/data tests, 14 simulated-DOM tests and static/build checks passed; real Chromium launch was blocked before any page loaded.** Rendering, actual downloads, devices and assistive technology remain unverified. This original CC BY 4.0 mini-lab is a bounded new implementation, not recovered historical software or a validated curriculum.
+
 ## Try recovered artifacts
 
 [Reality Atlas Appearance 0.3.1](tools/reality-atlas/README.md) is now included as an unchanged, self-contained HTML tool under its existing CC0 license. Open it in a WebGL2-capable desktop browser to explore motion, history, sphere packing, and finite-probe voids. **46 focused calculation/syntax checks passed; fresh rendered-browser testing was blocked by this environment.** Browser interactions and exports are not newly verified.
@@ -41,7 +45,7 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 ## For builders and AI-assisted research
 
-- [Recovered-artifact registry](data/artifacts.json): included artifact families, declared rights scope, provenance records and scoped verification limits.
+- [Included-artifact registry](data/artifacts.json): recovered and newly built learning artifact families, declared rights scope, provenance records and scoped verification limits.
 - [Concept records](data/concepts.json): stable IDs, source IDs, status, limitations, and suggested next experiments.
 - [Source records](sources/manifest.json): what was consulted and how strong each kind of evidence is.
 - [Implementation brief](concepts/first-demonstrator.md): a small, testable path from this archive to a working learning demonstration.
@@ -51,7 +55,7 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 ## What is actually included
 
-This repository contains newly written, source-linked summaries, proposed implementation handoffs, an unchanged CC0 Reality Atlas browser tool, the CC0 Lumen Commons standalone with reproducible source, the CC0 Universal Color/Ontology source toolkit, and preserved CC0 cooperation/rescue authoring files, each with its license, provenance, and scoped test evidence. It does **not** contain a merged game engine project, bulk-imported source trees, private conversation transcripts, training data exports, personal records, game art, music recordings, signing credentials, or copyrighted asset packs. Existing projects remain separate sources with separate rights and technical histories.
+This repository contains newly written, source-linked summaries, proposed implementation handoffs, a new CC BY 4.0 Motion → Trace → Shape mini-lab, an unchanged CC0 Reality Atlas browser tool, the CC0 Lumen Commons standalone with reproducible source, the CC0 Universal Color/Ontology source toolkit, and preserved CC0 cooperation/rescue authoring files, each with its license, provenance, and scoped test evidence. It does **not** contain a merged game engine project, bulk-imported source trees, private conversation transcripts, training data exports, personal records, game art, music recordings, signing credentials, or copyrighted asset packs. Existing projects remain separate sources with separate rights and technical histories.
 
 The most concrete technical foundations found include Reality Atlas source and a recovered standalone HTML artifact, AR Buddy Commons documentation and source, Math/Matter and Periodic Resonance Studio records, a shared-cooperation mission packet, and a PHYSIO-MESH research scaffold. Branch names and repository contents establish that work exists; they do not prove that an application builds, runs, is safe, or is complete.
 
@@ -62,6 +66,6 @@ The most concrete technical foundations found include Reality Atlas source and a
 - Rights: newly written archive content is CC BY 4.0; the included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files are CC0. Other upstream projects retain their own licenses. See [rights and attribution](docs/rights-and-publication.md).
 - Scientific status: conventional models must be checked independently. Speculative frameworks and historical catalogs are not validated scientific results.
 - Medical status: no diagnosis, treatment recommendation, or clinical device is supplied.
-- Verification: structural checks, 46 focused Reality Atlas calculation/syntax checks, 25 cooperation/rescue authoring tests, 24 Lumen Commons Node tests plus static build checks, and 29 Universal Color/Ontology Node tests passed. Fresh rendered-browser testing was blocked; no full application, GPU, headset, or interaction acceptance is claimed.
+- Verification: structural checks, 46 focused Reality Atlas calculation/syntax checks, 25 cooperation/rescue authoring tests, 24 Lumen Commons Node tests plus static build checks, 29 Universal Color/Ontology Node tests, and 32 new motion mini-lab Node tests plus static/build checks passed. Fresh rendered-browser testing was blocked; no full application, GPU, headset, or interaction acceptance is claimed.
 
 Exact private source locators and review files are kept outside this repository. Summarizing a private source does not make its original public. See the [release review record](docs/release-checklist.md) for this edition’s scope and remaining verification work.

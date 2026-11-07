@@ -74,6 +74,16 @@ The tool reads only the three specified metadata files. It does not run artifact
 
 Integrated after the Universal Color/Ontology preservation release: real queries for music, rescue, inspected physics, Lumen and ontology resolve against the expanded 22-concept/35-source archive. The ontology result preserves its known input-validation and display-safety limits. All prior artifact files, registry/source/concept records and licenses are unchanged by this helper addition.
 
+## New Motion to Trace to Shape mini-lab 0.1.0
+
+From `tools/motion-trace-shape/`, run `node --check src/core.js`, `node --check src/app.js`, `node --test tests/*.test.cjs` and `python3 tests/static_check.py`.
+
+Result on 2026-11-07: 32 Node tests passed (18 analytical/data tests and 14 tests using DOM/animation stand-ins), plus JavaScript/Python syntax and targeted static/build checks. The standalone is 33,912 bytes, SHA-256 `7d7ac4dfefe5740ac118c0a7b20197546ac3212c5a80a83503ce3254ddfd1e64`. Its full CC BY 4.0 text matches the archive's root license. Static checks include deterministic build parity, ID/label/ARIA targets, selected local/CSP/network/storage rules, motion/focus/responsive hooks and seven source-level text contrast pairs. See its README and validation.json for exact scope.
+
+Fresh browser preflight was blocked before page load by Chromium socket permissions. The supplied real-browser acceptance suite has not passed; no rendered screenshots, native slider/download behavior, physical-device or assistive-technology acceptance is claimed. This is a new bounded analytical Lissajous learning prototype, not a force solver, full demonstrator implementation, accessibility certificate or validated curriculum.
+
+Archive integration adds SRC-036, CON-023 and ART-005, distinguishes new implementations from recovered artifacts, and qualifies the earlier demonstrator proposal. It preserves all recovered source bytes/licenses. The integrated structural and offline helper checks pass; browser limitations remain explicit.
+
 ## Rights and privacy boundary
 
 Exact-commit CC0 provenance was reviewed separately for Reality Atlas, Lumen Commons, Universal Color/Ontology and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.

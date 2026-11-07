@@ -1,5 +1,12 @@
 # Changelog
 
+## Motion to Trace to Shape mini-lab, 2026-11-07
+
+- Added a newly built offline paired-sine/Lissajous mini-lab with original explanations, source, deterministic portable HTML and tests under existing CC BY 4.0 terms.
+- Verified 18 model/data tests, 14 simulated-control tests and targeted static/build checks. Real Chromium launch remains blocked before page load; rendered/device/download/accessibility behavior is unverified.
+- Added source/concept/artifact metadata, distinguished new implementations from recovered source and linked the partial demonstrator without claiming the full brief is complete.
+- Preserved all recovered artifact bytes and licenses.
+
 ## Idea Finder 0.1, 2026-11-07
 
 - Added a small offline concept-search helper with literal all-terms matching, exact tag/status filters, bounded results and transparent text ranking.

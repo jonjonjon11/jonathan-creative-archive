@@ -348,8 +348,8 @@
       ],
       "artifact_status": "editorial_proposal",
       "scientific_standing": "established_model_scoped",
-      "limitations": "Not historical implementation or currently supplied executable.",
-      "next_step": "Follow concepts/first-demonstrator.md."
+      "limitations": "The full brief is not implemented. A new bounded paired-sine mini-lab now demonstrates part of it (CON-023); this proposal is not a recovered historical application.",
+      "next_step": "Inspect tools/motion-trace-shape/README.md as a partial starting point, then follow the remaining acceptance gates in concepts/first-demonstrator.md."
     },
     {
       "id": "CON-021",
@@ -387,6 +387,25 @@
       "scientific_standing": "design_mapping",
       "limitations": "29 preserved Node tests pass, but source has documented input-validation gaps. Semantic colors and registry labels are not physical truth; display-rate names do not certify flashing safety. No UI or complete knowledge graph.",
       "next_step": "Build a separately tested derivative with finite/tuning/large-integer validation and static-by-default presentation; add authoritative citations before treating registry entries as evaluated knowledge."
+    },
+    {
+      "id": "CON-023",
+      "title": "Motion to trace to shape learning mini-lab",
+      "tags": [
+        "education",
+        "math",
+        "motion",
+        "browser",
+        "visualization"
+      ],
+      "summary": "Combine two analytical sinusoidal coordinates and compare separate motion, position-versus-time traces and a Lissajous shape in a new offline mini-lab.",
+      "source_ids": [
+        "SRC-036"
+      ],
+      "artifact_status": "source_inspected",
+      "scientific_standing": "established_model_scoped",
+      "limitations": "New partial demonstrator, not historical recovery or validated curriculum. 18 model/data and 14 simulated-DOM checks pass; real-browser launch blocked before page load, so rendering/download/device/assistive-technology behavior remains unverified.",
+      "next_step": "Run the included browser acceptance suite in a supported environment and review screenshots, physical-device controls and assistive-technology behavior before extending the model."
     }
   ]
 }

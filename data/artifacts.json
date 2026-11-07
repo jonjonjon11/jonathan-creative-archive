@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "review_date": "2026-11-07",
-  "scope": "Registry of recovered artifacts already included in this archive, not a catalog of every original tool or a legal clearance record.",
+  "scope": "Registry of selected recovered and newly built learning artifacts included in this archive, not every helper or original tool and not a legal clearance record.",
   "artifacts": [
     {
       "id": "ART-001",
@@ -92,6 +92,33 @@
       },
       "preserved_manifest": "tools/universal-color-ontology/source-review-manifest.json",
       "pinned_files": []
+    },
+    {
+      "id": "ART-005",
+      "title": "Motion to Trace to Shape 0.1.0",
+      "origin": "new_original_implementation",
+      "path": "tools/motion-trace-shape",
+      "source_ids": [
+        "SRC-036"
+      ],
+      "rights": {
+        "license_declared": "CC-BY-4.0",
+        "license_path": "tools/motion-trace-shape/LICENSE.CC-BY-4.0.txt",
+        "scope": "All newly authored code and explanations in this mini-lab, consistent with the archive compilation license. No recovered source or third-party assets bundled.",
+        "review_record": "tools/motion-trace-shape/README.md"
+      },
+      "verification": {
+        "status": "node_and_static_checks_passed_browser_blocked",
+        "record": "tools/motion-trace-shape/validation.json",
+        "limitations": "18 analytical/data and 14 simulated-DOM tests plus static/build checks passed. Chromium launch blocked before page load. Rendering, actual native controls/downloads, physical devices, assistive technology and educational effectiveness are unverified."
+      },
+      "preserved_manifest": null,
+      "pinned_files": [
+        {
+          "path": "tools/motion-trace-shape/Motion-Trace-Shape.html",
+          "sha256": "7d7ac4dfefe5740ac118c0a7b20197546ac3212c5a80a83503ce3254ddfd1e64"
+        }
+      ]
     }
   ]
 }

@@ -12,6 +12,8 @@ The unchanged Reality Atlas HTML is separately covered by [CC0 1.0 Universal](..
 
 The [Universal Color and Ontology toolkit](../tools/universal-color-ontology/README.md) preserves 12 unchanged files under its exact-source [CC0 license](../tools/universal-color-ontology/upstream/LICENSE). Its archive README and provenance manifest are new CC BY 4.0 documentation. Existing source credits remain intact; passing tests and a declared root license are not a legal or scientific audit.
 
+The new [Motion → Trace → Shape mini-lab](../tools/motion-trace-shape/README.md) is an original archive implementation under the existing CC BY 4.0 compilation license, with a complete matching copy in its directory. Its mathematical references are cited, not bundled third-party text or assets. It is not presented as recovered historical source.
+
 ## Different upstream licenses
 
 Reviewed source families use different terms. The educational-universe repository reports CC0-1.0. AR Buddy Commons separates AGPL-3.0-or-later source from CC-BY-SA-4.0 documentation/prompts/curricula and a future CERN-OHL-S-2.0 hardware direction. Other repositories have mixed or absent root licensing. [SRC-007, SRC-008, SRC-009]

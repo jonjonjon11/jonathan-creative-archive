@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="An offline mini-lab: combine two repeating motions, follow their traces, and discover a shape. No prior math needed.">
+  <title>Motion → Trace → Shape · An open mini-lab</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<a class="skip" href="#transport">Skip to playback controls</a>
+<main>
+  <header class="masthead"><div class="brand">Jonathan’s Creative Archive<br>Open learning / 001</div><div class="tag">Offline · Free to remix</div></header>
+  <section class="hero" aria-labelledby="title">
+    <div><h1 id="title">Two rhythms.<br><span>One surprising shape.</span></h1><p>One motion goes left and right. Another goes up and down. Give a dot both motions, and watch its history become a drawing.</p></div>
+    <div class="note">A 5-minute experiment.<br>No math background, sound or account needed. Nothing starts moving by itself.</div>
+  </section>
+  <noscript><p>This lab needs JavaScript for its controls. The explanations below still work: equal rhythms in step make a diagonal line; a quarter-cycle offset makes a circle; doubling the vertical rhythm in step makes a sideways figure-eight.</p></noscript>
+  <section class="workspace" aria-label="Interactive experiment">
+    <div class="controls card">
+      <p class="kicker">Make a prediction</p><h2>Choose your rhythms</h2>
+      <div class="preset-row" role="group" aria-label="Shape experiments">
+        <button id="preset-line" type="button" aria-pressed="false">Line</button>
+        <button id="preset-circle" type="button" aria-pressed="true">Circle</button>
+        <button id="preset-eight" type="button" aria-pressed="false">Figure-eight</button>
+      </div>
+      <div class="control"><label for="xCycles"><span class="teal">Left-right repeats</span><output id="xValue" for="xCycles">1</output></label><input id="xCycles" type="range" min="1" max="4" step="1" value="1" aria-describedby="cycleHint"></div>
+      <div class="control"><label for="yCycles"><span class="coral">Up-down repeats</span><output id="yValue" for="yCycles">1</output></label><input id="yCycles" type="range" min="1" max="4" step="1" value="1" aria-describedby="cycleHint"><p class="hint" id="cycleHint">Complete repeats within 8 model seconds.</p></div>
+      <div class="control"><label for="phase">Up-down head start <output id="phaseValue" for="phase">¼ cycle</output></label><input id="phase" type="range" min="0" max="360" step="15" value="90" aria-describedby="phaseHint"><p class="hint" id="phaseHint">A head start in the up-down rhythm’s own cycle. 90° means a quarter-cycle.</p></div>
+      <p class="hint">Changing a rhythm starts a new drawing at time zero.</p>
+      <hr>
+      <label class="check" for="guide"><input type="checkbox" id="guide" checked>Show the complete shape as a dashed guide</label>
+      <label class="check" for="still"><input type="checkbox" id="still">Still mode: step or scrub only</label>
+      <p id="motionNotice">Still mode turns off continuous playback.</p>
+    </div>
+    <figure class="shape card" style="margin:0" aria-labelledby="shapeHeading shapeCaption">
+      <div class="shape-head"><div><p class="kicker">03 / Combine the motions</p><h2 id="shapeHeading">The shape</h2></div><span class="shape-label" id="shapeName">Circle</span></div>
+      <svg id="shapeSvg" viewBox="0 0 420 420" role="img" aria-labelledby="shapeTitle shapeDesc">
+        <title id="shapeTitle">Combined motion in a square coordinate plot</title><desc id="shapeDesc">A dashed circle shows the complete guide. The dot starts at the top. Solid gold ink shows sampled positions up to the selected time.</desc>
+        <g stroke="#36545e" stroke-width="1"><path d="M50 50H370V370H50Z" fill="none"/><path d="M50 130H370M50 210H370M50 290H370M130 50V370M210 50V370M290 50V370"/></g>
+        <g fill="#c7dbdc"><text x="50" y="394" text-anchor="middle">−1</text><text x="210" y="394" text-anchor="middle">0</text><text x="370" y="394" text-anchor="middle">+1</text><text x="27" y="55" text-anchor="middle">+1</text><text x="27" y="215" text-anchor="middle">0</text><text x="27" y="375" text-anchor="middle">−1</text><text x="210" y="414" text-anchor="middle">left-right position (model units)</text><text x="51" y="27">up-down position ↑</text></g>
+        <path id="shapeGuide" d="" fill="none" stroke="#87a4ac" stroke-width="1.5" stroke-dasharray="5 6"/>
+        <path id="shapeTrace" d="" fill="none" stroke="#ffe18a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path id="projection" d="" fill="none" stroke="#bcd0d3" stroke-width="1" stroke-dasharray="3 5"/>
+        <circle id="shapeDot" cx="210" cy="50" r="7" fill="#fff5d4" stroke="#102e39" stroke-width="2"/>
+      </svg>
+      <figcaption id="shapeCaption" class="shape-caption"><span class="legend-ink">Solid gold = history so far</span><span>Dashed = complete guide (preview)</span></figcaption>
+    </figure>
+    <div class="timeline card" id="transport" tabindex="-1">
+      <div class="timeline-head"><div class="play-actions"><button id="play" class="primary" type="button">Play one cycle</button><button id="step" type="button">Step +⅛ s</button><button id="restart" type="button">Restart</button></div><label for="time" class="time-readout">Model time <output id="timeValue" for="time">0.000 / 8 s</output></label></div>
+      <input id="time" type="range" min="0" max="8" step="0.001" value="0" aria-describedby="timeHint">
+      <div class="transport-bottom"><p id="timeHint">Press Play, or move the time slider yourself. A trace remembers positions, not extra objects. Playback stops after 8 model seconds.</p><label class="speed-label" for="speed">Playback <select id="speed"><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label></div>
+      <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+  <section class="views" aria-label="The same experiment in two more views">
+    <article class="card"><p class="kicker">01 / Notice each motion</p><h2>Two simple back-and-forths</h2>
+      <svg id="motionSvg" viewBox="0 0 340 150" role="img" aria-labelledby="motionTitle motionDesc"><title id="motionTitle">Separate horizontal and vertical positions</title><desc id="motionDesc">The left-right dot and up-down diamond supply the two coordinates of the combined dot.</desc><g stroke="#b7c9c9" stroke-width="2"><path d="M28 70H218M280 32V132"/></g><g fill="#445e66"><text x="28" y="22">Left-right (circle)</text><text x="246" y="22">Up-down</text><text x="28" y="96">−1</text><text x="207" y="96">+1</text><text x="298" y="37">+1</text><text x="298" y="137">−1</text></g><circle id="xDot" cx="123" cy="70" r="8" fill="#006d77"/><path id="yDot" d="M280 23l8 9-8 9-8-9z" fill="#ab3a30"/></svg>
+      <div class="readout"><span class="teal">Left-right: <output id="xRead">0.000</output></span><span class="coral">Up-down: <output id="yRead">1.000</output></span></div>
+      <p class="description">Each dot moves along just one line. The combined dot borrows its left-right position from the circle and its height from the diamond.</p>
+    </article>
+    <article class="card"><p class="kicker">02 / Keep a time trace</p><h2>Same positions, time along the bottom</h2>
+      <svg id="timeSvg" viewBox="0 0 600 210" role="img" aria-labelledby="timeTitle timeDesc"><title id="timeTitle">Position versus model time for each motion</title><desc id="timeDesc">Separate stacked traces show the horizontal and vertical positions. Time goes left to right from zero to eight seconds. Each vertical scale runs from minus one to plus one model unit.</desc><g stroke="#b7c9c9" stroke-width="1"><path d="M58 25V175H570M58 60H570M58 140H570"/></g><g fill="#445e66"><text x="58" y="15">Left-right</text><text x="58" y="96">Up-down</text><text x="18" y="34">+1</text><text x="18" y="90">−1</text><text x="18" y="114">+1</text><text x="18" y="170">−1</text><text x="58" y="194" text-anchor="middle">0</text><text x="314" y="194" text-anchor="middle">4</text><text x="570" y="194" text-anchor="middle">8 s</text><text x="320" y="209" text-anchor="middle">model time →</text></g><path id="xGuide" d="" fill="none" stroke="#63898b" stroke-width="1" stroke-dasharray="4 5"/><path id="yGuide" d="" fill="none" stroke="#ae7d75" stroke-width="1" stroke-dasharray="4 5"/><path id="xTrace" d="" fill="none" stroke="#006d77" stroke-width="2.5"/><path id="yTrace" d="" fill="none" stroke="#ab3a30" stroke-width="2.5"/><path id="timeCursor" d="M58 25V175" stroke="#142c34" stroke-width="1.5"/><circle id="xTimeDot" cx="58" cy="60" r="4" fill="#006d77"/><path id="yTimeDot" d="M58 106l5 6-5 6-5-6z" fill="#ab3a30"/></svg>
+      <p class="description">Read both traces at the same time line. Their two heights become one point in the square plot. Here the horizontal axis is <strong>time</strong>; in the shape it is <strong>left-right position</strong>.</p>
+    </article>
+  </section>
+  <p id="textSummary" class="description">At 0.000 model seconds: left-right position 0.000; up-down position 1.000. Circle: both rhythms repeat once; the vertical rhythm has a quarter-cycle head start.</p>
+  <section class="learning" aria-label="Three experiments to try">
+    <article class="lesson"><h3>01 · Make a line</h3><p>Choose Line, then play or scrub. Both motions stay in step. Where is the dot when both positions are zero?</p><details><summary>Show what to notice</summary><p>The dot is at the center. Equal left-right and up-down positions make a diagonal line, traced back and forth. The path is not a new object or a force.</p></details></article>
+    <article class="lesson"><h3>02 · Open it into a circle</h3><p>Choose Circle. The repeat counts stay the same. What changes when one motion gets a quarter-cycle head start?</p><details><summary>Show what to notice</summary><p>When left-right position is zero, up-down position is at an extreme. When up-down position is zero, left-right position is at an extreme. Equal amplitudes and this offset make a circle.</p></details></article>
+    <article class="lesson"><h3>03 · Find a figure-eight</h3><p>Choose Figure-eight. The up-down rhythm now repeats twice as often. Predict how many times it reaches the top in 8 seconds.</p><details><summary>Show what to notice</summary><p>Twice. One left-right cycle and two up-down cycles, starting together, draw a sideways figure-eight. Try a different head start: a 1:2 ratio alone does not guarantee this shape.</p></details></article>
+  </section>
+  <section class="science" aria-label="Model, evidence and reuse">
+    <details id="modelDetails"><summary>What this model means, and what it does not</summary>
+      <p>This is a mathematical drawing made from two independent sinusoidal motions, a family called <strong>Lissajous curves</strong>. It is not a recording of a real object or a claim about quantum particles. There is no gravity, friction, sound or hidden force simulation. Colors distinguish coordinates; they are not physical properties.</p>
+      <p>Each coordinate reaches one model unit either side of the center. The equal-scale square plot keeps circles circular. We choose an 8-second model window. The controls set the number of repeats within that window, from 1 to 4. These integer counts make the position and direction repeat after 8 seconds, sometimes sooner. The head start is the vertical phase in degrees.</p>
+      <p class="formula">x(t) = sin(2π × left-right repeats × t / 8)<br>y(t) = sin(2π × up-down repeats × t / 8 + head start × π / 180)</p>
+      <p>These are analytical formulas, not a numerical integration. The trace uses 481 calculated samples, one every 1/60 model second including both endpoints. Straight segments join them. The live dot is calculated at the selected time, so it can be slightly ahead of the last stored sample. The dashed guide previews the whole window; it is not visited history. Nothing is measured.</p>
+      <p>Playback speed only changes how quickly you see model time pass. It does not change the equations or exported samples. Animation pauses when the page is hidden. No learning-effectiveness, device-accessibility or physical-safety certification is claimed.</p>
+      <p>References: <a href="https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion" target="_blank" rel="noopener noreferrer">OpenStax, Simple Harmonic Motion</a>; <a href="https://mathworld.wolfram.com/LissajousCurve.html" target="_blank" rel="noopener noreferrer">Wolfram MathWorld, Lissajous Curve</a>. References open online only if you choose them; the lab itself needs no connection.</p>
+    </details>
+    <details><summary>Use it without animation, or with a keyboard</summary><p>Everything begins paused. If your device asks for reduced motion, Still mode starts on. With Still mode on, use Step or the time slider to explore without continuous playback. Tab moves among controls. Enter or Space activates buttons. Arrow keys adjust sliders; Home and End go to their limits. You can use all controls without dragging. Position numbers and the text summary describe the selected moment. Changes are announced when you use a control, not on every animation frame.</p></details>
+    <div class="export-row"><button id="export" type="button">Save experiment JSON</button><p>Save the equations, parameters, all 481 samples and current display settings to your device. No names, tracking or uploads. Save or share the HTML file to reuse the lab offline.</p></div>
+    <p class="hint" id="exportStatus" role="status"></p>
+  </section>
+  <footer>Motion → Trace → Shape 0.1.0 · New mini-lab for Jonathan’s Creative Archive (2026). Original code and explanations, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. You may copy, change and share it, including commercially, with attribution and a note of changes. No external assets or runtime libraries.</footer>
+</main>
+<script src="src/core.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>

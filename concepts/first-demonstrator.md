@@ -1,5 +1,9 @@
 # Implementation brief: one inspectable learning model
 
+## New partial starting point
+
+[Motion → Trace → Shape](../tools/motion-trace-shape/README.md) is now included as a new original mini-lab inspired by this brief. It implements two bounded analytical sine coordinates, fixed samples, separate motion/time/shape views, paused/reduced-motion control logic and JSON export generation. It does not implement every quantity, model or acceptance gate below. Its 32 model/simulated-control checks and static build checks passed, but real-browser launch was blocked before page load. Use its README for the current limits; this brief remains a roadmap rather than a claim that the full project is complete.
+
 **ID:** DEMO-001  
 **Status:** editorial proposal  
 **Related concepts:** CON-001, CON-002, CON-003, CON-004  

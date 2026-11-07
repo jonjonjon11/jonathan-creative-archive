@@ -1,6 +1,6 @@
 # Recovered project map
 
-This map summarizes selected source and branch work. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/`, CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`, CC0 Lumen Commons source/standalone in `tools/lumen-commons/`, and the CC0 source toolkit in `tools/universal-color-ontology/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
+This map summarizes selected source and branch work, followed by a new implementation built for this archive. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/`, CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`, CC0 Lumen Commons source/standalone in `tools/lumen-commons/`, and the CC0 source toolkit in `tools/universal-color-ontology/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
 
 ## AR Buddy Commons
 
@@ -357,3 +357,13 @@ Earthling README states AGPL-3.0-or-later; Blackdragon has no detected root lice
 ### Rights
 
 Mostly no detected root license. Third-party purchased assets/music are not cleared for redistribution by repository ownership.
+
+## New archive implementation: Motion → Trace → Shape
+
+**Status:** New original offline mini-lab, not recovered historical software. **Source ID:** SRC-036.
+
+[Motion → Trace → Shape](../tools/motion-trace-shape/README.md) implements two analytical sinusoidal coordinates with a shared model/history and three representations: separate motions, time traces and combined shape. It supplies reproducible source and a portable 33,912-byte HTML file, three learner prompts and JSON export logic. It is a bounded partial implementation of the demonstrator brief, not a force solver or all proposed quantities.
+
+Fresh checks: 18 analytical/data tests, 14 simulated-DOM control-state tests and targeted static/build checks passed. Real Chromium launch was blocked before page load. Rendering, native control behavior, actual downloads, physical devices, assistive technology and educational effectiveness remain unverified. Existing source-level motion/contrast hooks are not an accessibility certification.
+
+New code and explanations use the archive's CC BY 4.0 license. No upstream code, third-party assets, runtime library, account, storage or background network request is bundled.

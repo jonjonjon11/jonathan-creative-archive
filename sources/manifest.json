@@ -399,6 +399,20 @@
       "included_artifact": "tools/universal-color-ontology/README.md",
       "artifact_license": "CC0-1.0",
       "source_commit": "e17aaa014a9cf66b6a510c01c5563409780b8656"
+    },
+    {
+      "id": "SRC-036",
+      "title": "New Motion to Trace to Shape mini-lab 0.1.0",
+      "evidence_class": "new_implementation_review",
+      "source_date": "2026-11-07",
+      "access": "new_public_archive_implementation",
+      "public_url": null,
+      "findings": "Original paired-sine/Lissajous learning mini-lab with 33,912-byte offline HTML, source/build, analytical samples, paused/reduced-motion controls and JSON export logic. 32 Node tests and targeted static/build checks passed.",
+      "limitations": "Chromium launch blocked before page load; simulated DOM tests do not establish rendered layout, native controls or successful downloads. Not a force simulation, full demonstrator brief or validated curriculum; physical-device and assistive-technology behavior unverified.",
+      "locator_policy": "New artifact is included directly; no private source locator or recovered historical implementation is implied.",
+      "included_artifact": "tools/motion-trace-shape/README.md",
+      "artifact_license": "CC-BY-4.0",
+      "artifact_sha256": "7d7ac4dfefe5740ac118c0a7b20197546ac3212c5a80a83503ce3254ddfd1e64"
     }
   ]
 }

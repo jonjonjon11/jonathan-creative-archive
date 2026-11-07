@@ -61,7 +61,7 @@ It ignores `.git` and `__pycache__` directories, `.pyc` files and `.DS_Store`. T
 
 The tool is intended for a trusted, stationary local checkout, not a hostile or concurrently changing filesystem. Its path checks are not an operating-system security sandbox. It does not prove who created the baseline or detect coordinated changes to both files and hash records. It does not parse license obligations or validate the truth of a verification record. It does not execute tests, check URLs, search private accounts, recover missing files, detect all secrets, review science, or certify privacy, accessibility, medical safety or educational efficacy. Metadata shown in a report may itself contain private information; review it before sharing.
 
-`data/artifacts.json` currently lists the three recovered artifact families, not every support script. Its `rights` fields name the declaration, applicable file scope, local license file and human review record. Its `verification` fields preserve the scoped test status and limitations. New recoveries require a human-authored entry and source/rights review. The supported upstream manifest layouts are intentionally limited to the two formats already in this archive.
+`data/artifacts.json` lists selected included learning artifacts, distinguishing recovered sources from new implementations; it does not enumerate every support script. Its `rights` fields name the declaration, applicable file scope, local license file and human review record. Its `verification` fields preserve the scoped test status and limitations. New recoveries require a human-authored entry and source/rights review. The supported upstream manifest layouts are intentionally limited to the two formats already in this archive.
 
 ## Verification
 

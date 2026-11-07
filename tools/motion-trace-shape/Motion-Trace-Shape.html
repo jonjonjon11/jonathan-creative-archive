@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="An offline mini-lab: combine two repeating motions, follow their traces, and discover a shape. No prior math needed.">
+  <title>Motion → Trace → Shape · An open mini-lab</title>
+  <style>
+:root { color-scheme: light; --ink:#142c34; --muted:#445e66; --paper:#f5f4ed; --card:#fffef8; --line:#b7c9c9; --teal:#006d77; --coral:#ab3a30; --night:#102e39; --gold:#ffe18a; }
+* { box-sizing:border-box; }
+body { margin:0; font:1rem/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:var(--paper); color:var(--ink); }
+a { color:var(--teal); text-underline-offset:3px; }
+a:hover { text-decoration-thickness:3px; }
+button,input,select { font:inherit; }
+button,select { min-height:46px; border:1px solid var(--line); border-radius:11px; padding:10px 15px; color:var(--ink); background:white; }
+button { cursor:pointer; font-weight:650; }
+button:hover { background:#e7efeb; }
+button:disabled { cursor:not-allowed; opacity:.58; }
+button[aria-pressed="true"],button.primary { background:var(--teal); border-color:var(--teal); color:white; }
+:focus-visible { outline:3px solid #6753ad; outline-offset:4px; }
+.skip { position:absolute; left:12px; top:-100px; z-index:10; padding:12px; background:white; }
+.skip:focus { top:12px; }
+main { max-width:1240px; margin:auto; padding:26px 28px 40px; }
+.masthead { display:flex; justify-content:space-between; align-items:center; gap:16px; padding-bottom:22px; border-bottom:1px solid var(--line); }
+.brand { font-size:.76rem; text-transform:uppercase; letter-spacing:.12em; font-weight:750; }
+.tag { font-size:.78rem; padding:6px 10px; background:#e2eae4; border-radius:99px; }
+.hero { display:flex; align-items:end; justify-content:space-between; gap:25px; margin:28px 0 25px; }
+h1 { font-size:clamp(2rem,4.3vw,3.5rem); line-height:1.08; letter-spacing:-.045em; margin:0 0 15px; max-width:760px; }
+h1 span { color:var(--teal); }
+.hero p { margin:0; max-width:660px; font-size:1.06rem; color:var(--muted); }
+.note { max-width:230px; font-size:.84rem; color:var(--muted); }
+.workspace { display:grid; grid-template-columns:minmax(230px,.8fr) minmax(0,1.5fr); gap:18px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; }
+.controls { padding:20px; }
+h2 { font-size:1.12rem; margin:0 0 13px; letter-spacing:-.015em; }
+.kicker { text-transform:uppercase; letter-spacing:.12em; font-size:.68rem; font-weight:750; margin:0 0 6px; color:var(--muted); }
+.preset-row { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:24px; }
+.preset-row button { padding:10px 13px; }
+.control { margin-bottom:19px; }
+.control label,.row-label { display:flex; justify-content:space-between; gap:10px; font-size:.9rem; font-weight:650; }
+output { font-variant-numeric:tabular-nums; }
+input[type="range"] { width:100%; min-height:44px; margin:0; accent-color:var(--teal); cursor:pointer; }
+#yCycles,#phase { accent-color:var(--coral); }
+.hint { font-size:.8rem; margin:0; color:var(--muted); }
+.controls hr { border:0; border-top:1px solid var(--line); margin:20px 0; }
+.check { display:flex; gap:10px; align-items:center; min-height:46px; font-size:.88rem; cursor:pointer; }
+.check input { width:20px; height:20px; accent-color:var(--teal); flex-shrink:0; }
+#motionNotice { margin:0 0 10px; font-size:.79rem; color:var(--muted); }
+.shape { background:var(--night); color:#f6f4e8; padding:20px 23px 15px; border-color:var(--night); }
+.shape .kicker,.shape .hint { color:#c7dbdc; }
+.shape-head { display:flex; justify-content:space-between; gap:16px; }
+.shape-head h2 { margin-bottom:3px; }
+.shape-label { color:var(--gold); font-size:.82rem; }
+.shape svg { display:block; width:100%; max-height:430px; aspect-ratio:1; margin:8px auto 0; }
+svg text { font-family:inherit; font-size:13px; }
+svg path,svg line,svg circle { vector-effect:non-scaling-stroke; }
+.shape-caption { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:.8rem; color:#c7dbdc; }
+.legend-ink { color:var(--gold); }
+.timeline { grid-column:1/-1; padding:18px 20px; }
+.timeline-head { display:flex; justify-content:space-between; align-items:center; gap:15px; flex-wrap:wrap; }
+.play-actions { display:flex; gap:8px; flex-wrap:wrap; }
+.time-readout { font-variant-numeric:tabular-nums; }
+.transport-bottom { display:flex; gap:20px; justify-content:space-between; align-items:start; }
+.transport-bottom p { margin:0; font-size:.84rem; color:var(--muted); max-width:690px; }
+.speed-label { display:flex; align-items:center; gap:10px; font-size:.82rem; white-space:nowrap; }
+.speed-label select { padding:8px; }
+.views { display:grid; grid-template-columns:1fr 1.65fr; gap:18px; margin-top:18px; }
+.views .card { padding:20px; min-width:0; }
+.views svg { display:block; width:100%; height:auto; }
+.teal { color:var(--teal); }
+.coral { color:var(--coral); }
+.description { margin:12px 0 0; font-size:.87rem; color:var(--muted); }
+.readout { display:flex; gap:18px; flex-wrap:wrap; font-size:.86rem; font-variant-numeric:tabular-nums; }
+.learning { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:28px; }
+.lesson { border-top:2px solid var(--teal); padding-top:15px; }
+.lesson h3 { font-size:1rem; margin:0 0 7px; }
+.lesson p { color:var(--muted); font-size:.9rem; margin:0 0 10px; }
+details { margin-top:12px; }
+summary { cursor:pointer; font-size:.9rem; min-height:44px; display:list-item; padding:10px 0; font-weight:650; }
+details p,details li { font-size:.9rem; }
+.science { margin-top:25px; border-top:1px solid var(--line); padding-top:8px; }
+.formula { font-family:ui-monospace,monospace; background:#e9eeea; padding:10px 13px; overflow-wrap:anywhere; border-radius:8px; }
+.export-row { display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin:20px 0; }
+.export-row p { font-size:.85rem; margin:0; max-width:660px; color:var(--muted); }
+footer { margin-top:25px; padding-top:16px; border-top:1px solid var(--line); font-size:.77rem; color:var(--muted); }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+[hidden] { display:none !important; }
+@media(max-width:760px) {
+  main { padding:18px 16px 28px; }
+  .hero { display:block; margin:24px 0; }
+  .hero .note { max-width:none; margin-top:13px; }
+  .workspace { grid-template-columns:1fr; }
+  .shape { grid-row:1; padding:18px; }
+  .controls { grid-row:3; }
+  .timeline { grid-row:2; }
+  .views,.learning { grid-template-columns:1fr; }
+  .transport-bottom { flex-direction:column; gap:10px; }
+  .masthead { align-items:start; }
+  .tag { white-space:nowrap; }
+  .shape svg { max-height:390px; }
+}
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; animation:none !important; transition:none !important; } }
+@media print { .controls,.timeline,.export-row,.skip { display:none; } .workspace,.views,.learning { display:block; } .card,.lesson { break-inside:avoid; margin:12px 0; } .shape { print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#transport">Skip to playback controls</a>
+<main>
+  <header class="masthead"><div class="brand">Jonathan’s Creative Archive<br>Open learning / 001</div><div class="tag">Offline · Free to remix</div></header>
+  <section class="hero" aria-labelledby="title">
+    <div><h1 id="title">Two rhythms.<br><span>One surprising shape.</span></h1><p>One motion goes left and right. Another goes up and down. Give a dot both motions, and watch its history become a drawing.</p></div>
+    <div class="note">A 5-minute experiment.<br>No math background, sound or account needed. Nothing starts moving by itself.</div>
+  </section>
+  <noscript><p>This lab needs JavaScript for its controls. The explanations below still work: equal rhythms in step make a diagonal line; a quarter-cycle offset makes a circle; doubling the vertical rhythm in step makes a sideways figure-eight.</p></noscript>
+  <section class="workspace" aria-label="Interactive experiment">
+    <div class="controls card">
+      <p class="kicker">Make a prediction</p><h2>Choose your rhythms</h2>
+      <div class="preset-row" role="group" aria-label="Shape experiments">
+        <button id="preset-line" type="button" aria-pressed="false">Line</button>
+        <button id="preset-circle" type="button" aria-pressed="true">Circle</button>
+        <button id="preset-eight" type="button" aria-pressed="false">Figure-eight</button>
+      </div>
+      <div class="control"><label for="xCycles"><span class="teal">Left-right repeats</span><output id="xValue" for="xCycles">1</output></label><input id="xCycles" type="range" min="1" max="4" step="1" value="1" aria-describedby="cycleHint"></div>
+      <div class="control"><label for="yCycles"><span class="coral">Up-down repeats</span><output id="yValue" for="yCycles">1</output></label><input id="yCycles" type="range" min="1" max="4" step="1" value="1" aria-describedby="cycleHint"><p class="hint" id="cycleHint">Complete repeats within 8 model seconds.</p></div>
+      <div class="control"><label for="phase">Up-down head start <output id="phaseValue" for="phase">¼ cycle</output></label><input id="phase" type="range" min="0" max="360" step="15" value="90" aria-describedby="phaseHint"><p class="hint" id="phaseHint">A head start in the up-down rhythm’s own cycle. 90° means a quarter-cycle.</p></div>
+      <p class="hint">Changing a rhythm starts a new drawing at time zero.</p>
+      <hr>
+      <label class="check" for="guide"><input type="checkbox" id="guide" checked>Show the complete shape as a dashed guide</label>
+      <label class="check" for="still"><input type="checkbox" id="still">Still mode: step or scrub only</label>
+      <p id="motionNotice">Still mode turns off continuous playback.</p>
+    </div>
+    <figure class="shape card" style="margin:0" aria-labelledby="shapeHeading shapeCaption">
+      <div class="shape-head"><div><p class="kicker">03 / Combine the motions</p><h2 id="shapeHeading">The shape</h2></div><span class="shape-label" id="shapeName">Circle</span></div>
+      <svg id="shapeSvg" viewBox="0 0 420 420" role="img" aria-labelledby="shapeTitle shapeDesc">
+        <title id="shapeTitle">Combined motion in a square coordinate plot</title><desc id="shapeDesc">A dashed circle shows the complete guide. The dot starts at the top. Solid gold ink shows sampled positions up to the selected time.</desc>
+        <g stroke="#36545e" stroke-width="1"><path d="M50 50H370V370H50Z" fill="none"/><path d="M50 130H370M50 210H370M50 290H370M130 50V370M210 50V370M290 50V370"/></g>
+        <g fill="#c7dbdc"><text x="50" y="394" text-anchor="middle">−1</text><text x="210" y="394" text-anchor="middle">0</text><text x="370" y="394" text-anchor="middle">+1</text><text x="27" y="55" text-anchor="middle">+1</text><text x="27" y="215" text-anchor="middle">0</text><text x="27" y="375" text-anchor="middle">−1</text><text x="210" y="414" text-anchor="middle">left-right position (model units)</text><text x="51" y="27">up-down position ↑</text></g>
+        <path id="shapeGuide" d="" fill="none" stroke="#87a4ac" stroke-width="1.5" stroke-dasharray="5 6"/>
+        <path id="shapeTrace" d="" fill="none" stroke="#ffe18a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path id="projection" d="" fill="none" stroke="#bcd0d3" stroke-width="1" stroke-dasharray="3 5"/>
+        <circle id="shapeDot" cx="210" cy="50" r="7" fill="#fff5d4" stroke="#102e39" stroke-width="2"/>
+      </svg>
+      <figcaption id="shapeCaption" class="shape-caption"><span class="legend-ink">Solid gold = history so far</span><span>Dashed = complete guide (preview)</span></figcaption>
+    </figure>
+    <div class="timeline card" id="transport" tabindex="-1">
+      <div class="timeline-head"><div class="play-actions"><button id="play" class="primary" type="button">Play one cycle</button><button id="step" type="button">Step +⅛ s</button><button id="restart" type="button">Restart</button></div><label for="time" class="time-readout">Model time <output id="timeValue" for="time">0.000 / 8 s</output></label></div>
+      <input id="time" type="range" min="0" max="8" step="0.001" value="0" aria-describedby="timeHint">
+      <div class="transport-bottom"><p id="timeHint">Press Play, or move the time slider yourself. A trace remembers positions, not extra objects. Playback stops after 8 model seconds.</p><label class="speed-label" for="speed">Playback <select id="speed"><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label></div>
+      <p class="sr-only" id="announcement" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+  <section class="views" aria-label="The same experiment in two more views">
+    <article class="card"><p class="kicker">01 / Notice each motion</p><h2>Two simple back-and-forths</h2>
+      <svg id="motionSvg" viewBox="0 0 340 150" role="img" aria-labelledby="motionTitle motionDesc"><title id="motionTitle">Separate horizontal and vertical positions</title><desc id="motionDesc">The left-right dot and up-down diamond supply the two coordinates of the combined dot.</desc><g stroke="#b7c9c9" stroke-width="2"><path d="M28 70H218M280 32V132"/></g><g fill="#445e66"><text x="28" y="22">Left-right (circle)</text><text x="246" y="22">Up-down</text><text x="28" y="96">−1</text><text x="207" y="96">+1</text><text x="298" y="37">+1</text><text x="298" y="137">−1</text></g><circle id="xDot" cx="123" cy="70" r="8" fill="#006d77"/><path id="yDot" d="M280 23l8 9-8 9-8-9z" fill="#ab3a30"/></svg>
+      <div class="readout"><span class="teal">Left-right: <output id="xRead">0.000</output></span><span class="coral">Up-down: <output id="yRead">1.000</output></span></div>
+      <p class="description">Each dot moves along just one line. The combined dot borrows its left-right position from the circle and its height from the diamond.</p>
+    </article>
+    <article class="card"><p class="kicker">02 / Keep a time trace</p><h2>Same positions, time along the bottom</h2>
+      <svg id="timeSvg" viewBox="0 0 600 210" role="img" aria-labelledby="timeTitle timeDesc"><title id="timeTitle">Position versus model time for each motion</title><desc id="timeDesc">Separate stacked traces show the horizontal and vertical positions. Time goes left to right from zero to eight seconds. Each vertical scale runs from minus one to plus one model unit.</desc><g stroke="#b7c9c9" stroke-width="1"><path d="M58 25V175H570M58 60H570M58 140H570"/></g><g fill="#445e66"><text x="58" y="15">Left-right</text><text x="58" y="96">Up-down</text><text x="18" y="34">+1</text><text x="18" y="90">−1</text><text x="18" y="114">+1</text><text x="18" y="170">−1</text><text x="58" y="194" text-anchor="middle">0</text><text x="314" y="194" text-anchor="middle">4</text><text x="570" y="194" text-anchor="middle">8 s</text><text x="320" y="209" text-anchor="middle">model time →</text></g><path id="xGuide" d="" fill="none" stroke="#63898b" stroke-width="1" stroke-dasharray="4 5"/><path id="yGuide" d="" fill="none" stroke="#ae7d75" stroke-width="1" stroke-dasharray="4 5"/><path id="xTrace" d="" fill="none" stroke="#006d77" stroke-width="2.5"/><path id="yTrace" d="" fill="none" stroke="#ab3a30" stroke-width="2.5"/><path id="timeCursor" d="M58 25V175" stroke="#142c34" stroke-width="1.5"/><circle id="xTimeDot" cx="58" cy="60" r="4" fill="#006d77"/><path id="yTimeDot" d="M58 106l5 6-5 6-5-6z" fill="#ab3a30"/></svg>
+      <p class="description">Read both traces at the same time line. Their two heights become one point in the square plot. Here the horizontal axis is <strong>time</strong>; in the shape it is <strong>left-right position</strong>.</p>
+    </article>
+  </section>
+  <p id="textSummary" class="description">At 0.000 model seconds: left-right position 0.000; up-down position 1.000. Circle: both rhythms repeat once; the vertical rhythm has a quarter-cycle head start.</p>
+  <section class="learning" aria-label="Three experiments to try">
+    <article class="lesson"><h3>01 · Make a line</h3><p>Choose Line, then play or scrub. Both motions stay in step. Where is the dot when both positions are zero?</p><details><summary>Show what to notice</summary><p>The dot is at the center. Equal left-right and up-down positions make a diagonal line, traced back and forth. The path is not a new object or a force.</p></details></article>
+    <article class="lesson"><h3>02 · Open it into a circle</h3><p>Choose Circle. The repeat counts stay the same. What changes when one motion gets a quarter-cycle head start?</p><details><summary>Show what to notice</summary><p>When left-right position is zero, up-down position is at an extreme. When up-down position is zero, left-right position is at an extreme. Equal amplitudes and this offset make a circle.</p></details></article>
+    <article class="lesson"><h3>03 · Find a figure-eight</h3><p>Choose Figure-eight. The up-down rhythm now repeats twice as often. Predict how many times it reaches the top in 8 seconds.</p><details><summary>Show what to notice</summary><p>Twice. One left-right cycle and two up-down cycles, starting together, draw a sideways figure-eight. Try a different head start: a 1:2 ratio alone does not guarantee this shape.</p></details></article>
+  </section>
+  <section class="science" aria-label="Model, evidence and reuse">
+    <details id="modelDetails"><summary>What this model means, and what it does not</summary>
+      <p>This is a mathematical drawing made from two independent sinusoidal motions, a family called <strong>Lissajous curves</strong>. It is not a recording of a real object or a claim about quantum particles. There is no gravity, friction, sound or hidden force simulation. Colors distinguish coordinates; they are not physical properties.</p>
+      <p>Each coordinate reaches one model unit either side of the center. The equal-scale square plot keeps circles circular. We choose an 8-second model window. The controls set the number of repeats within that window, from 1 to 4. These integer counts make the position and direction repeat after 8 seconds, sometimes sooner. The head start is the vertical phase in degrees.</p>
+      <p class="formula">x(t) = sin(2π × left-right repeats × t / 8)<br>y(t) = sin(2π × up-down repeats × t / 8 + head start × π / 180)</p>
+      <p>These are analytical formulas, not a numerical integration. The trace uses 481 calculated samples, one every 1/60 model second including both endpoints. Straight segments join them. The live dot is calculated at the selected time, so it can be slightly ahead of the last stored sample. The dashed guide previews the whole window; it is not visited history. Nothing is measured.</p>
+      <p>Playback speed only changes how quickly you see model time pass. It does not change the equations or exported samples. Animation pauses when the page is hidden. No learning-effectiveness, device-accessibility or physical-safety certification is claimed.</p>
+      <p>References: <a href="https://openstax.org/books/university-physics-volume-1/pages/15-1-simple-harmonic-motion" target="_blank" rel="noopener noreferrer">OpenStax, Simple Harmonic Motion</a>; <a href="https://mathworld.wolfram.com/LissajousCurve.html" target="_blank" rel="noopener noreferrer">Wolfram MathWorld, Lissajous Curve</a>. References open online only if you choose them; the lab itself needs no connection.</p>
+    </details>
+    <details><summary>Use it without animation, or with a keyboard</summary><p>Everything begins paused. If your device asks for reduced motion, Still mode starts on. With Still mode on, use Step or the time slider to explore without continuous playback. Tab moves among controls. Enter or Space activates buttons. Arrow keys adjust sliders; Home and End go to their limits. You can use all controls without dragging. Position numbers and the text summary describe the selected moment. Changes are announced when you use a control, not on every animation frame.</p></details>
+    <div class="export-row"><button id="export" type="button">Save experiment JSON</button><p>Save the equations, parameters, all 481 samples and current display settings to your device. No names, tracking or uploads. Save or share the HTML file to reuse the lab offline.</p></div>
+    <p class="hint" id="exportStatus" role="status"></p>
+  </section>
+  <footer>Motion → Trace → Shape 0.1.0 · New mini-lab for Jonathan’s Creative Archive (2026). Original code and explanations, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. You may copy, change and share it, including commercially, with attribution and a note of changes. No external assets or runtime libraries.</footer>
+</main>
+<script>
+/* Motion → Trace → Shape 0.1.0. Original code, CC BY 4.0; see README.md. */
+(function (root, factory) {
+  'use strict';
+  const api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  else root.MotionModel = api;
+}(typeof globalThis !== 'undefined' ? globalThis : this, function () {
+  'use strict';
+  const VERSION = '0.1.0';
+  const DURATION = 8;
+  const INTERVALS = 480;
+  const STEP = DURATION / INTERVALS;
+  const PRESETS = Object.freeze({
+    line: Object.freeze({ xCycles: 1, yCycles: 1, phase: 0 }),
+    circle: Object.freeze({ xCycles: 1, yCycles: 1, phase: 90 }),
+    eight: Object.freeze({ xCycles: 1, yCycles: 2, phase: 0 })
+  });
+  function validate(params) {
+    if (!params || typeof params !== 'object') throw new TypeError('Parameters must be an object.');
+    for (const key of ['xCycles', 'yCycles']) {
+      if (!Number.isInteger(params[key]) || params[key] < 1 || params[key] > 4) {
+        throw new RangeError(key + ' must be an integer from 1 to 4.');
+      }
+    }
+    if (!Number.isFinite(params.phase) || params.phase < 0 || params.phase > 360 || params.phase % 15 !== 0) {
+      throw new RangeError('Phase must be a multiple of 15 degrees from 0 to 360.');
+    }
+    return { xCycles: params.xCycles, yCycles: params.yCycles, phase: params.phase };
+  }
+  function stateAt(params, t) {
+    const p = validate(params);
+    if (!Number.isFinite(t) || t < 0 || t > DURATION) throw new RangeError('Time must be from 0 to 8 seconds.');
+    return {
+      t,
+      x: Math.sin(2 * Math.PI * p.xCycles * t / DURATION),
+      y: Math.sin(2 * Math.PI * p.yCycles * t / DURATION + p.phase * Math.PI / 180)
+    };
+  }
+  function sample(params) {
+    const p = validate(params);
+    return Array.from({ length: INTERVALS + 1 }, (_, i) => stateAt(p, i * STEP));
+  }
+  function historyUntil(samples, time) {
+    if (!Number.isFinite(time) || time < 0 || time > DURATION) throw new RangeError('Time must be from 0 to 8 seconds.');
+    // Fixed samples only. The live cursor is analytical and may fall between them.
+    return samples.slice(0, Math.floor(time / STEP + 1e-10) + 1);
+  }
+  function advance(time, elapsedSeconds, playbackSpeed) {
+    if (!Number.isFinite(time) || time < 0 || time > DURATION) throw new RangeError('Invalid time.');
+    if (!Number.isFinite(elapsedSeconds) || elapsedSeconds < 0) throw new RangeError('Invalid elapsed time.');
+    if (![0.5, 1, 2].includes(playbackSpeed)) throw new RangeError('Invalid playback speed.');
+    return Math.min(DURATION, time + elapsedSeconds * playbackSpeed);
+  }
+  function record(params, presentation) {
+    const p = validate(params);
+    if (!presentation || typeof presentation !== 'object') throw new TypeError('Presentation is required.');
+    const t = presentation.time;
+    stateAt(p, t);
+    advance(t, 0, presentation.playbackSpeed);
+    if (typeof presentation.showGuide !== 'boolean' || typeof presentation.stillMode !== 'boolean') throw new TypeError('Display switches must be boolean.');
+    return {
+      format: 'motion-trace-shape-experiment', schema_version: 1, model_version: VERSION,
+      model: {
+        method: 'Analytical sine functions; no numerical integration or measured data.',
+        equations: ['x(t) = sin(2*pi*x_cycles*t/8)', 'y(t) = sin(2*pi*y_cycles*t/8 + phase_degrees*pi/180)'],
+        parameters: { x_cycles: p.xCycles, y_cycles: p.yCycles, phase_degrees: p.phase, duration_seconds: DURATION, amplitude_model_units: 1 },
+        units: { t: 'model seconds', x: 'model units', y: 'model units' },
+        initial_state: stateAt(p, 0),
+        sampling: { interval_seconds: STEP, intervals: INTERVALS, sample_count: INTERVALS + 1, endpoints_included: true },
+        samples: sample(p)
+      },
+      presentation: { time: t, playback_speed: presentation.playbackSpeed, show_complete_guide: presentation.showGuide, still_mode: presentation.stillMode, positive_y: 'up', plot_aspect_ratio: 'equal units on both axes', trace: 'fixed samples joined by straight segments; analytical live cursor' }
+    };
+  }
+  return Object.freeze({ VERSION, DURATION, INTERVALS, STEP, PRESETS, validate, stateAt, sample, historyUntil, advance, record });
+}));
+</script>
+<script>
+/* Original interface for Motion → Trace → Shape. CC BY 4.0. */
+(function () {
+  'use strict';
+  const M = window.MotionModel;
+  const $ = id => document.getElementById(id);
+  const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let params = { ...M.PRESETS.circle };
+  let samples = M.sample(params);
+  let time = 0;
+  let running = false;
+  let frame = null;
+  let lastFrame = null;
+  $('still').checked = media.matches;
+  const set = (id, attr, value) => $(id).setAttribute(attr, String(value));
+  const fixed = n => Math.abs(n) < 0.0005 ? '0.000' : n.toFixed(3);
+  const pointPath = (points, x, y) => points.map((p, i) => `${i ? 'L' : 'M'}${x(p).toFixed(3)} ${y(p).toFixed(3)}`).join(' ');
+  const diamond = (x, y, r) => `M${x} ${y-r}l${r} ${r} -${r} ${r} -${r} -${r}Z`;
+  const px = p => 210 + 160 * p.x;
+  const py = p => 210 - 160 * p.y;
+  const tx = p => 58 + 512 * p.t / M.DURATION;
+  const tyX = p => 60 - 28 * p.x;
+  const tyY = p => 140 - 28 * p.y;
+  function shapeLabel() {
+    const phase = params.phase % 360;
+    if (params.xCycles === params.yCycles) {
+      if (phase === 0 || phase === 180) return 'Line';
+      if (phase === 90 || phase === 270) return 'Circle';
+      return 'Ellipse';
+    }
+    if (params.yCycles === params.xCycles * 2 && (phase === 0 || phase === 180)) return 'Figure-eight';
+    return 'Lissajous pattern';
+  }
+  function summary() {
+    const s = M.stateAt(params, time);
+    return `At ${fixed(time)} model seconds: left-right position ${fixed(s.x)}; up-down position ${fixed(s.y)} model units. ${shapeLabel()}. Left-right repeats ${params.xCycles} times and up-down repeats ${params.yCycles} times in 8 seconds, with a ${params.phase}-degree up-down head start.`;
+  }
+  function announce(message) { $('announcement').textContent = message; }
+  function updateButtons() {
+    $('play').disabled = $('still').checked;
+    $('play').textContent = running ? 'Pause' : time >= M.DURATION ? 'Replay one cycle' : 'Play one cycle';
+    $('step').disabled = time >= M.DURATION;
+    $('motionNotice').textContent = $('still').checked ? 'Still mode is on. Step and the time slider remain available.' : 'Still mode turns off continuous playback.';
+  }
+  function pause(message) {
+    running = false;
+    if (frame !== null) window.cancelAnimationFrame(frame);
+    frame = null;
+    lastFrame = null;
+    updateButtons();
+    if (message) announce(message);
+  }
+  function redrawGuide() {
+    set('shapeGuide', 'd', pointPath(samples, px, py));
+    set('xGuide', 'd', pointPath(samples, tx, tyX));
+    set('yGuide', 'd', pointPath(samples, tx, tyY));
+  }
+  function render() {
+    const s = M.stateAt(params, time);
+    const history = M.historyUntil(samples, time);
+    set('shapeTrace', 'd', pointPath(history, px, py));
+    set('xTrace', 'd', pointPath(history, tx, tyX));
+    set('yTrace', 'd', pointPath(history, tx, tyY));
+    for (const id of ['shapeGuide', 'xGuide', 'yGuide']) set(id, 'visibility', $('guide').checked ? 'visible' : 'hidden');
+    set('shapeDot', 'cx', px(s)); set('shapeDot', 'cy', py(s));
+    set('projection', 'd', `M${px(s)} 370V${py(s)}H50`);
+    set('xDot', 'cx', 123 + 95 * s.x);
+    set('yDot', 'd', diamond(280, 82 - 50 * s.y, 8));
+    set('timeCursor', 'd', `M${tx(s)} 25V175`);
+    set('xTimeDot', 'cx', tx(s)); set('xTimeDot', 'cy', tyX(s));
+    set('yTimeDot', 'd', diamond(tx(s), tyY(s), 5));
+    $('time').value = time;
+    $('timeValue').textContent = `${fixed(time)} / 8 s`;
+    set('time', 'aria-valuetext', `${fixed(time)} of 8 model seconds`);
+    $('xRead').textContent = fixed(s.x); $('yRead').textContent = fixed(s.y);
+    $('shapeName').textContent = shapeLabel();
+    $('textSummary').textContent = summary();
+    $('shapeDesc').textContent = `${summary()} Solid gold ink joins ${history.length} sampled positions so far. ${$('guide').checked ? 'The dashed line previews the complete shape.' : 'The complete guide is hidden.'}`;
+    updateButtons();
+  }
+  function syncParams() {
+    for (const key of ['xCycles', 'yCycles', 'phase']) $(key).value = params[key];
+    $('xValue').textContent = params.xCycles;
+    $('yValue').textContent = params.yCycles;
+    const phases = { 0: '0 cycles', 90: '¼ cycle', 180: '½ cycle', 270: '¾ cycle', 360: '1 cycle' };
+    $('phaseValue').textContent = phases[params.phase] || `${params.phase}°`;
+    set('phase', 'aria-valuetext', `${params.phase} degrees, ${params.phase / 360} of the up-down cycle`);
+    for (const [name, preset] of Object.entries(M.PRESETS)) {
+      set('preset-' + name, 'aria-pressed', Object.keys(preset).every(key => params[key] === preset[key]));
+    }
+  }
+  function changeModel(next) {
+    params = M.validate(next);
+    pause();
+    time = 0;
+    samples = M.sample(params);
+    syncParams(); redrawGuide(); render();
+    $('exportStatus').textContent = '';
+    announce('New experiment, paused at time zero. ' + summary());
+  }
+  function tick(now) {
+    if (!running) return;
+    if (lastFrame !== null) time = M.advance(time, Math.max(0, (now - lastFrame) / 1000), Number($('speed').value));
+    lastFrame = now;
+    render();
+    if (time >= M.DURATION) pause('Cycle complete. ' + summary());
+    else frame = window.requestAnimationFrame(tick);
+  }
+  $('play').addEventListener('click', () => {
+    if (running) { pause('Paused. ' + summary()); return; }
+    if ($('still').checked) return;
+    if (time >= M.DURATION) time = 0;
+    running = true; lastFrame = null;
+    render(); announce('Playing one 8-model-second window. Use Pause at any time.');
+    frame = window.requestAnimationFrame(tick);
+  });
+  $('step').addEventListener('click', () => {
+    pause(); time = Math.min(M.DURATION, time + 0.125); render(); announce(summary());
+  });
+  $('restart').addEventListener('click', () => {
+    pause(); time = 0; render(); announce('Restarted and paused. ' + summary());
+  });
+  $('time').addEventListener('input', () => {
+    pause(); time = Math.max(0, Math.min(M.DURATION, Number($('time').value))); render();
+  });
+  $('time').addEventListener('change', () => announce(summary()));
+  for (const key of ['xCycles', 'yCycles', 'phase']) $(key).addEventListener('input', () => {
+    changeModel({ ...params, [key]: Number($(key).value) });
+  });
+  for (const [name, preset] of Object.entries(M.PRESETS)) $('preset-' + name).addEventListener('click', () => changeModel(preset));
+  $('guide').addEventListener('change', () => { render(); announce($('guide').checked ? 'Complete guide shown. This does not change the model.' : 'Complete guide hidden. This does not change the model.'); });
+  $('still').addEventListener('change', () => {
+    if ($('still').checked) pause();
+    render(); announce($('still').checked ? 'Still mode on. Use Step or the time slider.' : 'Still mode off. Playback stays paused until you choose Play.');
+  });
+  $('speed').addEventListener('change', () => {
+    // Avoid applying a new speed retroactively to elapsed time before the change.
+    lastFrame = null;
+    announce(`Playback speed ${$('speed').value} times. Equations and sample data are unchanged.`);
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && running) pause('Paused because the page was hidden.');
+  });
+  media.addEventListener('change', event => {
+    if (event.matches) {
+      $('still').checked = true; pause(); render();
+      announce('Your device requested reduced motion. Still mode is now on.');
+    }
+  });
+  $('export').addEventListener('click', () => {
+    pause();
+    try {
+      const record = M.record(params, { time, playbackSpeed: Number($('speed').value), showGuide: $('guide').checked, stillMode: $('still').checked });
+      const blob = new Blob([JSON.stringify(record, null, 2) + '\n'], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url; link.download = 'motion-trace-shape-experiment.json';
+      document.body.appendChild(link); link.click(); link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 10000);
+      $('exportStatus').textContent = 'Experiment download requested. Check your browser’s downloads; nothing was uploaded.';
+    } catch (error) {
+      $('exportStatus').textContent = 'Your browser could not start the download. The experiment is still available here. Try opening the HTML in a full browser.';
+    }
+  });
+  syncParams(); redrawGuide(); render();
+}());
+</script>
+</body>
+</html>
