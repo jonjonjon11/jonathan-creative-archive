@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "title": "ALS trial facts: selected publication and sponsor-report extracts",
+  "version": "0.1.0",
+  "review_status": "draft_pending_qualified_review",
+  "as_of": "2026-11-07",
+  "license_scope": "Original factual selection, structure, and summaries: CC BY 4.0. Source publications and sponsor content retain their own rights. No abstracts, full papers, patient records, individual contact details, or licensed datasets are redistributed.",
+  "provenance": {
+    "method": "Manual factual extraction from fetched primary-publication abstracts and an inspected official sponsor release; values transcribed without estimating missing results.",
+    "clinicaltrials_api_queried": false,
+    "registry_status_limit": "ClinicalTrials.gov API retrieval through the provided skill was blocked by an unavailable shared dependency; ordinary study HTML returned only an application shell. No current registry fields are inferred.",
+    "response_hash_note": "SHA-256 values fingerprint the inspected response bytes, not source truth or a promise that a later response will match. Raw source responses were retained outside the repository during drafting.",
+    "selection_limit": "Four purposefully selected historical records illustrate changing evidence and research design; this is not a systematic ALS trial catalog or a clinical guideline.",
+    "review_limit": "AI factual extraction; qualified scientific and clinical review pending.",
+    "source_field_map": "Each record maps its factual fields to source section labels in field_provenance."
+  },
+  "sources": [
+    {
+      "id": "TRIAL-SOURCE-VALOR",
+      "title": "Trial of Antisense Oligonucleotide Tofersen for SOD1 ALS.",
+      "source_type": "primary_publication_abstract",
+      "publication_year": 2022,
+      "source_url": "https://consensus.app/papers/trial-of-antisense-oligonucleotide-tofersen-for-sod1-als-miller-cudkowicz/7046a8e53686529d811c0540cd66f2d0/?utm_source=chatgpt",
+      "doi": "10.1056/NEJMoa2204705",
+      "checked": "2026-11-07",
+      "inspection": "Consensus fetch returned the primary publication abstract and bibliographic record; only factual fields and original summaries are embedded here. Full text was not used.",
+      "source_response_sha256": "59444940a1db81ceaf2e160f1ba4cb55e4a3ef59db4e6053338faefc5a990ee3",
+      "source_response_format": "UTF-8 tool-returned JSON text, retained outside the repository during drafting",
+      "rights_note": "The original publication and abstract retain publisher/author rights; this record does not relicense or reproduce the abstract. Bibliographic titles, measurements, and original factual selection are included."
+    },
+    {
+      "id": "TRIAL-SOURCE-CENTAUR",
+      "title": "Trial of Sodium Phenylbutyrate–Taurursodiol for Amyotrophic Lateral Sclerosis",
+      "source_type": "primary_publication_abstract",
+      "publication_year": 2020,
+      "source_url": "https://consensus.app/papers/trial-of-sodium-phenylbutyrate–taurursodiol-for-paganoni-macklin/47c2214a5e34556eab364525622c130f/?utm_source=chatgpt",
+      "doi": "10.1056/NEJMoa1916945",
+      "checked": "2026-11-07",
+      "inspection": "Consensus fetch returned the primary publication abstract and bibliographic record; only factual fields and original summaries are embedded here. Full text was not used.",
+      "source_response_sha256": "426c1153fce29c34a8549ab66851f282c5d6da7a4c3bee83ded990635a1e1e34",
+      "source_response_format": "UTF-8 tool-returned JSON text, retained outside the repository during drafting",
+      "rights_note": "The original publication and abstract retain publisher/author rights; this record does not relicense or reproduce the abstract. Bibliographic titles, measurements, and original factual selection are included."
+    },
+    {
+      "id": "TRIAL-SOURCE-ATLAS",
+      "title": "Design of a Randomized, Placebo-Controlled, Phase 3 Trial of Tofersen Initiated in Clinically Presymptomatic SOD1 Variant Carriers: the ATLAS Study",
+      "source_type": "primary_publication_abstract",
+      "publication_year": 2022,
+      "source_url": "https://consensus.app/papers/design-of-a-randomized-placebocontrolled-phase-3-trial-of-benatar-wuu/149d258962b15be4b8024a7dd9c8f7d7/?utm_source=chatgpt",
+      "doi": null,
+      "checked": "2026-11-07",
+      "inspection": "Consensus fetch returned the primary publication abstract and bibliographic record; only factual fields and original summaries are embedded here. Full text was not used.",
+      "source_response_sha256": "45569623e1fdb2b2fc360f9651370edf997104080274ff973758fe5cd7bbf40c",
+      "source_response_format": "UTF-8 tool-returned JSON text, retained outside the repository during drafting",
+      "rights_note": "The original publication and abstract retain publisher/author rights; this record does not relicense or reproduce the abstract. Bibliographic titles, measurements, and original factual selection are included."
+    },
+    {
+      "id": "TRIAL-SOURCE-PHOENIX",
+      "title": "Amylyx Pharmaceuticals Announces Topline Results From Global Phase 3 PHOENIX Trial of AMX0035 in ALS",
+      "source_type": "sponsor_topline_release",
+      "published": "2024-03-08",
+      "source_url": "https://investors.amylyx.com/news-releases/news-release-details/amylyx-pharmaceuticals-announces-topline-results-global-phase-3",
+      "doi": null,
+      "checked": "2026-11-07",
+      "inspection": "HTTP 200; publication date, PHOENIX Study Results, and About the PHOENIX Trial sections inspected. No registry API data or full peer-reviewed PHOENIX paper was used for this row.",
+      "source_response_sha256": "98c85650c63d3f7a95dc6d24029b09abb56aa8f81180a89c16cd78644686a6e9",
+      "source_response_format": "HTTP HTML response bytes, retained outside the repository during drafting",
+      "rights_note": "Sponsor text remains under its own rights; only selected factual measurements, study identifiers, and original summaries are included."
+    },
+    {
+      "id": "TRIAL-SOURCE-PHOENIX-ID",
+      "title": "Sodium Phenylbutyrate and Tauroursodeoxycholic Acid: A Story of Hope Turned to Disappointment in Amyotrophic Lateral Sclerosis Treatment",
+      "source_type": "secondary_review_identifier_crosscheck",
+      "publication_year": 2024,
+      "source_url": "https://consensus.app/papers/sodium-phenylbutyrate-and-tauroursodeoxycholic-acid-a-ketabforoush-faghihi/60e0fff9e970500eab8438f5ce501b2c/?utm_source=chatgpt",
+      "doi": null,
+      "checked": "2026-11-07",
+      "inspection": "Fetched review abstract; used only to cross-check PHOENIX trial identifier NCT05021536, not to quantify efficacy or current drug availability.",
+      "source_response_sha256": "39a93ed06c83a90b96405844e351a6d1a53f0e95d36b3be4c638797b7b6bcffc",
+      "source_response_format": "UTF-8 tool-returned JSON text, retained outside the repository during drafting",
+      "rights_note": "Original review retains its rights. Only the factual trial identifier association is used; the abstract is not reproduced."
+    },
+    {
+      "id": "TRIAL-SOURCE-FDA-WITHDRAWAL",
+      "title": "Amylyx Pharmaceuticals, Inc.; Withdrawal of Approval of New Drug Application for RELYVRIO",
+      "source_type": "regulatory_notice",
+      "published": "2025-08-29",
+      "source_url": "https://www.federalregister.gov/documents/2025/08/29/2025-16646/amylyx-pharmaceuticals-inc-withdrawal-of-approval-of-new-drug-application-for-relyvrio-sodium",
+      "checked": "2026-11-07",
+      "inspection": "Official notice full body retrieved by the ALS evidence agent and inspected locally; distinguishes trial failure, planned marketing discontinuation, and effective U.S. approval-withdrawal date.",
+      "source_response_sha256": "422bacee96568b5ed6d3501bf81cdf49f0010ff062c9b1a060a7d33074a1798c",
+      "source_response_format": "Official Federal Register full-body HTML response bytes, retained outside the repository during drafting",
+      "rights_note": "U.S. federal notice used for factual regulatory history; original summary supplied here. No logos or third-party material reproduced."
+    }
+  ],
+  "records": [
+    {
+      "id": "TRIAL-FACT-VALOR-2022",
+      "trial_nct": "NCT02623699",
+      "trial_name": "VALOR",
+      "title": "Randomized tofersen study in symptomatic SOD1-associated ALS",
+      "record_kind": "randomized_trial_results",
+      "design": {
+        "phase": "3",
+        "randomized": true,
+        "control": "placebo",
+        "allocation_ratio": "2:1",
+        "masking": "Not extracted from the abstract used for this row; not a registry assertion."
+      },
+      "population": "Adults with ALS associated with SOD1 variants; the primary analysis used the subgroup predicted to progress faster.",
+      "enrollment_randomized": 108,
+      "randomized_groups": {
+        "tofersen": 72,
+        "placebo": 36
+      },
+      "primary_analysis_group_counts": {
+        "tofersen": 39,
+        "placebo": 21
+      },
+      "primary_endpoint": "Change from baseline in ALSFRS-R total score in the predicted-faster-progression subgroup.",
+      "timepoint": {
+        "value": 28,
+        "unit": "weeks"
+      },
+      "primary_result": {
+        "measure": "Between-group difference in ALSFRS-R change",
+        "group_changes": {
+          "tofersen": -6.98,
+          "placebo": -8.14
+        },
+        "estimate": 1.2,
+        "ci95_low": -3.2,
+        "ci95_high": 5.5,
+        "unit": "ALSFRS-R points",
+        "p_value": 0.97,
+        "analysis_note": "The primary test did not reach statistical significance. The reported P value belongs to the trial's specified analysis; do not recompute it from rounded means or this confidence interval. Higher ALSFRS-R scores represent better function."
+      },
+      "limitations": [
+        "This is the 2022 28-week randomized result, not all subsequent tofersen evidence.",
+        "The clinical primary endpoint did not meet significance despite biomarker reductions.",
+        "The small faster-progression primary subgroup differs from the overall randomized population.",
+        "Later delayed-start/open-label follow-up must be labeled separately and not treated as 28-week placebo-controlled evidence.",
+        "No treatment recommendation, dosing guidance, reversal of ALS, or cure claim is implied."
+      ],
+      "source_ids": [
+        "TRIAL-SOURCE-VALOR"
+      ],
+      "registry_status": null,
+      "registry_status_note": "Not queried; factual results extracted from a publication abstract, not a registry snapshot.",
+      "field_provenance": {
+        "trial_nct": "TRIAL-SOURCE-VALOR, abstract trial registration statement",
+        "design.phase": "TRIAL-SOURCE-VALOR, abstract Methods",
+        "design.randomized": "TRIAL-SOURCE-VALOR, abstract Methods",
+        "design.control": "TRIAL-SOURCE-VALOR, abstract Methods",
+        "design.allocation_ratio": "TRIAL-SOURCE-VALOR, abstract Methods",
+        "enrollment_randomized": "TRIAL-SOURCE-VALOR, abstract Results: 72 + 36 randomized participants",
+        "randomized_groups": "TRIAL-SOURCE-VALOR, abstract Results",
+        "primary_analysis_group_counts": "TRIAL-SOURCE-VALOR, abstract Results",
+        "primary_endpoint": "TRIAL-SOURCE-VALOR, abstract Methods",
+        "timepoint": "TRIAL-SOURCE-VALOR, abstract Methods",
+        "primary_result": "TRIAL-SOURCE-VALOR, abstract Results; numbers transcribed, not newly estimated"
+      }
+    },
+    {
+      "id": "TRIAL-FACT-CENTAUR-2020",
+      "trial_nct": "NCT03127514",
+      "trial_name": "CENTAUR",
+      "title": "Sodium phenylbutyrate–taurursodiol phase 2 randomized study",
+      "record_kind": "randomized_trial_results",
+      "design": {
+        "phase": "2",
+        "randomized": true,
+        "control": "placebo",
+        "allocation_ratio": "2:1",
+        "masking": "double-blind"
+      },
+      "population": "Participants with definite ALS whose symptoms began within the previous 18 months.",
+      "enrollment_randomized": 137,
+      "randomized_groups": {
+        "active_combination": 89,
+        "placebo": 48
+      },
+      "primary_endpoint": "Rate of change of ALSFRS-R total score through the randomized study period.",
+      "timepoint": {
+        "value": 24,
+        "unit": "weeks"
+      },
+      "primary_result": {
+        "measure": "Difference in mean ALSFRS-R rate of change",
+        "group_rates": {
+          "active_combination": -1.24,
+          "placebo": -1.66
+        },
+        "estimate": 0.42,
+        "ci95_low": 0.03,
+        "ci95_high": 0.81,
+        "unit": "ALSFRS-R points per month",
+        "p_value": 0.03,
+        "analysis_note": "Modified intention-to-treat analysis. This is a slope difference per month, not the 24-week point difference and not a survival estimate. Secondary outcomes were not statistically different in this report."
+      },
+      "limitations": [
+        "Read with the later negative PHOENIX trial row; the early finding is not a current effectiveness or availability recommendation.",
+        "Randomized enrollment counts are not asserted to equal the modified-intention-to-treat analysis denominators.",
+        "Do not multiply the slope difference by a rough weeks-to-months conversion and report it as a newly verified trial endpoint.",
+        "The 2020 report predates subsequent confirmatory evidence and U.S. approval withdrawal.",
+        "No cure, individual response, or long-term survival result follows from this primary endpoint alone."
+      ],
+      "source_ids": [
+        "TRIAL-SOURCE-CENTAUR",
+        "TRIAL-SOURCE-PHOENIX",
+        "TRIAL-SOURCE-FDA-WITHDRAWAL"
+      ],
+      "registry_status": null,
+      "registry_status_note": "Not queried; factual results extracted from a publication abstract, not a registry snapshot.",
+      "field_provenance": {
+        "trial_nct": "TRIAL-SOURCE-CENTAUR, abstract trial registration statement",
+        "design.phase": "TRIAL-SOURCE-PHOENIX, About the CENTAUR Trial section identifies phase 2",
+        "design.randomized": "TRIAL-SOURCE-CENTAUR, abstract Methods",
+        "design.control": "TRIAL-SOURCE-CENTAUR, abstract Methods",
+        "design.allocation_ratio": "TRIAL-SOURCE-CENTAUR, abstract Methods",
+        "design.masking": "TRIAL-SOURCE-CENTAUR, abstract Methods",
+        "enrollment_randomized": "TRIAL-SOURCE-CENTAUR, abstract Results",
+        "randomized_groups": "TRIAL-SOURCE-CENTAUR, abstract Results",
+        "primary_endpoint": "TRIAL-SOURCE-CENTAUR, abstract Methods",
+        "timepoint": "TRIAL-SOURCE-CENTAUR, abstract Methods",
+        "primary_result": "TRIAL-SOURCE-CENTAUR, abstract Results; numbers transcribed, not newly estimated"
+      }
+    },
+    {
+      "id": "TRIAL-FACT-PHOENIX-2024",
+      "trial_nct": "NCT05021536",
+      "trial_name": "PHOENIX",
+      "title": "Confirmatory phase 3 AMX0035 trial in ALS",
+      "record_kind": "sponsor_topline_results",
+      "design": {
+        "phase": "3",
+        "randomized": true,
+        "control": "placebo with standard-of-care in both groups",
+        "allocation_ratio": "3:2",
+        "masking": "Not extracted from the release used for this row."
+      },
+      "population": "Adults living with ALS in a global trial.",
+      "enrollment_randomized": 664,
+      "randomized_groups": null,
+      "primary_endpoint": "Change from baseline in ALSFRS-R total score.",
+      "timepoint": {
+        "value": 48,
+        "unit": "weeks"
+      },
+      "primary_result": {
+        "measure": "Primary between-group comparison of ALSFRS-R total-score change",
+        "p_value": 0.667,
+        "estimate": null,
+        "ci95_low": null,
+        "ci95_high": null,
+        "unit": "ALSFRS-R points",
+        "analysis_note": "The sponsor reported no statistically significant difference in the primary endpoint or secondary endpoints. The release did not supply an effect estimate or confidence interval; these are not inferred from the P value."
+      },
+      "limitations": [
+        "Source is a sponsor topline release dated 2024-03-08, not an independent review or a current registry status check.",
+        "The release's historical statements on product availability are not repeated as current advice.",
+        "The allocation ratio does not establish exact per-group enrollment counts, so those counts are not invented.",
+        "An insignificant result does not mathematically establish identical outcomes, zero effect, or absence of adverse effects.",
+        "U.S. formal approval withdrawal and later evidence must be read from dated regulatory and scientific sources separately."
+      ],
+      "source_ids": [
+        "TRIAL-SOURCE-PHOENIX",
+        "TRIAL-SOURCE-PHOENIX-ID",
+        "TRIAL-SOURCE-FDA-WITHDRAWAL"
+      ],
+      "registry_status": null,
+      "registry_status_note": "Not queried; a sponsor release supplies these dated study facts. No current recruitment or registry status is asserted.",
+      "field_provenance": {
+        "trial_nct": "TRIAL-SOURCE-PHOENIX-ID, fetched review abstract explicitly associates PHOENIX with NCT05021536; used only for identifier cross-check.",
+        "design": "TRIAL-SOURCE-PHOENIX, PHOENIX Study Results and About the PHOENIX Trial sections",
+        "population": "TRIAL-SOURCE-PHOENIX, PHOENIX Study Results section",
+        "enrollment_randomized": "TRIAL-SOURCE-PHOENIX, PHOENIX Study Results: 664 adults enrolled and randomized three-to-two",
+        "randomized_groups": "Not supplied; no exact counts inferred from allocation ratio",
+        "primary_endpoint": "TRIAL-SOURCE-PHOENIX, About the PHOENIX Trial section",
+        "timepoint": "TRIAL-SOURCE-PHOENIX, About the PHOENIX Trial section",
+        "primary_result": "TRIAL-SOURCE-PHOENIX, PHOENIX Study Results section",
+        "regulatory_context": "TRIAL-SOURCE-FDA-WITHDRAWAL, DATES and notice body"
+      },
+      "regulatory_context": {
+        "jurisdiction": "United States",
+        "product": "RELYVRIO",
+        "decision": "Withdrawal of approval",
+        "effective_date": "2025-08-29",
+        "source_id": "TRIAL-SOURCE-FDA-WITHDRAWAL",
+        "interpretation": "Formal FDA approval withdrawal date; distinct from the sponsor's earlier commercial decisions. No status in other jurisdictions is inferred."
+      }
+    },
+    {
+      "id": "TRIAL-FACT-ATLAS-DESIGN-2022",
+      "trial_nct": "NCT04856982",
+      "trial_name": "ATLAS",
+      "title": "Presymptomatic tofersen trial design in selected SOD1 variant carriers",
+      "record_kind": "trial_design_publication",
+      "design": {
+        "phase": "3",
+        "randomized": true,
+        "control": "placebo",
+        "allocation_ratio": null,
+        "masking": null
+      },
+      "population": "Clinically presymptomatic carriers of SOD1 variants associated with high or complete penetrance and rapid progression, selected additionally for elevated plasma neurofilament light chain.",
+      "enrollment_randomized": null,
+      "randomized_groups": null,
+      "primary_endpoint": "Whether earlier tofersen delays emergence of clinically manifest ALS; this is the design abstract's stated study objective, not a copied registered primary-outcome definition.",
+      "timepoint": null,
+      "primary_result": null,
+      "limitations": [
+        "A design article does not provide efficacy results or demonstrate ALS prevention.",
+        "Actual enrollment, exact registered endpoint definition, endpoint time frame, and current trial status were not retrieved.",
+        "This selection criterion does not apply to all SOD1 carriers or all forms of ALS.",
+        "A linked 2022 correction was identified, but its text was not available from the fetched record. Confirm the corrected full protocol before reusing design details.",
+        "No genetic screening or presymptomatic treatment advice is given."
+      ],
+      "source_ids": [
+        "TRIAL-SOURCE-ATLAS"
+      ],
+      "registry_status": null,
+      "registry_status_note": "Not queried; this row describes the 2022 design abstract only.",
+      "field_provenance": {
+        "trial_nct": "TRIAL-SOURCE-ATLAS, abstract study identifier",
+        "design.phase": "TRIAL-SOURCE-ATLAS, publication title",
+        "design.randomized": "TRIAL-SOURCE-ATLAS, publication title",
+        "design.control": "TRIAL-SOURCE-ATLAS, publication title",
+        "population": "TRIAL-SOURCE-ATLAS, abstract study design description",
+        "enrollment_randomized": "Not in the design abstract; no result asserted",
+        "primary_endpoint": "TRIAL-SOURCE-ATLAS, abstract stated study objective; not a registered-endpoint transcription",
+        "timepoint": "Not extracted",
+        "primary_result": "No results in the design abstract"
+      },
+      "correction_reference": {
+        "title": "Correction to: Design of a Randomized, Placebo-Controlled, Phase 3 Trial of Tofersen Initiated in Clinically Presymptomatic SOD1 Variant Carriers: the ATLAS Study",
+        "source_url": "https://consensus.app/papers/correction-to-design-of-a-randomized-placebocontrolled-benatar-wuu/b849be010c385c5483aca77a6d24db89/?utm_source=chatgpt",
+        "inspection": "Fetched bibliographic record; no correction text available."
+      }
+    }
+  ]
+}

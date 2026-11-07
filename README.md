@@ -8,6 +8,10 @@ An evidence-based map of Jonathan's ideas for an educational universe, mathemati
 
 That is the purpose of this archive. It is a selective reconstruction from available records, not a complete account export or a claim that every idea has been recovered. The newly written archive is licensed under [Creative Commons Attribution 4.0 International](LICENSE). The included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files retain their separate CC0 licenses.
 
+## Science, medicine, and engineering: new working material
+
+The [research and engineering commons](docs/research/README.md) now includes original ALS and cancer learning material, embedded source-linked evidence and trial facts, a searchable offline evidence CLI, and a sampled switch-input simulator with synthetic data. The explanations, selected factual records, code, examples, and tests are included directly. Start with the [ALS primer](docs/health/als-evidence-primer.md), [cancer primer](docs/health/cancer-evidence-foundations.md), or [switch-input lesson](docs/lessons/switch-input-foundations.md). [Verification and provenance](docs/research/verification.md) records the checked revision and contributor handoff.
+
 ## 🚀 NEW: Knowledge Commons Infrastructure (2026-11-07)
 
 **The foundation for collaborative learning and building together.**

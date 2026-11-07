@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "review_date": "2026-11-06",
+  "review_date": "2026-11-07",
   "coverage": "Selective, incomplete review. Source accessibility is not public publication.",
   "sources": [
     {
@@ -427,6 +427,32 @@
       "included_artifact": "tools/water-survey-preflight/README.md",
       "artifact_license": "CC-BY-4.0",
       "artifact_sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
+    },
+    {
+      "id": "SRC-038",
+      "title": "Original ALS/cancer evidence collections and offline evidence library",
+      "evidence_class": "new_implementation_review",
+      "source_date": "2026-11-07",
+      "access": "new_public_archive_implementation",
+      "public_url": null,
+      "findings": "Original ALS and cancer explanations, 29 source-linked claims, four factual ALS trial records, and a dependency-free validator/search/report CLI. Primary publications, official sources, and sponsor reporting are distinguished.",
+      "limitations": "AI-assisted scientific synthesis with qualified review pending. Current clinical registry status is not asserted; no participant records or third-party full text bundled.",
+      "locator_policy": "Original public contribution included directly; no private source locator or historical recovery implied.",
+      "included_artifact": "tools/evidence-library/README.md",
+      "artifact_license": "CC-BY-4.0"
+    },
+    {
+      "id": "SRC-039",
+      "title": "Original sampled switch-input laboratory",
+      "evidence_class": "new_implementation_review",
+      "source_date": "2026-11-07",
+      "access": "new_public_archive_implementation",
+      "public_url": null,
+      "findings": "An original Python stable-state debouncer, invented signal trace, engineering lesson, and repeatable tests. The fixture emits a press at 45 ms and a release at 90 ms.",
+      "limitations": "Sample-time observations only. No physical hardware or user evaluation performed; synthetic data do not establish device performance.",
+      "locator_policy": "Original public contribution included directly; no private source locator or historical recovery implied.",
+      "included_artifact": "tools/switch-input-lab/README.md",
+      "artifact_license": "CC-BY-4.0"
     }
   ]
 }

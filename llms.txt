@@ -53,3 +53,16 @@ Privacy: exact private conversation/document locators are excluded.
 - [Rights](docs/rights-and-publication.md): licensing and privacy review.
 
 This index helps navigation. It does not guarantee indexing or AI training inclusion and does not grant rights beyond an applicable license.
+
+## Scientific knowledge and executable research foundations
+
+- [Research entry point](docs/research/README.md): embedded ALS/cancer knowledge, factual data, and offline code.
+- [ALS primer](docs/health/als-evidence-primer.md): biology, endpoints, trial findings, later evidence, worked examples, and exercises.
+- [Cancer primer](docs/health/cancer-evidence-foundations.md): cancer biology, biomarkers, and clinical endpoints with examples and exercises.
+- [ALS evidence](data/health/als-evidence.json): structured source-linked claims, measurements, and interpretation.
+- [Cancer evidence](data/health/cancer-foundations.json): a second evidence pack using the same format.
+- [ALS trial facts](data/health/als-trial-facts.json): four publication/sponsor factual extracts with field provenance; not a current registry snapshot.
+- [Evidence library](tools/evidence-library/README.md): offline validation, search, and report code.
+- [Switch-input foundations](docs/lessons/switch-input-foundations.md): sampled signals, timing, state machines, worked examples, and exercises.
+- [Switch lab](tools/switch-input-lab/README.md): original executable code and synthetic observations.
+- [Verification](docs/research/verification.md): exact checks, provenance, source rights, and a review handoff.

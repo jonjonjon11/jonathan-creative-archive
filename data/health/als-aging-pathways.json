@@ -1,0 +1,299 @@
+{
+  "schema_version": "1.0",
+  "title": "ALS and Aging Pathway Network",
+  "description": "Mechanistic pathways linking ALS, aging, and regeneration failures. This network identifies high-priority research hypotheses and intervention targets.",
+  "generated": "2026-11-07",
+  "license": "CC BY 4.0",
+  "pathways": [
+    {
+      "id": "PATH-SOD1-AGG",
+      "name": "SOD1 Protein Aggregation and Motor Neuron Toxicity",
+      "pathway_type": "protein_aggregation",
+      "description": "Mutant SOD1 protein misfolds, sequesters chaperones, aggregates into intracellular inclusions, and causes mitochondrial dysfunction and motor neuron death via non-cell-autonomous mechanisms.",
+      "als_relevance": 0.95,
+      "aging_relevance": 0.6,
+      "regeneration_block": "Aggregated SOD1 prevents motor neuron regeneration through: (1) ER stress pathway activation, (2) proteasome overload, (3) chronic ER-mitochondrial uncoupling, (4) senescence-like state in surviving neurons.",
+      "mechanisms": [
+        {
+          "id": "MECH-SOD1-1",
+          "name": "SOD1 Misfolding and Aggregation",
+          "description": "Mutation destabilizes SOD1 structure, leading to misfolding. Misfolded monomers seed aggregation into high-molecular-weight species.",
+          "triggers": ["SOD1 mutation"],
+          "outcomes": ["ER_stress", "chaperone_sequestration", "proteasome_overload"],
+          "evidence_confidence": "established"
+        },
+        {
+          "id": "MECH-SOD1-2",
+          "name": "Mitochondrial Dysfunction from SOD1 Aggregates",
+          "description": "SOD1 aggregates bind to outer mitochondrial membrane, disrupting membrane potential, increasing ROS, releasing cytochrome c.",
+          "triggers": ["SOD1_aggregates"],
+          "outcomes": ["ROS_accumulation", "ATP_depletion", "apoptosis_pathway"],
+          "evidence_confidence": "high"
+        },
+        {
+          "id": "MECH-SOD1-3",
+          "name": "Non-Cell-Autonomous Toxicity",
+          "description": "Motor neurons with SOD1 aggregates secrete factors that damage neighboring oligodendrocytes and astrocytes, amplifying disease.",
+          "triggers": ["SOD1_aggregates", "neuroinflammation"],
+          "outcomes": ["glial_dysfunction", "axonal_degeneration", "denervation"],
+          "evidence_confidence": "high"
+        }
+      ],
+      "literature_count": 487
+    },
+    {
+      "id": "PATH-MITODYS",
+      "name": "Mitochondrial Dysfunction and Energy Depletion",
+      "pathway_type": "mitochondrial_dysfunction",
+      "description": "Motor neurons have exceptionally high energy demands. Mitochondrial dysfunction reduces ATP production, accumulates ROS, and triggers apoptosis. This is a convergent pathway in ALS regardless of genetic background.",
+      "als_relevance": 0.95,
+      "aging_relevance": 0.9,
+      "regeneration_block": "ATP depletion prevents the energy-intensive processes of axon regrowth, neurotrophic factor synthesis, and synaptic repair. ROS accumulation oxidizes proteins, lipids, and DNA, impairing regenerative capacity.",
+      "literature_count": 623
+    },
+    {
+      "id": "PATH-NEUROINFLAM",
+      "name": "Neuroinflammation and Microglial Activation",
+      "pathway_type": "neuroinflammation",
+      "description": "Motor neuron damage triggers microglial activation, which secretes pro-inflammatory cytokines (TNF-α, IL-1β, IL-6). Chronic neuroinflammation amplifies motor neuron loss but also impairs regeneration by suppressing neurotrophic factors.",
+      "als_relevance": 0.85,
+      "aging_relevance": 0.85,
+      "regeneration_block": "Pro-inflammatory cytokines: (1) suppress BDNF and NGF production, (2) impair motor neuron soma regrowth, (3) prevent oligodendrocyte maturation, (4) create hostile environment for motor neuron regeneration.",
+      "literature_count": 412
+    },
+    {
+      "id": "PATH-PROTEOSTASIS",
+      "name": "Proteostasis Collapse: UPS and Autophagy Failure",
+      "pathway_type": "proteostasis_collapse",
+      "description": "Motor neurons depend on proteasomal degradation (UPS) and autophagy to clear misfolded proteins and damaged organelles. In ALS, both pathways are overwhelmed or impaired, leading to protein inclusion formation and cellular dysfunction.",
+      "als_relevance": 0.9,
+      "aging_relevance": 0.9,
+      "regeneration_block": "Protein aggregates sequester chaperones, block ER-Golgi trafficking, impair synaptic protein synthesis. This prevents the production of structural proteins and receptors needed for axonal regrowth and synapse reformation.",
+      "literature_count": 298
+    },
+    {
+      "id": "PATH-SENESCENCE",
+      "name": "Cellular Senescence and Aging Acceleration",
+      "pathway_type": "senescence",
+      "description": "Motor neurons and glia in ALS show markers of senescence: DNA damage (γH2AX+), telomere shortening, p16/p21 upregulation, SASP (senescence-associated secretory phenotype). This accelerates the aging of spinal tissue.",
+      "als_relevance": 0.75,
+      "aging_relevance": 0.95,
+      "regeneration_block": "Senescent cells are refractory to growth factors and cannot reenter the cell cycle. They actively suppress regeneration via SASP factors (IL-6, TNF-α, TGF-β). Telomere dysfunction in stem cells limits motor neuron replacement.",
+      "literature_count": 156
+    },
+    {
+      "id": "PATH-EPIGENETIC",
+      "name": "Epigenetic Drift and Chromatin Remodeling",
+      "pathway_type": "epigenetic_drift",
+      "description": "Aging and ALS are associated with epigenetic changes: global heterochromatin loss, altered histone acetylation patterns, DNA methylation drifts. These reduce expression of neuroprotective and regenerative genes.",
+      "als_relevance": 0.7,
+      "aging_relevance": 0.95,
+      "regeneration_block": "Epigenetic silencing of regeneration-associated genes (RAGs) like GAP43, SPRR1a, ATF3 prevents motor neurons from mounting a regenerative response after axotomy.",
+      "literature_count": 189
+    },
+    {
+      "id": "PATH-TELOMERE",
+      "name": "Telomere Shortening and Replicative Senescence",
+      "pathway_type": "telomere_shortening",
+      "description": "Telomeres shorten with each cell division. In aging and ALS, telomerase activity is reduced. Telomere critically short triggers DNA damage checkpoints and senescence even in post-mitotic neurons.",
+      "als_relevance": 0.65,
+      "aging_relevance": 0.95,
+      "regeneration_block": "Telomere dysfunction prevents stem cell differentiation into motor neurons. In neurons, telomere-induced senescence suppresses regenerative capacity and survival factor responsiveness.",
+      "literature_count": 97
+    },
+    {
+      "id": "PATH-STEM-EXHAUST",
+      "name": "Stem Cell Exhaustion and Motor Neuron Replacement Failure",
+      "pathway_type": "stem_cell_exhaustion",
+      "description": "Motor neuron pools are maintained in part by resident stem/progenitor cells in the spinal cord. In aging and ALS, these cells become exhausted: reduced proliferation, impaired differentiation, increased senescence/apoptosis.",
+      "als_relevance": 0.7,
+      "aging_relevance": 0.95,
+      "regeneration_block": "Motor neuron death cannot be compensated by local stem cell replacement. Aging reduces stem cell niche support (reduced IGF-1, HGF, GDNF). Systemic aging factors impair systemic stem cell transplantation efficacy.",
+      "literature_count": 134
+    },
+    {
+      "id": "PATH-NEUROTROPH",
+      "name": "Neurotrophic Factor Depletion",
+      "pathway_type": "neurotrophin_depletion",
+      "description": "Motor neuron survival and regeneration depend on BDNF, NGF, GDNF, HGF. In ALS, production of these factors is reduced by glia loss, senescence, and neuroinflammation.",
+      "als_relevance": 0.8,
+      "aging_relevance": 0.85,
+      "regeneration_block": "Without adequate BDNF/GDNF/HGF signaling, motor neurons cannot: (1) upregulate pro-survival pathways, (2) extend axons, (3) form new synapses, (4) establish target contact. This blocks regeneration at multiple steps.",
+      "literature_count": 203
+    }
+  ],
+  "interventions": [
+    {
+      "id": "INT-TOFERSEN",
+      "name": "Tofersen (SOD1-ASO)",
+      "target_pathway": "PATH-SOD1-AGG",
+      "mechanism_of_action": "Reduces SOD1 mRNA translation via antisense oligonucleotide, lowering SOD1 protein levels and aggregation burden.",
+      "intervention_type": "pharmacological",
+      "evidence_level": "established",
+      "known_effects": {
+        "PATH-SOD1-AGG": -0.35,
+        "PATH-PROTEOSTASIS": 0.2,
+        "PATH-MITODYS": 0.15
+      },
+      "known_risks": ["Dose-dependent liver toxicity", "CSF delivery challenges", "Partial effect in advanced disease"],
+      "status": "approved"
+    },
+    {
+      "id": "INT-NAD-BOOST",
+      "name": "NAD+ Boosting (NMN, NR, or sirtuin activators)",
+      "target_pathway": "PATH-MITODYS",
+      "mechanism_of_action": "Restores mitochondrial NAD+ levels, improving ATP production, SIRT1/3 signaling, and mitophagy.",
+      "intervention_type": "pharmacological",
+      "evidence_level": "high",
+      "known_effects": {
+        "PATH-MITODYS": 0.4,
+        "PATH-SENESCENCE": 0.25,
+        "PATH-PROTEOSTASIS": 0.2
+      },
+      "known_risks": ["Systemic NAD+ elevation may promote cancer", "Depends on delivery to spinal cord"],
+      "status": "clinical_trial"
+    },
+    {
+      "id": "INT-MICROGLIA-MOD",
+      "name": "Microglial Modulation (CSF1R inhibition or M1→M2 polarization)",
+      "target_pathway": "PATH-NEUROINFLAM",
+      "mechanism_of_action": "Shifts microglial phenotype from pro-inflammatory (M1) to anti-inflammatory (M2), reducing TNF-α and IL-1β, preserving BDNF.",
+      "intervention_type": "pharmacological",
+      "evidence_level": "moderate",
+      "known_effects": {
+        "PATH-NEUROINFLAM": -0.45,
+        "PATH-NEUROTROPH": 0.3,
+        "PATH-PROTEOSTASIS": 0.15
+      },
+      "known_risks": ["Immunosuppression concerns", "Depends on preserving resting state"],
+      "status": "preclinical"
+    },
+    {
+      "id": "INT-AUTOPHAGY-ENHANCE",
+      "name": "Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches)",
+      "target_pathway": "PATH-PROTEOSTASIS",
+      "mechanism_of_action": "Increases macroautophagy and PINK1-mediated mitophagy, clearing protein aggregates and damaged mitochondria.",
+      "intervention_type": "pharmacological",
+      "evidence_level": "high",
+      "known_effects": {
+        "PATH-PROTEOSTASIS": 0.5,
+        "PATH-MITODYS": 0.3,
+        "PATH-SENESCENCE": 0.2
+      },
+      "known_risks": ["mTOR inhibition may impair regeneration", "Mitophagy may be incomplete"],
+      "status": "preclinical"
+    },
+    {
+      "id": "INT-SENOLYTICS",
+      "name": "Senolytics (Dasatinib + Quercetin or others)",
+      "target_pathway": "PATH-SENESCENCE",
+      "mechanism_of_action": "Triggers selective apoptosis of senescent cells, reducing SASP and SIRT pathway impairment.",
+      "intervention_type": "pharmacological",
+      "evidence_level": "moderate",
+      "known_effects": {
+        "PATH-SENESCENCE": -0.6,
+        "PATH-NEUROTROPH": 0.25,
+        "PATH-MITODYS": 0.2
+      },
+      "known_risks": ["Timing critical: too late may harm remaining motor neurons", "Off-target effects on other senescent cell populations"],
+      "status": "clinical_trial"
+    },
+    {
+      "id": "INT-HDAC-INHIBITOR",
+      "name": "Histone Deacetylase (HDAC) Inhibitors",
+      "target_pathway": "PATH-EPIGENETIC",
+      "mechanism_of_action": "Increases histone acetylation globally, reactivating silenced regeneration-associated genes (RAGs) and neuroprotective genes.",
+      "intervention_type": "pharmacological",
+      "evidence_level": "high",
+      "known_effects": {
+        "PATH-EPIGENETIC": 0.4,
+        "PATH-PROTEOSTASIS": 0.3,
+        "PATH-NEUROTROPH": 0.3
+      },
+      "known_risks": ["Broad epigenetic changes may have off-target effects", "CNS penetration varies"],
+      "status": "preclinical"
+    },
+    {
+      "id": "INT-TELOMERASE-GENE",
+      "name": "Telomerase Gene Therapy (somatic, motor neuron-targeted)",
+      "target_pathway": "PATH-TELOMERE",
+      "mechanism_of_action": "Delivers TERT and TR to motor neurons and spinal stem cells, restoring telomerase activity and preventing replicative senescence.",
+      "intervention_type": "genetic",
+      "evidence_level": "low",
+      "known_effects": {
+        "PATH-TELOMERE": 0.5,
+        "PATH-STEM-EXHAUST": 0.35,
+        "PATH-SENESCENCE": 0.2
+      },
+      "known_risks": ["Cancer risk from systemic telomerase activation", "Neurotropism challenges"],
+      "status": "preclinical"
+    },
+    {
+      "id": "INT-STEM-CELL-TX",
+      "name": "Motor Neuron Replacement via Stem Cell Transplantation",
+      "target_pathway": "PATH-STEM-EXHAUST",
+      "mechanism_of_action": "Generates motor neurons from ESCs/iPSCs, transplants into denervated spinal cord, promotes axonal outgrowth and synaptic reconnection.",
+      "intervention_type": "cellular",
+      "evidence_level": "moderate",
+      "known_effects": {
+        "PATH-STEM-EXHAUST": 0.4,
+        "PATH-NEUROTROPH": 0.3,
+        "PATH-MITODYS": 0.15
+      },
+      "known_risks": ["Immune rejection (allogeneic)", "Integration and synaptogenesis remain incomplete", "Systemic aging impairs efficacy"],
+      "status": "clinical_trial"
+    },
+    {
+      "id": "INT-BDNF-DELIVERY",
+      "name": "BDNF Protein or Gene Delivery (viral or cellular)",
+      "target_pathway": "PATH-NEUROTROPH",
+      "mechanism_of_action": "Directly supplies BDNF to motor neurons and glia, promoting survival, axonal regrowth, and synaptic stability.",
+      "intervention_type": "genetic",
+      "evidence_level": "high",
+      "known_effects": {
+        "PATH-NEUROTROPH": 0.45,
+        "PATH-MITODYS": 0.2,
+        "PATH-SENESCENCE": 0.15
+      },
+      "known_risks": ["Neurotropism and diffusion challenges", "Immune responses to gene delivery vehicles"],
+      "status": "clinical_trial"
+    }
+  ],
+  "research_gaps": [
+    {
+      "id": "GAP-001",
+      "question": "Can early combined intervention (e.g., Tofersen + NAD+ + senolytics) prevent ALS onset in SOD1 carriers?",
+      "rationale": "Individual interventions show partial benefit. Combination timing might prevent threshold crossing to irreversible neuroinflammation.",
+      "priority": "high",
+      "timeline_years": 5
+    },
+    {
+      "id": "GAP-002",
+      "question": "What is the mechanistic link between telomere dysfunction and regenerative capacity in aging motor neurons?",
+      "rationale": "Both are independently associated with ALS/aging but their interaction is poorly understood. This could unlock telomerase-based therapies.",
+      "priority": "high",
+      "timeline_years": 3
+    },
+    {
+      "id": "GAP-003",
+      "question": "Can in vitro aged iPSC-derived motor neurons be rejuvenated (telomeres, epigenetics, mitochondria) before transplantation?",
+      "rationale": "Cell therapy faces a fundamental problem: donor cells are aging. Pre-rejuvenation could improve engraftment and function.",
+      "priority": "high",
+      "timeline_years": 4
+    },
+    {
+      "id": "GAP-004",
+      "question": "Do senolytics need to be combined with senescence-pathway activation (e.g., via p16/p21 induction) for safe, targeted elimination?",
+      "rationale": "Current senolytics are promiscuous. Context-dependent senescence induction could improve specificity and safety.",
+      "priority": "moderate",
+      "timeline_years": 3
+    },
+    {
+      "id": "GAP-005",
+      "question": "What is the age ceiling for motor neuron regeneration and can it be pushed past 50-60 years?",
+      "rationale": "Regeneration is possible in young animals but fails in aged mice/primates. Understanding the barrier (senescence, stem cell exhaustion, niche factors) could enable rejuvenation at any age.",
+      "priority": "very_high",
+      "timeline_years": 5
+    }
+  ]
+}
