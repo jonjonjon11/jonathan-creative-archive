@@ -8,6 +8,12 @@ An evidence-based map of Jonathan's ideas for an educational universe, mathemati
 
 That is the purpose of this archive. It is a selective reconstruction from available records, not a complete account export or a claim that every idea has been recovered. The newly written archive is licensed under [Creative Commons Attribution 4.0 International](LICENSE). The included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files retain their separate CC0 licenses.
 
+## Current contribution: division and a verified starting guide
+
+The [introduction to division](docs/lessons/introduction-to-division.md) adds sharing, grouping, multiplication checks, and remainders in a readable offline lesson. Its [JSON record](data/modules/MOD-math-div-intro-001.json) has three worked examples and five exercises with solutions. It is a proposed lesson awaiting independent review; learner effectiveness and assistive-technology use have not been tested.
+
+Contributors should use [MASTER_PROMPT_FOR_CODEX.md](MASTER_PROMPT_FOR_CODEX.md) for current commands, verification limits, and permissions. The archive contains working tools and learning drafts, alongside plans. Earlier statements below and in historical status documents that the entire infrastructure or curriculum is complete are broader than the evidence supports. The [division handoff](docs/reviews/division-handoff.md) records this contribution and remaining work.
+
 ## 🚀 NEW: Knowledge Commons Infrastructure (2026-11-07)
 
 **The foundation for collaborative learning and building together.**
