@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "module": {
+    "id": "MOD-math-mult-intro-001",
+    "version": "1.0.0",
+    "title": "Introduction to Multiplication",
+    "subtitle": "Understanding repeated addition; building multiplication facts and fluency",
+    "grade_level": "3-4",
+    "subject": "Mathematics",
+    "expected_level": "intermediate",
+    "time_estimate_minutes": 45,
+    "license": "CC BY 4.0",
+    "license_uri": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Jonathan's Creative Archive Mathematics Curriculum",
+    "authors": ["Archive Contributors"],
+    "last_reviewed": "2026-11-07",
+    "review_status": "content_complete",
+    
+    "learning_objectives": [
+      "Understand multiplication as repeated addition of equal groups",
+      "Recognize the multiplication symbol (×) and what it means",
+      "Write and understand multiplication sentences (e.g., 3 × 4 = 12)",
+      "Develop fluency with multiplication facts through 10 × 10",
+      "Apply multiplication to solve real-world problems"
+    ],
+    
+    "prerequisites": [
+      {"id": "MOD-math-add-001", "title": "Basic Addition and Subtraction"}
+    ],
+    
+    "content": {
+      "introduction": {
+        "plain_text": "# Why Multiplication Matters\n\nMultiplication is a faster way to add equal groups.\n\nImagine you have 4 bags, each with 3 apples. Instead of counting: 3 + 3 + 3 + 3, you can say 4 × 3 = 12.\n\nMultiplication appears everywhere:\n- 5 containers × 6 eggs per container = 30 eggs\n- 4 wheels × 3 cars = 12 wheels\n- 2 hands × 5 fingers = 10 fingers\n\nMastering multiplication makes you faster at solving problems and builds the foundation for division, fractions, and algebra.",
+        "estimated_reading_minutes": 2
+      },
+      
+      "core_lesson": {
+        "sections": [
+          {
+            "title": "Section 1: Equal Groups and Repeated Addition",
+            "content": "# Multiplication as Repeated Addition\n\nMultiplication is a shortcut for adding the same number multiple times.\n\n**Understanding equal groups:**\nImagine you have 3 bags of marbles. Each bag has 4 marbles (all bags have the same number).\n\nHow many marbles total?\n\nYou could add: 4 + 4 + 4 = 12\nOr you could multiply: 3 × 4 = 12\n\nBoth give the same answer. But multiplication is faster to write and say.\n\n**The multiplication sentence:**\n3 × 4 = 12\n\n- The first number (3) is how many groups\n- The × symbol means \"groups of\" or \"times\"\n- The second number (4) is how many in each group\n- The = symbol means \"equals\" or \"makes\"\n- The answer (12) is the total\n\nYou say this aloud as: \"Three times four equals twelve\" or \"Three groups of four equals twelve.\"\n\n**Verification with repeated addition:**\n3 × 4 means 4 + 4 + 4\n- First group: 4\n- Second group: 4\n- Third group: 4\n- Total: 4 + 4 + 4 = 12\n\nSo 3 × 4 = 4 + 4 + 4 = 12\n\n**Why this matters:**\nAddition shows you step-by-step. Multiplication shows you the whole idea at once. As numbers get bigger, multiplication becomes much more efficient than addition.",
+            "estimated_reading_minutes": 10,
+            "key_terms": ["multiplication", "product", "factor", "group", "repeated addition", "times"]
+          },
+          {
+            "title": "Section 2: Multiplication Facts and Patterns",
+            "content": "# Learning Multiplication Facts and Discovering Patterns\n\nMultiplication facts are specific answers you learn: \"3 × 4 = 12\" or \"5 × 6 = 30.\"\n\nInstead of calculating every time, mathematicians memorize these facts so they can solve problems quickly.\n\n**The multiplication table (0-10):**\n\n×  | 0  1  2  3  4  5  6  7  8  9  10\n---|  0  1  2  3  4  5  6  7  8  9  10\n1  |  0  1  2  3  4  5  6  7  8  9  10\n2  |  0  2  4  6  8  10 12 14 16 18 20\n3  |  0  3  6  9  12 15 18 21 24 27 30\n4  |  0  4  8  12 16 20 24 28 32 36 40\n5  |  0  5  10 15 20 25 30 35 40 45 50\n...\n\n**Useful patterns:**\n\n1. **Anything times 0 = 0:**\n   - 1 × 0 = 0\n   - 5 × 0 = 0\n   - 100 × 0 = 0\n   (Zero groups of anything is nothing)\n\n2. **Anything times 1 = itself:**\n   - 1 × 5 = 5\n   - 1 × 9 = 9\n   - 1 × 100 = 100\n   (One group of something is just that something)\n\n3. **Times 2 is double:**\n   - 2 × 4 = 8 (double of 4 is 8)\n   - 2 × 7 = 14 (double of 7 is 14)\n   - 2 × 10 = 20 (double of 10 is 20)\n\n4. **Times 5 ends in 0 or 5:**\n   - 5 × 2 = 10 (ends in 0)\n   - 5 × 3 = 15 (ends in 5)\n   - 5 × 4 = 20 (ends in 0)\n   (Numbers alternate between 0 and 5)\n\n5. **Times 10 adds a zero:**\n   - 10 × 3 = 30\n   - 10 × 7 = 70\n   - 10 × 12 = 120\n   (Just put a zero at the end)\n\n6. **The commutative property (order doesn't matter):**\n   - 3 × 4 = 12 AND 4 × 3 = 12\n   - 2 × 5 = 10 AND 5 × 2 = 10\n   (Three groups of 4 = Four groups of 3 = same total)\n\nLearning these patterns helps you remember facts and figure out unknown facts quickly.",
+            "estimated_reading_minutes": 10,
+            "key_terms": ["multiplication table", "commutative property", "product", "factor", "facts"]
+          }
+        ]
+      },
+      
+      "worked_examples": [
+        {
+          "id": "EX-001",
+          "title": "Example 1: Multiplication as Repeated Addition",
+          "difficulty": "beginner",
+          "scenario": "You have 4 plates. Each plate has 3 cookies. How many cookies do you have altogether?",
+          "parameters": {
+            "groups": 4,
+            "items_per_group": 3
+          },
+          "prediction": "If I add the cookies from each plate, or multiply, I should get the same answer.",
+          "step_by_step": [
+            "Identify the setup: 4 plates, 3 cookies on each plate",
+            "Write it as addition: 3 + 3 + 3 + 3",
+            "Add step by step: 3 + 3 = 6, then 6 + 3 = 9, then 9 + 3 = 12",
+            "Or write it as multiplication: 4 × 3 = 12",
+            "Both methods give the same answer: 12 cookies"
+          ],
+          "explanation": "Multiplication is shorthand for repeated addition. When you have equal groups (4 groups of 3), you can add them or multiply them. Multiplication is faster: 4 × 3 tells you the whole situation at once.",
+          "mathematical_form": "4 × 3 = 3 + 3 + 3 + 3 = 12",
+          "visual_description": "Imagine 4 plates in a row. Each plate has 3 cookies. You count all the cookies: 3 from plate 1, 3 from plate 2, 3 from plate 3, 3 from plate 4. Total: 12."
+        },
+        {
+          "id": "EX-002",
+          "title": "Example 2: Using the Multiplication Table",
+          "difficulty": "intermediate",
+          "scenario": "You want to find 6 × 7. Look it up in the multiplication table.",
+          "parameters": {
+            "factor_1": 6,
+            "factor_2": 7
+          },
+          "prediction": "Using the table, I should be able to find the row for 6 and the column for 7, and where they meet is the answer.",
+          "step_by_step": [
+            "Find the row labeled '6' on the left side of the table",
+            "Find the column labeled '7' across the top",
+            "Follow the row 6 to the right until you reach the column 7",
+            "The number at that intersection is 42",
+            "So 6 × 7 = 42"
+          ],
+          "explanation": "The multiplication table is a tool that shows all multiplication facts at once. Once you learn how to read it, you can quickly find any fact without calculating. The table shows that 6 groups of 7 make 42.",
+          "mathematical_form": "6 × 7 = 42",
+          "visual_description": "A grid (table) with numbers. Row 6 and column 7 intersect at the cell containing 42."
+        },
+        {
+          "id": "EX-003",
+          "title": "Example 3: Real-World Multiplication",
+          "difficulty": "advanced",
+          "scenario": "A toy store has 8 shelves. Each shelf holds 9 toys. How many toys are on the shelves?",
+          "parameters": {
+            "shelves": 8,
+            "toys_per_shelf": 9
+          },
+          "prediction": "This is a multiplication problem. I need to find 8 × 9.",
+          "step_by_step": [
+            "Identify: 8 shelves (groups), 9 toys per shelf (items in each group)",
+            "Write the multiplication: 8 × 9 = ?",
+            "Use repeated addition to verify: 9 + 9 + 9 + 9 + 9 + 9 + 9 + 9",
+            "Or use the multiplication table: Row 8, column 9, answer is 72",
+            "Answer: 8 × 9 = 72 toys"
+          ],
+          "explanation": "Real-world situations often require multiplication. When you have multiple equal groups, multiplication is the right operation. In this case, 8 shelves (equal groups) × 9 toys each = 72 toys total.",
+          "mathematical_form": "8 × 9 = 9 × 8 = 72 (commutative property applies)",
+          "visual_description": "Eight shelves in a store, each holding 9 items. Counting all items across all shelves: 72 total."
+        }
+      ],
+      
+      "exercises": [
+        {
+          "id": "EX-001",
+          "title": "Exercise 1: Repeated Addition to Multiplication",
+          "difficulty": "beginner",
+          "problem_statement": "Write this as a multiplication sentence: 5 + 5 + 5 = 15",
+          "hint": "Count how many 5's you're adding (there are 3). That's 3 groups of 5.",
+          "solution": "3 × 5 = 15 (three groups of 5 equal 15)",
+          "answer": "3 × 5 = 15"
+        },
+        {
+          "id": "EX-002",
+          "title": "Exercise 2: Find the Product",
+          "difficulty": "beginner",
+          "problem_statement": "What is 4 × 6?",
+          "hint": "Think: 4 groups of 6 items each. You can add: 6 + 6 + 6 + 6, or use the multiplication table.",
+          "solution": "4 × 6 = 24 (four groups of 6 make 24)",
+          "answer": "24"
+        },
+        {
+          "id": "EX-003",
+          "title": "Exercise 3: Story Problem",
+          "difficulty": "intermediate",
+          "problem_statement": "A baker puts 7 cookies on each of 5 plates. How many cookies are there altogether?",
+          "hint": "This is a multiplication problem. How many plates? How many cookies per plate?",
+          "solution": "5 plates × 7 cookies per plate = 5 × 7 = 35 cookies",
+          "answer": "35 cookies"
+        },
+        {
+          "id": "EX-004",
+          "title": "Exercise 4: Commutative Property",
+          "difficulty": "intermediate",
+          "problem_statement": "Do 3 × 8 and 8 × 3 give the same answer? Why or why not?",
+          "hint": "3 × 8 means 3 groups of 8. 8 × 3 means 8 groups of 3. Do they give the same total?",
+          "solution": "Yes, they give the same answer: 3 × 8 = 24 and 8 × 3 = 24. Three groups of 8 equals eight groups of 3. The order doesn't matter in multiplication.",
+          "answer": "Yes, both equal 24"
+        },
+        {
+          "id": "EX-005",
+          "title": "Exercise 5: Challenge - Missing Factor",
+          "difficulty": "advanced",
+          "problem_statement": "Fill in the missing number: 7 × ? = 35",
+          "hint": "Think: 7 times what number makes 35? You could divide 35 by 7, or think about the multiplication table.",
+          "solution": "7 × 5 = 35. The missing number is 5.",
+          "answer": "5"
+        }
+      ],
+      
+      "interactive_experience": "Use objects to build equal groups and practice multiplication facts. Create arrays (rows and columns of objects) to visualize multiplication.",
+      "text_only_path": "Multiplication is repeated addition of equal groups. The × symbol means groups. Learn patterns in facts to calculate quickly."
+    },
+    
+    "sources": [
+      {
+        "title": "Principles and Standards for School Mathematics",
+        "authors": "National Council of Teachers of Mathematics",
+        "publication_year": 2000
+      },
+      {
+        "title": "Teaching Student-Centered Mathematics, Grades 3-5",
+        "authors": "Van de Walle and Lovin",
+        "publication_year": 2006
+      }
+    ],
+    
+    "accessibility_level": "partially_verified"
+  }
+}
