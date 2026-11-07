@@ -1,0 +1,401 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-11-07",
+  "title": "ALS and Aging Research Hypothesis Plan",
+  "description": "AI-generated high-priority research hypotheses ranked by impact, confidence, and feasibility.",
+  "hypothesis_count": 16,
+  "pathways_analyzed": 9,
+  "interventions_reviewed": 9,
+  "top_hypotheses": [
+    {
+      "rank": 1,
+      "id": "HYP-THR-ABD9E7",
+      "type": "therapeutic",
+      "statement": "Tofersen (SOD1-ASO) slows or reverses motor neuron survival",
+      "prediction": "Tofersen (SOD1-ASO) will reduce motor neuron survival by blocking Reduces SOD1 mRNA translation via antisense oligonucleotide, lowering SOD1 protein levels and aggregation burden.",
+      "confidence": "established",
+      "priority_score": 0.9,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SOD1-AGG"
+      ],
+      "interventions": [
+        "INT-TOFERSEN"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 2,
+      "id": "HYP-AD3C79B4",
+      "type": "mechanistic",
+      "statement": "Cellular Senescence and Aging Acceleration: Can early combined intervention (e.g., Tofersen + NAD+ + senolytics) prevent ALS onset in SOD1 carriers?",
+      "prediction": "We hypothesize that Senolytics preferentially target senescent cells; understanding selectivity is crucial. in Cellular Senescence and Aging Acceleration",
+      "confidence": "moderate",
+      "priority_score": 0.7124999999999999,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 3,
+      "id": "HYP-3E47418D",
+      "type": "mechanistic",
+      "statement": "Cellular Senescence and Aging Acceleration: What is the mechanistic link between telomere dysfunction and regenerative capacity in aging motor neurons?",
+      "prediction": "We hypothesize that Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap. in Cellular Senescence and Aging Acceleration",
+      "confidence": "moderate",
+      "priority_score": 0.7124999999999999,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 4,
+      "id": "HYP-E5E8CFA0",
+      "type": "mechanistic",
+      "statement": "Cellular Senescence and Aging Acceleration: Can in vitro aged iPSC-derived motor neurons be rejuvenated (telomeres, epigenetics, mitochondria) before transplantation?",
+      "prediction": "We hypothesize that Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap. in Cellular Senescence and Aging Acceleration",
+      "confidence": "moderate",
+      "priority_score": 0.7124999999999999,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 5,
+      "id": "HYP-9046F287",
+      "type": "mechanistic",
+      "statement": "Cellular Senescence and Aging Acceleration: Do senolytics need to be combined with senescence-pathway activation (e.g., via p16/p21 induction) for safe, targeted elimination?",
+      "prediction": "We hypothesize that Senolytics preferentially target senescent cells; understanding selectivity is crucial. in Cellular Senescence and Aging Acceleration",
+      "confidence": "moderate",
+      "priority_score": 0.7124999999999999,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 6,
+      "id": "HYP-SYN-8D9B58",
+      "type": "combination",
+      "statement": "Combination: Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) synergizes",
+      "prediction": "Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) together will have greater effect than sum of parts by targeting multiple pathways",
+      "confidence": "moderate",
+      "priority_score": 0.7,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SOD1-AGG",
+        "PATH-MITODYS",
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [
+        "INT-TOFERSEN",
+        "INT-NAD-BOOST",
+        "INT-SENOLYTICS"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 7,
+      "id": "HYP-SYN-E3F304",
+      "type": "combination",
+      "statement": "Combination: Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) synergizes",
+      "prediction": "Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) together will have greater effect than sum of parts by targeting multiple pathways",
+      "confidence": "moderate",
+      "priority_score": 0.7,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-NEUROINFLAM",
+        "PATH-PROTEOSTASIS"
+      ],
+      "interventions": [
+        "INT-MICROGLIA-MOD",
+        "INT-AUTOPHAGY-ENHANCE"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 8,
+      "id": "HYP-SYN-16973C",
+      "type": "combination",
+      "statement": "Combination: Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) synergizes",
+      "prediction": "Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) together will have greater effect than sum of parts by targeting multiple pathways",
+      "confidence": "moderate",
+      "priority_score": 0.7,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-EPIGENETIC",
+        "PATH-NEUROTROPH"
+      ],
+      "interventions": [
+        "INT-HDAC-INHIBITOR",
+        "INT-BDNF-DELIVERY"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 9,
+      "id": "HYP-SYN-269E5C",
+      "type": "combination",
+      "statement": "Combination: Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) synergizes",
+      "prediction": "Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) together will have greater effect than sum of parts by targeting multiple pathways",
+      "confidence": "moderate",
+      "priority_score": 0.7,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-STEM-EXHAUST",
+        "PATH-NEUROTROPH",
+        "PATH-NEUROINFLAM"
+      ],
+      "interventions": [
+        "INT-STEM-CELL-TX",
+        "INT-BDNF-DELIVERY",
+        "INT-MICROGLIA-MOD"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 10,
+      "id": "HYP-THR-BF572A",
+      "type": "therapeutic",
+      "statement": "NAD+ Boosting (NMN, NR, or sirtuin activators) slows or reverses mitochondrial ATP production",
+      "prediction": "NAD+ Boosting (NMN, NR, or sirtuin activators) will reduce mitochondrial ATP production by blocking Restores mitochondrial NAD+ levels, improving ATP production, SIRT1/3 signaling, and mitophagy.",
+      "confidence": "high",
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-MITODYS"
+      ],
+      "interventions": [
+        "INT-NAD-BOOST"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 11,
+      "id": "HYP-THR-A42E4A",
+      "type": "therapeutic",
+      "statement": "Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) slows or reverses neuroinflammation reduction",
+      "prediction": "Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) will reduce neuroinflammation reduction by blocking Shifts microglial phenotype from pro-inflammatory (M1) to anti-inflammatory (M2), reducing TNF-\u03b1 and IL-1\u03b2, preserving BDNF.",
+      "confidence": "moderate",
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-NEUROINFLAM"
+      ],
+      "interventions": [
+        "INT-MICROGLIA-MOD"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 12,
+      "id": "HYP-THR-D3D70E",
+      "type": "therapeutic",
+      "statement": "Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) slows or reverses protein aggregate clearance",
+      "prediction": "Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) will reduce protein aggregate clearance by blocking Increases macroautophagy and PINK1-mediated mitophagy, clearing protein aggregates and damaged mitochondria.",
+      "confidence": "high",
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-PROTEOSTASIS"
+      ],
+      "interventions": [
+        "INT-AUTOPHAGY-ENHANCE"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 13,
+      "id": "HYP-THR-8B72F6",
+      "type": "therapeutic",
+      "statement": "Senolytics (Dasatinib + Quercetin or others) slows or reverses senescent cell elimination",
+      "prediction": "Senolytics (Dasatinib + Quercetin or others) will reduce senescent cell elimination by blocking Triggers selective apoptosis of senescent cells, reducing SASP and SIRT pathway impairment.",
+      "confidence": "moderate",
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [
+        "INT-SENOLYTICS"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 14,
+      "id": "HYP-THR-A394BE",
+      "type": "therapeutic",
+      "statement": "Histone Deacetylase (HDAC) Inhibitors slows or reverses regeneration gene expression",
+      "prediction": "Histone Deacetylase (HDAC) Inhibitors will reduce regeneration gene expression by blocking Increases histone acetylation globally, reactivating silenced regeneration-associated genes (RAGs) and neuroprotective genes.",
+      "confidence": "high",
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-EPIGENETIC"
+      ],
+      "interventions": [
+        "INT-HDAC-INHIBITOR"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 15,
+      "id": "HYP-THR-4D2A9D",
+      "type": "therapeutic",
+      "statement": "BDNF Protein or Gene Delivery (viral or cellular) slows or reverses motor neuron survival and regrowth",
+      "prediction": "BDNF Protein or Gene Delivery (viral or cellular) will reduce motor neuron survival and regrowth by blocking Directly supplies BDNF to motor neurons and glia, promoting survival, axonal regrowth, and synaptic stability.",
+      "confidence": "high",
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-NEUROTROPH"
+      ],
+      "interventions": [
+        "INT-BDNF-DELIVERY"
+      ],
+      "experimental_approach": ""
+    },
+    {
+      "rank": 16,
+      "id": "HYP-THR-FE3843",
+      "type": "therapeutic",
+      "statement": "Motor Neuron Replacement via Stem Cell Transplantation slows or reverses motor neuron replacement",
+      "prediction": "Motor Neuron Replacement via Stem Cell Transplantation will reduce motor neuron replacement by blocking Generates motor neurons from ESCs/iPSCs, transplants into denervated spinal cord, promotes axonal outgrowth and synaptic reconnection.",
+      "confidence": "moderate",
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-STEM-EXHAUST"
+      ],
+      "interventions": [
+        "INT-STEM-CELL-TX"
+      ],
+      "experimental_approach": ""
+    }
+  ],
+  "all_hypotheses": [
+    {
+      "id": "HYP-THR-ABD9E7",
+      "type": "therapeutic",
+      "statement": "Tofersen (SOD1-ASO) slows or reverses motor neuron survival",
+      "confidence": "established",
+      "priority_score": 0.9
+    },
+    {
+      "id": "HYP-AD3C79B4",
+      "type": "mechanistic",
+      "statement": "Cellular Senescence and Aging Acceleration: Can early combined intervention (e.g., Tofersen + NAD+ + senolytics) prevent ALS onset in SOD1 carriers?",
+      "confidence": "moderate",
+      "priority_score": 0.7124999999999999
+    },
+    {
+      "id": "HYP-3E47418D",
+      "type": "mechanistic",
+      "statement": "Cellular Senescence and Aging Acceleration: What is the mechanistic link between telomere dysfunction and regenerative capacity in aging motor neurons?",
+      "confidence": "moderate",
+      "priority_score": 0.7124999999999999
+    },
+    {
+      "id": "HYP-E5E8CFA0",
+      "type": "mechanistic",
+      "statement": "Cellular Senescence and Aging Acceleration: Can in vitro aged iPSC-derived motor neurons be rejuvenated (telomeres, epigenetics, mitochondria) before transplantation?",
+      "confidence": "moderate",
+      "priority_score": 0.7124999999999999
+    },
+    {
+      "id": "HYP-9046F287",
+      "type": "mechanistic",
+      "statement": "Cellular Senescence and Aging Acceleration: Do senolytics need to be combined with senescence-pathway activation (e.g., via p16/p21 induction) for safe, targeted elimination?",
+      "confidence": "moderate",
+      "priority_score": 0.7124999999999999
+    },
+    {
+      "id": "HYP-SYN-8D9B58",
+      "type": "combination",
+      "statement": "Combination: Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) synergizes",
+      "confidence": "moderate",
+      "priority_score": 0.7
+    },
+    {
+      "id": "HYP-SYN-E3F304",
+      "type": "combination",
+      "statement": "Combination: Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) synergizes",
+      "confidence": "moderate",
+      "priority_score": 0.7
+    },
+    {
+      "id": "HYP-SYN-16973C",
+      "type": "combination",
+      "statement": "Combination: Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) synergizes",
+      "confidence": "moderate",
+      "priority_score": 0.7
+    },
+    {
+      "id": "HYP-SYN-269E5C",
+      "type": "combination",
+      "statement": "Combination: Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) synergizes",
+      "confidence": "moderate",
+      "priority_score": 0.7
+    },
+    {
+      "id": "HYP-THR-BF572A",
+      "type": "therapeutic",
+      "statement": "NAD+ Boosting (NMN, NR, or sirtuin activators) slows or reverses mitochondrial ATP production",
+      "confidence": "high",
+      "priority_score": 0.5
+    },
+    {
+      "id": "HYP-THR-A42E4A",
+      "type": "therapeutic",
+      "statement": "Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) slows or reverses neuroinflammation reduction",
+      "confidence": "moderate",
+      "priority_score": 0.5
+    },
+    {
+      "id": "HYP-THR-D3D70E",
+      "type": "therapeutic",
+      "statement": "Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) slows or reverses protein aggregate clearance",
+      "confidence": "high",
+      "priority_score": 0.5
+    },
+    {
+      "id": "HYP-THR-8B72F6",
+      "type": "therapeutic",
+      "statement": "Senolytics (Dasatinib + Quercetin or others) slows or reverses senescent cell elimination",
+      "confidence": "moderate",
+      "priority_score": 0.5
+    },
+    {
+      "id": "HYP-THR-A394BE",
+      "type": "therapeutic",
+      "statement": "Histone Deacetylase (HDAC) Inhibitors slows or reverses regeneration gene expression",
+      "confidence": "high",
+      "priority_score": 0.5
+    },
+    {
+      "id": "HYP-THR-4D2A9D",
+      "type": "therapeutic",
+      "statement": "BDNF Protein or Gene Delivery (viral or cellular) slows or reverses motor neuron survival and regrowth",
+      "confidence": "high",
+      "priority_score": 0.5
+    },
+    {
+      "id": "HYP-THR-FE3843",
+      "type": "therapeutic",
+      "statement": "Motor Neuron Replacement via Stem Cell Transplantation slows or reverses motor neuron replacement",
+      "confidence": "moderate",
+      "priority_score": 0.5
+    }
+  ]
+}
