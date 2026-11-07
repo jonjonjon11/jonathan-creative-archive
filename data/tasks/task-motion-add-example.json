@@ -1,0 +1,86 @@
+{
+  "task_id": "TASK-motion-add-example",
+  "version": "1.0.0",
+  "project_id": "PROJ-motion-trace-shape",
+  "type": "content_improvement",
+  "title": "Add a fourth worked example to Motion → Trace → Shape",
+  
+  "objective": "Extend the lesson with an additional worked example that demonstrates a less common frequency ratio or phase offset, helping learners build deeper understanding.",
+  
+  "scope": [
+    "Add one new worked example to the module",
+    "Follow the existing format (title, scenario, parameters, prediction, explanation, mathematical form)",
+    "Ensure all calculations are correct",
+    "Make it testable in the interactive lab",
+    "Keep it accessible to beginners"
+  ],
+  
+  "restrictions": [
+    "Do not remove or modify existing examples or exercises",
+    "Do not claim real-world physical effects without justification",
+    "Do not introduce unverified mathematics"
+  ],
+  
+  "inputs": [
+    {
+      "name": "Current module",
+      "source": "data/modules.json",
+      "how_to_access": "View the 'worked_examples' section"
+    },
+    {
+      "name": "Reference materials",
+      "source": "Wolfram MathWorld and OpenStax links in the module",
+      "how_to_access": "Provided in the module's sources section"
+    }
+  ],
+  
+  "deliverables": [
+    {
+      "name": "New worked example",
+      "format": "JSON object matching existing example structure",
+      "required_content": [
+        "id (e.g., 'EXE-LJ-004')",
+        "title",
+        "difficulty level",
+        "scenario",
+        "parameters (x_frequency, y_frequency, phase_offset_degrees)",
+        "prediction",
+        "step_by_step explanation",
+        "mathematical form",
+        "verification instructions"
+      ],
+      "acceptance_criteria": [
+        "Format matches existing examples exactly",
+        "Mathematical calculations are verified",
+        "Example is testable in the interactive lab",
+        "It teaches something new (not just repeating existing examples)",
+        "Explanation is clear and accessible"
+      ]
+    }
+  ],
+  
+  "example_ideas": [
+    "A 3:1 frequency ratio (creates a three-lobed shape)",
+    "A 3:2 frequency ratio (creates a six-pointed pattern)",
+    "A high frequency ratio like 5:2 (creates complexity)",
+    "A specific phase offset example not yet covered (e.g., 45° or 135°)",
+    "A scenario contrasting two similar phase offsets to show sensitivity"
+  ],
+  
+  "time_estimate_hours": 2,
+  "difficulty": "intermediate",
+  "priority": "medium",
+  
+  "required_skills": [
+    "Mathematical writing",
+    "Ability to verify calculations",
+    "Understanding of Lissajous curves"
+  ],
+  
+  "how_to_start": "1. Review the three existing worked examples. 2. Choose a frequency ratio or phase offset not yet covered. 3. Work through the math yourself. 4. Test in the interactive lab (tools/motion-trace-shape/Motion-Trace-Shape.html). 5. Write the example following the existing format. 6. Submit.",
+  
+  "how_to_submit": "Fork the repository, edit data/modules.json to add your example to the 'worked_examples' array, and open a pull request with a description of what you added.",
+  
+  "status": "open",
+  "created_date": "2026-11-07"
+}

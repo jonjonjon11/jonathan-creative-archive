@@ -1,0 +1,93 @@
+{
+  "task_id": "TASK-motion-browser-test",
+  "version": "1.0.0",
+  "project_id": "PROJ-motion-trace-shape",
+  "type": "validation",
+  "title": "Test Motion → Trace → Shape on real browsers",
+  
+  "objective": "Verify the HTML application renders correctly and all controls work across Chrome, Firefox, Safari, and Edge.",
+  
+  "scope": [
+    "Test the standalone HTML file",
+    "Verify rendering of layout, graphs, and visuals",
+    "Test all interactive controls: Play, Pause, Step, time slider, parameter selectors",
+    "Test JSON download",
+    "Document browser versions and devices",
+    "Identify any rendering or interaction issues"
+  ],
+  
+  "restrictions": [
+    "Do not modify the HTML or JavaScript",
+    "Do not upload files to third-party sites",
+    "Do not reverse-engineer assets"
+  ],
+  
+  "inputs": [
+    {
+      "name": "Motion-Trace-Shape.html",
+      "source": "tools/motion-trace-shape/Motion-Trace-Shape.html",
+      "how_to_access": "Download from GitHub or clone repository"
+    }
+  ],
+  
+  "deliverables": [
+    {
+      "name": "Browser test report",
+      "format": "Markdown or plain text",
+      "required_content": [
+        "Browser name and version",
+        "Device type (desktop/mobile/tablet)",
+        "Operating system",
+        "Which controls were tested",
+        "Any visual or functional issues",
+        "Overall assessment (works/partial/does not work)"
+      ],
+      "acceptance_criteria": [
+        "Report covers at least two browser/OS combinations",
+        "All controls are documented",
+        "Issues are described specifically",
+        "Report is dated"
+      ]
+    }
+  ],
+  
+  "beneficiaries": [
+    {
+      "name": "Learners",
+      "impact": "Ensures consistent experience across devices"
+    },
+    {
+      "name": "Educators",
+      "impact": "Confidence the tool works in classrooms"
+    }
+  ],
+  
+  "time_estimate_hours": 4,
+  "difficulty": "beginner",
+  "priority": "high",
+  
+  "required_skills": [
+    "Browser navigation",
+    "Ability to describe what works and doesn't work",
+    "Attention to detail"
+  ],
+  
+  "required_permissions": [
+    "Read access to GitHub repository",
+    "Ability to download files",
+    "Access to at least two different browsers"
+  ],
+  
+  "stop_conditions": [
+    "HTML file is corrupted or inaccessible",
+    "You do not have access to at least two browsers",
+    "Testing requires payment or account creation"
+  ],
+  
+  "how_to_start": "1. Clone the repository. 2. Download Motion-Trace-Shape.html from tools/motion-trace-shape/. 3. Open in first browser and test all controls. 4. Document results. 5. Repeat in second browser. 6. Submit report.",
+  
+  "how_to_submit": "Create a file docs/test-reports/browser-test-[your-name]-[date].md with your report and open a pull request.",
+  
+  "status": "open",
+  "created_date": "2026-11-07"
+}
