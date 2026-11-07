@@ -1,6 +1,6 @@
 # Recovered project map
 
-This map summarizes selected source and branch work, followed by a new implementation built for this archive. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/`, CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`, CC0 Lumen Commons source/standalone in `tools/lumen-commons/`, and the CC0 source toolkit in `tools/universal-color-ontology/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
+This map summarizes selected source and branch work, followed by new implementations built for this archive. All 30 owned source repositories in the prepublication inventory were private at inspection; this count predates the new public compilation repository. It is not a merger or a full application release. Separately reviewed included artifacts are the unchanged CC0 Reality Atlas standalone in `tools/reality-atlas/`, CC0 cooperation/rescue source files in `artifacts/cooperation-rescue/`, CC0 Lumen Commons source/standalone in `tools/lumen-commons/`, and the CC0 source toolkit in `tools/universal-color-ontology/`. Test counts below are historical source reports unless explicitly identified as fresh archive revalidation. Exact private repository locators are withheld.
 
 ## AR Buddy Commons
 
@@ -367,3 +367,11 @@ Mostly no detected root license. Third-party purchased assets/music are not clea
 Fresh checks: 18 analytical/data tests, 14 simulated-DOM control-state tests and targeted static/build checks passed. Real Chromium launch was blocked before page load. Rendering, native control behavior, actual downloads, physical devices, assistive technology and educational effectiveness remain unverified. Existing source-level motion/contrast hooks are not an accessibility certification.
 
 New code and explanations use the archive's CC BY 4.0 license. No upstream code, third-party assets, runtime library, account, storage or background network request is bundled.
+
+## New archive experiment: Water Survey Preflight
+
+**Status:** Original offline CSV review prototype. **Source ID:** SRC-037.
+
+[Water Survey Preflight](../tools/water-survey-preflight/README.md) provides explicit mappings and bounded findings for a subset of water-point survey structure, coordinate/date, required-field and duplicate checks. Official WPdx sources are linked with a documented rules reconciliation; all supplied examples are synthetic. Its 40,532-byte HTML, source, tests, source notes and a small evaluation hypothesis are included under CC BY 4.0.
+
+Fresh checks: 84 tests passed (73 core, 5 static, 6 simulated-controller), plus deterministic build/syntax checks. Independent review corrected exact-decimal boundary handling and a browser-test fixture before release. Real-browser rendering, downloads, mobile use, accessibility and CSP enforcement tests have not run. This partial unofficial preflight is not water-safety assessment, official WPdx validation or upload approval. No practitioner test has established demand, workflow fit or benefit. No real field data, automatic edits, uploads or background network calls are included.

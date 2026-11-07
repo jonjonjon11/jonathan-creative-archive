@@ -84,6 +84,16 @@ Fresh browser preflight was blocked before page load by Chromium socket permissi
 
 Archive integration adds SRC-036, CON-023 and ART-005, distinguishes new implementations from recovered artifacts, and qualifies the earlier demonstrator proposal. It preserves all recovered source bytes/licenses. The integrated structural and offline helper checks pass; browser limitations remain explicit.
 
+## New Water Survey Preflight experiment 0.1.0
+
+From `tools/water-survey-preflight/`, run `node build.cjs --check` and `node --test tests/*.test.cjs`. JavaScript syntax checks cover the core, controller, build and optional browser-test script.
+
+Result on 2026-11-07: 84 tests passed, zero failed/skipped (73 core, 5 static and 6 controller tests using a DOM model), under Node v24.22.1. The deterministic HTML is 40,532 bytes, SHA-256 `c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa`. The complete license matches the existing root CC BY 4.0 text. Independent review corrected decimal coordinates exceeding bounds below floating-point precision and the escaping of a browser injection fixture; regression tests passed after correction.
+
+Real-browser assertions did not run due to startup/local-file restrictions. Rendering, downloads, mobile use, assistive technology and CSP enforcement remain untested. Static CSP-hash checks and a simulated controller do not establish those outcomes. The README prominently states this limit. Source links, rule reconciliation, synthetic fixtures and an unvalidated practitioner-evaluation hypothesis accompany the package.
+
+This is a partial unofficial preflight, not a water-quality/safety assessment, WPdx certification or upload approval. It has not demonstrated practitioner usefulness or field impact. Archive integration adds SRC-037, CON-024 and ART-006 without changing earlier artifact bytes or licenses. The package manifest reflects documentation-only publication edits; app/source/build/test/fixture bytes remain unchanged from the reviewed corrected candidate.
+
 ## Rights and privacy boundary
 
 Exact-commit CC0 provenance was reviewed separately for Reality Atlas, Lumen Commons, Universal Color/Ontology and the preserved cooperation/rescue files; their complete source licenses are included. The new compilation is CC BY 4.0, with the owner’s existing root license preserved; other upstream rights remain separate. Private conversation/Drive/file locators and editorial review records remain outside this repository. The unchanged tool retains its original GitHub source link, which may require repository access.

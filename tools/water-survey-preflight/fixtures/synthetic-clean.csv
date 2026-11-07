@@ -1,0 +1,3 @@
+#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source,#water_tech,#activity_id,#install_year,#rehab_year,#notes
+1.2345,32.4567,2024-02-29,Yes,Synthetic Survey Team,Borehole,Hand Pump,SYN-001,2020,2023,Invented demonstration observation; not a real surveyed point
+-1.3456,33.5678,2024-03-01T13:30:00+03:00,No,Synthetic Survey Team,Protected Spring,,SYN-002,2019,,Invented demonstration observation; not a real surveyed point

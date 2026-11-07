@@ -14,6 +14,8 @@ The [Universal Color and Ontology toolkit](../tools/universal-color-ontology/REA
 
 The new [Motion → Trace → Shape mini-lab](../tools/motion-trace-shape/README.md) is an original archive implementation under the existing CC BY 4.0 compilation license, with a complete matching copy in its directory. Its mathematical references are cited, not bundled third-party text or assets. It is not presented as recovered historical source.
 
+The original [Water Survey Preflight experiment](../tools/water-survey-preflight/README.md), including its invented fixtures, uses CC BY 4.0 with a matching full license. WPdx names identify public reference guidance, not affiliation or endorsement. The linked documents retain their own rights; no official PDFs, datasets, logos or third-party implementation are bundled.
+
 ## Different upstream licenses
 
 Reviewed source families use different terms. The educational-universe repository reports CC0-1.0. AR Buddy Commons separates AGPL-3.0-or-later source from CC-BY-SA-4.0 documentation/prompts/curricula and a future CERN-OHL-S-2.0 hardware direction. Other repositories have mixed or absent root licensing. [SRC-007, SRC-008, SRC-009]

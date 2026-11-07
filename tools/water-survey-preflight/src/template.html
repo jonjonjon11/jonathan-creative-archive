@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="__CSP__">
+  <meta name="referrer" content="no-referrer">
+  <title>Water-point preflight · Offline CSV review</title>
+  <style>__STYLE__</style>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to CSV review</a>
+  <header class="masthead"><a href="#" class="brand" aria-label="Water-point preflight home"><span class="mark" aria-hidden="true">◈</span> Water-point preflight</a><span class="pill">Offline prototype · v0.1</span></header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">A small check before the next step</p>
+      <h1 id="title">Review the data.<br><span>Keep the context.</span></h1>
+      <p class="lede">Find missing values, coordinate problems, date issues, and possible duplicates in a water-point survey CSV. Every finding stays yours to interpret.</p>
+      <div class="promises"><span>✓ Runs on your device</span><span>✓ No account or upload</span><span>✓ Original file unchanged</span></div>
+      <p class="notice"><strong>Data review, not water testing.</strong> This independent experiment is not affiliated with WPdx. It cannot establish water safety, verify a site, or certify upload acceptance. Its real-world usefulness has not yet been evaluated.</p>
+    </section>
+    <section id="workspace" class="panel" aria-labelledby="input-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / Bring a local copy</p><h2 id="input-title">Choose your CSV</h2></div><button id="demo" class="secondary" type="button">Try a synthetic example</button></div>
+      <p id="input-help" class="muted">UTF-8, comma-separated CSV. Up to 5 MB, 25,000 records, and 256 columns. Quoted commas, quotes, and multiline cells are supported. Only the fields below are checked.</p>
+      <label class="file-zone" for="file"><strong>Choose a local CSV file</strong><span>It is read in this tab, never uploaded by this app.</span><input id="file" type="file" accept=".csv,text/csv" aria-describedby="input-help"></label>
+      <details id="paste-details"><summary>Or paste CSV text</summary><label for="csv" class="sr-only">CSV text to review</label><textarea id="csv" rows="7" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source"></textarea><p class="muted small">File contents also appear here after opening. Browser extensions, clipboard tools, and your device’s security are outside this app’s control.</p></details>
+      <p id="input-status" role="status" class="muted small">No data loaded. The example contains invented observations only.</p>
+      <div class="actions"><button id="review" type="button">Review CSV</button><button id="clear" class="quiet" type="button">Clear this tab</button></div>
+    </section>
+    <section id="mapping-panel" class="panel" aria-labelledby="mapping-title" hidden>
+      <p class="eyebrow">02 / Confirm the meaning</p><h2 id="mapping-title">Map your columns</h2>
+      <p class="muted">Exact WPdx field names are suggested, with or without #. For other headers, choose the matching column yourself. A column cannot serve two fields. Changes require another review.</p>
+      <div id="mapping" class="mapping"></div>
+      <p class="small muted">Source and technology are open text, not a fixed list. Optional columns not listed here, geographic boundaries, and the truth of survey observations are not validated.</p>
+      <button id="review-mapping" type="button">Review with these mappings</button>
+    </section>
+    <section id="results" class="panel" aria-labelledby="results-title" tabindex="-1" hidden>
+      <div class="section-heading"><div><p class="eyebrow">03 / Review, then decide</p><h2 id="results-title">Review findings</h2></div><span id="review-state" class="pill"></span></div>
+      <p id="result-summary" role="status"></p>
+      <div class="stats"><div><strong id="count-records">0</strong><span>data records</span></div><div><strong id="count-errors">0</strong><span>errors</span></div><div><strong id="count-warnings">0</strong><span>warnings</span></div></div>
+      <p class="small muted"><strong>Error:</strong> missing required information, an impossible coordinate, or input this checker cannot interpret. <strong>Warning:</strong> a human review question, not proof of incorrect data. These are this prototype’s severity levels, not WPdx rejection decisions.</p>
+      <div class="filter"><label for="filter">Show findings</label><select id="filter"><option value="all">All findings</option><option value="error">Errors only</option><option value="warning">Warnings only</option></select><span id="page-summary" class="small muted"></span></div>
+      <div id="issues"></div>
+      <div id="pagination" class="actions" hidden><button id="previous" class="secondary" type="button">Previous 100</button><button id="next" class="secondary" type="button">Next 100</button></div>
+      <div class="export"><label><input id="include-values" type="checkbox"> Include column headers and example values in the report (may reveal sensitive information)</label><button id="download" class="secondary" type="button">Save JSON report locally</button><p class="small muted">Reports default to omitting input headers and values. They are not anonymous: review before sharing. The report contains findings, not a corrected dataset.</p></div>
+      <p class="notice"><strong>What remains:</strong> verify WGS 84 coordinates and country boundaries, confirm each observation and the meaning of unknowns with the data collector, review data-sharing rights, and use the official WPdx process if submitting. No findings does not mean complete, accurate, safe, or accepted.</p>
+    </section>
+    <section class="bottom-grid" aria-label="About this experiment">
+      <article><h2>Keep people in the loop.</h2><p>Never fill a gap by guessing. Do not turn a water-presence response into a safety claim. Duplicate observations can be legitimate visits; this tool never deletes or fixes records.</p><p>Close or clear the tab when finished. No cookies, analytics, local storage, or remote services are used. Downloaded reports and browser-managed file history remain on your device.</p></article>
+      <article><h2>Built on published guidance.</h2><p>Rules reviewed on <strong>7 November 2026</strong>. The currently linked WPdx standard is dated January 2021; the MEAL annex was published in December 2023. This is a bounded preflight, not a full implementation of either.</p><p class="source-links"><a href="https://www.waterpointdata.org/wp-content/uploads/2021/04/WPDx_Data_Standard.pdf" target="_blank" rel="noopener noreferrer">WPdx standard ↗</a><a href="https://www.waterpointdata.org/wp-content/uploads/2023/11/WPdx_MEAL_Guide_Dec2023.pdf" target="_blank" rel="noopener noreferrer">MEAL guidance ↗</a><a href="https://www.waterpointdata.org/access-data/" target="_blank" rel="noopener noreferrer">Existing WPdx checks ↗</a></p><p class="small muted">These optional reference links open online. The review itself works without a connection. WPdx already validates uploads; an additional offline workflow is a hypothesis to test.</p></article>
+    </section>
+  </main>
+  <footer>Water-point preflight · Original public-benefit experiment · CC BY 4.0 · No warranty</footer>
+  <noscript><p class="notice">JavaScript is required for local review. No data has been processed.</p></noscript>
+  <script>__CORE__</script>
+  <script>__UI__</script>
+</body>
+</html>

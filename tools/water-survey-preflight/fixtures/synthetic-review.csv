@@ -1,0 +1,6 @@
+#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source,#water_tech,#activity_id,#install_year,#rehab_year,#notes
+1.2345,32.4567,2024-02-29,Yes,Synthetic Survey Team,Borehole,Hand Pump,SYN-001,2020,2023,"Invented example, not a real surveyed point"
+95.1234,32.5678,2024-02-30,Functional,Synthetic Survey Team,,Hand Pump,SYN-002,2022,2020,"Deliberate coordinate, date, status, and year issues"
+0,0,2099-01-01,,Synthetic Survey Team,Unknown,,SYN-003,,,Deliberate location and future-date warnings
+-1.3456,33.5678,2024-03-01,No,Synthetic Survey Team,,,SYN-004,,,Missing source and technology
+1.2345,32.4567,2024-02-29,Yes,Synthetic Survey Team,Borehole,Hand Pump,SYN-001,2020,2023,"Invented example, not a real surveyed point"

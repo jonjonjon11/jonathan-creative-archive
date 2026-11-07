@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-eCwMSvlngeGGmdULu1Vz1kmg0Dlv+xf8bui6ec//x7s=' 'sha256-ho8687inH5jA56Px4IeiWaPJKMoKQCpseT5AeVecDbo='; style-src 'sha256-RmXlo6BqRalprR5dddm0DKG0pJtxSX2zol1o6nGEpvM='; connect-src 'none'; img-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Water-point preflight · Offline CSV review</title>
+  <style>:root{color-scheme:light;--ink:#203d38;--muted:#526660;--green:#1c6952;--line:#ccd8d0;--paper:#fcfdf9;--wash:#eef3ec;--warn:#74500a;--error:#9b3027}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}a{color:var(--green);text-underline-offset:4px}button,input,select,textarea{font:inherit}button{border:1px solid var(--green);border-radius:8px;background:var(--green);color:#fff;padding:11px 19px;font-weight:650;cursor:pointer;min-height:46px}button:hover{background:#154e3f}button:disabled{opacity:.5;cursor:default}.secondary{background:transparent;color:var(--green)}.secondary:hover{background:#e4eee5}.quiet{background:transparent;color:var(--muted);border-color:transparent}.quiet:hover{background:#e4eee5}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #7b540a;outline-offset:4px}h1,h2,p{margin-top:0}h1{font-size:clamp(2.7rem,6vw,4.7rem);line-height:1.08;letter-spacing:-.045em;font-weight:650;margin-bottom:25px}h1 span{color:var(--green)}h2{font-size:1.45rem;line-height:1.3;letter-spacing:-.02em;margin-bottom:12px}.masthead,main,footer{max-width:1120px;margin:auto}.masthead{padding:27px 36px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{text-decoration:none;font-size:1.06rem;font-weight:700;display:flex;align-items:center;gap:12px}.mark{font-size:28px;color:var(--green)}.pill{font-size:.75rem;letter-spacing:.03em;padding:5px 10px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}.intro{padding:54px 0 30px;max-width:850px}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.72rem;font-weight:750;color:var(--green);margin-bottom:12px}.lede{font-size:1.12rem;max-width:730px;color:var(--muted)}.promises{display:flex;flex-wrap:wrap;gap:8px 23px;font-size:.83rem;font-weight:600;margin:24px 0}.notice{border-left:3px solid #7e927a;padding:12px 16px;background:var(--wash);font-size:.87rem;margin:20px 0 0}.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:28px 30px;margin-bottom:24px;box-shadow:0 4px 20px #254f3d05}.section-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}.muted{color:var(--muted)}.small{font-size:.83rem}.file-zone{display:flex;flex-direction:column;border:1px dashed #91a598;border-radius:9px;padding:22px 25px;background:#f5f8f2;gap:5px;margin:20px 0}.file-zone span{font-size:.86rem;color:var(--muted)}input[type=file]{margin-top:10px;max-width:100%;font-size:.85rem}input[type=file]::file-selector-button{background:#fff;border:1px solid #91a598;border-radius:5px;padding:8px 12px;margin-right:12px;color:var(--ink);cursor:pointer}summary{cursor:pointer;color:var(--green);font-weight:600;margin:12px 0}textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;font-family:ui-monospace,monospace;font-size:.85rem;resize:vertical;min-height:140px}input[type=checkbox]{width:19px;height:19px;vertical-align:middle;accent-color:var(--green);margin-right:7px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.mapping{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 25px;margin:25px 0}.map-field{display:flex;flex-direction:column;gap:6px}.map-field label{font-weight:650;font-size:.89rem}.map-field small{font-weight:400;color:var(--muted)}select{border:1px solid #91a598;color:var(--ink);background:#fff;padding:9px;border-radius:6px;max-width:100%;min-width:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:20px 0}.stats div{padding:16px 20px 16px 0}.stats strong{display:block;font-size:2.15rem;line-height:1.2;letter-spacing:-.04em}.stats span{font-size:.82rem;color:var(--muted)}#count-errors{color:var(--error)}#count-warnings{color:var(--warn)}.filter{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0 14px}.filter label{font-size:.88rem;font-weight:650}.filter select{font-size:.86rem}.issue{border-top:1px solid var(--line);padding:17px 0;display:grid;grid-template-columns:140px 1fr;gap:20px}.severity{font-size:.73rem;text-transform:uppercase;font-weight:750;letter-spacing:.05em}.severity.error{color:var(--error)}.severity.warning{color:var(--warn)}.location{display:block;font-size:.8rem;color:var(--muted)}.issue h3{font-size:.92rem;margin:0 0 6px;overflow-wrap:anywhere}.issue p{font-size:.89rem;margin-bottom:6px}.issue code{font-size:.8rem;white-space:pre-wrap;overflow-wrap:anywhere;display:inline-block;background:var(--wash);padding:3px 6px;border-radius:4px;max-width:100%}.basis{font-size:.73rem;color:var(--muted);display:block}.export{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}.export label{font-size:.83rem;display:block;margin-bottom:14px}.export p{margin-top:10px}.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin:45px 0}.bottom-grid h2{font-size:1.1rem}.bottom-grid p{font-size:.88rem;color:var(--muted)}.source-links{display:flex;gap:8px 20px;flex-wrap:wrap}.source-links a{font-size:.82rem}main{padding:0 36px}footer{padding:22px 36px 35px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:fixed;left:15px;top:-80px;background:white;z-index:10;padding:12px}.skip:focus{top:12px}#results:focus{outline:none}.empty{padding:24px;background:var(--wash);border-radius:8px}.empty p{margin:0}.loading{opacity:.65}@media(max-width:660px){main{padding:0 18px}.masthead{padding:18px;align-items:flex-start;flex-direction:column;gap:8px}.intro{padding-top:32px}.panel{padding:22px 18px}.section-heading{align-items:flex-start;flex-direction:column;gap:7px}.mapping,.bottom-grid{grid-template-columns:1fr}.bottom-grid{gap:20px}.issue{grid-template-columns:1fr;gap:5px}.location{display:inline;margin-left:10px}.file-zone{padding:17px}.promises{gap:8px 14px;font-size:.77rem}footer{padding:22px 18px}.stats strong{font-size:1.8rem}.stats div{padding-right:8px}.stats span{font-size:.73rem}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}@media print{button,.file-zone,textarea,.filter,#pagination,.export,.skip,#mapping-panel{display:none!important}.intro{padding:15px 0}h1{font-size:2rem}.panel{box-shadow:none;break-inside:avoid}.issue{break-inside:avoid}main{padding:0}.bottom-grid{display:block}footer{padding:10px 0}}
+</style>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to CSV review</a>
+  <header class="masthead"><a href="#" class="brand" aria-label="Water-point preflight home"><span class="mark" aria-hidden="true">◈</span> Water-point preflight</a><span class="pill">Offline prototype · v0.1</span></header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">A small check before the next step</p>
+      <h1 id="title">Review the data.<br><span>Keep the context.</span></h1>
+      <p class="lede">Find missing values, coordinate problems, date issues, and possible duplicates in a water-point survey CSV. Every finding stays yours to interpret.</p>
+      <div class="promises"><span>✓ Runs on your device</span><span>✓ No account or upload</span><span>✓ Original file unchanged</span></div>
+      <p class="notice"><strong>Data review, not water testing.</strong> This independent experiment is not affiliated with WPdx. It cannot establish water safety, verify a site, or certify upload acceptance. Its real-world usefulness has not yet been evaluated.</p>
+    </section>
+    <section id="workspace" class="panel" aria-labelledby="input-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / Bring a local copy</p><h2 id="input-title">Choose your CSV</h2></div><button id="demo" class="secondary" type="button">Try a synthetic example</button></div>
+      <p id="input-help" class="muted">UTF-8, comma-separated CSV. Up to 5 MB, 25,000 records, and 256 columns. Quoted commas, quotes, and multiline cells are supported. Only the fields below are checked.</p>
+      <label class="file-zone" for="file"><strong>Choose a local CSV file</strong><span>It is read in this tab, never uploaded by this app.</span><input id="file" type="file" accept=".csv,text/csv" aria-describedby="input-help"></label>
+      <details id="paste-details"><summary>Or paste CSV text</summary><label for="csv" class="sr-only">CSV text to review</label><textarea id="csv" rows="7" spellcheck="false" autocapitalize="off" autocomplete="off" placeholder="#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source"></textarea><p class="muted small">File contents also appear here after opening. Browser extensions, clipboard tools, and your device’s security are outside this app’s control.</p></details>
+      <p id="input-status" role="status" class="muted small">No data loaded. The example contains invented observations only.</p>
+      <div class="actions"><button id="review" type="button">Review CSV</button><button id="clear" class="quiet" type="button">Clear this tab</button></div>
+    </section>
+    <section id="mapping-panel" class="panel" aria-labelledby="mapping-title" hidden>
+      <p class="eyebrow">02 / Confirm the meaning</p><h2 id="mapping-title">Map your columns</h2>
+      <p class="muted">Exact WPdx field names are suggested, with or without #. For other headers, choose the matching column yourself. A column cannot serve two fields. Changes require another review.</p>
+      <div id="mapping" class="mapping"></div>
+      <p class="small muted">Source and technology are open text, not a fixed list. Optional columns not listed here, geographic boundaries, and the truth of survey observations are not validated.</p>
+      <button id="review-mapping" type="button">Review with these mappings</button>
+    </section>
+    <section id="results" class="panel" aria-labelledby="results-title" tabindex="-1" hidden>
+      <div class="section-heading"><div><p class="eyebrow">03 / Review, then decide</p><h2 id="results-title">Review findings</h2></div><span id="review-state" class="pill"></span></div>
+      <p id="result-summary" role="status"></p>
+      <div class="stats"><div><strong id="count-records">0</strong><span>data records</span></div><div><strong id="count-errors">0</strong><span>errors</span></div><div><strong id="count-warnings">0</strong><span>warnings</span></div></div>
+      <p class="small muted"><strong>Error:</strong> missing required information, an impossible coordinate, or input this checker cannot interpret. <strong>Warning:</strong> a human review question, not proof of incorrect data. These are this prototype’s severity levels, not WPdx rejection decisions.</p>
+      <div class="filter"><label for="filter">Show findings</label><select id="filter"><option value="all">All findings</option><option value="error">Errors only</option><option value="warning">Warnings only</option></select><span id="page-summary" class="small muted"></span></div>
+      <div id="issues"></div>
+      <div id="pagination" class="actions" hidden><button id="previous" class="secondary" type="button">Previous 100</button><button id="next" class="secondary" type="button">Next 100</button></div>
+      <div class="export"><label><input id="include-values" type="checkbox"> Include column headers and example values in the report (may reveal sensitive information)</label><button id="download" class="secondary" type="button">Save JSON report locally</button><p class="small muted">Reports default to omitting input headers and values. They are not anonymous: review before sharing. The report contains findings, not a corrected dataset.</p></div>
+      <p class="notice"><strong>What remains:</strong> verify WGS 84 coordinates and country boundaries, confirm each observation and the meaning of unknowns with the data collector, review data-sharing rights, and use the official WPdx process if submitting. No findings does not mean complete, accurate, safe, or accepted.</p>
+    </section>
+    <section class="bottom-grid" aria-label="About this experiment">
+      <article><h2>Keep people in the loop.</h2><p>Never fill a gap by guessing. Do not turn a water-presence response into a safety claim. Duplicate observations can be legitimate visits; this tool never deletes or fixes records.</p><p>Close or clear the tab when finished. No cookies, analytics, local storage, or remote services are used. Downloaded reports and browser-managed file history remain on your device.</p></article>
+      <article><h2>Built on published guidance.</h2><p>Rules reviewed on <strong>7 November 2026</strong>. The currently linked WPdx standard is dated January 2021; the MEAL annex was published in December 2023. This is a bounded preflight, not a full implementation of either.</p><p class="source-links"><a href="https://www.waterpointdata.org/wp-content/uploads/2021/04/WPDx_Data_Standard.pdf" target="_blank" rel="noopener noreferrer">WPdx standard ↗</a><a href="https://www.waterpointdata.org/wp-content/uploads/2023/11/WPdx_MEAL_Guide_Dec2023.pdf" target="_blank" rel="noopener noreferrer">MEAL guidance ↗</a><a href="https://www.waterpointdata.org/access-data/" target="_blank" rel="noopener noreferrer">Existing WPdx checks ↗</a></p><p class="small muted">These optional reference links open online. The review itself works without a connection. WPdx already validates uploads; an additional offline workflow is a hypothesis to test.</p></article>
+    </section>
+  </main>
+  <footer>Water-point preflight · Original public-benefit experiment · CC BY 4.0 · No warranty</footer>
+  <noscript><p class="notice">JavaScript is required for local review. No data has been processed.</p></noscript>
+  <script>/* Water-point preflight 0.1.0. Original implementation. See LICENSE and docs/rules.md. */
+(function (root, factory) {
+  "use strict";
+  const api = factory();
+  if (typeof module === "object" && module.exports) module.exports = api;
+  else root.WaterPreflight = api;
+})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+  "use strict";
+  const VERSION = "0.1.0";
+  const LIMITS = Object.freeze({ characters: 5000000, rows: 25000, columns: 256, cell: 65536, issues: 2000 });
+  const FIELDS = Object.freeze([
+    ["lat_deg", "Latitude", "required"], ["lon_deg", "Longitude", "required"],
+    ["report_date", "Visit date", "required"], ["status_id", "Water present at visit", "required"],
+    ["source", "Collecting organization", "required"],
+    ["water_source", "Water source", "either"], ["water_tech", "Water technology", "either"],
+    ["activity_id", "Water-point ID", "optional"], ["install_year", "Installation year", "optional"],
+    ["rehab_year", "Rehabilitation year", "optional"]
+  ].map(([key, label, need]) => Object.freeze({ key, label, need })));
+  function normalHeader(value) { return value.trim().replace(/^#/, "").toLowerCase(); }
+  function exceedsDecimalBound(value, bound) {
+    // Called only for syntactically valid plain decimals. Compare the supplied decimal
+    // exactly, so binary floating-point rounding cannot hide a tiny out-of-range value.
+    const [integerPart, fraction = ""] = value.replace(/^[+-]/, "").split(".");
+    const integer = integerPart.replace(/^0+/, "") || "0", limit = String(bound);
+    return integer.length > limit.length ||
+      (integer.length === limit.length && (integer > limit || (integer === limit && /[1-9]/.test(fraction))));
+  }
+  function excerpt(value) { return String(value).length > 160 ? String(value).slice(0, 159) + "…" : String(value); }
+  function parseCSV(input) {
+    const fail = (code, message, line, record) => ({ records: [], skippedBlankLines: 0, error: { code, message, line, record } });
+    if (typeof input !== "string") return fail("CSV_INPUT", "Input must be text.", 1, 1);
+    if (input.length > LIMITS.characters) return fail("FILE_LIMIT", "This prototype supports at most 5,000,000 text characters.", 1, 1);
+    let text = input.charCodeAt(0) === 0xFEFF ? input.slice(1) : input;
+    if (text.includes("\u0000")) return fail("CSV_ENCODING", "NUL characters found. Export a UTF-8 CSV, not UTF-16 or a spreadsheet workbook.", 1, 1);
+    let cells = [], field = "", state = "start", line = 1, startLine = 1, record = 1, touched = false, skipped = 0;
+    const records = [];
+    const pushField = () => { cells.push(field); field = ""; state = "start"; };
+    const pushRecord = () => {
+      pushField();
+      if (!touched && cells.length === 1 && cells[0] === "") skipped++;
+      else records.push({ cells, line: startLine, record });
+      cells = []; touched = false; record++;
+    };
+    for (let i = 0; i < text.length; i++) {
+      const c = text[i];
+      const newline = c === "\r" || c === "\n";
+      if (state === "quoted") {
+        if (c === '"') {
+          if (text[i + 1] === '"') { field += '"'; i++; }
+          else state = "closed";
+        } else if (newline) {
+          if (c === "\r" && text[i + 1] === "\n") { field += "\r\n"; i++; }
+          else field += c;
+          line++;
+        } else field += c;
+      } else if (newline) {
+        pushRecord();
+        if (c === "\r" && text[i + 1] === "\n") i++;
+        line++; startLine = line;
+      } else if (c === ",") {
+        touched = true; pushField();
+      } else if (state === "closed") {
+        return fail("CSV_QUOTE", "Only a comma or a line break may follow a closing quote. Remove extra characters or spaces outside the quotes.", line, record);
+      } else if (c === '"') {
+        if (state !== "start") return fail("CSV_QUOTE", "Quote inside an unquoted field. Quote the whole field and double embedded quotes.", line, record);
+        touched = true; state = "quoted";
+      } else {
+        touched = true; state = "plain"; field += c;
+      }
+      if (field.length > LIMITS.cell) return fail("CELL_LIMIT", "A cell exceeds 65,536 characters. Split or shorten it in a copy of the CSV.", line, record);
+      if (cells.length >= LIMITS.columns) return fail("COLUMN_LIMIT", "This prototype supports at most 256 columns.", line, record);
+      if (records.length > LIMITS.rows + 1) return fail("ROW_LIMIT", "This prototype supports at most 25,000 data records.", line, record);
+    }
+    if (state === "quoted") return fail("CSV_QUOTE", "Unclosed quoted field. Check the record beginning on this line.", startLine, record);
+    if (touched || field !== "" || cells.length > 0) pushRecord();
+    if (records.length > LIMITS.rows + 1) return fail("ROW_LIMIT", "This prototype supports at most 25,000 data records.", line, record);
+    return { records, skippedBlankLines: skipped, error: null };
+  }
+  function autoMapping(headers) {
+    const mapping = Object.create(null);
+    for (const { key } of FIELDS) {
+      const candidates = headers.map((header, index) => normalHeader(header) === key ? index : -1).filter(index => index >= 0);
+      mapping[key] = candidates.length === 1 ? candidates[0] : null;
+    }
+    return mapping;
+  }
+  function dateParts(value) {
+    // Deliberately bounded ISO calendar profile. Never use Date.parse on local or ambiguous input.
+    const m = /^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2})(?::(\d{2})(?:[.,](\d+))?)?(Z|[+-]\d{2}(?::?\d{2})?)?)?$/.exec(value);
+    if (!m) return { valid: false, reason: "Use YYYY-MM-DD, optionally followed by T and HH:mm[:ss[.fraction]], then optional Z or ±HH[:mm]. Other ISO forms are outside this checker’s profile." };
+    const year = +m[1], month = +m[2], day = +m[3];
+    const leap = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+    const days = [31, leap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    if (year < 1 || month < 1 || month > 12 || day < 1 || day > days[month - 1]) return { valid: false, reason: "This is not a valid calendar date in years 0001–9999. Check the month, day, and leap year." };
+    if (m[4] !== undefined) {
+      const hour = +m[4], minute = +m[5], second = +(m[6] || 0);
+      if (hour > 23 || minute > 59 || second > 59) return { valid: false, reason: "This checker accepts hours 00–23 and minutes/seconds 00–59. End-of-day 24:00 and leap-second forms require manual review and are outside its profile." };
+      if (m[8] && m[8] !== "Z") {
+        const z = /^[+-](\d{2})(?::?(\d{2}))?$/.exec(m[8]);
+        if (+z[1] > 23 || +(z[2] || 0) > 59) return { valid: false, reason: "The timezone offset has an out-of-range hour or minute." };
+      }
+    }
+    return { valid: true, year, date: value.slice(0, 10), hasTime: m[4] !== undefined };
+  }
+  function checkCSV(input, options = {}) {
+    const parsed = parseCSV(input);
+    const referenceDate = options.referenceDate || new Date().toISOString().slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(referenceDate) || !dateParts(referenceDate).valid) throw new Error("referenceDate must be a valid YYYY-MM-DD date.");
+    const result = {
+      version: VERSION, referenceDate, complete: false, headers: [], mapping: {},
+      counts: { records: 0, reviewed: 0, errors: 0, warnings: 0, recordsWithErrors: 0, recordsWithWarnings: 0, skippedBlankLines: parsed.skippedBlankLines },
+      issues: [], omittedIssues: 0,
+      scope: "Local preflight only; not WPdx certification, upload acceptance, field verification, or water-safety assessment. No geographic boundary or full optional-field checks. Values in issues are shortened to 160 characters."
+    };
+    const errorRows = new Set(), warningRows = new Set();
+    const add = (severity, code, row, field, value, message, basis = "local-review") => {
+      result.counts[severity === "error" ? "errors" : "warnings"]++;
+      if (row && row.record) (severity === "error" ? errorRows : warningRows).add(row.record);
+      if (result.issues.length < LIMITS.issues) result.issues.push({ severity, code, record: row ? row.record : null, line: row ? row.line : null, field, value: excerpt(value), message, basis });
+      else result.omittedIssues++;
+    };
+    if (parsed.error) {
+      add("error", parsed.error.code, parsed.error, "CSV", "", parsed.error.message, "parser-profile");
+      return result;
+    }
+    if (!parsed.records.length) { add("error", "EMPTY_FILE", null, "CSV", "", "No header or data records found.", "parser-profile"); return result; }
+    const header = parsed.records[0];
+    result.headers = header.cells;
+    const rows = parsed.records.slice(1);
+    result.counts.records = rows.length;
+    if (!rows.length) add("error", "NO_DATA", null, "CSV", "", "A header alone is not a survey. Add data records.", "parser-profile");
+    let headerBad = false;
+    const seenHeaders = new Set();
+    header.cells.forEach((value, index) => {
+      const name = normalHeader(value);
+      if (!name) { add("error", "HEADER_EMPTY", null, "column " + (index + 1), value, "Give every column a non-empty, unique header.", "parser-profile"); headerBad = true; }
+      else if (seenHeaders.has(name)) { add("error", "HEADER_DUPLICATE", null, "column " + (index + 1), value, "Duplicate header after ignoring #, case, and surrounding spaces. Rename it to avoid ambiguous mapping.", "parser-profile"); headerBad = true; }
+      seenHeaders.add(name);
+    });
+    const mapping = options.mapping === undefined ? autoMapping(header.cells) : options.mapping;
+    const used = new Map();
+    for (const { key, need } of FIELDS) {
+      const index = mapping && Object.hasOwn(mapping, key) ? mapping[key] : null;
+      result.mapping[key] = index;
+      if (index !== null && (!Number.isInteger(index) || index < 0 || index >= header.cells.length)) {
+        add("error", "MAPPING_INVALID", null, key, index, "Choose an existing column or leave this field unmapped.", "parser-profile"); headerBad = true;
+      } else if (index !== null) {
+        if (used.has(index)) { add("error", "MAPPING_REUSED", null, key, header.cells[index], "This column is already mapped to " + used.get(index) + ". Use a separate column for each meaning.", "parser-profile"); headerBad = true; }
+        used.set(index, key);
+      } else if (need === "required") { add("error", "MAPPING_REQUIRED", null, key, "", "Map a column for this required parameter. No values are guessed or supplied as constants.", "wpdx-required"); headerBad = true; }
+    }
+    if (result.mapping.water_source === null && result.mapping.water_tech === null) {
+      add("error", "MAPPING_TYPE", null, "water_source / water_tech", "", "Map at least one water-source or water-technology column.", "wpdx-required"); headerBad = true;
+    }
+    if (headerBad) return result;
+    const exactRows = new Map(), visits = new Map();
+    for (const row of rows) {
+      if (row.cells.length !== header.cells.length) {
+        add("error", "ROW_WIDTH", row, "CSV", row.cells.length, "This record has " + row.cells.length + " cells; the header has " + header.cells.length + ". Check commas and quoting. Field checks were skipped for this record.", "parser-profile");
+        continue;
+      }
+      result.counts.reviewed++;
+      const raw = key => result.mapping[key] === null ? "" : row.cells[result.mapping[key]];
+      const value = key => raw(key).trim();
+      for (const key of ["lat_deg", "lon_deg", "report_date", "source"]) {
+        if (!value(key)) add("error", "REQUIRED_VALUE", row, key, raw(key), "This required value is blank. Check the survey record; do not invent a value.", "wpdx-required");
+      }
+      if (!value("water_source") && !value("water_tech")) add("error", "WATER_TYPE_MISSING", row, "water_source / water_tech", "", "Provide at least one observed water-source or technology value.", "wpdx-required");
+      let coordinatesValid = true;
+      for (const [key, bound] of [["lat_deg", 90], ["lon_deg", 180]]) {
+        const v = value(key);
+        if (!v) { coordinatesValid = false; continue; }
+        if (!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(v)) {
+          add("error", "COORD_FORMAT", row, key, raw(key), "Use a plain decimal-degree number with a dot. DMS, comma decimals, exponents, NaN, and infinity are not supported.", "parser-profile"); coordinatesValid = false;
+        } else if (exceedsDecimalBound(v, bound)) {
+          add("error", "COORD_RANGE", row, key, raw(key), "Must be between −" + bound + " and +" + bound + ". Verify latitude/longitude order and the coordinate system; no swap was made.", "coordinate-bounds"); coordinatesValid = false;
+        } else if ((v.split(".")[1] || "").length < 4) {
+          add("warning", "COORD_PRECISION", row, key, raw(key), "Fewer than four decimal places were supplied. WPdx recommends at least four. Verify the original GPS precision; adding zeros does not improve accuracy.", "wpdx-guidance");
+        }
+      }
+      if (coordinatesValid && !/[1-9]/.test(value("lat_deg")) && !/[1-9]/.test(value("lon_deg"))) add("warning", "ZERO_COORDINATES", row, "lat_deg / lon_deg", "0, 0", "Both coordinates are zero. This can be a default placeholder. Verify the original location; no boundary check was performed.");
+      const status = value("status_id");
+      if (!/^(yes|no)$/i.test(status)) add("warning", "STATUS_REVIEW", row, "status_id", raw("status_id"), status ? "Not Yes/No. WPdx permits mapped binary equivalents and represents unknowns as blank. A person must confirm the intended mapping; this tool does not infer water presence from functionality wording." : "Water-presence value is blank. WPdx describes blank/unknown responses as empty cells. Confirm that this reflects the survey rather than a missing observation.", "wpdx-guidance");
+      let date = null;
+      if (value("report_date")) {
+        date = dateParts(value("report_date"));
+        if (!date.valid) add("error", "DATE_PROFILE", row, "report_date", raw("report_date"), date.reason, "parser-profile");
+        else if (date.date > referenceDate) add("warning", "FUTURE_DATE", row, "report_date", raw("report_date"), "Visit calendar date is after the review date (" + referenceDate + ", UTC). Check timezone, device clock, or transcription. Timestamp offsets are not converted for this warning.");
+      }
+      const years = {};
+      for (const key of ["install_year", "rehab_year"]) {
+        const v = value(key);
+        if (!v) continue;
+        if (!/^\d{4}$/.test(v) || Number(v) < 1) add("warning", "YEAR_FORMAT", row, key, raw(key), "Use a four-digit calendar year when known; this optional value could not be checked.", "wpdx-guidance");
+        else {
+          years[key] = Number(v);
+          if (years[key] > Number(referenceDate.slice(0, 4))) add("warning", "FUTURE_YEAR", row, key, v, "Year is after the review year. Confirm the original record.");
+          if (date && date.valid && years[key] > date.year) add("warning", "YEAR_AFTER_VISIT", row, key, v, "Year is after the visit year. This may combine information from different visits; review the provenance.");
+        }
+      }
+      if (years.install_year && years.rehab_year && years.rehab_year < years.install_year) add("warning", "YEAR_ORDER", row, "rehab_year", value("rehab_year"), "Rehabilitation year precedes installation year. Confirm whether the fields describe the same infrastructure.");
+      for (const key of ["source", "water_source", "water_tech"]) {
+        if (/^(unknown|n\/?a|null|none|-|not known)$/i.test(value(key))) add("warning", "PLACEHOLDER", row, key, raw(key), "This may be an unknown-value placeholder. Confirm its meaning. Open-text categories are not restricted to a fixed vocabulary.");
+      }
+      const exactKey = JSON.stringify(row.cells);
+      const isExactDuplicate = exactRows.has(exactKey);
+      if (isExactDuplicate) add("warning", "EXACT_DUPLICATE", row, "record", "", "All cells exactly match record " + exactRows.get(exactKey) + ". Confirm whether both observations belong. Nothing was deleted.");
+      else exactRows.set(exactKey, row.record);
+      if (value("activity_id") && value("source") && date && date.valid) {
+        const visitKey = JSON.stringify([value("source"), value("activity_id"), date.date]);
+        if (visits.has(visitKey) && !isExactDuplicate) add("warning", "REPEATED_VISIT_ID", row, "activity_id", raw("activity_id"), "Same organization, water-point ID, and calendar visit date as record " + visits.get(visitKey) + ". Multiple visits can be legitimate; review rather than delete automatically.");
+        else if (!visits.has(visitKey)) visits.set(visitKey, row.record);
+      }
+    }
+    result.counts.recordsWithErrors = errorRows.size;
+    result.counts.recordsWithWarnings = warningRows.size;
+    result.complete = rows.length > 0 && result.counts.reviewed === rows.length;
+    return result;
+  }
+  return Object.freeze({ VERSION, LIMITS, FIELDS, normalHeader, parseCSV, autoMapping, dateParts, checkCSV });
+});
+</script>
+  <script>(function () {
+  "use strict";
+  const P = window.WaterPreflight;
+  const $ = id => document.getElementById(id);
+  const sample = "#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source,#water_tech,#activity_id,#install_year,#rehab_year,#notes\n1.2345,32.4567,2024-02-29,Yes,Synthetic Survey Team,Borehole,Hand Pump,SYN-001,2020,2023,\"Invented example, not a real surveyed point\"\n95.1234,32.5678,2024-02-30,Functional,Synthetic Survey Team,,Hand Pump,SYN-002,2022,2020,\"Deliberate coordinate, date, status, and year issues\"\n0,0,2099-01-01,,Synthetic Survey Team,Unknown,,SYN-003,,,Deliberate location and future-date warnings\n-1.3456,33.5678,2024-03-01,No,Synthetic Survey Team,,,SYN-004,,,Missing source and technology\n1.2345,32.4567,2024-02-29,Yes,Synthetic Survey Team,Borehole,Hand Pump,SYN-001,2020,2023,\"Invented example, not a real surveyed point\"\n";
+  let result = null, mapping = null, headerKey = null, page = 0, generation = 0;
+  const perPage = 100;
+  function el(tag, text, className) { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; if (className) node.className = className; return node; }
+  function status(text) { $("input-status").textContent = text; }
+  function invalidate(message) {
+    result = null; $("results").hidden = true; $("include-values").checked = false;
+    $("issues").replaceChildren(); $("result-summary").textContent = ""; $("page-summary").textContent = "";
+    $("review-state").textContent = ""; $("pagination").hidden = true;
+    for (const id of ["count-records", "count-errors", "count-warnings"]) $(id).textContent = "0";
+    status(message || "Input changed. Review again to refresh findings.");
+  }
+  function buildMapping(headers) {
+    const key = JSON.stringify(headers);
+    if (headerKey === key && mapping) return;
+    headerKey = key; mapping = P.autoMapping(headers);
+    const container = $("mapping"); container.replaceChildren();
+    for (const field of P.FIELDS) {
+      const wrapper = el("div", undefined, "map-field"), label = el("label", field.label + " ");
+      const id = "map-" + field.key; label.htmlFor = id;
+      label.append(el("small", field.need === "required" ? "required" : field.need === "either" ? "one of these two" : "optional"));
+      const select = el("select"); select.id = id;
+      const none = el("option", "Not mapped"); none.value = ""; select.append(none);
+      headers.forEach((header, index) => { const option = el("option", (index + 1) + ". " + (header.length > 100 ? header.slice(0, 97) + "…" : header)); option.value = String(index); select.append(option); });
+      select.value = mapping[field.key] === null ? "" : String(mapping[field.key]);
+      select.addEventListener("change", () => { mapping[field.key] = select.value === "" ? null : Number(select.value); invalidate("Column mapping changed. Review again to apply it."); });
+      wrapper.append(label, select); container.append(wrapper);
+    }
+  }
+  function review() {
+    const text = $("csv").value;
+    const parsed = P.parseCSV(text);
+    if (!parsed.error && parsed.records.length) { buildMapping(parsed.records[0].cells); $("mapping-panel").hidden = false; }
+    else { $("mapping-panel").hidden = true; mapping = null; headerKey = null; }
+    result = P.checkCSV(text, mapping ? { mapping } : {});
+    page = 0; $("filter").value = "all"; $("include-values").checked = false;
+    const c = result.counts;
+    $("count-records").textContent = c.records.toLocaleString();
+    $("count-errors").textContent = c.errors.toLocaleString();
+    $("count-warnings").textContent = c.warnings.toLocaleString();
+    $("review-state").textContent = result.complete ? "Checks finished" : "Review incomplete";
+    $("result-summary").textContent = (result.complete ? "Reviewed " + c.reviewed + " data records. " : "Could not complete all field checks. Reviewed " + c.reviewed + " of " + c.records + " data records. ") +
+      (c.errors + c.warnings ? "Inspect the findings below before deciding what to change." : "No issues found by these limited checks. Human verification is still needed.") +
+      (c.skippedBlankLines ? " Skipped " + c.skippedBlankLines + " empty physical line(s)." : "") +
+      (result.omittedIssues ? " Only the first " + P.LIMITS.issues + " findings are shown and exported; " + result.omittedIssues + " further findings were counted but omitted. Fix these issues and review again." : "");
+    $("results").hidden = false;
+    renderIssues();
+    status("Review finished in this tab. Reference date: " + result.referenceDate + " (UTC). Original file unchanged.");
+    $("results").focus();
+  }
+  function renderIssues() {
+    if (!result) return;
+    const filter = $("filter").value;
+    const all = result.issues.filter(issue => filter === "all" || issue.severity === filter);
+    const pages = Math.max(1, Math.ceil(all.length / perPage)); page = Math.min(page, pages - 1);
+    const start = page * perPage, selected = all.slice(start, start + perPage);
+    $("page-summary").textContent = all.length ? (start + 1) + "–" + (start + selected.length) + " of " + all.length + " retained findings" : "No findings in this view";
+    const target = $("issues"); target.replaceChildren();
+    if (!selected.length) target.append(el("p", "No findings in this view. This does not establish data quality or water safety.", "empty"));
+    for (const issue of selected) {
+      const article = el("article", undefined, "issue"), aside = el("div"), body = el("div");
+      aside.append(el("span", issue.severity, "severity " + issue.severity), el("span", issue.record === null ? "File / mapping" : "Record " + issue.record + " · line " + issue.line, "location"));
+      body.append(el("h3", issue.field + " · " + issue.code), el("p", issue.message));
+      if (issue.value !== "") body.append(el("code", issue.value));
+      body.append(el("span", "Rule basis: " + issue.basis, "basis")); article.append(aside, body); target.append(article);
+    }
+    $("pagination").hidden = pages <= 1; $("previous").disabled = page === 0; $("next").disabled = page >= pages - 1;
+  }
+  function download() {
+    if (!result) return;
+    const include = $("include-values").checked;
+    const exported = { ...result, generatedAt: new Date().toISOString(), inputValuesIncluded: include, headers: include ? result.headers : undefined,
+      issues: result.issues.map(issue => ({ ...issue, value: include ? issue.value : undefined })) };
+    const blob = new Blob([JSON.stringify(exported, null, 2) + "\n"], { type: "application/json" });
+    const url = URL.createObjectURL(blob), a = el("a"); a.href = url; a.download = "water-point-preflight-report.json";
+    document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    status("A local report download was requested. It omits " + (include ? "no issue values; review carefully before sharing." : "input headers and values; review before sharing."));
+  }
+  $("review").addEventListener("click", review); $("review-mapping").addEventListener("click", review);
+  $("csv").addEventListener("input", () => { generation++; invalidate(); });
+  $("demo").addEventListener("click", () => { generation++; $("file").value = ""; $("csv").value = sample; headerKey = null; mapping = null; invalidate(); review(); status("Synthetic example loaded and reviewed. Every observation is invented; the deliberate issues are for practice."); });
+  $("clear").addEventListener("click", () => { generation++; $("file").value = ""; $("csv").value = ""; mapping = null; headerKey = null; $("mapping").replaceChildren(); $("mapping-panel").hidden = true; $("paste-details").open = false; invalidate("Cleared this tab’s visible data and findings. Previously downloaded files, clipboard contents, and browser history are not erased."); $("file").focus(); });
+  $("file").addEventListener("change", async () => {
+    const token = ++generation, file = $("file").files[0];
+    if (!file) return;
+    $("csv").value = ""; mapping = null; headerKey = null; $("mapping-panel").hidden = true; invalidate("Reading the local file…");
+    if (file.size > 5000000) { status("File is larger than 5 MB. Export a smaller UTF-8 CSV. Nothing was reviewed."); return; }
+    try {
+      const bytes = await file.arrayBuffer();
+      if (token !== generation) return;
+      $("csv").value = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+      review();
+    } catch (error) {
+      if (token !== generation) return;
+      status("Could not read this file as UTF-8 text. Export a UTF-8 CSV and try again. Nothing was reviewed.");
+    }
+  });
+  $("filter").addEventListener("change", () => { page = 0; renderIssues(); });
+  $("previous").addEventListener("click", () => { page--; renderIssues(); $("filter").focus(); });
+  $("next").addEventListener("click", () => { page++; renderIssues(); $("filter").focus(); });
+  $("download").addEventListener("click", download);
+})();
+</script>
+</body>
+</html>

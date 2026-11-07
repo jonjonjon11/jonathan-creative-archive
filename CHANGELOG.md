@@ -1,5 +1,12 @@
 # Changelog
 
+## Water Survey Preflight experiment, 2026-11-07
+
+- Added an original offline water-point CSV review prototype, synthetic fixtures, public source/rule notes and an evaluation hypothesis under existing CC BY 4.0 terms.
+- Independently reran 84 core/static/simulated-controller tests and deterministic build/syntax checks after decimal-boundary and browser-fixture review corrections.
+- Clearly marked partial unofficial scope, no water-safety or upload-certification claim, unvalidated practitioner usefulness and unrun real-browser/rendering/download/mobile/accessibility/CSP tests.
+- Preserved earlier tools, recovered sources and licenses; added source/concept/artifact metadata and navigation.
+
 ## Motion to Trace to Shape mini-lab, 2026-11-07
 
 - Added a newly built offline paired-sine/Lissajous mini-lab with original explanations, source, deterministic portable HTML and tests under existing CC BY 4.0 terms.

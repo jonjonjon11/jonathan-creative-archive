@@ -406,6 +406,25 @@
       "scientific_standing": "established_model_scoped",
       "limitations": "New partial demonstrator, not historical recovery or validated curriculum. 18 model/data and 14 simulated-DOM checks pass; real-browser launch blocked before page load, so rendering/download/device/assistive-technology behavior remains unverified.",
       "next_step": "Run the included browser acceptance suite in a supported environment and review screenshots, physical-device controls and assistive-technology behavior before extending the model."
+    },
+    {
+      "id": "CON-024",
+      "title": "Offline water-survey CSV preflight experiment",
+      "tags": [
+        "water",
+        "data",
+        "offline",
+        "public_benefit",
+        "browser"
+      ],
+      "summary": "Review a local water-point survey CSV for a documented subset of structure, mapping, coordinate/date and duplicate concerns while preserving human interpretation and the original file.",
+      "source_ids": [
+        "SRC-037"
+      ],
+      "artifact_status": "source_inspected",
+      "scientific_standing": "not_a_scientific_claim",
+      "limitations": "84 core/static/simulated-controller checks pass, but real-browser acceptance is unrun. Partial unofficial preflight, not water-safety assessment or upload certification. Practitioner need/usefulness and field impact are unvalidated; fixtures are invented.",
+      "next_step": "Run the supplied browser suite and inspect rendering, downloads, mobile and assistive-technology behavior. Then assess the documented workflow hypothesis with consenting practitioners using synthetic examples before proposing adoption."
     }
   ]
 }

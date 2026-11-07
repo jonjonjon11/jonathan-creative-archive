@@ -24,6 +24,10 @@ Privacy: exact private conversation/document locators are excluded.
 
 - [Motion → Trace → Shape 0.1](tools/motion-trace-shape/README.md): original offline paired-sine/Lissajous learning mini-lab under CC BY 4.0; 32 analytical/simulated-control tests and static checks passed. Fresh browser launch blocked before page load; no rendered/device/accessibility or curriculum acceptance.
 
+## New experimental data tool
+
+- [Water Survey Preflight 0.1](tools/water-survey-preflight/README.md): original offline CSV preflight under CC BY 4.0; 84 core/static/simulated-controller checks passed. Partial unofficial rules, not water-safety assessment or upload certification. Real-browser/rendering/download/mobile/accessibility/CSP enforcement tests not run; practitioner usefulness unvalidated.
+
 ## Included reusable artifacts
 
 - [Reality Atlas](tools/reality-atlas/README.md): unchanged CC0 browser tool; 46 calculation/syntax checks passed, fresh browser rendering blocked.

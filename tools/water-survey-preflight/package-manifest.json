@@ -1,0 +1,124 @@
+{
+  "name": "water-point-preflight",
+  "version": "0.1.0",
+  "review_date": "2026-11-07",
+  "kind": "original independent offline prototype",
+  "license": "CC-BY-4.0",
+  "publication_status": "Experimental archive edition; partial unofficial preflight, not browser-validated or field-validated.",
+  "runtime_dependencies": [],
+  "synthetic_data_only": true,
+  "reference_sources": [
+    "https://www.waterpointdata.org/share-data/",
+    "https://www.waterpointdata.org/wp-content/uploads/2021/04/WPDx_Data_Standard.pdf",
+    "https://www.waterpointdata.org/wp-content/uploads/2023/11/WPdx_MEAL_Guide_Dec2023.pdf",
+    "https://www.waterpointdata.org/2023/12/07/announcing-the-wpdx-monitoring-evaluation-adapting-and-learning-meal-guide/",
+    "https://www.waterpointdata.org/access-data/"
+  ],
+  "verification": {
+    "core_tests_passed": 73,
+    "static_tests_passed": 5,
+    "controller_model_tests_passed": 6,
+    "standalone_build_matches": true,
+    "browser_tests": "not run: browser startup/protocol restrictions",
+    "field_effectiveness": "unvalidated"
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 18658,
+      "sha256": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5487,
+      "sha256": "14f6c11efe77a3ae46a337f977340b3c5364d7694c02348ee9e11e1baac1808b"
+    },
+    {
+      "path": "build.cjs",
+      "bytes": 1335,
+      "sha256": "82b5c9e515742c7144fe09c11775718be2935b92a6a8d9986a1849a28d496d5a"
+    },
+    {
+      "path": "docs/evaluation.md",
+      "bytes": 1799,
+      "sha256": "9020fdfa0b6f5dbfba5d930cadc84efe655cf9b039c691dc4aa52940a4cfc197"
+    },
+    {
+      "path": "docs/rules.md",
+      "bytes": 5640,
+      "sha256": "baad69349e6adb4f4dad53f1b65b8e33f04d498b494eceec314f3a1046cd1a20"
+    },
+    {
+      "path": "docs/sources.md",
+      "bytes": 2104,
+      "sha256": "346a734fa6be2195d6210d4b5fda64ad11b3c636178f0381063d526881ca27ab"
+    },
+    {
+      "path": "docs/verification.md",
+      "bytes": 3872,
+      "sha256": "2b2d1986436f00620940e63be70af7ad4c5afef7bfe46341126e1d4b7ff71c22"
+    },
+    {
+      "path": "fixtures/synthetic-clean.csv",
+      "bytes": 434,
+      "sha256": "337960bd01c8ee9f8b9573919f6a99be0d0b5faf45d1bfb9fa570dcb78ead2ec"
+    },
+    {
+      "path": "fixtures/synthetic-review.csv",
+      "bytes": 732,
+      "sha256": "f7d70f87d12ce7ecb0aa28f4f7e40527f6fae05f94cc392c0eef3ff1807dec40"
+    },
+    {
+      "path": "index.html",
+      "bytes": 40532,
+      "sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
+    },
+    {
+      "path": "src/core.js",
+      "bytes": 16928,
+      "sha256": "782c0c4af96781e18699d50bbb5573d649a0d0396ffb17fc6ee8ba79cfffc7bb"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 6697,
+      "sha256": "4665e5a3a06a45a969ad1e5d75d9b40ca1b4a49b71497db3a25d68ea7184a6f3"
+    },
+    {
+      "path": "src/template.html",
+      "bytes": 7674,
+      "sha256": "2e994365e48663c337fe363d699f66b0a3e1d55753e694e53d4e2d41af10fd24"
+    },
+    {
+      "path": "src/ui.js",
+      "bytes": 8217,
+      "sha256": "4e32ea5040894787a0f1355946df271dbf13d99e8938d796b8434ebac562d1fa"
+    },
+    {
+      "path": "tests/browser.cjs",
+      "bytes": 10499,
+      "sha256": "c5e31c5b984e55aa0568c51e3874a43fafe4eb289eb6fad745fba1b7d4325c21"
+    },
+    {
+      "path": "tests/core.test.cjs",
+      "bytes": 13552,
+      "sha256": "d582ab0694e257e9cde191b813542e8baf9fdd3b00f98df7952da515b21e4d3d"
+    },
+    {
+      "path": "tests/fixtures.cjs",
+      "bytes": 527,
+      "sha256": "353f5f580e5e4c87b7e93f698f0dff76b9b209449e76e082077a674a9a663395"
+    },
+    {
+      "path": "tests/static.test.cjs",
+      "bytes": 2808,
+      "sha256": "dea4ae361e95d0f5c751566b890e63e45ee8086f5803e9798a7314904d8bbc2a"
+    },
+    {
+      "path": "tests/ui.test.cjs",
+      "bytes": 5971,
+      "sha256": "ead2556d81da949ac994c9d9210a006864a22a6c82cb397fe83b5fe629ba40a6"
+    }
+  ],
+  "archive_path": "tools/water-survey-preflight",
+  "release_notes": "Publication packaging adds a prominent browser-verification warning and clarifies documentation wording. Authored app, build, test and synthetic fixture bytes are unchanged from the independently reviewed corrected candidate."
+}

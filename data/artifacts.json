@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "review_date": "2026-11-07",
-  "scope": "Registry of selected recovered and newly built learning artifacts included in this archive, not every helper or original tool and not a legal clearance record.",
+  "scope": "Registry of selected recovered and newly built artifacts included in this archive, not every helper or original tool and not a legal clearance record.",
   "artifacts": [
     {
       "id": "ART-001",
@@ -117,6 +117,33 @@
         {
           "path": "tools/motion-trace-shape/Motion-Trace-Shape.html",
           "sha256": "7d7ac4dfefe5740ac118c0a7b20197546ac3212c5a80a83503ce3254ddfd1e64"
+        }
+      ]
+    },
+    {
+      "id": "ART-006",
+      "title": "Water Survey Preflight experimental 0.1.0",
+      "origin": "new_original_implementation",
+      "path": "tools/water-survey-preflight",
+      "source_ids": [
+        "SRC-037"
+      ],
+      "rights": {
+        "license_declared": "CC-BY-4.0",
+        "license_path": "tools/water-survey-preflight/LICENSE",
+        "scope": "Original code, documentation and invented fixtures under the existing compilation license. Official WPdx references are linked only; no third-party datasets, PDFs or logos bundled.",
+        "review_record": "tools/water-survey-preflight/README.md"
+      },
+      "verification": {
+        "status": "core_static_simulated_controller_passed_browser_not_run",
+        "record": "tools/water-survey-preflight/docs/verification.md",
+        "limitations": "84 tests passed: 73 core, 5 static, 6 simulated controller. Real browser/rendering/download/mobile/accessibility/CSP enforcement tests not run. Partial unofficial preflight, not water-safety assessment or upload certification; practitioner usefulness unvalidated."
+      },
+      "preserved_manifest": null,
+      "pinned_files": [
+        {
+          "path": "tools/water-survey-preflight/index.html",
+          "sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
         }
       ]
     }
