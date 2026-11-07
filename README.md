@@ -8,7 +8,27 @@ An evidence-based map of Jonathan's ideas for an educational universe, mathemati
 
 That is the purpose of this archive. It is a selective reconstruction from available records, not a complete account export or a claim that every idea has been recovered. The newly written archive is licensed under [Creative Commons Attribution 4.0 International](LICENSE). The included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files retain their separate CC0 licenses.
 
-## Try a newly built learning mini-lab
+## 🚀 NEW: Knowledge Commons Infrastructure (2026-11-07)
+
+**The foundation for collaborative learning and building together.**
+
+We've built a complete system for creating, sharing, and improving educational modules—starting with the first finished pathway:
+
+### [Motion → Trace → Shape: A Lesson in Lissajous Curves](docs/QUICKSTART.md)
+
+**Learn:** Download the interactive lab and explore how two oscillating motions combine to create lines, circles, and figure-eights. No internet needed. [Read the full module](data/modules.json) or [download the standalone HTML](tools/motion-trace-shape/Motion-Trace-Shape.html).
+
+**Contribute:** Help test it on your browser, add examples, or verify the math. Open tasks are listed in `data/tasks/`. [See templates](docs/task-templates/).
+
+**Build on it:** Use the [Knowledge Module Schema](docs/knowledge-module-schema.md) to create your own lessons. Everything is standardized, validated, and portable.
+
+**Status:** ✓ Module complete · ✓ 32/32 tests pass · ✓ Offline verified · □ Real-device testing pending · □ Learner feedback pending
+
+→ **[Start here: docs/QUICKSTART.md](docs/QUICKSTART.md)** for learners, contributors, and maintainers.
+
+---
+
+## A newly built learning mini-lab (Details)
 
 [Motion → Trace → Shape 0.1](tools/motion-trace-shape/README.md) turns two repeating motions into a line, circle or figure-eight. Download its self-contained HTML, then compare motion, time traces and shape offline. It starts paused and offers stepping, a time slider, reduced-motion handling and experiment JSON export logic. **18 analytical/data tests, 14 simulated-DOM tests and static/build checks passed; real Chromium launch was blocked before any page loaded.** Rendering, actual downloads, devices and assistive technology remain unverified. This original CC BY 4.0 mini-lab is a bounded new implementation, not recovered historical software or a validated curriculum.
 
