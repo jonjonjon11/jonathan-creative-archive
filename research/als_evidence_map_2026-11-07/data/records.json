@@ -1,0 +1,451 @@
+{
+  "schema_version": "1.1.0",
+  "as_of": "2026-11-07",
+  "review_status": "draft_research_candidate_not_independently_ALS_clinician_reviewed",
+  "data_scope": "public_published_aggregate_only",
+  "records": [
+    {
+      "id": "tofersen_sod1",
+      "title": "Tofersen / SOD1: VALOR and original US accelerated approval",
+      "target": "SOD1 mRNA",
+      "stage": "randomized_trial_and_regulatory_decision",
+      "population": "Adults with SOD1-ALS; VALOR randomized 108: 72 tofersen and 36 placebo. Faster-progression primary analysis: 60.",
+      "design": "Phase 3 VALOR, randomized, double-blind, placebo-controlled; week-28 assessment.",
+      "trial_ids": [
+        "NCT02623699"
+      ],
+      "source_ids": [
+        "valor_2022",
+        "qalsody_label_2023",
+        "qalsody_snapshot",
+        "qalsody_fda_action",
+        "qalsody_fda_statistics_2023"
+      ],
+      "observations": [
+        {
+          "kind": "clinical_primary",
+          "endpoint": "ALSFRS-R change from baseline, faster-progression subgroup",
+          "timepoint": "28 weeks",
+          "result": "The prespecified primary joint-rank test with multiple imputation did not meet the endpoint.",
+          "primary_endpoint_met": false,
+          "statistic": {
+            "measure": "joint_rank_test",
+            "value": null,
+            "unit": null,
+            "interval": null,
+            "p_value": 0.97,
+            "analysis_method": "Joint-rank test with multiple imputation",
+            "p_value_method": "Joint-rank test with multiple imputation"
+          },
+          "source_ids": [
+            "valor_2022",
+            "qalsody_fda_statistics_2023"
+          ]
+        },
+        {
+          "kind": "clinical_supportive",
+          "endpoint": "ALSFRS-R change from baseline, faster-progression subgroup; supportive analysis",
+          "timepoint": "28 weeks",
+          "result": "The adjusted mean difference and confidence interval describe the supportive ANCOVA analysis, not the joint-rank test.",
+          "primary_endpoint_met": null,
+          "statistic": {
+            "measure": "adjusted_mean_difference",
+            "value": 1.2,
+            "unit": "ALSFRS-R points",
+            "interval": {
+              "type": "confidence",
+              "level": 0.95,
+              "lower": -3.2,
+              "upper": 5.5
+            },
+            "p_value": 0.6,
+            "analysis_method": "ANCOVA with multiple imputation",
+            "p_value_method": "ANCOVA with multiple imputation"
+          },
+          "source_ids": [
+            "qalsody_fda_statistics_2023",
+            "qalsody_label_2023"
+          ]
+        },
+        {
+          "kind": "biomarker",
+          "endpoint": "Plasma NfL and CSF SOD1",
+          "timepoint": "28 weeks",
+          "result": "Both decreased relative to placebo; these are biomarker outcomes, not direct functional recovery.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "qalsody_label_2023"
+          ]
+        },
+        {
+          "kind": "regulatory",
+          "endpoint": "Original US accelerated approval",
+          "timepoint": "2023-04-25",
+          "result": "FDA approval for adults with SOD1-ALS was based on plasma NfL reduction, with clinical-benefit confirmation required.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "qalsody_snapshot",
+            "qalsody_fda_action",
+            "qalsody_label_2023"
+          ]
+        }
+      ],
+      "negative_evidence": [
+        "VALOR's prespecified primary clinical result was nonsignificant."
+      ],
+      "unknowns": [
+        "The total later clinical, safety, and confirmatory-trial evidence is not synthesized here. The final VALOR/OLE paper is a verified, explicit scope exclusion below."
+      ],
+      "caveats": [
+        "Do not generalize SOD1-specific evidence to all ALS.",
+        "Original 2023 label lists serious neurologic risks; this is not a current prescribing guide.",
+        "Open-label follow-up does not replace the randomized primary analysis."
+      ],
+      "regulatory_status": {
+        "jurisdiction": "US",
+        "status": "original_accelerated_approval",
+        "event_date": "2023-04-25",
+        "source_ids": [
+          "qalsody_snapshot",
+          "qalsody_fda_action"
+        ]
+      },
+      "scope_exclusions": [
+        {
+          "source_id": "valor_ole_final_2025",
+          "reason": "Significant named omission: the final integrated VALOR/open-label-extension report was published online 2025-12-22. Its longer-term efficacy and safety results have not been extracted or appraised here. This record covers the original randomized result and original US approval only, not the total current tofersen evidence."
+        }
+      ]
+    },
+    {
+      "id": "ulefnersen_fus",
+      "title": "Ulefnersen / FUS: sponsor-reported FUSION topline result",
+      "target": "FUS RNA/protein reduction",
+      "stage": "sponsor_reported_randomized_trial",
+      "population": "FUS-ALS; primary analysis population 73.",
+      "design": "FUSION: randomized, double-blind, placebo-controlled Phase 1-3 trial; 72-week controlled period, then open-label extension.",
+      "trial_ids": [
+        "NCT04768972"
+      ],
+      "source_ids": [
+        "fusion_ionis_2026"
+      ],
+      "observations": [
+        {
+          "kind": "clinical_primary",
+          "endpoint": "Joint rank: death/permanent ventilation, rescue, and ALSFRS-R change",
+          "timepoint": "Day 505 / 72 weeks",
+          "result": "Sponsor reported a favorable primary comparison with placebo on 2026-09-22.",
+          "primary_endpoint_met": true,
+          "statistic": {
+            "measure": "joint_rank_test",
+            "value": null,
+            "unit": null,
+            "interval": null,
+            "p_value": 0.0005,
+            "analysis_method": "Prespecified joint-rank analysis as described by sponsor",
+            "p_value_method": "Joint-rank analysis"
+          },
+          "source_ids": [
+            "fusion_ionis_2026"
+          ]
+        },
+        {
+          "kind": "biomarker",
+          "endpoint": "Serum NfL secondary endpoint",
+          "timepoint": "Not detailed in the selected topline report",
+          "result": "Sponsor reported a significant favorable change; no numerical effect extracted.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "fusion_ionis_2026"
+          ]
+        }
+      ],
+      "negative_evidence": [
+        "No negative controlled efficacy finding was reported in this selected topline source; this is not evidence of absence."
+      ],
+      "unknowns": [
+        "Detailed effect size, uncertainty, subgroup results, and full safety analysis were not supplied in this topline summary."
+      ],
+      "caveats": [
+        "Sponsor report, not a peer-reviewed full trial report in this map.",
+        "Rescue permits early open-label treatment after prespecified progression.",
+        "A composite p-value does not quantify survival gain.",
+        "Do not extrapolate to non-FUS ALS."
+      ],
+      "regulatory_status": {
+        "jurisdiction": "Not a jurisdiction-wide approval search",
+        "status": "investigational_in_cited_source",
+        "event_date": "2026-09-22",
+        "source_ids": [
+          "fusion_ionis_2026"
+        ]
+      },
+      "scope_exclusions": []
+    },
+    {
+      "id": "qrl201_stmn2",
+      "title": "QRL-201 / STMN2: early ANQUR interim signals",
+      "target": "Restoration of STMN2 expression",
+      "stage": "sponsor_reported_early_trial",
+      "population": "Sporadic and C9orf72-related ALS; 69 dosed, including 17 dose-escalation and 52 dose-range-finding participants.",
+      "design": "Double-blind, placebo-controlled ANQUR. Sponsor called it Phase 1 in 2024 and Phase 1/2 in 2026; current registry protocol not verified.",
+      "trial_ids": [
+        "NCT05633459"
+      ],
+      "source_ids": [
+        "anqur_design_2024",
+        "anqur_interim_2026"
+      ],
+      "observations": [
+        {
+          "kind": "safety_primary",
+          "endpoint": "Safety and tolerability of repeated doses, per 2024 sponsor design description",
+          "timepoint": "Current protocol assessment window not verified",
+          "result": "2026 sponsor report described generally acceptable tolerability; it did not provide a complete adverse-event table.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "anqur_design_2024",
+            "anqur_interim_2026"
+          ]
+        },
+        {
+          "kind": "biomarker",
+          "endpoint": "Tissue STMN2 expression/mis-splicing and low-dose pNfH",
+          "timepoint": "Interim report, 2026-02-23",
+          "result": "Sponsor reported target engagement versus natural-history tissue and reduced low-dose pNfH.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "anqur_interim_2026"
+          ]
+        },
+        {
+          "kind": "clinical_exploratory",
+          "endpoint": "ALSFRS-R decline in sporadic ALS",
+          "timepoint": "24 weeks for the reported post-hoc subset",
+          "result": "Overall trend; significant result reported only after post-hoc exclusion of highest-baseline-NfL participants.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "anqur_interim_2026",
+            "anqur_design_2024"
+          ]
+        }
+      ],
+      "negative_evidence": [
+        "No confirmatory primary clinical efficacy success is established by these selected interim data."
+      ],
+      "unknowns": [
+        "Numerical effect sizes, confidence intervals, multiplicity handling, and subgroup denominators were not supplied in the selected release."
+      ],
+      "caveats": [
+        "Sponsor-only interim analysis; post-hoc exclusions can create optimistic results.",
+        "Target engagement and neurofilament changes do not establish clinical benefit.",
+        "2024 endpoint hierarchy may have changed; verify registry amendments."
+      ],
+      "regulatory_status": {
+        "jurisdiction": "Not a jurisdiction-wide approval search",
+        "status": "investigational_in_cited_source",
+        "event_date": "2026-02-23",
+        "source_ids": [
+          "anqur_interim_2026"
+        ]
+      },
+      "scope_exclusions": []
+    },
+    {
+      "id": "dnl343",
+      "title": "DNL343: negative HEALEY Regimen G randomized result",
+      "target": "eIF2B activation / integrated stress response",
+      "stage": "peer_reviewed_randomized_trial",
+      "population": "ALS; 249 randomized within Regimen G: 186 active, 63 placebo; 76 concurrent shared controls, yielding 139 pooled placebo and 325 analyzed participants.",
+      "design": "Double-blind HEALEY platform trial at 74 US centers; 200 mg/day tested for 24 weeks.",
+      "trial_ids": [
+        "NCT05842941"
+      ],
+      "source_ids": [
+        "dnl343_jama_2026"
+      ],
+      "observations": [
+        {
+          "kind": "clinical_primary",
+          "endpoint": "Bayesian joint function/survival disease rate ratio (DRR)",
+          "timepoint": "24 weeks",
+          "result": "Primary endpoint was not met; posterior probability DRR < 1 was 0.37.",
+          "primary_endpoint_met": false,
+          "statistic": {
+            "measure": "median_disease_rate_ratio",
+            "value": 1.04,
+            "unit": "ratio",
+            "interval": {
+              "type": "credible",
+              "level": 0.95,
+              "lower": 0.83,
+              "upper": 1.32
+            },
+            "p_value": null,
+            "analysis_method": "Bayesian shared-parameter model of function and survival",
+            "p_value_method": null
+          },
+          "source_ids": [
+            "dnl343_jama_2026"
+          ]
+        }
+      ],
+      "negative_evidence": [
+        "No demonstrated slowing at the tested formulation, dose, duration, and population; secondary clinical outcomes did not show benefit."
+      ],
+      "unknowns": [
+        "A null trial does not resolve every alternative dose, formulation, exposure, or biological subgroup."
+      ],
+      "caveats": [
+        "Credible interval and posterior probability are not a frequentist confidence interval or p-value.",
+        "Shared controls are not additional active-arm randomizations.",
+        "Prior target-engagement evidence did not establish clinical efficacy."
+      ],
+      "regulatory_status": {
+        "jurisdiction": "Not assessed",
+        "status": "not_assessed",
+        "event_date": null,
+        "source_ids": []
+      },
+      "scope_exclusions": []
+    },
+    {
+      "id": "relyvrio_withdrawal",
+      "title": "Relyvrio / AMX0035: PHOENIX failure and distinct withdrawal events",
+      "target": "Sodium phenylbutyrate plus taurursodiol",
+      "stage": "negative_trial_report_and_regulatory_withdrawal",
+      "population": "PHOENIX: 664 adults with ALS, randomized 3:2 active versus placebo, alongside standard care.",
+      "design": "Global, 48-week, placebo-controlled Phase 3 trial.",
+      "trial_ids": [],
+      "source_ids": [
+        "phoenix_topline_2024",
+        "relyvrio_announcement_2024",
+        "relyvrio_fda_withdrawal_2025"
+      ],
+      "observations": [
+        {
+          "kind": "clinical_primary",
+          "endpoint": "Change in ALSFRS-R total score from baseline",
+          "timepoint": "48 weeks",
+          "result": "Sponsor reported primary and secondary endpoints were not met on 2024-03-08.",
+          "primary_endpoint_met": false,
+          "statistic": {
+            "measure": "primary_endpoint_test",
+            "value": null,
+            "unit": null,
+            "interval": null,
+            "p_value": 0.667,
+            "analysis_method": "Primary endpoint analysis; exact test not specified in selected sponsor release",
+            "p_value_method": "Not specified in selected sponsor release"
+          },
+          "source_ids": [
+            "phoenix_topline_2024"
+          ]
+        },
+        {
+          "kind": "commercial_action",
+          "endpoint": "Market-removal announcement and end of new-patient access",
+          "timepoint": "2024-04-04",
+          "result": "Amylyx announced a voluntary withdrawal process in the US and Canada; this was not FDA's effective approval-withdrawal date.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "relyvrio_announcement_2024"
+          ]
+        },
+        {
+          "kind": "regulatory",
+          "endpoint": "FDA withdrawal of NDA 216660 approval",
+          "timepoint": "2025-08-29",
+          "result": "US approval withdrawal took effect, following the sponsor's voluntary request based on PHOENIX.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "relyvrio_fda_withdrawal_2025"
+          ]
+        }
+      ],
+      "negative_evidence": [
+        "The larger confirmatory PHOENIX trial failed to establish its prespecified clinical benefit."
+      ],
+      "unknowns": [
+        "This record does not reproduce all earlier CENTAUR analyses, PHOENIX methods, or evidence in other diseases."
+      ],
+      "caveats": [
+        "Sponsor topline efficacy data and an official regulatory action are different source types.",
+        "Canada's exact legal cancellation date is not established here.",
+        "Regulatory withdrawal is not a biological endpoint."
+      ],
+      "regulatory_status": {
+        "jurisdiction": "US",
+        "status": "approval_withdrawn",
+        "event_date": "2025-08-29",
+        "source_ids": [
+          "relyvrio_fda_withdrawal_2025"
+        ]
+      },
+      "scope_exclusions": []
+    },
+    {
+      "id": "unc13a_mechanism",
+      "title": "UNC13A: TDP-43-associated cryptic-splicing mechanism",
+      "target": "UNC13A cryptic exon regulation",
+      "stage": "peer_reviewed_mechanistic_research",
+      "population": "Human brain tissue, neuronal cell lines, and induced-pluripotent-stem-cell-derived motor neurons; not a treatment trial population.",
+      "design": "Ma and colleagues, published online 2022-02-23: laboratory perturbation and human tissue analyses.",
+      "trial_ids": [],
+      "source_ids": [
+        "unc13a_ma_2022"
+      ],
+      "observations": [
+        {
+          "kind": "mechanistic",
+          "endpoint": "UNC13A cryptic exon inclusion and protein abundance",
+          "timepoint": "Experiment-specific; no clinical follow-up interval",
+          "result": "Nuclear TDP-43 loss promoted UNC13A cryptic splicing and reduced protein expression; risk variants increased mis-splicing under TDP-43 dysfunction.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "unc13a_ma_2022"
+          ]
+        },
+        {
+          "kind": "hypothesis",
+          "endpoint": "Potential therapeutic relevance of correcting mis-splicing",
+          "timepoint": "Not a clinical outcome",
+          "result": "Mechanistic evidence motivates testing restoration; it does not demonstrate benefit in people with ALS.",
+          "primary_endpoint_met": null,
+          "statistic": null,
+          "source_ids": [
+            "unc13a_ma_2022"
+          ]
+        }
+      ],
+      "negative_evidence": [
+        "This mechanistic study contains no randomized patient efficacy test."
+      ],
+      "unknowns": [
+        "Whether, when, and how much restoring UNC13A changes clinical outcomes is not answered by this record."
+      ],
+      "caveats": [
+        "The cryptic exon event is not conserved in mouse; model choice matters.",
+        "Genetic risk association is not deterministic patient prognosis.",
+        "No individual-level datasets or predictive model were accessed or created."
+      ],
+      "regulatory_status": {
+        "jurisdiction": "Not applicable",
+        "status": "not_applicable",
+        "event_date": null,
+        "source_ids": []
+      },
+      "scope_exclusions": []
+    }
+  ]
+}
