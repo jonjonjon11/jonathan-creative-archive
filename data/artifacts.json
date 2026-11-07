@@ -146,6 +146,76 @@
           "sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
         }
       ]
+    },
+    {
+      "id": "ART-007",
+      "title": "ALS/cancer evidence collections and offline evidence library",
+      "origin": "new_original_implementation",
+      "path": "tools/evidence-library",
+      "source_ids": [
+        "SRC-038"
+      ],
+      "rights": {
+        "license_declared": "CC-BY-4.0",
+        "license_path": "LICENSE",
+        "scope": "Original code, synthesis, selected factual records, and tests follow CC BY 4.0; cited sources retain their rights. No third-party full text or participant data bundled.",
+        "review_record": "docs/research/verification.md"
+      },
+      "verification": {
+        "status": "offline_code_and_data_checks_passed_scientific_review_pending",
+        "record": "docs/research/verification.md",
+        "limitations": "Checks establish documented local code/data behavior. Scientific, clinical, hardware, and user acceptance are separate review questions."
+      },
+      "preserved_manifest": null,
+      "pinned_files": [
+        {
+          "path": "tools/evidence-library/evidence_library.py",
+          "sha256": "2660ce2cfa82e49697bbb52750d2d7f0faf7dca6ed2d51f128c4ba8a33264aa3"
+        },
+        {
+          "path": "data/health/als-evidence.json",
+          "sha256": "21a0652178086497b34905e74496100d4bff42625df44e13a60464392da96581"
+        },
+        {
+          "path": "data/health/cancer-foundations.json",
+          "sha256": "beea7a3503ecccd2948db848d93f05d90e92d923fc0f4777d9bfe238fab40394"
+        },
+        {
+          "path": "data/health/als-trial-facts.json",
+          "sha256": "b38af69a11edf9462bb6401d2f1c724c02d4563e73f0d5dd701ae53b87b01cd6"
+        }
+      ]
+    },
+    {
+      "id": "ART-008",
+      "title": "Sampled switch-input educational laboratory",
+      "origin": "new_original_implementation",
+      "path": "tools/switch-input-lab",
+      "source_ids": [
+        "SRC-039"
+      ],
+      "rights": {
+        "license_declared": "CC-BY-4.0",
+        "license_path": "LICENSE",
+        "scope": "Original code, lesson, tests, and invented trace follow CC BY 4.0. Technical references are cited, not copied.",
+        "review_record": "docs/research/verification.md"
+      },
+      "verification": {
+        "status": "synthetic_simulation_checks_passed",
+        "record": "docs/research/verification.md",
+        "limitations": "Checks establish documented local code/data behavior. Scientific, clinical, hardware, and user acceptance are separate review questions."
+      },
+      "preserved_manifest": null,
+      "pinned_files": [
+        {
+          "path": "tools/switch-input-lab/switch_input.py",
+          "sha256": "69c964bf6006a27d747314783c3dabe7596f798ef1ff12feebfec317fc833bdf"
+        },
+        {
+          "path": "tools/switch-input-lab/fixtures/synthetic-bounce.json",
+          "sha256": "671bcf2589bcb7d993fa982cf13c125cadaff92efec7f949ebf2528d06968168"
+        }
+      ]
     }
   ]
 }
