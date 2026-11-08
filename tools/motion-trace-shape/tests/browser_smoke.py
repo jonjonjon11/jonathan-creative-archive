@@ -96,7 +96,7 @@ def check_page(browser, filename, screenshots):
     for _ in range(2):
         page.locator('#play').click()
         expect(page.locator('#play')).to_have_text('Pause')
-        page.wait_for_function("Number(document.querySelector('#time').value) > 0")
+        expect(page.locator('#time')).not_to_have_value('0')
         page.locator('#play').click()
         frozen = page.locator('#time').input_value()
         page.wait_for_timeout(100)
