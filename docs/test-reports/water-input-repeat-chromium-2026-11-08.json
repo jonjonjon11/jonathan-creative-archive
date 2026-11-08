@@ -1,0 +1,1220 @@
+{
+  "kind": "bounded synthetic diagnostics, not performance acceptance",
+  "browser": "chromium",
+  "nativePasteTested": false,
+  "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+  "startedAt": "2026-11-08T21:06:38.264Z",
+  "caseBudgetMs": 40000,
+  "totalBudgetMs": 420000,
+  "cases": [
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:06:38.543Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:06:38.546Z",
+          "state": "completed",
+          "elapsedMs": 183.57
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:06:38.778Z",
+          "state": "completed",
+          "elapsedMs": 119.86
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:06:38.898Z",
+          "state": "completed",
+          "elapsedMs": 59.71
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:06:38.958Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:07:08.963Z",
+          "state": "completed",
+          "elapsedMs": 1001.56
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:09.966Z",
+          "state": "completed",
+          "elapsedMs": 79.44
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 254.3000000000029
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:07:10.046Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31998,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:07:10.540Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:10.543Z",
+          "state": "completed",
+          "elapsedMs": 62.69
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:10.654Z",
+          "state": "completed",
+          "elapsedMs": 120.36
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:10.775Z",
+          "state": "completed",
+          "elapsedMs": 48.29
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:07:10.824Z",
+          "state": "completed",
+          "elapsedMs": 32.54
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:10.857Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:07:40.863Z",
+          "state": "completed",
+          "elapsedMs": 1001.27
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:41.865Z",
+          "state": "completed",
+          "elapsedMs": 77.84
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 274.8000000000029
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:07:41.944Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31892,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:07:42.429Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:42.432Z",
+          "state": "completed",
+          "elapsedMs": 62.43
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:42.545Z",
+          "state": "completed",
+          "elapsedMs": 110.82
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:42.657Z",
+          "state": "completed",
+          "elapsedMs": 50.56
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:42.708Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:08:12.713Z",
+          "state": "completed",
+          "elapsedMs": 1001.36
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:08:13.716Z",
+          "state": "completed",
+          "elapsedMs": 83.89
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 236.89999999999418
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:08:13.800Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31854,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:08:14.287Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:08:14.290Z",
+          "state": "completed",
+          "elapsedMs": 57.03
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:08:14.401Z",
+          "state": "completed",
+          "elapsedMs": 125.61
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:08:14.528Z",
+          "state": "completed",
+          "elapsedMs": 43.42
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:08:14.572Z",
+          "state": "completed",
+          "elapsedMs": 32.01
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:08:14.605Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:08:44.610Z",
+          "state": "completed",
+          "elapsedMs": 1001.3
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:08:45.613Z",
+          "state": "completed",
+          "elapsedMs": 78.51
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 277.0999999999767
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:08:45.692Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31891,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 2,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:08:46.185Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:08:46.188Z",
+          "state": "completed",
+          "elapsedMs": 61.81
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:08:46.300Z",
+          "state": "completed",
+          "elapsedMs": 104.76
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:08:46.405Z",
+          "state": "completed",
+          "elapsedMs": 65.48
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:08:46.471Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:09:16.476Z",
+          "state": "completed",
+          "elapsedMs": 1001.5
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:09:17.478Z",
+          "state": "completed",
+          "elapsedMs": 80.84
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 244.39999999999418
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:09:17.560Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31864,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 2,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:09:18.044Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:09:18.047Z",
+          "state": "completed",
+          "elapsedMs": 61.07
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:09:18.157Z",
+          "state": "completed",
+          "elapsedMs": 111.73
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:09:18.269Z",
+          "state": "completed",
+          "elapsedMs": 65.51
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:09:18.336Z",
+          "state": "completed",
+          "elapsedMs": 32.99
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:09:18.369Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:09:48.378Z",
+          "state": "completed",
+          "elapsedMs": 1000.89
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:09:49.380Z",
+          "state": "completed",
+          "elapsedMs": 80.05
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 285.1000000000058
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:09:49.460Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31897,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 2,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:09:49.945Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:09:49.949Z",
+          "state": "completed",
+          "elapsedMs": 61.35
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:09:50.058Z",
+          "state": "completed",
+          "elapsedMs": 127.27
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:09:50.189Z",
+          "state": "completed",
+          "elapsedMs": 46.21
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:09:50.236Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:10:20.241Z",
+          "state": "completed",
+          "elapsedMs": 1000.63
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:10:21.243Z",
+          "state": "completed",
+          "elapsedMs": 81.03
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 251.5
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:10:21.324Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31862,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 2,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:10:21.812Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:10:21.815Z",
+          "state": "completed",
+          "elapsedMs": 64.63
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:10:21.928Z",
+          "state": "completed",
+          "elapsedMs": 123.64
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:10:22.053Z",
+          "state": "completed",
+          "elapsedMs": 47.66
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:10:22.101Z",
+          "state": "completed",
+          "elapsedMs": 31.24
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:10:22.133Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:10:52.138Z",
+          "state": "completed",
+          "elapsedMs": 1001.05
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:10:53.140Z",
+          "state": "completed",
+          "elapsedMs": 79.61
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 277
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:10:53.220Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31894,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 3,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:10:53.713Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:10:53.716Z",
+          "state": "completed",
+          "elapsedMs": 61.35
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:10:53.830Z",
+          "state": "completed",
+          "elapsedMs": 120.8
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:10:53.952Z",
+          "state": "completed",
+          "elapsedMs": 61.95
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:10:54.015Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:11:24.020Z",
+          "state": "completed",
+          "elapsedMs": 1000.25
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:11:25.021Z",
+          "state": "completed",
+          "elapsedMs": 77.58
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 259.20000000001164
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:11:25.099Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31876,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 3,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:11:25.592Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:11:25.595Z",
+          "state": "completed",
+          "elapsedMs": 63.27
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:11:25.708Z",
+          "state": "completed",
+          "elapsedMs": 122.97
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:11:25.832Z",
+          "state": "completed",
+          "elapsedMs": 64.57
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:11:25.897Z",
+          "state": "completed",
+          "elapsedMs": 32.77
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:11:25.930Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:11:55.936Z",
+          "state": "completed",
+          "elapsedMs": 1001.09
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:11:56.940Z",
+          "state": "completed",
+          "elapsedMs": 76.52
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 295
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:11:57.017Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31915,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 3,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:11:57.501Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:11:57.504Z",
+          "state": "completed",
+          "elapsedMs": 63.5
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:11:57.622Z",
+          "state": "completed",
+          "elapsedMs": 125.18
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:11:57.748Z",
+          "state": "completed",
+          "elapsedMs": 49.69
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:11:57.798Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:12:27.803Z",
+          "state": "completed",
+          "elapsedMs": 1001.66
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:12:28.806Z",
+          "state": "completed",
+          "elapsedMs": 79.56
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 250
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:12:28.886Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31865,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 3,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:12:29.375Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:12:29.378Z",
+          "state": "completed",
+          "elapsedMs": 63.58
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:12:29.489Z",
+          "state": "completed",
+          "elapsedMs": 122.91
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:12:29.613Z",
+          "state": "completed",
+          "elapsedMs": 50.72
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:12:29.664Z",
+          "state": "completed",
+          "elapsedMs": 29.86
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:12:29.694Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:12:59.699Z",
+          "state": "completed",
+          "elapsedMs": 1001.06
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:13:00.701Z",
+          "state": "completed",
+          "elapsedMs": 81.43
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 278.79999999998836
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:13:00.783Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31896,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    }
+  ],
+  "finishedAt": "2026-11-08T21:13:01.002Z",
+  "observationComplete": true,
+  "meaning": "Recorded timeouts are diagnostic findings, not passing performance claims. No native clipboard paste was tested."
+}

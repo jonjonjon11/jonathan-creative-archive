@@ -185,36 +185,3 @@ jobs:
           path: ${{ runner.temp }}/reality-atlas-browser
           if-no-files-found: ignore
           retention-days: 7
-
-  water-input-diagnostics:
-    name: Water input diagnostics (${{ matrix.browser }})
-    if: github.event_name == 'push' && github.ref == 'refs/heads/dot/water-input-investigation'
-    runs-on: ubuntu-24.04
-    timeout-minutes: 12
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chromium, firefox]
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Install pinned test tools outside the archive
-        run: |
-          npm install --prefix "$RUNNER_TEMP/water-playwright" --no-audit --no-fund playwright@1.56.0
-          "$RUNNER_TEMP/water-playwright/node_modules/.bin/playwright" install --with-deps ${{ matrix.browser }}
-      - name: Observe bounded synthetic input paths with external watchdogs
-        env:
-          WATER_BROWSER: ${{ matrix.browser }}
-          WATER_INPUT_QA_DIR: ${{ runner.temp }}/water-input-${{ matrix.browser }}
-          WATER_INPUT_CASES: '[{"method":"fill-open","rows":25000,"width":320,"repeat":1},{"method":"fill-without-app-listener","rows":25000,"width":320,"repeat":1},{"method":"fill-open","rows":25000,"width":1280,"repeat":1},{"method":"fill-without-app-listener","rows":25000,"width":1280,"repeat":1},{"method":"fill-open","rows":25000,"width":320,"repeat":2},{"method":"fill-without-app-listener","rows":25000,"width":320,"repeat":2},{"method":"fill-open","rows":25000,"width":1280,"repeat":2},{"method":"fill-without-app-listener","rows":25000,"width":1280,"repeat":2},{"method":"fill-open","rows":25000,"width":320,"repeat":3},{"method":"fill-without-app-listener","rows":25000,"width":320,"repeat":3},{"method":"fill-open","rows":25000,"width":1280,"repeat":3},{"method":"fill-without-app-listener","rows":25000,"width":1280,"repeat":3}]'
-        run: NODE_PATH="$RUNNER_TEMP/water-playwright/node_modules" node tools/water-survey-preflight/tests/input-diagnostics.cjs
-      - name: Preserve observations, including timeouts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: water-input-${{ matrix.browser }}
-          path: ${{ runner.temp }}/water-input-${{ matrix.browser }}
-          if-no-files-found: error
-          retention-days: 7

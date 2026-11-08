@@ -1,0 +1,2308 @@
+{
+  "kind": "bounded synthetic diagnostics, not performance acceptance",
+  "browser": "firefox",
+  "nativePasteTested": false,
+  "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+  "startedAt": "2026-11-08T21:06:32.444Z",
+  "caseBudgetMs": 40000,
+  "totalBudgetMs": 420000,
+  "cases": [
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:06:32.684Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:06:32.687Z",
+          "state": "completed",
+          "elapsedMs": 430.76
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:06:33.920Z",
+          "state": "completed",
+          "elapsedMs": 319.56
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:06:34.240Z",
+          "state": "completed",
+          "elapsedMs": 94.89
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:06:34.336Z",
+          "state": "completed",
+          "elapsedMs": 364.36
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:06:34.700Z",
+          "state": "completed",
+          "elapsedMs": 2154.91
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:06:36.856Z",
+          "state": "completed",
+          "elapsedMs": 717.83
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:06:37.574Z",
+          "state": "completed",
+          "elapsedMs": 64.78
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:06:37.640Z",
+          "state": "completed",
+          "elapsedMs": 16.23
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:06:37.657Z",
+          "state": "completed",
+          "elapsedMs": 76.77
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:06:37.734Z",
+          "state": "completed",
+          "elapsedMs": 491.5
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 454
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 769
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 770
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 3785,
+          "maxTimerGapMs": 2045,
+          "ticks": 10
+        }
+      ],
+      "capturedAppInputListeners": 1,
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 454
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 769
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 770
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 2045,
+          "ticks": 7,
+          "last": 3624
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:06:38.226Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5994,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:06:38.689Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:06:38.693Z",
+          "state": "completed",
+          "elapsedMs": 348.35
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:06:40.092Z",
+          "state": "completed",
+          "elapsedMs": 348.26
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:06:40.441Z",
+          "state": "completed",
+          "elapsedMs": 88.51
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:06:40.530Z",
+          "state": "completed",
+          "elapsedMs": 49.21
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:06:40.580Z",
+          "state": "completed",
+          "elapsedMs": 368.71
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:06:40.949Z",
+          "state": "completed",
+          "elapsedMs": 2146.52
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:06:43.096Z",
+          "state": "completed",
+          "elapsedMs": 715.95
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:06:43.813Z",
+          "state": "completed",
+          "elapsedMs": 39.47
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:06:43.853Z",
+          "state": "completed",
+          "elapsedMs": 26.24
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:06:43.880Z",
+          "state": "completed",
+          "elapsedMs": 81.18
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:06:43.962Z",
+          "state": "completed",
+          "elapsedMs": 489.93
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 526
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 850
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 850
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 3799,
+          "maxTimerGapMs": 2034,
+          "ticks": 10
+        }
+      ],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 526
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 850
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 850
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 2034,
+          "ticks": 8,
+          "last": 3695
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:06:44.453Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 6222,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:06:44.913Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:06:44.916Z",
+          "state": "completed",
+          "elapsedMs": 338.91
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:06:46.037Z",
+          "state": "completed",
+          "elapsedMs": 319.27
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:06:46.357Z",
+          "state": "completed",
+          "elapsedMs": 81.04
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:06:46.441Z",
+          "state": "completed",
+          "elapsedMs": 323.29
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:06:46.764Z",
+          "state": "completed",
+          "elapsedMs": 2139.59
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:06:48.905Z",
+          "state": "completed",
+          "elapsedMs": 250.65
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:06:49.156Z",
+          "state": "completed",
+          "elapsedMs": 52.39
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:06:49.209Z",
+          "state": "completed",
+          "elapsedMs": 13.37
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:06:49.223Z",
+          "state": "completed",
+          "elapsedMs": 130.44
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:06:49.354Z",
+          "state": "completed",
+          "elapsedMs": 480.39
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 447
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 720
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 720
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 447
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 720
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 720
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 1980,
+          "ticks": 6,
+          "last": 3092
+        },
+        "documentWidth": 1280,
+        "viewport": 1280
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:06:49.835Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5378,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:06:50.290Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:06:50.293Z",
+          "state": "completed",
+          "elapsedMs": 322.91
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:06:51.372Z",
+          "state": "completed",
+          "elapsedMs": 327.3
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:06:51.700Z",
+          "state": "completed",
+          "elapsedMs": 85.38
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:06:51.786Z",
+          "state": "completed",
+          "elapsedMs": 44.84
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:06:51.831Z",
+          "state": "completed",
+          "elapsedMs": 323.99
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:06:52.156Z",
+          "state": "completed",
+          "elapsedMs": 2076.31
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:06:54.232Z",
+          "state": "completed",
+          "elapsedMs": 250.11
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:06:54.483Z",
+          "state": "completed",
+          "elapsedMs": 39.86
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:06:54.524Z",
+          "state": "completed",
+          "elapsedMs": 26.04
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:06:54.551Z",
+          "state": "completed",
+          "elapsedMs": 128.82
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:06:54.680Z",
+          "state": "completed",
+          "elapsedMs": 490.42
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 498
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 775
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 776
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 3261,
+          "maxTimerGapMs": 1920,
+          "ticks": 10
+        }
+      ],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 498
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 775
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 776
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 1920,
+          "ticks": 7,
+          "last": 3080
+        },
+        "documentWidth": 1280,
+        "viewport": 1280
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:06:55.171Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5335,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 2,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:06:55.631Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:06:55.634Z",
+          "state": "completed",
+          "elapsedMs": 349.01
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:06:56.792Z",
+          "state": "completed",
+          "elapsedMs": 327.28
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:06:57.121Z",
+          "state": "completed",
+          "elapsedMs": 81.73
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:06:57.204Z",
+          "state": "completed",
+          "elapsedMs": 371.07
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:06:57.576Z",
+          "state": "completed",
+          "elapsedMs": 2208.52
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:06:59.785Z",
+          "state": "completed",
+          "elapsedMs": 732.82
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:07:00.519Z",
+          "state": "completed",
+          "elapsedMs": 46.29
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:07:00.566Z",
+          "state": "completed",
+          "elapsedMs": 20.59
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:07:00.587Z",
+          "state": "completed",
+          "elapsedMs": 78.93
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:00.667Z",
+          "state": "completed",
+          "elapsedMs": 483.78
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 454
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 776
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 777
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 3805,
+          "maxTimerGapMs": 2084,
+          "ticks": 10
+        }
+      ],
+      "capturedAppInputListeners": 1,
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 454
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 776
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 777
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 2084,
+          "ticks": 8,
+          "last": 3690
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:07:01.151Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5978,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 2,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:07:01.607Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:01.610Z",
+          "state": "completed",
+          "elapsedMs": 335.14
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:02.738Z",
+          "state": "completed",
+          "elapsedMs": 319.12
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:03.057Z",
+          "state": "completed",
+          "elapsedMs": 85.14
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:07:03.143Z",
+          "state": "completed",
+          "elapsedMs": 49.33
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:03.193Z",
+          "state": "completed",
+          "elapsedMs": 371.64
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:07:03.565Z",
+          "state": "completed",
+          "elapsedMs": 2189.03
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:07:05.755Z",
+          "state": "completed",
+          "elapsedMs": 720.45
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:07:06.476Z",
+          "state": "completed",
+          "elapsedMs": 37.74
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:07:06.514Z",
+          "state": "completed",
+          "elapsedMs": 12.06
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:07:06.527Z",
+          "state": "completed",
+          "elapsedMs": 80.49
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:06.608Z",
+          "state": "completed",
+          "elapsedMs": 484.33
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 495
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 819
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 819
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 3845,
+          "maxTimerGapMs": 2074,
+          "ticks": 10
+        }
+      ],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 495
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 819
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 819
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 2074,
+          "ticks": 8,
+          "last": 3706
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:07:07.093Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5939,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 2,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:07:07.547Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:07.550Z",
+          "state": "completed",
+          "elapsedMs": 327.87
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:08.643Z",
+          "state": "completed",
+          "elapsedMs": 322.53
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:08.967Z",
+          "state": "completed",
+          "elapsedMs": 84.03
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:09.052Z",
+          "state": "completed",
+          "elapsedMs": 329.25
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:07:09.381Z",
+          "state": "completed",
+          "elapsedMs": 2090.71
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:07:11.473Z",
+          "state": "completed",
+          "elapsedMs": 244.53
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:07:11.718Z",
+          "state": "completed",
+          "elapsedMs": 47.65
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:07:11.766Z",
+          "state": "completed",
+          "elapsedMs": 18.95
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:07:11.786Z",
+          "state": "completed",
+          "elapsedMs": 123.07
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:11.910Z",
+          "state": "completed",
+          "elapsedMs": 490.56
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 454
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 730
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 731
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 454
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 730
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 731
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 2354,
+          "ticks": 5,
+          "last": 3048
+        },
+        "documentWidth": 1280,
+        "viewport": 1280
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:07:12.401Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5306,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 2,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:07:12.856Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:12.859Z",
+          "state": "completed",
+          "elapsedMs": 327.88
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:13.950Z",
+          "state": "completed",
+          "elapsedMs": 319.97
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:14.271Z",
+          "state": "completed",
+          "elapsedMs": 80.87
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:07:14.352Z",
+          "state": "completed",
+          "elapsedMs": 48.94
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:14.402Z",
+          "state": "completed",
+          "elapsedMs": 317.87
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:07:14.721Z",
+          "state": "completed",
+          "elapsedMs": 2098.65
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:07:16.821Z",
+          "state": "completed",
+          "elapsedMs": 266.52
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:07:17.088Z",
+          "state": "completed",
+          "elapsedMs": 39.53
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:07:17.128Z",
+          "state": "completed",
+          "elapsedMs": 26.54
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:07:17.155Z",
+          "state": "completed",
+          "elapsedMs": 135.42
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:17.292Z",
+          "state": "completed",
+          "elapsedMs": 491.96
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 494
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 762
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 763
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 3297,
+          "maxTimerGapMs": 1918,
+          "ticks": 10
+        }
+      ],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 494
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 762
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 763
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 1918,
+          "ticks": 7,
+          "last": 3099
+        },
+        "documentWidth": 1280,
+        "viewport": 1280
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:07:17.784Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5379,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 3,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:07:18.246Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:18.249Z",
+          "state": "completed",
+          "elapsedMs": 336.21
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:19.389Z",
+          "state": "completed",
+          "elapsedMs": 331.63
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:19.722Z",
+          "state": "completed",
+          "elapsedMs": 98.23
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:19.821Z",
+          "state": "completed",
+          "elapsedMs": 372.47
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:07:20.194Z",
+          "state": "completed",
+          "elapsedMs": 2213.95
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:07:22.409Z",
+          "state": "completed",
+          "elapsedMs": 733.52
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:07:23.143Z",
+          "state": "completed",
+          "elapsedMs": 46.14
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:07:23.190Z",
+          "state": "completed",
+          "elapsedMs": 18.67
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:07:23.209Z",
+          "state": "completed",
+          "elapsedMs": 81.35
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:23.292Z",
+          "state": "completed",
+          "elapsedMs": 493.27
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 475
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 798
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 798
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 3834,
+          "maxTimerGapMs": 2104,
+          "ticks": 10
+        }
+      ],
+      "capturedAppInputListeners": 1,
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 475
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 798
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 798
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 2104,
+          "ticks": 8,
+          "last": 3718
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:07:23.785Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 6000,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 3,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:07:24.246Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:24.249Z",
+          "state": "completed",
+          "elapsedMs": 340.85
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:25.382Z",
+          "state": "completed",
+          "elapsedMs": 321.14
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:25.704Z",
+          "state": "completed",
+          "elapsedMs": 91.1
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:07:25.795Z",
+          "state": "completed",
+          "elapsedMs": 48.53
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:25.844Z",
+          "state": "completed",
+          "elapsedMs": 373.82
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:07:26.219Z",
+          "state": "completed",
+          "elapsedMs": 2197.28
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:07:28.417Z",
+          "state": "completed",
+          "elapsedMs": 759.78
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:07:29.177Z",
+          "state": "completed",
+          "elapsedMs": 37.72
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:07:29.216Z",
+          "state": "completed",
+          "elapsedMs": 10.81
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:07:29.227Z",
+          "state": "completed",
+          "elapsedMs": 79.59
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:29.308Z",
+          "state": "completed",
+          "elapsedMs": 495.08
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 504
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 830
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 830
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 504
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 830
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 830
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 2514,
+          "ticks": 7,
+          "last": 3767
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:07:29.803Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 6015,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 3,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:07:30.264Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:30.267Z",
+          "state": "completed",
+          "elapsedMs": 342.42
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:31.405Z",
+          "state": "completed",
+          "elapsedMs": 332.95
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:31.739Z",
+          "state": "completed",
+          "elapsedMs": 73.58
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:31.814Z",
+          "state": "completed",
+          "elapsedMs": 323.67
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:07:32.139Z",
+          "state": "completed",
+          "elapsedMs": 2140.25
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:07:34.279Z",
+          "state": "completed",
+          "elapsedMs": 250.51
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:07:34.530Z",
+          "state": "completed",
+          "elapsedMs": 51.05
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:07:34.582Z",
+          "state": "completed",
+          "elapsedMs": 14.43
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:07:34.597Z",
+          "state": "completed",
+          "elapsedMs": 126.44
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:34.725Z",
+          "state": "completed",
+          "elapsedMs": 490.96
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 455
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 727
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 728
+        }
+      ],
+      "streamedHeartbeats": [],
+      "capturedAppInputListeners": 1,
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 455
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 727
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 728
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 1966,
+          "ticks": 6,
+          "last": 3099
+        },
+        "documentWidth": 1280,
+        "viewport": 1280
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:07:35.216Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5407,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-without-app-listener",
+      "rows": 25000,
+      "width": 1280,
+      "repeat": 3,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:07:35.673Z",
+      "commit": "27da190ff515cc4319295946c59ed4d1b3b83d2e",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:07:35.676Z",
+          "state": "completed",
+          "elapsedMs": 335.2
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:07:36.824Z",
+          "state": "completed",
+          "elapsedMs": 330.03
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:07:37.155Z",
+          "state": "completed",
+          "elapsedMs": 90.31
+        },
+        {
+          "name": "setup-listener-control",
+          "startedAt": "2026-11-08T21:07:37.246Z",
+          "state": "completed",
+          "elapsedMs": 48.99
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:07:37.295Z",
+          "state": "completed",
+          "elapsedMs": 331.6
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:07:37.627Z",
+          "state": "completed",
+          "elapsedMs": 2120.71
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:07:39.749Z",
+          "state": "completed",
+          "elapsedMs": 262.29
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:07:40.012Z",
+          "state": "completed",
+          "elapsedMs": 39.02
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:07:40.051Z",
+          "state": "completed",
+          "elapsedMs": 28.27
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:07:40.080Z",
+          "state": "completed",
+          "elapsedMs": 131.08
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:07:40.212Z",
+          "state": "completed",
+          "elapsedMs": 491.6
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 509
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "capture",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 796
+        },
+        {
+          "kind": "event",
+          "listenerPhase": "bubble",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 796
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 3344,
+          "maxTimerGapMs": 1981,
+          "ticks": 10
+        }
+      ],
+      "capturedAppInputListeners": 1,
+      "listenerControl": {
+        "originalNodePreserved": true,
+        "registeredAppInputCallbacks": 1,
+        "callbacksRemoved": 1
+      },
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 509
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "capture",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 796
+            },
+            {
+              "kind": "event",
+              "listenerPhase": "bubble",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 796
+            }
+          ],
+          "counts": {
+            "beforeinput": 1,
+            "capture:input": 1,
+            "input": 1
+          },
+          "maxTimerGapMs": 1981,
+          "ticks": 7,
+          "last": 3150
+        },
+        "documentWidth": 1280,
+        "viewport": 1280
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:07:40.704Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 5485,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    }
+  ],
+  "finishedAt": "2026-11-08T21:07:40.919Z",
+  "observationComplete": true,
+  "meaning": "Recorded timeouts are diagnostic findings, not passing performance claims. No native clipboard paste was tested."
+}

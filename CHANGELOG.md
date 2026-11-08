@@ -1,3 +1,9 @@
+## Water input diagnostics, 2026-11-08
+
+- Preserve 40 bounded synthetic observations separating Chromium automated fill from file import, visible reopening and direct assignment. Matched listener-removal/width repeats do not resolve the fill timeout; native clipboard paste remains untested.
+- Add an optional isolated Linux diagnostic runner, five fixture/watchdog tests and unchanged raw evidence. Review corrected detached-process cleanup and the listener-control methodology before collection.
+- Leave delivered application files unchanged and remove the temporary diagnostic CI job after collection. Existing acceptance checks remain intact. See the [dated investigation](docs/test-reports/water-input-diagnostics-2026-11-08.md).
+
 ## Multiplication prerequisite correction, 2026-11-08
 
 - Complete the 0–10 multiplication table, distinguish zero groups from zero items per group, and add no-grid reasoning for the previously missing row-6 and row-8 examples.

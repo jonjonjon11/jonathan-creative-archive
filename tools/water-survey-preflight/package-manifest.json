@@ -21,7 +21,8 @@
     "standalone_build_matches": true,
     "browser_tests": "19 scoped check groups passed in each of Chromium and Firefox; see ../../docs/test-reports/water-browser-2026-11-08.md",
     "field_effectiveness": "unvalidated",
-    "large_paste_responsiveness": "unresolved after a Chromium timeout; maximum-record native file import passes"
+    "large_paste_responsiveness": "Chromium automated fill timeout reproduced with matched controls; native clipboard paste untested. See ../../docs/test-reports/water-input-diagnostics-2026-11-08.md.",
+    "diagnostic_harness_tests_passed": 5
   },
   "files": [
     {
@@ -31,8 +32,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6539,
-      "sha256": "df3fdcebc2549230c25117bf1c545bcf757725d3945f7392df54e3e7695dccac"
+      "bytes": 8708,
+      "sha256": "39c2a9afde3003703084303bebe013b7886b189d67cc875806b6c6f71cb144b7"
     },
     {
       "path": "build.cjs",
@@ -56,8 +57,8 @@
     },
     {
       "path": "docs/verification.md",
-      "bytes": 4866,
-      "sha256": "635f807eba7ebb07c78e78a80f8813d5d40926ace37430d22acfd2149f58b161"
+      "bytes": 5517,
+      "sha256": "6986e32fc05174903f860cd628e6d9d81702dd768ab8f8311d76e466658c8441"
     },
     {
       "path": "fixtures/synthetic-clean.csv",
@@ -131,5 +132,5 @@
     }
   ],
   "archive_path": "tools/water-survey-preflight",
-  "release_notes": "Scoped offline browser CI and evidence added. Runtime changes prevent export-value consent restoration and narrow maximum-count overflow. Core rules and fixtures unchanged; large-paste responsiveness and field usefulness remain unvalidated."
+  "release_notes": "Adds bounded synthetic input diagnostics, five harness tests and dated evidence. Delivered application/source/fixture bytes unchanged from the scoped browser-reviewed edition; no native-paste or performance fix claimed."
 }

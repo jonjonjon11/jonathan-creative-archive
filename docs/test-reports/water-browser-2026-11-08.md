@@ -1,5 +1,7 @@
 # Water Survey Preflight browser validation
 
+Follow-up: the [controlled input investigation](water-input-diagnostics-2026-11-08.md) narrows the automated-fill timeout without changing delivered runtime files or establishing native clipboard-paste behavior. This report retains its historical verification checkpoint.
+
 Date: 2026-11-08. Assessment: **scoped automated desktop-browser checks pass using invented records only**. This is a partial unofficial data preflight, not water testing, WPdx certification, upload approval or demonstrated practitioner benefit.
 
 ## Exact build and evidence

@@ -1,5 +1,9 @@
 # Verification record
 
+## Controlled input follow-up — 2026-11-08
+
+The [bounded input investigation](../../../docs/test-reports/water-input-diagnostics-2026-11-08.md) records 40 synthetic observations: 27 complete and 13 Chromium automated-fill timeouts. The repeated timeout persists at both widths after removing only the original input callback in the test page. It does not demonstrate a native clipboard-paste defect. Delivered app/source/fixture bytes are unchanged; native paste remains untested and large files should use file import. The existing 85 app/core tests plus five new diagnostic-harness tests pass. The historical browser review below remains intact.
+
 ## Current browser update — 2026-11-08
 
 85 Node tests pass (73 core, 6 static, 6 simulated controller), with exact standalone build parity. Scoped offline Chromium and Firefox runs pass 19 browser check groups each using invented records only. Browser verification fixed native Firefox restoration of the export-value opt-in and maximum-count overflow at narrow widths. See the [dated browser report](../../../docs/test-reports/water-browser-2026-11-08.md) and its unchanged JSON summaries for exact revisions, hashes, versions, screenshots and failures.

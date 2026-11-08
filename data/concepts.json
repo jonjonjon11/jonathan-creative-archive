@@ -425,7 +425,7 @@
       "artifact_status": "source_inspected",
       "scientific_standing": "not_a_scientific_claim",
       "limitations": "85 Node tests and scoped synthetic offline Chromium/Firefox checks pass. Large-paste responsiveness, physical devices and assistive technology remain unverified. Partial unofficial preflight, not water-safety assessment or upload certification. Practitioner usefulness and field impact are unvalidated.",
-      "next_step": "Review the dated browser evidence, investigate large-paste responsiveness, then assess physical-device and assistive-technology behavior and the workflow hypothesis with consenting practitioners using synthetic examples before proposing adoption."
+      "next_step": "Review the controlled input investigation before further changes. If useful, test native clipboard paste in an authorized isolated profile; do not infer it from locator.fill. Physical-device, assistive-technology and consenting-practitioner synthetic workflow assessment remain open."
     }
   ]
 }
