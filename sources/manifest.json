@@ -364,7 +364,7 @@
       "access": "private_source_or_current_conversation",
       "public_url": null,
       "findings": "Recovered HTML and branch documentation for motion, packing, occupancy, finite-probe voids and export.",
-      "limitations": "46 focused calculation/syntax checks passed in this archive review; fresh browser execution blocked before page load. Historical 40-check/41-browser-check reports not rerun; no full inherited regression or target-device acceptance.",
+      "limitations": "46 calculation/syntax checks and scoped offline Chromium/Firefox software-WebGL2 checks pass in the archive; see docs/test-reports/reality-atlas-browser-2026-11-08.md. Historical source suites were not rerun wholesale. No full inherited regression, native-GPU, target-device, accessibility or learner acceptance.",
       "locator_policy": "Exact private locator withheld from publication candidate.",
       "included_artifact": "tools/reality-atlas/Reality_Atlas_Appearance_0.3.1.html",
       "artifact_license": "CC0-1.0",

@@ -1,0 +1,259 @@
+{
+  "suite": "archive-reality-atlas-browser/1",
+  "passed": true,
+  "started_utc": "2026-11-08T12:59:43.490469+00:00",
+  "browser_engine": "firefox",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+  "python": "3.11.18",
+  "playwright": "1.56.0",
+  "artifact_sha256": "fdb0f246ddcf45e3b6b90fae356c95dfce86cfab122fab33a1143659f87bce0d",
+  "runner_sha256": "3e5dae7ce9ed8b68fb75d9ec9a938cf9146ae6297245587bf07f3484611e1926",
+  "loading": "isolated copied HTML via actual file URL; fresh offline browser context",
+  "rendering": "software renderer requested; actual renderer recorded below",
+  "checks": [
+    {
+      "name": "isolated offline HTML initializes WebGL2 with nonblank framebuffer",
+      "passed": true,
+      "detail": {
+        "hash": 3328211479,
+        "lit": 39715,
+        "width": 1056,
+        "height": 640,
+        "error": 0,
+        "batches": 2,
+        "points": 3073,
+        "lines": 15,
+        "spheres": 0
+      }
+    },
+    {
+      "name": "reduced-motion startup pauses the prescribed trajectory",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "four observation modes change pixels without changing motion parameters",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "four presets change rendered geometry",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "native keyboard range changes affect orbit precession vibration breathing and window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "palette preserves parameters and physical/display times remain separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "scrub pauses stable framebuffer and play advances time and pixels",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "keyboard zoom fit and mouse drag update camera",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "motion reset restores selected preset cycle and observation window",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "motion JSON and SVG are actually downloaded and retain exact finite state",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "matter cutaway void finite-probe fixture and three grid sizes render; packing exports preserve state",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Fibonacci unequal seeded arrangement spherical container and packing reset work",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "390 320 and landscape layouts paint without page overflow after repeated switches; exports work",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "native reload starts default paused motion without stale packing state",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "centered synthetic sphere fixture has a filled cutaway-cap pixel",
+      "passed": true,
+      "detail": [
+        29,
+        117,
+        88,
+        255
+      ]
+    },
+    {
+      "name": "native context loss and restoration require reload; reload recreates working scene",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "separate synthetic unavailable-WebGL2 fault shows explicit requirement rather than false rendering",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "main flow has no uncaught page exceptions or external requests",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "downloads": [
+    {
+      "scenario": "motion-export",
+      "lab": "motion",
+      "mode": "exposure",
+      "json_path": "motion-export/reality-appearance-state.json",
+      "svg_path": "motion-export/reality-appearance-vector.svg",
+      "json_sha256": "b95315e6c0d3d3902ab4da1889083ffd698b5255b3f7ca3b318dc35ff932a03f",
+      "svg_sha256": "63f84d0ad8a7fc5b9fdd3a5804bd66c872eff496dd02ffed19a2cd2548639b13",
+      "svg_glyphs": 3088
+    },
+    {
+      "scenario": "packing-void-export",
+      "lab": "packing",
+      "mode": "void",
+      "json_path": "packing-void-export/reality-appearance-state.json",
+      "svg_path": "packing-void-export/reality-appearance-vector.svg",
+      "json_sha256": "4b94bfaf0fb2602355da1a1caa5a26b9bdea10415e1552fcb61915ea95d3f298",
+      "svg_sha256": "6829099a34f800fd4a072b4c3417261bc37c704ca1c33d2509de240f72dadbfb",
+      "svg_glyphs": 4995
+    },
+    {
+      "scenario": "layout-390-844-export",
+      "lab": "motion",
+      "mode": "snapshot",
+      "json_path": "layout-390-844-export/reality-appearance-state.json",
+      "svg_path": "layout-390-844-export/reality-appearance-vector.svg",
+      "json_sha256": "e93b4bf816571ff646e164043674c60bfd3ac74cb2e4539453409d6b1a819963",
+      "svg_sha256": "94a1296f2a16513b4aeedfa6d93d37927a52d190517fec5ab68c0389d62ec931",
+      "svg_glyphs": 17
+    },
+    {
+      "scenario": "layout-320-844-export",
+      "lab": "motion",
+      "mode": "snapshot",
+      "json_path": "layout-320-844-export/reality-appearance-state.json",
+      "svg_path": "layout-320-844-export/reality-appearance-vector.svg",
+      "json_sha256": "e93b4bf816571ff646e164043674c60bfd3ac74cb2e4539453409d6b1a819963",
+      "svg_sha256": "94a1296f2a16513b4aeedfa6d93d37927a52d190517fec5ab68c0389d62ec931",
+      "svg_glyphs": 17
+    },
+    {
+      "scenario": "layout-844-390-export",
+      "lab": "motion",
+      "mode": "snapshot",
+      "json_path": "layout-844-390-export/reality-appearance-state.json",
+      "svg_path": "layout-844-390-export/reality-appearance-vector.svg",
+      "json_sha256": "e93b4bf816571ff646e164043674c60bfd3ac74cb2e4539453409d6b1a819963",
+      "svg_sha256": "94a1296f2a16513b4aeedfa6d93d37927a52d190517fec5ab68c0389d62ec931",
+      "svg_glyphs": 17
+    }
+  ],
+  "layout_metrics": [
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "innerWidth": 390,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "controls": [
+        {
+          "id": "a-export",
+          "left": 287.3666687011719,
+          "right": 378
+        },
+        {
+          "id": "a-svg",
+          "left": 31,
+          "right": 359
+        }
+      ]
+    },
+    {
+      "viewport": [
+        320,
+        844
+      ],
+      "innerWidth": 320,
+      "clientWidth": 320,
+      "scrollWidth": 320,
+      "controls": [
+        {
+          "id": "a-export",
+          "left": 217.36666870117188,
+          "right": 308
+        },
+        {
+          "id": "a-svg",
+          "left": 31,
+          "right": 289
+        }
+      ]
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "innerWidth": 844,
+      "clientWidth": 844,
+      "scrollWidth": 844,
+      "controls": [
+        {
+          "id": "a-export",
+          "left": 694.6500244140625,
+          "right": 824.0000305175781
+        },
+        {
+          "id": "a-svg",
+          "left": 579,
+          "right": 809
+        }
+      ]
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "external_requests": [],
+  "not_tested": [
+    "physical mobile/touch",
+    "Safari or Edge",
+    "native GPU/Metal or WebGPU",
+    "Unity Unreal or VR",
+    "screen readers or full keyboard traversal",
+    "accessibility conformance",
+    "scientific or learner/educator acceptance",
+    "upstream six-scene regression",
+    "performance benchmarks",
+    "browser profiles extensions or arbitrary file/download permissions"
+  ],
+  "browser_version": "142.0.1",
+  "renderer": {
+    "version": "WebGL 2.0",
+    "vendor": "Mozilla",
+    "renderer": "llvmpipe, or similar"
+  },
+  "finished_utc": "2026-11-08T12:59:58.493774+00:00"
+}

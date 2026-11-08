@@ -14,13 +14,13 @@
       "rights": {
         "license_declared": "CC0-1.0",
         "license_path": "tools/reality-atlas/LICENSE.CC0-1.0.txt",
-        "scope": "Preserved HTML artifact only; archive-facing documentation is CC BY 4.0.",
+        "scope": "Preserved HTML artifact only is CC0; archive harness and documentation are CC BY 4.0.",
         "review_record": "tools/reality-atlas/README.md"
       },
       "verification": {
-        "status": "focused_calculation_checks_passed_browser_blocked",
-        "record": "tools/reality-atlas/README.md",
-        "limitations": "46 calculation/syntax checks passed. Fresh browser rendering, interaction and export remain unverified."
+        "status": "scoped_offline_software_webgl_browser_and_calculation_checks_passed",
+        "record": "docs/test-reports/reality-atlas-browser-2026-11-08.md",
+        "limitations": "46 calculation/syntax checks and 18 scoped check groups per Chromium/Firefox engine pass for unchanged HTML using software WebGL2, native controls and saved JSON/SVG exports. Native GPUs, physical devices/touch, Safari, accessibility, human learning and upstream six-scene acceptance remain unverified."
       },
       "preserved_manifest": null,
       "pinned_files": [
