@@ -4,7 +4,7 @@ An original, free, dependency-free **offline prototype** for reviewing water-poi
 
 **Not water testing, WPdx certification, upload approval, or a verified improvement to field practice.** It is an independent public-benefit experiment, not affiliated with or endorsed by WPdx. Its usefulness and offline demand are unvalidated. WPdx already provides ingestion validation; this tool is not a replacement.
 
-**Browser verification has not run.** The 84 passing checks cover core logic, static source/build properties and a simulated controller. Real rendering, downloads, mobile use, assistive technology and CSP enforcement remain unverified. See the [verification record](docs/verification.md) before trying real data.
+**85 Node checks and scoped offline Chromium/Firefox browser checks pass with invented data.** Real local downloads, file import, reload consent, narrow layouts and selected CSP enforcement are exercised. Large-paste responsiveness, physical devices, assistive technology and practitioner usefulness remain unverified. See the [dated browser report](../../docs/test-reports/water-browser-2026-11-08.md) and [verification record](docs/verification.md).
 
 ## Try it
 
@@ -29,6 +29,8 @@ See [rule decisions and reconciliation](docs/rules.md), [source provenance](docs
 ### Limits
 
 The file picker permits up to **5,000,000 bytes**. The text parser permits **5,000,000 JavaScript string units**, **25,000 data records**, **256 columns**, and **65,536 string units per cell**. Physical empty lines are skipped but source record/line numbering is preserved. The first **2,000 findings** are retained; all additional findings are counted and the omission is prominently reported. Each retained value is shortened to at most 160 string units. Findings are paginated 100 at a time.
+
+Prefer the file picker for large CSVs. A roughly one-million-character automated textarea fill timed out in Chromium; large-paste responsiveness remains unresolved. The 25,000-record synthetic file-picker path passes both tested browsers, which does not establish maximum-size paste performance.
 
 An incomplete parse or mapping prevents full review. A width error skips that row's field checks and marks the review incomplete. “Checks finished” means this bounded checker ran, not that a dataset passed any official process.
 
@@ -55,7 +57,7 @@ NODE_PATH=/path/to/existing/node_modules WATER_BROWSER=chromium WATER_QA_DIR=/tm
 NODE_PATH=/path/to/existing/node_modules WATER_BROWSER=firefox WATER_QA_DIR=/tmp/water-firefox node tests/browser.cjs
 ```
 
-They do not add dependencies to the delivered app. The browser tests copy only `index.html` into an isolated folder and use its `file://` URL with browser networking offline. `WATER_BROWSER_EXECUTABLE` may select an existing browser binary; otherwise the matching Playwright-managed browser is used. Screenshots and a JSON summary are written to `WATER_QA_DIR`, including on assertion or launch failure. Tests use invented records only. Narrow desktop viewports are not physical-phone tests. See the verification record for what actually ran and what did not.
+They do not add dependencies to the delivered app. The browser tests copy only `index.html` into an isolated folder and use its `file://` URL with browser networking offline. `WATER_BROWSER_EXECUTABLE` may select an existing browser binary; otherwise the matching Playwright-managed browser is used. Screenshots and a JSON summary are written to `WATER_QA_DIR`, including on browser assertion or launch failure after report initialization. Tests use invented records only. Narrow desktop viewports are not physical-phone tests. See the verification record for what actually ran and what did not.
 
 ## License and attribution
 

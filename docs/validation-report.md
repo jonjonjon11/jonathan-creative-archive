@@ -103,3 +103,7 @@ These are pre-publication content checks. The initial public repository’s owne
 ## Motion browser validation update — 2026-11-08
 
 The earlier local launch failure remains historical and reproducible. New Ubuntu 24.04 CI checks pass for Chromium and Firefox, both source and standalone, including offline native controls and real JSON downloads. Screenshot review exposed and corrected an opaque SVG time-axis fill. See the [exact dated report](test-reports/motion-browser-2026-11-08.md) for revisions, versions, failures, checks and remaining physical-device/accessibility/human-review limits. Other artifacts' browser gaps are unchanged.
+
+## Water browser validation update — 2026-11-08
+
+The earlier blocked local browser attempt remains historical. Scoped Ubuntu 24.04 CI now passes Chromium and Firefox using invented records, isolated file loading, real local exports, native CSV import, reload consent, narrow layouts and selected CSP probes. Browser tests exposed and corrected checkbox restoration and six-digit count overflow. Water has 85 passing Node tests; the archive aggregate has 251 Python and 184 Node tests. See the [dated report](test-reports/water-browser-2026-11-08.md) for exact revisions, successful and failed runs, visual evidence and the unresolved large-paste timeout. No water-safety, practitioner-effectiveness, physical-device or accessibility acceptance is implied.

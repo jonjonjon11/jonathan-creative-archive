@@ -1,10 +1,10 @@
 {
   "name": "water-point-preflight",
   "version": "0.1.0",
-  "review_date": "2026-11-07",
+  "review_date": "2026-11-08",
   "kind": "original independent offline prototype",
   "license": "CC-BY-4.0",
-  "publication_status": "Experimental archive edition; partial unofficial preflight, not browser-validated or field-validated.",
+  "publication_status": "Experimental archive edition with scoped synthetic Chromium/Firefox browser checks; partial unofficial preflight, not field-validated.",
   "runtime_dependencies": [],
   "synthetic_data_only": true,
   "reference_sources": [
@@ -19,8 +19,9 @@
     "static_tests_passed": 6,
     "controller_model_tests_passed": 6,
     "standalone_build_matches": true,
-    "browser_tests": "not run: browser startup/protocol restrictions",
-    "field_effectiveness": "unvalidated"
+    "browser_tests": "19 scoped check groups passed in each of Chromium and Firefox; see ../../docs/test-reports/water-browser-2026-11-08.md",
+    "field_effectiveness": "unvalidated",
+    "large_paste_responsiveness": "unresolved after a Chromium timeout; maximum-record native file import passes"
   },
   "files": [
     {
@@ -30,8 +31,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 6067,
-      "sha256": "0858e6ac28fa209c7242c0b2a6a70f0c502e20c7732fdfb24508987b48ae36da"
+      "bytes": 6539,
+      "sha256": "df3fdcebc2549230c25117bf1c545bcf757725d3945f7392df54e3e7695dccac"
     },
     {
       "path": "build.cjs",
@@ -55,8 +56,8 @@
     },
     {
       "path": "docs/verification.md",
-      "bytes": 3872,
-      "sha256": "2b2d1986436f00620940e63be70af7ad4c5afef7bfe46341126e1d4b7ff71c22"
+      "bytes": 4866,
+      "sha256": "635f807eba7ebb07c78e78a80f8813d5d40926ace37430d22acfd2149f58b161"
     },
     {
       "path": "fixtures/synthetic-clean.csv",
@@ -120,5 +121,5 @@
     }
   ],
   "archive_path": "tools/water-survey-preflight",
-  "release_notes": "Browser-validation work adds isolated synthetic Chromium/Firefox CI and disables browser restoration of the report-value opt-in. See the verification record for actual evidence and remaining limitations."
+  "release_notes": "Scoped offline browser CI and evidence added. Runtime changes prevent export-value consent restoration and narrow maximum-count overflow. Core rules and fixtures unchanged; large-paste responsiveness and field usefulness remain unvalidated."
 }
