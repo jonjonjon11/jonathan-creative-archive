@@ -30,8 +30,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5487,
-      "sha256": "14f6c11efe77a3ae46a337f977340b3c5364d7694c02348ee9e11e1baac1808b"
+      "bytes": 6067,
+      "sha256": "0858e6ac28fa209c7242c0b2a6a70f0c502e20c7732fdfb24508987b48ae36da"
     },
     {
       "path": "build.cjs",
@@ -95,8 +95,8 @@
     },
     {
       "path": "tests/browser.cjs",
-      "bytes": 10499,
-      "sha256": "c5e31c5b984e55aa0568c51e3874a43fafe4eb289eb6fad745fba1b7d4325c21"
+      "bytes": 16116,
+      "sha256": "c7fa5afcc20630456b8b3f96a0eb43f28578bd946c83e6e2f7e82022a62d5b23"
     },
     {
       "path": "tests/core.test.cjs",

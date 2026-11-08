@@ -48,13 +48,14 @@ node build.cjs --check
 node --test tests/*.test.cjs
 ```
 
-Optional browser tests use an existing Playwright installation and Chromium, only for testing:
+Optional browser tests use an existing Playwright installation and Chromium or Firefox, only for testing. CI pins Playwright 1.56.0. The runner does not install dependencies:
 
 ```sh
-NODE_PATH=/path/to/existing/node_modules CHROMIUM=/path/to/chromium node tests/browser.cjs
+NODE_PATH=/path/to/existing/node_modules WATER_BROWSER=chromium WATER_QA_DIR=/tmp/water-chromium node tests/browser.cjs
+NODE_PATH=/path/to/existing/node_modules WATER_BROWSER=firefox WATER_QA_DIR=/tmp/water-firefox node tests/browser.cjs
 ```
 
-They do not add dependencies to the delivered app. The browser tests run against the local `file://` page with browser networking offline. See the verification record for what actually ran and what did not.
+They do not add dependencies to the delivered app. The browser tests copy only `index.html` into an isolated folder and use its `file://` URL with browser networking offline. `WATER_BROWSER_EXECUTABLE` may select an existing browser binary; otherwise the matching Playwright-managed browser is used. Screenshots and a JSON summary are written to `WATER_QA_DIR`, including on assertion or launch failure. Tests use invented records only. Narrow desktop viewports are not physical-phone tests. See the verification record for what actually ran and what did not.
 
 ## License and attribution
 
