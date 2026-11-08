@@ -3,13 +3,14 @@
 import argparse
 from pathlib import Path
 from validate import ROOT, load, validate
+from followup import load_followup, validate_followup, render_followup
 
 
 def render(document, register):
     sources = {s["id"]: s for s in register["sources"]}
     def citations(ids):
         return "; ".join(f"[{i}]({sources[i]['url']})" for i in ids)
-    lines = ["# ALS evidence map", "", f"Snapshot: {document['as_of']}. Six purposively selected records. Not comprehensive.", "", "**Draft research candidate. Not independently reviewed by an ALS clinician. No patient predictions or treatment recommendations.**", "", "Read README.md for selection, interpretation, reproducibility, and limitations. Source dates and access caveats are in SOURCE_ACCESS.md.", ""]
+    lines = ["# ALS evidence map", "", f"Snapshot: {document['as_of']}. Six purposively selected records. Not comprehensive.", "", "**Draft research candidate. Not independently reviewed by an ALS clinician. No patient predictions or treatment recommendations.**", "", "Read README.md for selection, interpretation, reproducibility, and limitations. Source dates and access caveats are in SOURCE_ACCESS.md. A separately dated [VALOR/OLE follow-up](VALOR_OLE_FOLLOWUP.md) adds later evidence without changing the historical primary result.", ""]
     for r in document["records"]:
         lines += [f"## {r['title']}", "", f"- Record: `{r['id']}`", f"- Stage: {r['stage'].replace('_', ' ')}", f"- Target: {r['target']}", f"- Population: {r['population']}", f"- Design: {r['design']}", f"- Trial identifiers: {', '.join(r['trial_ids']) or 'None asserted in this record'}", f"- Context sources: {citations(r['source_ids'])}", ""]
         for o in r["observations"]:
@@ -56,7 +57,11 @@ def main():
     args = parser.parse_args()
     document, register = load()
     validate(document, register)
-    for filename, content in render(document, register).items():
+    followup = load_followup()
+    validate_followup(followup, document)
+    views = render(document, register)
+    views["VALOR_OLE_FOLLOWUP.md"] = render_followup(followup)
+    for filename, content in views.items():
         path = ROOT / filename
         if args.check:
             if not path.exists() or path.read_text(encoding="utf-8") != content:

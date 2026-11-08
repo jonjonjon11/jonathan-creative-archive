@@ -96,7 +96,7 @@
         "VALOR's prespecified primary clinical result was nonsignificant."
       ],
       "unknowns": [
-        "The total later clinical, safety, and confirmatory-trial evidence is not synthesized here. The final VALOR/OLE paper is a verified, explicit scope exclusion below."
+        "This historical record does not synthesize all later evidence. See the separately dated VALOR_OLE_FOLLOWUP.md for the bounded final VALOR/OLE extraction."
       ],
       "caveats": [
         "Do not generalize SOD1-specific evidence to all ALS.",
@@ -115,7 +115,7 @@
       "scope_exclusions": [
         {
           "source_id": "valor_ole_final_2025",
-          "reason": "Significant named omission: the final integrated VALOR/open-label-extension report was published online 2025-12-22. Its longer-term efficacy and safety results have not been extracted or appraised here. This record covers the original randomized result and original US approval only, not the total current tofersen evidence."
+          "reason": "Excluded from this original-trial/approval record. Selected final VALOR/OLE outcomes and limitations are now extracted separately in VALOR_OLE_FOLLOWUP.md, dated 2026-11-08; the historical primary result is unchanged."
         }
       ]
     },
