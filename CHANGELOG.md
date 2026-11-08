@@ -1,3 +1,9 @@
+## Reality Atlas browser verification, 2026-11-08
+
+- Preserve the original CC0 0.3.1 HTML bytes and add isolated offline Chromium/Firefox WebGL2 CI checks with recorded software renderers.
+- Verify rendered controls, motion/packing/void, actual JSON/SVG downloads, narrow viewports, reload and graphics-failure messages.
+- Record exact evidence and remaining physical-device, native-GPU, accessibility, human-learning and upstream-regression limits in the [dated report](docs/test-reports/reality-atlas-browser-2026-11-08.md).
+
 ## Water browser verification, 2026-11-08
 
 - Add isolated synthetic Chromium/Firefox checks, real downloads and file imports, reload-consent regressions, narrow maximum-count layouts and positive-control CSP probes to CI.

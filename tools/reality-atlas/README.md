@@ -9,15 +9,17 @@ A recovered, self-contained browser teaching tool for motion, observation, spher
 3. If a file-preview app shows text or a blank preview, use an actual browser. No server, account, paid API, or runtime download is required by the file.
 4. Start with Motion composer. Compare Snapshot, Trail, Exposure, and Occupancy. Then try Matter & void, change the radius family, and vary the probe radius.
 
-The interface includes Save state (JSON) and Export vector view (SVG). These are existing source features, **not freshly browser-verified exports** in this archive review.
+The interface includes Save state (JSON) and Export vector view (SVG). Both now have actual saved-download checks in Chromium and Firefox; see the [dated browser report](../../docs/test-reports/reality-atlas-browser-2026-11-08.md).
 
-## Fresh testing: limited pass; browser test blocked
+## Fresh testing: calculation and scoped browser checks pass
 
 **46 focused calculation-layer and syntax checks passed** on Node v24.22.1. The test extracts the original calculation code, leaves the HTML unchanged, and supplies no filesystem, network, process, or browser objects to that code. It checks finite geometry, circle closure, rotation, declared speed bounds, history budgets/weights, occupancy weight conservation, deterministic non-overlapping packing, finite-probe voxel behavior, invalid inputs, the exact original hash, and whole-script syntax.
 
 Run `node scripts/check_reality_core.cjs` from the repository root. [Machine-readable results](core-check-results.json) list the checks.
 
-**A fresh rendered-browser test did not run.** Chromium aborted before loading the file because this environment denied creation of its process-singleton socket, including the permitted escalated attempt. Therefore no new claim is made about WebGL rendering, interaction, downloads, SVG export, narrow-screen layout, accessibility, or device performance.
+**Scoped offline Chromium/Firefox browser checks pass** on GitHub-hosted Ubuntu 24.04 with recorded software WebGL2 renderers. Each engine passed 18 check groups: actual file loading, framebuffer/control changes, motion/packing/void views, five saved JSON/SVG pairs, repeated narrow-layout switches, reload and explicit graphics-failure handling. The [dated report](../../docs/test-reports/reality-atlas-browser-2026-11-08.md) includes exact versions, hashes, evidence and reproduction commands.
+
+The initial archive attempt failed before page load because the local environment denied Chromium process-singleton socket creation. That historical local limit is unchanged. The new CI evidence does not establish physical phones/touch, Safari, native GPUs, accessibility, human learning outcomes or device performance.
 
 Historical source records report 40 numerical/build checks and 41 Chromium/SwiftShader browser/pixel checks. Those historical suites were not rerun here. iPhone/Safari, native GPU, Unity, VR/headsets, and full inherited-regression acceptance remain unestablished by this edition.
 

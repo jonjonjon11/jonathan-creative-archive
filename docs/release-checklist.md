@@ -25,7 +25,7 @@ Review date: 2026-11-06. A clean structural check is not a complete security, le
 - Run `python3 scripts/validate_archive.py` for structure, source references, links, and selected privacy markers.
 - Run `node scripts/check_reality_core.cjs` for the preserved tool’s 46 focused calculation/syntax checks.
 - The cooperation/rescue validator and all 25 preserved tests passed; these check authoring/reference logic, not playable content or safety certification.
-- The Reality Atlas tool’s fresh rendered-browser test was blocked before page load. Browser interaction, WebGL rendering, downloads, SVG export, accessibility, mobile, and headset acceptance remain unverified in this edition.
+- Reality Atlas has [scoped offline Chromium/Firefox software-WebGL2 checks](test-reports/reality-atlas-browser-2026-11-08.md), including controls, saved JSON/SVG exports and narrow desktop viewports. The HTML hash is unchanged. Physical mobile/touch, native GPUs, accessibility, human learning and headsets remain unverified.
 - Lumen Commons has 24 passing Node tests, static build/source-parity checks and [offline Chromium/Firefox standalone checks](test-reports/lumen-browser-2026-11-08.md). Physical-device/touch, audio, accessibility and learner acceptance remain open.
 - Historical source test reports remain distinct from newly executed checks.
 - SHA-256 values in `data/checksums.json` support file-integrity comparison; they are not proof of scientific correctness or rights.

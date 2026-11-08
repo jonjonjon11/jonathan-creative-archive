@@ -72,10 +72,10 @@
       ],
       "artifact_status": "source_inspected",
       "scientific_standing": "established_model_scoped",
-      "limitations": "Historical tests not rerun; not quantum truth or headset acceptance.",
-      "next_step": "Open the included standalone in a WebGL2 browser and conduct a documented rendering, interaction and export check.",
+      "limitations": "Prescribed classical geometry and approximate voxel connectivity, not quantum truth. Software-WebGL browser checks do not establish native GPUs, physical devices, accessibility, human learning or the upstream six-scene regression.",
+      "next_step": "Review docs/test-reports/reality-atlas-browser-2026-11-08.md, then assess actual target devices, accessibility and learner workflows before expanding claims.",
       "included_artifact": "tools/reality-atlas/Reality_Atlas_Appearance_0.3.1.html",
-      "limited_verification": "46 original calculation-layer/syntax checks passed on Node v24.22.1. Fresh Chromium test blocked before load."
+      "limited_verification": "46 calculation/syntax checks and 18 scoped Chromium/Firefox browser check groups per engine pass on the unchanged standalone, with software WebGL2, actual file navigation and saved JSON/SVG downloads."
     },
     {
       "id": "CON-005",

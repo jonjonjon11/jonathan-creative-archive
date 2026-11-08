@@ -14,7 +14,7 @@ Command: `node scripts/check_reality_core.cjs`.
 
 Result: 46 focused checks passed on Node v24.22.1. The exact unchanged artifact hash and full inline-script syntax were checked, followed by calculation-layer tests. See `tools/reality-atlas/core-check-results.json` and the tool README for scope and limitations.
 
-Fresh browser status: BLOCKED BEFORE PAGE LOAD. Chromium could not create its process-singleton socket in this environment, including the permitted escalated attempt. No fresh rendering, UI, downloads, SVG exports, accessibility, responsive layout, mobile, headset, or performance acceptance is claimed. Historical upstream browser counts are separate and were not rerun.
+Initial-edition browser status: BLOCKED BEFORE PAGE LOAD (superseded only for the scoped CI checks documented below). Chromium could not create its process-singleton socket in this environment, including the permitted escalated attempt. That initial attempt established no fresh rendering, UI, download, SVG-export, accessibility, responsive-layout, mobile, headset or performance acceptance. Historical upstream browser counts remain separate and were not rerun wholesale.
 
 ## Cooperation/rescue authoring kit
 
@@ -107,3 +107,7 @@ The earlier local launch failure remains historical and reproducible. New Ubuntu
 ## Water browser validation update — 2026-11-08
 
 The earlier blocked local browser attempt remains historical. Scoped Ubuntu 24.04 CI now passes Chromium and Firefox using invented records, isolated file loading, real local exports, native CSV import, reload consent, narrow layouts and selected CSP probes. Browser tests exposed and corrected checkbox restoration and six-digit count overflow. Water has 85 passing Node tests; the archive aggregate has 251 Python and 184 Node tests. See the [dated report](test-reports/water-browser-2026-11-08.md) for exact revisions, successful and failed runs, visual evidence and the unresolved large-paste timeout. No water-safety, practitioner-effectiveness, physical-device or accessibility acceptance is implied.
+
+## Reality Atlas browser validation update — 2026-11-08
+
+The unchanged 0.3.1 standalone now passes 18 scoped check groups in each of Chromium and Firefox on GitHub-hosted Ubuntu 24.04 with recorded software WebGL2 renderers. Checks include actual isolated file navigation, rendered frame changes, native controls, five saved JSON/SVG pairs per browser, narrow/landscape desktop viewports, reload and explicit graphics-failure handling. The 46 calculation/syntax checks still pass. See the [dated evidence report](test-reports/reality-atlas-browser-2026-11-08.md) for exact hashes, runs, retained artifacts and limitations. This does not validate native GPU, iPhone/Safari, accessibility, learning outcomes or the upstream six-scene suite. The earlier local launch failure remains historical.
