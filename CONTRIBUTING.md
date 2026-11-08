@@ -26,3 +26,7 @@ Do not submit personal records, medical details, credentials, identifying inform
 ## Review
 
 Run the structural validator and [Archive Steward](tools/archive-steward/README.md), then review the prose. When adding a recovered artifact, update `data/artifacts.json` with the exact rights scope and verification limits. Review all new and changed files before refreshing `data/checksums.json`; the read-only helper deliberately cannot bless a new baseline. Automated checks cannot establish truth, license compatibility, safety, or completeness. Corrections should preserve the source history of the claim rather than silently rewriting a proposal as an accomplished result.
+
+## Add a learning module
+
+Start with the [authoring guide](docs/knowledge-module-schema.md) and the [corrected worked-example specimen](docs/task-templates/new-example-template.md). The generic template is unreviewed scaffolding, not an accessible or complete lesson. Run `python3 tools/validate.py module data/modules.json data/modules/*.json` and `python3 -B -m unittest discover -s tools/tests -p 'test_*.py'`. These detect structural defects and selected regressions; they do not certify correctness or pedagogy. Include independent mathematical/source review and report which browser or learner checks were not performed.

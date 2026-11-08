@@ -16,8 +16,7 @@
       "[Your name or alias]"
     ],
     "last_reviewed": "[YYYY-MM-DD]",
-    "review_status": "content_complete",
-    
+    "review_status": "draft_unreviewed",
     "learning_objectives": [
       "First learning objective (measurable, action-oriented)",
       "Second learning objective",
@@ -25,7 +24,6 @@
       "Fourth learning objective",
       "Fifth learning objective"
     ],
-    
     "prerequisites": [
       {
         "id": "MOD-[prerequisite-id]",
@@ -33,13 +31,11 @@
         "description": "[Why it matters as preparation]"
       }
     ],
-    
     "content": {
       "introduction": {
         "plain_text": "# Why This Matters\n\n[Explanation of why this topic is important. Why does a learner need to know this? What problems does it solve? What doors does it open?]\n\n[2-3 concrete examples of where this shows up in real life]",
         "estimated_reading_minutes": 3
       },
-      
       "core_lesson": {
         "sections": [
           {
@@ -64,7 +60,6 @@
           }
         ]
       },
-      
       "worked_examples": [
         {
           "id": "EX-001",
@@ -127,7 +122,6 @@
           "visual_description": "[Visual representation]"
         }
       ],
-      
       "exercises": [
         {
           "id": "EX-001",
@@ -175,12 +169,9 @@
           "answer": "[Final answer]"
         }
       ],
-      
       "interactive_experience": "[Optional: Link to interactive HTML lab or note: 'No interactive lab for this module']",
-      
       "text_only_path": "[Optional: Complete summary of lesson in plain text for accessibility. Can reference core_lesson + worked_examples.]"
     },
-    
     "sources": [
       {
         "title": "[Source title]",
@@ -197,7 +188,6 @@
         "description": "[Why this source]"
       }
     ],
-    
     "contribution_opportunities": [
       {
         "title": "[Opportunity 1]",
@@ -206,8 +196,7 @@
         "difficulty": "beginner"
       }
     ],
-    
-    "accessibility_notes": "Keyboard navigable, semantic HTML, text-only path provided, reduced-motion support",
-    "accessibility_level": "partial_verified"
+    "accessibility_notes": "Describe actual checks and untested features. A JSON template supplies no keyboard, screen-reader, contrast or reduced-motion verification.",
+    "accessibility_level": "unverified"
   }
 }

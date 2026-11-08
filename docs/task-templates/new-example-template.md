@@ -1,144 +1,115 @@
-# New Worked Example Template
+# Add a worked motion example
 
-Use this template to add a new worked example to the Motion → Trace → Shape module.
+Use the [corrected module](../../data/modules.json) and [paper-first lesson](../lessons/motion-trace-shape.md), not a remembered picture of a frequency ratio. Frequency ratio **and phase** determine the trace. In this lab amplitudes are equal and the parameter names `x_frequency` and `y_frequency` denote repeat counts over the eight-second window, not hertz.
 
-## Instructions
+## A complete, mathematically checked specimen
 
-1. Review the three existing worked examples in `data/modules.json` (search for `"worked_examples"`)
-2. Choose a frequency ratio or phase offset not yet demonstrated
-3. Work through the mathematics yourself
-4. Test your example in the interactive lab at `tools/motion-trace-shape/Motion-Trace-Shape.html`
-5. Write your example using this template
-6. Submit via pull request
-
----
-
-## New Worked Example
-
-Replace everything below with your example. Keep the JSON structure exactly as shown.
+This specimen is an authoring example, not a claim of browser, educator or learner acceptance. It is not yet inserted into the canonical module. Check that its ID is unused before adding it. New contributors can use its format but should choose their own useful question rather than blindly duplicate it.
 
 ```json
 {
   "id": "EXE-LJ-004",
-  "title": "[Your Example Title]",
-  "difficulty": "beginner OR intermediate OR advanced",
-  "scenario": "[Brief description of the setup: frequencies, phase offset, what makes it interesting]",
-  "parameters": {
-    "x_frequency": [integer 1-4],
-    "y_frequency": [integer 1-4],
-    "phase_offset_degrees": [0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300, 315, 330, 345],
-    "time_window_seconds": 8
-  },
-  "prediction": "[What shape or pattern do you expect to see? Be specific.]",
-  "step_by_step": [
-    "[At time t=0: describe the starting positions of x and y]",
-    "[At time t=[some moment]: describe what's happening]",
-    "[At time t=[another moment]: describe the progression]",
-    "[Conclude with how the pattern completes]"
-  ],
-  "explanation": "[Why does this combination of parameters produce this shape? Explain the relationship between frequency ratio and phase offset.]",
-  "mathematical_form": "[Equations: x(t) = ..., y(t) = ..., and any derived relationships like x² + y² = ... if applicable]",
-  "verification": "[How can someone test this in the interactive lab? Example: 'Set x cycles to 1, y cycles to 3, phase offset to 45°, and press Play.']"
-}
-```
-
----
-
-## Choosing Your Example
-
-### Suggested Frequency Ratios
-- **1:2** (already done: figure-eight)
-- **1:3** — Creates a three-lobed shape
-- **2:3** — Creates a six-pointed pattern
-- **3:2** — Similar to 2:3 but reversed
-- **3:4** — Creates a more complex shape
-- **4:3** — Another interesting ratio
-- **5:2** or **5:3** — High ratios create intricate patterns
-
-### Suggested Phase Offsets (for same frequencies)
-- **45°** — Creates an ellipse (between line and circle)
-- **135°** — Another ellipse orientation
-- **225°** — Yet another orientation
-
-### Educational Value
-
-Choose an example that:
-- Teaches something new that isn't covered by the existing three examples
-- Shows a clear pattern or progression
-- Helps learners see how frequency ratio and phase work together
-- Is testable in the interactive lab
-
----
-
-## Verification Checklist
-
-Before submitting, verify:
-
-- [ ] I have tested my example in the interactive lab
-- [ ] The mathematical equations are correct
-- [ ] The prediction matches what I observed
-- [ ] The step-by-step explanation is clear and accurate
-- [ ] The JSON structure is valid (no syntax errors)
-- [ ] The example teaches something not already covered
-- [ ] The explanation is accessible to beginners
-- [ ] The verification instructions are clear enough for someone else to test
-
----
-
-## Example of a Good New Example
-
-Here's a complete example to show you the format:
-
-```json
-{
-  "id": "EXE-LJ-004",
-  "title": "The Three-Lobed Flower: 1:3 Frequency Ratio",
-  "difficulty": "beginner",
-  "scenario": "The x-motion oscillates once while the y-motion oscillates three times. Both start together (phase offset = 0°). This creates a shape with three distinct lobes.",
+  "title": "One-to-three at zero phase: a retraced cubic",
+  "difficulty": "intermediate",
+  "scenario": "Over eight seconds, x repeats once and y repeats three times, with equal amplitudes and zero phase offset.",
   "parameters": {
     "x_frequency": 1,
     "y_frequency": 3,
     "phase_offset_degrees": 0,
     "time_window_seconds": 8
   },
-  "prediction": "A three-lobed or three-pointed shape, similar to a flower or cloverleaf. The three lobes appear symmetrically around the center.",
+  "prediction": "The point travels along the graph y = 3x - 4x³ for -1 ≤ x ≤ 1, retracing it. This is not a three-petal flower.",
   "step_by_step": [
-    "At t=0: both x and y start at the center (0, 0)",
-    "As t increases: x moves slowly right while y oscillates quickly up-down-up-down-up",
-    "At t≈2.67: x reaches its rightmost point (+1) and y completes 1 full cycle, returning to 0",
-    "As t continues: x moves back left while y oscillates 2 more times",
-    "By t=8: x completes one cycle and y completes three, creating a symmetric three-lobed pattern"
+    "Let u = 2πt/8. Then x = sin(u) and y = sin(3u).",
+    "The triple-angle identity gives sin(3u) = 3sin(u) - 4sin³(u), so y = 3x - 4x³.",
+    "At t = 0 the point is (0, 0). At t = 1 it is (√2/2, √2/2). At t = 2 it is (1, -1).",
+    "At t = 3 it returns to (√2/2, √2/2), and at t = 4 it returns to (0, 0).",
+    "The second half visits the negative-x portion: at t = 6 the point is (-1, 1). At t = 8 it returns to the origin."
   ],
-  "explanation": "The 1:3 frequency ratio means y oscillates three times for every one oscillation of x. This creates three distinct lobes because y's quick oscillations are 'sampled' at three different x-positions (right, center, and left). The resulting shape is symmetric and resembles a flower.",
-  "mathematical_form": "x(t) = sin(2π · 1 · t / 8) = sin(πt / 4)\ny(t) = sin(2π · 3 · t / 8) = sin(3πt / 4)\nThe frequency ratio 3:1 determines the three-lobed structure.",
-  "verification": "In the interactive lab: Set x cycles to 1, y cycles to 3, phase offset to 0°. Press Play. You should see the point trace a symmetric three-lobed shape."
+  "explanation": "Each x value determines exactly one y value at this phase. Multiple times can have the same coordinates, so repeated motion does not imply distinct petals. Time direction and speed are separate from the geometric set of points.",
+  "mathematical_form": "x(t) = sin(2πt/8); y(t) = sin(6πt/8); y = 3x - 4x³, -1 ≤ x ≤ 1.",
+  "verification": "Compute the listed coordinates and compare with the cubic. If a browser is available, set x repeats to 1, y repeats to 3 and phase to 0°, then use Step or the time slider. Record actual browser observations separately from mathematical checks.",
+  "verification_samples": [
+    {
+      "t_seconds": 0,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "t_seconds": 1,
+      "x": 0.7071067811865476,
+      "y": 0.7071067811865476
+    },
+    {
+      "t_seconds": 2,
+      "x": 1,
+      "y": -1
+    },
+    {
+      "t_seconds": 3,
+      "x": 0.7071067811865476,
+      "y": 0.7071067811865476
+    },
+    {
+      "t_seconds": 4,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "t_seconds": 5,
+      "x": -0.7071067811865476,
+      "y": -0.7071067811865476
+    },
+    {
+      "t_seconds": 6,
+      "x": -1,
+      "y": 1
+    },
+    {
+      "t_seconds": 7,
+      "x": -0.7071067811865476,
+      "y": -0.7071067811865476
+    },
+    {
+      "t_seconds": 8,
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "derived_relation": {
+    "form": "y = a*x + b*x^3",
+    "a": 3,
+    "b": -4
+  }
 }
 ```
 
----
+## Why the triple-angle identity works
 
-## Submitting Your Example
+Expand sin(2u + u):
 
-1. Fork or clone the repository
-2. Edit `data/modules.json`
-3. Find the `"worked_examples"` array (around line 1800)
-4. Add your new example to the array (don't forget the comma after the previous example)
-5. Run validation:
-   ```bash
-   python3 -m json.tool data/modules.json > /dev/null
-   ```
-   (This checks for JSON syntax errors)
-6. Commit and open a pull request
-7. In the PR description, reference the task: "Addresses TASK-motion-add-example"
+sin(3u) = sin(2u)cos(u) + cos(2u)sin(u)
+= 2sin(u)cos²(u) + (1 − 2sin²(u))sin(u)
+= 3sin(u) − 4sin³(u).
 
----
+No physical force, measured phenomenon or new theory is being inferred. This is an algebraic identity for the lab's sinusoidal model. Changing phase generally invalidates the specific cubic relation above.
 
-## Questions?
+## Choose another useful question
 
-If you're unsure about something:
-- Re-read the existing worked examples
-- Test your idea in the interactive lab first
-- Check the references (Wolfram MathWorld, OpenStax)
-- Ask in the repository issues
+- At equal repeat counts, compare 45° and 135°: both give ellipses, with different orientation. Derive rather than guess their equations.
+- Compare 1:3 at 0° and 90°. Show why the same repeat counts do not guarantee the same trace.
+- For 2:3 at a stated phase, calculate a coordinate table before describing the shape. Do not infer a fixed number of points or petals from the ratio alone.
+- Stay within the actual lab controls (repeat counts 1–4); do not promise that 5:2 can be selected without a separate lab change.
 
-Thank you for expanding the Motion → Trace → Shape lesson!
+## Contribution steps
+
+1. Read the [authoring guide](../knowledge-module-schema.md).
+2. State repeat counts, phase, amplitude convention and time window explicitly.
+3. Work through the equations; provide enough numerical checkpoints to catch a sign, phase or unit error.
+4. Keep calculations separate from browser observations and learning-effectiveness claims.
+5. Add an unused-ID example to `module.content.worked_examples` in `data/modules.json`.
+6. Add regression tests for its actual mathematics, not only its wording.
+7. Run the module validator, relevant motion tests and archive checks; update only reviewed file checksums.
+8. Submit a focused pull request with scope, sources or derivation, commands, outcomes and remaining review needs.
+
+The test suite parses this specimen's JSON and checks its stored numerical checkpoints and cubic coefficients against the sinusoidal model. Prose edits still require review. That does not establish teaching effectiveness, browser compatibility or accessibility. Original specimen and derivation: CC BY 4.0 under the repository license; linked source materials retain their own licenses.

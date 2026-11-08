@@ -10,6 +10,8 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 ## Integrated additions (2026-11-08)
 
+- [Safer contributor authoring checks](docs/knowledge-module-schema.md): malformed records and duplicate identities are rejected, the template starts unverified, and the [1:3 worked example](docs/task-templates/new-example-template.md) derives a retraced cubic instead of repeating the old flower claim. Structural success is not scientific or educational acceptance.
+
 - [Corrected paper-first motion lesson](docs/lessons/motion-trace-shape.md), with worked examples, coordinate tables and regression tests.
 - [Offline evidence integrity auditor](tools/evidence-integrity-audit/README.md), with invented example data and adversarial tests. Checks structure and provenance fields, not scientific truth.
 - [Six-record ALS evidence map](research/als_evidence_map_2026-11-07/README.md), including structured observations, public source references, readable views and reproducibility tools. This incomplete research draft is not treatment guidance and has not received ALS-clinician review.

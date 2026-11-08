@@ -1,12 +1,10 @@
 {
   "task_id": "TASK-motion-add-example",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "project_id": "PROJ-motion-trace-shape",
   "type": "content_improvement",
   "title": "Add a fourth worked example to Motion → Trace → Shape",
-  
   "objective": "Extend the lesson with an additional worked example that demonstrates a less common frequency ratio or phase offset, helping learners build deeper understanding.",
-  
   "scope": [
     "Add one new worked example to the module",
     "Follow the existing format (title, scenario, parameters, prediction, explanation, mathematical form)",
@@ -14,13 +12,11 @@
     "Make it testable in the interactive lab",
     "Keep it accessible to beginners"
   ],
-  
   "restrictions": [
     "Do not remove or modify existing examples or exercises",
     "Do not claim real-world physical effects without justification",
     "Do not introduce unverified mathematics"
   ],
-  
   "inputs": [
     {
       "name": "Current module",
@@ -33,7 +29,6 @@
       "how_to_access": "Provided in the module's sources section"
     }
   ],
-  
   "deliverables": [
     {
       "name": "New worked example",
@@ -58,29 +53,22 @@
       ]
     }
   ],
-  
   "example_ideas": [
-    "A 3:1 frequency ratio (creates a three-lobed shape)",
-    "A 3:2 frequency ratio (creates a six-pointed pattern)",
-    "A high frequency ratio like 5:2 (creates complexity)",
-    "A specific phase offset example not yet covered (e.g., 45° or 135°)",
-    "A scenario contrasting two similar phase offsets to show sensitivity"
+    "Use the mathematically checked 1:3 zero-phase cubic specimen in docs/task-templates/new-example-template.md, after confirming its ID is unused and independently reviewing it.",
+    "Compare equal repeat counts at 45° and 135° and derive the ellipse equations.",
+    "Compare 1:3 at 0° and 90°, verifying how phase changes the trace.",
+    "For 2:3 at a stated phase, calculate coordinates before describing the shape; do not infer a fixed petal count from the ratio alone."
   ],
-  
   "time_estimate_hours": 2,
   "difficulty": "intermediate",
   "priority": "medium",
-  
   "required_skills": [
     "Mathematical writing",
     "Ability to verify calculations",
     "Understanding of Lissajous curves"
   ],
-  
-  "how_to_start": "1. Review the three existing worked examples. 2. Choose a frequency ratio or phase offset not yet covered. 3. Work through the math yourself. 4. Test in the interactive lab (tools/motion-trace-shape/Motion-Trace-Shape.html). 5. Write the example following the existing format. 6. Submit.",
-  
+  "how_to_start": "Read the corrected module, paper-first lesson and new-example template. Choose a precisely parameterized example, verify its equations and coordinates, record any actual browser checks separately, and submit with numerical regression tests.",
   "how_to_submit": "Fork the repository, edit data/modules.json to add your example to the 'worked_examples' array, and open a pull request with a description of what you added.",
-  
   "status": "open",
   "created_date": "2026-11-07"
 }
