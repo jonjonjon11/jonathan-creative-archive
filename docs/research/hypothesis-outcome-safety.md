@@ -3,6 +3,12 @@
 Review date: 2026-11-08 (UTC). Scope: a software correction on top of PR #5 at
 `f67042770e06c9fd0d12fe80003712014a2e0584`, not a scientific validation of that PR.
 
+This is the pinned outcome-safety review record. The subsequent
+[identity/export correction](hypothesis-identity-exports.md) addresses the
+non-therapeutic ID collisions and export caps noted below, advances hypothesis
+exports to version 1.2, and preserves the 1.1 therapeutic IDs. The earlier counts
+and remaining-work statements below describe that earlier scope.
+
 ## Verified failures and correction
 
 The old therapeutic template said every intervention "slows or reverses" its

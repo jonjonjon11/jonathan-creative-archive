@@ -10,7 +10,7 @@
 - Outcome direction and effect size are not inferred for therapeutic questions; populations are caller-supplied labels, not validated indications.
 - Priority scores and timelines are unvalidated heuristics/defaults, not probabilities, clinical effect estimates, or a validated research ranking.
 - Loading an evidence pack does not appraise it or connect its sources to a generated question. Literature counts and registry coefficients are not verified here.
-- Mechanistic and combination templates remain unvalidated; their affirmative wording does not establish causality, efficacy, or synergy.
+- Mechanistic and combination proposals remain unvalidated; caller-supplied descriptions do not establish causality, efficacy, or synergy.
 
 ## Summary
 
@@ -18,6 +18,8 @@
 - **Interventions Reviewed:** 9
 - **Hypotheses Generated:** 16
 - **Questions displayed below:** 10
+
+Showing 10 of 16 questions. [Complete question records](als-aging-hypotheses.json) are in `all_hypotheses`; the JSON top list and this report are previews.
 
 ## First 10 Questions by Unvalidated Heuristic Score
 
@@ -63,37 +65,37 @@
 **Timeline placeholder (unvalidated):** 24 months
 **Prediction:** We hypothesize that Senolytics preferentially target senescent cells; understanding selectivity is crucial. in Cellular Senescence and Aging Acceleration
 
-### 6. Combination: Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) synergizes
+### 6. Combination question: Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others)
 
 **Type:** combination
-**Confidence:** moderate
+**Confidence:** open_question
 **Heuristic score (unvalidated):** 0.70
 **Timeline placeholder (unvalidated):** 24 months
-**Prediction:** Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) together will have greater effect than sum of parts by targeting multiple pathways
+**Prediction:** Test whether Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) has the proposed combined effect: Multi-pathway SOD1-ALS intervention. This is an untested hypothesis, not demonstrated synergy.
 
-### 7. Combination: Microglial Modulation (CSF1R inhibition or M1→M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) synergizes
+### 7. Combination question: Microglial Modulation (CSF1R inhibition or M1→M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches)
 
 **Type:** combination
-**Confidence:** moderate
+**Confidence:** open_question
 **Heuristic score (unvalidated):** 0.70
 **Timeline placeholder (unvalidated):** 24 months
-**Prediction:** Microglial Modulation (CSF1R inhibition or M1→M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) together will have greater effect than sum of parts by targeting multiple pathways
+**Prediction:** Test whether Microglial Modulation (CSF1R inhibition or M1→M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) has the proposed combined effect: Glial support + proteasome rescue. This is an untested hypothesis, not demonstrated synergy.
 
-### 8. Combination: Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) synergizes
+### 8. Combination question: Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular)
 
 **Type:** combination
-**Confidence:** moderate
+**Confidence:** open_question
 **Heuristic score (unvalidated):** 0.70
 **Timeline placeholder (unvalidated):** 24 months
-**Prediction:** Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) together will have greater effect than sum of parts by targeting multiple pathways
+**Prediction:** Test whether Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) has the proposed combined effect: Epigenetic reactivation + neurotrophic support. This is an untested hypothesis, not demonstrated synergy.
 
-### 9. Combination: Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1→M2 polarization) synergizes
+### 9. Combination question: Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1→M2 polarization)
 
 **Type:** combination
-**Confidence:** moderate
+**Confidence:** open_question
 **Heuristic score (unvalidated):** 0.70
 **Timeline placeholder (unvalidated):** 24 months
-**Prediction:** Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1→M2 polarization) together will have greater effect than sum of parts by targeting multiple pathways
+**Prediction:** Test whether Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1→M2 polarization) has the proposed combined effect: Regeneration + trophic + niche support. This is an untested hypothesis, not demonstrated synergy.
 
 ### 10. Does NAD+ Boosting (NMN, NR, or sirtuin activators) change mitochondrial ATP production in all ALS?
 

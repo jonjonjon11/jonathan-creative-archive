@@ -15,13 +15,38 @@ turn an intervention's registry label into confidence in a new outcome claim.
 If population is omitted, it is explicitly `unspecified population`, not SOD1-ALS.
 No clinical benefit or harm is inferred from the question wording.
 
-Hypothesis exports are now version `1.1`. They add `status`, `limitations`,
-`target_outcome`, and `patient_population`. Therapeutic IDs now identify the
-intervention/outcome/population tuple, so distinct questions no longer overwrite
-each other. **Old therapeutic IDs change:** regenerate dependent exports and
-review downstream references rather than joining old and new IDs blindly.
-Identical normalized questions retain one deterministic ID. Non-therapeutic
-records use null outcome/population fields; pathway exports remain version `1.0`.
+Hypothesis exports are now version `1.2`. Version `1.1` added `status`,
+`limitations`, `target_outcome`, and `patient_population`, and changed therapeutic
+IDs to identify intervention/outcome/population tuples. Version `1.2` preserves
+those therapeutic IDs and adds `gap_description`, `proposed_mechanism`, and
+`expected_synergy`. Fields that do not apply to a record are null. Pathway exports
+remain version `1.0`.
+
+**Version 1.2 changes mechanistic and combination IDs.** Mechanistic identity
+includes pathway, gap, and proposed mechanism. Combination identity includes the
+ordered intervention IDs and proposed interaction description. Field boundaries
+are preserved, so concatenated IDs such as `["A", "BC"]` and `["AB", "C"]` no
+longer collide. Whitespace around descriptions is trimmed; ID strings remain
+exact. Reordered intervention lists remain distinct and do not imply a dosing or
+timing protocol. Repeating the same normalized question updates that record;
+mechanistic confidence remains updateable metadata, not part of its identity.
+Regenerate dependent exports and review references to the old IDs. A record
+already overwritten in an old export cannot be recovered without its inputs.
+
+Combination generation now requires at least two distinct registered intervention
+IDs and a nonblank interaction description. Unknown IDs are rejected, not silently
+dropped. The proposed interaction is preserved as unvalidated caller context and
+the template asks whether it occurs, with `open_question` confidence; it does not
+assert demonstrated synergy.
+
+Both JSON export paths now retain every registered hypothesis. The research
+plan's `all_hypotheses` includes complete question records, including predictions,
+context, references, and experimental approach. Its `top_hypotheses` is a 30-record
+preview with explicit count/truncation metadata; the Markdown report shows at most
+10 and links to the complete JSON. The standalone `ranked_by_priority` list is no
+longer capped at 50. Direct `rank_hypotheses_by_priority()` calls still default to
+20; pass `limit=None` for all, or a nonnegative integer for a preview. Exports are
+in-memory, not a streaming or large-dataset storage solution.
 
 The existing scores, timelines, registry coefficients, literature counts,
 mechanistic statements, and combination claims still require source-level review.
@@ -36,10 +61,11 @@ python3 -m unittest discover -s tools/hypothesis-engine/tests -p 'test_*.py' -v
 ```
 
 The suite checks wording, preserved context, non-overwriting IDs, malformed
-context, export limits, and committed-output parity apart from the generation
+context, export completeness across the old 50/100-record boundaries, and committed-output parity apart from the generation
 date. The original single test-file invocation does not run the new regressions.
-The workflow runs the full suite. See the [review record](../../docs/research/hypothesis-outcome-safety.md)
-for the scope and remaining gaps.
+The workflow runs the full suite. See the [outcome-safety review](../../docs/research/hypothesis-outcome-safety.md)
+and [identity/export review](../../docs/research/hypothesis-identity-exports.md)
+for their scopes and remaining gaps.
 
 ## Overview
 

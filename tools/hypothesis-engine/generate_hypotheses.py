@@ -141,62 +141,62 @@ def generate_hypotheses(engine: HypothesisEngine, network: dict) -> None:
             engine.generate_synergy_hypothesis(int_ids, synergy_desc)
 
 
+def _research_record(hypothesis, rank: int) -> dict:
+    """Retain all question data using the research export's existing key names."""
+    return {
+        "rank": rank,
+        "id": hypothesis.id,
+        "type": hypothesis.hypothesis_type,
+        "statement": hypothesis.statement,
+        "prediction": hypothesis.prediction,
+        "target_outcome": hypothesis.target_outcome,
+        "patient_population": hypothesis.patient_population,
+        "gap_description": hypothesis.gap_description,
+        "proposed_mechanism": hypothesis.proposed_mechanism,
+        "expected_synergy": hypothesis.expected_synergy,
+        "confidence": hypothesis.confidence,
+        "priority_score": hypothesis.priority_score,
+        "timeline_months": hypothesis.estimated_timeline_months,
+        "pathways": hypothesis.pathways_involved,
+        "interventions": hypothesis.interventions_proposed,
+        "supporting_evidence": hypothesis.supporting_evidence,
+        "contradicting_evidence": hypothesis.contradicting_evidence,
+        "experimental_approach": hypothesis.experimental_approach,
+    }
+
+
 def export_research_plan(engine: HypothesisEngine, output_dir: str) -> None:
-    """Export comprehensive research plan."""
+    """Export all question records, plus explicitly bounded presentation views."""
     
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
     
-    # Export top hypotheses
-    top_hypotheses = engine.rank_hypotheses_by_priority(limit=100)
+    ranked_hypotheses = engine.rank_hypotheses_by_priority(limit=None)
+    records = [_research_record(h, i + 1) for i, h in enumerate(ranked_hypotheses)]
     
     hypotheses_file = output_path / "als-aging-hypotheses.json"
     plan_data = {
-        "schema_version": "1.1",
+        "schema_version": "1.2",
         "status": "unvalidated_research_questions",
         "limitations": HYPOTHESIS_LIMITATIONS,
         "generated": date.today().isoformat(),
         "title": "ALS and Aging Research Hypothesis Plan",
         "description": "Template-generated, unvalidated research questions sorted by heuristic scores. No clinical predictions or validated ranking.",
         "hypothesis_count": len(engine.hypotheses),
+        "exported_hypothesis_count": len(records),
+        "presentation_limits": {"top_hypotheses": 30, "markdown_report": 10},
+        "top_hypotheses_count": min(len(records), 30),
+        "top_hypotheses_truncated": len(records) > 30,
         "pathways_analyzed": len(engine.pathways),
         "interventions_reviewed": len(engine.interventions),
-        "top_hypotheses": [
-            {
-                "rank": i + 1,
-                "id": h.id,
-                "type": h.hypothesis_type,
-                "statement": h.statement,
-                "prediction": h.prediction,
-                "target_outcome": h.target_outcome,
-                "patient_population": h.patient_population,
-                "confidence": h.confidence,
-                "priority_score": h.priority_score,
-                "timeline_months": h.estimated_timeline_months,
-                "pathways": h.pathways_involved,
-                "interventions": h.interventions_proposed,
-                "experimental_approach": h.experimental_approach
-            }
-            for i, h in enumerate(top_hypotheses[:30])
-        ],
-        "all_hypotheses": [
-            {
-                "id": h.id,
-                "type": h.hypothesis_type,
-                "statement": h.statement,
-                "target_outcome": h.target_outcome,
-                "patient_population": h.patient_population,
-                "confidence": h.confidence,
-                "priority_score": h.priority_score
-            }
-            for h in top_hypotheses
-        ]
+        "top_hypotheses": records[:30],
+        "all_hypotheses": records,
     }
     
     with open(hypotheses_file, 'w') as f:
         json.dump(plan_data, f, indent=2)
     
-    print(f"✓ Exported {len(top_hypotheses)} ranked hypotheses to {hypotheses_file}")
+    print(f"✓ Exported {len(records)} ranked hypotheses to {hypotheses_file}")
     
     # Export pathway network
     engine.export_pathways_json(str(output_path / "als-aging-pathways-enriched.json"))
@@ -215,10 +215,13 @@ def export_research_plan(engine: HypothesisEngine, output_dir: str) -> None:
         f.write(f"- **Pathways Analyzed:** {len(engine.pathways)}\n")
         f.write(f"- **Interventions Reviewed:** {len(engine.interventions)}\n")
         f.write(f"- **Hypotheses Generated:** {len(engine.hypotheses)}\n")
-        f.write(f"- **Questions displayed below:** {len(top_hypotheses[:10])}\n\n")
+        f.write(f"- **Questions displayed below:** {len(ranked_hypotheses[:10])}\n\n")
+        f.write(f"Showing {len(ranked_hypotheses[:10])} of {len(ranked_hypotheses)} questions. "
+                "[Complete question records](als-aging-hypotheses.json) are in `all_hypotheses`; "
+                "the JSON top list and this report are previews.\n\n")
         
         f.write("## First 10 Questions by Unvalidated Heuristic Score\n\n")
-        for i, h in enumerate(top_hypotheses[:10]):
+        for i, h in enumerate(ranked_hypotheses[:10]):
             f.write(f"### {i+1}. {h.statement}\n\n")
             f.write(f"**Type:** {h.hypothesis_type}\n")
             f.write(f"**Confidence:** {h.confidence}\n")

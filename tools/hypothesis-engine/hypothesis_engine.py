@@ -21,8 +21,21 @@ HYPOTHESIS_LIMITATIONS = [
     "Outcome direction and effect size are not inferred for therapeutic questions; populations are caller-supplied labels, not validated indications.",
     "Priority scores and timelines are unvalidated heuristics/defaults, not probabilities, clinical effect estimates, or a validated research ranking.",
     "Loading an evidence pack does not appraise it or connect its sources to a generated question. Literature counts and registry coefficients are not verified here.",
-    "Mechanistic and combination templates remain unvalidated; their affirmative wording does not establish causality, efficacy, or synergy.",
+    "Mechanistic and combination proposals remain unvalidated; caller-supplied descriptions do not establish causality, efficacy, or synergy.",
 ]
+
+
+def _question_text(name: str, value: str) -> str:
+    """Normalize caller context without inferring its scientific meaning."""
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{name} must be nonempty text")
+    return value.strip()
+
+
+def _question_id(prefix: str, context: list) -> str:
+    """Hash structured context with field boundaries, not concatenated text."""
+    identity = json.dumps(context, ensure_ascii=False, separators=(",", ":"))
+    return f"{prefix}{hashlib.sha256(identity.encode('utf-8')).hexdigest()[:16].upper()}"
 
 
 class PathwayType(Enum):
@@ -116,6 +129,9 @@ class Hypothesis:
     priority_score: float = 0.5
     target_outcome: Optional[str] = None
     patient_population: Optional[str] = None
+    gap_description: Optional[str] = None
+    proposed_mechanism: Optional[str] = None
+    expected_synergy: Optional[str] = None
 
 
 class HypothesisEngine:
@@ -153,12 +169,17 @@ class HypothesisEngine:
         proposed_mechanism: str,
         confidence: str = "moderate"
     ) -> Hypothesis:
-        """Generate a mechanistic hypothesis about a pathway gap."""
+        """Identify a question by pathway, normalized gap, and proposed mechanism.
+
+        Confidence is updateable metadata, not part of question identity.
+        """
         pathway = self.pathways.get(pathway_id)
         if not pathway:
             raise ValueError(f"Unknown pathway: {pathway_id}")
 
-        hyp_id = f"HYP-{hashlib.md5(gap_description.encode()).hexdigest()[:8].upper()}"
+        gap_description = _question_text("gap_description", gap_description)
+        proposed_mechanism = _question_text("proposed_mechanism", proposed_mechanism)
+        hyp_id = _question_id("HYP-MEC-", [pathway_id, gap_description, proposed_mechanism])
         hyp = Hypothesis(
             id=hyp_id,
             hypothesis_type="mechanistic",
@@ -166,7 +187,9 @@ class HypothesisEngine:
             prediction=f"We hypothesize that {proposed_mechanism} in {pathway.name}",
             pathways_involved=[pathway_id],
             confidence=confidence,
-            priority_score=pathway.als_relevance * pathway.aging_relevance
+            priority_score=pathway.als_relevance * pathway.aging_relevance,
+            gap_description=gap_description,
+            proposed_mechanism=proposed_mechanism,
         )
         self.hypotheses[hyp.id] = hyp
         return hyp
@@ -188,15 +211,9 @@ class HypothesisEngine:
         if not intervention:
             raise ValueError(f"Unknown intervention: {intervention_id}")
 
-        for name, value in (("target_outcome", target_outcome),
-                            ("patient_population", patient_population)):
-            if not isinstance(value, str) or not value.strip():
-                raise ValueError(f"{name} must be nonempty text")
-        target_outcome = target_outcome.strip()
-        patient_population = patient_population.strip()
-        identity = json.dumps([intervention_id, target_outcome, patient_population],
-                              ensure_ascii=False, separators=(",", ":"))
-        hyp_id = f"HYP-THR-{hashlib.sha256(identity.encode('utf-8')).hexdigest()[:16].upper()}"
+        target_outcome = _question_text("target_outcome", target_outcome)
+        patient_population = _question_text("patient_population", patient_population)
+        hyp_id = _question_id("HYP-THR-", [intervention_id, target_outcome, patient_population])
         hyp = Hypothesis(
             id=hyp_id,
             hypothesis_type="therapeutic",
@@ -220,12 +237,23 @@ class HypothesisEngine:
         intervention_ids: list[str],
         expected_synergy: str
     ) -> Hypothesis:
-        """Generate a hypothesis about intervention combinations."""
-        hyp_id = f"HYP-SYN-{hashlib.md5(''.join(intervention_ids).encode()).hexdigest()[:6].upper()}"
-        interventions = [self.interventions.get(iid) for iid in intervention_ids if iid in self.interventions]
+        """Preserve the ordered intervention list and proposed interaction.
 
-        if not interventions:
-            raise ValueError("No valid interventions found")
+        Order is retained, not interpreted as a dosing/timing protocol. Reject
+        incomplete combinations instead of silently dropping unknown members.
+        """
+        if (not isinstance(intervention_ids, list) or len(intervention_ids) < 2
+                or any(not isinstance(iid, str) or not iid.strip() for iid in intervention_ids)):
+            raise ValueError("intervention_ids must be a list of at least two distinct nonempty IDs")
+        if len(set(intervention_ids)) != len(intervention_ids):
+            raise ValueError("intervention_ids must contain distinct IDs")
+        for iid in intervention_ids:
+            if iid not in self.interventions:
+                raise ValueError(f"Unknown intervention: {iid}")
+        expected_synergy = _question_text("expected_synergy", expected_synergy)
+        intervention_ids = list(intervention_ids)
+        hyp_id = _question_id("HYP-SYN-", [intervention_ids, expected_synergy])
+        interventions = [self.interventions[iid] for iid in intervention_ids]
 
         target_pathways = [i.target_pathway for i in interventions]
         names = " + ".join([i.name for i in interventions])
@@ -233,18 +261,25 @@ class HypothesisEngine:
         hyp = Hypothesis(
             id=hyp_id,
             hypothesis_type="combination",
-            statement=f"Combination: {names} synergizes",
-            prediction=f"{names} together will have greater effect than sum of parts by targeting multiple pathways",
+            statement=f"Combination question: {names}",
+            prediction=(f"Test whether {names} has the proposed combined effect: {expected_synergy}. "
+                        "This is an untested hypothesis, not demonstrated synergy."),
             pathways_involved=target_pathways,
             interventions_proposed=intervention_ids,
-            confidence="moderate",
-            priority_score=0.7
+            confidence="open_question",
+            priority_score=0.7,
+            expected_synergy=expected_synergy,
         )
         self.hypotheses[hyp.id] = hyp
         return hyp
 
-    def rank_hypotheses_by_priority(self, limit: int = 20) -> list[Hypothesis]:
-        """Sort stored heuristic scores; this is not a validated priority model."""
+    def rank_hypotheses_by_priority(self, limit: Optional[int] = 20) -> list[Hypothesis]:
+        """Sort heuristic scores; None requests all records, otherwise a preview.
+
+        Scores are not a validated priority model. The default remains 20.
+        """
+        if limit is not None and (type(limit) is not int or limit < 0):
+            raise ValueError("limit must be a nonnegative integer or None")
         ranked = sorted(
             self.hypotheses.values(),
             key=lambda h: (h.priority_score, len(h.supporting_evidence)),
@@ -255,7 +290,7 @@ class HypothesisEngine:
     def export_hypotheses_json(self, output_path: str) -> None:
         """Export hypotheses as structured JSON for downstream analysis."""
         export_data = {
-            "schema_version": "1.1",
+            "schema_version": "1.2",
             "status": "unvalidated_research_questions",
             "limitations": HYPOTHESIS_LIMITATIONS,
             "generated": date.today().isoformat(),
@@ -263,7 +298,7 @@ class HypothesisEngine:
             "hypotheses": [asdict(h) for h in self.hypotheses.values()],
             "ranked_by_priority": [
                 {"id": h.id, "statement": h.statement, "priority": h.priority_score}
-                for h in self.rank_hypotheses_by_priority(limit=50)
+                for h in self.rank_hypotheses_by_priority(limit=None)
             ]
         }
 
