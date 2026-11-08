@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "pathways": [
+    {
+      "id": "P1",
+      "source_ids": [
+        "S1"
+      ],
+      "als_relevance": 0.2,
+      "aging_relevance": 0.3,
+      "score_provenance": {
+        "als_relevance": {
+          "method": "Invented test coefficient; not empirical."
+        },
+        "aging_relevance": {
+          "method": "Invented test coefficient; not empirical."
+        }
+      },
+      "literature_count": 1,
+      "literature_source_ids": [
+        "S1"
+      ],
+      "mechanisms": [
+        {
+          "id": "M1",
+          "evidence_confidence": "low",
+          "supporting_sources": [
+            "S1"
+          ]
+        }
+      ]
+    }
+  ],
+  "interventions": [
+    {
+      "id": "I1",
+      "target_pathway": "P1",
+      "evidence_level": "low",
+      "source_ids": [
+        "S1"
+      ],
+      "known_effects": {
+        "P1": 0.123
+      },
+      "effect_provenance": {
+        "P1": {
+          "kind": "illustrative",
+          "note": "Invented coefficient for software tests only."
+        }
+      }
+    }
+  ],
+  "pathway_count": 1,
+  "intervention_count": 1
+}

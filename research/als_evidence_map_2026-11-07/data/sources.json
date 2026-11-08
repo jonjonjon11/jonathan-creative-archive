@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.1.0",
+  "access_date": "2026-11-07",
+  "method": "Targeted public web search and retrieval. Metadata and relevant source sections were checked; no systematic search, full supplement review, or dataset reanalysis was performed.",
+  "sources": [
+    {
+      "id": "valor_2022",
+      "title": "Trial of Antisense Oligonucleotide Tofersen for SOD1 ALS",
+      "creator": "Miller TM and colleagues",
+      "type": "peer_reviewed_trial",
+      "publication_date": "2022-09-22",
+      "date_precision": "day",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2204705",
+      "identifiers": [
+        "doi:10.1056/NEJMoa2204705",
+        "PMID:36129998"
+      ],
+      "access_level": "indexed_abstract_only",
+      "access_note": "Publisher full text returned HTTP 403; PubMed page did not render. Indexed primary-paper abstract supported p=0.97. FDA statistical presentation separately verifies primary joint-rank/MI p=0.97 and supportive ANCOVA/MI mean difference, interval, and p=0.60.",
+      "locator": "Abstract; faster-progression primary analysis",
+      "reuse": "Bibliographic reference and concise original factual summary only; article redistribution rights not established.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "qalsody_label_2023",
+      "title": "QALSODY original prescribing information, revised April 2023",
+      "creator": "Biogen / US Food and Drug Administration",
+      "type": "regulatory_label",
+      "publication_date": "2023-04",
+      "date_precision": "month",
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2023/215887s000lbl.pdf",
+      "identifiers": [
+        "FDA reference ID:5163072"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Historical 14-page PDF accessed. It explicitly warns that it may not be the latest approved label.",
+      "locator": "Sections 1, 5, 12.2, 14; printed pages 10-13 for trial and biomarker outcomes",
+      "reuse": "Source PDF not redistributed; only original extraction of public aggregate facts.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "qalsody_snapshot",
+      "title": "Drug Trials Snapshots: QALSODY",
+      "creator": "US Food and Drug Administration",
+      "type": "regulatory_summary",
+      "publication_date": null,
+      "date_precision": "unknown",
+      "url": "https://www.fda.gov/drugs/drug-trials-snapshots/drug-trials-snapshots-qalsody",
+      "identifiers": [],
+      "access_level": "body_retrieved",
+      "access_note": "Page publication date not established; original approval event explicitly dated April 25, 2023. Snapshot concerns original approval, not later updates.",
+      "locator": "Original Approval date; Who participated; How were trials designed",
+      "reuse": "Original summary and reference only.",
+      "regulatory_assertions": [
+        {
+          "record_id": "tofersen_sod1",
+          "status": "original_accelerated_approval",
+          "jurisdiction": "US",
+          "event_date": "2023-04-25",
+          "locator": "Original Approval date; Who participated; How were trials designed"
+        }
+      ]
+    },
+    {
+      "id": "qalsody_fda_action",
+      "title": "FDA approves treatment of amyotrophic lateral sclerosis associated with a mutation in the SOD1 gene",
+      "creator": "US Food and Drug Administration",
+      "type": "regulatory_summary",
+      "publication_date": null,
+      "date_precision": "unknown",
+      "url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-amyotrophic-lateral-sclerosis-associated-mutation-sod1-gene",
+      "identifiers": [],
+      "access_level": "body_retrieved",
+      "access_note": "Page date was not established. Original approval date is independently supported by FDA snapshot. The page mixes safety and randomized sample counts; the original label resolves 147 exposed versus 108 randomized.",
+      "locator": "Action and Effectiveness",
+      "reuse": "Original summary and reference only.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "fusion_ionis_2026",
+      "title": "Ionis announces positive topline results from Phase 3 FUSION study of ulefnersen marking significant milestone in advancing first potential disease modifying treatment for FUS-ALS",
+      "creator": "Ionis Pharmaceuticals and Otsuka",
+      "type": "sponsor_press_release",
+      "publication_date": "2026-09-22",
+      "date_precision": "day",
+      "url": "https://ir.ionis.com/news-releases/news-release-details/ionis-announces-positive-topline-results-phase-3-fusion-study",
+      "identifiers": [
+        "NCT04768972"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Primary sponsor release retrieved. It states detailed results would be presented and submitted for publication later; this does not prove no subsequent publication exists.",
+      "locator": "Primary result paragraph; About the FUSION Trial; footnote 1",
+      "reuse": "No release text or figures redistributed; concise factual extraction and attribution.",
+      "regulatory_assertions": [
+        {
+          "record_id": "ulefnersen_fus",
+          "status": "investigational_in_cited_source",
+          "jurisdiction": "Not a jurisdiction-wide approval search",
+          "event_date": "2026-09-22",
+          "locator": "Primary result paragraph; About the FUSION Trial; footnote 1"
+        }
+      ]
+    },
+    {
+      "id": "anqur_design_2024",
+      "title": "QurAlis' ANQUR Clinical Trial of QRL-201 in ALS Advances to Dose Range-Finding (DRF) Phase With First Participant Dosed",
+      "creator": "QurAlis",
+      "type": "sponsor_press_release",
+      "publication_date": "2024-11-19",
+      "date_precision": "day",
+      "url": "https://www.quralis.com/news/quralis-anqur-clinical-trial-of-qrl-201-in-als-advances-to-dose-range-finding-drf-phase-with-first-participant-dosed/",
+      "identifiers": [
+        "NCT05633459",
+        "QRL-201-01"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Historical sponsor endpoint hierarchy: safety primary, PK secondary, clinical and biomarker exploratory. It is not verification of the current protocol.",
+      "locator": "About the ANQUR Clinical Trial",
+      "reuse": "Concise original factual extraction; source content not redistributed.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "anqur_interim_2026",
+      "title": "QurAlis Demonstrates Effects on Disease Progression and Target Engagement in ANQUR Clinical Trial of QRL-201, a First-in-Class Precision Medicine in Development for Sporadic ALS",
+      "creator": "QurAlis",
+      "type": "sponsor_press_release",
+      "publication_date": "2026-02-23",
+      "date_precision": "day",
+      "url": "https://www.quralis.com/news/quralis-demonstrates-effects-on-disease-progression-and-target-engagement-in-anqur-clinical-trial-of-qrl-201-a-first-in-class-precision-medicine-in-development-for-sporadic-als/",
+      "identifiers": [
+        "NCT05633459",
+        "QRL-201-01"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Sponsor-only interim report. Numerical effect sizes and full adverse-event tables were not in this release. Search found later reporting about a 2026 conference presentation, but the actual later poster was not reviewed or treated as a verified new dataset.",
+      "locator": "Interim-analysis bullet list; About ANQUR Clinical Trial",
+      "reuse": "Concise original factual extraction; source content not redistributed.",
+      "regulatory_assertions": [
+        {
+          "record_id": "qrl201_stmn2",
+          "status": "investigational_in_cited_source",
+          "jurisdiction": "Not a jurisdiction-wide approval search",
+          "event_date": "2026-02-23",
+          "locator": "Interim-analysis bullet list; About ANQUR Clinical Trial"
+        }
+      ]
+    },
+    {
+      "id": "dnl343_jama_2026",
+      "title": "DNL343 and Disease Progression in Amyotrophic Lateral Sclerosis: A Randomized Clinical Trial",
+      "creator": "Paganoni S, Chibnik LB, Quintana M, and colleagues",
+      "type": "peer_reviewed_trial",
+      "publication_date": "2026-09-22",
+      "date_precision": "day",
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2854318",
+      "identifiers": [
+        "doi:10.1001/jamanetworkopen.2026.34809",
+        "PMID:42771346",
+        "NCT05842941"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Primary article retrieved; abstract, outcome tables, and trial-design sections examined. Supplements were not independently audited.",
+      "locator": "Abstract Results; Table 1; Methods, Trial Design and Oversight",
+      "reuse": "Original concise aggregate extraction only; no article text, figures, or datasets redistributed.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "phoenix_topline_2024",
+      "title": "Amylyx Pharmaceuticals Announces Topline Results From Global Phase 3 PHOENIX Trial of AMX0035 in ALS",
+      "creator": "Amylyx Pharmaceuticals",
+      "type": "sponsor_press_release",
+      "publication_date": "2024-03-08",
+      "date_precision": "day",
+      "url": "https://investors.amylyx.com/news-releases/news-release-details/amylyx-pharmaceuticals-announces-topline-results-global-phase-3",
+      "identifiers": [
+        "PHOENIX"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Primary sponsor report retrieved; clinical trial failure independently corroborated by later FDA notice, but the p-value comes from this release.",
+      "locator": "PHOENIX Study Results",
+      "reuse": "Original concise extraction; release not redistributed.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "relyvrio_announcement_2024",
+      "title": "Amylyx Pharmaceuticals Announces Formal Intention to Remove RELYVRIO/ALBRIOZA from the Market; Provides Updates on Access to Therapy, Pipeline, Corporate Restructuring, and Strategy",
+      "creator": "Amylyx Pharmaceuticals",
+      "type": "sponsor_press_release",
+      "publication_date": "2024-04-04",
+      "date_precision": "day",
+      "url": "https://investors.amylyx.com/news-releases/news-release-details/amylyx-pharmaceuticals-announces-formal-intention-remove",
+      "identifiers": [],
+      "access_level": "body_retrieved",
+      "access_note": "Primary announcement distinguishes withdrawal process and patient-access changes from later regulatory action.",
+      "locator": "Opening bullets and first body paragraph",
+      "reuse": "Original concise extraction; release not redistributed.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "relyvrio_fda_withdrawal_2025",
+      "title": "Amylyx Pharmaceuticals, Inc.; Withdrawal of Approval of New Drug Application for RELYVRIO (Sodium Phenylbutyrate and Taurursodiol) for Suspension, 3 Gram/Packet and 1 Gram/Packet",
+      "creator": "US Food and Drug Administration; Federal Register",
+      "type": "regulatory_notice",
+      "publication_date": "2025-08-29",
+      "date_precision": "day",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2025-08-29/pdf/2025-16646.pdf",
+      "identifiers": [
+        "90 FR 42251",
+        "FR document:2025-16646",
+        "NDA:216660"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Official published one-page PDF checked, not only advance public-inspection draft. Effective withdrawal date explicitly August 29, 2025.",
+      "locator": "Page 42251, FDA notice, Dates and Supplementary Information",
+      "reuse": "US federal regulatory notice; package retains a reference and concise factual extraction, not the source PDF.",
+      "regulatory_assertions": [
+        {
+          "record_id": "relyvrio_withdrawal",
+          "status": "approval_withdrawn",
+          "jurisdiction": "US",
+          "event_date": "2025-08-29",
+          "locator": "Page 42251, FDA notice, Dates and Supplementary Information"
+        }
+      ]
+    },
+    {
+      "id": "unc13a_ma_2022",
+      "title": "TDP-43 represses cryptic exon inclusion in the FTD-ALS gene UNC13A",
+      "creator": "Ma XR and colleagues",
+      "type": "peer_reviewed_mechanistic",
+      "publication_date": "2022-02-23",
+      "date_precision": "day",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8891019/",
+      "identifiers": [
+        "doi:10.1038/s41586-022-04424-7",
+        "PMID:35197626",
+        "PMCID:PMC8891019"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Primary article available in PMC; online publication date and mechanism checked. Original journal issue is March 2022. No linked sequence/raw datasets accessed.",
+      "locator": "Abstract, Main, and discussion of nonconservation in mouse",
+      "reuse": "Article explicitly CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). This package supplies a new concise summary, with changes consisting of summarization; no original figures included.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "qalsody_fda_statistics_2023",
+      "title": "FDA Summary Presentation: Tofersen, Peripheral and Central Nervous System Drugs Advisory Committee Meeting, March 22, 2023",
+      "creator": "US Food and Drug Administration",
+      "type": "regulatory_summary",
+      "publication_date": null,
+      "date_precision": "unknown",
+      "url": "https://www.fda.gov/media/166392/download",
+      "identifiers": [],
+      "access_level": "body_retrieved",
+      "access_note": "Meeting dated March 22, 2023; PDF carries March 20, 2023 date stamps. Exact web publication date not established. Slide 29 distinguishes primary joint-rank p=0.97 from supportive ANCOVA/MI p=0.60.",
+      "locator": "PDF page 15, slide 29; methods on preceding slides",
+      "reuse": "Original factual extraction only; source PDF not redistributed.",
+      "regulatory_assertions": []
+    },
+    {
+      "id": "valor_ole_final_2025",
+      "title": "Long-Term Tofersen in SOD1 Amyotrophic Lateral Sclerosis",
+      "creator": "Miller TM, Cudkowicz ME, Shaw PJ, and colleagues",
+      "type": "peer_reviewed_trial",
+      "publication_date": "2025-12-22",
+      "date_precision": "day",
+      "url": "https://jamanetwork.com/journals/jamaneurology/fullarticle/2843130",
+      "identifiers": [
+        "doi:10.1001/jamaneurol.2025.4946",
+        "PMCID:PMC12723595"
+      ],
+      "access_level": "body_retrieved",
+      "access_note": "Title, online date, final integrated VALOR/OLE design, and abstract verified; February 2026 issue. This significant later report is a named scope exclusion, not evidence of absence of longer-term results. Outcomes and supplements were not extracted or appraised for this map.",
+      "locator": "Publication metadata; Abstract; Introduction identifying final integrated results",
+      "reuse": "Bibliographic attribution and scope note only; paper not redistributed.",
+      "regulatory_assertions": []
+    }
+  ],
+  "unverified_navigation": [
+    {
+      "url": "https://clinicaltrials.gov/study/NCT04768972",
+      "purpose": "FUSION registration",
+      "access_note": "Only a page shell rendered; registry details and current recruitment status were not verified."
+    },
+    {
+      "url": "https://clinicaltrials.gov/study/NCT05633459",
+      "purpose": "ANQUR registration",
+      "access_note": "Only a page shell rendered; current protocol, phase fields, outcome hierarchy, and amendments were not verified."
+    },
+    {
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT04768972",
+      "purpose": "FUSION public API fallback",
+      "access_note": "Public web retrieval tool could not access the URL. No API record acquired."
+    },
+    {
+      "url": "https://clinicaltrials.gov/api/v2/studies/NCT05633459",
+      "purpose": "ANQUR public API fallback",
+      "access_note": "Public web retrieval tool could not access the URL. No API record acquired."
+    },
+    {
+      "url": "https://www.nature.com/articles/s41586-022-04424-7",
+      "purpose": "UNC13A Ma primary publisher page",
+      "access_note": "Publisher redirect could not be retrieved. Independently public PMC copy was used."
+    },
+    {
+      "url": "https://www.nature.com/articles/s41586-022-04436-3",
+      "purpose": "Related Brown UNC13A mechanism paper",
+      "access_note": "Publisher redirect could not be retrieved. Indexed metadata was found, but this paper was not used for substantive extracted claims."
+    }
+  ]
+}

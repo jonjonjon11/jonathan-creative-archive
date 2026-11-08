@@ -8,11 +8,19 @@ An evidence-based map of Jonathan's ideas for an educational universe, mathemati
 
 That is the purpose of this archive. It is a selective reconstruction from available records, not a complete account export or a claim that every idea has been recovered. The newly written archive is licensed under [Creative Commons Attribution 4.0 International](LICENSE). The included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files retain their separate CC0 licenses.
 
+## Integrated additions (2026-11-08)
+
+- [Corrected paper-first motion lesson](docs/lessons/motion-trace-shape.md), with worked examples, coordinate tables and regression tests.
+- [Offline evidence integrity auditor](tools/evidence-integrity-audit/README.md), with invented example data and adversarial tests. Checks structure and provenance fields, not scientific truth.
+- [Six-record ALS evidence map](research/als_evidence_map_2026-11-07/README.md), including structured observations, public source references, readable views and reproducibility tools. This incomplete research draft is not treatment guidance and has not received ALS-clinician review.
+
+These files are in the main branch. The hypothesis engine and its stacked corrections remain outside main because important scientific/provenance problems remain. See the [integration and verification record](docs/reviews/main-integration-2026-11-08.md) for the exact contribution revisions, commands, limits and historical checksum reconciliation. Older status documents are historical snapshots, not current acceptance claims.
+
 ## 🚀 NEW: Knowledge Commons Infrastructure (2026-11-07)
 
 **The foundation for collaborative learning and building together.**
 
-We've built a complete system for creating, sharing, and improving educational modules—starting with the first finished pathway:
+The repository contains a working module schema, validation tools and a corrected draft learning pathway. Educator, learner and real-device acceptance are still pending:
 
 ### [Motion → Trace → Shape: A Lesson in Lissajous Curves](docs/QUICKSTART.md)
 
@@ -20,9 +28,9 @@ We've built a complete system for creating, sharing, and improving educational m
 
 **Contribute:** Help test it on your browser, add examples, or verify the math. Open tasks are listed in `data/tasks/`. [See templates](docs/task-templates/).
 
-**Build on it:** Use the [Knowledge Module Schema](docs/knowledge-module-schema.md) to create your own lessons. Everything is standardized, validated, and portable.
+**Build on it:** Use the [Knowledge Module Schema](docs/knowledge-module-schema.md) to create your own lessons. The schema has structural checks; their passing does not establish factual correctness, educational effectiveness or device compatibility.
 
-**Status:** ✓ Module complete · ✓ 32/32 tests pass · ✓ Offline verified · □ Real-device testing pending · □ Learner feedback pending
+**Status:** Corrected draft · 44 numerical, simulated-control and lesson tests · Deterministic source/build checks · Real-device, educator and learner review pending
 
 → **[Start here: docs/QUICKSTART.md](docs/QUICKSTART.md)** for learners, contributors, and maintainers.
 

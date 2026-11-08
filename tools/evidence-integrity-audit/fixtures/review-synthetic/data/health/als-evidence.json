@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://example.org/synthetic"
+    }
+  ],
+  "claims": [
+    {
+      "id": "C1",
+      "source_ids": [
+        "S1"
+      ],
+      "statement": "Invented fixture; no biomedical meaning."
+    }
+  ]
+}
