@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "module": {
     "id": "MOD-math-add-001",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Basic Addition and Subtraction",
     "subtitle": "Combining groups and removing amounts; building fluency with plus and minus through 10",
     "grade_level": "K-2",
@@ -12,73 +12,107 @@
     "license": "CC BY 4.0",
     "license_uri": "https://creativecommons.org/licenses/by/4.0/",
     "attribution": "Jonathan's Creative Archive Mathematics Curriculum",
-    "authors": ["Archive Contributors"],
-    "last_reviewed": "2026-11-07",
-    "review_status": "content_complete",
-    
+    "authors": [
+      "Archive Contributors"
+    ],
+    "last_reviewed": "2026-11-08",
+    "review_status": "draft_pending_review",
     "learning_objectives": [
       "Understand addition as combining two groups into one total",
       "Understand subtraction as removing an amount or finding the difference",
-      "Fluently add and subtract within 10",
-      "Recognize the symbols + (plus) and - (minus) and = (equals)",
+      "Practice addition and subtraction with whole numbers from 0 through 10",
+      "Connect + (plus), - (minus) and = (equals) to their meanings, including equal value on both sides of an equation",
       "Solve simple addition and subtraction story problems"
     ],
-    
     "prerequisites": [
-      {"id": "MOD-math-count-001", "title": "Counting and Number Recognition (0-20)"}
+      {
+        "id": "MOD-math-count-001",
+        "title": "Counting and Number Recognition (0-20)"
+      }
     ],
-    
     "content": {
       "introduction": {
-        "plain_text": "# Why Addition and Subtraction Matter\n\nEvery day, you combine things and separate things:\n- Combine: You have 2 cookies. Your friend gives you 3 more. Now you have 5.\n- Separate: You have 5 cookies. You eat 2. Now you have 3 left.\n\nAddition and subtraction let you solve these everyday problems with numbers instead of always needing physical objects.\n\nThese operations (plus and minus) are the foundation for all higher math. If you can add and subtract fluently, everything else becomes possible.",
+        "plain_text": "# Why Addition and Subtraction Matter\n\nAddition helps us combine quantities. Subtraction helps us find what remains or compare quantities. For example, receiving 3 cookies when you have 2 gives 5 cookies; removing 2 from 5 leaves 3.\n\nThis lesson uses whole numbers from 0 through 10. Its take-away examples remove no more than the starting amount. Other kinds of numbers and subtraction with negative answers are beyond this lesson.\n\nUse the named-item descriptions without physical objects, or use objects if helpful. Letters such as A and B label different items; they are not amounts to calculate. Read the text yourself or have a helper or suitable reading tool present one step at a time. Pause or repeat as needed. Looking, moving objects, handwriting and spoken answers are optional. You may select, type, dictate or otherwise communicate your reasoning using a method that works for you.\n\nThe aim is to understand and practice these operations, not to prove fluency from a few exercises. These alternatives are teaching proposals, not a report of accessibility or learner testing.",
         "estimated_reading_minutes": 2
       },
-      
       "core_lesson": {
         "sections": [
           {
             "title": "Section 1: Addition - Combining Groups",
-            "content": "# Addition: Putting Two Groups Together\n\nAddition means combining two groups into one total amount.\n\n**What is addition?**\nImagine you have 3 red marbles and 2 blue marbles. If you put them all together in one pile, how many marbles do you have?\n\n3 + 2 = 5\n\nThe plus sign (+) means \"put together\" or \"combine.\" The equals sign (=) means \"the same as\" or \"makes.\" \n\nSo \"3 + 2 = 5\" means: \"Three plus two equals five\" or \"Three and two make five\" or \"If you combine a group of 3 and a group of 2, you get 5 total.\"\n\n**Why does this work?**\nYou can verify this with objects:\n- Gather 3 marbles\n- Count them: one, two, three\n- Gather 2 more marbles\n- Count them: one, two\n- Put all marbles together\n- Count the total: one, two, three, four, five\n- Answer: 5 marbles\n\n**The plus and equals symbols:**\n- The plus sign (+) tells you to combine two amounts\n- The equals sign (=) tells you what the total is\n- A number sentence (like 3 + 2 = 5) shows the whole problem and answer\n\n**Different ways to make 5:**\n- 1 + 4 = 5 (one marble and four marbles make five)\n- 2 + 3 = 5 (two marbles and three marbles make five)\n- 0 + 5 = 5 (zero marbles and five marbles make five)\n- 5 + 0 = 5 (five marbles and zero marbles make five)\n\nAll of these are addition facts that equal 5. Knowing many ways to make a number is very useful.",
+            "content": "# Addition: Combining Quantities\n\nImagine one group of 3 marbles, named A, B and C, and another group of 2 marbles, named D and E. The groups have no shared items. To find their combined count, count each marble once: A is one, B is two, C is three, D is four and E is five.\n\n3 + 2 = 5\n\nThe plus sign (+) indicates addition. Here it combines the counts of two groups without counting any item twice. The numbers being added are addends; their total is the sum. Moving the marbles into one pile is optional. Both groups together already contain five marbles; changing their arrangement does not create more.\n\n**Equality means the same value on both sides:**\nThe equals sign (=) states that the expressions on both sides have the same value. In 3 + 2 = 5, the left side has value five and the right side has value five. It does not mean that an answer must always come after the sign.\n- 5 = 3 + 2 is also true: five has the same value as three plus two.\n- 3 + 2 = 4 + 1 is true: each side has value five.\n\n**Different ways to make 5:**\n- 1 + 4 = 5\n- 2 + 3 = 5\n- 0 + 5 = 5\n- 5 + 0 = 5\n\nAdding zero leaves an amount unchanged. An empty group contributes no items. Adding a positive whole-number amount increases the starting amount; adding zero does not. This distinction matters even though the worked addition example uses two nonempty groups.",
             "estimated_reading_minutes": 10,
-            "key_terms": ["addition", "plus", "combine", "sum", "addend", "equals"]
+            "key_terms": [
+              "addition",
+              "plus",
+              "combine",
+              "sum",
+              "addend",
+              "equals"
+            ]
           },
           {
             "title": "Section 2: Subtraction - Taking Away and Comparing",
-            "content": "# Subtraction: Removing an Amount or Finding the Difference\n\nSubtraction means either removing items from a group or comparing two groups to find the difference.\n\n**Taking away (removing):**\nYou have 5 cookies. You eat 2. How many are left?\n\n5 - 2 = 3\n\nThe minus sign (-) means \"take away\" or \"remove.\" So \"5 - 2 = 3\" means: \"Five minus two equals three\" or \"If you start with 5 and remove 2, you have 3 left.\"\n\nYou can verify this with objects:\n- Gather 5 cookies\n- Count them: one, two, three, four, five\n- Remove 2 cookies\n- Count what's left: one, two, three\n- Answer: 3 cookies remain\n\n**Comparing (finding the difference):**\nYou have 7 apples. Your friend has 4 apples. How many more do you have?\n\n7 - 4 = 3\n\nYou have 3 more apples than your friend. The minus sign helps us find the difference between two amounts.\n\n**The minus and equals symbols:**\n- The minus sign (-) tells you to take away or compare\n- The equals sign (=) tells you the result\n- A number sentence (like 5 - 2 = 3) shows the whole problem and answer\n\n**Subtraction facts that relate to 5:**\n- 5 - 1 = 4\n- 5 - 2 = 3\n- 5 - 3 = 2\n- 5 - 4 = 1\n- 5 - 5 = 0\n- 5 - 0 = 5\n\nEach subtraction fact shows a different way to break apart the number 5.\n\n**Connection between addition and subtraction:**\nAddition and subtraction are opposites:\n- If 3 + 2 = 5, then 5 - 2 = 3\n- If 4 + 1 = 5, then 5 - 1 = 4\n\nKnowing this connection helps you check your work and learn facts faster.",
+            "content": "# Subtraction: Taking Away or Comparing\n\nThe minus sign (-) indicates subtraction. We can use subtraction to find what remains after removing items or to find the difference between two quantities.\n\n**Taking away:**\nStart with 5 cookies named A, B, C, D and E. Remove A and B from the collection. The remaining cookies are C, D and E. Count those three cookies once each, so 5 - 2 = 3. Physical cookies are optional; the named description supplies the example. In these whole-number take-away examples, remove no more items than the starting collection contains.\n\n**Comparing without taking away:**\nOne collection has 7 apples named A, B, C, D, E, F and G. Another has 4 apples named P, Q, R and S. Match one apple from each collection: A with P, B with Q, C with R, D with S. The first collection has E, F and G unmatched, so it has three more apples: 7 - 4 = 3. Neither collection loses any apples. Pairing is a way to compare their counts, not an instruction to remove them.\n\nIn 7 - 4 = 3, the starting number is the minuend, the number subtracted is the subtrahend and the difference is three. These names are optional vocabulary; understanding the quantities comes first. As in addition, the equals sign states the same value on both sides: seven minus four has value three.\n\n**Subtraction facts for 5:**\n- 5 - 1 = 4\n- 5 - 2 = 3\n- 5 - 3 = 2\n- 5 - 4 = 1\n- 5 - 5 = 0\n- 5 - 0 = 5\n\nRemoving all five leaves an empty collection with count zero. Removing zero leaves the starting amount unchanged.\n\n**Checking with addition:**\nAddition and subtraction can undo each other: if 3 + 2 = 5, then 5 - 2 = 3 and 5 - 3 = 2. Check a subtraction by adding the amount removed to the amount remaining: 2 + 3 = 5. This check accounts for every item in the starting collection.",
             "estimated_reading_minutes": 10,
-            "key_terms": ["subtraction", "minus", "take away", "difference", "remaining", "minuend", "subtrahend"]
+            "key_terms": [
+              "subtraction",
+              "minus",
+              "take away",
+              "difference",
+              "remaining",
+              "minuend",
+              "subtrahend"
+            ]
           }
         ]
       },
-      
       "worked_examples": [
         {
           "id": "EX-001",
-          "title": "Example 1: Simple Addition with Objects",
+          "title": "Example 1: Addition with Named Items",
           "difficulty": "beginner",
-          "scenario": "You have 2 toy cars in one pile and 3 toy cars in another pile. You want to know how many cars you have altogether.",
+          "scenario": "One group contains toy cars A and B. A second group contains different toy cars C, D and E. How many cars are in the two groups altogether?",
           "parameters": {
             "group_1": 2,
             "group_2": 3,
             "operation": "addition"
           },
-          "prediction": "If I combine the two piles, the total will be more than either pile alone.",
+          "prediction": "Each group is nonempty, so the combined count will be greater than either group alone.",
           "step_by_step": [
-            "Look at the first pile and count: one, two (2 cars)",
-            "Look at the second pile and count: one, two, three (3 cars)",
-            "Push the piles together to make one big pile",
-            "Count the combined pile: one, two, three, four, five (5 cars total)",
-            "The number sentence is: 2 + 3 = 5"
+            "Use the named lists; physical cars, looking and moving them are optional.",
+            "The first group is A and B: 2 cars. The second group is C, D and E: 3 cars. No car belongs to both groups.",
+            "Count every car once in the combined list: car A: 1; car B: 2; car C: 3; car D: 4; car E: 5.",
+            "The last count is five. The number sentence is 2 + 3 = 5.",
+            "The expressions on both sides have the same value: two plus three and five."
           ],
-          "explanation": "When you combine two groups, you add them together. The plus sign means to put the groups together. The total (5) is greater than either starting group (2 or 3). This is the essence of addition: combining.",
-          "mathematical_form": "2 + 3 = 5 (addend + addend = sum)",
-          "visual_description": "Two piles of cars move together into one pile. As items combine, the total increases from 2 to 3 to 5."
+          "explanation": "The combined collection contains five cars. Moving them is not necessary to find its count and does not change that count. Here both addends are positive, so the sum is greater than either addend; this is not a rule for adding zero.",
+          "mathematical_form": "2 + 3 = 5",
+          "visual_description": "An optional picture could show two groups joined into one pile. There are five cars before and after rearranging them. The named lists give the same example without a picture.",
+          "item_trace": {
+            "starting_items": [
+              "A",
+              "B"
+            ],
+            "added_items": [
+              "C",
+              "D",
+              "E"
+            ],
+            "removed_items": [],
+            "remaining_items": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ]
+          }
         },
         {
           "id": "EX-002",
           "title": "Example 2: Subtraction - Taking Away",
           "difficulty": "intermediate",
-          "scenario": "You have 7 crackers. You eat 3 of them. You want to know how many you have left.",
+          "scenario": "The crackers are A, B, C, D, E, F and G. Remove A, B and C from this collection. How many remain?",
           "parameters": {
             "starting_amount": 7,
             "amount_removed": 3,
@@ -86,20 +120,43 @@
           },
           "prediction": "When I take away 3 from 7, the amount that remains will be less than 7.",
           "step_by_step": [
-            "Count out 7 crackers: one, two, three, four, five, six, seven",
-            "Set aside 3 crackers (this is the amount you eat)",
-            "Count the remaining crackers: one, two, three, four (4 crackers left)",
-            "The number sentence is: 7 - 3 = 4"
+            "Use the named list of 7 crackers. Physical crackers and moving them are optional.",
+            "The removed crackers are A, B and C: 3 crackers. None of them remains in the collection being counted.",
+            "The remaining crackers are D, E, F and G. Count cracker D: 1; cracker E: 2; cracker F: 3; cracker G: 4.",
+            "The number sentence is 7 - 3 = 4. Check it by adding the removed and remaining counts: 3 + 4 = 7."
           ],
-          "explanation": "When you subtract, you start with an amount and remove part of it. The minus sign means to take away. What remains is the answer. The answer (4) is less than what you started with (7).",
-          "mathematical_form": "7 - 3 = 4 (minuend - subtrahend = difference)",
-          "visual_description": "A pile of 7 items has 3 items removed. The remaining items are counted: 4 stay behind."
+          "explanation": "The seven starting crackers split into three removed crackers and four remaining crackers, with no overlap or missing item. Seven minus three and four have the same value. No eating or handling of crackers is required.",
+          "mathematical_form": "7 - 3 = 4",
+          "visual_description": "An optional picture could separate A, B and C from D, E, F and G. Only the four remaining crackers are counted after removal. All item names are also supplied in text.",
+          "item_trace": {
+            "starting_items": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G"
+            ],
+            "added_items": [],
+            "removed_items": [
+              "A",
+              "B",
+              "C"
+            ],
+            "remaining_items": [
+              "D",
+              "E",
+              "F",
+              "G"
+            ]
+          }
         },
         {
           "id": "EX-003",
           "title": "Example 3: Using Addition and Subtraction Together",
           "difficulty": "advanced",
-          "scenario": "You start with 6 blocks. You add 2 more blocks. Then you remove 4 blocks. How many do you have now?",
+          "scenario": "Start with blocks A, B, C, D, E and F. Add two different blocks, G and H. Then remove A, B, C and D. How many blocks remain?",
           "parameters": {
             "starting": 6,
             "add": 2,
@@ -107,23 +164,49 @@
           },
           "prediction": "If I add first, then subtract, I should end up with fewer blocks than I started with.",
           "step_by_step": [
-            "Start with 6 blocks",
-            "Add 2 more: 6 + 2 = 8 blocks now",
-            "Remove 4: 8 - 4 = 4 blocks remaining",
-            "Final answer: 4 blocks"
+            "Use the named lists. Physical blocks and moving them are optional. Start with A, B, C, D, E and F: 6 blocks.",
+            "Add G and H. The collection is now A, B, C, D, E, F, G and H: 6 + 2 = 8.",
+            "Remove A, B, C and D. The remaining blocks are E, F, G and H: 8 - 4 = 4.",
+            "Check the remaining list: block E: 1; block F: 2; block G: 3; block H: 4.",
+            "Final answer: 4 blocks. The combined number sentence is (6 + 2) - 4 = 4."
           ],
-          "explanation": "You can do multiple operations (additions and subtractions) one after another. After adding, your total increased to 8. After subtracting, it decreased to 4. The final answer (4) is less than what you started with (6) because you removed more than you added.",
-          "mathematical_form": "(6 + 2) - 4 = 4 or 6 + 2 - 4 = 4",
-          "visual_description": "A pile starts at 6, grows to 8 as items are added, then shrinks to 4 as items are removed."
+          "explanation": "The first operation adds two distinct items to the collection. The second removes four of the eight items. Four remain. The final count is two fewer than the initial six because four were removed after only two were added.",
+          "mathematical_form": "(6 + 2) - 4 = 4",
+          "visual_description": "An optional picture could show a collection growing from six to eight blocks and then four blocks being removed, leaving four. The named lists also describe every change without a picture.",
+          "item_trace": {
+            "starting_items": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F"
+            ],
+            "added_items": [
+              "G",
+              "H"
+            ],
+            "removed_items": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "remaining_items": [
+              "E",
+              "F",
+              "G",
+              "H"
+            ]
+          }
         }
       ],
-      
       "exercises": [
         {
           "id": "EX-001",
           "title": "Exercise 1: Addition Sentence",
           "difficulty": "beginner",
-          "problem_statement": "You have 4 red blocks and 1 blue block. You combine them into one pile. Write the number sentence and tell how many blocks you have altogether.",
+          "problem_statement": "You have 4 red blocks and 1 blue block. You combine them into one pile. Give the number sentence and tell how many blocks you have altogether.",
           "hint": "Start with 4, add 1 more. The number sentence starts with 4 + 1 = ?",
           "solution": "Combine the blocks: 4 + 1 = 5 blocks total.",
           "answer": "4 + 1 = 5"
@@ -132,7 +215,7 @@
           "id": "EX-002",
           "title": "Exercise 2: Subtraction Sentence",
           "difficulty": "beginner",
-          "problem_statement": "You have 8 grapes. You eat 3. Write the number sentence and tell how many grapes you have left.",
+          "problem_statement": "You have 8 grapes. You eat 3. Give the number sentence and tell how many grapes you have left.",
           "hint": "Start with 8, take away 3. The number sentence starts with 8 - 3 = ?",
           "solution": "Remove 3 from 8: 8 - 3 = 5 grapes remaining.",
           "answer": "8 - 3 = 5"
@@ -142,7 +225,7 @@
           "title": "Exercise 3: Story Problem - Addition",
           "difficulty": "intermediate",
           "problem_statement": "Maria has 5 pencils. Her teacher gives her 4 more pencils. How many pencils does Maria have now?",
-          "hint": "Think: 5 pencils + 4 more = ? total. Write a number sentence.",
+          "hint": "Think: 5 pencils + 4 more = ? total. Give a number sentence using your preferred communication method.",
           "solution": "Maria starts with 5 and gets 4 more. 5 + 4 = 9 pencils.",
           "answer": "5 + 4 = 9 pencils"
         },
@@ -165,11 +248,9 @@
           "answer": "4"
         }
       ],
-      
-      "interactive_experience": "Practice with real objects: combine groups (addition) and remove items (subtraction). Try writing number sentences after each activity.",
-      "text_only_path": "Addition combines two groups. Subtraction removes items or finds differences. Practice both operations with objects you have at home."
+      "interactive_experience": "Optional: use physical objects to try the examples, or follow the named-item descriptions without objects. Combine groups with no shared items, remove a stated subset, or compare two collections by matching pairs. Give the number sentence using a suitable communication method. Handling objects, handwriting and spoken answers are optional.",
+      "text_only_path": "# Addition and Subtraction without Handling Objects\n\nRead these steps yourself or have a helper or suitable reading tool present one step at a time. No picture or physical objects are required. Pause and repeat as needed, and communicate your reasoning in a way that works for you. The letters label distinct items, not numbers to add. These descriptions do not verify the contents of an unseen real collection.\n\n**Combine two groups:**\nOne group contains cars A and B. Another contains different cars C, D and E. Count each car once: car A: 1; car B: 2; car C: 3; car D: 4; car E: 5. The total is five, so 2 + 3 = 5. The two groups already contain five cars altogether; moving them would not change that total.\n\n**Equal value:**\nThe equals sign means the same value on both sides. Thus 5 = 3 + 2 is true, and 3 + 2 = 4 + 1 is true because each side has value five. An equation does not require the result to be written on the right.\n\n**Take away:**\nStart with crackers A, B, C, D, E, F and G. Remove A, B and C. The remaining crackers are D, E, F and G. Count cracker D: 1; cracker E: 2; cracker F: 3; cracker G: 4. Thus 7 - 3 = 4. Check: 3 + 4 = 7. Here the removed amount is no greater than the starting count.\n\n**Compare:**\nOne collection contains apples A, B, C, D, E, F and G. Another contains apples P, Q, R and S. Match A with P, B with Q, C with R, D with S. E, F and G are unmatched in the first collection, so it has three more apples: 7 - 4 = 3. Neither collection loses any apples.\n\n**Zero:**\nAdding zero leaves an amount unchanged: 5 + 0 = 5. Removing zero also leaves it unchanged: 5 - 0 = 5. Removing all five leaves an empty collection: 5 - 5 = 0.\n\n**Try a missing number:**\nFor 3 + ? = 7, count on from three: four, five, six, seven. There are four more counts, so 3 + 4 = 7. The missing number is four. Now try the five exercises and compare your reasoning with their solutions. Handwriting and spoken answers are optional. These alternatives have not been tested with learners or assistive technology."
     },
-    
     "sources": [
       {
         "title": "Principles and Standards for School Mathematics",
@@ -182,7 +263,7 @@
         "publication_year": 2018
       }
     ],
-    
-    "accessibility_level": "partially_verified"
+    "accessibility_level": "unverified",
+    "verification_notes": "Version 1.0.1 clarifies relational equality, supplies worked named-item alternatives for addition, take-away and comparison, and makes physical manipulation and response methods optional. Selected automated regressions check written numeric equations, item traces, exercise answers and stated review limits. Independent AI review is separate from human acceptance. Educator, learner, screen-reader, other assistive-technology, browser-rendering and educational-effectiveness review have not been performed for this correction. The inherited book references have not been re-inspected; no source-page verification, accessibility certification or fluency outcome is claimed. This lesson does not teach printed or tactile numeral recognition."
   }
 }
