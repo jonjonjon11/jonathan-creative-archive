@@ -1,7 +1,7 @@
 {
   "artifact": "motion-trace-shape",
   "version": "0.1.0",
-  "review_date": "2026-11-07",
+  "review_date": "2026-11-08",
   "origin": "New original implementation inspired by the public archive; not recovered historical code.",
   "license": "CC-BY-4.0 for all newly authored code and explanations in this directory.",
   "runtime_dependencies": [],
@@ -36,38 +36,56 @@
       "command": "Python ast.parse for build_single.py, tests/static_check.py and tests/browser_smoke.py",
       "scope": "Python syntax only",
       "runtime": "3.12.14"
+    },
+    {
+      "command": "node --test tests/*.test.cjs",
+      "tests": 46,
+      "scope": "32 original lab tests, 12 lesson tests and 2 SVG-fill regressions; original model/controller unchanged.",
+      "runtime": "Node v24.22.1"
+    },
+    {
+      "command": "python tests/browser_smoke.py --browser chromium|firefox",
+      "tested_commit": "01ef1e2283bdc182a61123c80fa06f14a7d1e5e0",
+      "run_url": "https://github.com/jonjonjon11/jonathan-creative-archive/actions/runs/42460445954",
+      "record": "../../docs/test-reports/motion-browser-2026-11-08.md",
+      "reports": [
+        "../../docs/test-reports/motion-chromium-2026-11-08.json",
+        "../../docs/test-reports/motion-firefox-2026-11-08.json"
+      ],
+      "scope": "Offline headless controls, repeated downloads, analytical samples, reduced motion, SVG fill/scale and narrow CSS viewports. AI screenshot inspection; not human/device/accessibility acceptance."
     }
   ],
   "blocked": [
     {
-      "stage": "Chromium launch preflight before any page load",
+      "stage": "Local Chromium launch preflight before any page load (still blocked; separate CI browser run passed)",
       "reason": "Chromium aborted: chrome/browser/process_singleton_posix.cc:297 socket() failed: Operation not permitted (1). Crashpad also reported a missing database.",
       "result": "No page loaded. No rendered screenshots, browser interactions or real downloads were validated.",
       "action_status": "Launch failed; no browser result."
     }
   ],
   "not_run": [
-    "tests/browser_smoke.py acceptance flows (browser preflight blocked)",
-    "rendered screenshot review",
     "physical touch devices",
-    "Safari and Firefox",
+    "Safari and Edge",
     "screen-reader testing",
     "zoom and complete accessibility audit",
-    "educational effectiveness study"
+    "human visual review",
+    "real desktop background-tab pausing",
+    "educator/learner acceptance and educational effectiveness study"
   ],
   "checksums_sha256": {
     ".gitignore": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
     "LICENSE.CC-BY-4.0.txt": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f",
-    "Motion-Trace-Shape.html": "7d7ac4dfefe5740ac118c0a7b20197546ac3212c5a80a83503ce3254ddfd1e64",
-    "README.md": "ce04cd0fc1f23b6dab7707aad7f5e48d3506203c2683e0983981134bd43364ef",
+    "Motion-Trace-Shape.html": "345db16c12301b38621da091b2c193f0654f2af4d45c27c4414bcadab608b496",
+    "README.md": "62d5fc384d98b6e96c1789d9e61a7cff4a62b08d02e8d97795ecf864f70c58af",
     "build_single.py": "767b6c4b59197e18a4ac329d05b1d1298b765b80f0101b3d4eeea55f4fbb3c25",
-    "index.html": "b87df65875406ed9a04ce4d967115124f601501740c4422daac671bbf399d3b0",
+    "index.html": "c8626986734d243a70050734b1e57856992a9a40babd365c52ba5109d26bbbeb",
     "src/app.js": "d3d46379ce44733bc1b1d14fa8f783c6e80cd3e8718f218d573fee1de164736f",
     "src/core.js": "07981d8364b3f9b7962526bc3cf22387faab78d02634e2ef2f40e06bc0acb646",
     "src/style.css": "374c498be52d19292c8cdee1ebae808328bd60867ed47402040229fc2648117f",
-    "tests/browser_smoke.py": "231e3ce673549976d04b4a4c54722a929c58fa51046467ee897ad4d3a88d69be",
+    "tests/browser_smoke.py": "3bab83e8841199073eb828441396f714b3133b60dcd7b1be0cb6374f6df511a6",
     "tests/core.test.cjs": "a1a917eb2280bd6bcdb1882f318f971b019a88d2d7847787ca1365ee6736355b",
     "tests/static_check.py": "ddba60de7fb2dc0897bfc03d684f3e70b4cde65bb74078b18869259e9a434c79",
-    "tests/ui-state.test.cjs": "e573e4662f9f3106da44bce105c67636881f9d70634e970884c1c8d7841bdb22"
+    "tests/ui-state.test.cjs": "e573e4662f9f3106da44bce105c67636881f9d70634e970884c1c8d7841bdb22",
+    "tests/svg-rendering.test.cjs": "420d2e132f6e204d2f8fd7f0594aaeb12ba187dc43d2dd6cac85d53a9cd8e9f7"
   }
 }

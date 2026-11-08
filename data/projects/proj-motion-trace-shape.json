@@ -5,7 +5,6 @@
   "title": "Motion → Trace → Shape: A Foundational Lesson in Lissajous Curves",
   "subtitle": "First complete knowledge module for the commons",
   "purpose": "Create a beginner-friendly, offline-capable learning pathway for understanding how two oscillating motions combine to form predictable geometric shapes.",
-  
   "affected_communities": [
     {
       "community_name": "Students (ages 12+) exploring mathematics and physics",
@@ -13,43 +12,40 @@
       "accessibility_needs": "Keyboard navigation, reduced-motion support, text-based access"
     }
   ],
-  
   "problem_statement": "Many learners struggle to visualize how two independent oscillating motions combine. We need a portable, inclusive, offline-capable introduction to Lissajous curves.",
-  
   "current_state": {
     "completed": [
       "Interactive HTML lab with three presets",
       "18 numerical tests and 14 UI tests passed",
       "Three worked examples and five exercises",
       "Knowledge module schema and JSON record",
-      "Offline capability verified"
+      "Offline capability verified",
+      "Scoped Chromium/Firefox offline browser checks and SVG fill correction; see docs/test-reports/motion-browser-2026-11-08.md"
     ],
     "unverified": [
-      "Real-browser rendering",
+      "Physical-device and human visual acceptance; Safari and Edge",
       "Mobile and touch interaction",
       "Screen-reader compatibility",
       "Actual learner feedback"
     ]
   },
-  
   "status": "first_pathway_complete_validation_pending",
-  "status_date": "2026-11-07",
+  "status_date": "2026-11-08",
   "license": "CC BY 4.0",
-  
   "governance": {
     "decision_maker": "Jonathan",
     "review_required": true
   },
-  
   "resources": {
     "maintainer": "Archive Contributors",
     "hosting": "github.com/jonjonjon11/jonathan-creative-archive"
   },
-  
   "next_milestones": [
     {
       "name": "Real-device validation",
-      "tasks_required": ["TASK-motion-browser-test"],
+      "tasks_required": [
+        "TASK-motion-browser-test"
+      ],
       "priority": "high"
     }
   ]

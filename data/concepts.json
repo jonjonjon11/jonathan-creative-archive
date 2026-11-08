@@ -404,8 +404,9 @@
       ],
       "artifact_status": "source_inspected",
       "scientific_standing": "established_model_scoped",
-      "limitations": "New partial demonstrator, not historical recovery or validated curriculum. 18 model/data and 14 simulated-DOM checks pass; real-browser launch blocked before page load, so rendering/download/device/assistive-technology behavior remains unverified.",
-      "next_step": "Run the included browser acceptance suite in a supported environment and review screenshots, physical-device controls and assistive-technology behavior before extending the model."
+      "limitations": "New partial demonstrator, not historical recovery or validated curriculum. 46 Node tests and scoped offline Chromium/Firefox checks pass. Physical devices, touch, Safari/Edge, assistive technology and educational effectiveness remain unverified.",
+      "next_step": "Review the dated browser report, then conduct human visual, physical-device and assistive-technology checks before extending the model.",
+      "limited_verification": "2026-11-08: headless Chromium 141.0.7390.37 and Firefox 142.0.1 on Ubuntu 24.04; offline controls, JSON downloads, SVG fill/scale and narrow CSS widths. Evidence: docs/test-reports/motion-browser-2026-11-08.md."
     },
     {
       "id": "CON-024",
