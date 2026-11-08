@@ -103,7 +103,7 @@ class TherapeuticQuestionTests(unittest.TestCase):
             output = Path(temp) / "hypotheses.json"
             self.engine.export_hypotheses_json(str(output))
             data = json.loads(output.read_text())
-        self.assertEqual(data["schema_version"], "1.1")
+        self.assertEqual(data["schema_version"], "1.2")
         self.assertEqual(data["status"], "unvalidated_research_questions")
         self.assertTrue(data["limitations"])
         self.assertEqual(data["hypotheses"][0]["target_outcome"], h.target_outcome)
@@ -115,7 +115,7 @@ class TherapeuticQuestionTests(unittest.TestCase):
             export_research_plan(self.engine, temp)
             data = json.loads((Path(temp) / "als-aging-hypotheses.json").read_text())
             report = (Path(temp) / "HYPOTHESIS_GENERATION_REPORT.md").read_text()
-        self.assertEqual(data["schema_version"], "1.1")
+        self.assertEqual(data["schema_version"], "1.2")
         self.assertEqual(data["status"], "unvalidated_research_questions")
         for name in ("top_hypotheses", "all_hypotheses"):
             self.assertEqual(data[name][0]["target_outcome"], h.target_outcome)

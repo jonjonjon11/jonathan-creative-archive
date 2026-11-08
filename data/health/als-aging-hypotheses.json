@@ -1,17 +1,24 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "status": "unvalidated_research_questions",
   "limitations": [
     "Generated statements are unvalidated research questions, not clinical predictions or treatment recommendations.",
     "Outcome direction and effect size are not inferred for therapeutic questions; populations are caller-supplied labels, not validated indications.",
     "Priority scores and timelines are unvalidated heuristics/defaults, not probabilities, clinical effect estimates, or a validated research ranking.",
     "Loading an evidence pack does not appraise it or connect its sources to a generated question. Literature counts and registry coefficients are not verified here.",
-    "Mechanistic and combination templates remain unvalidated; their affirmative wording does not establish causality, efficacy, or synergy."
+    "Mechanistic and combination proposals remain unvalidated; caller-supplied descriptions do not establish causality, efficacy, or synergy."
   ],
   "generated": "2026-11-07",
   "title": "ALS and Aging Research Hypothesis Plan",
   "description": "Template-generated, unvalidated research questions sorted by heuristic scores. No clinical predictions or validated ranking.",
   "hypothesis_count": 16,
+  "exported_hypothesis_count": 16,
+  "presentation_limits": {
+    "top_hypotheses": 30,
+    "markdown_report": 10
+  },
+  "top_hypotheses_count": 16,
+  "top_hypotheses_truncated": false,
   "pathways_analyzed": 9,
   "interventions_reviewed": 9,
   "top_hypotheses": [
@@ -23,6 +30,9 @@
       "prediction": "Test whether Tofersen (SOD1-ASO) changes motor neuron survival in SOD1-ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "motor neuron survival",
       "patient_population": "SOD1-ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
       "priority_score": 0.9,
       "timeline_months": 24,
@@ -32,16 +42,21 @@
       "interventions": [
         "INT-TOFERSEN"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
       "rank": 2,
-      "id": "HYP-AD3C79B4",
+      "id": "HYP-MEC-B1270B13C4C95D9E",
       "type": "mechanistic",
       "statement": "Cellular Senescence and Aging Acceleration: Can early combined intervention (e.g., Tofersen + NAD+ + senolytics) prevent ALS onset in SOD1 carriers?",
       "prediction": "We hypothesize that Senolytics preferentially target senescent cells; understanding selectivity is crucial. in Cellular Senescence and Aging Acceleration",
       "target_outcome": null,
       "patient_population": null,
+      "gap_description": "Can early combined intervention (e.g., Tofersen + NAD+ + senolytics) prevent ALS onset in SOD1 carriers?",
+      "proposed_mechanism": "Senolytics preferentially target senescent cells; understanding selectivity is crucial.",
+      "expected_synergy": null,
       "confidence": "moderate",
       "priority_score": 0.7124999999999999,
       "timeline_months": 24,
@@ -49,16 +64,21 @@
         "PATH-SENESCENCE"
       ],
       "interventions": [],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
       "rank": 3,
-      "id": "HYP-3E47418D",
+      "id": "HYP-MEC-57DEA9F33F4E5794",
       "type": "mechanistic",
       "statement": "Cellular Senescence and Aging Acceleration: What is the mechanistic link between telomere dysfunction and regenerative capacity in aging motor neurons?",
       "prediction": "We hypothesize that Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap. in Cellular Senescence and Aging Acceleration",
       "target_outcome": null,
       "patient_population": null,
+      "gap_description": "What is the mechanistic link between telomere dysfunction and regenerative capacity in aging motor neurons?",
+      "proposed_mechanism": "Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap.",
+      "expected_synergy": null,
       "confidence": "moderate",
       "priority_score": 0.7124999999999999,
       "timeline_months": 24,
@@ -66,16 +86,21 @@
         "PATH-SENESCENCE"
       ],
       "interventions": [],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
       "rank": 4,
-      "id": "HYP-E5E8CFA0",
+      "id": "HYP-MEC-B16CA81E93A64B48",
       "type": "mechanistic",
       "statement": "Cellular Senescence and Aging Acceleration: Can in vitro aged iPSC-derived motor neurons be rejuvenated (telomeres, epigenetics, mitochondria) before transplantation?",
       "prediction": "We hypothesize that Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap. in Cellular Senescence and Aging Acceleration",
       "target_outcome": null,
       "patient_population": null,
+      "gap_description": "Can in vitro aged iPSC-derived motor neurons be rejuvenated (telomeres, epigenetics, mitochondria) before transplantation?",
+      "proposed_mechanism": "Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap.",
+      "expected_synergy": null,
       "confidence": "moderate",
       "priority_score": 0.7124999999999999,
       "timeline_months": 24,
@@ -83,16 +108,21 @@
         "PATH-SENESCENCE"
       ],
       "interventions": [],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
       "rank": 5,
-      "id": "HYP-9046F287",
+      "id": "HYP-MEC-FABA6230DFBC4162",
       "type": "mechanistic",
       "statement": "Cellular Senescence and Aging Acceleration: Do senolytics need to be combined with senescence-pathway activation (e.g., via p16/p21 induction) for safe, targeted elimination?",
       "prediction": "We hypothesize that Senolytics preferentially target senescent cells; understanding selectivity is crucial. in Cellular Senescence and Aging Acceleration",
       "target_outcome": null,
       "patient_population": null,
+      "gap_description": "Do senolytics need to be combined with senescence-pathway activation (e.g., via p16/p21 induction) for safe, targeted elimination?",
+      "proposed_mechanism": "Senolytics preferentially target senescent cells; understanding selectivity is crucial.",
+      "expected_synergy": null,
       "confidence": "moderate",
       "priority_score": 0.7124999999999999,
       "timeline_months": 24,
@@ -100,17 +130,22 @@
         "PATH-SENESCENCE"
       ],
       "interventions": [],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
       "rank": 6,
-      "id": "HYP-SYN-8D9B58",
+      "id": "HYP-SYN-ECD8EFEC667FCA75",
       "type": "combination",
-      "statement": "Combination: Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) synergizes",
-      "prediction": "Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) together will have greater effect than sum of parts by targeting multiple pathways",
+      "statement": "Combination question: Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others)",
+      "prediction": "Test whether Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) has the proposed combined effect: Multi-pathway SOD1-ALS intervention. This is an untested hypothesis, not demonstrated synergy.",
       "target_outcome": null,
       "patient_population": null,
-      "confidence": "moderate",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": "Multi-pathway SOD1-ALS intervention",
+      "confidence": "open_question",
       "priority_score": 0.7,
       "timeline_months": 24,
       "pathways": [
@@ -123,17 +158,22 @@
         "INT-NAD-BOOST",
         "INT-SENOLYTICS"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
       "rank": 7,
-      "id": "HYP-SYN-E3F304",
+      "id": "HYP-SYN-7B70B97CF6F65DDC",
       "type": "combination",
-      "statement": "Combination: Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) synergizes",
-      "prediction": "Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) together will have greater effect than sum of parts by targeting multiple pathways",
+      "statement": "Combination question: Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches)",
+      "prediction": "Test whether Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) has the proposed combined effect: Glial support + proteasome rescue. This is an untested hypothesis, not demonstrated synergy.",
       "target_outcome": null,
       "patient_population": null,
-      "confidence": "moderate",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": "Glial support + proteasome rescue",
+      "confidence": "open_question",
       "priority_score": 0.7,
       "timeline_months": 24,
       "pathways": [
@@ -144,17 +184,22 @@
         "INT-MICROGLIA-MOD",
         "INT-AUTOPHAGY-ENHANCE"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
       "rank": 8,
-      "id": "HYP-SYN-16973C",
+      "id": "HYP-SYN-F71DA0FF936CF065",
       "type": "combination",
-      "statement": "Combination: Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) synergizes",
-      "prediction": "Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) together will have greater effect than sum of parts by targeting multiple pathways",
+      "statement": "Combination question: Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular)",
+      "prediction": "Test whether Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) has the proposed combined effect: Epigenetic reactivation + neurotrophic support. This is an untested hypothesis, not demonstrated synergy.",
       "target_outcome": null,
       "patient_population": null,
-      "confidence": "moderate",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": "Epigenetic reactivation + neurotrophic support",
+      "confidence": "open_question",
       "priority_score": 0.7,
       "timeline_months": 24,
       "pathways": [
@@ -165,17 +210,22 @@
         "INT-HDAC-INHIBITOR",
         "INT-BDNF-DELIVERY"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
       "rank": 9,
-      "id": "HYP-SYN-269E5C",
+      "id": "HYP-SYN-DA48EF60FEA8C640",
       "type": "combination",
-      "statement": "Combination: Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) synergizes",
-      "prediction": "Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) together will have greater effect than sum of parts by targeting multiple pathways",
+      "statement": "Combination question: Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization)",
+      "prediction": "Test whether Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) has the proposed combined effect: Regeneration + trophic + niche support. This is an untested hypothesis, not demonstrated synergy.",
       "target_outcome": null,
       "patient_population": null,
-      "confidence": "moderate",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": "Regeneration + trophic + niche support",
+      "confidence": "open_question",
       "priority_score": 0.7,
       "timeline_months": 24,
       "pathways": [
@@ -188,6 +238,8 @@
         "INT-BDNF-DELIVERY",
         "INT-MICROGLIA-MOD"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
@@ -198,6 +250,9 @@
       "prediction": "Test whether NAD+ Boosting (NMN, NR, or sirtuin activators) changes mitochondrial ATP production in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "mitochondrial ATP production",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
       "priority_score": 0.5,
       "timeline_months": 24,
@@ -207,6 +262,8 @@
       "interventions": [
         "INT-NAD-BOOST"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
@@ -217,6 +274,9 @@
       "prediction": "Test whether Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) changes neuroinflammation reduction in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "neuroinflammation reduction",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
       "priority_score": 0.5,
       "timeline_months": 24,
@@ -226,6 +286,8 @@
       "interventions": [
         "INT-MICROGLIA-MOD"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
@@ -236,6 +298,9 @@
       "prediction": "Test whether Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) changes protein aggregate clearance in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "protein aggregate clearance",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
       "priority_score": 0.5,
       "timeline_months": 24,
@@ -245,6 +310,8 @@
       "interventions": [
         "INT-AUTOPHAGY-ENHANCE"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
@@ -255,6 +322,9 @@
       "prediction": "Test whether Senolytics (Dasatinib + Quercetin or others) changes senescent cell elimination in aged/advanced ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "senescent cell elimination",
       "patient_population": "aged/advanced ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
       "priority_score": 0.5,
       "timeline_months": 24,
@@ -264,6 +334,8 @@
       "interventions": [
         "INT-SENOLYTICS"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
@@ -274,6 +346,9 @@
       "prediction": "Test whether Histone Deacetylase (HDAC) Inhibitors changes regeneration gene expression in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "regeneration gene expression",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
       "priority_score": 0.5,
       "timeline_months": 24,
@@ -283,6 +358,8 @@
       "interventions": [
         "INT-HDAC-INHIBITOR"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
@@ -293,6 +370,9 @@
       "prediction": "Test whether BDNF Protein or Gene Delivery (viral or cellular) changes motor neuron survival and regrowth in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "motor neuron survival and regrowth",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
       "priority_score": 0.5,
       "timeline_months": 24,
@@ -302,6 +382,8 @@
       "interventions": [
         "INT-BDNF-DELIVERY"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     },
     {
@@ -312,6 +394,9 @@
       "prediction": "Test whether Motor Neuron Replacement via Stem Cell Transplantation changes motor neuron replacement in advanced ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "motor neuron replacement",
       "patient_population": "advanced ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
       "priority_score": 0.5,
       "timeline_months": 24,
@@ -321,153 +406,399 @@
       "interventions": [
         "INT-STEM-CELL-TX"
       ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
       "experimental_approach": ""
     }
   ],
   "all_hypotheses": [
     {
+      "rank": 1,
       "id": "HYP-THR-BB591625E3346ACB",
       "type": "therapeutic",
       "statement": "Does Tofersen (SOD1-ASO) change motor neuron survival in SOD1-ALS?",
+      "prediction": "Test whether Tofersen (SOD1-ASO) changes motor neuron survival in SOD1-ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "motor neuron survival",
       "patient_population": "SOD1-ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
-      "priority_score": 0.9
+      "priority_score": 0.9,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SOD1-AGG"
+      ],
+      "interventions": [
+        "INT-TOFERSEN"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
-      "id": "HYP-AD3C79B4",
+      "rank": 2,
+      "id": "HYP-MEC-B1270B13C4C95D9E",
       "type": "mechanistic",
       "statement": "Cellular Senescence and Aging Acceleration: Can early combined intervention (e.g., Tofersen + NAD+ + senolytics) prevent ALS onset in SOD1 carriers?",
+      "prediction": "We hypothesize that Senolytics preferentially target senescent cells; understanding selectivity is crucial. in Cellular Senescence and Aging Acceleration",
       "target_outcome": null,
       "patient_population": null,
+      "gap_description": "Can early combined intervention (e.g., Tofersen + NAD+ + senolytics) prevent ALS onset in SOD1 carriers?",
+      "proposed_mechanism": "Senolytics preferentially target senescent cells; understanding selectivity is crucial.",
+      "expected_synergy": null,
       "confidence": "moderate",
-      "priority_score": 0.7124999999999999
+      "priority_score": 0.7124999999999999,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
-      "id": "HYP-3E47418D",
+      "rank": 3,
+      "id": "HYP-MEC-57DEA9F33F4E5794",
       "type": "mechanistic",
       "statement": "Cellular Senescence and Aging Acceleration: What is the mechanistic link between telomere dysfunction and regenerative capacity in aging motor neurons?",
+      "prediction": "We hypothesize that Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap. in Cellular Senescence and Aging Acceleration",
       "target_outcome": null,
       "patient_population": null,
+      "gap_description": "What is the mechanistic link between telomere dysfunction and regenerative capacity in aging motor neurons?",
+      "proposed_mechanism": "Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap.",
+      "expected_synergy": null,
       "confidence": "moderate",
-      "priority_score": 0.7124999999999999
+      "priority_score": 0.7124999999999999,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
-      "id": "HYP-E5E8CFA0",
+      "rank": 4,
+      "id": "HYP-MEC-B16CA81E93A64B48",
       "type": "mechanistic",
       "statement": "Cellular Senescence and Aging Acceleration: Can in vitro aged iPSC-derived motor neurons be rejuvenated (telomeres, epigenetics, mitochondria) before transplantation?",
+      "prediction": "We hypothesize that Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap. in Cellular Senescence and Aging Acceleration",
       "target_outcome": null,
       "patient_population": null,
+      "gap_description": "Can in vitro aged iPSC-derived motor neurons be rejuvenated (telomeres, epigenetics, mitochondria) before transplantation?",
+      "proposed_mechanism": "Understanding the role of Cellular Senescence and Aging Acceleration is critical to this research gap.",
+      "expected_synergy": null,
       "confidence": "moderate",
-      "priority_score": 0.7124999999999999
+      "priority_score": 0.7124999999999999,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
-      "id": "HYP-9046F287",
+      "rank": 5,
+      "id": "HYP-MEC-FABA6230DFBC4162",
       "type": "mechanistic",
       "statement": "Cellular Senescence and Aging Acceleration: Do senolytics need to be combined with senescence-pathway activation (e.g., via p16/p21 induction) for safe, targeted elimination?",
+      "prediction": "We hypothesize that Senolytics preferentially target senescent cells; understanding selectivity is crucial. in Cellular Senescence and Aging Acceleration",
       "target_outcome": null,
       "patient_population": null,
+      "gap_description": "Do senolytics need to be combined with senescence-pathway activation (e.g., via p16/p21 induction) for safe, targeted elimination?",
+      "proposed_mechanism": "Senolytics preferentially target senescent cells; understanding selectivity is crucial.",
+      "expected_synergy": null,
       "confidence": "moderate",
-      "priority_score": 0.7124999999999999
+      "priority_score": 0.7124999999999999,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
-      "id": "HYP-SYN-8D9B58",
+      "rank": 6,
+      "id": "HYP-SYN-ECD8EFEC667FCA75",
       "type": "combination",
-      "statement": "Combination: Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) synergizes",
+      "statement": "Combination question: Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others)",
+      "prediction": "Test whether Tofersen (SOD1-ASO) + NAD+ Boosting (NMN, NR, or sirtuin activators) + Senolytics (Dasatinib + Quercetin or others) has the proposed combined effect: Multi-pathway SOD1-ALS intervention. This is an untested hypothesis, not demonstrated synergy.",
       "target_outcome": null,
       "patient_population": null,
-      "confidence": "moderate",
-      "priority_score": 0.7
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": "Multi-pathway SOD1-ALS intervention",
+      "confidence": "open_question",
+      "priority_score": 0.7,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SOD1-AGG",
+        "PATH-MITODYS",
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [
+        "INT-TOFERSEN",
+        "INT-NAD-BOOST",
+        "INT-SENOLYTICS"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
-      "id": "HYP-SYN-E3F304",
+      "rank": 7,
+      "id": "HYP-SYN-7B70B97CF6F65DDC",
       "type": "combination",
-      "statement": "Combination: Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) synergizes",
+      "statement": "Combination question: Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches)",
+      "prediction": "Test whether Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) + Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) has the proposed combined effect: Glial support + proteasome rescue. This is an untested hypothesis, not demonstrated synergy.",
       "target_outcome": null,
       "patient_population": null,
-      "confidence": "moderate",
-      "priority_score": 0.7
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": "Glial support + proteasome rescue",
+      "confidence": "open_question",
+      "priority_score": 0.7,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-NEUROINFLAM",
+        "PATH-PROTEOSTASIS"
+      ],
+      "interventions": [
+        "INT-MICROGLIA-MOD",
+        "INT-AUTOPHAGY-ENHANCE"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
-      "id": "HYP-SYN-16973C",
+      "rank": 8,
+      "id": "HYP-SYN-F71DA0FF936CF065",
       "type": "combination",
-      "statement": "Combination: Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) synergizes",
+      "statement": "Combination question: Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular)",
+      "prediction": "Test whether Histone Deacetylase (HDAC) Inhibitors + BDNF Protein or Gene Delivery (viral or cellular) has the proposed combined effect: Epigenetic reactivation + neurotrophic support. This is an untested hypothesis, not demonstrated synergy.",
       "target_outcome": null,
       "patient_population": null,
-      "confidence": "moderate",
-      "priority_score": 0.7
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": "Epigenetic reactivation + neurotrophic support",
+      "confidence": "open_question",
+      "priority_score": 0.7,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-EPIGENETIC",
+        "PATH-NEUROTROPH"
+      ],
+      "interventions": [
+        "INT-HDAC-INHIBITOR",
+        "INT-BDNF-DELIVERY"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
-      "id": "HYP-SYN-269E5C",
+      "rank": 9,
+      "id": "HYP-SYN-DA48EF60FEA8C640",
       "type": "combination",
-      "statement": "Combination: Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) synergizes",
+      "statement": "Combination question: Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization)",
+      "prediction": "Test whether Motor Neuron Replacement via Stem Cell Transplantation + BDNF Protein or Gene Delivery (viral or cellular) + Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) has the proposed combined effect: Regeneration + trophic + niche support. This is an untested hypothesis, not demonstrated synergy.",
       "target_outcome": null,
       "patient_population": null,
-      "confidence": "moderate",
-      "priority_score": 0.7
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": "Regeneration + trophic + niche support",
+      "confidence": "open_question",
+      "priority_score": 0.7,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-STEM-EXHAUST",
+        "PATH-NEUROTROPH",
+        "PATH-NEUROINFLAM"
+      ],
+      "interventions": [
+        "INT-STEM-CELL-TX",
+        "INT-BDNF-DELIVERY",
+        "INT-MICROGLIA-MOD"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
+      "rank": 10,
       "id": "HYP-THR-B3C127FEADF074B3",
       "type": "therapeutic",
       "statement": "Does NAD+ Boosting (NMN, NR, or sirtuin activators) change mitochondrial ATP production in all ALS?",
+      "prediction": "Test whether NAD+ Boosting (NMN, NR, or sirtuin activators) changes mitochondrial ATP production in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "mitochondrial ATP production",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
-      "priority_score": 0.5
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-MITODYS"
+      ],
+      "interventions": [
+        "INT-NAD-BOOST"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
+      "rank": 11,
       "id": "HYP-THR-1C0BE081C995865C",
       "type": "therapeutic",
       "statement": "Does Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) change neuroinflammation reduction in all ALS?",
+      "prediction": "Test whether Microglial Modulation (CSF1R inhibition or M1\u2192M2 polarization) changes neuroinflammation reduction in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "neuroinflammation reduction",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
-      "priority_score": 0.5
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-NEUROINFLAM"
+      ],
+      "interventions": [
+        "INT-MICROGLIA-MOD"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
+      "rank": 12,
       "id": "HYP-THR-0B020D7C5ACC01FB",
       "type": "therapeutic",
       "statement": "Does Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) change protein aggregate clearance in all ALS?",
+      "prediction": "Test whether Autophagy Enhancement (mTOR inhibition, spermidine, or genetic approaches) changes protein aggregate clearance in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "protein aggregate clearance",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
-      "priority_score": 0.5
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-PROTEOSTASIS"
+      ],
+      "interventions": [
+        "INT-AUTOPHAGY-ENHANCE"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
+      "rank": 13,
       "id": "HYP-THR-E174DC177E0AEC30",
       "type": "therapeutic",
       "statement": "Does Senolytics (Dasatinib + Quercetin or others) change senescent cell elimination in aged/advanced ALS?",
+      "prediction": "Test whether Senolytics (Dasatinib + Quercetin or others) changes senescent cell elimination in aged/advanced ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "senescent cell elimination",
       "patient_population": "aged/advanced ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
-      "priority_score": 0.5
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-SENESCENCE"
+      ],
+      "interventions": [
+        "INT-SENOLYTICS"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
+      "rank": 14,
       "id": "HYP-THR-650C2201E8431E17",
       "type": "therapeutic",
       "statement": "Does Histone Deacetylase (HDAC) Inhibitors change regeneration gene expression in all ALS?",
+      "prediction": "Test whether Histone Deacetylase (HDAC) Inhibitors changes regeneration gene expression in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "regeneration gene expression",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
-      "priority_score": 0.5
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-EPIGENETIC"
+      ],
+      "interventions": [
+        "INT-HDAC-INHIBITOR"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
+      "rank": 15,
       "id": "HYP-THR-A194F422E3F2A431",
       "type": "therapeutic",
       "statement": "Does BDNF Protein or Gene Delivery (viral or cellular) change motor neuron survival and regrowth in all ALS?",
+      "prediction": "Test whether BDNF Protein or Gene Delivery (viral or cellular) changes motor neuron survival and regrowth in all ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "motor neuron survival and regrowth",
       "patient_population": "all ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
-      "priority_score": 0.5
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-NEUROTROPH"
+      ],
+      "interventions": [
+        "INT-BDNF-DELIVERY"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     },
     {
+      "rank": 16,
       "id": "HYP-THR-F08CC556753F70E5",
       "type": "therapeutic",
       "statement": "Does Motor Neuron Replacement via Stem Cell Transplantation change motor neuron replacement in advanced ALS?",
+      "prediction": "Test whether Motor Neuron Replacement via Stem Cell Transplantation changes motor neuron replacement in advanced ALS relative to a prespecified comparator; direction and effect size are not inferred from registry metadata.",
       "target_outcome": "motor neuron replacement",
       "patient_population": "advanced ALS",
+      "gap_description": null,
+      "proposed_mechanism": null,
+      "expected_synergy": null,
       "confidence": "open_question",
-      "priority_score": 0.5
+      "priority_score": 0.5,
+      "timeline_months": 24,
+      "pathways": [
+        "PATH-STEM-EXHAUST"
+      ],
+      "interventions": [
+        "INT-STEM-CELL-TX"
+      ],
+      "supporting_evidence": [],
+      "contradicting_evidence": [],
+      "experimental_approach": ""
     }
   ]
 }
