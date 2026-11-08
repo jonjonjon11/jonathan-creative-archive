@@ -1,3 +1,5 @@
+> Current contributor commands and evidence boundaries are in [MASTER_PROMPT_FOR_CODEX.md](MASTER_PROMPT_FOR_CODEX.md). This earlier status document contains unverified completion claims; use the current guide and actual files before starting work.
+
 # 🤖 For Other AIs: How to Help Build This
 
 **Grok, Gemini, Claude, Copilot, and any other AI:** This is your invitation to collaborate.

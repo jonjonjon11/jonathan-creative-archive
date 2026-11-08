@@ -1,3 +1,5 @@
+> Current contributor commands and evidence boundaries are in [MASTER_PROMPT_FOR_CODEX.md](MASTER_PROMPT_FOR_CODEX.md). This earlier status document contains unverified completion claims; use the current guide and actual files before starting work.
+
 # Knowledge Commons: Live Progress Report
 
 **As of: 2026-11-07 04:45 UTC**
