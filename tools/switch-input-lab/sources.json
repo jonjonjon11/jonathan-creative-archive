@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "scope": "Technical background for an original synthetic educational simulator; no clinical or device-suitability claim.",
+  "sources": [
+    {
+      "id": "SW-SRC-TI-SCEA094",
+      "title": "SCEA094 Application brief",
+      "publisher": "Texas Instruments",
+      "published": "2020-10",
+      "url": "https://www.ti.com/document-viewer/lit/html/SCEA094",
+      "checked": "2026-11-07",
+      "inspection": "HTTP 200; application brief text inspected. Explains that physical switches can bounce and rapid logic response can cause false triggers.",
+      "rights_note": "Source retains its rights; no source prose, drawings, or circuit designs were incorporated."
+    },
+    {
+      "id": "SW-SRC-ARDUINO-DEBOUNCE",
+      "title": "Official Arduino Debounce example",
+      "publisher": "Arduino",
+      "url": "https://github.com/arduino/arduino-examples/blob/main/examples/02.Digital/Debounce/Debounce.ino",
+      "inspected_url": "https://raw.githubusercontent.com/arduino/arduino-examples/main/examples/02.Digital/Debounce/Debounce.ino",
+      "checked": "2026-11-07",
+      "inspection": "HTTP 200; the example's comments and elapsed-time state-change logic were inspected. This is a mutable upstream reference, not a pinned recovery.",
+      "rights_note": "The inspected example declares public-domain code. No code was copied; this lab uses its own offline trace format, acceptance boundary, validation, and state-machine implementation."
+    }
+  ],
+  "review_update": {
+    "date": "2026-11-08",
+    "scope": "Independent AI review retrieved both public references and confirmed the limited contact-bounce and elapsed-time-filtering claims. No source prose, diagrams or code imported. Device and educational suitability remain unreviewed."
+  }
+}

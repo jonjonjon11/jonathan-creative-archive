@@ -10,6 +10,8 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 ## Integrated additions (2026-11-08)
 
+- [One press, one star](docs/lessons/one-press-one-star.md): a small offline programming exercise with runnable Python, an invented input trace, line-by-line explanations and solved challenges. It extracts the [switch-input foundation](tools/switch-input-lab/README.md) without importing PR #4's biomedical proposals. No hardware, assistive-device suitability or learning-effectiveness claim is made.
+
 - [Introduction to division](docs/lessons/introduction-to-division.md): a complete offline draft with three worked examples, five exercises, arithmetic/content-parity tests, and a [bounded educator review task](data/tasks/task-division-review.json). Sharing, grouping, remainders and zero divisors are explained without requiring a digital lab. Educator, learner and assistive-technology review remain pending. See the [integration record](docs/reviews/division-integration-2026-11-08.md).
 
 - [Safer contributor authoring checks](docs/knowledge-module-schema.md): malformed records and duplicate identities are rejected, the template starts unverified, and the [1:3 worked example](docs/task-templates/new-example-template.md) derives a retraced cubic instead of repeating the old flower claim. Structural success is not scientific or educational acceptance.

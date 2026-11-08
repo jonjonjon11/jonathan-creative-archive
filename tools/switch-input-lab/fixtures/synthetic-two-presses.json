@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "metadata": {
+    "title": "Invented observations for two star-collecting presses",
+    "synthetic": true,
+    "provenance": "Handwritten educational timestamps; no person, patient, switch, sensor, or physical device was measured."
+  },
+  "stability_ms": 20,
+  "initial_pressed": false,
+  "samples": [
+    {
+      "timestamp_ms": 0,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 5,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 8,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 12,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 20,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 25,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 35,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 45,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 50,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 60,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 66,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 70,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 90,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 100,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 120,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 125,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 130,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 149,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 150,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 170,
+      "pressed": true
+    },
+    {
+      "timestamp_ms": 190,
+      "pressed": false
+    },
+    {
+      "timestamp_ms": 210,
+      "pressed": false
+    }
+  ]
+}
