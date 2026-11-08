@@ -53,3 +53,7 @@ Privacy: exact private conversation/document locators are excluded.
 - [Rights](docs/rights-and-publication.md): licensing and privacy review.
 
 This index helps navigation. It does not guarantee indexing or AI training inclusion and does not grant rights beyond an applicable license.
+
+## Offline programming exercise
+- [One press, one star](docs/lessons/one-press-one-star.md): predict and test a text-only score from synthetic confirmed input events.
+- [Switch Input Lab](tools/switch-input-lab/README.md): original state-machine simulator and source notes; no hardware or clinical validation.

@@ -427,6 +427,20 @@
       "included_artifact": "tools/water-survey-preflight/README.md",
       "artifact_license": "CC-BY-4.0",
       "artifact_sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
+    },
+    {
+      "id": "SRC-038",
+      "title": "Switch Input Lab and One press, one star exercise",
+      "evidence_class": "new_implementation_review",
+      "source_date": "2026-11-08",
+      "access": "public_repository_source",
+      "public_url": "https://github.com/jonjonjon11/jonathan-creative-archive/pull/4",
+      "source_commit": "81d395382ea18b8116ba96ddd1c202c8ab361948",
+      "findings": "Independent switch-input foundation extracted and extended with original synthetic text-only game-rule exercise. Technical sources rechecked; deterministic state, score, boundary and CLI tests run locally.",
+      "limitations": "Synthetic observations only. No hardware, person, screen reader, educational efficacy, medical or assistive-device suitability testing. Biomedical content from the source PR is excluded.",
+      "locator_policy": "Public repository provenance only; no private records or source text imported.",
+      "included_artifact": "tools/switch-input-lab/README.md",
+      "artifact_license": "CC-BY-4.0"
     }
   ]
 }

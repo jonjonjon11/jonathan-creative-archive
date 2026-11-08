@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "review_date": "2026-11-07",
+  "review_date": "2026-11-08",
   "scope": "Registry of selected recovered and newly built artifacts included in this archive, not every helper or original tool and not a legal clearance record.",
   "artifacts": [
     {
@@ -144,6 +144,45 @@
         {
           "path": "tools/water-survey-preflight/index.html",
           "sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
+        }
+      ]
+    },
+    {
+      "id": "ART-007",
+      "title": "Switch Input Lab and One press, one star",
+      "origin": "isolated_existing_proposal_with_new_original_exercise",
+      "path": "tools/switch-input-lab",
+      "source_ids": [
+        "SRC-038"
+      ],
+      "rights": {
+        "license_declared": "CC-BY-4.0",
+        "license_path": "LICENSE",
+        "scope": "Original simulator, lessons, tests and invented fixtures under the existing archive license. Cited sources retain their rights; no source prose or third-party code imported.",
+        "review_record": "docs/reviews/switch-learning-integration-2026-11-08.md"
+      },
+      "verification": {
+        "status": "offline_state_score_and_cli_tests_passed",
+        "record": "docs/reviews/switch-learning-integration-2026-11-08.md",
+        "limitations": "Checks synthetic software behavior and documented examples, not usability, educational effectiveness, hardware or clinical suitability. Not a playable platformer or live input driver."
+      },
+      "preserved_manifest": null,
+      "pinned_files": [
+        {
+          "path": "tools/switch-input-lab/switch_input.py",
+          "sha256": "1f7b1c3ebc341dc3db28feebfbc5edac188c75cff2d35a58853ed25132bd7ed1"
+        },
+        {
+          "path": "tools/switch-input-lab/star_counter.py",
+          "sha256": "005b5cfb23deb22f8633ba8833bc21101cf29c0c6eb8d2c9836cbf0a1b74d521"
+        },
+        {
+          "path": "tools/switch-input-lab/fixtures/synthetic-bounce.json",
+          "sha256": "671bcf2589bcb7d993fa982cf13c125cadaff92efec7f949ebf2528d06968168"
+        },
+        {
+          "path": "tools/switch-input-lab/fixtures/synthetic-two-presses.json",
+          "sha256": "1429cf774a2a3c4e3d62c7196b4adf16a6c1c42ce01eda1f59dfe9b8ea1770f5"
         }
       ]
     }

@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-08 — Bounded switch-input learning slice
+
+- Extract the independent switch-input simulator, synthetic fixture, lesson, references and tests from PR #4 at 81d39538, without its biomedical evidence or hypothesis tools.
+- Add One press, one star: working Python score logic, a two-press fixture, a paper-first trace, step-by-step code explanation and solved exercises.
+- Escape input-derived Unicode and control characters for predictable, single-line error messages from either CLI.
+- Add boundary, exercise-parity and CLI checks to continuous integration. Learner, educator, device and assistive-technology acceptance remain open.
+- Verification and provenance: [integration record](docs/reviews/switch-learning-integration-2026-11-08.md).
+
 ## Water Survey Preflight experiment, 2026-11-07
 
 - Added an original offline water-point CSV review prototype, synthetic fixtures, public source/rule notes and an evaluation hypothesis under existing CC BY 4.0 terms.
