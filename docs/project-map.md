@@ -81,8 +81,8 @@ Repository root detected CC0-1.0. Third-party assets, engine dependencies and ol
 
 ### Evidence limits
 
-- Fresh browser suite stopped during Chromium startup because socket creation was denied; the app was not loaded. Historical 35-check browser evidence is not a current pass.
-- No fresh audio, exports, native storage persistence, physical-device/Safari performance, accessibility certification, educational efficacy or public child-safety acceptance.
+- The initial archive browser attempt stopped before page load because socket creation was denied. Later scoped offline Chromium/Firefox checks, including quests, native save/reload and actual progress export/restore, are recorded in the [2026-11-08 browser report](test-reports/lumen-browser-2026-11-08.md). Historical upstream checks remain separate evidence.
+- Audio/listening, persistence across browser restarts or file moves, physical-device/Safari performance, accessibility certification, educational efficacy and public child-safety acceptance remain unverified.
 - Browser-local progress and art are not cloud sync; companions are not online players or live AI.
 
 ### Rights
@@ -362,9 +362,9 @@ Mostly no detected root license. Third-party purchased assets/music are not clea
 
 **Status:** New original offline mini-lab, not recovered historical software. **Source ID:** SRC-036.
 
-[Motion → Trace → Shape](../tools/motion-trace-shape/README.md) implements two analytical sinusoidal coordinates with a shared model/history and three representations: separate motions, time traces and combined shape. It supplies reproducible source and a portable 33,912-byte HTML file, three learner prompts and JSON export logic. It is a bounded partial implementation of the demonstrator brief, not a force solver or all proposed quantities.
+[Motion → Trace → Shape](../tools/motion-trace-shape/README.md) implements two analytical sinusoidal coordinates with a shared model/history and three representations: separate motions, time traces and combined shape. It supplies reproducible source, a portable HTML file, learner prompts and JSON export. It is a bounded partial implementation of the demonstrator brief, not a force solver or all proposed quantities.
 
-Fresh checks: 18 analytical/data tests, 14 simulated-DOM control-state tests and targeted static/build checks passed. Real Chromium launch was blocked before page load. Rendering, native control behavior, actual downloads, physical devices, assistive technology and educational effectiveness remain unverified. Existing source-level motion/contrast hooks are not an accessibility certification.
+The initial local browser launch was blocked before page load. Later scoped offline Chromium/Firefox checks cover rendered output, selected native controls and actual downloads, and found a corrected SVG fill defect. See the [2026-11-08 browser report](test-reports/motion-browser-2026-11-08.md) for exact revisions, checks and limits. Physical devices, assistive technology and educational effectiveness remain unverified; implemented motion/contrast hooks are not accessibility certification.
 
 New code and explanations use the archive's CC BY 4.0 license. No upstream code, third-party assets, runtime library, account, storage or background network request is bundled.
 
@@ -372,6 +372,6 @@ New code and explanations use the archive's CC BY 4.0 license. No upstream code,
 
 **Status:** Original offline CSV review prototype. **Source ID:** SRC-037.
 
-[Water Survey Preflight](../tools/water-survey-preflight/README.md) provides explicit mappings and bounded findings for a subset of water-point survey structure, coordinate/date, required-field and duplicate checks. Official WPdx sources are linked with a documented rules reconciliation; all supplied examples are synthetic. Its 40,532-byte HTML, source, tests, source notes and a small evaluation hypothesis are included under CC BY 4.0.
+[Water Survey Preflight](../tools/water-survey-preflight/README.md) provides explicit mappings and bounded findings for a subset of water-point survey structure, coordinate/date, required-field and duplicate checks. Official WPdx sources are linked with a documented rules reconciliation; all supplied examples are synthetic. Its standalone HTML, source, tests, source notes and a small evaluation hypothesis are included under CC BY 4.0.
 
-Fresh checks: 84 tests passed (73 core, 5 static, 6 simulated-controller), plus deterministic build/syntax checks. Independent review corrected exact-decimal boundary handling and a browser-test fixture before release. Real-browser rendering, downloads, mobile use, accessibility and CSP enforcement tests have not run. This partial unofficial preflight is not water-safety assessment, official WPdx validation or upload approval. No practitioner test has established demand, workflow fit or benefit. No real field data, automatic edits, uploads or background network calls are included.
+Scoped offline Chromium/Firefox checks now exercise rendering, real downloads, file import, reload consent, narrow layouts and selected CSP enforcement with invented records. See the [2026-11-08 browser report](test-reports/water-browser-2026-11-08.md) for exact revisions, corrections and limits. Large-paste responsiveness, physical mobile use and assistive technology remain unverified. This partial unofficial preflight is not water-safety assessment, official WPdx validation or upload approval. No practitioner test has established demand, workflow fit or benefit. No real field data, automatic edits, uploads or background network calls are included.
