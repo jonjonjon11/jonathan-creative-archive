@@ -195,5 +195,6 @@ def load():
 
 if __name__ == "__main__":
     from followup import load_followup, validate_followup
+    from registry_update import load_registry_update, validate_registry_update
     historical = load()
-    print(json.dumps({"validation": "passed", **validate(*historical), "followup": validate_followup(load_followup(), historical[0])}, sort_keys=True))
+    print(json.dumps({"validation": "passed", **validate(*historical), "followup": validate_followup(load_followup(), historical[0]), "registry_update": validate_registry_update(load_registry_update(), *historical)}, sort_keys=True))

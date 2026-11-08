@@ -1,3 +1,9 @@
+## Dated ANQUR registry correction, 2026-11-08
+
+- Resolve the historical registry-access/window gaps with dated primary registration and relevant amendment comparisons, retaining the sponsor Phase 1/2 discrepancy.
+- Keep Phase 1 registration, safety-primary/PK-secondary hierarchy, actual enrollment and document availability separate from sponsor-reported results. No efficacy or regulatory-status upgrade.
+- Preserve historical JSON snapshots and add a separately dated structured correction, generated view, validation and mutation tests. See the [review record](research/als_evidence_map_2026-11-07/REVIEW_ANQUR_REGISTRY.md).
+
 ## Bounded VALOR/OLE evidence follow-up, 2026-11-08
 
 - Add separately dated final follow-up extraction with claim-level sources, patient-centered outcomes, biomarkers, safety denominators and limitations. Preserve historical primary failure and original approval assertion.

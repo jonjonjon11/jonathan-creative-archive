@@ -6,7 +6,7 @@
   ],
   "files": {
     ".gitignore": "bb1e6cdf00a7850b7a814c06e83ccef552eb35052d2689abf9447f0bcf323dff",
-    "CHANGELOG.md": "60ac0d245c6b688c8761df90ce1e5aa1de3c94ba6fa0c1ba92c2ee96275f98a9",
+    "CHANGELOG.md": "5287f5f6ea88dffdafad5fbf0e4058c651dc676887e44d17ff9092ff8650d0a1",
     "CONTRIBUTING.md": "a7f0c27dc894287544b519db3b80d367a867f0861afa376b0159db862a860484",
     "LICENSE": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f",
     "README.md": "bd86db326c8b6aacb65a0caf0b2414c9ad9dcfd4793d23d97ddade52e2df64bc",
@@ -142,15 +142,15 @@
     "docs/reviews/main-integration-2026-11-08.md": "97c1c9e41898fc5f800f4697173cf50dd12bf112de9f691eb6d270499e1309f8",
     "docs/task-templates/browser-test-template.md": "79353476533bf1bcb0f33001263410f0888e95117f06a47304b5e0ecdee931fd",
     "docs/task-templates/new-example-template.md": "581e0663fd9efcdbba0cdf712816ec32f155cbfc55639289b405fc729774faec",
-    "research/als_evidence_map_2026-11-07/EVIDENCE_MAP.md": "d1f26dd41f144663911cc7495bdca48b0d4e063b25a873fbd8f0c7a3cc0680a6",
-    "research/als_evidence_map_2026-11-07/MANIFEST.sha256": "57a4473b7c015d3208aee406a6ddb17822ac8858796f65b0eac98afc1f1d72ab",
-    "research/als_evidence_map_2026-11-07/README.md": "6ac98bb4b182cddbb7dc9f8b29dcb877a325c06831291f5fc117cd99d5591ad6",
-    "research/als_evidence_map_2026-11-07/SOURCE_ACCESS.md": "a0109d5be9291c9005a927e92d29a2cd5e0d1271d75e65d63a0728b483c64153",
+    "research/als_evidence_map_2026-11-07/EVIDENCE_MAP.md": "82f52cf8cb84123afd8a66f458c1053df2acb7aec684312c7158796a8224f851",
+    "research/als_evidence_map_2026-11-07/MANIFEST.sha256": "c2a9741d0d3ead62045bc72fb26e203675b90693fcd49f43766ca462e4943e95",
+    "research/als_evidence_map_2026-11-07/README.md": "50bc77160d8398c4e531288b60c493f61aebd687315283dc85854b5f1bc1bba6",
+    "research/als_evidence_map_2026-11-07/SOURCE_ACCESS.md": "005dd0bd795ddc931f0e2dcc66845cfb77a25a417b51c85b7e999ff5b0131209",
     "research/als_evidence_map_2026-11-07/data/records.json": "0c5a626df00b7c675d9785d02a45005a9a213f9043793981ef1906555d967e31",
     "research/als_evidence_map_2026-11-07/data/sources.json": "e6e49bf076d67d594827baca675582bf8e5abb560f6d2335625cf8186fc2de19",
     "research/als_evidence_map_2026-11-07/tests/test_validation.py": "d0d9228fdf0cb41d6d1588b5ce5b59d279aa716c8465583d447545361b01386a",
-    "research/als_evidence_map_2026-11-07/tools/render.py": "72b877096a89d6bf1d23274680d59bb0351f7cc89188c4c0fc6551538ba42880",
-    "research/als_evidence_map_2026-11-07/tools/validate.py": "aece64131ef259e5606ced7fc8fb80254f6cc1068213f720949e46988ffb87dc",
+    "research/als_evidence_map_2026-11-07/tools/render.py": "d1fe2883cc6f9d2f3c7f206ecbc96994360fe296818edd9fb894df6e9e1633db",
+    "research/als_evidence_map_2026-11-07/tools/validate.py": "c034164b53b74ac48a5a2297d8388f396969f37de7b845b83f524bdbb1b6a620",
     "tools/evidence-integrity-audit/LICENSE": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f",
     "tools/evidence-integrity-audit/README.md": "d40e6c00982a4052c15b5bb6f894f458e147f7b14f2df87183dbe0c7bc44ccc5",
     "tools/evidence-integrity-audit/audit.py": "4f0499e672cfcf7415b5919bb0359af61b0279402fe71c9379c72d29aeb233a3",
@@ -207,6 +207,11 @@
     "research/als_evidence_map_2026-11-07/VALOR_OLE_FOLLOWUP.md": "c5dc09088517d0be7d142d758a0339600fde945ceb3aa8b36f31998bfafc14ef",
     "research/als_evidence_map_2026-11-07/data/valor_ole_followup.json": "7f459358656688c4729624c51b9d5c68200867703e79242577f2439e64962576",
     "research/als_evidence_map_2026-11-07/tests/test_followup.py": "fad46c10eaeb053328c9b61fb5f7a2ae93fd807aecdd394b5bc7951ce0adf430",
-    "research/als_evidence_map_2026-11-07/tools/followup.py": "4bde3c3b5a9cf3820aff5a034909118f5d93c77aa367ed31b8fc3cc7ccacc3a3"
+    "research/als_evidence_map_2026-11-07/tools/followup.py": "4bde3c3b5a9cf3820aff5a034909118f5d93c77aa367ed31b8fc3cc7ccacc3a3",
+    "research/als_evidence_map_2026-11-07/ANQUR_REGISTRY_UPDATE.md": "52333e198ed6f28b57ffb77cd613f5147d5a1d4185b046058aea5fdbdff3b4b3",
+    "research/als_evidence_map_2026-11-07/REVIEW_ANQUR_REGISTRY.md": "3758c183784e62d6f2e8d45f57d2754d4dc530c8daa74525c15955dd132282cb",
+    "research/als_evidence_map_2026-11-07/data/anqur_registry_update.json": "4ef151650e9a896a4dd1becebc41f364634e73b9e2fcb640fe5c59cc070aecf0",
+    "research/als_evidence_map_2026-11-07/tests/test_registry_update.py": "4681b3ad0304973056a0cd2ecd351ee6ce59258d1c1d63dfbeec6cd18484fad8",
+    "research/als_evidence_map_2026-11-07/tools/registry_update.py": "8752f6501ffcfd78fb0fe5c2bf2614aff8d090cec1172223d5c7e0cb96ae49b1"
   }
 }

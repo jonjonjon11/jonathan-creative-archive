@@ -8,6 +8,10 @@ This small, hand-curated map separates molecular mechanisms, biomarkers, clinica
 
 [VALOR/OLE follow-up](VALOR_OLE_FOLLOWUP.md) separately extracts selected final-report outcomes, supplemental methods and limits. The six historical records and their 2026-11-07 access dates are preserved; this is not a whole-map refresh. The companion uses its own schema 1.0.0 in `data/valor_ole_followup.json`, claim-level source locations and 2026-11-08 access dates. See [review scope and tests](REVIEW_VALOR_OLE.md). Independent AI extraction/software review is distinct from ALS clinician review, which has not occurred.
 
+## Dated ANQUR registry correction, 2026-11-08
+
+[ANQUR registry correction](ANQUR_REGISTRY_UPDATE.md) resolves the historical registry-access and safety-window gaps. The reviewed May 15, 2026 registration still lists Phase 1, safety primary through Day 421 and plasma-PK secondary endpoints; the sponsor’s Phase 1/2 wording remains an unexplained discrepancy. Registration is not efficacy evidence. This companion has its own schema 1.0.0, source/access dates and [review record](REVIEW_ANQUR_REGISTRY.md); historical JSON records and sponsor-only outcomes remain unchanged. Machine consumers must load `data/anqur_registry_update.json` alongside the historical `data/records.json`, rather than treating the old access caveats as current.
+
 ## Read and reproduce
 
 - `EVIDENCE_MAP.md`: generated human-readable records.
@@ -28,7 +32,7 @@ python3 tools/render.py --check
 sha256sum -c MANIFEST.sha256
 ```
 
-`render.py` deterministically regenerates the two historical Markdown views and the follow-up companion. The validator checks both schemas, including separate analysis identity, source locators, denominators and nominal inference. It cannot establish the truth of source claims or the adequacy of an analysis. Hashes and passing tests prove local file integrity and consistency, not scientific correctness. No test contacts the internet or re-estimates trial statistics. A reviewer must revisit cited sources and examine methods, protocols, amendments, and supplements before reuse.
+`render.py` deterministically regenerates the historical Markdown views, the VALOR/OLE companion and the ANQUR registry correction. The validator checks all three schemas, including separate analysis identity, source locators, denominators and nominal inference. It cannot establish the truth of source claims or the adequacy of an analysis. Hashes and passing tests prove local file integrity and consistency, not scientific correctness. No test contacts the internet or re-estimates trial statistics. A reviewer must revisit cited sources and examine methods, protocols, amendments, and supplements before reuse.
 
 ## Selection and interpretation
 
@@ -42,12 +46,12 @@ Schema 1.1.0 separates statistical methods: tofersen's primary joint-rank test w
 
 Regulatory fields are typed and must match a dated, record-specific assertion in an in-record cited source. Approvals and withdrawals require a retrieved regulator source type. These assertions are curated extractions, not an independent truth oracle: metadata and matching assertions could both be wrong. Positive synthetic tests demonstrate that a newly sourced status can be accepted rather than permanently fixing a drug's current status. Snapshot-specific clinical guardrails protect selected historical extractions, not all future evidence.
 
-Dates distinguish original publication, source-described events, retrieval, and archive cutoff. The April 2024 Relyvrio announcement is deliberately separate from FDA's August 2025 approval withdrawal. Registry links whose pages did not render are navigation aids only; their contents were not treated as verified. QRL-201's phase and endpoint descriptions are explicitly attributed to sponsor reports from different dates.
+Dates distinguish original publication, source-described events, retrieval, and archive cutoff. The April 2024 Relyvrio announcement is deliberately separate from FDA's August 2025 approval withdrawal. Originally inaccessible registry links are retained as historical retrieval records, not claim evidence. ANQUR’s subsequently verified registration and amendments have a separately dated correction; sponsor descriptions retain their original attribution.
 
 ## Limitations and review before publication
 
 1. Recheck every claim against full methods and statistical-analysis plans. Selected source sections, not all supplements, were read. VALOR's publisher page was unavailable; its numerical findings were cross-checked against the accessible original FDA label.
-2. Resolve trial-registry access gaps and inspect amendment histories, especially ANQUR's phase terminology and endpoint hierarchy. Do not silently treat a 2024 sponsor description as a verified 2026 protocol.
+2. Other trial-registry access gaps remain. ANQUR registration and relevant version comparisons are now verified in the dated correction; full protocol/SAP details and the reason for sponsor/registry phase terminology differences remain unknown. Do not treat a registry summary as a full protocol.
 3. Review later publications, regulator updates, and safety evidence. This is not a complete current safety/benefit assessment. The historical tofersen label is intentionally identified as historical.
    - Significant named omission: [Long-Term Tofersen in SOD1 Amyotrophic Lateral Sclerosis](https://jamanetwork.com/journals/jamaneurology/fullarticle/2843130), published online December 22, 2025 (February 2026 issue), reports final integrated VALOR/OLE results. Its longer-term efficacy and safety results remain outside this historical tofersen record. Selected findings are now in the separately dated [follow-up companion](VALOR_OLE_FOLLOWUP.md); broader later evidence and original SAP versions remain unverified.
 4. Obtain independent ALS clinical and research-methods review. No such review has occurred here. Absence of a reported result is not evidence that no result exists.

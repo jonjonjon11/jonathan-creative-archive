@@ -4,15 +4,22 @@ import argparse
 from pathlib import Path
 from validate import ROOT, load, validate
 from followup import load_followup, validate_followup, render_followup
+from registry_update import load_registry_update, validate_registry_update, render_registry_update, registry_notice
 
 
-def render(document, register):
+def render(document, register, registry_update=None):
+    if registry_update is None:
+        registry_update = load_registry_update()
+    validate_registry_update(registry_update, document, register)
     sources = {s["id"]: s for s in register["sources"]}
     def citations(ids):
         return "; ".join(f"[{i}]({sources[i]['url']})" for i in ids)
     lines = ["# ALS evidence map", "", f"Snapshot: {document['as_of']}. Six purposively selected records. Not comprehensive.", "", "**Draft research candidate. Not independently reviewed by an ALS clinician. No patient predictions or treatment recommendations.**", "", "Read README.md for selection, interpretation, reproducibility, and limitations. Source dates and access caveats are in SOURCE_ACCESS.md. A separately dated [VALOR/OLE follow-up](VALOR_OLE_FOLLOWUP.md) adds later evidence without changing the historical primary result.", ""]
     for r in document["records"]:
-        lines += [f"## {r['title']}", "", f"- Record: `{r['id']}`", f"- Stage: {r['stage'].replace('_', ' ')}", f"- Target: {r['target']}", f"- Population: {r['population']}", f"- Design: {r['design']}", f"- Trial identifiers: {', '.join(r['trial_ids']) or 'None asserted in this record'}", f"- Context sources: {citations(r['source_ids'])}", ""]
+        lines += [f"## {r['title']}", ""]
+        if r["id"] == registry_update["parent_record_id"]:
+            lines += [registry_notice(registry_update), "", "The following fields preserve the original November 7 snapshot; their registry-access/window caveats are superseded by the dated correction above.", ""]
+        lines += [f"- Record: `{r['id']}`", f"- Stage: {r['stage'].replace('_', ' ')}", f"- Target: {r['target']}", f"- Population: {r['population']}", f"- Design: {r['design']}", f"- Trial identifiers: {', '.join(r['trial_ids']) or 'None asserted in this record'}", f"- Context sources: {citations(r['source_ids'])}", ""]
         for o in r["observations"]:
             lines += [f"### {o['kind'].replace('_', ' ').capitalize()}", "", f"{o['endpoint']}. Timepoint: {o['timepoint']}.", "", o["result"]]
             if o["statistic"] is not None:
@@ -45,7 +52,7 @@ def render(document, register):
             access += [f"- Curated regulatory assertion: {a['record_id']}; {a['status']}; {a['jurisdiction']}; {a['event_date']}. Source location: {a['locator']}."]
         if s["regulatory_assertions"]:
             access += [""]
-    access += ["## Unverified navigation and retrieval gaps", "", "These URLs do not supply verified claim evidence in this map.", ""]
+    access += ["## Historical navigation and retrieval gaps", "", "The entries below record failed retrievals on November 7. ANQUR registration and API access were subsequently verified on November 8: see the [dated registry correction](ANQUR_REGISTRY_UPDATE.md). Other entries remain unverified. These historical entries themselves are not claim evidence.", ""]
     for s in register["unverified_navigation"]:
         access += [f"- [{s['purpose']}]({s['url']}): {s['access_note']}"]
     return {"EVIDENCE_MAP.md": "\n".join(lines).rstrip() + "\n", "SOURCE_ACCESS.md": "\n".join(access).rstrip() + "\n"}
@@ -61,6 +68,7 @@ def main():
     validate_followup(followup, document)
     views = render(document, register)
     views["VALOR_OLE_FOLLOWUP.md"] = render_followup(followup)
+    views["ANQUR_REGISTRY_UPDATE.md"] = render_registry_update(load_registry_update(), register)
     for filename, content in views.items():
         path = ROOT / filename
         if args.check:
