@@ -130,7 +130,7 @@
     "TASK_COMPLETE_MARKERS.txt": "c8bf06970d7168ac536cc5f85e864d9a72a206e5b46d0773ebdb2c8d44d55121",
     "data/TODO-modules.json": "c0fecb2a685fc3984de5fd3130e1d4abc9ff1b7a696ea8a171b784bacc5e16ae",
     "data/modules-math-curriculum.json": "1750a986196d2466ea8331921905ec0bdd4142afa315f1eefb7c67b19319a6db",
-    "data/modules/MOD-math-add-001.json": "e5aae944af1f67b5652672a5c278097ce8be367f04dfd73b9050073908b09052",
+    "data/modules/MOD-math-add-001.json": "6815b147272e3de256c7afb97bbf93a780f40617ceebb1d5f3df7f00f1cb7a8d",
     "data/modules/MOD-math-count-001.json": "702c9bf3e487a214fa4d1eddceda183a99f89eb0de0496ce936d52a467337184",
     "data/modules/MOD-math-mult-intro-001.json": "2daf6a635dde6bb9711e7c9c176b8c54da8101fbd7f58fff91a1a0eab8c256fd",
     "data/projects/proj-motion-trace-shape.json": "7aa54347b7c27f6a5259994f8bd91f685502f0222a59c79fbbaaf0c8c15ee487",
@@ -216,6 +216,8 @@
     "docs/reviews/multiplication-prerequisite-2026-11-08.md": "5b3182105a2971f53e129f5aa91543150ae98ecca67f246c965444ba6a4b0638",
     "tests/test_multiplication_lesson.py": "88ce1a8a730657c10dbdee89ab02960edd419734c884302d47305747ff02a9c9",
     "tests/test_counting_lesson.py": "d74e3d47ceb31df75a04db6967666fadd50afaead4001ecc3122125de0414651",
-    "docs/reviews/counting-prerequisite-2026-11-08.md": "ea7c0a897a814971432a27794394184137bf9931494251229f1b70f853697004"
+    "docs/reviews/counting-prerequisite-2026-11-08.md": "ea7c0a897a814971432a27794394184137bf9931494251229f1b70f853697004",
+    "tests/test_addition_lesson.py": "cca5ac0f163f04757a9e92272044af28dd03e4a385932ff58f097606dd098c90",
+    "docs/reviews/addition-prerequisite-2026-11-08.md": "9819b99256406c5202518d313234a98da66b7b45d8b49603b21d8f3caf9cdcbe"
   }
 }
