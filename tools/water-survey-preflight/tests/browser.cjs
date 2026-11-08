@@ -172,15 +172,21 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     await page.waitForFunction(() => document.querySelector("#count-records").textContent === "25,000" && !document.querySelector("#results").hidden);
     assert.equal(await page.locator("#count-records").textContent(), "25,000");
     assert.equal(await page.locator("#count-errors").textContent(), "100,000");
-    await page.locator(".stats").scrollIntoViewIfNeeded();
-    await page.screenshot({ path: path.join(dir, "maximum-counts.png") }); screenshots.push("maximum-counts.png");
-    summary.maximumCountsLayout = await page.evaluate(() => ({
-      viewportWidth: window.innerWidth, documentWidth: document.documentElement.scrollWidth,
-      counts: [...document.querySelectorAll(".stats strong")].map(node => ({ text: node.textContent, width: node.clientWidth, contentWidth: node.scrollWidth }))
-    }));
-    assert.ok(summary.maximumCountsLayout.documentWidth <= summary.maximumCountsLayout.viewportWidth, "Maximum counts must not overflow the viewport");
-    assert.ok(summary.maximumCountsLayout.counts.every(node => node.contentWidth <= node.width), "Maximum count text must fit its own box");
-    pass("maximum record count and six-digit error total fit the 320-pixel viewport");
+    summary.maximumCountsLayout = [];
+    for (const width of [320, 401, 660, 661]) {
+      await page.setViewportSize({ width, height: 700 });
+      await page.locator(".stats").scrollIntoViewIfNeeded();
+      const filename = `maximum-counts-${width}.png`;
+      await page.screenshot({ path: path.join(dir, filename) }); screenshots.push(filename);
+      const layout = await page.evaluate(() => ({
+        viewportWidth: window.innerWidth, documentWidth: document.documentElement.scrollWidth,
+        counts: [...document.querySelectorAll(".stats strong")].map(node => ({ text: node.textContent, width: node.clientWidth, contentWidth: node.scrollWidth }))
+      }));
+      summary.maximumCountsLayout.push(layout);
+      assert.ok(layout.documentWidth <= width, `Maximum counts must not overflow the ${width}-pixel viewport`);
+      assert.ok(layout.counts.every(node => node.contentWidth <= node.width), `Maximum count text must fit its own box at ${width} pixels`);
+    }
+    pass("maximum record count and six-digit error total fit at 320, 401, 660 and 661 pixels, including both sides of the narrow breakpoint");
     // Separate positive-control CSP probe: no remote target, data, or policy relaxation.
     const probe = await context.newPage();
     await probe.goto(pathToFileURL(isolatedFile).href);
