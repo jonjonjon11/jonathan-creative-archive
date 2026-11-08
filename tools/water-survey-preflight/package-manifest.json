@@ -70,8 +70,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 40551,
-      "sha256": "b61c1afd7e0e2ae38d6958637e3fa23b41e715bc05ed53f2b96a4b0fe946bce3"
+      "bytes": 40635,
+      "sha256": "e7ce2d5ed15d08d677210f43688e9ef4d2edfa4f09a8a9af012d0155bed2436e"
     },
     {
       "path": "src/core.js",
@@ -80,8 +80,8 @@
     },
     {
       "path": "src/style.css",
-      "bytes": 6697,
-      "sha256": "4665e5a3a06a45a969ad1e5d75d9b40ca1b4a49b71497db3a25d68ea7184a6f3"
+      "bytes": 6781,
+      "sha256": "d4be80f944672936a48475fd604f52aa78576101da0dd3ad44b9df4bd86a5b48"
     },
     {
       "path": "src/template.html",
@@ -95,8 +95,8 @@
     },
     {
       "path": "tests/browser.cjs",
-      "bytes": 16592,
-      "sha256": "436851ebf7af471cee65870b18daa8e76f39451f09e618b89452e26b138daff3"
+      "bytes": 16960,
+      "sha256": "dee82a35371ab9cd8d4dfe829b71877c9a7419575c468170f47f6692e9e66ff4"
     },
     {
       "path": "tests/core.test.cjs",

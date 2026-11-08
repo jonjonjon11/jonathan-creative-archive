@@ -174,8 +174,12 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     assert.equal(await page.locator("#count-errors").textContent(), "100,000");
     await page.locator(".stats").scrollIntoViewIfNeeded();
     await page.screenshot({ path: path.join(dir, "maximum-counts.png") }); screenshots.push("maximum-counts.png");
-    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
-    assert.equal(await page.locator(".stats strong").evaluateAll(nodes => nodes.every(node => node.scrollWidth <= node.clientWidth)), true);
+    summary.maximumCountsLayout = await page.evaluate(() => ({
+      viewportWidth: window.innerWidth, documentWidth: document.documentElement.scrollWidth,
+      counts: [...document.querySelectorAll(".stats strong")].map(node => ({ text: node.textContent, width: node.clientWidth, contentWidth: node.scrollWidth }))
+    }));
+    assert.ok(summary.maximumCountsLayout.documentWidth <= summary.maximumCountsLayout.viewportWidth, "Maximum counts must not overflow the viewport");
+    assert.ok(summary.maximumCountsLayout.counts.every(node => node.contentWidth <= node.width), "Maximum count text must fit its own box");
     pass("maximum record count and six-digit error total fit the 320-pixel viewport");
     // Separate positive-control CSP probe: no remote target, data, or policy relaxation.
     const probe = await context.newPage();
