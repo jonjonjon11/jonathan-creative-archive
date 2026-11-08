@@ -33,7 +33,7 @@ Privacy: exact private conversation/document locators are excluded.
 - [Reality Atlas](tools/reality-atlas/README.md): unchanged CC0 browser tool; 46 calculation/syntax checks passed, fresh browser rendering blocked.
 - [Cooperation/rescue mission kit](artifacts/cooperation-rescue/README.md): preserved CC0 mission data and Python authoring/reference validator; 25 tests passed. Draft/unmerged source, not a playable game or certified training system.
 
-- [Lumen Commons 0.1](tools/lumen-commons/README.md): distinct CC0 educational browser adventure with reproducible source; 24 Node tests and static build checks passed, fresh browser test blocked before page load.
+- [Lumen Commons 0.1](tools/lumen-commons/README.md): distinct CC0 educational browser adventure with reproducible source; 24 Node tests, static build checks and scoped offline Chromium/Firefox standalone quest/save/export/restore checks pass; physical-device, audio, accessibility and learner acceptance remain open.
 
 - [Universal Color + Ontology Core v1](tools/universal-color-ontology/README.md): preserved CC0 source toolkit for color representations, a finite vocabulary and bounded generators; 29 Node tests passed. Known input gaps; no UI, validated knowledge graph or flashing/accessibility safety claim.
 

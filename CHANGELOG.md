@@ -1,3 +1,9 @@
+# Lumen standalone browser validation, 2026-11-08
+
+- Added original archive-authored offline Chromium/Firefox checks and pinned CI jobs without changing recovered runtime, standalone, CSP or source/test provenance.
+- Verified all five quests, repeated completion, native keyboard ranges, dialog dismissal, settings, scripted dialogue/artwork, native save/reload and same-context tab reopen, four real JSON downloads, export/erase/restore, invalid imports, injected storage denial and four CSS viewport layouts. Screenshot review also prompted a bounded canvas-paint readiness check rather than accepting a cleared canvas after resize.
+- Preserved exact browser/build evidence and updated current verification descriptions. Physical-device/touch, audio, accessibility, translation quality and educational acceptance remain open.
+
 # Changelog
 
 ## 2026-11-08 — Bounded switch-input learning slice

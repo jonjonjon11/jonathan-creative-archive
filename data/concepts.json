@@ -366,8 +366,8 @@
       ],
       "artifact_status": "source_inspected",
       "scientific_standing": "established_model_scoped",
-      "limitations": "Source/generated prototype with 24 passing Node tests and static build checks, but fresh browser testing blocked before page load. Not a validated curriculum, live MMORPG or certified accessible system.",
-      "next_step": "Run the preserved browser suite and deliberate device/persistence/audio/accessibility checks before extending the lessons or hosting it."
+      "limitations": "Preserved prototype with 24 passing Node tests, static build checks and scoped offline Chromium/Firefox standalone quest/save/export/restore checks. Not a validated curriculum, live MMORPG or certified accessible system; physical-device/touch, audio and learner acceptance remain open.",
+      "next_step": "Review docs/test-reports/lumen-browser-2026-11-08.md, then assess physical-device/touch, audio, browser-restart persistence, accessibility and educator/learner workflows before extending or hosting it."
     },
     {
       "id": "CON-022",
