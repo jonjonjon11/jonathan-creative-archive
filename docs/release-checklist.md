@@ -26,7 +26,7 @@ Review date: 2026-11-06. A clean structural check is not a complete security, le
 - Run `node scripts/check_reality_core.cjs` for the preserved tool’s 46 focused calculation/syntax checks.
 - The cooperation/rescue validator and all 25 preserved tests passed; these check authoring/reference logic, not playable content or safety certification.
 - The Reality Atlas tool’s fresh rendered-browser test was blocked before page load. Browser interaction, WebGL rendering, downloads, SVG export, accessibility, mobile, and headset acceptance remain unverified in this edition.
-- Lumen Commons passed 24 fresh Node tests and static build/source-parity checks. Its browser test was blocked before page load; no fresh rendered-browser or device acceptance is claimed.
+- Lumen Commons has 24 passing Node tests, static build/source-parity checks and [offline Chromium/Firefox standalone checks](test-reports/lumen-browser-2026-11-08.md). Physical-device/touch, audio, accessibility and learner acceptance remain open.
 - Historical source test reports remain distinct from newly executed checks.
 - SHA-256 values in `data/checksums.json` support file-integrity comparison; they are not proof of scientific correctness or rights.
 

@@ -61,13 +61,13 @@
       "rights": {
         "license_declared": "CC0-1.0",
         "license_path": "tools/lumen-commons/LICENSE",
-        "scope": "Included originals and generated standalone named in source-review-manifest.json; archive README is CC BY 4.0.",
+        "scope": "Included originals and generated standalone named in source-review-manifest.json retain CC0; archive README, standalone_browser.py and new validation reports are CC BY 4.0.",
         "review_record": "tools/lumen-commons/README.md"
       },
       "verification": {
-        "status": "node_and_static_checks_passed_browser_blocked",
-        "record": "tools/lumen-commons/README.md",
-        "limitations": "24 Node tests and build/static checks passed. Fresh browser suite blocked before page load; no educational efficacy or target-device acceptance."
+        "status": "scoped_offline_browser_checks_passed",
+        "record": "docs/test-reports/lumen-browser-2026-11-08.md",
+        "limitations": "24 Node tests, static/build checks and scoped Chromium/Firefox standalone quest, native reload, export/restore and layout checks pass. Source-edition navigation, browser-restart persistence, physical touch devices, audio, accessibility and educational acceptance remain unverified."
       },
       "preserved_manifest": "tools/lumen-commons/source-review-manifest.json",
       "pinned_files": []
