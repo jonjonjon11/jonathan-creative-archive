@@ -199,6 +199,6 @@
     "docs/test-reports/water-browser-2026-11-08.md": "ccedb0dfa2bfb3e7692229937baa294137f404d07c2577e587e29fa52691812a",
     "docs/test-reports/water-chromium-2026-11-08.json": "840b0ebdfef242cc79673d73943a58f7025950b24e20767176f61824d8516970",
     "docs/test-reports/water-firefox-2026-11-08.json": "9ce681aaef61b2041c0cd60da27ad6fd7a49629bb52c8f0aa7b8e2c89d5117d0",
-    "tools/reality-atlas/tests/browser_smoke.py": "91cea41b3715042664141516953fb02bb73b4a7185708b57bd3520efbd0e9ba9"
+    "tools/reality-atlas/tests/browser_smoke.py": "3e5dae7ce9ed8b68fb75d9ec9a938cf9146ae6297245587bf07f3484611e1926"
   }
 }

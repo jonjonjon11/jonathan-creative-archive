@@ -299,12 +299,26 @@ def functional(browser, url, report, folder):
             page.locator(f'[data-lab="{lab}"]').click()
             settle(page)
             paint_after_resize(page)
-            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            assert page.evaluate('document.documentElement.scrollWidth <= document.documentElement.clientWidth')
             page.locator('#a-svg').scroll_into_view_if_needed()
             expect(page.locator('#a-svg')).to_be_visible()
         page.locator('[data-view="snapshot"]').click()
         settle(page)
         report['downloads'].append(exports(page, folder, f'layout-{width}-{height}-export'))
+        # Full-page Chromium captures can crop a scrollbar-width strip. Retain
+        # a normal viewport capture and measured client-width bounds as well.
+        metrics = page.evaluate('''() => {
+          const root = document.documentElement;
+          return {innerWidth, clientWidth: root.clientWidth, scrollWidth: root.scrollWidth,
+            controls: ['a-export', 'a-svg'].map(id => {
+              const b = document.getElementById(id).getBoundingClientRect();
+              return {id, left: b.left, right: b.right};
+            })};
+        }''')
+        assert all(c['left'] >= 0 and c['right'] <= metrics['clientWidth'] for c in metrics['controls'])
+        report['layout_metrics'].append({'viewport': [width, height], **metrics})
+        page.evaluate('window.scrollTo(0, 0)')
+        page.screenshot(path=str(folder / f'viewport-{width}-{height}.png'), full_page=False)
         screenshot(page, folder, f'narrow-{width}-{height}')
     check(report, '390 320 and landscape layouts paint without page overflow after repeated switches; exports work')
     page.reload()
@@ -373,7 +387,7 @@ def main():
               'artifact_sha256': digest(ROOT / FILENAME), 'runner_sha256': digest(Path(__file__)),
               'loading': 'isolated copied HTML via actual file URL; fresh offline browser context',
               'rendering': 'software renderer requested; actual renderer recorded below',
-              'checks': [], 'downloads': [], 'page_errors': [], 'console_errors': [], 'external_requests': [],
+              'checks': [], 'downloads': [], 'layout_metrics': [], 'page_errors': [], 'console_errors': [], 'external_requests': [],
               'not_tested': ['physical mobile/touch', 'Safari or Edge', 'native GPU/Metal or WebGPU',
                              'Unity Unreal or VR', 'screen readers or full keyboard traversal',
                              'accessibility conformance', 'scientific or learner/educator acceptance',
