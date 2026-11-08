@@ -14,7 +14,9 @@ import json
 import sys
 from pathlib import Path
 from datetime import date
-from hypothesis_engine import HypothesisEngine, Pathway, Intervention, Mechanism
+from hypothesis_engine import (
+    HYPOTHESIS_LIMITATIONS, HypothesisEngine, Pathway, Intervention, Mechanism,
+)
 
 
 def load_pathway_network(network_path: str) -> dict:
@@ -150,10 +152,12 @@ def export_research_plan(engine: HypothesisEngine, output_dir: str) -> None:
     
     hypotheses_file = output_path / "als-aging-hypotheses.json"
     plan_data = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
+        "status": "unvalidated_research_questions",
+        "limitations": HYPOTHESIS_LIMITATIONS,
         "generated": date.today().isoformat(),
         "title": "ALS and Aging Research Hypothesis Plan",
-        "description": "AI-generated high-priority research hypotheses ranked by impact, confidence, and feasibility.",
+        "description": "Template-generated, unvalidated research questions sorted by heuristic scores. No clinical predictions or validated ranking.",
         "hypothesis_count": len(engine.hypotheses),
         "pathways_analyzed": len(engine.pathways),
         "interventions_reviewed": len(engine.interventions),
@@ -164,6 +168,8 @@ def export_research_plan(engine: HypothesisEngine, output_dir: str) -> None:
                 "type": h.hypothesis_type,
                 "statement": h.statement,
                 "prediction": h.prediction,
+                "target_outcome": h.target_outcome,
+                "patient_population": h.patient_population,
                 "confidence": h.confidence,
                 "priority_score": h.priority_score,
                 "timeline_months": h.estimated_timeline_months,
@@ -178,6 +184,8 @@ def export_research_plan(engine: HypothesisEngine, output_dir: str) -> None:
                 "id": h.id,
                 "type": h.hypothesis_type,
                 "statement": h.statement,
+                "target_outcome": h.target_outcome,
+                "patient_population": h.patient_population,
                 "confidence": h.confidence,
                 "priority_score": h.priority_score
             }
@@ -198,26 +206,34 @@ def export_research_plan(engine: HypothesisEngine, output_dir: str) -> None:
     with open(report_file, 'w') as f:
         f.write("# ALS and Aging Research Hypothesis Generation Report\n\n")
         f.write(f"**Generated:** {date.today().isoformat()}\n\n")
+        f.write("**Status:** Unvalidated research questions, not clinical predictions.\n\n")
+        f.write("## Interpretation limits\n\n")
+        for limitation in HYPOTHESIS_LIMITATIONS:
+            f.write(f"- {limitation}\n")
+        f.write("\n")
         f.write(f"## Summary\n\n")
         f.write(f"- **Pathways Analyzed:** {len(engine.pathways)}\n")
         f.write(f"- **Interventions Reviewed:** {len(engine.interventions)}\n")
         f.write(f"- **Hypotheses Generated:** {len(engine.hypotheses)}\n")
-        f.write(f"- **Top Priorities:** {len(top_hypotheses[:10])}\n\n")
+        f.write(f"- **Questions displayed below:** {len(top_hypotheses[:10])}\n\n")
         
-        f.write("## Top 10 Research Hypotheses\n\n")
+        f.write("## First 10 Questions by Unvalidated Heuristic Score\n\n")
         for i, h in enumerate(top_hypotheses[:10]):
             f.write(f"### {i+1}. {h.statement}\n\n")
             f.write(f"**Type:** {h.hypothesis_type}\n")
             f.write(f"**Confidence:** {h.confidence}\n")
-            f.write(f"**Priority Score:** {h.priority_score:.2f}\n")
-            f.write(f"**Timeline:** ~{h.estimated_timeline_months} months\n")
+            f.write(f"**Heuristic score (unvalidated):** {h.priority_score:.2f}\n")
+            f.write(f"**Timeline placeholder (unvalidated):** {h.estimated_timeline_months} months\n")
+            if h.hypothesis_type == "therapeutic":
+                f.write(f"**Target outcome:** {h.target_outcome}\n")
+                f.write(f"**Population label (not validated):** {h.patient_population}\n")
             f.write(f"**Prediction:** {h.prediction}\n\n")
         
         f.write("## Next Steps\n\n")
-        f.write("1. **Prioritize testing:** Focus first on high-confidence, high-impact hypotheses (scores > 0.75)\n")
-        f.write("2. **Run parallel tracks:** Some hypotheses can be tested simultaneously\n")
-        f.write("3. **Integrate results:** Use findings to refine pathway models and generate new hypotheses\n")
-        f.write("4. **Coordinate globally:** Share results with other ALS research groups to avoid duplication\n\n")
+        f.write("1. **Review sources:** Connect each question to directly inspected evidence and distinguish outcomes, populations, and study designs.\n")
+        f.write("2. **Specify the question:** Define the comparator, measurement, time point, and analysis before testing.\n")
+        f.write("3. **Review assumptions:** Audit registry coefficients, literature counts, and heuristic scores; do not infer efficacy or priorities from them.\n")
+        f.write("4. **Obtain qualified review:** Scientific, ethical, and safety review is needed before research use.\n\n")
     
     print(f"✓ Generated research report: {report_file}")
 

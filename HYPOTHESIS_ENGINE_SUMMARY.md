@@ -1,8 +1,16 @@
 # Hypothesis Engine: AI-Driven Research Planning Summary
 
 **Date:** November 7, 2026
-**Status:** ✓ Complete and tested
+**Status:** Historical implementation summary with unresolved scientific claims
 **PR:** #5 (codex/hypothesis-engine)
+
+**Review notice (2026-11-08):** Passing software tests does not establish the
+scientific or clinical claims below. Therapeutic generation now poses
+direction-neutral questions and retains outcome/population context. The claimed
+literature coverage, efficacy, coefficients, timelines, and rankings in this
+historical summary remain unverified. See the [current limitations and correction](docs/research/hypothesis-outcome-safety.md)
+and [regenerated report](data/health/HYPOTHESIS_GENERATION_REPORT.md). This document
+is preserved as history, not as a validated research result or recommendation.
 
 ## What Was Built
 

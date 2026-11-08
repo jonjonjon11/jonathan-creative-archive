@@ -1,5 +1,46 @@
 # Hypothesis Engine: AI-Driven Research Planning for ALS and Aging
 
+## Current review status
+
+**Unvalidated research-question generator.** It does not simulate disease, predict
+treatment effects, or validate clinical indications. Loading an evidence pack
+stores it but does not connect its sources to generated questions. The older
+overview below contains proposed capabilities and unreviewed scientific claims;
+it must not be read as evidence that they are implemented or established.
+
+The outcome-safety correction replaces blanket claims such as "will reduce motor
+neuron survival" with direction-neutral questions. Therapeutic questions preserve
+the caller's outcome and population, use `open_question` confidence, and do not
+turn an intervention's registry label into confidence in a new outcome claim.
+If population is omitted, it is explicitly `unspecified population`, not SOD1-ALS.
+No clinical benefit or harm is inferred from the question wording.
+
+Hypothesis exports are now version `1.1`. They add `status`, `limitations`,
+`target_outcome`, and `patient_population`. Therapeutic IDs now identify the
+intervention/outcome/population tuple, so distinct questions no longer overwrite
+each other. **Old therapeutic IDs change:** regenerate dependent exports and
+review downstream references rather than joining old and new IDs blindly.
+Identical normalized questions retain one deterministic ID. Non-therapeutic
+records use null outcome/population fields; pathway exports remain version `1.0`.
+
+The existing scores, timelines, registry coefficients, literature counts,
+mechanistic statements, and combination claims still require source-level review.
+Scores remain heuristic, including the retained 0.9/0.5 therapeutic values; they
+are not clinical probabilities or validated research priorities. No quantitative
+claim has been newly established by this correction.
+
+Run the full standard-library regression suite from the repository root:
+
+```sh
+python3 -m unittest discover -s tools/hypothesis-engine/tests -p 'test_*.py' -v
+```
+
+The suite checks wording, preserved context, non-overwriting IDs, malformed
+context, export limits, and committed-output parity apart from the generation
+date. The original single test-file invocation does not run the new regressions.
+The workflow runs the full suite. See the [review record](../../docs/research/hypothesis-outcome-safety.md)
+for the scope and remaining gaps.
+
 ## Overview
 
 The Hypothesis Engine is a computational system for generating, ranking, and prioritizing research hypotheses to accelerate ALS and aging reversal research.
@@ -79,8 +120,8 @@ python3 hypothesis_engine.py --test
 # Generate research plan
 python3 generate_hypotheses.py
 
-# Run tests
-python3 -m pytest tests/test_hypothesis_engine.py -v
+# Run all standard-library tests, including the output-safety regressions
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
 ### Integration with Evidence Library
