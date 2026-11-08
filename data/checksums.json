@@ -6,7 +6,7 @@
   ],
   "files": {
     ".gitignore": "bb1e6cdf00a7850b7a814c06e83ccef552eb35052d2689abf9447f0bcf323dff",
-    "CHANGELOG.md": "5287f5f6ea88dffdafad5fbf0e4058c651dc676887e44d17ff9092ff8650d0a1",
+    "CHANGELOG.md": "d535c51c58d527a434ea8ebdc9659994ef0dd0f9aa19d08a62a9fe6942397c97",
     "CONTRIBUTING.md": "a7f0c27dc894287544b519db3b80d367a867f0861afa376b0159db862a860484",
     "LICENSE": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f",
     "README.md": "ec611716dddbf2d202e6baf9ba6bb04644887649a9e1d6e73dc1eb1336ffa5ec",
@@ -117,7 +117,7 @@
     "tools/water-survey-preflight/tests/fixtures.cjs": "353f5f580e5e4c87b7e93f698f0dff76b9b209449e76e082077a674a9a663395",
     "tools/water-survey-preflight/tests/static.test.cjs": "1329706bee22645a039291ef7cfa2ee1df643ac714aae07bcf505e49bea34105",
     "tools/water-survey-preflight/tests/ui.test.cjs": "ead2556d81da949ac994c9d9210a006864a22a6c82cb397fe83b5fe629ba40a6",
-    ".github/workflows/knowledge-commons-status.yml": "88d95516fe7dae66978ffdc89e1c0be630a0894119ee9f2a6bcd8c55ad1861d1",
+    ".github/workflows/knowledge-commons-status.yml": "39016e4ee8bc511c8a49237619b670fc3ccbce0761c8ff5a754ca5a4c590d1ba",
     "FOR_OTHER_AIS.md": "a584f2eaa18498d7e0d3be270cbd3d116c4d2a8aa4ac38a0a8650a5d15df3a72",
     "HANDOFF.md": "462dd9a5bc2be28b0a67a37c18ecf406b085c9a4d43ba32f9e44c41128dff2c8",
     "IMPLEMENTATION_COMPLETE.md": "d9465fd6163a70fac18cbeb3dad175285351ce5de698a7cd6dd4463df9273baa",
@@ -132,7 +132,7 @@
     "data/modules-math-curriculum.json": "1750a986196d2466ea8331921905ec0bdd4142afa315f1eefb7c67b19319a6db",
     "data/modules/MOD-math-add-001.json": "e5aae944af1f67b5652672a5c278097ce8be367f04dfd73b9050073908b09052",
     "data/modules/MOD-math-count-001.json": "bedb178b62ba5403fdd06374994bd3d3caba6e2ab995646088773567ed686f32",
-    "data/modules/MOD-math-mult-intro-001.json": "a384385954d3954fe4cf1e9820657aeffe25e618c86e8b8f6b2fda4fdf2718cb",
+    "data/modules/MOD-math-mult-intro-001.json": "2daf6a635dde6bb9711e7c9c176b8c54da8101fbd7f58fff91a1a0eab8c256fd",
     "data/projects/proj-motion-trace-shape.json": "7aa54347b7c27f6a5259994f8bd91f685502f0222a59c79fbbaaf0c8c15ee487",
     "data/tasks/task-motion-add-example.json": "98791c26254ec7a5daf3fc09365603d179811a545054fbb60e2beb8c655d2687",
     "data/tasks/task-motion-browser-test.json": "4fe312413ce6e16dbe1a3b03d3a0a5076b9862178eb3bdc40b1801255a39dff9",
@@ -212,6 +212,8 @@
     "research/als_evidence_map_2026-11-07/REVIEW_ANQUR_REGISTRY.md": "3758c183784e62d6f2e8d45f57d2754d4dc530c8daa74525c15955dd132282cb",
     "research/als_evidence_map_2026-11-07/data/anqur_registry_update.json": "4ef151650e9a896a4dd1becebc41f364634e73b9e2fcb640fe5c59cc070aecf0",
     "research/als_evidence_map_2026-11-07/tests/test_registry_update.py": "4681b3ad0304973056a0cd2ecd351ee6ce59258d1c1d63dfbeec6cd18484fad8",
-    "research/als_evidence_map_2026-11-07/tools/registry_update.py": "8752f6501ffcfd78fb0fe5c2bf2614aff8d090cec1172223d5c7e0cb96ae49b1"
+    "research/als_evidence_map_2026-11-07/tools/registry_update.py": "8752f6501ffcfd78fb0fe5c2bf2614aff8d090cec1172223d5c7e0cb96ae49b1",
+    "docs/reviews/multiplication-prerequisite-2026-11-08.md": "5b3182105a2971f53e129f5aa91543150ae98ecca67f246c965444ba6a4b0638",
+    "tests/test_multiplication_lesson.py": "88ce1a8a730657c10dbdee89ab02960edd419734c884302d47305747ff02a9c9"
   }
 }

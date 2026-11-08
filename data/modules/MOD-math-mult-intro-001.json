@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "module": {
     "id": "MOD-math-mult-intro-001",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Introduction to Multiplication",
     "subtitle": "Understanding repeated addition; building multiplication facts and fluency",
     "grade_level": "3-4",
@@ -13,8 +13,8 @@
     "license_uri": "https://creativecommons.org/licenses/by/4.0/",
     "attribution": "Jonathan's Creative Archive Mathematics Curriculum",
     "authors": ["Archive Contributors"],
-    "last_reviewed": "2026-11-07",
-    "review_status": "content_complete",
+    "last_reviewed": "2026-11-08",
+    "review_status": "draft_pending_review",
     
     "learning_objectives": [
       "Understand multiplication as repeated addition of equal groups",
@@ -30,7 +30,7 @@
     
     "content": {
       "introduction": {
-        "plain_text": "# Why Multiplication Matters\n\nMultiplication is a faster way to add equal groups.\n\nImagine you have 4 bags, each with 3 apples. Instead of counting: 3 + 3 + 3 + 3, you can say 4 × 3 = 12.\n\nMultiplication appears everywhere:\n- 5 containers × 6 eggs per container = 30 eggs\n- 4 wheels × 3 cars = 12 wheels\n- 2 hands × 5 fingers = 10 fingers\n\nMastering multiplication makes you faster at solving problems and builds the foundation for division, fractions, and algebra.",
+        "plain_text": "# Why Multiplication Matters\n\nMultiplication is a faster way to add equal groups.\n\nImagine you have 4 bags, each with 3 apples. Instead of counting: 3 + 3 + 3 + 3, you can say 4 × 3 = 12.\n\nMultiplication appears everywhere:\n- 5 containers × 6 eggs per container = 30 eggs\n- 3 cars × 4 wheels per car = 12 wheels\n- 2 hands × 5 fingers = 10 fingers\n\nMastering multiplication makes you faster at solving problems and builds the foundation for division, fractions, and algebra.",
         "estimated_reading_minutes": 2
       },
       
@@ -44,7 +44,7 @@
           },
           {
             "title": "Section 2: Multiplication Facts and Patterns",
-            "content": "# Learning Multiplication Facts and Discovering Patterns\n\nMultiplication facts are specific answers you learn: \"3 × 4 = 12\" or \"5 × 6 = 30.\"\n\nInstead of calculating every time, mathematicians memorize these facts so they can solve problems quickly.\n\n**The multiplication table (0-10):**\n\n×  | 0  1  2  3  4  5  6  7  8  9  10\n---|  0  1  2  3  4  5  6  7  8  9  10\n1  |  0  1  2  3  4  5  6  7  8  9  10\n2  |  0  2  4  6  8  10 12 14 16 18 20\n3  |  0  3  6  9  12 15 18 21 24 27 30\n4  |  0  4  8  12 16 20 24 28 32 36 40\n5  |  0  5  10 15 20 25 30 35 40 45 50\n...\n\n**Useful patterns:**\n\n1. **Anything times 0 = 0:**\n   - 1 × 0 = 0\n   - 5 × 0 = 0\n   - 100 × 0 = 0\n   (Zero groups of anything is nothing)\n\n2. **Anything times 1 = itself:**\n   - 1 × 5 = 5\n   - 1 × 9 = 9\n   - 1 × 100 = 100\n   (One group of something is just that something)\n\n3. **Times 2 is double:**\n   - 2 × 4 = 8 (double of 4 is 8)\n   - 2 × 7 = 14 (double of 7 is 14)\n   - 2 × 10 = 20 (double of 10 is 20)\n\n4. **Times 5 ends in 0 or 5:**\n   - 5 × 2 = 10 (ends in 0)\n   - 5 × 3 = 15 (ends in 5)\n   - 5 × 4 = 20 (ends in 0)\n   (Numbers alternate between 0 and 5)\n\n5. **Times 10 adds a zero:**\n   - 10 × 3 = 30\n   - 10 × 7 = 70\n   - 10 × 12 = 120\n   (Just put a zero at the end)\n\n6. **The commutative property (order doesn't matter):**\n   - 3 × 4 = 12 AND 4 × 3 = 12\n   - 2 × 5 = 10 AND 5 × 2 = 10\n   (Three groups of 4 = Four groups of 3 = same total)\n\nLearning these patterns helps you remember facts and figure out unknown facts quickly.",
+            "content": "# Learning Multiplication Facts and Discovering Patterns\n\nMultiplication facts are specific answers you learn: \"3 × 4 = 12\" or \"5 × 6 = 30.\"\n\nInstead of calculating every time, mathematicians memorize these facts so they can solve problems quickly.\n\n**The multiplication table (0-10):**\n\nThe row label tells how many equal groups there are. The column label tells how many items are in each group. Their intersection gives the total. For example, row 6 and column 7 give 42; row 8 and column 9 give 72.\n\n| Groups / items per group | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |\n| 1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |\n| 2 | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 |\n| 3 | 0 | 3 | 6 | 9 | 12 | 15 | 18 | 21 | 24 | 27 | 30 |\n| 4 | 0 | 4 | 8 | 12 | 16 | 20 | 24 | 28 | 32 | 36 | 40 |\n| 5 | 0 | 5 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 |\n| 6 | 0 | 6 | 12 | 18 | 24 | 30 | 36 | 42 | 48 | 54 | 60 |\n| 7 | 0 | 7 | 14 | 21 | 28 | 35 | 42 | 49 | 56 | 63 | 70 |\n| 8 | 0 | 8 | 16 | 24 | 32 | 40 | 48 | 56 | 64 | 72 | 80 |\n| 9 | 0 | 9 | 18 | 27 | 36 | 45 | 54 | 63 | 72 | 81 | 90 |\n| 10 | 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 |\n\nRow 0 means zero groups, so every total in that row is zero. Column 0 means zero items in each group, so every total in that column is also zero. The row 0, column 0 entry is 0 × 0 = 0.\n\nYou can find a product without following a grid: add the items in each group. For six groups of seven, 6 × 7 = 7 + 7 + 7 + 7 + 7 + 7 = 42. For eight groups of nine, 8 × 9 = 9 + 9 + 9 + 9 + 9 + 9 + 9 + 9 = 72.\n\n**Useful patterns:**\n\n1. **Anything times 0 = 0:**\n   - 1 × 0 = 0\n   - 5 × 0 = 0\n   - 100 × 0 = 0\n   (Each group has zero items, so the total is zero. Zero groups also gives zero: 0 × 5 = 0.)\n\n2. **Anything times 1 = itself:**\n   - 1 × 5 = 5\n   - 1 × 9 = 9\n   - 1 × 100 = 100\n   (One group of something is just that something)\n\n3. **Times 2 is double:**\n   - 2 × 4 = 8 (double of 4 is 8)\n   - 2 × 7 = 14 (double of 7 is 14)\n   - 2 × 10 = 20 (double of 10 is 20)\n\n4. **Times 5 ends in 0 or 5:**\n   - 5 × 2 = 10 (ends in 0)\n   - 5 × 3 = 15 (ends in 5)\n   - 5 × 4 = 20 (ends in 0)\n   (Numbers alternate between 0 and 5)\n\n5. **Multiplying a whole number by 10:**\n   - 10 × 3 = 30\n   - 10 × 7 = 70\n   - 10 × 12 = 120\n   (For whole numbers written in base ten, append a zero to the right. Each digit moves one place to the left.)\n\n6. **The commutative property (order doesn't matter):**\n   - 3 × 4 = 12 AND 4 × 3 = 12\n   - 2 × 5 = 10 AND 5 × 2 = 10\n   (Three groups of 4 = Four groups of 3 = same total)\n\nLearning these patterns helps you remember facts and figure out unknown facts quickly.",
             "estimated_reading_minutes": 10,
             "key_terms": ["multiplication table", "commutative property", "product", "factor", "facts"]
           }
@@ -166,7 +166,7 @@
       ],
       
       "interactive_experience": "Use objects to build equal groups and practice multiplication facts. Create arrays (rows and columns of objects) to visualize multiplication.",
-      "text_only_path": "Multiplication is repeated addition of equal groups. The × symbol means groups. Learn patterns in facts to calculate quickly."
+      "text_only_path": "Multiplication counts equal groups. In 3 × 4, read “three groups of four”: 4 + 4 + 4 = 12. The first factor counts groups; the second counts items in each group. You can add instead of using a table, and you do not need to work quickly. For six groups of seven, 6 × 7 = 7 + 7 + 7 + 7 + 7 + 7 = 42. For eight groups of nine, 8 × 9 = 9 + 9 + 9 + 9 + 9 + 9 + 9 + 9 = 72. Zero groups of seven gives 0 × 7 = 0. Seven groups with zero items in each gives 7 × 0 = 0. Both have zero items in total."
     },
     
     "sources": [
@@ -182,6 +182,7 @@
       }
     ],
     
-    "accessibility_level": "partially_verified"
+    "accessibility_level": "unverified",
+    "verification_notes": "The 0-10 table and written arithmetic have scoped automated and independent AI checks. These checks are not educator, learner, browser-rendering or screen-reader acceptance. The inherited book references were not re-inspected for this correction."
   }
 }
