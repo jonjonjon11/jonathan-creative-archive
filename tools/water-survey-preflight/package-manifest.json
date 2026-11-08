@@ -121,8 +121,8 @@
     },
     {
       "path": "tests/input-diagnostics.cjs",
-      "bytes": 15828,
-      "sha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410"
+      "bytes": 18329,
+      "sha256": "b7739bcfd2365f15b0e5545bf35d9790c1408561f3135e9705031c301827a896"
     },
     {
       "path": "tests/input-diagnostics.test.cjs",

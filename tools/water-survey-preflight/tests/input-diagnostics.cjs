@@ -7,7 +7,7 @@ const crypto = require("node:crypto");
 const { spawn } = require("node:child_process");
 const { pathToFileURL } = require("node:url");
 const sha256 = value => crypto.createHash("sha256").update(value).digest("hex");
-const METHODS = ["file-closed", "reopen-after-file", "assign-open", "fill-open"];
+const METHODS = ["file-closed", "reopen-after-file", "assign-open", "fill-open", "fill-without-app-listener"];
 const TARGET_PHASES = new Set(["file-import-closed", "toggle-populated-textarea", "observe-details-open", "paint-after-open", "playwright-fill", "programmatic-value-assignment", "synthetic-input-dispatch", "paint-after-input", "review-after-input", "verify-result", "scroll-results"]);
 function isDiagnosticTimeout(stage) { return TARGET_PHASES.has(stage); }
 function makeFixture(rows) {
@@ -15,7 +15,7 @@ function makeFixture(rows) {
   return "lat_deg,lon_deg,report_date,status_id,source,water_source\n" + Array.from({ length: rows }, (_, i) => `999,999,2024-02-30,Unknown,,Unknown ${i}`).join("\n");
 }
 function caseMatrix() {
-  return [2050, 25000].flatMap(rows => METHODS.map(method => ({ method, rows, width: 320, repeat: 1 })));
+  return [2050, 25000].flatMap(rows => METHODS.filter(method => method !== "fill-without-app-listener").map(method => ({ method, rows, width: 320, repeat: 1 })));
 }
 function validateCases(cases) {
   if (!Array.isArray(cases) || !cases.length || cases.length > 16) throw new Error("Expected 1–16 diagnostic cases");
@@ -99,18 +99,41 @@ async function childCase(config) {
       const target = entry.kind === "event" ? report.streamedEvents : report.streamedHeartbeats;
       if (target.length < (entry.kind === "event" ? 20 : 80)) { target.push(entry); write(); }
     });
+    await page.addInitScript(() => {
+      const original = EventTarget.prototype.addEventListener;
+      window.appInputRegistration = { entries: [], restore: () => { EventTarget.prototype.addEventListener = original; } };
+      EventTarget.prototype.addEventListener = function(type, listener, options) {
+        if (this.id === "csv" && type === "input" && typeof listener === "function")
+          window.appInputRegistration.entries.push({ target: this, listener, capture: typeof options === "boolean" ? options : !!(options && options.capture) });
+        return original.call(this, type, listener, options);
+      };
+    });
     await phase("load-and-sample", async () => {
       await page.goto(pathToFileURL(path.join(standalone, "index.html")).href);
+      report.capturedAppInputListeners = await page.evaluate(() => {
+        window.appInputRegistration.restore(); return window.appInputRegistration.entries.length;
+      });
+      if (report.capturedAppInputListeners !== 1) throw new Error("Expected exactly one original application input listener");
       await page.locator("#demo").click();
       await page.evaluate(() => {
-        window.inputDiagnostic = { events: [], maxTimerGapMs: 0, ticks: 0, last: performance.now() };
+        window.inputDiagnostic = { events: [], counts: {}, maxTimerGapMs: 0, ticks: 0, last: performance.now() };
         const d = window.inputDiagnostic;
-        for (const type of ["paste", "beforeinput", "input"]) document.querySelector("#csv").addEventListener(type, e => {
+        window.attachInputDiagnostic = element => {
+          element.addEventListener("input", e => {
+            d.counts["capture:input"] = (d.counts["capture:input"] || 0) + 1;
+            if (d.events.length < 20) {
+              const entry = { kind: "event", listenerPhase: "capture", type: "input", inputType: e.inputType || null, isTrusted: e.isTrusted, valueLength: e.target.value.length, atMs: performance.now() };
+              d.events.push(entry); window.recordInputDiagnostic(entry).catch(() => {});
+            }
+          }, true);
+          for (const type of ["paste", "beforeinput", "input"]) element.addEventListener(type, e => {
+          d.counts[type] = (d.counts[type] || 0) + 1;
           if (d.events.length < 20) {
-            const entry = { kind: "event", type, inputType: e.inputType || null, isTrusted: e.isTrusted, valueLength: e.target.value.length, atMs: performance.now() };
+            const entry = { kind: "event", listenerPhase: "bubble", type, inputType: e.inputType || null, isTrusted: e.isTrusted, valueLength: e.target.value.length, atMs: performance.now() };
             d.events.push(entry); window.recordInputDiagnostic(entry).catch(() => {});
           }
-        });
+        }); };
+        window.attachInputDiagnostic(document.querySelector("#csv"));
         setInterval(() => { const now = performance.now(); d.maxTimerGapMs = Math.max(d.maxTimerGapMs, now - d.last); d.last = now; d.ticks++;
           if (d.ticks % 10 === 0) window.recordInputDiagnostic({ kind: "heartbeat", atMs: now, maxTimerGapMs: d.maxTimerGapMs, ticks: d.ticks }).catch(() => {});
         }, 50);
@@ -131,7 +154,17 @@ async function childCase(config) {
       }
     } else {
       await phase("open-small-textarea", async () => { await page.locator("#paste-details summary").click(); await paint(); });
-      if (config.method === "fill-open") await phase("playwright-fill", () => page.locator("#csv").fill(text));
+      if (config.method === "fill-without-app-listener") await phase("setup-listener-control", async () => {
+        report.listenerControl = await page.locator("#csv").evaluate(element => {
+          const entries = window.appInputRegistration.entries;
+          if (entries.length !== 1 || entries[0].target !== element) throw new Error("Listener target mismatch");
+          element.removeEventListener("input", entries[0].listener, entries[0].capture);
+          return { originalNodePreserved: true, registeredAppInputCallbacks: entries.length, callbacksRemoved: 1 };
+        });
+        if (report.listenerControl.callbacksRemoved !== 1) throw new Error("Listener control did not remove exactly one callback");
+        await paint();
+      });
+      if (["fill-open", "fill-without-app-listener"].includes(config.method)) await phase("playwright-fill", () => page.locator("#csv").fill(text));
       else {
         await phase("programmatic-value-assignment", () => page.locator("#csv").evaluate((element, value) => { element.value = value; }, text));
         await phase("synthetic-input-dispatch", () => page.locator("#csv").evaluate(element => { element.dispatchEvent(new Event("input", { bubbles: true })); }));

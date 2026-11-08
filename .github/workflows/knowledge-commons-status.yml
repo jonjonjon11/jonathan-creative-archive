@@ -208,6 +208,7 @@ jobs:
         env:
           WATER_BROWSER: ${{ matrix.browser }}
           WATER_INPUT_QA_DIR: ${{ runner.temp }}/water-input-${{ matrix.browser }}
+          WATER_INPUT_CASES: '[{"method":"fill-open","rows":25000,"width":320,"repeat":1},{"method":"fill-without-app-listener","rows":25000,"width":320,"repeat":1},{"method":"fill-open","rows":25000,"width":1280,"repeat":1},{"method":"fill-without-app-listener","rows":25000,"width":1280,"repeat":1},{"method":"fill-open","rows":25000,"width":320,"repeat":2},{"method":"fill-without-app-listener","rows":25000,"width":320,"repeat":2},{"method":"fill-open","rows":25000,"width":1280,"repeat":2},{"method":"fill-without-app-listener","rows":25000,"width":1280,"repeat":2},{"method":"fill-open","rows":25000,"width":320,"repeat":3},{"method":"fill-without-app-listener","rows":25000,"width":320,"repeat":3},{"method":"fill-open","rows":25000,"width":1280,"repeat":3},{"method":"fill-without-app-listener","rows":25000,"width":1280,"repeat":3}]'
         run: NODE_PATH="$RUNNER_TEMP/water-playwright/node_modules" node tools/water-survey-preflight/tests/input-diagnostics.cjs
       - name: Preserve observations, including timeouts
         if: always()
