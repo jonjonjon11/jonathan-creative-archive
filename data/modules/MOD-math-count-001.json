@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "module": {
     "id": "MOD-math-count-001",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "title": "Counting and Number Recognition (0-20)",
     "subtitle": "Learning to recognize quantities, count systematically, and understand how numbers represent amounts",
     "grade_level": "K-2",
@@ -12,140 +12,157 @@
     "license": "CC BY 4.0",
     "license_uri": "https://creativecommons.org/licenses/by/4.0/",
     "attribution": "Jonathan's Creative Archive Mathematics Curriculum",
-    "authors": ["Archive Contributors"],
-    "last_reviewed": "2026-11-07",
-    "review_status": "content_complete",
-    
+    "authors": [
+      "Archive Contributors"
+    ],
+    "last_reviewed": "2026-11-08",
+    "review_status": "draft_pending_review",
     "learning_objectives": [
-      "Count reliably from 0 to 20 in any order",
-      "Recognize numerals 0-20 and match them to quantities",
+      "Count collections of 0-20 items, counting each item exactly once in any item order while keeping the number sequence in order",
+      "Connect numerals 0-20 and their number names to quantities using a suitable reading or communication method",
       "Understand that a numeral represents a specific amount",
       "Count collections and tell 'how many'",
       "Recognize patterns in counting sequences"
     ],
-    
     "prerequisites": [],
-    
     "content": {
       "introduction": {
-        "plain_text": "# Why Counting Matters\n\nCounting is how we understand and communicate quantities. Every day, children naturally want to know: How many toys? How many days until my birthday? How many people are at dinner?\n\nCounting is more than just saying numbers in order. It's about connecting the sounds we make (one, two, three) with the symbols we write (1, 2, 3) and with real quantities of objects.\n\nWhen you can count reliably and recognize numbers, you can:\n- Know if you have enough cookies for everyone\n- Tell someone how many of something you have\n- Keep track of things over time\n- Build the foundation for addition and subtraction\n\nThis module helps you develop strong counting skills that will support all future math learning.",
+        "plain_text": "# Why Counting Matters\n\nCounting helps us understand and communicate quantities: How many toys? How many days until a birthday? How many people are at dinner?\n\nCounting is more than reciting number names. It connects a sequence such as one, two, three with a quantity of items. Numerals such as 1, 2 and 3 are symbols used to record numbers.\n\nYou can count aloud, silently, or using your preferred communication method. Looking, touching, pointing and moving objects are possible ways to keep track, not requirements. This lesson also provides named-item lists that can be read or presented one item at a time by a helper or suitable reading tool. Choose a method that works for you and pause or repeat as needed.\n\nCounting helps you check whether there are enough items for everyone, keep track of collections, and prepare for addition and subtraction. These alternatives are teaching proposals, not a report of accessibility or learner testing.",
         "estimated_reading_minutes": 2
       },
-      
       "core_lesson": {
         "sections": [
           {
             "title": "Section 1: One-to-One Correspondence and Reliable Counting",
-            "content": "# One-to-One Correspondence: Matching Numbers to Things\n\nCounting reliably means saying one number for each object as you count.\n\n**What is one-to-one correspondence?**\nIt's the fancy way of saying: touch one toy, say one number. Touch the next toy, say the next number. Keep going until you run out of toys.\n\nImagine you have 5 balls in a line. As you count:\n- Touch ball 1, say \"one\"\n- Touch ball 2, say \"two\"\n- Touch ball 3, say \"three\"\n- Touch ball 4, say \"four\"\n- Touch ball 5, say \"five\"\n\nYou touched each ball exactly once and said each number exactly once. That's one-to-one correspondence.\n\n**Why does this matter?**\nWithout one-to-one correspondence, you might:\n- Skip a ball and count wrong\n- Touch one ball twice and count wrong\n- Lose track and forget where you were\n\n**The reliable counting sequence:**\nThe numbers always go in the same order: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.\n\nNo matter what you're counting (apples, children, fingers, days), the sequence never changes. This predictability is powerful. Once you know the sequence, you can count anything.\n\n**Counting in different contexts:**\n- Counting objects you can touch (toys, apples, children)\n- Counting sounds (claps, bells, footsteps)\n- Counting actions (jumps, steps, breaths)\n- Counting on your fingers (a built-in counter)\n\nIn all these cases, the sequence stays the same: 1, 2, 3, 4, 5...",
+            "content": "# One-to-One Correspondence: One Count for Each Item\n\nFor a collection that stays the same while you count, match each item to exactly one number in the sequence 1, 2, 3 and so on. Do not skip an item or count one twice. This is one-to-one correspondence in counting. After every item has been counted once, the last number gives the total. This is called cardinality.\n\n**Choose a way to keep track:**\n- Touch, point to or move objects if that is useful to you.\n- Read a list of distinct item names, or have a helper or suitable reading tool present one name at a time. Count each item when its name is presented.\n- Count distinct sounds or events, when that presentation works for you.\n\nCounting aloud is optional. You may count silently or record or communicate numbers in another suitable way. A helper can present items without giving the answer. A list represents the collection described; it does not verify how many objects are in a real room.\n\n**A text example:**\nThe items are ball A, ball B, ball C, ball D and ball E. The letters name different balls; they are not counts. Match ball A to one, B to two, C to three, D to four and E to five. Every ball has one count, so there are five balls.\n\n**Keep the number sequence in order:**\n1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.\n\nThe order of the items can change, but the number sequence stays in order. Counting E, D, C, B, A still assigns one through five and gives five balls. This works only when no items are added, removed, skipped or counted twice. For an empty collection, there are no items to assign numbers to: its count is zero, written 0. Do not assign zero to the first item of a nonempty collection.",
             "estimated_reading_minutes": 8,
-            "key_terms": ["one-to-one correspondence", "counting sequence", "quantity", "numeral"]
+            "key_terms": [
+              "one-to-one correspondence",
+              "counting sequence",
+              "quantity",
+              "cardinality"
+            ]
           },
           {
             "title": "Section 2: Number Recognition and Quantity Correspondence",
-            "content": "# Numerals: Symbols That Represent Quantities\n\nA numeral is the symbol we write to show how many. The numeral \"5\" is a visual symbol that represents the quantity of five things.\n\n**The numerals 0-20:**\n0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20\n\nEach numeral has a unique shape. Learning to recognize them means seeing \"5\" and knowing it stands for the quantity you get when you count: one, two, three, four, five.\n\n**Matching numerals to quantities:**\n- See the numeral \"3\" → Know there are three things\n- See three things → Write the numeral \"3\"\n- Hear the word \"three\" → Write the numeral 3\n- Count \"one, two, three\" and have 3 objects → Call it \"three\" and write \"3\"\n\nAll of these represent the same concept: the quantity of three.\n\n**Understanding zero:**\nZero is special. It means \"none\" or \"no amount.\"\n\nIf you have a plate and no cookies on it, the plate has zero cookies. The numeral 0 represents that empty state.\n\nZero is still a quantity (the quantity of nothing) and it's still a number in our counting system.\n\n**Quantities and their patterns:**\n- 1 object: a single thing (one finger, one apple, one person)\n- 2 objects: a pair (two eyes, two hands, two wheels on a bicycle)\n- 3 objects: a small group (three bears, three sides of a triangle)\n- 5 objects: fingers on one hand\n- 10 objects: fingers on both hands\n- 20 objects: fingers and toes together\n\nRecognizing these familiar quantities helps you count faster and estimate without counting every single item.",
+            "content": "# Numerals: Symbols That Represent Numbers\n\nA numeral is a symbol or group of symbols used to write a number. In this lesson, 5 represents five and 12 represents twelve. The numeral 12 uses two digits, 1 followed by 2; it represents twelve, not a count of two items.\n\n**Numerals and number names from 0 to 20:**\n0 (zero), 1 (one), 2 (two), 3 (three), 4 (four), 5 (five), 6 (six), 7 (seven), 8 (eight), 9 (nine), 10 (ten), 11 (eleven), 12 (twelve), 13 (thirteen), 14 (fourteen), 15 (fifteen), 16 (sixteen), 17 (seventeen), 18 (eighteen), 19 (nineteen), 20 (twenty).\n\nPrinted numerals have visual forms. Numbers can also be represented in tactile notation such as Braille, which has its own conventions. A reader or helper can present the number name when a numeral is encountered. Hearing the name or knowing the quantity is not the same skill as recognizing the printed or tactile form. This text supports number-name and quantity matching; it does not teach Braille notation or establish mastery of numeral shapes. Practice a desired notation with suitable materials and support.\n\n**Match a numeral, a name and a quantity:**\nThe numeral 3 is named three. For the items cup A, cup B and cup C, match A to one, B to two and C to three. The total is three cups, recorded as 3. You may select, type, write, dictate or otherwise communicate the answer using a method that works for you. Handwriting is optional.\n\n**Understand zero:**\nAn empty plate has no cookies. The number of cookies is zero, written 0. Zero is a number and is the count of an empty collection. If there is one cookie, its count is one, not zero.\n\n**Useful group descriptions:**\nOne item is a single item. Two items form a pair. Five named items can be counted one through five, and ten items one through ten. The kind, size or arrangement of the items does not change the count when the collection itself stays unchanged.",
             "estimated_reading_minutes": 8,
-            "key_terms": ["numeral", "quantity", "zero", "digit", "numeral recognition"]
+            "key_terms": [
+              "numeral",
+              "quantity",
+              "zero",
+              "digit",
+              "numeral recognition"
+            ]
           }
         ]
       },
-      
       "worked_examples": [
         {
           "id": "EX-001",
           "title": "Example 1: Counting a Small Collection",
           "difficulty": "beginner",
-          "scenario": "You have a pile of 4 blocks. You want to know exactly how many blocks you have.",
+          "scenario": "The collection consists of block A, block B, block C and block D. Find how many blocks are listed.",
           "parameters": {
             "objects": "blocks",
             "quantity": 4,
             "arrangement": "scattered pile"
           },
-          "prediction": "If I count each block once, saying one number for each block, I'll be able to tell how many blocks there are.",
+          "prediction": "Matching one count to each listed block will give the total.",
           "step_by_step": [
-            "Look at the blocks and decide to count them",
-            "Pick up or point to the first block, say 'one'",
-            "Move to the next block, say 'two'",
-            "Move to the next block, say 'three'",
-            "Move to the last block, say 'four'",
-            "Stop counting because there are no more blocks",
-            "Remember: the last number you said (four) tells you how many blocks you have"
+            "Use the named list, read or presented one item at a time. Touching or pointing at physical blocks is optional.",
+            "Block A: 1 (one)",
+            "Block B: 2 (two)",
+            "Block C: 3 (three)",
+            "Block D: 4 (four)",
+            "All listed blocks have been counted exactly once. The last count is four, so the total is 4 blocks."
           ],
-          "explanation": "Counting works because each time you touch an object and say a number, you're connecting that object to its position in the counting sequence. The last number you say tells you the total amount. In this case, four blocks.",
+          "explanation": "Each distinct block is matched to one count in order. The last count is four, which gives the total. Counting aloud, touching, pointing and moving blocks are optional; the same matching can be followed through the named list.",
           "mathematical_form": "Quantity = 4, represented by numeral 4",
-          "visual_description": "Imagine 4 blocks arranged in a scattered way. As you count, you mark or touch each block in order (first, second, third, fourth). By the end, you've touched each block exactly once and know there are four."
+          "visual_description": "An optional picture could show four scattered blocks. The named-item list above provides the counting example without the picture."
         },
         {
           "id": "EX-002",
           "title": "Example 2: Recognizing Numerals and Matching to Quantities",
           "difficulty": "intermediate",
-          "scenario": "You see a card with the numeral 7 on it. You also see a collection of 7 stars. You want to verify they match.",
+          "scenario": "The numeral is 7 (seven). The collection consists of stars A, B, C, D, E, F and G. Check whether its count matches that number.",
           "parameters": {
             "numeral": 7,
             "objects": "stars",
             "quantity": 7
           },
-          "prediction": "If I count the stars and the last number I say matches the numeral on the card, then the numeral represents this quantity.",
+          "prediction": "If the last count is seven after every listed star is counted once, the quantity matches the number represented by 7.",
           "step_by_step": [
-            "Look at the numeral on the card: 7",
-            "Look at the stars and decide to count them",
-            "Point to the first star, say 'one'",
-            "Point to the second star, say 'two'",
-            "Point to the third star, say 'three'",
-            "Point to the fourth star, say 'four'",
-            "Point to the fifth star, say 'five'",
-            "Point to the sixth star, say 'six'",
-            "Point to the seventh star, say 'seven'",
-            "Stop. The number you said (seven) matches the numeral on the card (7)",
-            "Conclusion: The numeral 7 represents this collection of stars"
+            "Read or otherwise receive the numeral and its number name: 7, seven. A printed card is optional.",
+            "Use the named star list, read or presented one item at a time. Touching or pointing is optional.",
+            "Star A: 1 (one)",
+            "Star B: 2 (two)",
+            "Star C: 3 (three)",
+            "Star D: 4 (four)",
+            "Star E: 5 (five)",
+            "Star F: 6 (six)",
+            "Star G: 7 (seven)",
+            "Every listed star has been counted once. The last count is seven, so the total is 7 stars and matches 7 (seven)."
           ],
-          "explanation": "Numerals are symbols that stand for quantities. When the number you count matches the numeral shown, it means the symbol represents that exact collection. This connection—between the symbol we write (7), the word we say (seven), and the actual objects (7 stars)—is what makes numerals useful.",
-          "mathematical_form": "Numeral 7 = Quantity of 7 objects = The word 'seven'",
-          "visual_description": "A card shows \"7\". Below it are 7 stars arranged in a pattern. As you count each star (one, two, three... seven), you mark or point to each one. At the end, you've said seven numbers and counted seven objects. The match confirms the numeral represents this quantity."
+          "explanation": "The numeral 7 represents the number seven. Seven is the count of this collection, but 7 can also represent other collections of seven items. Matching the quantity does not by itself show that a learner recognizes the printed or tactile form of the numeral.",
+          "mathematical_form": "7 stars; numeral: 7; number name: seven",
+          "visual_description": "An optional card shows 7 above seven stars. The numeral, number name and distinct star names are supplied in text, so this example does not require a card or picture."
         },
         {
           "id": "EX-003",
           "title": "Example 3: Finding the Right Numeral for a Collection",
           "difficulty": "advanced",
-          "scenario": "You have a collection of 12 buttons. You need to find the numeral card that shows how many buttons you have.",
+          "scenario": "The collection consists of buttons A, B, C, D, E, F, G, H, I, J, K and L. Choose its count from 10 (ten), 11 (eleven), 12 (twelve), 13 (thirteen) or 14 (fourteen).",
           "parameters": {
             "objects": "buttons",
             "quantity": 12,
-            "available_numerals": [10, 11, 12, 13, 14]
+            "available_numerals": [
+              10,
+              11,
+              12,
+              13,
+              14
+            ]
           },
-          "prediction": "If I count all the buttons carefully and remember the number sequence, the last number I say will be the correct numeral to match.",
+          "prediction": "After every listed button is counted exactly once, the last count tells me which numeral and number name to choose.",
           "step_by_step": [
-            "Look at all the buttons and organize them in a line so it's easier to count",
-            "Start counting: 'one' (first button), 'two' (second button), 'three' (third button)",
-            "Keep counting: 'four, five, six, seven, eight, nine, ten'",
-            "Continue: 'eleven, twelve'",
-            "Stop because you've touched each button exactly once",
-            "The last number you said was 'twelve'",
-            "Look at the numeral cards: 10, 11, 12, 13, 14",
-            "Find the one that shows twelve: 12",
-            "Match complete: 12 buttons are represented by the numeral 12"
+            "Use the named button list, read or presented one item at a time. Arranging, touching or pointing at physical buttons is optional.",
+            "Button A: 1 (one)",
+            "Button B: 2 (two)",
+            "Button C: 3 (three)",
+            "Button D: 4 (four)",
+            "Button E: 5 (five)",
+            "Button F: 6 (six)",
+            "Button G: 7 (seven)",
+            "Button H: 8 (eight)",
+            "Button I: 9 (nine)",
+            "Button J: 10 (ten)",
+            "Button K: 11 (eleven)",
+            "Button L: 12 (twelve)",
+            "Every listed button has been counted exactly once. The last count is twelve.",
+            "Among 10 (ten), 11 (eleven), 12 (twelve), 13 (thirteen) and 14 (fourteen), choose 12 (twelve). Communicate the choice in a suitable way; handwriting is optional."
           ],
-          "explanation": "Counting to find a quantity is a skill that works for any amount. You use the reliable counting sequence (1, 2, 3... 12) to connect the objects with the correct numeral. Even though counting 12 things takes longer than counting 4 things, the process is the same. The quantity you discover by counting tells you which numeral symbol to use.",
+          "explanation": "The twelve distinct button names each receive one count. The total is twelve, represented here by 12. The digits 1 followed by 2 form the numeral for twelve. This example checks count-to-number matching, not independent recognition of a numeral shape.",
           "mathematical_form": "Quantity = 12 buttons, represented by numeral 12",
-          "visual_description": "Imagine 12 buttons scattered on a table. You arrange them in a line. As you point to each one and count (one through twelve), you're using one-to-one correspondence. By the time you finish, you know the answer: there are 12 buttons, so the correct numeral is 12."
+          "visual_description": "An optional picture could show twelve buttons in a line. The named-item list and counting steps provide the example without arranging or seeing buttons."
         }
       ],
-      
       "exercises": [
         {
           "id": "EX-001",
           "title": "Exercise 1: Count a Small Collection",
           "difficulty": "beginner",
-          "problem_statement": "You have 6 toy cars. Count them carefully using one-to-one correspondence. Touch each car as you count. What number do you say last?",
-          "hint": "Remember: Say one number for each car. Start with 'one' and keep going until you've touched every car.",
-          "solution": "Touch the first car and say 'one'. Touch the second car and say 'two'. Touch the third car and say 'three'. Touch the fourth car and say 'four'. Touch the fifth car and say 'five'. Touch the sixth car and say 'six'. The last number you said is 'six'.",
+          "problem_statement": "The collection consists of cars A, B, C, D, E and F. Use the named list to count each car once. What is the last count? Touching or pointing at physical cars is optional.",
+          "hint": "Count aloud, silently or using your preferred communication method. Match each distinct car name to the next number, starting with one.",
+          "solution": "Car A: 1 (one); car B: 2 (two); car C: 3 (three); car D: 4 (four); car E: 5 (five); car F: 6 (six). Every car was counted once, so the last count and total are six.",
           "answer": "6"
         },
         {
           "id": "EX-002",
           "title": "Exercise 2: Match Numerals to Quantities",
           "difficulty": "beginner",
-          "problem_statement": "You see the numeral 8. How many objects should be in the collection that this numeral represents?",
-          "hint": "Think about what the numeral 8 means. It's the number you say after seven when you're counting.",
+          "problem_statement": "The numeral is 8 (eight). How many objects should be in a collection with this count? You may communicate the answer in a suitable way; handwriting is optional.",
+          "hint": "Think about what the numeral 8 means. It is the number after seven in the counting sequence.",
           "solution": "The numeral 8 represents the quantity you reach when you count: one, two, three, four, five, six, seven, eight. So there should be 8 objects.",
           "answer": "8 objects"
         },
@@ -153,17 +170,17 @@
           "id": "EX-003",
           "title": "Exercise 3: Counting in a Different Order",
           "difficulty": "intermediate",
-          "problem_statement": "You have 5 apples arranged on a table, but not in a line. You count them in this order: the apple in the middle, then the one on the left, then the one on the right, then one from the corner, then the last one. What number do you say? Does it change based on the order you count?",
-          "hint": "Remember: The counting sequence never changes. No matter what order you count in, the sequence is always 1, 2, 3, 4, 5...",
-          "solution": "You say: one (middle apple), two (left apple), three (right apple), four (corner apple), five (last apple). The last number is still 5. The order you count doesn't change how many there are. There are always 5 apples.",
-          "answer": "Still 5. Order doesn't matter."
+          "problem_statement": "Five apples are named A, B, C, D and E. First count the names in that order. Then count the same apples in the order C, A, E, B, D. What is the last count each time? No apples are added or removed, and each is counted once in each count.",
+          "hint": "Change the order of the items, not the number sequence. Both counts use one, two, three, four, five.",
+          "solution": "First: apple A is one, B is two, C is three, D is four and E is five. Second: apple C is one, A is two, E is three, B is four and D is five. Both counts end at five. The item order changes, but counting the same five items exactly once still gives 5.",
+          "answer": "5 each time. Item order does not change the total when every item in the unchanged collection is counted exactly once."
         },
         {
           "id": "EX-004",
           "title": "Exercise 4: Recognize Zero",
           "difficulty": "intermediate",
           "problem_statement": "You have an empty cup. There are no crackers in it. What numeral represents how many crackers are in the cup?",
-          "hint": "What number means 'none' or 'no amount'? Think about the special number at the start: 0, 1, 2, 3...",
+          "hint": "An empty collection has count zero. Which numeral represents zero?",
           "solution": "There are no crackers, so the quantity is zero. Zero is represented by the numeral 0.",
           "answer": "0"
         },
@@ -171,17 +188,15 @@
           "id": "EX-005",
           "title": "Exercise 5: Challenge - Count Beyond 10",
           "difficulty": "advanced",
-          "problem_statement": "You have 15 sticks. Count them carefully one by one. What numeral represents 15 sticks?",
-          "hint": "The numbers from 11-20 follow a pattern: eleven, twelve, thirteen, fourteen, fifteen...",
-          "solution": "Count each stick: one through fifteen. The last number is fifteen. The numeral 15 represents 15 sticks.",
+          "problem_statement": "The sticks are named A, B, C, D, E, F, G, H, I, J, K, L, M, N and O. Count each listed stick once. What numeral represents the total? Use the list without physical sticks, or choose physical items if useful.",
+          "hint": "Keep the number sequence in order after ten: eleven, twelve, thirteen, fourteen, fifteen. The letters name distinct sticks; they are not counts.",
+          "solution": "Stick A: 1 (one); Stick B: 2 (two); Stick C: 3 (three); Stick D: 4 (four); Stick E: 5 (five); Stick F: 6 (six); Stick G: 7 (seven); Stick H: 8 (eight); Stick I: 9 (nine); Stick J: 10 (ten); Stick K: 11 (eleven); Stick L: 12 (twelve); Stick M: 13 (thirteen); Stick N: 14 (fourteen); Stick O: 15 (fifteen). Every listed stick has one count. The last count is fifteen, so the total is 15 sticks.",
           "answer": "15"
         }
       ],
-      
-      "interactive_experience": "Use objects at home and count collections of 5-15 items. Try counting the same collection in different orders.",
-      "text_only_path": "One-to-one correspondence: say one number for each object. Learn to recognize numerals 0-20 by seeing them and connecting to collections."
+      "interactive_experience": "Optional: count a collection of 5-15 items using a suitable tracking method, or use the named-item lists in this lesson. A helper may present one item name at a time without giving the answer. Recount the same unchanged collection in a different item order, counting each item exactly once. Physical objects, touching, pointing, handwriting and spoken answers are not required.",
+      "text_only_path": "# Counting without a picture or handling objects\n\nRead the following text, or use a helper or suitable reading tool to present one item name at a time. Count aloud, silently or using your preferred communication method. No picture, physical collection, pointing or handwriting is required for these examples. This route teaches counting a described collection and matching number names to quantities; it does not establish printed or tactile numeral recognition or verify an unseen real collection.\n\nThe collection is block A, block B, block C and block D. The letters distinguish items; they are not counts. Match block A to 1 (one), block B to 2 (two), block C to 3 (three), and block D to 4 (four). Every block has been counted once. The last count, four, is the total, written 4.\n\nNow count the same collection in the order D, B, A, C: D is one, B is two, A is three and C is four. The total is still four. Item order can change; number order stays one, two, three, four. This rule assumes the collection stays unchanged and no item is skipped or counted twice.\n\nAn empty collection has no items to match to number names. Its count is 0 (zero). For a nonempty collection, assign 1 (one) to the first item, not zero.\n\nFor larger collections, continue in order through twenty. The numeral-name pairs are: 0 (zero), 1 (one), 2 (two), 3 (three), 4 (four), 5 (five), 6 (six), 7 (seven), 8 (eight), 9 (nine), 10 (ten), 11 (eleven), 12 (twelve), 13 (thirteen), 14 (fourteen), 15 (fifteen), 16 (sixteen), 17 (seventeen), 18 (eighteen), 19 (nineteen), 20 (twenty). A numeral can contain more than one digit: 12 is written with 1 followed by 2 and represents twelve.\n\nTry the five exercises using their named collections or descriptions. Their solutions explain each count. Reading or hearing a number name supports quantity matching but is not a substitute for learning the desired printed or tactile notation with suitable materials. These alternatives have not been tested with learners or assistive technology."
     },
-    
     "sources": [
       {
         "title": "Principles and Standards for School Mathematics",
@@ -194,7 +209,7 @@
         "publication_year": 1999
       }
     ],
-    
-    "accessibility_level": "partially_verified"
+    "accessibility_level": "unverified",
+    "verification_notes": "Version 1.0.1 corrects the sight-dependent text-only summary and makes physical tracking and spoken answers optional. Selected automated regressions check the written counting sequences, numeral-name pairs, examples, exercises and stated review limits. Independent AI review is separate from human acceptance. Educator, learner, screen-reader, other assistive-technology and browser-rendering review have not been performed for this correction. The inherited book references have not been re-inspected; no source-page verification or accessibility certification is claimed. This lesson does not teach Braille notation or establish printed/tactile numeral-recognition proficiency."
   }
 }
