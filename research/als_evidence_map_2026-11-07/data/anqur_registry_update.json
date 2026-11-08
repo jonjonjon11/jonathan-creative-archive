@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "as_of": "2026-11-08",
+  "parent_record_id": "qrl201_stmn2",
+  "trial_id": "NCT05633459",
+  "scope": "registry_provenance_only",
+  "review_status": "draft_research_candidate_not_independently_ALS_clinician_reviewed",
+  "title": "ANQUR: dated registry-provenance correction",
+  "sources": [
+    {
+      "id": "anqur_registry_v24",
+      "title": "ClinicalTrials.gov NCT05633459, version 24",
+      "url": "https://clinicaltrials.gov/study/NCT05633459?tab=history&a=24#version-content-panel",
+      "type": "trial_registry",
+      "record_posted_date": "2026-05-15",
+      "version_submitted_dates": [
+        "2026-05-12"
+      ],
+      "access_date": "2026-11-08",
+      "access_level": "body_retrieved",
+      "locator": "Study Status; Study Design; Outcome Measures; Document Section; current API hasResults",
+      "access_note": "Official ClinicalTrials.gov record inspected. Current fields also independently retrieved through the public API; historical comparisons read in the official browser interface. This is a registration summary, not a full protocol or statistical-analysis plan."
+    },
+    {
+      "id": "anqur_registry_v1",
+      "title": "ClinicalTrials.gov NCT05633459, original version",
+      "url": "https://clinicaltrials.gov/study/NCT05633459?tab=history&a=1#version-content-panel",
+      "type": "trial_registry",
+      "record_posted_date": "2022-12-01",
+      "version_submitted_dates": [
+        "2022-11-21"
+      ],
+      "access_date": "2026-11-08",
+      "access_level": "body_retrieved",
+      "locator": "Study Design; Outcome Measures",
+      "access_note": "Official ClinicalTrials.gov record inspected. Current fields also independently retrieved through the public API; historical comparisons read in the official browser interface. This is a registration summary, not a full protocol or statistical-analysis plan."
+    },
+    {
+      "id": "anqur_registry_v15_v16",
+      "title": "ClinicalTrials.gov NCT05633459, comparison of versions 15 and 16",
+      "url": "https://clinicaltrials.gov/study/NCT05633459?tab=history&a=15&b=16#version-content-panel",
+      "type": "trial_registry",
+      "record_posted_date": "2024-08-28",
+      "version_submitted_dates": [
+        "2024-07-02",
+        "2024-08-26"
+      ],
+      "access_date": "2026-11-08",
+      "access_level": "body_retrieved",
+      "locator": "Study Design; Arms and Interventions; Outcome Measures",
+      "access_note": "Official ClinicalTrials.gov record inspected. Current fields also independently retrieved through the public API; historical comparisons read in the official browser interface. This is a registration summary, not a full protocol or statistical-analysis plan."
+    },
+    {
+      "id": "anqur_registry_v23_v24",
+      "title": "ClinicalTrials.gov NCT05633459, comparison of versions 23 and 24",
+      "url": "https://clinicaltrials.gov/study/NCT05633459?tab=history&a=23&b=24#version-content-panel",
+      "type": "trial_registry",
+      "record_posted_date": "2026-05-15",
+      "version_submitted_dates": [
+        "2025-08-22",
+        "2026-05-12"
+      ],
+      "access_date": "2026-11-08",
+      "access_level": "body_retrieved",
+      "locator": "Study Identification; Study Design; Arms and Interventions; Outcome Measures",
+      "access_note": "Official ClinicalTrials.gov record inspected. Current fields also independently retrieved through the public API; historical comparisons read in the official browser interface. This is a registration summary, not a full protocol or statistical-analysis plan."
+    }
+  ],
+  "current_registration": {
+    "version": 24,
+    "submitted_date": "2026-05-12",
+    "posted_date": "2026-05-15",
+    "verified_month": "2026-05",
+    "phase": "Phase 1",
+    "enrollment": {
+      "count": 69,
+      "type": "actual"
+    },
+    "primary_outcome": {
+      "measure": "Number of participants with one or more treatment emergent adverse events and serious adverse events",
+      "time_frame": "Baseline through Day 421 [End of Study Visit"
+    },
+    "secondary_outcomes": [
+      {
+        "measure": "Pharmacokinetics (plasma): Maximum observed concentration of QRL-201 (Cmax)",
+        "time_frame": "Predose up to 24 hours post dose"
+      },
+      {
+        "measure": "Pharmacokinetics (plasma): Area under the concentration time curve from zero to infinity (AUCinf) of QRL-201",
+        "time_frame": "Predose up to 24 hours post dose"
+      },
+      {
+        "measure": "Pharmacokinetics (plasma): Time of maximum concentration (Tmax) of QRL-201",
+        "time_frame": "Predose up to 24 hours postdose"
+      }
+    ],
+    "results_posted": false,
+    "full_protocol_or_sap_posted_in_reviewed_record": false,
+    "source_refs": [
+      {
+        "source_id": "anqur_registry_v24",
+        "locator": "Study Status; Study Design; Outcome Measures; empty Document Section; current API hasResults=false"
+      }
+    ]
+  },
+  "history": [
+    {
+      "id": "original_registration",
+      "text": "Version 1, submitted November 21, 2022 and first posted December 1, 2022, lists Phase 1, 64 estimated participants, the primary safety endpoint from baseline through 253 days, and the three plasma-PK secondary outcomes.",
+      "source_refs": [
+        {
+          "source_id": "anqur_registry_v1",
+          "locator": "Study Status; Study Design; Outcome Measures"
+        }
+      ]
+    },
+    {
+      "id": "safety_window_amendment",
+      "text": "Version 15 to version 16 (submitted July 2 to August 26, 2024; version 16 posted August 28) retained Phase 1 and the safety-primary/plasma-PK-secondary hierarchy. It extended the primary safety window from baseline through 253 days to baseline through Day 421 and revised the arms to identify sporadic and C9orf72 ALS cohorts.",
+      "source_refs": [
+        {
+          "source_id": "anqur_registry_v15_v16",
+          "locator": "Study Design; Arms and Interventions; Outcome Measures"
+        }
+      ]
+    },
+    {
+      "id": "extended_dosing_amendment",
+      "text": "Version 23 to version 24 (submitted August 22, 2025 to May 12, 2026; version 24 posted May 15) retained Phase 1 and the listed outcome hierarchy. It added an open-label extended-dosing period to the title, arms and eligibility, increased listed arms from four to five, and changed enrollment from 64 estimated to 69 actual.",
+      "source_refs": [
+        {
+          "source_id": "anqur_registry_v23_v24",
+          "locator": "Study Identification; Study Design; Arms and Interventions; Outcome Measures; Eligibility"
+        }
+      ]
+    }
+  ],
+  "phase_discrepancy": {
+    "text": "The sponsor called ANQUR Phase 1 in its 2024 design release and Phase 1/2 in its February 23, 2026 interim release. The later May 2026 registration still lists Phase 1. The reason for the different terminology is unknown; the reviewed registry amendments do not establish a registered upgrade to Phase 1/2.",
+    "source_refs": [
+      {
+        "source_id": "anqur_design_2024",
+        "locator": "About the ANQUR Clinical Trial"
+      },
+      {
+        "source_id": "anqur_interim_2026",
+        "locator": "About ANQUR Clinical Trial"
+      },
+      {
+        "source_id": "anqur_registry_v24",
+        "locator": "Study Design"
+      },
+      {
+        "source_id": "anqur_registry_v23_v24",
+        "locator": "Study Design"
+      }
+    ]
+  },
+  "limits": [
+    "Registry design fields and actual enrollment are not efficacy or safety results. The historical sponsor-only interim observations and their evidence stage are unchanged.",
+    "The registered safety-primary/plasma-PK-secondary hierarchy does not establish that the reported ALSFRS-R subgroup analysis or biomarker analyses were prespecified. Full protocol/SAP details, multiplicity handling and subgroup denominators remain unknown in this bounded review.",
+    "No results, full protocol or SAP are posted in the reviewed ClinicalTrials.gov record. This does not imply that results or documents do not exist elsewhere.",
+    "The record still contains a narrative planned-cohort description totaling 64, alongside its structured actual enrollment of 69. These refer to different record fields; the narrative is not silently rewritten or used as an actual analyzed denominator.",
+    "The source contains an unmatched bracket in the primary-outcome time-frame text; the structured extraction preserves it verbatim. Day 421 is a registered assessment window, not evidence that every participant completed follow-up.",
+    "This targeted November 8, 2026 access correction is not a whole-map refresh, systematic review, clinician review, regulatory-status update or confirmation of a full protocol amendment history."
+  ],
+  "reuse": "Original concise factual extraction and references only. No source documents, registry payload, participant data or screenshots are redistributed; cited sources retain their own rights."
+}

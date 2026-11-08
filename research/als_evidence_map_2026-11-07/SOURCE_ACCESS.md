@@ -196,9 +196,9 @@ URLs below are the source references. No source document bytes are included in t
 - Relevant location: Publication metadata; Abstract; Introduction identifying final integrated results
 - Reuse: Bibliographic attribution and scope note only; paper not redistributed.
 
-## Unverified navigation and retrieval gaps
+## Historical navigation and retrieval gaps
 
-These URLs do not supply verified claim evidence in this map.
+The entries below record failed retrievals on November 7. ANQUR registration and API access were subsequently verified on November 8: see the [dated registry correction](ANQUR_REGISTRY_UPDATE.md). Other entries remain unverified. These historical entries themselves are not claim evidence.
 
 - [FUSION registration](https://clinicaltrials.gov/study/NCT04768972): Only a page shell rendered; registry details and current recruitment status were not verified.
 - [ANQUR registration](https://clinicaltrials.gov/study/NCT05633459): Only a page shell rendered; current protocol, phase fields, outcome hierarchy, and amendments were not verified.

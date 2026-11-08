@@ -117,6 +117,10 @@ Regulatory sources: [fusion_ionis_2026](https://ir.ionis.com/news-releases/news-
 
 ## QRL-201 / STMN2: early ANQUR interim signals
 
+**Registry correction checked 2026-11-08:** The registration posted 2026-05-15 lists Phase 1, 69 actual participants, a primary safety endpoint through Day 421 and three plasma-PK secondary endpoints. This resolves the registry-access/window gap below, not the unexplained sponsor Phase 1/2 terminology. [Dated extraction, amendment comparisons and limits](ANQUR_REGISTRY_UPDATE.md). No efficacy inference or posted registry results.
+
+The following fields preserve the original November 7 snapshot; their registry-access/window caveats are superseded by the dated correction above.
+
 - Record: `qrl201_stmn2`
 - Stage: sponsor reported early trial
 - Target: Restoration of STMN2 expression
