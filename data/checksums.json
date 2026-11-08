@@ -189,6 +189,6 @@
     "docs/test-reports/motion-browser-2026-11-08.md": "69e64af375f5873f66d80f0dfa4807b2373157bba4e3d6687c3eb6af489f396b",
     "docs/test-reports/motion-chromium-2026-11-08.json": "94533bde5061f297340bc800fb18997b2bdf2b887d70e13ce6591da80c54536e",
     "docs/test-reports/motion-firefox-2026-11-08.json": "0cd0dd4ca3f9bee14b5e0cbbb0cd07d28be072258ea3b361e3cf37a899d6a60b",
-    "tools/lumen-commons/tests/standalone_browser.py": "6d166eee005e8ca6e6162454674560480f093088efd700b26aa89b90b1ac2388"
+    "tools/lumen-commons/tests/standalone_browser.py": "4c45dd76c6e920d8d81f496d8936fee24b92dac3c9e7d4c6c372ff00a643e1bc"
   }
 }

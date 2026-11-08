@@ -15,6 +15,7 @@ from pathlib import Path
 import platform
 import shutil
 import tempfile
+import time
 
 from playwright.sync_api import expect, sync_playwright
 
@@ -86,7 +87,7 @@ def attach_observers(page, errors, requests):
 
 def new_context(browser, url, errors, requests, *, denied=False, reduced='no-preference'):
     context = browser.new_context(viewport={'width': 1280, 'height': 1000},
-                                  reduced_motion=reduced, accept_downloads=True)
+                                  device_scale_factor=1, reduced_motion=reduced, accept_downloads=True)
     context.set_offline(True)
     if denied:
         context.add_init_script(DENY_STORAGE)
@@ -207,6 +208,36 @@ def check_functional(browser, url, errors, requests, screenshots):
     context.close()
 
 
+def wait_for_world_paint(page):
+    """Do not mistake a resized, cleared canvas for a rendered world.
+
+    Native frame scheduling can repaint after set_viewport_size has returned.
+    Require correctly resized backing dimensions and nonblack, varied pixels
+    twice, 50 ms apart. This is paint readiness, not graphical correctness.
+    """
+    deadline, consecutive = time.monotonic() + 5, 0
+    while time.monotonic() < deadline:
+        painted = page.locator('#world').evaluate("""canvas => {
+            const r = canvas.getBoundingClientRect();
+            if (canvas.width !== Math.round(r.width) ||
+                canvas.height !== Math.round(r.height)) return false;
+            const c = canvas.getContext('2d'), colors = new Set();
+            let bright = 0;
+            for (let y = 1; y <= 4; y++) for (let x = 1; x <= 4; x++) {
+                const p = c.getImageData(Math.floor(canvas.width*x/5),
+                                        Math.floor(canvas.height*y/5), 1, 1).data;
+                if (p[3] === 255 && p[0]+p[1]+p[2] > 40) bright++;
+                colors.add(Array.from(p).join(','));
+            }
+            return bright === 16 && colors.size >= 8;
+        }""")
+        consecutive = consecutive + 1 if painted else 0
+        if consecutive >= 2:
+            return
+        page.wait_for_timeout(50)
+    raise AssertionError('World canvas did not paint after viewport resize')
+
+
 def check_layout(browser, url, errors, requests, screenshots):
     context, page = new_context(browser, url, errors, requests, reduced='reduce')
     expect(page.locator('body')).to_have_class('reduce')
@@ -217,6 +248,7 @@ def check_layout(browser, url, errors, requests, screenshots):
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), (width, height)
         box = page.locator('#world').bounding_box()
         assert box and box['width'] > 0 and box['height'] > 0
+        wait_for_world_paint(page)
         if screenshots:
             page.screenshot(path=str(screenshots / f'world-{width}x{height}.png'), full_page=True)
         # Use the toolbar, which stays available when the sidebar is hidden.
@@ -231,6 +263,11 @@ def check_layout(browser, url, errors, requests, screenshots):
             assert page.locator('#panel').evaluate('(p) => p.scrollWidth <= p.clientWidth'), title
             if screenshots and index == 0:
                 page.screenshot(path=str(screenshots / f'fraction-{width}x{height}.png'), full_page=True)
+            if index == 0:
+                slider(page, 'cells', 9)
+                page.get_by_role('button', name='Try my idea', exact=True).click()
+                expect(page.locator('.feedback')).to_contain_text('Beacon restored')
+                expect(page.locator('#progressLabel')).to_have_text('1 / 5')
             close_panel(page, escape=index % 2 == 0)
     context.close()
 
@@ -302,13 +339,13 @@ def main():
                   for name in [FILENAME, 'index.html', 'src/core.js', 'src/game.js',
                                'src/world.js', 'src/style.css', 'tests/standalone_browser.py']},
         'scope': ['five quests and idempotent repeated completion', 'wrong answer and hint',
-                  'keyboard activation, native fraction range keys, Escape and Close focus return',
+                  'keyboard activation, native quest range keys, Escape and Close focus return',
                   'three language switches and reduced-motion/quality settings',
                   'scripted dialogue and local artwork', 'native file-origin storage across reload and same-context tab reopen',
                   'four real JSON downloads including after export/erase/restore roundtrip',
                   'erase Cancel/Accept against isolated synthetic state',
                   'invalid JSON, future-version and oversized restore preserve existing state',
-                  'six destinations and dialog fit at 1280x1000, 390x844, 320x844, 844x390',
+                  'painted world, six destinations, dialog fit and fraction controls at 1280x1000, 390x844, 320x844, 844x390',
                   'separate injected storage denial allows play and export but does not persist',
                   'no page/console errors or external network requests'],
         'not_tested': ['source edition browser navigation', 'browser restart/profile persistence or moving the HTML file',
