@@ -42,6 +42,7 @@ jobs:
           python3 tools/lumen-commons/tests/static_check.py
           python3 tools/motion-trace-shape/tests/static_check.py
           python3 artifacts/cooperation-rescue/contract.py
+          node tools/water-survey-preflight/build.cjs --check
       - name: Validate evidence map and exact generated views
         run: |
           python3 research/als_evidence_map_2026-11-07/tools/validate.py
@@ -116,5 +117,38 @@ jobs:
         with:
           name: lumen-browser-${{ matrix.browser }}
           path: ${{ runner.temp }}/lumen-browser
+          if-no-files-found: ignore
+          retention-days: 7
+
+  water-browser:
+    name: Water browser (${{ matrix.browser }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned browser test tools outside the archive
+        run: |
+          npm install --prefix "$RUNNER_TEMP/water-playwright" --no-audit --no-fund playwright@1.56.0
+          "$RUNNER_TEMP/water-playwright/node_modules/.bin/playwright" install --with-deps ${{ matrix.browser }}
+      - name: Test isolated offline Water standalone with synthetic data
+        env:
+          WATER_BROWSER: ${{ matrix.browser }}
+          WATER_QA_DIR: ${{ runner.temp }}/water-browser-${{ matrix.browser }}
+        run: |
+          node tools/water-survey-preflight/build.cjs --check
+          NODE_PATH="$RUNNER_TEMP/water-playwright/node_modules" node tools/water-survey-preflight/tests/browser.cjs
+      - name: Preserve scoped browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: water-browser-${{ matrix.browser }}
+          path: ${{ runner.temp }}/water-browser-${{ matrix.browser }}
           if-no-files-found: ignore
           retention-days: 7

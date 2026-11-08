@@ -135,15 +135,15 @@
         "review_record": "tools/water-survey-preflight/README.md"
       },
       "verification": {
-        "status": "core_static_simulated_controller_passed_browser_not_run",
+        "status": "scoped_offline_browser_and_node_checks_passed",
         "record": "tools/water-survey-preflight/docs/verification.md",
-        "limitations": "84 tests passed: 73 core, 5 static, 6 simulated controller. Real browser/rendering/download/mobile/accessibility/CSP enforcement tests not run. Partial unofficial preflight, not water-safety assessment or upload certification; practitioner usefulness unvalidated."
+        "limitations": "85 Node tests: 73 core, 6 static, 6 simulated controller. Scoped synthetic Chromium/Firefox checks pass for local file import/downloads, reload consent, layouts and selected CSP enforcement. Large-paste responsiveness, physical devices, accessibility and practitioner usefulness remain unverified; not water-safety assessment or upload certification."
       },
       "preserved_manifest": null,
       "pinned_files": [
         {
           "path": "tools/water-survey-preflight/index.html",
-          "sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
+          "sha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7"
         }
       ]
     },

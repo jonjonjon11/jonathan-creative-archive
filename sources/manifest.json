@@ -421,12 +421,12 @@
       "source_date": "2026-11-07",
       "access": "new_public_archive_implementation",
       "public_url": null,
-      "findings": "Original offline CSV preflight with explicit mappings, bounded parser/rules, row-level findings and privacy-default JSON report logic. Rule decisions reconcile linked public WPdx guidance. Corrected candidate passed 84 core/static/simulated-controller tests and reproducible-build checks.",
-      "limitations": "Partial unofficial review profile, not WPdx certification, upload acceptance or water-safety assessment. Browser, rendering, downloads, mobile, assistive technology and CSP enforcement tests not run. No practitioner validation, real survey data or demonstrated field benefit.",
+      "findings": "Original offline CSV preflight with explicit mappings, bounded parser/rules and privacy-default JSON reports. Linked public WPdx guidance is reconciled in rule notes. 85 Node tests, reproducible build and scoped synthetic offline Chromium/Firefox checks pass; browser verification corrected reload consent and narrow count overflow.",
+      "limitations": "Partial unofficial review, not WPdx certification, upload acceptance or water-safety assessment. Large-paste responsiveness, physical devices and assistive technology remain unverified. No practitioner validation, real survey data or demonstrated field benefit. See docs/test-reports/water-browser-2026-11-08.md.",
       "locator_policy": "New artifact and public reference links are included directly; no private source or historical implementation implied.",
       "included_artifact": "tools/water-survey-preflight/README.md",
       "artifact_license": "CC-BY-4.0",
-      "artifact_sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
+      "artifact_sha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7"
     },
     {
       "id": "SRC-038",

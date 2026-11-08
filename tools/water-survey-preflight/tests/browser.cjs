@@ -1,6 +1,8 @@
 "use strict";
-// Test-only dependency: use an already installed Playwright and Chromium. Nothing is installed here.
-const { chromium } = require("playwright");
+// Optional test-only dependency. Uses an installed Playwright browser; never installs anything.
+// Only synthetic fixtures and an isolated copy of the standalone HTML are exercised.
+const playwright = require("playwright");
+const crypto = require("node:crypto");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
@@ -10,24 +12,47 @@ const P = require("../src/core.js");
 const { makeInjectionFixture } = require("./fixtures.cjs");
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROMIUM || "/usr/bin/chromium", args: ["--no-sandbox", "--disable-dev-shm-usage"] });
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "water-preflight-qa-"));
-  const checks = [], errors = [], network = [], cspErrors = [];
+  const browserName = process.env.WATER_BROWSER || "chromium";
+  if (!["chromium", "firefox"].includes(browserName)) throw new Error("WATER_BROWSER must be chromium or firefox");
+  const dir = process.env.WATER_QA_DIR ? path.resolve(process.env.WATER_QA_DIR) : fs.mkdtempSync(path.join(os.tmpdir(), "water-preflight-qa-"));
+  fs.mkdirSync(dir, { recursive: true });
+  const standalone = fs.mkdtempSync(path.join(dir, "standalone-"));
+  const html = fs.readFileSync(path.join(__dirname, "../index.html"));
+  const isolatedFile = path.join(standalone, "index.html");
+  fs.writeFileSync(isolatedFile, html);
+  assert.deepEqual(fs.readdirSync(standalone), ["index.html"]);
+  const sha256 = bytes => crypto.createHash("sha256").update(bytes).digest("hex");
+  const checks = [], errors = [], network = [], cspErrors = [], screenshots = [];
+  const summary = {
+    startedAt: new Date().toISOString(), status: "running", browser: browserName,
+    playwright: require("playwright/package.json").version, node: process.version,
+    platform: process.platform, architecture: process.arch, commit: process.env.GITHUB_SHA || null,
+    standaloneSha256: sha256(html), runnerSha256: sha256(fs.readFileSync(__filename)),
+    networking: "offline", syntheticDataOnly: true, standaloneFiles: ["index.html"],
+    limitations: "Scoped desktop-browser automation only; not physical-device, comprehensive accessibility, practitioner-effectiveness, WPdx-certification or water-safety acceptance."
+  };
+  let browser, page;
   const pass = message => { checks.push(message); console.log("PASS: " + message); };
   try {
-    const context = await browser.newContext({ offline: true, acceptDownloads: true, viewport: { width: 1280, height: 900 } });
-    const page = await context.newPage();
+    const executablePath = process.env.WATER_BROWSER_EXECUTABLE || (browserName === "chromium" ? process.env.CHROMIUM : undefined);
+    browser = await playwright[browserName].launch({ headless: true, ...(executablePath ? { executablePath } : {}) });
+    summary.browserVersion = browser.version();
+    const context = await browser.newContext({ offline: true, acceptDownloads: true, locale: "en-US", viewport: { width: 1280, height: 900 } });
+    page = await context.newPage();
+    page.setDefaultTimeout(15000);
+    page.setDefaultNavigationTimeout(15000);
     page.on("pageerror", e => errors.push(e.message));
     page.on("request", r => { if (/^https?:/.test(r.url())) network.push(r.url()); });
     page.on("console", msg => { if (msg.type() === "error" && /Content Security Policy|Refused to/.test(msg.text())) cspErrors.push(msg.text()); });
-    await page.goto(pathToFileURL(path.join(__dirname, "../index.html")).href);
+    await page.goto(pathToFileURL(isolatedFile).href);
     await page.getByRole("button", { name: "Try a synthetic example" }).click();
     assert.equal(await page.locator("#count-errors").textContent(), "3");
     assert.equal(await page.locator("#count-warnings").textContent(), "9");
     assert.equal(await page.locator("#results").evaluate(e => e === document.activeElement), true);
     assert.equal(await page.locator(".issue").count(), 12);
     pass("file:// standalone loads with browser networking offline and synthetic fixture produces expected findings");
-    await page.screenshot({ path: path.join(dir, "desktop-findings.png"), fullPage: true });
+    await page.evaluate(() => scrollTo(0, 0));
+    await page.screenshot({ path: path.join(dir, "desktop-findings.png"), fullPage: true }); screenshots.push("desktop-findings.png");
     await page.locator("#filter").selectOption("error");
     assert.equal(await page.locator(".issue").count(), 3);
     await page.locator("#filter").selectOption("warning");
@@ -46,7 +71,9 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     const fullReport = page.waitForEvent("download"); await page.locator("#download").click();
     const fullPath = path.join(dir, "opt-in-report.json"); await (await fullReport).saveAs(fullPath);
     const full = JSON.parse(fs.readFileSync(fullPath, "utf8"));
-    assert.equal(full.inputValuesIncluded, true); assert(full.headers.length > 0); assert(full.issues.some(issue => issue.value !== ""));
+    assert.equal(full.inputValuesIncluded, true); assert(full.headers.length > 0);
+    assert(full.issues.every(issue => typeof issue.value === "string"));
+    assert(full.issues.some(issue => issue.code === "STATUS_REVIEW" && issue.value === "Functional"));
     pass("values enter the exported report only after explicit local checkbox choice");
     await page.locator("#file").setInputFiles(path.join(__dirname, "../fixtures/synthetic-clean.csv"));
     await page.waitForFunction(() => document.querySelector("#count-records").textContent === "2" && !document.querySelector("#results").hidden);
@@ -99,7 +126,14 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     assert.equal(await page.locator("#csv").inputValue(), ""); assert.equal(await page.locator("#results").isVisible(), false);
     assert.equal(await page.locator("#mapping-panel").isVisible(), false); assert.equal(await page.locator("#file").inputValue(), "");
     pass("repeated sample loads do not duplicate findings; Clear removes visible input, mappings, and results");
-    await page.reload(); await page.keyboard.press("Tab");
+    await page.getByRole("button", { name: "Try a synthetic example" }).click();
+    await page.locator("#include-values").check();
+    assert.equal(await page.locator("#include-values").isChecked(), true);
+    await page.reload();
+    assert.equal(await page.locator("#results").isVisible(), false);
+    assert.equal(await page.locator("#include-values").isChecked(), false);
+    pass("native reload does not restore a completed review or opt-in export choice");
+    await page.keyboard.press("Tab");
     assert.equal(await page.evaluate(() => document.activeElement.className), "skip");
     await page.keyboard.press("Enter");
     await page.getByRole("button", { name: "Try a synthetic example" }).focus(); await page.keyboard.press("Enter");
@@ -111,15 +145,78 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     assert.deepEqual(storage, { local: 0, session: 0, cookie: "" });
     assert.equal(network.length, 0); assert.deepEqual(errors, []); assert.deepEqual(cspErrors, []);
     pass("no HTTP(S) requests, page errors, CSP violations, cookies, or web-storage entries observed");
-    await page.setViewportSize({ width: 390, height: 844 });
-    await page.screenshot({ path: path.join(dir, "mobile-findings.png"), fullPage: true });
-    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
-    pass("390-pixel mobile layout has no horizontal page overflow");
-    await page.setViewportSize({ width: 320, height: 700 });
-    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
-    pass("320-pixel narrow layout has no horizontal page overflow");
-    const summary = { checkedAt: new Date().toISOString(), chromium: await browser.version(), browser: "Chromium via Playwright", networking: "offline", passed: checks.length, checks, httpRequests: network.length, pageErrors: errors, screenshots: ["desktop-findings.png", "mobile-findings.png"] };
+    for (const viewport of [{ width: 390, height: 844 }, { width: 320, height: 700 }]) {
+      await page.setViewportSize(viewport);
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
+      const filename = `narrow-${viewport.width}-findings.png`;
+      await page.evaluate(() => scrollTo(0, 0));
+      await page.screenshot({ path: path.join(dir, filename), fullPage: true }); screenshots.push(filename);
+      await page.locator("#filter").selectOption("error");
+      assert.equal(await page.locator(".issue").count(), 3);
+      const narrowDownload = page.waitForEvent("download"); await page.locator("#download").click();
+      const narrowPath = path.join(dir, `narrow-${viewport.width}-report.json`);
+      await (await narrowDownload).saveAs(narrowPath);
+      const narrowReport = JSON.parse(fs.readFileSync(narrowPath, "utf8"));
+      assert.equal(narrowReport.inputValuesIncluded, false); assert.equal(narrowReport.issues.length, 12);
+      await page.locator("#clear").click();
+      assert.equal(await page.locator("#results").isVisible(), false);
+      await page.getByRole("button", { name: "Try a synthetic example" }).click();
+      assert.equal(await page.locator(".issue").count(), 12);
+      pass(`${viewport.width}-pixel viewport has no horizontal overflow and supports filtering, a real download, Clear and repeat review`);
+    }
+    // Import the maximum synthetic file through the native picker; do not simulate a million-character paste.
+    await page.locator("#paste-details").evaluate(e => e.open = false);
+    const large = "lat_deg,lon_deg,report_date,status_id,source,water_source\n" + Array.from({ length: 25000 }, (_, i) =>
+      `999,999,2024-02-30,Unknown,,Unknown ${i}`).join("\n");
+    await page.locator("#file").setInputFiles({ name: "maximum-synthetic.csv", mimeType: "text/csv", buffer: Buffer.from(large) });
+    await page.waitForFunction(() => document.querySelector("#count-records").textContent === "25,000" && !document.querySelector("#results").hidden);
+    assert.equal(await page.locator("#count-records").textContent(), "25,000");
+    assert.equal(await page.locator("#count-errors").textContent(), "100,000");
+    summary.maximumCountsLayout = [];
+    for (const width of [320, 401, 660, 661]) {
+      await page.setViewportSize({ width, height: 700 });
+      await page.locator(".stats").scrollIntoViewIfNeeded();
+      const filename = `maximum-counts-${width}.png`;
+      await page.screenshot({ path: path.join(dir, filename) }); screenshots.push(filename);
+      const layout = await page.evaluate(() => ({
+        viewportWidth: window.innerWidth, documentWidth: document.documentElement.scrollWidth,
+        counts: [...document.querySelectorAll(".stats strong")].map(node => ({ text: node.textContent, width: node.clientWidth, contentWidth: node.scrollWidth }))
+      }));
+      summary.maximumCountsLayout.push(layout);
+      assert.ok(layout.documentWidth <= width, `Maximum counts must not overflow the ${width}-pixel viewport`);
+      assert.ok(layout.counts.every(node => node.contentWidth <= node.width), `Maximum count text must fit its own box at ${width} pixels`);
+    }
+    pass("maximum record count and six-digit error total fit at 320, 401, 660 and 661 pixels, including both sides of the narrow breakpoint");
+    // Separate positive-control CSP probe: no remote target, data, or policy relaxation.
+    const probe = await context.newPage();
+    await probe.goto(pathToFileURL(isolatedFile).href);
+    await probe.evaluate(() => {
+      window.policyViolations = [];
+      document.addEventListener("securitypolicyviolation", event => window.policyViolations.push(event.effectiveDirective));
+      const script = document.createElement("script"); script.textContent = "window.unapprovedScriptRan = true";
+      document.body.append(script);
+      fetch("data:text/plain,synthetic-csp-probe").catch(() => {});
+    });
+    await probe.waitForFunction(() => window.policyViolations.some(x => x.startsWith("script-src")) && window.policyViolations.includes("connect-src"));
+    assert.equal(await probe.evaluate(() => window.unapprovedScriptRan), undefined);
+    summary.cspProbeViolations = await probe.evaluate(() => window.policyViolations);
+    await probe.close();
+    pass("separate CSP probe blocks an unapproved inline script and a data-URL fetch without contacting a remote service");
+    assert.equal(network.length, 0); assert.deepEqual(errors, []); assert.deepEqual(cspErrors, []);
+    summary.status = "passed";
+  } catch (error) {
+    summary.status = "failed";
+    summary.failure = { name: error.name, message: error.message.slice(0, 2000), stack: error.stack && error.stack.slice(-2000) };
+    if (page && !page.isClosed()) {
+      try { await page.screenshot({ path: path.join(dir, "failure.png"), fullPage: true }); screenshots.push("failure.png"); }
+      catch (captureError) { summary.screenshotFailure = captureError.message; }
+    }
+    throw error;
+  } finally {
+    Object.assign(summary, { checkedAt: new Date().toISOString(), passed: checks.length, checks,
+      httpRequests: network.length, requestUrls: network, pageErrors: errors, cspErrors, screenshots });
     fs.writeFileSync(path.join(dir, "summary.json"), JSON.stringify(summary, null, 2) + "\n");
     console.log("QA output: " + dir);
-  } finally { await browser.close(); }
-})().catch(error => { console.error(error); process.exitCode = 1; });
+    if (browser) await browser.close();
+  }
+})().catch(error => { console.error(String(error).slice(0, 2000)); process.exitCode = 1; });

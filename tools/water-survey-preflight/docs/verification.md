@@ -1,8 +1,16 @@
 # Verification record
 
+## Current browser update — 2026-11-08
+
+85 Node tests pass (73 core, 6 static, 6 simulated controller), with exact standalone build parity. Scoped offline Chromium and Firefox runs pass 19 browser check groups each using invented records only. Browser verification fixed native Firefox restoration of the export-value opt-in and maximum-count overflow at narrow widths. See the [dated browser report](../../../docs/test-reports/water-browser-2026-11-08.md) and its unchanged JSON summaries for exact revisions, hashes, versions, screenshots and failures.
+
+The roughly one-million-character paste path remains unresolved after a Chromium timeout; large CSVs should use the verified file-picker route. Physical devices, Safari/Edge, assistive technology, real data and practitioner benefit remain unvalidated. This is not water-safety assessment or official upload certification.
+
+## Historical initial review — 2026-11-07
+
 Candidate **0.1.0**, reviewed **2026-11-07 UTC**. No real field data was used. This record distinguishes code tests from browser or field verification.
 
-## Passed on this candidate
+### Passed on the initial candidate
 
 - Node.js v24.22.1: **84 tests passed**, zero failed/skipped: 73 core tests, 5 static tests, and 6 UI-controller tests using a small DOM model. Command: `node --test tests/*.test.cjs`.
 - Reproducible standalone build: `node build.cjs --check` confirmed `index.html` exactly matches its source/fixture inputs.
@@ -11,13 +19,13 @@ Candidate **0.1.0**, reviewed **2026-11-07 UTC**. No real field data was used. T
 - Controller-model coverage includes example load, filters, privacy-default and explicit-value exports, repeated loads, clear/invalidation, mapping changes, real UTF-8 decoding, invalid encoding, file-size limits, and delayed file reads losing to newer input or Clear.
 - Static checks confirm bundled CSP hashes, no external runtime assets or network/storage API references, no HTML-insertion sinks, unique IDs, label targets, and no-referrer source links. Main text-palette contrast pairs meet 4.5:1 on their intended light backgrounds. These are not a full accessibility or security audit.
 
-## Browser verification did not run
+### Browser verification did not run in the initial environment
 
 Chromium could not start before page load because local socket creation was restricted. Another available browser route did not support opening the local file. No browser tests, screenshots, mobile layout checks, or live network observations completed.
 
 `tests/browser.cjs` is supplied for a permitted environment with Playwright and Chromium. It is syntactically checked but **its assertions are unrun**. It exercises offline file loading, local downloads, filters, mappings, inert malicious text, paging, invalid files, repeated/clear flows, keyboard/labels, storage/network observation, and narrow viewports. A reviewer should run it and inspect screenshots before describing this as browser-tested.
 
-## Not assessed
+### Not assessed in the initial review
 
 - Real-browser rendering and content-security-policy enforcement; Safari, Firefox, mobile operating systems, and assistive-technology use.
 - Real survey exports, practitioner comprehension, workflow fit, demand for offline review, error-reduction benefits, or field impact.
@@ -26,6 +34,6 @@ Chromium could not start before page load because local socket creation was rest
 
 This verification was performed before the experimental archive release. The included manifest records file hashes for comparison, not proof of safety, impact, or external certification.
 
-## Independent-review corrections
+### Initial independent-review corrections
 
 Two initial-candidate defects were reproduced and corrected before release review: (1) a browser-test header contained unescaped quotes, preventing the intended DOM test from reaching the page; it now uses a shared CSV-escaped fixture with a successful-parse assertion and a runnable core regression; (2) numeric conversion rounded decimal coordinates such as `90.000000000000000001` to the boundary. Bounds now compare the original decimal strings exactly. These corrections do not turn the still-blocked browser suite into a passed test.

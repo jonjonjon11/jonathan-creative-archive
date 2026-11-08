@@ -1,0 +1,145 @@
+{
+  "startedAt": "2026-11-08T11:04:34.750Z",
+  "status": "passed",
+  "browser": "firefox",
+  "playwright": "1.56.0",
+  "node": "v22.23.4",
+  "platform": "linux",
+  "architecture": "x64",
+  "commit": "75228137240771344ccc60401007ebd91e38d7c8",
+  "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+  "runnerSha256": "b21e6b288e0f979ceb7e45cd7d1c6cd9abace10729a12e3cd01e7f57519b7e3f",
+  "networking": "offline",
+  "syntheticDataOnly": true,
+  "standaloneFiles": [
+    "index.html"
+  ],
+  "limitations": "Scoped desktop-browser automation only; not physical-device, comprehensive accessibility, practitioner-effectiveness, WPdx-certification or water-safety acceptance.",
+  "browserVersion": "142.0.1",
+  "maximumCountsLayout": [
+    {
+      "viewportWidth": 320,
+      "documentWidth": 320,
+      "counts": [
+        {
+          "text": "25,000",
+          "width": 246,
+          "contentWidth": 246
+        },
+        {
+          "text": "100,000",
+          "width": 246,
+          "contentWidth": 246
+        },
+        {
+          "text": "25,000",
+          "width": 246,
+          "contentWidth": 246
+        }
+      ]
+    },
+    {
+      "viewportWidth": 401,
+      "documentWidth": 401,
+      "counts": [
+        {
+          "text": "25,000",
+          "width": 327,
+          "contentWidth": 327
+        },
+        {
+          "text": "100,000",
+          "width": 327,
+          "contentWidth": 327
+        },
+        {
+          "text": "25,000",
+          "width": 327,
+          "contentWidth": 327
+        }
+      ]
+    },
+    {
+      "viewportWidth": 660,
+      "documentWidth": 660,
+      "counts": [
+        {
+          "text": "25,000",
+          "width": 586,
+          "contentWidth": 586
+        },
+        {
+          "text": "100,000",
+          "width": 586,
+          "contentWidth": 586
+        },
+        {
+          "text": "25,000",
+          "width": 586,
+          "contentWidth": 586
+        }
+      ]
+    },
+    {
+      "viewportWidth": 661,
+      "documentWidth": 661,
+      "counts": [
+        {
+          "text": "25,000",
+          "width": 156,
+          "contentWidth": 156
+        },
+        {
+          "text": "100,000",
+          "width": 156,
+          "contentWidth": 156
+        },
+        {
+          "text": "25,000",
+          "width": 156,
+          "contentWidth": 156
+        }
+      ]
+    }
+  ],
+  "cspProbeViolations": [
+    "script-src-elem",
+    "connect-src"
+  ],
+  "checkedAt": "2026-11-08T11:04:38.807Z",
+  "passed": 19,
+  "checks": [
+    "file:// standalone loads with browser networking offline and synthetic fixture produces expected findings",
+    "severity filters use text labels and correct counts",
+    "default local JSON report omits input values and headers and exports all severities",
+    "values enter the exported report only after explicit local checkbox choice",
+    "real UTF-8 file-picker read works offline, resets export consent, and avoids an official pass claim",
+    "edits and mapping changes invalidate old results; explicit custom-header mapping restores review",
+    "HTML-like headers and values render as inert text without DOM injection",
+    "large finding sets paginate and disclose the retained-issue cap without losing aggregate error counts",
+    "malformed CSV explicitly aborts review and hides stale mappings",
+    "non-UTF-8 file fails explicitly without stale findings",
+    "file byte limit enforced before reading",
+    "repeated sample loads do not duplicate findings; Clear removes visible input, mappings, and results",
+    "native reload does not restore a completed review or opt-in export choice",
+    "keyboard skip link, keyboard sample action, result focus, and form labels checked",
+    "no HTTP(S) requests, page errors, CSP violations, cookies, or web-storage entries observed",
+    "390-pixel viewport has no horizontal overflow and supports filtering, a real download, Clear and repeat review",
+    "320-pixel viewport has no horizontal overflow and supports filtering, a real download, Clear and repeat review",
+    "maximum record count and six-digit error total fit at 320, 401, 660 and 661 pixels, including both sides of the narrow breakpoint",
+    "separate CSP probe blocks an unapproved inline script and a data-URL fetch without contacting a remote service"
+  ],
+  "httpRequests": 0,
+  "requestUrls": [],
+  "pageErrors": [],
+  "cspErrors": [],
+  "screenshots": [
+    "desktop-findings.png",
+    "narrow-390-findings.png",
+    "narrow-320-findings.png",
+    "maximum-counts-320.png",
+    "maximum-counts-401.png",
+    "maximum-counts-660.png",
+    "maximum-counts-661.png"
+  ]
+}

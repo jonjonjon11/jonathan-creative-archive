@@ -1,3 +1,9 @@
+## Water browser verification, 2026-11-08
+
+- Add isolated synthetic Chromium/Firefox checks, real downloads and file imports, reload-consent regressions, narrow maximum-count layouts and positive-control CSP probes to CI.
+- Fix browser restoration of the export-value opt-in and six-digit summary overflow. Preserve core rules, synthetic data, reference sources, runtime independence and water-safety caveats.
+- Record exact passing evidence, failure history and remaining large-paste, physical-device, accessibility and practitioner-validation limits in the [dated report](docs/test-reports/water-browser-2026-11-08.md).
+
 ## Learner-entry repair, 2026-11-08
 
 - Route the quick start and START_HERE directly to readable lessons, with ZIP/raw-file instructions and a paper-first check/change/share example.

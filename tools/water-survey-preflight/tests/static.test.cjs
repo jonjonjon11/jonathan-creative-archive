@@ -42,3 +42,7 @@ test("main text palette meets WCAG AA normal-text contrast on its intended light
     assert(contrast >= 4.5, `${fg}/${bg}: ${contrast}`);
   }
 });
+
+test("sensitive report opt-in disables browser form-state restoration", () => {
+  assert.match(html, /<input\b[^>]*id="include-values"[^>]*autocomplete="off"/);
+});

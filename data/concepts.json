@@ -424,8 +424,8 @@
       ],
       "artifact_status": "source_inspected",
       "scientific_standing": "not_a_scientific_claim",
-      "limitations": "84 core/static/simulated-controller checks pass, but real-browser acceptance is unrun. Partial unofficial preflight, not water-safety assessment or upload certification. Practitioner need/usefulness and field impact are unvalidated; fixtures are invented.",
-      "next_step": "Run the supplied browser suite and inspect rendering, downloads, mobile and assistive-technology behavior. Then assess the documented workflow hypothesis with consenting practitioners using synthetic examples before proposing adoption."
+      "limitations": "85 Node tests and scoped synthetic offline Chromium/Firefox checks pass. Large-paste responsiveness, physical devices and assistive technology remain unverified. Partial unofficial preflight, not water-safety assessment or upload certification. Practitioner usefulness and field impact are unvalidated.",
+      "next_step": "Review the dated browser evidence, investigate large-paste responsiveness, then assess physical-device and assistive-technology behavior and the workflow hypothesis with consenting practitioners using synthetic examples before proposing adoption."
     }
   ]
 }
