@@ -4,7 +4,7 @@
 
 This is a new implementation inspired by the archive’s [one-model demonstrator brief](../../concepts/first-demonstrator.md) and [model/history/representation design](../../chapters/03-math-physics-and-xr.md). It is not recovered historical software. It implements a deliberately small two-coordinate analytical model, rather than all requirements or physical quantities proposed in the brief.
 
-**Verification:** 32 original lab tests, 12 lesson regression tests, and targeted static checks passed. Real Chromium could not start in the build environment, before loading any page, because its process-singleton socket was not permitted. Rendered-browser, actual touch-device, download and assistive-technology behavior remain unverified. The included browser suite is a future acceptance test, not a passed test.
+**Verification (2026-11-08):** 46 Node tests and static/build checks pass. Headless Chromium 141.0.7390.37 and Firefox 142.0.1 on Ubuntu 24.04 pass the browser suite for both source and standalone, including native controls and actual JSON downloads. Screenshot review found and fixed a black SVG fill over the time traces. Physical devices, touch, assistive technology and human/learner acceptance remain unverified. See the [dated report](../../docs/test-reports/motion-browser-2026-11-08.md). Local Chromium still cannot initialize its process socket; browser evidence comes from CI.
 
 ## Try it
 
@@ -80,13 +80,14 @@ The 12 lesson regression tests additionally check the separate knowledge-module 
 
 The 18 model/data tests cover known line, circle and figure-eight values, closure and bounds across all 400 allowed parameter combinations, sampling, reproducibility, replay order, display/model independence and invalid inputs. The 14 UI-state tests run the real application code against minimal DOM and animation-frame stand-ins. They cover pause/replay/reset/scrub, repeated actions, parameter changes, hidden-page pausing, reduced-motion changes and JSON generation. They do **not** test rendering, native controls or real downloads.
 
-A separate real-browser smoke suite requires a separately available Playwright installation and Chromium. Nothing in this project installs them:
+A separate real-browser suite requires a development installation of Playwright and Chromium or Firefox. The runtime and test script install nothing. The CI workflow installs pinned Playwright 1.56.0 and its browser builds on Ubuntu 24.04:
 
 ```sh
-python3 tests/browser_smoke.py --chromium /path/to/chromium --screenshots /tmp/motion-lab-screenshots
+python3 tests/browser_smoke.py --browser chromium --screenshots /tmp/motion-chromium --report /tmp/motion-chromium.json
+python3 tests/browser_smoke.py --browser firefox --screenshots /tmp/motion-firefox --report /tmp/motion-firefox.json
 ```
 
-It is intended to test both source and standalone forms offline, reduced-motion startup, keyboard ranges, presets, guide, play/pause/restart, a real JSON download and overflow at 320/390 CSS-pixel widths. Review resulting screenshots yourself. It has not passed in this build environment. See [validation record](validation.json) for exact scope and remaining checks.
+It tests both editions offline, paused/reduced-motion startup, keyboard parameter increments, all presets, guides/disclosures, repeated playback and interruption, real JSON downloads with all 481 samples, speed/data separation, unfilled time axes, equal plot coordinate scale and page overflow at 1280/390/320 CSS-pixel widths. It passed in both CI browser engines. Review screenshots yourself; narrow CSS viewports do not establish mobile/touch usability. Two markup regressions cover the SVG fill correction. An existing local Chromium can still be selected with `--chromium /path/to/chromium`. See the [validation record](validation.json) for scope and remaining checks.
 
 ## Files and reuse
 

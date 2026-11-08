@@ -36,7 +36,7 @@ The repository contains a working module schema, validation tools and a correcte
 
 **Build on it:** Use the [Knowledge Module Schema](docs/knowledge-module-schema.md) to create your own lessons. The schema has structural checks; their passing does not establish factual correctness, educational effectiveness or device compatibility.
 
-**Status:** Corrected draft · 44 numerical, simulated-control and lesson tests · Deterministic source/build checks · Real-device, educator and learner review pending
+**Status:** Corrected draft · 46 numerical, simulated-control, lesson and SVG tests · Chromium/Firefox headless checks pass · Real-device, educator and learner review pending
 
 → **[Start here: docs/QUICKSTART.md](docs/QUICKSTART.md)** for learners, contributors, and maintainers.
 
@@ -44,7 +44,7 @@ The repository contains a working module schema, validation tools and a correcte
 
 ## A newly built learning mini-lab (Details)
 
-[Motion → Trace → Shape 0.1](tools/motion-trace-shape/README.md) turns two repeating motions into a line, circle or figure-eight. Download its self-contained HTML, then compare motion, time traces and shape offline. It starts paused and offers stepping, a time slider, reduced-motion handling and experiment JSON export logic. **18 analytical/data tests, 14 simulated-DOM tests and static/build checks passed; real Chromium launch was blocked before any page loaded.** Rendering, actual downloads, devices and assistive technology remain unverified. This original CC BY 4.0 mini-lab is a bounded new implementation, not recovered historical software or a validated curriculum.
+[Motion → Trace → Shape 0.1](tools/motion-trace-shape/README.md) turns two repeating motions into a line, circle or figure-eight. Download its self-contained HTML, then compare motion, time traces and shape offline. It starts paused and offers stepping, a time slider, reduced-motion handling and experiment JSON export logic. **46 Node tests, static/build checks and headless Chromium/Firefox checks pass.** Browser screenshot review found and fixed an opaque SVG fill covering the time traces. Offline controls and real JSON downloads now have reproducible checks; physical devices, assistive technology and learner acceptance remain unverified. See the [dated browser report](docs/test-reports/motion-browser-2026-11-08.md). This original CC BY 4.0 mini-lab is a bounded new implementation, not recovered historical software or a validated curriculum.
 
 ## Review an experimental data tool
 
@@ -104,6 +104,6 @@ The most concrete technical foundations found include Reality Atlas source and a
 - Rights: newly written archive content is CC BY 4.0; the included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files are CC0. Other upstream projects retain their own licenses. See [rights and attribution](docs/rights-and-publication.md).
 - Scientific status: conventional models must be checked independently. Speculative frameworks and historical catalogs are not validated scientific results.
 - Medical status: no diagnosis, treatment recommendation, or clinical device is supplied.
-- Verification: structural checks, 46 focused Reality Atlas calculation/syntax checks, 25 cooperation/rescue authoring tests, 24 Lumen Commons Node tests plus static build checks, 29 Universal Color/Ontology Node tests, 32 new motion mini-lab Node tests plus static/build checks, and 84 water-survey core/static/simulated-controller checks passed. Fresh rendered-browser testing was blocked; no full application, GPU, headset, or interaction acceptance is claimed.
+- Verification: structural checks, 46 focused Reality Atlas calculation/syntax checks, 25 cooperation/rescue authoring tests, 24 Lumen Commons Node tests plus static build checks, 29 Universal Color/Ontology Node tests, 46 motion mini-lab Node tests plus static/build and two-browser checks, and 84 water-survey core/static/simulated-controller checks passed. The motion mini-lab now has scoped headless Chromium/Firefox interaction and download checks; other fresh browser gaps remain. No full application, GPU, headset, physical-device or accessibility acceptance is claimed.
 
 Exact private source locators and review files are kept outside this repository. Summarizing a private source does not make its original public. See the [release review record](docs/release-checklist.md) for this edition’s scope and remaining verification work.

@@ -108,9 +108,9 @@
         "review_record": "tools/motion-trace-shape/README.md"
       },
       "verification": {
-        "status": "node_and_static_checks_passed_browser_blocked",
+        "status": "offline_and_headless_chromium_firefox_checks_passed",
         "record": "tools/motion-trace-shape/validation.json",
-        "limitations": "18 analytical/data and 14 simulated-DOM tests plus static/build checks passed. Chromium launch blocked before page load. Rendering, actual native controls/downloads, physical devices, assistive technology and educational effectiveness are unverified."
+        "limitations": "46 Node tests, static/build checks and offline headless Chromium/Firefox controls/download checks pass; SVG time-axis fill corrected after screenshot review. Physical devices, Safari/Edge, assistive technology, human review and educational effectiveness remain unverified. See the dated browser report."
       },
       "preserved_manifest": null,
       "pinned_files": [
