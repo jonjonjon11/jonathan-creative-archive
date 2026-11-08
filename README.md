@@ -8,6 +8,10 @@ An evidence-based map of Jonathan's ideas for an educational universe, mathemati
 
 That is the purpose of this archive. It is a selective reconstruction from available records, not a complete account export or a claim that every idea has been recovered. The newly written archive is licensed under [Creative Commons Attribution 4.0 International](LICENSE). The included Reality Atlas, Lumen Commons, Universal Color/Ontology toolkit, and preserved cooperation/rescue source files retain their separate CC0 licenses.
 
+## Learn or contribute without Git
+
+Start with the [learner quick start](docs/QUICKSTART.md): choose a readable lesson, download a copy, check or change an example, and share feedback only if you want to. It includes a plain-text report and welcomes single-device observations without treating them as complete compatibility testing. No account is needed for local learning. Human learner, educator and accessibility acceptance remain pending.
+
 ## Integrated additions (2026-11-08)
 
 - [One press, one star](docs/lessons/one-press-one-star.md): a small offline programming exercise with runnable Python, an invented input trace, line-by-line explanations and solved challenges. It extracts the [switch-input foundation](tools/switch-input-lab/README.md) without importing PR #4's biomedical proposals. No hardware, assistive-device suitability or learning-effectiveness claim is made.
@@ -30,7 +34,7 @@ The repository contains a working module schema, validation tools and a correcte
 
 ### [Motion → Trace → Shape: A Lesson in Lissajous Curves](docs/QUICKSTART.md)
 
-**Learn:** Download the interactive lab and explore how two oscillating motions combine to create lines, circles, and figure-eights. No internet needed. [Read the full module](data/modules.json) or [download the standalone HTML](tools/motion-trace-shape/Motion-Trace-Shape.html).
+**Learn:** Download the interactive lab and explore how two oscillating motions combine to create lines, circles, and figure-eights. No internet needed. [Read the paper-first lesson](docs/lessons/motion-trace-shape.md) or [download the standalone HTML](tools/motion-trace-shape/Motion-Trace-Shape.html).
 
 **Contribute:** Help test it on your browser, add examples, or verify the math. Open tasks are listed in `data/tasks/`. [See templates](docs/task-templates/).
 

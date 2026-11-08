@@ -1,3 +1,10 @@
+## Learner-entry repair, 2026-11-08
+
+- Route the quick start and START_HERE directly to readable lessons, with ZIP/raw-file instructions and a paper-first check/change/share example.
+- Add the previously missing verification report, preserve attribution and private local work, and explain optional GitHub account requirements.
+- Welcome single-browser observations while retaining the open cross-browser acceptance task. Replace mandatory developer submission steps with optional issue or fork routes.
+- Add scoped documentation regressions and a clean-export review record. Existing lesson data, app runtime, licenses and biomedical branches are unchanged; human learner and accessibility acceptance remain pending.
+
 # Lumen standalone browser validation, 2026-11-08
 
 - Added original archive-authored offline Chromium/Firefox checks and pinned CI jobs without changing recovered runtime, standalone, CSP or source/test provenance.

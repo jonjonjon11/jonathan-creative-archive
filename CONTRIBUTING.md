@@ -2,6 +2,12 @@
 
 The newly written archive is CC BY 4.0; the included Reality Atlas tool retains CC0. Check [rights and attribution](docs/rights-and-publication.md) before reusing or adding material. Propose focused corrections with a source ID and supporting evidence.
 
+## Start with one observation
+
+You can check or adapt an example without Git or JSON. The [learner quick start](docs/QUICKSTART.md) provides download steps, a short report, attribution guidance, and optional issue submission. One browser or device is enough for a partial observation; report untested parts explicitly. Posting to GitHub requires an account and connection, while keeping or sharing a permitted local copy does not require GitHub. Do not collect learner-identifying information.
+
+An issue or adaptation is a proposal, not an approved correction. The repository-editing checks below apply when preparing files for integration; they are not prerequisites for asking a question or reporting an observation.
+
 ## Improve evidence before expanding claims
 
 - Choose one concept or source ID.
