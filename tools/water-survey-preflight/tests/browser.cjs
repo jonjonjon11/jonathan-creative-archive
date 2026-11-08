@@ -39,6 +39,8 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     summary.browserVersion = browser.version();
     const context = await browser.newContext({ offline: true, acceptDownloads: true, locale: "en-US", viewport: { width: 1280, height: 900 } });
     page = await context.newPage();
+    page.setDefaultTimeout(15000);
+    page.setDefaultNavigationTimeout(15000);
     page.on("pageerror", e => errors.push(e.message));
     page.on("request", r => { if (/^https?:/.test(r.url())) network.push(r.url()); });
     page.on("console", msg => { if (msg.type() === "error" && /Content Security Policy|Refused to/.test(msg.text())) cspErrors.push(msg.text()); });
@@ -49,6 +51,7 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     assert.equal(await page.locator("#results").evaluate(e => e === document.activeElement), true);
     assert.equal(await page.locator(".issue").count(), 12);
     pass("file:// standalone loads with browser networking offline and synthetic fixture produces expected findings");
+    await page.evaluate(() => scrollTo(0, 0));
     await page.screenshot({ path: path.join(dir, "desktop-findings.png"), fullPage: true }); screenshots.push("desktop-findings.png");
     await page.locator("#filter").selectOption("error");
     assert.equal(await page.locator(".issue").count(), 3);
@@ -146,6 +149,7 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
       await page.setViewportSize(viewport);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true);
       const filename = `narrow-${viewport.width}-findings.png`;
+      await page.evaluate(() => scrollTo(0, 0));
       await page.screenshot({ path: path.join(dir, filename), fullPage: true }); screenshots.push(filename);
       await page.locator("#filter").selectOption("error");
       assert.equal(await page.locator(".issue").count(), 3);
@@ -160,11 +164,12 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
       assert.equal(await page.locator(".issue").count(), 12);
       pass(`${viewport.width}-pixel viewport has no horizontal overflow and supports filtering, a real download, Clear and repeat review`);
     }
-    // The large result cap must remain usable at the narrowest viewport too.
-    await page.locator("#paste-details").evaluate(e => e.open = true);
+    // Import the maximum synthetic file through the native picker; do not simulate a million-character paste.
+    await page.locator("#paste-details").evaluate(e => e.open = false);
     const large = "lat_deg,lon_deg,report_date,status_id,source,water_source\n" + Array.from({ length: 25000 }, (_, i) =>
       `999,999,2024-02-30,Unknown,,Unknown ${i}`).join("\n");
-    await page.locator("#csv").fill(large); await page.locator("#review").click();
+    await page.locator("#file").setInputFiles({ name: "maximum-synthetic.csv", mimeType: "text/csv", buffer: Buffer.from(large) });
+    await page.waitForFunction(() => document.querySelector("#count-records").textContent === "25,000" && !document.querySelector("#results").hidden);
     assert.equal(await page.locator("#count-records").textContent(), "25,000");
     assert.equal(await page.locator("#count-errors").textContent(), "100,000");
     await page.locator(".stats").scrollIntoViewIfNeeded();
@@ -191,7 +196,7 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     summary.status = "passed";
   } catch (error) {
     summary.status = "failed";
-    summary.failure = { name: error.name, message: error.message, stack: error.stack };
+    summary.failure = { name: error.name, message: error.message.slice(0, 2000), stack: error.stack && error.stack.slice(-2000) };
     if (page && !page.isClosed()) {
       try { await page.screenshot({ path: path.join(dir, "failure.png"), fullPage: true }); screenshots.push("failure.png"); }
       catch (captureError) { summary.screenshotFailure = captureError.message; }
@@ -204,4 +209,4 @@ const { makeInjectionFixture } = require("./fixtures.cjs");
     console.log("QA output: " + dir);
     if (browser) await browser.close();
   }
-})().catch(error => { console.error(error); process.exitCode = 1; });
+})().catch(error => { console.error(String(error).slice(0, 2000)); process.exitCode = 1; });

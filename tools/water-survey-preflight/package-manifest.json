@@ -16,7 +16,7 @@
   ],
   "verification": {
     "core_tests_passed": 73,
-    "static_tests_passed": 5,
+    "static_tests_passed": 6,
     "controller_model_tests_passed": 6,
     "standalone_build_matches": true,
     "browser_tests": "not run: browser startup/protocol restrictions",
@@ -70,8 +70,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 40532,
-      "sha256": "c4999a450e7c71e732e3e1dc7920783512ebafdb5e104ffe2b93fc462ce313aa"
+      "bytes": 40551,
+      "sha256": "b61c1afd7e0e2ae38d6958637e3fa23b41e715bc05ed53f2b96a4b0fe946bce3"
     },
     {
       "path": "src/core.js",
@@ -85,8 +85,8 @@
     },
     {
       "path": "src/template.html",
-      "bytes": 7674,
-      "sha256": "2e994365e48663c337fe363d699f66b0a3e1d55753e694e53d4e2d41af10fd24"
+      "bytes": 7693,
+      "sha256": "24e4847026d61b603ec2f0eb6c8baea97bc061e44b34c5b3112d922af1fa4cea"
     },
     {
       "path": "src/ui.js",
@@ -95,8 +95,8 @@
     },
     {
       "path": "tests/browser.cjs",
-      "bytes": 16116,
-      "sha256": "c7fa5afcc20630456b8b3f96a0eb43f28578bd946c83e6e2f7e82022a62d5b23"
+      "bytes": 16592,
+      "sha256": "436851ebf7af471cee65870b18daa8e76f39451f09e618b89452e26b138daff3"
     },
     {
       "path": "tests/core.test.cjs",
@@ -110,8 +110,8 @@
     },
     {
       "path": "tests/static.test.cjs",
-      "bytes": 2808,
-      "sha256": "dea4ae361e95d0f5c751566b890e63e45ee8086f5803e9798a7314904d8bbc2a"
+      "bytes": 2974,
+      "sha256": "1329706bee22645a039291ef7cfa2ee1df643ac714aae07bcf505e49bea34105"
     },
     {
       "path": "tests/ui.test.cjs",
@@ -120,5 +120,5 @@
     }
   ],
   "archive_path": "tools/water-survey-preflight",
-  "release_notes": "Publication packaging adds a prominent browser-verification warning and clarifies documentation wording. Authored app, build, test and synthetic fixture bytes are unchanged from the independently reviewed corrected candidate."
+  "release_notes": "Browser-validation work adds isolated synthetic Chromium/Firefox CI and disables browser restoration of the report-value opt-in. See the verification record for actual evidence and remaining limitations."
 }
