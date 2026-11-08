@@ -1,15 +1,8 @@
 #!/usr/bin/env python3
-"""AI-driven hypothesis generation and mechanistic modeling for ALS and aging research.
+"""Template-based, unvalidated research questions from a pathway registry.
 
-This system:
-1. Parses evidence from ALS/cancer/aging packs
-2. Builds mechanistic pathway models
-3. Generates testable hypotheses from pathway gaps
-4. Simulates intervention effects on disease progression
-5. Tracks confidence, supporting evidence, and unknowns
-
-Philosophy: Use computational biology to identify high-leverage research questions
-and intervention targets before and during wet-lab validation.
+This code does not simulate disease, appraise evidence, or predict treatment
+effects. Loading an evidence pack stores it; generation does not analyze it.
 """
 from __future__ import annotations
 
@@ -21,6 +14,15 @@ from pathlib import Path
 import sys
 from typing import Optional, Any
 import hashlib
+
+
+HYPOTHESIS_LIMITATIONS = [
+    "Generated statements are unvalidated research questions, not clinical predictions or treatment recommendations.",
+    "Outcome direction and effect size are not inferred for therapeutic questions; populations are caller-supplied labels, not validated indications.",
+    "Priority scores and timelines are unvalidated heuristics/defaults, not probabilities, clinical effect estimates, or a validated research ranking.",
+    "Loading an evidence pack does not appraise it or connect its sources to a generated question. Literature counts and registry coefficients are not verified here.",
+    "Mechanistic and combination templates remain unvalidated; their affirmative wording does not establish causality, efficacy, or synergy.",
+]
 
 
 class PathwayType(Enum):
@@ -112,6 +114,8 @@ class Hypothesis:
     experimental_approach: str = ""
     estimated_timeline_months: int = 24
     priority_score: float = 0.5
+    target_outcome: Optional[str] = None
+    patient_population: Optional[str] = None
 
 
 class HypothesisEngine:
@@ -125,7 +129,7 @@ class HypothesisEngine:
         self.evidence_pack: dict[str, Any] = {}
 
     def load_evidence_pack(self, pack_path: str) -> None:
-        """Load ALS evidence data to inform pathway relevance scoring."""
+        """Store a pack without appraising it or using it in generation/scoring."""
         try:
             with open(pack_path, 'r') as f:
                 self.evidence_pack = json.load(f)
@@ -171,23 +175,42 @@ class HypothesisEngine:
         self,
         intervention_id: str,
         target_outcome: str,
-        patient_population: str = "SOD1-ALS"
+        patient_population: str = "unspecified population"
     ) -> Hypothesis:
-        """Generate a therapeutic hypothesis linking an intervention to an outcome."""
+        """Pose an untested, direction-neutral intervention/outcome question.
+
+        A registry mechanism or evidence label does not establish an effect on
+        the requested outcome. Preserve the supplied population and distinguish
+        questions for different outcomes or populations. No evidence appraisal
+        or numerical prediction is performed.
+        """
         intervention = self.interventions.get(intervention_id)
         if not intervention:
             raise ValueError(f"Unknown intervention: {intervention_id}")
 
-        hyp_id = f"HYP-THR-{hashlib.md5(intervention_id.encode()).hexdigest()[:6].upper()}"
+        for name, value in (("target_outcome", target_outcome),
+                            ("patient_population", patient_population)):
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(f"{name} must be nonempty text")
+        target_outcome = target_outcome.strip()
+        patient_population = patient_population.strip()
+        identity = json.dumps([intervention_id, target_outcome, patient_population],
+                              ensure_ascii=False, separators=(",", ":"))
+        hyp_id = f"HYP-THR-{hashlib.sha256(identity.encode('utf-8')).hexdigest()[:16].upper()}"
         hyp = Hypothesis(
             id=hyp_id,
             hypothesis_type="therapeutic",
-            statement=f"{intervention.name} slows or reverses {target_outcome}",
-            prediction=f"{intervention.name} will reduce {target_outcome} by blocking {intervention.mechanism_of_action}",
+            statement=f"Does {intervention.name} change {target_outcome} in {patient_population}?",
+            prediction=(f"Test whether {intervention.name} changes {target_outcome} in {patient_population} "
+                        "relative to a prespecified comparator; direction and effect size are not inferred "
+                        "from registry metadata."),
             pathways_involved=[intervention.target_pathway],
             interventions_proposed=[intervention_id],
-            confidence=intervention.evidence_level,
-            priority_score=0.9 if intervention.evidence_level == 'established' else 0.5
+            confidence="open_question",
+            # Retained for compatibility, not validated as research priority.
+            priority_score=0.9 if intervention.evidence_level == 'established' else 0.5,
+            target_outcome=target_outcome,
+            patient_population=patient_population,
         )
         self.hypotheses[hyp.id] = hyp
         return hyp
@@ -221,7 +244,7 @@ class HypothesisEngine:
         return hyp
 
     def rank_hypotheses_by_priority(self, limit: int = 20) -> list[Hypothesis]:
-        """Rank hypotheses by impact × confidence × feasibility."""
+        """Sort stored heuristic scores; this is not a validated priority model."""
         ranked = sorted(
             self.hypotheses.values(),
             key=lambda h: (h.priority_score, len(h.supporting_evidence)),
@@ -232,7 +255,9 @@ class HypothesisEngine:
     def export_hypotheses_json(self, output_path: str) -> None:
         """Export hypotheses as structured JSON for downstream analysis."""
         export_data = {
-            "schema_version": "1.0",
+            "schema_version": "1.1",
+            "status": "unvalidated_research_questions",
+            "limitations": HYPOTHESIS_LIMITATIONS,
             "generated": date.today().isoformat(),
             "hypothesis_count": len(self.hypotheses),
             "hypotheses": [asdict(h) for h in self.hypotheses.values()],

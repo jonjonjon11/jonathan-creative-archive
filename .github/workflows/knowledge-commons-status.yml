@@ -35,3 +35,6 @@ jobs:
 
       - name: Check committed science data and offline examples
         run: python3 -m unittest discover -s tests -p 'test_health_foundations.py' -v
+
+      - name: Test hypothesis question wording and generated-output parity
+        run: python3 -m unittest discover -s tools/hypothesis-engine/tests -p 'test_*.py' -v

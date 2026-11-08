@@ -131,7 +131,7 @@ class TestHypothesisEngine(unittest.TestCase):
             with open(output_file) as f:
                 data = json.load(f)
             
-            self.assertEqual(data["schema_version"], "1.0")
+            self.assertEqual(data["schema_version"], "1.1")
             self.assertGreater(len(data["hypotheses"]), 0)
             self.assertIn("ranked_by_priority", data)
     
