@@ -59,6 +59,7 @@ def check_page(browser, filename, screenshots):
     for id_ in ['shapeSvg', 'motionSvg', 'timeSvg']:
         expect(page.locator('#' + id_)).to_be_visible()
     expect(page.locator('#shapeGuide')).to_have_attribute('d', re.compile('^M'))
+    expect(page.locator('#timeSvg g[stroke] path')).to_have_css('fill', 'none')
     expect(page.locator('#still')).to_be_checked()
     expect(page.locator('#play')).to_be_disabled()
     expect(page.locator('#timeValue')).to_have_text('0.000 / 8 s')
@@ -210,7 +211,7 @@ def main():
         'mode': 'headless, offline local files; desktop and narrow CSS viewports',
         'files': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
                   for name in ['index.html', 'Motion-Trace-Shape.html', 'src/app.js', 'src/core.js', 'src/style.css']},
-        'scope': ['both source and standalone', 'SVG visibility and equal coordinate scale',
+        'scope': ['both source and standalone', 'SVG visibility, unfilled time axes and equal coordinate scale',
                   'reduced and normal paused startup', 'all presets and parameter keyboard increments',
                   'guide and disclosure toggles', 'play/pause/restart/replay and interruption',
                   'dynamic reduced-motion pause', 'repeated real JSON downloads and 481 analytical samples',

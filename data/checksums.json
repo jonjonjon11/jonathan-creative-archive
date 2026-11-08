@@ -28,7 +28,7 @@
     "chapters/09-stories-and-art.md": "1827d0387ee62651fa0d4802e2027c43b63dd659ca4afd818911208f6b05a867",
     "concepts/first-demonstrator.md": "b68edc457089caa07e50fddd9938a34fce603b74fe452d091eb5a5424605d950",
     "data/README.md": "e922a339fb94b16dcd5ef6541409386024d7835dfcf98dd9bdd171e41f08749c",
-    "data/artifacts.json": "dd790f919dd1a4c1f896e95ad10644e4152a9397b5048370529d17fafcee889d",
+    "data/artifacts.json": "6015d7cbde8e7b3bff901b82dbbbba3e45022a19afb5540425fb66a80cc43d06",
     "data/concepts.json": "837317da07b284882a0e2f8f5fad57f2f3d30d0214b8f98fdf963f9acc9c3f2c",
     "data/modules.json": "2f55079eca40c5e41fced3eb74fb4ce8ea27448b1f28bd46da23c5319896cd12",
     "docs/evidence-and-status.md": "4e687e10e32a7cc1cab5a97add388f2b854537449e60cdba689eab9c9e0b84f2",
@@ -66,14 +66,14 @@
     "tools/lumen-commons/tests/static_check.py": "0cf6fae84afe0f3ac700310d5831e401ad7835ec5b201ca4dad82a495cd6ca99",
     "tools/motion-trace-shape/.gitignore": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
     "tools/motion-trace-shape/LICENSE.CC-BY-4.0.txt": "f5b745ef98087f531e719ee8ca6a96809444573ecc7173c6fa68eaad39b3cc3f",
-    "tools/motion-trace-shape/Motion-Trace-Shape.html": "7d7ac4dfefe5740ac118c0a7b20197546ac3212c5a80a83503ce3254ddfd1e64",
+    "tools/motion-trace-shape/Motion-Trace-Shape.html": "345db16c12301b38621da091b2c193f0654f2af4d45c27c4414bcadab608b496",
     "tools/motion-trace-shape/README.md": "e890525010e5c59000fb0f5dc80bf823ee25ffcda07e4984c93e5f55ea06c6fb",
     "tools/motion-trace-shape/build_single.py": "767b6c4b59197e18a4ac329d05b1d1298b765b80f0101b3d4eeea55f4fbb3c25",
-    "tools/motion-trace-shape/index.html": "b87df65875406ed9a04ce4d967115124f601501740c4422daac671bbf399d3b0",
+    "tools/motion-trace-shape/index.html": "c8626986734d243a70050734b1e57856992a9a40babd365c52ba5109d26bbbeb",
     "tools/motion-trace-shape/src/app.js": "d3d46379ce44733bc1b1d14fa8f783c6e80cd3e8718f218d573fee1de164736f",
     "tools/motion-trace-shape/src/core.js": "07981d8364b3f9b7962526bc3cf22387faab78d02634e2ef2f40e06bc0acb646",
     "tools/motion-trace-shape/src/style.css": "374c498be52d19292c8cdee1ebae808328bd60867ed47402040229fc2648117f",
-    "tools/motion-trace-shape/tests/browser_smoke.py": "9f81fd3779e620ceb2254759a14536325f6a4bc6d0378a377fcc520d59f02209",
+    "tools/motion-trace-shape/tests/browser_smoke.py": "3bab83e8841199073eb828441396f714b3133b60dcd7b1be0cb6374f6df511a6",
     "tools/motion-trace-shape/tests/core.test.cjs": "a1a917eb2280bd6bcdb1882f318f971b019a88d2d7847787ca1365ee6736355b",
     "tools/motion-trace-shape/tests/lesson.test.cjs": "b493e356f7a5577afd2104e35029233f61d944ef84f63b160ae912d2f01283d0",
     "tools/motion-trace-shape/tests/static_check.py": "ddba60de7fb2dc0897bfc03d684f3e70b4cde65bb74078b18869259e9a434c79",
@@ -184,6 +184,7 @@
     "tools/switch-input-lab/star_counter.py": "005b5cfb23deb22f8633ba8833bc21101cf29c0c6eb8d2c9836cbf0a1b74d521",
     "tools/switch-input-lab/switch_input.py": "1f7b1c3ebc341dc3db28feebfbc5edac188c75cff2d35a58853ed25132bd7ed1",
     "tools/switch-input-lab/tests/test_star_counter.py": "bb9713334de4850213a768ffac70d8d64968eb0430b2c8cc0e5a6f85917bf4d9",
-    "tools/switch-input-lab/tests/test_switch_input.py": "2d519e503d0ed9f1e965481e423880dd3b1914421c96ade0c1240b4515123b33"
+    "tools/switch-input-lab/tests/test_switch_input.py": "2d519e503d0ed9f1e965481e423880dd3b1914421c96ade0c1240b4515123b33",
+    "tools/motion-trace-shape/tests/svg-rendering.test.cjs": "420d2e132f6e204d2f8fd7f0594aaeb12ba187dc43d2dd6cac85d53a9cd8e9f7"
   }
 }
