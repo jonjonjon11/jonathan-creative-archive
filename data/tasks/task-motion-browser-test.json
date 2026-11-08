@@ -1,6 +1,6 @@
 {
   "task_id": "TASK-motion-browser-test",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "project_id": "PROJ-motion-trace-shape",
   "type": "validation",
   "title": "Test Motion → Trace → Shape on real browsers",
@@ -11,11 +11,12 @@
     "Test all interactive controls: Play, Pause, Step, time slider, parameter selectors",
     "Test JSON download",
     "Document browser versions and devices",
-    "Identify any rendering or interaction issues"
+    "Identify any rendering or interaction issues",
+    "Accept single-setup partial observations while retaining the full task completion criteria"
   ],
   "restrictions": [
     "Do not modify the HTML or JavaScript",
-    "Do not upload files to third-party sites",
+    "Do not upload the lab or personal data to third-party testing services; optional public repository feedback must follow the privacy guidance in docs/QUICKSTART.md",
     "Do not reverse-engineer assets"
   ],
   "inputs": [
@@ -23,6 +24,11 @@
       "name": "Motion-Trace-Shape.html",
       "source": "tools/motion-trace-shape/Motion-Trace-Shape.html",
       "how_to_access": "Download from GitHub or clone repository"
+    },
+    {
+      "name": "Browser observation report",
+      "source": "docs/task-templates/browser-test-template.md",
+      "how_to_access": "Copy into plain text or use the prompts on paper"
     }
   ],
   "deliverables": [
@@ -35,11 +41,13 @@
         "Operating system",
         "Which controls were tested",
         "Any visual or functional issues",
-        "Overall assessment (works/partial/does not work)"
+        "Overall assessment (works/partial/does not work)",
+        "Downloaded revision or version, if known",
+        "Untested controls and remaining uncertainty"
       ],
       "acceptance_criteria": [
-        "Report covers at least two browser/OS combinations",
-        "All controls are documented",
+        "A partial report may cover one browser/device setup; state the limited coverage",
+        "Controls are marked worked, partial, did not work or not tested",
         "Issues are described specifically",
         "Report is dated"
       ]
@@ -48,11 +56,11 @@
   "beneficiaries": [
     {
       "name": "Learners",
-      "impact": "Ensures consistent experience across devices"
+      "impact": "Specific observations help identify device and interaction problems"
     },
     {
       "name": "Educators",
-      "impact": "Confidence the tool works in classrooms"
+      "impact": "Evidence helps educators judge the stated compatibility limits without implying classroom acceptance"
     }
   ],
   "time_estimate_hours": 4,
@@ -66,15 +74,15 @@
   "required_permissions": [
     "Read access to GitHub repository",
     "Ability to download files",
-    "Access to at least two different browsers"
+    "Access to one browser or device for a partial observation"
   ],
   "stop_conditions": [
     "HTML file is corrupted or inaccessible",
-    "You do not have access to at least two browsers",
-    "Testing requires payment or account creation"
+    "Testing requires payment or account creation",
+    "Testing requires bypassing a security warning, unfamiliar permissions or sharing personal information"
   ],
-  "how_to_start": "1. Clone the repository. 2. Download Motion-Trace-Shape.html from tools/motion-trace-shape/. 3. Open in first browser and test all controls. 4. Document results. 5. Repeat in second browser. 6. Submit report.",
-  "how_to_submit": "Create a file docs/test-reports/browser-test-[your-name]-[date].md with your report and open a pull request.",
+  "how_to_start": "Read docs/QUICKSTART.md. Download and open the standalone HTML without Git, or use an existing copy. Record observations from one available setup with the browser report template. Mark untested controls explicitly. A second setup is optional.",
+  "how_to_submit": "Keep the report locally, or voluntarily paste it into a repository issue with a GitHub account and connection. Experienced contributors may submit a dated docs/test-reports/ file through a fork and pull request. Reference TASK-motion-browser-test without claiming that a partial report closes it.",
   "status": "open",
   "created_date": "2026-11-07",
   "progress": {
@@ -83,5 +91,10 @@
     "report": "docs/test-reports/motion-browser-2026-11-08.md",
     "completed": "Headless Chromium and Firefox on Ubuntu 24.04; both editions, controls/downloads, narrow CSS widths and AI screenshot review. SVG fill defect corrected.",
     "remaining": "Keep task open for physical-device, Safari/Edge, human visual and assistive-technology acceptance. CI is not a mobile/touch test."
-  }
+  },
+  "completion_criteria": [
+    "Partial reports do not close this task or establish cross-browser compatibility",
+    "Before closure, maintainers review combined evidence for the requested browser/device coverage, including the remaining physical-device, Safari/Edge, human visual and assistive-technology gaps",
+    "A single contributor does not need to supply all coverage"
+  ]
 }

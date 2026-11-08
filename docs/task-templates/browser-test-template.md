@@ -1,151 +1,53 @@
-# Browser Test Report Template
+# Browser observation report
 
-Use this template to document your testing of Motion → Trace → Shape on different browsers.
+One browser or device is enough to contribute an observation. Copy the prompts below into plain text, or use them on paper. Repeat the environment section only if you choose to try another setup. This does not require installing another browser or creating an account.
 
-## Test Information
+```text
+Tool: Motion → Trace → Shape
+File tested: tools/motion-trace-shape/Motion-Trace-Shape.html
+Downloaded revision/version and source, if known:
+Date tested:
+Contributor name or pseudonym (optional):
 
-**Tester Name:** (Your name or GitHub username)  
-**Date Tested:** (YYYY-MM-DD)  
-**Report Created:** (YYYY-MM-DD)
+Environment:
+Browser and version (or unknown):
+Operating system (or unknown):
+Device type (desktop/laptop/tablet/phone):
+Input used (keyboard/mouse/touch/other):
+Local downloaded file or other setup:
 
----
+For each item use: worked / partial / did not work / not tested.
+Describe the action and observation, not just a tick.
 
-## Test Environment 1
+Page loads:
+Layout and graphs:
+Line, Circle and Figure-eight presets:
+Play one cycle, Pause and Restart:
+Step +⅛ s and time slider:
+Left-right and up-down repeat counts:
+Phase offset:
+Still mode and reduced-motion preference:
+Playback speed:
+Dashed complete-shape guide:
+Save experiment JSON (confirm the file actually downloaded):
+Keyboard navigation and visible focus:
+Text clarity, zoom or another observation:
 
-### System Information
-- **Browser:** (e.g., Chrome 130.0.6723)
-- **Operating System:** (e.g., macOS 14.1, Windows 11, Ubuntu 24.04)
-- **Device Type:** (Desktop, Laptop, Tablet, Mobile)
-- **Screen Resolution:** (e.g., 1920x1080)
-
-### What You Tested
-
-For each control, note whether it worked, partially worked, or did not work.
-
-| Control | Tested | Status | Notes |
-|---------|--------|--------|-------|
-| **Page loads** | ☐ | ✓/✗/⚠ | |
-| **Layout and graphs render** | ☐ | ✓/✗/⚠ | |
-| **Preset buttons (Line, Circle, Figure-Eight)** | ☐ | ✓/✗/⚠ | |
-| **Play button** | ☐ | ✓/✗/⚠ | |
-| **Pause button** | ☐ | ✓/✗/⚠ | |
-| **Step button** | ☐ | ✓/✗/⚠ | |
-| **Time slider** | ☐ | ✓/✗/⚠ | |
-| **X-cycles selector** | ☐ | ✓/✗/⚠ | |
-| **Y-cycles selector** | ☐ | ✓/✗/⚠ | |
-| **Phase offset slider** | ☐ | ✓/✗/⚠ | |
-| **Save JSON button** | ☐ | ✓/✗/⚠ | |
-| **Keyboard navigation (Tab)** | ☐ | ✓/✗/⚠ | |
-| **Reduced-motion preference** | ☐ | ✓/✗/⚠ | |
-
-### Visual Issues
-
-Describe any visual problems you noticed (rendering glitches, text cut off, colors not visible, etc.):
-
-```
-[Your observations here]
+Issue or confusing step:
+Steps to repeat it:
+What I expected:
+What actually happened:
+What I did not test:
+Summary limited to this setup:
+Status: partial observation; review pending
 ```
 
-### Functional Issues
+If a file will not open, report that and stop. Do not bypass a security warning, grant unfamiliar permissions or install software just to complete this report. Mark untried controls **not tested**. A download request is not proof that a file was saved. An experiment JSON export cannot be imported into the current motion lab.
 
-Describe any controls that did not work as expected:
+Screenshots are optional. Show only the relevant tool; remove private tabs, notifications and personal data before sharing. Do not submit learner names, ages, school details, patient information or account details. There is no need to identify yourself beyond an optional contributor name or pseudonym.
 
-```
-[Your observations here]
-```
+You can keep this report private. For optional repository feedback, see the [quick start](../QUICKSTART.md#optional-feedback-to-this-repository). Posting an issue or pull request requires a GitHub account and connection. An issue can contain the report as text. Experienced contributors may instead add a dated report under `docs/test-reports/` through a fork and pull request; avoid overwriting another report. Reference `TASK-motion-browser-test` without claiming to close it from one partial report.
 
-### Overall Assessment
+The [task record](../../data/tasks/task-motion-browser-test.json) separates partial observations from completion. Automated Chromium/Firefox coverage is already recorded in the [browser report](../test-reports/motion-browser-2026-11-08.md). Physical-device/touch, Safari/Edge, human visual and assistive-technology acceptance remain open. Neither this template nor a successful individual check establishes accessibility or educational effectiveness.
 
-**Does this browser work?**
-- [ ] ✓ **Works** — All features render and function correctly
-- [ ] ⚠ **Partial** — Most features work; minor issues noted
-- [ ] ✗ **Does not work** — Significant issues prevent use
-
----
-
-## Test Environment 2
-
-### System Information
-- **Browser:** (e.g., Firefox 131.0)
-- **Operating System:** (e.g., macOS 14.1, Windows 11, iOS 18)
-- **Device Type:** (Desktop, Laptop, Tablet, Mobile)
-- **Screen Resolution:** (e.g., 375x667)
-
-### What You Tested
-
-| Control | Tested | Status | Notes |
-|---------|--------|--------|-------|
-| **Page loads** | ☐ | ✓/✗/⚠ | |
-| **Layout and graphs render** | ☐ | ✓/✗/⚠ | |
-| **Play/Pause** | ☐ | ✓/✗/⚠ | |
-| **Time slider** | ☐ | ✓/✗/⚠ | |
-| **Parameter selectors** | ☐ | ✓/✗/⚠ | |
-
-### Visual Issues
-
-```
-[Your observations here]
-```
-
-### Functional Issues
-
-```
-[Your observations here]
-```
-
-### Overall Assessment
-
-**Does this browser work?**
-- [ ] ✓ **Works**
-- [ ] ⚠ **Partial**
-- [ ] ✗ **Does not work**
-
----
-
-## Summary
-
-### Browsers Tested
-- [ ] Chrome/Chromium
-- [ ] Firefox
-- [ ] Safari
-- [ ] Edge
-- [ ] Other: ________
-
-### Overall Compatibility
-**Summary sentence:** "Motion → Trace → Shape works [well/partially/not well] on [tested browsers]. [Main issue, if any]."
-
-### Recommendations
-
-What should be fixed or improved?
-
-```
-1. [Issue and suggestion]
-2. [Issue and suggestion]
-```
-
----
-
-## Screenshots (Optional)
-
-If possible, attach screenshots showing:
-- The app in each tested browser (normal view)
-- Any areas with rendering issues (close-ups)
-- Mobile view (if tested)
-
-**How to add screenshots:**
-1. Take a screenshot (print screen or browser dev tools)
-2. Save as PNG or JPEG
-3. Upload to the pull request or issue when you submit this report
-
----
-
-## Submission
-
-When you're done:
-
-1. Save this file as `browser-test-[your-name]-[YYYY-MM-DD].md`
-2. Place it in the `docs/test-reports/` directory
-3. Open a pull request with this file
-4. In the PR description, reference the task: "Closes TASK-motion-browser-test" (optional)
-
-Thank you for helping validate Motion → Trace → Shape!
+Original template: [CC BY 4.0](../../LICENSE), Jonathan's Creative Archive Contributors, 2026.

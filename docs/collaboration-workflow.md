@@ -2,6 +2,8 @@
 
 A local-first, portable workflow for defining projects, tasks, and contributors in the Knowledge Commons.
 
+For learning or reporting one observation without Git, use the [learner quick start](QUICKSTART.md). The JSON below is illustrative scaffolding, not a record of real completed reviews, current test coverage, a promise of response times or instructions to contact a named person. The [current browser task](../data/tasks/task-motion-browser-test.json) accepts single-setup partial reports and keeps full acceptance separate.
+
 ## Overview
 
 This system enables:
@@ -181,7 +183,7 @@ All records are plain JSON, validatable offline, and can be exchanged via git, e
         "Recommendations for improvement (if any)"
       ],
       "acceptance_criteria": [
-        "Report covers at least two browser/OS combinations",
+        "A partial report may cover one browser/device setup; state the limited coverage",
         "All controls listed in the report",
         "Issues are described specifically (e.g., 'Play button does not start animation on Safari 15.2')",
         "Report is dated and signed by the tester"
@@ -198,7 +200,7 @@ All records are plain JSON, validatable offline, and can be exchanged via git, e
   ],
   
   "acceptance_criteria": [
-    "The report covers at least two different browser/OS combinations",
+    "A partial report may cover one browser/device setup; state the limited coverage",
     "All interactive controls are documented as tested",
     "Any issues found are described specifically with steps to reproduce",
     "The report is clear, organized, and suitable for sharing with developers",
@@ -232,12 +234,11 @@ All records are plain JSON, validatable offline, and can be exchanged via git, e
   "required_permissions": [
     "Read access to the GitHub repository",
     "Ability to download files from GitHub",
-    "Access to at least two different browsers or devices"
+    "Access to one browser or device for a partial observation"
   ],
   
   "stop_conditions": [
     "If the HTML file is corrupted or inaccessible",
-    "If you do not have access to at least two different browsers",
     "If testing requires payment or account creation"
   ],
   
@@ -254,9 +255,9 @@ All records are plain JSON, validatable offline, and can be exchanged via git, e
     }
   ],
   
-  "how_to_start": "1. Clone or download the repository. 2. Navigate to tools/motion-trace-shape/. 3. Download Motion-Trace-Shape.html. 4. Open it in your first browser. 5. Use the browser test template to document what works. 6. Repeat in at least one other browser. 7. Submit the report.",
+  "how_to_start": "1. Clone or download the repository. 2. Navigate to tools/motion-trace-shape/. 3. Download Motion-Trace-Shape.html. 4. Open it in your first browser. 5. Use the browser test template to document what works. 6. Optionally repeat in another browser. 7. Keep the report locally or voluntarily submit it.",
   
-  "how_to_submit": "Create a new Markdown file in docs/test-reports/ with the name browser-test-[your-name]-[date].md. Include the test report and any screenshots. Open a pull request or contact @jonjonjon11 directly.",
+  "how_to_submit": "Create a new Markdown file in docs/test-reports/ with the name browser-test-[your-name]-[date].md. Include the test report and any screenshots. Optionally paste the report into a repository issue, or submit a fork pull request. Online submission requires a GitHub account and connection. A partial report does not close the task.",
   
   "related_tasks": [],
   
@@ -356,7 +357,7 @@ When a task is ready for work, export this packet:
   ],
   
   "acceptance_criteria": [
-    "Report covers at least two browser/OS combinations",
+    "A partial report may cover one browser/device setup; state the limited coverage",
     "All controls are documented",
     "Issues are described specifically"
   ],
