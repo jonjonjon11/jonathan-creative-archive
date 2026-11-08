@@ -1,3 +1,9 @@
+## Multiplication prerequisite correction, 2026-11-08
+
+- Complete the 0–10 multiplication table, distinguish zero groups from zero items per group, and add no-grid reasoning for the previously missing row-6 and row-8 examples.
+- Add arithmetic/content regressions to CI and explicitly retain pending educator/learner and unverified accessibility status.
+- Keep the division lesson and recovered runtime artifacts unchanged. See the [bounded review record](docs/reviews/multiplication-prerequisite-2026-11-08.md).
+
 ## Dated ANQUR registry correction, 2026-11-08
 
 - Resolve the historical registry-access/window gaps with dated primary registration and relevant amendment comparisons, retaining the sponsor Phase 1/2 discrepancy.
