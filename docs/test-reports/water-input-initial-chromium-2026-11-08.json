@@ -1,0 +1,1276 @@
+{
+  "kind": "bounded synthetic diagnostics, not performance acceptance",
+  "browser": "chromium",
+  "nativePasteTested": false,
+  "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+  "startedAt": "2026-11-08T21:00:49.443Z",
+  "caseBudgetMs": 40000,
+  "totalBudgetMs": 420000,
+  "cases": [
+    {
+      "method": "file-closed",
+      "rows": 2050,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:49.718Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 2050,
+        "bytes": 82997,
+        "stringUnits": 82997,
+        "sha256": "299112f4d9a03ac85a1475aa807a4a610d6fc6af656b755426482600336f7cc9",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:49.719Z",
+          "state": "completed",
+          "elapsedMs": 254.1
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:50.023Z",
+          "state": "completed",
+          "elapsedMs": 114.13
+        },
+        {
+          "name": "file-import-closed",
+          "startedAt": "2026-11-08T21:00:50.138Z",
+          "state": "completed",
+          "elapsedMs": 110.85
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:00:50.249Z",
+          "state": "completed",
+          "elapsedMs": 62.5
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:00:50.313Z",
+          "state": "completed",
+          "elapsedMs": 20.36
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:00:50.334Z",
+          "state": "completed",
+          "elapsedMs": 33.81
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:00:50.368Z",
+          "state": "completed",
+          "elapsedMs": 43.16
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 82997,
+        "records": "2,050",
+        "errors": "8,200",
+        "warnings": "2,050",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [],
+          "maxTimerGapMs": 95.20000000000437,
+          "ticks": 2,
+          "last": 212.09999999999854
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:00:50.412Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 1193,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "reopen-after-file",
+      "rows": 2050,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:50.911Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 2050,
+        "bytes": 82997,
+        "stringUnits": 82997,
+        "sha256": "299112f4d9a03ac85a1475aa807a4a610d6fc6af656b755426482600336f7cc9",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:50.912Z",
+          "state": "completed",
+          "elapsedMs": 68.09
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:51.031Z",
+          "state": "completed",
+          "elapsedMs": 123.38
+        },
+        {
+          "name": "file-import-closed",
+          "startedAt": "2026-11-08T21:00:51.155Z",
+          "state": "completed",
+          "elapsedMs": 93.61
+        },
+        {
+          "name": "toggle-populated-textarea",
+          "startedAt": "2026-11-08T21:00:51.249Z",
+          "state": "completed",
+          "elapsedMs": 66.67
+        },
+        {
+          "name": "observe-details-open",
+          "startedAt": "2026-11-08T21:00:51.317Z",
+          "state": "completed",
+          "elapsedMs": 10.98
+        },
+        {
+          "name": "paint-after-open",
+          "startedAt": "2026-11-08T21:00:51.329Z",
+          "state": "completed",
+          "elapsedMs": 20.09
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:00:51.349Z",
+          "state": "completed",
+          "elapsedMs": 25.51
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:00:51.376Z",
+          "state": "completed",
+          "elapsedMs": 40.69
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:00:51.417Z",
+          "state": "completed",
+          "elapsedMs": 39.11
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:00:51.457Z",
+          "state": "completed",
+          "elapsedMs": 24.45
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [],
+      "streamedHeartbeats": [],
+      "detailsOpen": true,
+      "observed": {
+        "length": 82997,
+        "records": "2,050",
+        "errors": "8,200",
+        "warnings": "2,050",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [],
+          "maxTimerGapMs": 80.40000000000146,
+          "ticks": 3,
+          "last": 281.90000000000146
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:00:51.482Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 1059,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "assign-open",
+      "rows": 2050,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:51.973Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 2050,
+        "bytes": 82997,
+        "stringUnits": 82997,
+        "sha256": "299112f4d9a03ac85a1475aa807a4a610d6fc6af656b755426482600336f7cc9",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:51.974Z",
+          "state": "completed",
+          "elapsedMs": 69.28
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:52.093Z",
+          "state": "completed",
+          "elapsedMs": 111.31
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:00:52.205Z",
+          "state": "completed",
+          "elapsedMs": 60.65
+        },
+        {
+          "name": "programmatic-value-assignment",
+          "startedAt": "2026-11-08T21:00:52.266Z",
+          "state": "completed",
+          "elapsedMs": 26.49
+        },
+        {
+          "name": "synthetic-input-dispatch",
+          "startedAt": "2026-11-08T21:00:52.293Z",
+          "state": "completed",
+          "elapsedMs": 34.27
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:00:52.328Z",
+          "state": "completed",
+          "elapsedMs": 20.7
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:00:52.349Z",
+          "state": "completed",
+          "elapsedMs": 116.08
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:00:52.466Z",
+          "state": "completed",
+          "elapsedMs": 25.35
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:00:52.492Z",
+          "state": "completed",
+          "elapsedMs": 40.98
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:00:52.533Z",
+          "state": "completed",
+          "elapsedMs": 37.8
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:00:52.572Z",
+          "state": "completed",
+          "elapsedMs": 25.09
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": null,
+          "isTrusted": false,
+          "valueLength": 82997,
+          "atMs": 228.79999999999563
+        }
+      ],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 82997,
+        "records": "2,050",
+        "errors": "8,200",
+        "warnings": "2,050",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": null,
+              "isTrusted": false,
+              "valueLength": 82997,
+              "atMs": 228.79999999999563
+            }
+          ],
+          "maxTimerGapMs": 81.69999999999709,
+          "ticks": 5,
+          "last": 358.90000000000146
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:00:52.598Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 1112,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 2050,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:53.093Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 2050,
+        "bytes": 82997,
+        "stringUnits": 82997,
+        "sha256": "299112f4d9a03ac85a1475aa807a4a610d6fc6af656b755426482600336f7cc9",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:53.095Z",
+          "state": "completed",
+          "elapsedMs": 62.07
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:53.207Z",
+          "state": "completed",
+          "elapsedMs": 113.87
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:00:53.321Z",
+          "state": "completed",
+          "elapsedMs": 60.9
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:00:53.383Z",
+          "state": "completed",
+          "elapsedMs": 6882.18
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:01:00.266Z",
+          "state": "completed",
+          "elapsedMs": 15.8
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:01:00.282Z",
+          "state": "completed",
+          "elapsedMs": 134.68
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:01:00.419Z",
+          "state": "completed",
+          "elapsedMs": 53.29
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:01:00.473Z",
+          "state": "completed",
+          "elapsedMs": 26.22
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:01:00.500Z",
+          "state": "completed",
+          "elapsedMs": 40.81
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:00.542Z",
+          "state": "completed",
+          "elapsedMs": 45.95
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 185.40000000000146
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6989.699999999997
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6989.9000000000015
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6990.0999999999985
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6990.199999999997
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6990.299999999996
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6990.5
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6990.5999999999985
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6990.699999999997
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6990.9000000000015
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991.0999999999985
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991.199999999997
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991.299999999996
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991.299999999996
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991.4000000000015
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991.5
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991.5
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 6991.699999999997
+        }
+      ],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 82997,
+        "records": "2,050",
+        "errors": "8,200",
+        "warnings": "2,050",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "type": "beforeinput",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 185.40000000000146
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6989.699999999997
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6989.9000000000015
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6990.0999999999985
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6990.199999999997
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6990.299999999996
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6990.5
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6990.5999999999985
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6990.699999999997
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6990.9000000000015
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991.0999999999985
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991.199999999997
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991.299999999996
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991.299999999996
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991.4000000000015
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991.5
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991.5
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 6991.699999999997
+            }
+          ],
+          "maxTimerGapMs": 6906.100000000006,
+          "ticks": 3,
+          "last": 7171.799999999996
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:01:00.588Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 7990,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "file-closed",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:01:01.106Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:01:01.109Z",
+          "state": "completed",
+          "elapsedMs": 74.3
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:01:01.246Z",
+          "state": "completed",
+          "elapsedMs": 128.13
+        },
+        {
+          "name": "file-import-closed",
+          "startedAt": "2026-11-08T21:01:01.374Z",
+          "state": "completed",
+          "elapsedMs": 440.23
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:01:01.815Z",
+          "state": "completed",
+          "elapsedMs": 112.77
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:01:01.929Z",
+          "state": "completed",
+          "elapsedMs": 20.19
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:01:01.950Z",
+          "state": "completed",
+          "elapsedMs": 36.16
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:01.987Z",
+          "state": "completed",
+          "elapsedMs": 30.06
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [],
+          "maxTimerGapMs": 239.09999999999854,
+          "ticks": 2,
+          "last": 541.5999999999985
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:01:02.017Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 1426,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "reopen-after-file",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:01:02.527Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:01:02.530Z",
+          "state": "completed",
+          "elapsedMs": 76.75
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:01:02.666Z",
+          "state": "completed",
+          "elapsedMs": 128.35
+        },
+        {
+          "name": "file-import-closed",
+          "startedAt": "2026-11-08T21:01:02.795Z",
+          "state": "completed",
+          "elapsedMs": 419.59
+        },
+        {
+          "name": "toggle-populated-textarea",
+          "startedAt": "2026-11-08T21:01:03.215Z",
+          "state": "completed",
+          "elapsedMs": 395.02
+        },
+        {
+          "name": "observe-details-open",
+          "startedAt": "2026-11-08T21:01:03.611Z",
+          "state": "completed",
+          "elapsedMs": 14.8
+        },
+        {
+          "name": "paint-after-open",
+          "startedAt": "2026-11-08T21:01:03.628Z",
+          "state": "completed",
+          "elapsedMs": 3.59
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:01:03.632Z",
+          "state": "completed",
+          "elapsedMs": 70.78
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:01:03.703Z",
+          "state": "completed",
+          "elapsedMs": 12.24
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:01:03.716Z",
+          "state": "completed",
+          "elapsedMs": 98.49
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:03.816Z",
+          "state": "completed",
+          "elapsedMs": 38.54
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [],
+      "streamedHeartbeats": [],
+      "detailsOpen": true,
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [],
+          "maxTimerGapMs": 357.6999999999971,
+          "ticks": 4,
+          "last": 933.6999999999971
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:01:03.858Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 1838,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "assign-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:01:04.369Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:01:04.373Z",
+          "state": "completed",
+          "elapsedMs": 82.1
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:01:04.510Z",
+          "state": "completed",
+          "elapsedMs": 135.42
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:01:04.646Z",
+          "state": "completed",
+          "elapsedMs": 52.73
+        },
+        {
+          "name": "programmatic-value-assignment",
+          "startedAt": "2026-11-08T21:01:04.699Z",
+          "state": "completed",
+          "elapsedMs": 78.35
+        },
+        {
+          "name": "synthetic-input-dispatch",
+          "startedAt": "2026-11-08T21:01:04.778Z",
+          "state": "completed",
+          "elapsedMs": 328.49
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:01:05.107Z",
+          "state": "completed",
+          "elapsedMs": 24.42
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:01:05.132Z",
+          "state": "completed",
+          "elapsedMs": 299.55
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:01:05.432Z",
+          "state": "completed",
+          "elapsedMs": 71.62
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:01:05.504Z",
+          "state": "completed",
+          "elapsedMs": 28.07
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:01:05.533Z",
+          "state": "completed",
+          "elapsedMs": 81.52
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:05.615Z",
+          "state": "completed",
+          "elapsedMs": 40.7
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": null,
+          "isTrusted": false,
+          "valueLength": 1038947,
+          "atMs": 590.3999999999942
+        }
+      ],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": null,
+              "isTrusted": false,
+              "valueLength": 1038947,
+              "atMs": 590.3999999999942
+            }
+          ],
+          "maxTimerGapMs": 398.90000000000146,
+          "ticks": 4,
+          "last": 897.5
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:01:05.657Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 1800,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "chromium",
+      "status": "automation_timeout",
+      "startedAt": "2026-11-08T21:01:06.174Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "141.0.7390.37",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:01:06.177Z",
+          "state": "completed",
+          "elapsedMs": 77.68
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:01:06.314Z",
+          "state": "completed",
+          "elapsedMs": 128.93
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:01:06.444Z",
+          "state": "completed",
+          "elapsedMs": 54.26
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:01:06.499Z",
+          "state": "running"
+        },
+        {
+          "name": "failure-screenshot",
+          "startedAt": "2026-11-08T21:01:36.505Z",
+          "state": "completed",
+          "elapsedMs": 1001.71
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:37.508Z",
+          "state": "completed",
+          "elapsedMs": 80.75
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "type": "beforeinput",
+          "inputType": "insertText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 261.6999999999971
+        }
+      ],
+      "streamedHeartbeats": [],
+      "failure": {
+        "stage": "playwright-fill",
+        "name": "TimeoutError",
+        "message": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#csv')\n    - locator resolved to <textarea id=\"csv\" rows=\"7\" spellcheck=\"false\" autocomplete=\"off\" autocapitalize=\"off\" placeholder=\"#lat_deg,#lon_deg,#report_date,#status_id,#source,#water_source\"></textarea>\n    - fill(\"lat_deg,lon_deg,report_date,status_id,source,water_source\n999,999,2024-02-30,Unknown,,Unknown 0\n999,999,2024-02-30,Unknown,,Unknown 1\n999,999,2024-02-30,Unknown,,Unknown 2\n999,999,2024-02-30,Unknown,,Unk"
+      },
+      "captureFailure": "page.screenshot: Timeout 1000ms exceeded.\nCall log:\n  - taking page screenshot\n",
+      "finishedAt": "2026-11-08T21:01:37.589Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 31922,
+        "trackedProcesses": 7,
+        "cleanupIncomplete": false
+      },
+      "timeoutStage": "playwright-fill",
+      "timeoutClassification": "measured-path finding"
+    }
+  ],
+  "finishedAt": "2026-11-08T21:01:37.809Z",
+  "observationComplete": true,
+  "meaning": "Recorded timeouts are diagnostic findings, not passing performance claims. No native clipboard paste was tested."
+}

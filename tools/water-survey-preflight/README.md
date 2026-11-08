@@ -30,7 +30,7 @@ See [rule decisions and reconciliation](docs/rules.md), [source provenance](docs
 
 The file picker permits up to **5,000,000 bytes**. The text parser permits **5,000,000 JavaScript string units**, **25,000 data records**, **256 columns**, and **65,536 string units per cell**. Physical empty lines are skipped but source record/line numbering is preserved. The first **2,000 findings** are retained; all additional findings are counted and the omission is prominently reported. Each retained value is shortened to at most 160 string units. Findings are paginated 100 at a time.
 
-Prefer the file picker for large CSVs. A roughly one-million-character automated textarea fill timed out in Chromium; large-paste responsiveness remains unresolved. The 25,000-record synthetic file-picker path passes both tested browsers, which does not establish maximum-size paste performance.
+Prefer the file picker for large CSVs. A roughly one-million-character automated textarea fill timed out in Chromium; native clipboard-paste responsiveness remains untested. The [controlled input investigation](../../docs/test-reports/water-input-diagnostics-2026-11-08.md) reproduces the Chromium automation timeout even without the app input callback, while file import, reopening and direct assignment/review controls complete. This does not establish maximum-size native paste performance.
 
 An incomplete parse or mapping prevents full review. A width error skips that row's field checks and marks the review incomplete. “Checks finished” means this bounded checker ran, not that a dataset passed any official process.
 
@@ -58,6 +58,19 @@ NODE_PATH=/path/to/existing/node_modules WATER_BROWSER=firefox WATER_QA_DIR=/tmp
 ```
 
 They do not add dependencies to the delivered app. The browser tests copy only `index.html` into an isolated folder and use its `file://` URL with browser networking offline. `WATER_BROWSER_EXECUTABLE` may select an existing browser binary; otherwise the matching Playwright-managed browser is used. Screenshots and a JSON summary are written to `WATER_QA_DIR`, including on browser assertion or launch failure after report initialization. Tests use invented records only. Narrow desktop viewports are not physical-phone tests. See the verification record for what actually ran and what did not.
+
+## Optional synthetic input diagnostics
+
+See the [dated findings and exact evidence](../../docs/test-reports/water-input-diagnostics-2026-11-08.md). For investigation only, `tests/input-diagnostics.cjs` compares file import, reopening the populated paste panel, programmatic assignment plus a synthetic input event, and Playwright `locator.fill`. These are not native clipboard-paste tests or a performance acceptance benchmark. The delivered application files are unchanged.
+
+The runner requires Linux `/proc`, Node 20+ and the same optional Playwright/browser installation described above. Each case launches an isolated browser, uses invented CSV records, records bounded phase/event metadata outside the renderer, and applies an external 40-second watchdog with tracked-descendant cleanup. The overall budget is 420 seconds. Setup/cleanup failures or skipped cases fail the diagnostic run; measured-path timeouts are recorded findings, never performance passes.
+
+```sh
+NODE_PATH=/path/to/existing/node_modules WATER_BROWSER=chromium WATER_INPUT_QA_DIR=/tmp/water-input-chromium node tests/input-diagnostics.cjs
+NODE_PATH=/path/to/existing/node_modules WATER_BROWSER=firefox WATER_INPUT_QA_DIR=/tmp/water-input-firefox node tests/input-diagnostics.cjs
+```
+
+The default matrix has eight cases: 2,050 and 25,000 rows across four routes at 320 CSS pixels. `WATER_INPUT_CASES` accepts an explicit bounded JSON list with `method`, `rows`, `width` and `repeat`. Supported widths are 320 and 1280; repetitions are labels from 1 to 3, not automatic reruns. The optional `fill-without-app-listener` control removes exactly the original app input callback in the isolated test page, preserving the original textarea. It intentionally bypasses normal invalidation for causal investigation and is **not an alternative runtime implementation**. No source file is changed. Do not interpret a successful diagnostic-job exit as all cases passing: inspect each case status and phase.
 
 ## License and attribution
 

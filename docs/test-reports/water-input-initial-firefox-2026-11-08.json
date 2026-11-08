@@ -1,0 +1,1055 @@
+{
+  "kind": "bounded synthetic diagnostics, not performance acceptance",
+  "browser": "firefox",
+  "nativePasteTested": false,
+  "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+  "startedAt": "2026-11-08T21:00:45.359Z",
+  "caseBudgetMs": 40000,
+  "totalBudgetMs": 420000,
+  "cases": [
+    {
+      "method": "file-closed",
+      "rows": 2050,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:45.629Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 2050,
+        "bytes": 82997,
+        "stringUnits": 82997,
+        "sha256": "299112f4d9a03ac85a1475aa807a4a610d6fc6af656b755426482600336f7cc9",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:45.630Z",
+          "state": "completed",
+          "elapsedMs": 418.91
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:46.939Z",
+          "state": "completed",
+          "elapsedMs": 388.3
+        },
+        {
+          "name": "file-import-closed",
+          "startedAt": "2026-11-08T21:00:47.328Z",
+          "state": "completed",
+          "elapsedMs": 155.24
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:00:47.484Z",
+          "state": "completed",
+          "elapsedMs": 61.81
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:00:47.546Z",
+          "state": "completed",
+          "elapsedMs": 23.36
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:00:47.571Z",
+          "state": "completed",
+          "elapsedMs": 86.54
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:00:47.658Z",
+          "state": "completed",
+          "elapsedMs": 526.85
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 82997,
+        "records": "2,050",
+        "errors": "8,200",
+        "warnings": "2,050",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [],
+          "maxTimerGapMs": 118,
+          "ticks": 1,
+          "last": 500
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:00:48.185Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 3044,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "reopen-after-file",
+      "rows": 2050,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:48.676Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 2050,
+        "bytes": 82997,
+        "stringUnits": 82997,
+        "sha256": "299112f4d9a03ac85a1475aa807a4a610d6fc6af656b755426482600336f7cc9",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:48.678Z",
+          "state": "completed",
+          "elapsedMs": 368.12
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:49.988Z",
+          "state": "completed",
+          "elapsedMs": 357.31
+        },
+        {
+          "name": "file-import-closed",
+          "startedAt": "2026-11-08T21:00:50.346Z",
+          "state": "completed",
+          "elapsedMs": 173.41
+        },
+        {
+          "name": "toggle-populated-textarea",
+          "startedAt": "2026-11-08T21:00:50.520Z",
+          "state": "completed",
+          "elapsedMs": 57.6
+        },
+        {
+          "name": "observe-details-open",
+          "startedAt": "2026-11-08T21:00:50.578Z",
+          "state": "completed",
+          "elapsedMs": 50.57
+        },
+        {
+          "name": "paint-after-open",
+          "startedAt": "2026-11-08T21:00:50.630Z",
+          "state": "completed",
+          "elapsedMs": 21.94
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:00:50.653Z",
+          "state": "completed",
+          "elapsedMs": 33.57
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:00:50.687Z",
+          "state": "completed",
+          "elapsedMs": 15.99
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:00:50.704Z",
+          "state": "completed",
+          "elapsedMs": 79.38
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:00:50.784Z",
+          "state": "completed",
+          "elapsedMs": 533.55
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [],
+      "streamedHeartbeats": [],
+      "detailsOpen": true,
+      "observed": {
+        "length": 82997,
+        "records": "2,050",
+        "errors": "8,200",
+        "warnings": "2,050",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [],
+          "maxTimerGapMs": 148,
+          "ticks": 3,
+          "last": 622
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:00:51.318Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 3129,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "assign-open",
+      "rows": 2050,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:51.807Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 2050,
+        "bytes": 82997,
+        "stringUnits": 82997,
+        "sha256": "299112f4d9a03ac85a1475aa807a4a610d6fc6af656b755426482600336f7cc9",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:51.808Z",
+          "state": "completed",
+          "elapsedMs": 366.72
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:53.071Z",
+          "state": "completed",
+          "elapsedMs": 353.33
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:00:53.425Z",
+          "state": "completed",
+          "elapsedMs": 94.21
+        },
+        {
+          "name": "programmatic-value-assignment",
+          "startedAt": "2026-11-08T21:00:53.520Z",
+          "state": "completed",
+          "elapsedMs": 37.77
+        },
+        {
+          "name": "synthetic-input-dispatch",
+          "startedAt": "2026-11-08T21:00:53.558Z",
+          "state": "completed",
+          "elapsedMs": 78.6
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:00:53.637Z",
+          "state": "completed",
+          "elapsedMs": 30.8
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:00:53.669Z",
+          "state": "completed",
+          "elapsedMs": 131.97
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:00:53.802Z",
+          "state": "completed",
+          "elapsedMs": 26.83
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:00:53.829Z",
+          "state": "completed",
+          "elapsedMs": 23.18
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:00:53.853Z",
+          "state": "completed",
+          "elapsedMs": 75.98
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:00:53.930Z",
+          "state": "completed",
+          "elapsedMs": 539.46
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": null,
+          "isTrusted": false,
+          "valueLength": 82997,
+          "atMs": 557
+        }
+      ],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 82997,
+        "records": "2,050",
+        "errors": "8,200",
+        "warnings": "2,050",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": null,
+              "isTrusted": false,
+              "valueLength": 82997,
+              "atMs": 557
+            }
+          ],
+          "maxTimerGapMs": 98,
+          "ticks": 5,
+          "last": 694
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:00:54.470Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 3149,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 2050,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:54.959Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 2050,
+        "bytes": 82997,
+        "stringUnits": 82997,
+        "sha256": "299112f4d9a03ac85a1475aa807a4a610d6fc6af656b755426482600336f7cc9",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:54.960Z",
+          "state": "completed",
+          "elapsedMs": 370.33
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:56.221Z",
+          "state": "completed",
+          "elapsedMs": 358.23
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:00:56.581Z",
+          "state": "completed",
+          "elapsedMs": 88.14
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:00:56.671Z",
+          "state": "completed",
+          "elapsedMs": 50.4
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:00:56.722Z",
+          "state": "completed",
+          "elapsedMs": 195.36
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:00:56.918Z",
+          "state": "completed",
+          "elapsedMs": 165.86
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:00:57.085Z",
+          "state": "completed",
+          "elapsedMs": 50.46
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:00:57.136Z",
+          "state": "completed",
+          "elapsedMs": 15.94
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:00:57.152Z",
+          "state": "completed",
+          "elapsedMs": 81.97
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:00:57.235Z",
+          "state": "completed",
+          "elapsedMs": 544.41
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 463
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 82997,
+          "atMs": 493
+        }
+      ],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 82997,
+        "records": "2,050",
+        "errors": "8,200",
+        "warnings": "2,050",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 463
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 82997,
+              "atMs": 493
+            }
+          ],
+          "maxTimerGapMs": 229,
+          "ticks": 5,
+          "last": 831
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:00:57.780Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 3305,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "file-closed",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:00:58.274Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:00:58.278Z",
+          "state": "completed",
+          "elapsedMs": 375.12
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:00:59.546Z",
+          "state": "completed",
+          "elapsedMs": 354.48
+        },
+        {
+          "name": "file-import-closed",
+          "startedAt": "2026-11-08T21:00:59.901Z",
+          "state": "completed",
+          "elapsedMs": 325.4
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:01:00.227Z",
+          "state": "completed",
+          "elapsedMs": 54.2
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:01:00.282Z",
+          "state": "completed",
+          "elapsedMs": 28.47
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:01:00.311Z",
+          "state": "completed",
+          "elapsedMs": 85.63
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:00.398Z",
+          "state": "completed",
+          "elapsedMs": 532.77
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [],
+          "maxTimerGapMs": 223,
+          "ticks": 2,
+          "last": 655
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:01:00.931Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 3149,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "reopen-after-file",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:01:01.423Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:01:01.426Z",
+          "state": "completed",
+          "elapsedMs": 371.91
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:01:02.671Z",
+          "state": "completed",
+          "elapsedMs": 334.74
+        },
+        {
+          "name": "file-import-closed",
+          "startedAt": "2026-11-08T21:01:03.008Z",
+          "state": "completed",
+          "elapsedMs": 646.13
+        },
+        {
+          "name": "toggle-populated-textarea",
+          "startedAt": "2026-11-08T21:01:03.655Z",
+          "state": "completed",
+          "elapsedMs": 56.46
+        },
+        {
+          "name": "observe-details-open",
+          "startedAt": "2026-11-08T21:01:03.712Z",
+          "state": "completed",
+          "elapsedMs": 373.91
+        },
+        {
+          "name": "paint-after-open",
+          "startedAt": "2026-11-08T21:01:04.087Z",
+          "state": "completed",
+          "elapsedMs": 34.37
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:01:04.123Z",
+          "state": "completed",
+          "elapsedMs": 43.74
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:01:04.167Z",
+          "state": "completed",
+          "elapsedMs": 21.02
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:01:04.189Z",
+          "state": "completed",
+          "elapsedMs": 84.55
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:04.275Z",
+          "state": "completed",
+          "elapsedMs": 529.06
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [],
+      "streamedHeartbeats": [],
+      "detailsOpen": true,
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [],
+          "maxTimerGapMs": 539,
+          "ticks": 4,
+          "last": 1398
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:01:04.805Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 3871,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "assign-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:01:05.305Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:01:05.308Z",
+          "state": "completed",
+          "elapsedMs": 366.01
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:01:06.549Z",
+          "state": "completed",
+          "elapsedMs": 346.56
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:01:06.899Z",
+          "state": "completed",
+          "elapsedMs": 81.24
+        },
+        {
+          "name": "programmatic-value-assignment",
+          "startedAt": "2026-11-08T21:01:06.981Z",
+          "state": "completed",
+          "elapsedMs": 45.44
+        },
+        {
+          "name": "synthetic-input-dispatch",
+          "startedAt": "2026-11-08T21:01:07.028Z",
+          "state": "completed",
+          "elapsedMs": 341.05
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:01:07.371Z",
+          "state": "completed",
+          "elapsedMs": 25.46
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:01:07.397Z",
+          "state": "completed",
+          "elapsedMs": 282.73
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:01:07.681Z",
+          "state": "completed",
+          "elapsedMs": 43.82
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:01:07.725Z",
+          "state": "completed",
+          "elapsedMs": 22.22
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:01:07.748Z",
+          "state": "completed",
+          "elapsedMs": 83.63
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:07.833Z",
+          "state": "completed",
+          "elapsedMs": 540.36
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": null,
+          "isTrusted": false,
+          "valueLength": 1038947,
+          "atMs": 811
+        }
+      ],
+      "streamedHeartbeats": [],
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": null,
+              "isTrusted": false,
+              "valueLength": 1038947,
+              "atMs": 811
+            }
+          ],
+          "maxTimerGapMs": 358,
+          "ticks": 5,
+          "last": 1104
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:01:08.374Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 3568,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    },
+    {
+      "method": "fill-open",
+      "rows": 25000,
+      "width": 320,
+      "repeat": 1,
+      "browser": "firefox",
+      "status": "completed",
+      "startedAt": "2026-11-08T21:01:08.864Z",
+      "commit": "353c3bc094e2c76145ec217776ba56241404c5f5",
+      "browserVersion": "142.0.1",
+      "playwright": "1.56.0",
+      "node": "v22.23.4",
+      "platform": "linux",
+      "architecture": "x64",
+      "standaloneSha256": "709f1db0bb210c5bf02762302da635ecdae5304841d40cb36e1c4abf54189cb7",
+      "runnerSha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410",
+      "fixture": {
+        "rows": 25000,
+        "bytes": 1038947,
+        "stringUnits": 1038947,
+        "sha256": "a38c8b5697626ab7667ed8609323a3eff88602cb9338f044195eb855848279c6",
+        "syntheticOnly": true
+      },
+      "nativePasteTested": false,
+      "offline": true,
+      "phases": [
+        {
+          "name": "launch",
+          "startedAt": "2026-11-08T21:01:08.867Z",
+          "state": "completed",
+          "elapsedMs": 368.62
+        },
+        {
+          "name": "load-and-sample",
+          "startedAt": "2026-11-08T21:01:10.133Z",
+          "state": "completed",
+          "elapsedMs": 361.91
+        },
+        {
+          "name": "open-small-textarea",
+          "startedAt": "2026-11-08T21:01:10.496Z",
+          "state": "completed",
+          "elapsedMs": 83.77
+        },
+        {
+          "name": "playwright-fill",
+          "startedAt": "2026-11-08T21:01:10.582Z",
+          "state": "completed",
+          "elapsedMs": 372.84
+        },
+        {
+          "name": "paint-after-input",
+          "startedAt": "2026-11-08T21:01:10.956Z",
+          "state": "completed",
+          "elapsedMs": 2404.18
+        },
+        {
+          "name": "review-after-input",
+          "startedAt": "2026-11-08T21:01:13.361Z",
+          "state": "completed",
+          "elapsedMs": 800.29
+        },
+        {
+          "name": "verify-result",
+          "startedAt": "2026-11-08T21:01:14.162Z",
+          "state": "completed",
+          "elapsedMs": 54.11
+        },
+        {
+          "name": "scroll-results",
+          "startedAt": "2026-11-08T21:01:14.217Z",
+          "state": "completed",
+          "elapsedMs": 45.37
+        },
+        {
+          "name": "optional-screenshot",
+          "startedAt": "2026-11-08T21:01:14.263Z",
+          "state": "completed",
+          "elapsedMs": 86.12
+        },
+        {
+          "name": "close-browser",
+          "startedAt": "2026-11-08T21:01:14.350Z",
+          "state": "completed",
+          "elapsedMs": 547.39
+        }
+      ],
+      "pageErrors": [],
+      "requests": [],
+      "streamedEvents": [
+        {
+          "kind": "event",
+          "type": "beforeinput",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 732,
+          "atMs": 495
+        },
+        {
+          "kind": "event",
+          "type": "input",
+          "inputType": "insertCompositionText",
+          "isTrusted": true,
+          "valueLength": 1038947,
+          "atMs": 815
+        }
+      ],
+      "streamedHeartbeats": [
+        {
+          "kind": "heartbeat",
+          "atMs": 4090,
+          "maxTimerGapMs": 2238,
+          "ticks": 10
+        }
+      ],
+      "observed": {
+        "length": 1038947,
+        "records": "25,000",
+        "errors": "100,000",
+        "warnings": "25,000",
+        "resultsVisible": true,
+        "inputDiagnostic": {
+          "events": [
+            {
+              "kind": "event",
+              "type": "beforeinput",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 732,
+              "atMs": 495
+            },
+            {
+              "kind": "event",
+              "type": "input",
+              "inputType": "insertCompositionText",
+              "isTrusted": true,
+              "valueLength": 1038947,
+              "atMs": 815
+            }
+          ],
+          "maxTimerGapMs": 2238,
+          "ticks": 8,
+          "last": 3990
+        },
+        "documentWidth": 320,
+        "viewport": 320
+      },
+      "valueMatches": true,
+      "resultMatches": true,
+      "screenshotCaptured": true,
+      "finishedAt": "2026-11-08T21:01:14.898Z",
+      "process": {
+        "code": 0,
+        "signal": null,
+        "timedOut": false,
+        "elapsedMs": 6519,
+        "trackedProcesses": 10,
+        "cleanupIncomplete": false
+      }
+    }
+  ],
+  "finishedAt": "2026-11-08T21:01:15.119Z",
+  "observationComplete": true,
+  "meaning": "Recorded timeouts are diagnostic findings, not passing performance claims. No native clipboard paste was tested."
+}
