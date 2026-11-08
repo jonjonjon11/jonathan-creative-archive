@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "hypothesis_count": 1,
+  "pathways_analyzed": 1,
+  "interventions_reviewed": 1,
+  "all_hypotheses": [
+    {
+      "id": "H1",
+      "type": "mechanistic",
+      "statement": "Invented fixture.",
+      "confidence": "low",
+      "priority_score": 0.25
+    }
+  ],
+  "top_hypotheses": [
+    {
+      "id": "H1",
+      "type": "mechanistic",
+      "statement": "Invented fixture.",
+      "confidence": "low",
+      "priority_score": 0.25,
+      "score_provenance": {
+        "priority_score": {
+          "method": "Fixed synthetic test value."
+        }
+      },
+      "supporting_evidence": [
+        "C1"
+      ],
+      "contradicting_evidence": [],
+      "experimental_approach": "Synthetic software-only fixture check.",
+      "pathways": [
+        "P1"
+      ],
+      "interventions": [
+        "I1"
+      ]
+    }
+  ]
+}

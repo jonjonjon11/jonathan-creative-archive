@@ -2,22 +2,52 @@ name: Knowledge Commons Status
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
-      - name: Validate Knowledge Commons modules
-        run: python3 tools/validate.py module data/modules.json
-      
-      - name: Validate projects
-        run: python3 tools/validate.py project data/projects/proj-motion-trace-shape.json
-      
-      - name: Validate tasks
-        run: python3 tools/validate.py task data/tasks/task-motion-browser-test.json && python3 tools/validate.py task data/tasks/task-motion-add-example.json
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate Knowledge Commons records
+        run: |
+          python3 tools/validate.py module data/modules.json data/modules/*.json
+          python3 tools/validate.py project data/projects/*.json
+          python3 tools/validate.py task data/tasks/*.json
+      - name: Run offline Python suites
+        run: |
+          python3 -B -m unittest discover -s artifacts/cooperation-rescue -p 'test_*.py'
+          python3 -B -m unittest discover -s tools/archive-steward/tests -p 'test_*.py'
+          python3 -B -m unittest discover -s tools/idea-finder/tests -p 'test_*.py'
+          python3 -B -m unittest discover -s tools/evidence-integrity-audit/tests -p 'test_*.py'
+          python3 -B -m unittest discover -s research/als_evidence_map_2026-11-07/tests -p 'test_*.py'
+      - name: Run numerical and simulated-control Node suites
+        run: |
+          node --test tools/lumen-commons/tests/*.test.cjs tools/motion-trace-shape/tests/*.test.cjs tools/water-survey-preflight/tests/*.test.cjs tools/universal-color-ontology/upstream/packages/*/test/*.test.mjs
+          node scripts/check_reality_core.cjs
+      - name: Check source and standalone parity
+        run: |
+          python3 tools/lumen-commons/tests/static_check.py
+          python3 tools/motion-trace-shape/tests/static_check.py
+          python3 artifacts/cooperation-rescue/contract.py
+      - name: Validate evidence map and exact generated views
+        run: |
+          python3 research/als_evidence_map_2026-11-07/tools/validate.py
+          python3 research/als_evidence_map_2026-11-07/tools/render.py --check
+          (cd research/als_evidence_map_2026-11-07 && sha256sum -c MANIFEST.sha256)
+          python3 -B tools/evidence-integrity-audit/audit.py --repo tools/evidence-integrity-audit/fixtures/clean-synthetic
+      - name: Validate archive structure and reviewed checksums
+        run: |
+          python3 scripts/validate_archive.py
+          python3 tools/archive-steward/archive_steward.py .
+          git diff --check
+          git diff --exit-code

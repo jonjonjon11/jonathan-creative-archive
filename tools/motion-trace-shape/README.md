@@ -4,7 +4,7 @@
 
 This is a new implementation inspired by the archive’s [one-model demonstrator brief](../../concepts/first-demonstrator.md) and [model/history/representation design](../../chapters/03-math-physics-and-xr.md). It is not recovered historical software. It implements a deliberately small two-coordinate analytical model, rather than all requirements or physical quantities proposed in the brief.
 
-**Verification:** 32 Node tests and targeted static checks passed. Real Chromium could not start in the build environment, before loading any page, because its process-singleton socket was not permitted. Rendered-browser, actual touch-device, download and assistive-technology behavior remain unverified. The included browser suite is a future acceptance test, not a passed test.
+**Verification:** 32 original lab tests, 12 lesson regression tests, and targeted static checks passed. Real Chromium could not start in the build environment, before loading any page, because its process-singleton socket was not permitted. Rendered-browser, actual touch-device, download and assistive-technology behavior remain unverified. The included browser suite is a future acceptance test, not a passed test.
 
 ## Try it
 
@@ -16,6 +16,10 @@ This is a new implementation inspired by the archive’s [one-model demonstrator
 6. Choose **Save experiment JSON** to request a local download of the full model sample set and display settings. Check the browser’s downloads to confirm it saved.
 
 You can instead open `index.html` while keeping the `src` directory beside it. Reference links are optional and require a connection when opened. No background network requests, storage, analytics, account, audio, external libraries, fonts or image assets are used. The lab does not remember your experiment after closing the page; save the JSON first if you want its record. There is no JSON import interface in this version.
+
+## Read without animation
+
+The [paper-first lesson](../../docs/lessons/motion-trace-shape.md) includes checked coordinate tables, three worked examples, five exercises with solutions, and seven steps for reading or drawing the traces. It corrects the separate knowledge-module draft’s timing and phase errors; the lab equations and executable files are unchanged. Independent educator and accessibility review remain pending.
 
 ## A five-minute learning path
 
@@ -71,6 +75,8 @@ python3 tests/static_check.py
 ```
 
 The build embeds the source CSS and scripts into the standalone HTML deterministically. Static checks verify exact build parity, valid ID/label/ARIA targets, no standalone runtime asset references, chosen CSP restrictions, absence of selected network/storage APIs, relevant accessibility hooks and seven text-color pairs. They do not execute a browser.
+
+The 12 lesson regression tests additionally check the separate knowledge-module text and tables against independently specified special-angle values, the numerical core, and the readable edition. They cover corrected timings, phase behavior, a parabola counterexample, units, and supported controls. They do not establish educational effectiveness.
 
 The 18 model/data tests cover known line, circle and figure-eight values, closure and bounds across all 400 allowed parameter combinations, sampling, reproducibility, replay order, display/model independence and invalid inputs. The 14 UI-state tests run the real application code against minimal DOM and animation-frame stand-ins. They cover pause/replay/reset/scrub, repeated actions, parameter changes, hidden-page pausing, reduced-motion changes and JSON generation. They do **not** test rendering, native controls or real downloads.
 
