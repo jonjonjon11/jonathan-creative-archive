@@ -86,3 +86,35 @@ jobs:
           path: ${{ runner.temp }}/motion-browser
           if-no-files-found: ignore
           retention-days: 7
+
+  lumen-browser:
+    name: Lumen browser (${{ matrix.browser }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned browser test tools
+        run: |
+          python -m pip install playwright==1.56.0
+          python -m playwright install --with-deps ${{ matrix.browser }}
+      - name: Test isolated offline Lumen standalone
+        run: |
+          python tools/lumen-commons/tests/standalone_browser.py \
+            --browser ${{ matrix.browser }} \
+            --screenshots "$RUNNER_TEMP/lumen-browser/screenshots" \
+            --report "$RUNNER_TEMP/lumen-browser/report.json"
+      - name: Preserve scoped browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lumen-browser-${{ matrix.browser }}
+          path: ${{ runner.temp }}/lumen-browser
+          if-no-files-found: ignore
+          retention-days: 7
