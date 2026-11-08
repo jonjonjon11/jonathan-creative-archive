@@ -149,7 +149,12 @@ def check_page(browser, filename, screenshots):
         page.set_viewport_size({'width': width, 'height': 1000 if width == 1280 else 844})
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Horizontal overflow'
         box = page.locator('#shapeSvg').bounding_box()
-        assert box and box['width'] > 0 and abs(box['width'] - box['height']) < 1
+        assert box and box['width'] > 0 and box['height'] > 0, box
+        # The SVG viewport may letterbox; its coordinate transform must not stretch circles.
+        scale = page.locator('#shapeSvg').evaluate(
+            '(svg) => { const m = svg.getScreenCTM(); '
+            'return {x: Math.hypot(m.a, m.b), y: Math.hypot(m.c, m.d)}; }')
+        assert scale['x'] > 0 and math.isclose(scale['x'], scale['y'], abs_tol=1e-9), scale
         page.locator('#preset-line').click()
         page.locator('#restart').click()
         page.locator('#step').click()
@@ -205,7 +210,7 @@ def main():
         'mode': 'headless, offline local files; desktop and narrow CSS viewports',
         'files': {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
                   for name in ['index.html', 'Motion-Trace-Shape.html', 'src/app.js', 'src/core.js', 'src/style.css']},
-        'scope': ['both source and standalone', 'SVG visibility and square shape bounds',
+        'scope': ['both source and standalone', 'SVG visibility and equal coordinate scale',
                   'reduced and normal paused startup', 'all presets and parameter keyboard increments',
                   'guide and disclosure toggles', 'play/pause/restart/replay and interruption',
                   'dynamic reduced-motion pause', 'repeated real JSON downloads and 481 analytical samples',
