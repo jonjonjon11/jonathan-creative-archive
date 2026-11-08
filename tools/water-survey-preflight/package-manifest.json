@@ -118,6 +118,16 @@
       "path": "tests/ui.test.cjs",
       "bytes": 5971,
       "sha256": "ead2556d81da949ac994c9d9210a006864a22a6c82cb397fe83b5fe629ba40a6"
+    },
+    {
+      "path": "tests/input-diagnostics.cjs",
+      "bytes": 15828,
+      "sha256": "bc91c23c5a56f9c32d87b48244f9975ccd23042cfdee9faabc560b0294e05410"
+    },
+    {
+      "path": "tests/input-diagnostics.test.cjs",
+      "bytes": 2671,
+      "sha256": "e8c77ff3685e70cc3e56881e6b1996a55c6f6676a48302b0a4b0a5e2b3e59b4a"
     }
   ],
   "archive_path": "tools/water-survey-preflight",
