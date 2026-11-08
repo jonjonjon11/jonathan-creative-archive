@@ -1,3 +1,5 @@
+> Current contributor commands and evidence boundaries are in [MASTER_PROMPT_FOR_CODEX.md](MASTER_PROMPT_FOR_CODEX.md). This earlier status document contains unverified completion claims; use the current guide and actual files before starting work.
+
 # START HERE
 
 You've found Jonathan's Knowledge Commons system. This document explains what you're looking at and how to use it.

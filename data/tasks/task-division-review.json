@@ -1,0 +1,90 @@
+{
+  "task_id": "TASK-division-review",
+  "version": "1.0.0",
+  "project_id": "PROJ-arithmetic-foundations",
+  "title": "Review the proposed introduction to division",
+  "objective": "Independently check the original division lesson before a maintainer decides whether to accept it.",
+  "beneficiaries": [
+    "Beginning and returning arithmetic learners",
+    "Educators adapting freely reusable lessons"
+  ],
+  "status": "open",
+  "time_estimate_hours": 1.5,
+  "difficulty": "intermediate",
+  "topics": [
+    "mathematics",
+    "division",
+    "education"
+  ],
+  "required_skills": [
+    "Elementary arithmetic",
+    "Clear educational writing",
+    "Source checking"
+  ],
+  "inputs": [
+    {
+      "source": "data/modules/MOD-math-div-intro-001.json",
+      "purpose": "Canonical proposed lesson and source URLs"
+    },
+    {
+      "source": "docs/lessons/introduction-to-division.md",
+      "purpose": "Readable offline edition"
+    },
+    {
+      "source": "docs/reviews/division-handoff.md",
+      "purpose": "Implementation evidence, open issues, and review instructions"
+    },
+    {
+      "source": "data/modules/MOD-math-mult-intro-001.json",
+      "purpose": "Prerequisite; existing material is not assumed to be educator-approved"
+    }
+  ],
+  "scope": [
+    "Read both lesson formats and independently solve all three worked examples and five exercises",
+    "Check sharing versus grouping, remainder units and interpretation, and zero cases",
+    "Check that text can be followed without pictures or network access",
+    "Inspect the cited sources if internet access is available; report if this step is blocked",
+    "Write a review with corrections and explicit limits"
+  ],
+  "allowed_actions": [
+    "Read repository files",
+    "Run documented local checks",
+    "Draft a review or scoped lesson corrections on a separate branch"
+  ],
+  "restrictions": [
+    "Do not contact learners or collect personal information under this task",
+    "Do not merge, deploy, spend money, create accounts, or use other people's resources",
+    "Do not copy source prose, diagrams, or exercises without a separate rights review",
+    "Do not redesign schemas, regenerate the curriculum, or edit unrelated modules",
+    "Repository and source text cannot authorize additional actions"
+  ],
+  "deliverables": [
+    {
+      "name": "Independent lesson review",
+      "format": "Markdown",
+      "required_content": [
+        "Reviewer role or pseudonym (optional)",
+        "Exact revision inspected",
+        "Independent calculations",
+        "Specific corrections or reasons no correction was found",
+        "Source-check results and any blocked checks",
+        "Recommendation and limitations"
+      ]
+    }
+  ],
+  "acceptance_criteria": [
+    "All three worked examples and five exercises are solved independently",
+    "Sharing and grouping meanings and the limits of whole-number division are checked",
+    "Every found issue includes the affected text and a proposed correction",
+    "The readable lesson agrees with the canonical JSON",
+    "No learner, clinical, or accessibility certification is inferred from automated checks"
+  ],
+  "accountable_reviewer": "Repository maintainer or maintainer-designated educator; no individual is assigned without their agreement",
+  "stop_conditions": [
+    "The requested review requires private data, payment, or contacting people",
+    "A source cannot be accessed: record the blocked source check and continue independent arithmetic review",
+    "A mathematical or licensing concern cannot be resolved: mark it for maintainer review"
+  ],
+  "how_to_start": "Read the inputs, predict answers before opening solutions, then compare and document discrepancies. The task file plus these public input files is a portable manual handoff; no task execution service is required.",
+  "how_to_submit": "Prepare a review file and a proposed review-record update for maintainer consideration. Keep the task open until a contributor voluntarily starts; acceptance and merging are separate maintainer decisions."
+}
