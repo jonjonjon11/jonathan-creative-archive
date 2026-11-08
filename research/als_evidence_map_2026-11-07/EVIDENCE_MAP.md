@@ -4,7 +4,7 @@ Snapshot: 2026-11-07. Six purposively selected records. Not comprehensive.
 
 **Draft research candidate. Not independently reviewed by an ALS clinician. No patient predictions or treatment recommendations.**
 
-Read README.md for selection, interpretation, reproducibility, and limitations. Source dates and access caveats are in SOURCE_ACCESS.md.
+Read README.md for selection, interpretation, reproducibility, and limitations. Source dates and access caveats are in SOURCE_ACCESS.md. A separately dated [VALOR/OLE follow-up](VALOR_OLE_FOLLOWUP.md) adds later evidence without changing the historical primary result.
 
 ## Tofersen / SOD1: VALOR and original US accelerated approval
 
@@ -56,7 +56,7 @@ Sources: [qalsody_snapshot](https://www.fda.gov/drugs/drug-trials-snapshots/drug
 - VALOR's prespecified primary clinical result was nonsignificant.
 
 **Unknowns**
-- The total later clinical, safety, and confirmatory-trial evidence is not synthesized here. The final VALOR/OLE paper is a verified, explicit scope exclusion below.
+- This historical record does not synthesize all later evidence. See the separately dated VALOR_OLE_FOLLOWUP.md for the bounded final VALOR/OLE extraction.
 
 **Caveats**
 - Do not generalize SOD1-specific evidence to all ALS.
@@ -69,7 +69,7 @@ Regulatory sources: [qalsody_snapshot](https://www.fda.gov/drugs/drug-trials-sna
 
 **Named scope exclusions**
 
-- [valor_ole_final_2025](https://jamanetwork.com/journals/jamaneurology/fullarticle/2843130): Significant named omission: the final integrated VALOR/open-label-extension report was published online 2025-12-22. Its longer-term efficacy and safety results have not been extracted or appraised here. This record covers the original randomized result and original US approval only, not the total current tofersen evidence.
+- [valor_ole_final_2025](https://jamanetwork.com/journals/jamaneurology/fullarticle/2843130): Excluded from this original-trial/approval record. Selected final VALOR/OLE outcomes and limitations are now extracted separately in VALOR_OLE_FOLLOWUP.md, dated 2026-11-08; the historical primary result is unchanged.
 
 ## Ulefnersen / FUS: sponsor-reported FUSION topline result
 

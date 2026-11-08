@@ -1,3 +1,9 @@
+## Bounded VALOR/OLE evidence follow-up, 2026-11-08
+
+- Add separately dated final follow-up extraction with claim-level sources, patient-centered outcomes, biomarkers, safety denominators and limitations. Preserve historical primary failure and original approval assertion.
+- Distinguish ANCOVA from post hoc joint-rank analyses, retaining the supplement’s unrounded p=.0541 rather than claiming success from the main table’s .05 rounding.
+- Add deterministic companion validation/rendering and mutation tests. Independent AI review is not ALS clinician review; source inconsistencies and unretrieved SAP versions remain disclosed in the [review record](research/als_evidence_map_2026-11-07/REVIEW_VALOR_OLE.md).
+
 ## Reality Atlas browser verification, 2026-11-08
 
 - Preserve the original CC0 0.3.1 HTML bytes and add isolated offline Chromium/Firefox WebGL2 CI checks with recorded software renderers.

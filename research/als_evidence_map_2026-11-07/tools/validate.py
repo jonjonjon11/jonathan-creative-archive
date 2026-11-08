@@ -194,4 +194,6 @@ def load():
 
 
 if __name__ == "__main__":
-    print(json.dumps({"validation": "passed", **validate(*load())}, sort_keys=True))
+    from followup import load_followup, validate_followup
+    historical = load()
+    print(json.dumps({"validation": "passed", **validate(*historical), "followup": validate_followup(load_followup(), historical[0])}, sort_keys=True))

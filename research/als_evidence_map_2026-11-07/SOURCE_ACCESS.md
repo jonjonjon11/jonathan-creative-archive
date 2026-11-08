@@ -192,7 +192,7 @@ URLs below are the source references. No source document bytes are included in t
 - Publication date: 2025-12-22 (day precision)
 - Identifiers: doi:10.1001/jamaneurol.2025.4946, PMCID:PMC12723595
 - Access: body_retrieved
-- Access note: Title, online date, final integrated VALOR/OLE design, and abstract verified; February 2026 issue. This significant later report is a named scope exclusion, not evidence of absence of longer-term results. Outcomes and supplements were not extracted or appraised for this map.
+- Access note: Historical access on 2026-11-07 verified metadata, scope and abstract only. Outcome and supplement extraction from a separate 2026-11-08 retrieval is documented in data/valor_ole_followup.json and VALOR_OLE_FOLLOWUP.md, not retroactively attributed to this access date.
 - Relevant location: Publication metadata; Abstract; Introduction identifying final integrated results
 - Reuse: Bibliographic attribution and scope note only; paper not redistributed.
 

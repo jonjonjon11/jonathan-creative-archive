@@ -4,6 +4,10 @@
 
 This small, hand-curated map separates molecular mechanisms, biomarkers, clinical outcomes, sponsor announcements, and regulatory decisions. It is a starting point for public computational evidence organization, not a systematic review, efficacy ranking, patient prediction, treatment recommendation, or clinical decision tool.
 
+## Bounded follow-up added 2026-11-08
+
+[VALOR/OLE follow-up](VALOR_OLE_FOLLOWUP.md) separately extracts selected final-report outcomes, supplemental methods and limits. The six historical records and their 2026-11-07 access dates are preserved; this is not a whole-map refresh. The companion uses its own schema 1.0.0 in `data/valor_ole_followup.json`, claim-level source locations and 2026-11-08 access dates. See [review scope and tests](REVIEW_VALOR_OLE.md). Independent AI extraction/software review is distinct from ALS clinician review, which has not occurred.
+
 ## Read and reproduce
 
 - `EVIDENCE_MAP.md`: generated human-readable records.
@@ -24,7 +28,7 @@ python3 tools/render.py --check
 sha256sum -c MANIFEST.sha256
 ```
 
-`render.py` deterministically regenerates the two Markdown views. Hashes and passing tests prove local file integrity and consistency, not scientific correctness. No test contacts the internet or re-estimates trial statistics. A reviewer must revisit cited sources and examine methods, protocols, amendments, and supplements before reuse.
+`render.py` deterministically regenerates the two historical Markdown views and the follow-up companion. The validator checks both schemas, including separate analysis identity, source locators, denominators and nominal inference. It cannot establish the truth of source claims or the adequacy of an analysis. Hashes and passing tests prove local file integrity and consistency, not scientific correctness. No test contacts the internet or re-estimates trial statistics. A reviewer must revisit cited sources and examine methods, protocols, amendments, and supplements before reuse.
 
 ## Selection and interpretation
 
@@ -45,7 +49,7 @@ Dates distinguish original publication, source-described events, retrieval, and 
 1. Recheck every claim against full methods and statistical-analysis plans. Selected source sections, not all supplements, were read. VALOR's publisher page was unavailable; its numerical findings were cross-checked against the accessible original FDA label.
 2. Resolve trial-registry access gaps and inspect amendment histories, especially ANQUR's phase terminology and endpoint hierarchy. Do not silently treat a 2024 sponsor description as a verified 2026 protocol.
 3. Review later publications, regulator updates, and safety evidence. This is not a complete current safety/benefit assessment. The historical tofersen label is intentionally identified as historical.
-   - Significant named omission: [Long-Term Tofersen in SOD1 Amyotrophic Lateral Sclerosis](https://jamanetwork.com/journals/jamaneurology/fullarticle/2843130), published online December 22, 2025 (February 2026 issue), reports final integrated VALOR/OLE results. Its metadata and scope were verified, but its longer-term efficacy and safety results are not extracted or appraised in this historical tofersen record. A current treatment-evidence assessment must include that paper and later evidence.
+   - Significant named omission: [Long-Term Tofersen in SOD1 Amyotrophic Lateral Sclerosis](https://jamanetwork.com/journals/jamaneurology/fullarticle/2843130), published online December 22, 2025 (February 2026 issue), reports final integrated VALOR/OLE results. Its longer-term efficacy and safety results remain outside this historical tofersen record. Selected findings are now in the separately dated [follow-up companion](VALOR_OLE_FOLLOWUP.md); broader later evidence and original SAP versions remain unverified.
 4. Obtain independent ALS clinical and research-methods review. No such review has occurred here. Absence of a reported result is not evidence that no result exists.
 5. Keep third-party articles and figures out of this package unless their reuse rights are checked. This package contains original concise summaries and references, not copies of source articles or underlying datasets. Original code and original concise summaries follow the repository's root [Creative Commons Attribution 4.0 International (CC BY 4.0) license](../../LICENSE). Cited articles, figures, datasets, and sponsor materials retain their own rights and licenses; citations do not relicense them.
 
