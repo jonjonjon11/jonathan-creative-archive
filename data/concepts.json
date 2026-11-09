@@ -385,8 +385,8 @@
       ],
       "artifact_status": "source_inspected",
       "scientific_standing": "design_mapping",
-      "limitations": "29 preserved Node tests pass, but source has documented input-validation gaps. Semantic colors and registry labels are not physical truth; display-rate names do not certify flashing safety. No UI or complete knowledge graph.",
-      "next_step": "Build a separately tested derivative with finite/tuning/large-integer validation and static-by-default presentation; add authoritative citations before treating registry entries as evaluated knowledge."
+      "limitations": "29 preserved and 23 new bounded number/pitch adapter tests pass. Original APIs retain documented gaps; the opt-in adapter covers only four functions. Semantic colors and uncited vocabulary labels are not physical truth, and display-rate names do not certify flashing safety. No UI or complete knowledge graph.",
+      "next_step": "Review and extend the separately tested bounded adapter only as needed; harden color/visual inputs before adding static-by-default presentation, and add authoritative citations before treating vocabulary entries as evaluated knowledge."
     },
     {
       "id": "CON-023",

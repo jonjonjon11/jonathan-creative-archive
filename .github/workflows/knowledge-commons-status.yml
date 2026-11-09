@@ -35,7 +35,7 @@ jobs:
           python3 -B -m unittest discover -s research/als_evidence_map_2026-11-07/tests -p 'test_*.py'
       - name: Run numerical and simulated-control Node suites
         run: |
-          node --test tools/lumen-commons/tests/*.test.cjs tools/motion-trace-shape/tests/*.test.cjs tools/water-survey-preflight/tests/*.test.cjs tools/universal-color-ontology/upstream/packages/*/test/*.test.mjs
+          node --test tools/lumen-commons/tests/*.test.cjs tools/motion-trace-shape/tests/*.test.cjs tools/water-survey-preflight/tests/*.test.cjs tools/universal-color-ontology/upstream/packages/*/test/*.test.mjs tools/universal-color-ontology/bounded/tests/*.test.mjs
           node scripts/check_reality_core.cjs
       - name: Check source and standalone parity
         run: |
