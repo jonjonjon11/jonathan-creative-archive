@@ -1,3 +1,9 @@
+## Bounded ontology generators, 2026-11-09
+
+- Add an opt-in offline CLI and four validation adapters for exact integers, reduced rationals, MIDI pitches and canonical note sets. Reject rounded numeric inputs, invalid tuning, and computed frequency overflow/underflow.
+- Preserve all 12 CC0 upstream files and their source manifest unchanged; original adapter code and tests use CC BY 4.0. Add 23 focused tests to existing CI.
+- Keep vocabulary citations, color/visual hardening, rendering and human/device acceptance outside this scope. See the [dated review](docs/reviews/bounded-ontology-generators-2026-11-09.md).
+
 ## Water input diagnostics, 2026-11-08
 
 - Preserve 40 bounded synthetic observations separating Chromium automated fill from file import, visible reopening and direct assignment. Matched listener-removal/width repeats do not resolve the fill timeout; native clipboard paste remains untested.

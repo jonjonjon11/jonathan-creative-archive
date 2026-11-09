@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "review_date": "2026-11-08",
+  "review_date": "2026-11-09",
   "scope": "Registry of selected recovered and newly built artifacts included in this archive, not every helper or original tool and not a legal clearance record.",
   "artifacts": [
     {
@@ -82,13 +82,13 @@
       "rights": {
         "license_declared": "CC0-1.0",
         "license_path": "tools/universal-color-ontology/upstream/LICENSE",
-        "scope": "Twelve unchanged upstream files named in source-review-manifest.json; archive README and manifest are CC BY 4.0.",
+        "scope": "Twelve unchanged upstream files named in source-review-manifest.json remain CC0. Archive documentation, manifest and the new bounded/ adapter, CLI and tests are CC BY 4.0.",
         "review_record": "tools/universal-color-ontology/README.md"
       },
       "verification": {
-        "status": "node_source_tests_passed_known_input_limits",
-        "record": "tools/universal-color-ontology/README.md",
-        "limitations": "29 preserved Node tests passed. Source toolkit, no UI; input-validation gaps and uncited vocabulary labels remain. No photosensitivity, accessibility or scientific certification."
+        "status": "preserved_and_bounded_adapter_node_tests_passed",
+        "record": "docs/reviews/bounded-ontology-generators-2026-11-09.md",
+        "limitations": "29 preserved plus 23 opt-in adapter/CLI tests pass. Four number/pitch functions have bounded input validation; other original APIs retain documented gaps. No UI/audio, physical-safety, accessibility or scientific certification; vocabulary citations remain incomplete."
       },
       "preserved_manifest": "tools/universal-color-ontology/source-review-manifest.json",
       "pinned_files": []

@@ -12,6 +12,10 @@ The preserved `upstream/` snapshot retains its complete [CC0 1.0 Universal licen
 
 Source revision: `e17aaa014a9cf66b6a510c01c5563409780b8656`, authored/committed by the repository owner. Source identity and original paths are recorded as metadata without private source links. The archive does not include the rest of that repository or its history.
 
+## Use the new bounded adapter
+
+The separately authored [bounded generators and offline CLI](bounded/README.md) preserve exact large integers and reduced fractions, validate note/tuning inputs, and reject computed frequency overflow or underflow. **23 new tests pass** alongside the 29 preserved tests. The adapter is opt-in, CC BY 4.0, and does not change the original CC0 files. It covers four number/pitch functions only, with no rendering or audio. See the [dated review](../../docs/reviews/bounded-ontology-generators-2026-11-09.md).
+
 ## Run the preserved tests
 
 Requires Node.js 20 or later. From this directory:

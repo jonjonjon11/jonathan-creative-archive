@@ -24,9 +24,14 @@ for c in concepts:
         if s not in source_ids: errors.append(f"{c['id']}: missing source {s}")
 private_patterns = [r'https://chatgpt\.com/c/', r'https://(?:docs|drive)\.google\.com/', r'libfile_[A-Za-z0-9]+', r'Sentinel_[A-Za-z0-9]+', r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----']
 files = [p for p in root.rglob('*') if p.is_file() and '.git' not in p.parts and '__pycache__' not in p.parts]
+# This reviewed adapter does not broaden the repository-wide extension policy.
+bounded_module_files = {
+    root / 'tools/universal-color-ontology/bounded' / relative
+    for relative in ('cli.mjs', 'generators.mjs', 'tests/cli.test.mjs', 'tests/generators.test.mjs')
+}
 for p in files:
     if p.suffix in {'.pem', '.key', '.p12', '.pfx', '.jks', '.keystore'}: errors.append(f"Disallowed file: {p.relative_to(root)}")
-    if p.suffix not in {'.md', '.json', '.txt', '.py', '.cjs', '.html'} and p.name != '.gitignore' and p not in {root / 'LICENSE', root / 'artifacts/cooperation-rescue/LICENSE', root / 'tools/lumen-commons/LICENSE', root / 'tools/universal-color-ontology/upstream/LICENSE', root / 'tools/water-survey-preflight/LICENSE', root / '.github/workflows/knowledge-commons-status.yml', root / 'tools/evidence-integrity-audit/LICENSE', root / 'research/als_evidence_map_2026-11-07/MANIFEST.sha256'} and not (p.suffix == '.mjs' and p.is_relative_to(root / 'tools/universal-color-ontology/upstream/packages')) and not (p.suffix in {'.js', '.css'} and any(p.is_relative_to(root / path) for path in ('tools/lumen-commons/src', 'tools/motion-trace-shape/src', 'tools/water-survey-preflight/src'))) and p not in {root / "tools/water-survey-preflight/fixtures/synthetic-clean.csv", root / "tools/water-survey-preflight/fixtures/synthetic-review.csv"}: errors.append(f"Unexpected file type: {p.relative_to(root)}")
+    if p.suffix not in {'.md', '.json', '.txt', '.py', '.cjs', '.html'} and p.name != '.gitignore' and p not in {root / 'LICENSE', root / 'artifacts/cooperation-rescue/LICENSE', root / 'tools/lumen-commons/LICENSE', root / 'tools/universal-color-ontology/upstream/LICENSE', root / 'tools/water-survey-preflight/LICENSE', root / '.github/workflows/knowledge-commons-status.yml', root / 'tools/evidence-integrity-audit/LICENSE', root / 'research/als_evidence_map_2026-11-07/MANIFEST.sha256'} and p not in bounded_module_files and not (p.suffix == '.mjs' and p.is_relative_to(root / 'tools/universal-color-ontology/upstream/packages')) and not (p.suffix in {'.js', '.css'} and any(p.is_relative_to(root / path) for path in ('tools/lumen-commons/src', 'tools/motion-trace-shape/src', 'tools/water-survey-preflight/src'))) and p not in {root / "tools/water-survey-preflight/fixtures/synthetic-clean.csv", root / "tools/water-survey-preflight/fixtures/synthetic-review.csv"}: errors.append(f"Unexpected file type: {p.relative_to(root)}")
     text = p.read_text(encoding='utf-8')
     if p.suffix != '.py':
         for pat in private_patterns:
