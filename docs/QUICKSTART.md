@@ -8,6 +8,7 @@ These are AI-assisted learning drafts. Mathematical and software checks have bee
 
 - [Introduction to division](lessons/introduction-to-division.md): share objects, make equal groups and check leftovers. Read the three examples, then try the five exercises before their hints and solutions. Paper or imagined objects are enough.
 - [Motion, traces and shape](lessons/motion-trace-shape.md): predict lines, circles and figure-eights from two repeating motions. Coordinate tables and written explanations work without animation. The optional browser lab is described below.
+- [String harmonics](lessons/string-harmonics.md): fit patterns between two fixed endpoints, calculate their frequencies, and distinguish a node from a point passing through zero. Three worked examples and five solved questions need no sound or animation. This original companion is separate from the previously recorded Cloud City lab.
 - [One press, one star](lessons/one-press-one-star.md): follow an invented input trace and predict a small game's score. Read it on paper, or run and change the finished Python example if you already have Python. Its lesson explains that extra setup; it is not a live game or assistive device.
 
 Choose your own pace. Read one example, explain it in your own words, try a question, then compare your reasoning with the solution. You do not need to read a schema or edit JSON to begin.

@@ -10,7 +10,7 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 
 ## Choose what to do
 
-- **Read a lesson:** use the [learner quick start](docs/QUICKSTART.md) for division, motion and shapes, or a small programming exercise. Reading does not require an account or programming tools.
+- **Read a lesson:** use the [learner quick start](docs/QUICKSTART.md) for division, motion and shapes, string harmonics, or a small programming exercise. Reading does not require an account or programming tools.
 - **Try an offline browser tool:** follow the opening instructions for [Motion → Trace → Shape](tools/motion-trace-shape/README.md), [Lumen Commons](tools/lumen-commons/README.md), [Reality Atlas](tools/reality-atlas/README.md), or the experimental [Water Survey Preflight](tools/water-survey-preflight/README.md). Download the files first; GitHub's source previews do not run the apps. These are prototypes with scoped checks, not validated curricula or certified tools.
 - **Explore ideas and research:** browse the [thematic chapters below](#start-here), or read the [ALS evidence map and dated follow-ups](research/als_evidence_map_2026-11-07/README.md). The research is incomplete and is not treatment guidance.
 - **Reuse or contribute:** start with the [contribution guide](CONTRIBUTING.md) and [artifact registry](data/artifacts.json). The registry describes selected included artifacts, their separate rights and evidence limits; some are source packages rather than runnable apps.
@@ -18,6 +18,10 @@ That is the purpose of this archive. It is a selective reconstruction from avail
 ## Learn or contribute without Git
 
 Start with the [learner quick start](docs/QUICKSTART.md): choose a readable lesson, download a copy, check or change an example, and share feedback only if you want to. It includes a plain-text report and welcomes single-device observations without treating them as complete compatibility testing. No account is needed for local learning. Human learner, educator and accessibility acceptance remain pending.
+
+## String harmonics companion (2026-11-09)
+
+[String harmonics](docs/lessons/string-harmonics.md) is an original paper-first companion with three worked examples and five solved questions about ideal fixed-end strings. It explains nodes, wavelength, harmonic frequency and model limits without requiring sound or animation. The archive already records a separate Cloud City standing-wave lab; this is not a claim to recover that source or invent the topic. Numerical/content checks and [dated review evidence](docs/reviews/string-harmonics-2026-11-09.md) are supplied. Educator, learner and accessibility acceptance remain pending.
 
 ## Integrated additions (2026-11-08)
 
