@@ -1,3 +1,9 @@
+## String harmonics companion, 2026-11-09
+
+- Add original text-first fixed-end string teaching material: three worked examples, five solved questions, static tables, units, assumptions and source-specific provenance.
+- Credit the prior Cloud City standing-wave record without implying recovery or checking of that external implementation. Distinguish mechanical displacement from quantum probability density and chosen musical mappings.
+- Add 14 numerical/content regression tests under the existing lesson-test CI discovery and learner navigation. No runtime, workflow or preserved source changes. See the [dated review](docs/reviews/string-harmonics-2026-11-09.md) for executed checks and pending human review.
+
 ## Bounded ontology generators, 2026-11-09
 
 - Add an opt-in offline CLI and four validation adapters for exact integers, reduced rationals, MIDI pitches and canonical note sets. Reject rounded numeric inputs, invalid tuning, and computed frequency overflow/underflow.
