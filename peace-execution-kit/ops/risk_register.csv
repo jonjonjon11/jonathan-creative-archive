@@ -1,0 +1,8 @@
+risk_id,date,category,description,likelihood,impact,owner,mitigation,trigger,contingency,status
+R-001,YYYY-MM-DD,Governance,Decision bottlenecks delay urgent actions,medium,high,TBD,"Define delegated authority and escalation SLA",">7 day unresolved decisions","Emergency decision protocol",open
+R-002,YYYY-MM-DD,Fiduciary,Misuse of funds or in-kind resources,medium,high,TBD,"Dual approval, open ledger, random audit","Unexplained variance >10%","Freeze disbursement and investigate",open
+R-003,YYYY-MM-DD,Safeguarding,Harm to vulnerable participants,low,critical,TBD,"Mandatory safeguarding procedures and training","Any report of abuse","Immediate suspension and independent response",open
+R-004,YYYY-MM-DD,Operational,Staff burnout reduces delivery quality,medium,medium,TBD,"Define backup staffing and duty rotation","Sick leave spike or missed shifts","Redistribute workload and pause noncritical activity",open
+R-005,YYYY-MM-DD,Reputation,Public misunderstanding reduces partner trust,medium,medium,TBD,"Publish clear scope and weekly updates","Negative partner feedback trend","Host clarification briefings",open
+R-006,YYYY-MM-DD,Security,Digital compromise of operational files,low,high,TBD,"Access controls and encrypted backups","Unauthorized access event","Rotate credentials and restore from backup",open
+

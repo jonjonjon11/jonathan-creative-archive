@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atom Viewer</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #0b1020; color: #e5e7eb; }
+    #ui {
+      position: fixed; top: 10px; left: 10px; z-index: 20;
+      background: rgba(10, 15, 30, 0.85); border: 1px solid #334155; border-radius: 8px;
+      padding: 10px; width: 320px;
+    }
+    #ui label { display: block; margin: 8px 0 3px; font-size: 12px; color: #cbd5e1; }
+    #ui input, #ui select { width: 100%; }
+    #legend { font-size: 12px; color: #93c5fd; margin-top: 8px; line-height: 1.35; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <div id="ui">
+    <div style="margin-bottom:8px;font-size:12px;">
+      <a href="./hydrogen-replay.html" style="color:#93c5fd;">Open Same Starting Frame: Hydrogen Replay →</a>
+    </div>
+    <label for="element">Element</label>
+    <select id="element"></select>
+
+    <label for="timescale">Timescale (simulation speed)</label>
+    <input id="timescale" type="range" min="0" max="500" value="100" />
+
+    <label for="zoom">Zoom</label>
+    <input id="zoom" type="range" min="5" max="120" value="28" />
+
+    <label for="opacity">Opacity (see-through)</label>
+    <input id="opacity" type="range" min="10" max="100" value="70" />
+
+    <label for="clip">Cross-section clip (Y plane)</label>
+    <input id="clip" type="range" min="-40" max="40" value="40" />
+
+    <div id="legend">
+      Drag: rotate | Wheel: zoom<br />
+      This is an educational orbital-shell visualization.
+    </div>
+  </div>
+
+  <script type="module">
+    import * as THREE from "https://unpkg.com/three@0.162.0/build/three.module.js";
+    import { OrbitControls } from "https://unpkg.com/three@0.162.0/examples/jsm/controls/OrbitControls.js";
+
+    const elementData = [
+      { symbol: "H", name: "Hydrogen", protons: 1, shells: [1] },
+      { symbol: "He", name: "Helium", protons: 2, shells: [2] },
+      { symbol: "Li", name: "Lithium", protons: 3, shells: [2, 1] },
+      { symbol: "Be", name: "Beryllium", protons: 4, shells: [2, 2] },
+      { symbol: "B", name: "Boron", protons: 5, shells: [2, 3] },
+      { symbol: "C", name: "Carbon", protons: 6, shells: [2, 4] },
+      { symbol: "N", name: "Nitrogen", protons: 7, shells: [2, 5] },
+      { symbol: "O", name: "Oxygen", protons: 8, shells: [2, 6] },
+      { symbol: "F", name: "Fluorine", protons: 9, shells: [2, 7] },
+      { symbol: "Ne", name: "Neon", protons: 10, shells: [2, 8] },
+      { symbol: "Na", name: "Sodium", protons: 11, shells: [2, 8, 1] },
+      { symbol: "Mg", name: "Magnesium", protons: 12, shells: [2, 8, 2] },
+      { symbol: "Si", name: "Silicon", protons: 14, shells: [2, 8, 4] },
+      { symbol: "Fe", name: "Iron", protons: 26, shells: [2, 8, 14, 2] }
+    ];
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.localClippingEnabled = true;
+    document.body.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color("#0b1020");
+
+    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 500);
+    camera.position.set(0, 15, 28);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+    const keyLight = new THREE.DirectionalLight(0xffffff, 1.1);
+    keyLight.position.set(16, 20, 10);
+    scene.add(keyLight);
+
+    const atomRoot = new THREE.Group();
+    scene.add(atomRoot);
+
+    const clipPlane = new THREE.Plane(new THREE.Vector3(0, -1, 0), 40);
+    renderer.clippingPlanes = [clipPlane];
+
+    function makeMaterial(color, opacity = 1.0, transparent = false) {
+      return new THREE.MeshStandardMaterial({
+        color,
+        transparent,
+        opacity,
+        roughness: 0.35,
+        metalness: 0.1,
+        clippingPlanes: [clipPlane]
+      });
+    }
+
+    function clearGroup(group) {
+      while (group.children.length) {
+        const c = group.children.pop();
+        if (c.geometry) c.geometry.dispose();
+        if (c.material) c.material.dispose();
+      }
+    }
+
+    const animatedElectrons = [];
+    let shellOpacity = 0.7;
+
+    function buildAtom(element) {
+      clearGroup(atomRoot);
+      animatedElectrons.length = 0;
+
+      const nucleus = new THREE.Group();
+      atomRoot.add(nucleus);
+      const protonCount = element.protons;
+      const neutronCount = Math.max(1, Math.round(element.protons * 1.1));
+      const totalNucleons = protonCount + neutronCount;
+      const radius = Math.max(1.8, Math.cbrt(totalNucleons) * 0.85);
+
+      for (let i = 0; i < totalNucleons; i++) {
+        const isProton = i < protonCount;
+        const sphere = new THREE.Mesh(
+          new THREE.SphereGeometry(0.45, 16, 16),
+          makeMaterial(isProton ? "#f97316" : "#60a5fa", 1, false)
+        );
+        const r = radius * Math.pow(Math.random(), 0.45);
+        const theta = Math.random() * Math.PI * 2;
+        const phi = Math.acos(2 * Math.random() - 1);
+        sphere.position.set(
+          r * Math.sin(phi) * Math.cos(theta),
+          r * Math.cos(phi),
+          r * Math.sin(phi) * Math.sin(theta)
+        );
+        nucleus.add(sphere);
+      }
+
+      element.shells.forEach((electronsInShell, shellIdx) => {
+        const shellRadius = 4 + shellIdx * 4.2;
+        const ring = new THREE.Mesh(
+          new THREE.TorusGeometry(shellRadius, 0.08, 12, 120),
+          makeMaterial("#93c5fd", shellOpacity, true)
+        );
+        ring.rotation.x = Math.PI / 2;
+        atomRoot.add(ring);
+
+        for (let i = 0; i < electronsInShell; i++) {
+          const e = new THREE.Mesh(
+            new THREE.SphereGeometry(0.22, 14, 14),
+            makeMaterial("#22d3ee", 1, false)
+          );
+          atomRoot.add(e);
+          animatedElectrons.push({
+            mesh: e,
+            shellRadius,
+            shellIdx,
+            phase: (i / Math.max(1, electronsInShell)) * Math.PI * 2,
+            speed: 0.45 + shellIdx * 0.18
+          });
+        }
+      });
+    }
+
+    const elementSelect = document.getElementById("element");
+    for (const e of elementData) {
+      const option = document.createElement("option");
+      option.value = e.symbol;
+      option.textContent = `${e.symbol} - ${e.name}`;
+      elementSelect.appendChild(option);
+    }
+    elementSelect.value = "C";
+
+    const timescaleEl = document.getElementById("timescale");
+    const zoomEl = document.getElementById("zoom");
+    const opacityEl = document.getElementById("opacity");
+    const clipEl = document.getElementById("clip");
+
+    function currentElement() {
+      return elementData.find((e) => e.symbol === elementSelect.value) || elementData[0];
+    }
+
+    function rebuildFromUI() {
+      shellOpacity = Number(opacityEl.value) / 100;
+      buildAtom(currentElement());
+      camera.position.set(0, 15, Number(zoomEl.value));
+    }
+
+    elementSelect.addEventListener("change", rebuildFromUI);
+    opacityEl.addEventListener("input", rebuildFromUI);
+    zoomEl.addEventListener("input", () => {
+      camera.position.z = Number(zoomEl.value);
+    });
+    clipEl.addEventListener("input", () => {
+      clipPlane.constant = Number(clipEl.value);
+    });
+
+    rebuildFromUI();
+
+    const clock = new THREE.Clock();
+    function animate() {
+      const dt = clock.getDelta();
+      const t = clock.elapsedTime;
+      const speedScale = Number(timescaleEl.value) / 100;
+
+      for (const e of animatedElectrons) {
+        const a = e.phase + t * e.speed * speedScale;
+        const tilt = (e.shellIdx * 0.42) % Math.PI;
+        const x = Math.cos(a) * e.shellRadius;
+        const z = Math.sin(a) * e.shellRadius;
+        const y = Math.sin(a * 0.65 + e.shellIdx) * 0.6;
+        e.mesh.position.set(
+          x,
+          y * Math.cos(tilt) - z * Math.sin(tilt) * 0.06,
+          z
+        );
+      }
+
+      atomRoot.rotation.y += dt * 0.15;
+      controls.update();
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  </script>
+</body>
+</html>
+
