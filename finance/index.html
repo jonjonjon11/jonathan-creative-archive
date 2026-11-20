@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financing Simulator</title>
+  <link rel="stylesheet" href="../web/site.css" />
+</head>
+<body>
+  <header class="wrap">
+    <a href="../index.html">← Back to project home</a>
+    <h1>Global Financing Simulator + Coverage Ledger</h1>
+    <p class="lead">
+      Published scenarios are reproduced exactly from the supplied ledger fixtures. Custom assumptions are separate and labeled as custom.
+    </p>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="controls">
+        <label><input type="radio" name="mode" value="published" checked /> Published scenario mode</label>
+        <label><input type="radio" name="mode" value="custom" /> Custom scenario mode</label>
+        <select id="preset">
+          <option value="conservative">Conservative (published)</option>
+          <option value="moderate">Moderate (published)</option>
+          <option value="ambitious">Ambitious (published)</option>
+        </select>
+      </div>
+      <p class="caption" id="modeNote"></p>
+    </section>
+
+    <section class="section" id="customControls" hidden>
+      <h2>Custom assumptions (separate from published ledger rows)</h2>
+      <div class="controls">
+        <label>Defense dividend (% of baseline defense pool; recommended 1.5–4 in source narrative)
+          <input id="defensePct" type="number" min="0" max="30" step="0.1" value="3" />
+        </label>
+        <label>Debt/service reforms (USD trillions)
+          <input id="debtT" type="number" min="0" max="10" step="0.01" value="0.60" />
+        </label>
+        <label>Solidarity flows (USD trillions)
+          <input id="solidarityT" type="number" min="0" max="10" step="0.01" value="0.55" />
+        </label>
+        <label>Efficiency and leakage recovery (USD trillions)
+          <input id="efficiencyT" type="number" min="0" max="10" step="0.01" value="0.30" />
+        </label>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Result</h2>
+      <table class="table">
+        <tbody>
+          <tr><th>Annual benchmark</th><td id="benchmark"></td></tr>
+          <tr><th>Scenario annual total</th><td id="total"></td></tr>
+          <tr><th>Remaining gap</th><td id="gap"></td></tr>
+          <tr><th>Coverage</th><td id="coverage"></td></tr>
+          <tr><th>Source comparability</th><td id="comparability"></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Published fixture rows</h2>
+      <table class="table" id="fixtureTable">
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Total (USD T)</th>
+            <th>Gap (USD T)</th>
+            <th>Coverage</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Source trace</h2>
+      <ul>
+        <li><strong>Benchmark:</strong> 4.30 trillion USD annual need (ledger fixture).</li>
+        <li><strong>Published fixture rows:</strong> 0.45T / 1.75T / 3.80T totals; 3.85T / 2.55T / 0.50T gaps; 10.5% / 40.7% / 88.4% coverage.</li>
+        <li><strong>Defense dividend note:</strong> narrative range 1.5–4% in source text; custom controls may exceed this for exploration and are labeled non-comparable.</li>
+      </ul>
+      <p class="caption">If source files are added under <code>sources/</code>, link exact page references here.</p>
+    </section>
+  </main>
+
+  <script>
+    const benchmark = 4.30;
+    const defenseBase = 10.0; // used only in custom mode as an explicit assumption
+    const fixtures = {
+      conservative: { label: "Conservative", total: 0.45, gap: 3.85, coverage: 10.5 },
+      moderate: { label: "Moderate", total: 1.75, gap: 2.55, coverage: 40.7 },
+      ambitious: { label: "Ambitious", total: 3.80, gap: 0.50, coverage: 88.4 }
+    };
+
+    const modeInputs = document.querySelectorAll("input[name='mode']");
+    const presetEl = document.getElementById("preset");
+    const modeNote = document.getElementById("modeNote");
+    const customControls = document.getElementById("customControls");
+    const benchmarkEl = document.getElementById("benchmark");
+    const totalEl = document.getElementById("total");
+    const gapEl = document.getElementById("gap");
+    const coverageEl = document.getElementById("coverage");
+    const comparabilityEl = document.getElementById("comparability");
+    const fixtureBody = document.querySelector("#fixtureTable tbody");
+    const defensePctEl = document.getElementById("defensePct");
+    const debtTEl = document.getElementById("debtT");
+    const solidarityTEl = document.getElementById("solidarityT");
+    const efficiencyTEl = document.getElementById("efficiencyT");
+
+    function fmtT(v) { return `${v.toFixed(2)} T USD`; }
+    function clamp(n, min, max) { return Math.max(min, Math.min(max, Number(n) || 0)); }
+
+    function renderFixtureTable() {
+      fixtureBody.innerHTML = "";
+      Object.values(fixtures).forEach((row) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${row.label}</td><td>${fmtT(row.total)}</td><td>${fmtT(row.gap)}</td><td>${row.coverage.toFixed(1)}%</td>`;
+        fixtureBody.appendChild(tr);
+      });
+    }
+
+    function getMode() {
+      return [...modeInputs].find((x) => x.checked)?.value || "published";
+    }
+
+    function render() {
+      const mode = getMode();
+      benchmarkEl.textContent = fmtT(benchmark);
+      customControls.hidden = mode !== "custom";
+      presetEl.disabled = mode !== "published";
+
+      if (mode === "published") {
+        const row = fixtures[presetEl.value];
+        totalEl.textContent = fmtT(row.total);
+        gapEl.textContent = fmtT(row.gap);
+        coverageEl.textContent = `${row.coverage.toFixed(1)}%`;
+        comparabilityEl.textContent = "Comparable to published ledger row (fixture exact reproduction).";
+        modeNote.textContent = "Published mode: numbers come directly from ledger fixtures and are regression targets.";
+      } else {
+        const defensePct = clamp(defensePctEl.value, 0, 30);
+        const debtT = clamp(debtTEl.value, 0, 10);
+        const solidarityT = clamp(solidarityTEl.value, 0, 10);
+        const efficiencyT = clamp(efficiencyTEl.value, 0, 10);
+        const defenseT = (defensePct / 100) * defenseBase;
+        const total = defenseT + debtT + solidarityT + efficiencyT;
+        const gap = benchmark - total;
+        const coverage = (total / benchmark) * 100;
+
+        totalEl.textContent = fmtT(total);
+        gapEl.textContent = `${gap >= 0 ? "" : "+"}${fmtT(Math.abs(gap))}${gap < 0 ? " surplus" : ""}`;
+        coverageEl.textContent = `${coverage.toFixed(1)}%`;
+        comparabilityEl.textContent = "Custom scenario: not a published ledger row.";
+        modeNote.textContent = "Custom mode: explicit assumptions for exploration; do not treat as source-published totals.";
+      }
+    }
+
+    renderFixtureTable();
+    render();
+    modeInputs.forEach((m) => m.addEventListener("change", render));
+    presetEl.addEventListener("change", render);
+    [defensePctEl, debtTEl, solidarityTEl, efficiencyTEl].forEach((el) => el.addEventListener("input", render));
+  </script>
+</body>
+</html>
+

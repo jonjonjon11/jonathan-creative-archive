@@ -1,0 +1,14 @@
+week_start,metric_id,metric_name,baseline,current,target_100d,unit,data_quality,owner,notes
+YYYY-MM-DD,M-001,Participants served in core services,0,0,300,people,provisional,TBD,
+YYYY-MM-DD,M-002,Mediation cases opened,0,0,50,cases,provisional,TBD,
+YYYY-MM-DD,M-003,Mediation cases resolved,0,0,30,cases,provisional,TBD,
+YYYY-MM-DD,M-004,Training attendance rate,0,0,80,percent,provisional,TBD,
+YYYY-MM-DD,M-005,Safeguarding incidents confirmed,0,0,0,count,provisional,TBD,
+YYYY-MM-DD,M-006,Primary-care referral completion,0,0,120,cases,provisional,TBD,
+YYYY-MM-DD,M-007,Food-support households reached,0,0,200,households,provisional,TBD,
+YYYY-MM-DD,M-008,Water-access disruptions resolved,0,0,25,incidents,provisional,TBD,
+YYYY-MM-DD,M-009,Volunteer retention,0,0,75,percent,provisional,TBD,
+YYYY-MM-DD,M-010,Weekly partner reporting compliance,0,0,90,percent,provisional,TBD,
+YYYY-MM-DD,M-011,Grievances resolved within SLA,0,0,95,percent,provisional,TBD,
+YYYY-MM-DD,M-012,Youth program attendance,0,0,150,people,provisional,TBD,
+

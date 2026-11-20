@@ -1,0 +1,8 @@
+date,decision_id,topic,decision,owner,rationale,review_date,status
+YYYY-MM-DD,D-001,Rights Floor,"No intervention may violate core rights protections",TBD,"Prevents harmful tradeoffs and mission drift",YYYY-MM-DD,active
+YYYY-MM-DD,D-002,Transparency,"Budgets, milestones, and outcomes are published internally by default",TBD,"Supports trust and anti-corruption",YYYY-MM-DD,active
+YYYY-MM-DD,D-003,Scaling Rule,"Only interventions with measured positive outcomes scale",TBD,"Prevents narrative-driven expansion",YYYY-MM-DD,active
+YYYY-MM-DD,D-004,Safeguarding,"All pilot activities require safeguarding checks before launch",TBD,"Reduces risk for vulnerable participants",YYYY-MM-DD,active
+YYYY-MM-DD,D-005,Fiduciary Control,"Dual-approval required for financial/resource commitments",TBD,"Reduces misuse and increases accountability",YYYY-MM-DD,active
+YYYY-MM-DD,D-006,Data Integrity,"Each reported metric must include source and owner",TBD,"Prevents unverifiable reporting",YYYY-MM-DD,active
+
