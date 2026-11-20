@@ -1,0 +1,42 @@
+{
+  "as_of": "2026-11-20",
+  "entries": [
+    {
+      "id": "lv-001",
+      "name": "East Las Vegas Community Learning Site (candidate)",
+      "municipality": "Las Vegas Valley",
+      "facility_type": "Community center candidate",
+      "status": "candidate_only",
+      "evidence": "Placeholder candidate record pending verified public-source confirmation",
+      "notes": "No approval implied for any specific design option."
+    },
+    {
+      "id": "lv-002",
+      "name": "North Valley Adaptive Reuse Site (candidate)",
+      "municipality": "Las Vegas Valley",
+      "facility_type": "Adaptive reuse candidate",
+      "status": "candidate_only",
+      "evidence": "Placeholder candidate record pending verified public-source confirmation",
+      "notes": "No booking, cost, or permit status assumed."
+    },
+    {
+      "id": "lv-003",
+      "name": "Central Corridor Pilot Venue (candidate)",
+      "municipality": "Las Vegas Valley",
+      "facility_type": "Rented pilot candidate",
+      "status": "candidate_only",
+      "evidence": "Placeholder candidate record pending verified public-source confirmation",
+      "notes": "Supervised rented model only, pending agreements."
+    },
+    {
+      "id": "lv-004",
+      "name": "South Valley Purpose-Built Concept Site (candidate)",
+      "municipality": "Las Vegas Valley",
+      "facility_type": "Purpose-built concept candidate",
+      "status": "candidate_only",
+      "evidence": "Placeholder candidate record pending verified public-source confirmation",
+      "notes": "Represents long-horizon concept stage."
+    }
+  ]
+}
+

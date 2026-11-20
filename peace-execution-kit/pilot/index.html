@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Las Vegas Pilot</title>
+  <link rel="stylesheet" href="../web/site.css" />
+</head>
+<body>
+  <header class="wrap">
+    <a href="../index.html">← Back to project home</a>
+    <h1>Las Vegas Pilot View</h1>
+    <p class="lead">Proposed actions are separated from completed status and missing evidence.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <h2>Action windows</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Window</th>
+            <th>Proposed action</th>
+            <th>Responsible role</th>
+            <th>Evidence needed</th>
+            <th>Completion criterion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>First 24 hours</td>
+            <td>Stand up local coordination channel and safeguarding contact.</td>
+            <td>Program lead (proposed)</td>
+            <td>Documented contact roster and incident channel</td>
+            <td>Verified contact loop test completed</td>
+          </tr>
+          <tr>
+            <td>First 30 days</td>
+            <td>Activate one supervised rented pilot site.</td>
+            <td>Site operations lead (proposed)</td>
+            <td>Signed access agreement + operating schedule</td>
+            <td>Weekly service cadence started</td>
+          </tr>
+          <tr>
+            <td>First 100 days</td>
+            <td>Publish baseline metrics and first change report.</td>
+            <td>Data and evaluation lead (proposed)</td>
+            <td>Baseline dataset + public method note</td>
+            <td>First delta report published</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Candidate facilities (no approvals implied)</h2>
+      <table class="table" id="venues">
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Evidence</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>Next route</h2>
+      <p>From candidate concepts, compare spatial assumptions in <a href="../courtyard/index.html">Courtyard Options A/B</a>.</p>
+    </section>
+  </main>
+
+  <script>
+    fetch("../data/las_vegas_pilots.json")
+      .then((r) => r.json())
+      .then((data) => {
+        const tbody = document.querySelector("#venues tbody");
+        data.entries.forEach((v) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `<td>${v.name}</td><td>${v.facility_type}</td><td>${v.status}</td><td>${v.evidence}</td><td>${v.notes}</td>`;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(() => {
+        const tbody = document.querySelector("#venues tbody");
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td colspan="5">Failed to load venue data.</td>`;
+        tbody.appendChild(tr);
+      });
+  </script>
+</body>
+</html>
+

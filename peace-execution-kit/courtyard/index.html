@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courtyard Concepts</title>
+  <link rel="stylesheet" href="../web/site.css" />
+  <style>
+    #plan svg { width: 100%; height: auto; border: 1px solid #2d3a61; border-radius: 8px; background: #0f172a; }
+    .room { fill: #1d4ed8; stroke: #93c5fd; stroke-width: 2; opacity: 0.88; }
+    .court { fill: #14532d; stroke: #86efac; stroke-width: 2; opacity: 0.88; }
+    text { fill: #e5e7eb; font-family: Arial, sans-serif; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a href="../index.html">← Back to project home</a>
+    <h1>Courtyard Community Complex Concepts</h1>
+    <p class="lead">Switch options and floors. Enclosed area is shown separately from open courtyard/terrace area.</p>
+  </header>
+
+  <main class="wrap">
+    <section class="section">
+      <div class="controls">
+        <label>Option
+          <select id="option">
+            <option value="A">Option A</option>
+            <option value="B">Option B</option>
+          </select>
+        </label>
+        <label>Floor
+          <select id="floor">
+            <option value="1">Floor 1</option>
+            <option value="2">Floor 2</option>
+          </select>
+        </label>
+      </div>
+      <p id="caption" class="caption"></p>
+    </section>
+
+    <section class="section" id="plan"></section>
+
+    <section class="section">
+      <table class="table">
+        <thead>
+          <tr><th>Option</th><th>Enclosed area</th><th>Open courtyard/terrace</th><th>Total referenced in source brief</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>6,640 sq ft</td><td>2,480 sq ft (courtyard/terrace)</td><td>4,160 + 2,480 = 6,640 enclosed-equivalent reference</td></tr>
+          <tr><td>B</td><td>22,400 sq ft</td><td>10,304 sq ft (courtyard/terrace)</td><td>12,096 + 10,304 = 22,400</td></tr>
+        </tbody>
+      </table>
+      <p class="caption">No candidate facility is implied as approved for either option.</p>
+    </section>
+  </main>
+
+  <script>
+    const spec = {
+      A: {
+        1: { enclosed: "6,640 sq ft", open: "2,480 sq ft", title: "Option A / Floor 1 - compact supervised pilot" },
+        2: { enclosed: "6,640 sq ft", open: "2,480 sq ft", title: "Option A / Floor 2 - compact supervised pilot" }
+      },
+      B: {
+        1: { enclosed: "22,400 sq ft", open: "10,304 sq ft", title: "Option B / Floor 1 - larger purpose-built concept" },
+        2: { enclosed: "22,400 sq ft", open: "10,304 sq ft", title: "Option B / Floor 2 - larger purpose-built concept" }
+      }
+    };
+
+    const optionEl = document.getElementById("option");
+    const floorEl = document.getElementById("floor");
+    const captionEl = document.getElementById("caption");
+    const planEl = document.getElementById("plan");
+
+    function room(x, y, w, h, label, klass = "room") {
+      return `<rect class="${klass}" x="${x}" y="${y}" width="${w}" height="${h}" rx="6" /><text x="${x + 8}" y="${y + 22}">${label}</text>`;
+    }
+
+    function renderPlan(option, floor) {
+      const s = spec[option][floor];
+      captionEl.textContent = `${s.title} | Enclosed: ${s.enclosed} | Open: ${s.open}`;
+
+      const scale = option === "A" ? 1 : 1.35;
+      const width = 700 * scale;
+      const height = 420 * scale;
+      const rooms = option === "A"
+        ? [
+          room(30, 30, 240, 130, "Learning Studio"),
+          room(290, 30, 170, 130, "Mediation"),
+          room(480, 30, 180, 130, "Health Referral"),
+          room(30, 180, 260, 180, "Workshop"),
+          room(310, 180, 350, 180, "Open Courtyard", "court")
+        ]
+        : [
+          room(40, 30, 260, 140, "Library + Digital Lab"),
+          room(320, 30, 190, 140, "Childcare"),
+          room(530, 30, 220, 140, "Clinic Partnership"),
+          room(40, 190, 300, 190, "Makerspace"),
+          room(360, 190, 390, 190, "Central Courtyard", "court")
+        ];
+
+      const floorSuffix = floor === "1" ? "Ground-flow emphasis" : "Upper-floor circulation emphasis";
+      planEl.innerHTML = `
+        <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Courtyard plan ${option} floor ${floor}">
+          <text x="20" y="20">Option ${option} - Floor ${floor} (${floorSuffix})</text>
+          ${rooms.join("")}
+        </svg>
+      `;
+    }
+
+    function render() {
+      renderPlan(optionEl.value, floorEl.value);
+    }
+
+    optionEl.addEventListener("change", render);
+    floorEl.addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>
+

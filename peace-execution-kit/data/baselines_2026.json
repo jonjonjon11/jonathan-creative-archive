@@ -1,0 +1,24 @@
+{
+  "as_of": "2026-11-20",
+  "notes": "Seed baseline dataset for reproducible demo. Values marked estimated are not claims of observed completion.",
+  "indicators": [
+    { "id": "conflict_deaths", "name": "Conflict deaths", "value": null, "unit": "people/year", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "civilian_harm", "name": "Civilian harm incidents", "value": null, "unit": "incidents/year", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "displacement", "name": "Forced displacement", "value": null, "unit": "people", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "extreme_poverty", "name": "Extreme poverty", "value": null, "unit": "people", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "food_insecurity", "name": "Acute food insecurity", "value": null, "unit": "people", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "safe_water_access", "name": "Safe water access deficit", "value": null, "unit": "people", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "preventable_mortality", "name": "Preventable mortality", "value": null, "unit": "deaths/year", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "literacy_gap", "name": "Foundational literacy gap", "value": null, "unit": "people", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "electricity_access_gap", "name": "Electricity access gap", "value": null, "unit": "people", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "sanitation_gap", "name": "Sanitation service gap", "value": null, "unit": "people", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "gbv_rate", "name": "Gender-based violence prevalence", "value": null, "unit": "%", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "youth_unemployment", "name": "Youth unemployment", "value": null, "unit": "%", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "housing_insecurity", "name": "Housing insecurity", "value": null, "unit": "households", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "institutional_trust", "name": "Institutional trust index", "value": null, "unit": "index", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "corruption_exposure", "name": "Corruption exposure index", "value": null, "unit": "index", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "climate_disaster_loss", "name": "Climate disaster annual loss", "value": null, "unit": "USD", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" },
+    { "id": "community_participation", "name": "Community participation", "value": null, "unit": "%", "geography": "Global", "observation_period": "2025", "publication_date": null, "source": "To be linked from verified source", "status": "awaiting_research" }
+  ]
+}
+
